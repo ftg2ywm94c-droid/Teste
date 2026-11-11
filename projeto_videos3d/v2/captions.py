@@ -2,9 +2,11 @@
 """Legenda ASS 1080x1920 a partir do texto APROVADO + tempos de palavra do Whisper (alinhamento por difflib).
 Também gera os textos de apoio (HUD) com tempos amarrados à narração.
 Uso: python3 v2/captions.py roteiros/01_distancia_de_parada.md analysis/narracao/01_words.json v2/out/legenda.ass"""
-import sys, re, json, difflib, unicodedata
+import os, sys, re, json, difflib, unicodedata
 script_md, words_json, out = sys.argv[1:4]
-txt = open(script_md).read().split('## Narração (texto para a ElevenLabs)')[1].split('## Base')[0].strip()
+EP = os.environ.get('EP')          # episódio com configuração própria (v2/ep<EP>/captions_cfg.py); sem EP = vídeo 01
+txt = open(script_md).read().split('## Narração')[1].split('\n', 1)[1].split('## Base')[0]
+txt = re.sub(r'\[[^\]]*\]', ' ', txt).strip()       # remove marcações de seção [HOOK 0–3 s] etc.
 S = txt.split()
 Wd = json.load(open(words_json))['words']
 def norm(w):
@@ -32,8 +34,20 @@ for q, ph in enumerate(KEYPH):
     p = ph.split(); n = len(p)
     for i in range(len(S) - n + 1):
         if low[i:i + n] == p: hl[i:i + n] = [True] * n; pid[i:i + n] = [(q, i)] * n
+HLW = ('sessenta', 'cinquenta', 'quarenta', 'dez', 'comentários')
+if EP:
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), f'ep{EP}'))
+    import captions_cfg as CFG
+    KEYPH, HLW = CFG.KEYPH, CFG.HLW
+    hl = [False] * len(S); pid = [None] * len(S)
+    for q, ph in enumerate(KEYPH):
+        p = ph.split(); n = len(p)
+        for i in range(len(S) - n + 1):
+            if low[i:i + n] == p:
+                hl[i:i + n] = [True] * n
+                if len(ph) <= 18: pid[i:i + n] = [(q, i)] * n      # expressão curta não é partida; longa pode quebrar
 for i, w in enumerate(low):
-    if w in ('sessenta', 'cinquenta', 'quarenta', 'dez', 'comentários'): hl[i] = True
+    if w in HLW: hl[i] = True
 # blocos: separa em trechos por pontuação/pausa; cada trecho vira blocos de ≤ 16 caracteres, sem partir expressão-chave
 # nem terminar bloco em palavra curta (artigo/preposição). Escolhe a divisão com menos blocos e tamanhos mais parecidos.
 segs, cur = [], []
@@ -41,10 +55,11 @@ for i, w in enumerate(S):
     cur.append(i); gap = (tim[i + 1][0] - tim[i][1]) if i + 1 < len(S) else 9
     if re.search(r'[.,?!…]$', w) or gap > 0.22: segs.append(cur); cur = []
 if cur: segs.append(cur)
+RELAX = [False]
 def ok_cut(j):      # pode cortar depois da palavra j?
     if j + 1 >= len(S): return True
     if pid[j] is not None and pid[j] == pid[j + 1]: return False
-    return len(norm(S[j])) > 3 or S[j].lower() in ('só', 'dez', 'é')
+    return RELAX[0] or len(norm(S[j])) > 3 or S[j].lower() in ('só', 'dez', 'é')
 from functools import lru_cache
 chunks = []
 for seg in segs:
@@ -61,7 +76,10 @@ for seg in segs:
             k, cost, parts = best(b); cand = (k + 1, cost + (L - 12) ** 2 + (400 if L > 16 else 0), ((a, b),) + parts)
             if res is None or cand[:2] < res[:2]: res = cand
         return res or (99, 9e9, ((a, n),))
-    for a, b in best(0)[2]: chunks.append(seg[a:b])
+    res = best(0)
+    if res[0] >= 99 and EP:          # sem divisão válida: permite cortar depois de palavra curta
+        RELAX[0] = True; best.cache_clear(); res = best(0); RELAX[0] = False
+    for a, b in res[2]: chunks.append(seg[a:b])
 def ts(t): return f"{int(t // 3600)}:{int(t // 60 % 60):02d}:{t % 60:05.2f}"
 YEL = '&H0028D7FF&'
 ev = []
@@ -80,7 +98,7 @@ def wt(phrase, which='s'):
     for i in range(len(S) - n + 1):
         if low[i:i + n] == p: return tim[i][0] if which == 's' else tim[i + n - 1][1]
     raise KeyError(phrase)
-HUD = [(0.15, wt('do limite', 'e') + 0.3, '60 km/h  ·  limite 50'),
+HUD = CFG.HUD(wt) if EP else [(0.15, wt('do limite', 'e') + 0.3, '60 km/h  ·  limite 50'),
        (wt('trinta e cinco metros') - 0.1, wt('à frente', 'e') + 0.4, '35 m até o menino'),
        (wt('levou um segundo') - 0.1, wt('no freio', 'e') + 0.2, 'tempo de reação: 1,5 s'),
        (wt('cresce com o quadrado') - 0.1, wt('quadrado da velocidade', 'e') + 0.6, 'frenagem cresce com v²'),
@@ -97,6 +115,7 @@ ScaledBorderAndShadow: yes
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Leg,Poppins,92,&H00FFFFFF,&H00FFFFFF,&H00101010,&H78000000,-1,0,0,0,100,100,0,0,1,5,2,2,90,90,560,1
+Style: Nota,Poppins,38,&H00FFFFFF,&H00FFFFFF,&H64000000,&H64000000,-1,0,0,0,100,100,1,0,3,10,0,8,80,80,140,1
 Style: Hud,Poppins,62,&H00FFFFFF,&H00FFFFFF,&H50000000,&H50000000,-1,0,0,0,100,100,1,0,3,18,0,8,80,80,250,1
 
 [Events]
@@ -104,6 +123,8 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
 L = [f"Dialogue: 1,{ts(s)},{ts(e)},Leg,,0,0,0,,{{\\fad(40,30)\\fscx92\\fscy92\\t(0,90,\\fscx100\\fscy100)}}{t}" for s, e, t in ev]
 L += [f"Dialogue: 0,{ts(s)},{ts(e)},Hud,,0,0,0,,{{\\fad(180,180)}}{t}" for s, e, t in HUD]
+NOTES = CFG.NOTES(wt) if EP and hasattr(CFG, 'NOTES') else []
+L += [f"Dialogue: 0,{ts(s)},{ts(e)},Nota,,0,0,0,,{{\\fad(200,200)}}{t}" for s, e, t in NOTES]
 open(out, 'w').write(head + '\n'.join(L) + '\n')
 json.dump(dict(diffs=diffs, words=[dict(w=S[i], s=tim[i][0], e=tim[i][1], key=hl[i]) for i in range(len(S))],
                chunks=[dict(s=s, e=e, t=t) for s, e, t in ev], hud=HUD), open(out.replace('.ass', '.json'), 'w'), ensure_ascii=False, indent=0)

@@ -4,7 +4,9 @@ envelope com o MP3 original: atraso ~0 e escala de tempo 1,0), legendas amarrada
 folha de contato. Uso: python3 v2/qc.py v2/out/01_distancia_de_parada_1080x1920.mp4"""
 import sys, os, json, re, subprocess, numpy as np, cv2
 HERE = os.path.dirname(os.path.abspath(__file__)); PROJ = os.path.dirname(HERE); sys.path[:0] = [os.path.join(HERE, 'lib'), HERE]
-import story as S, shots as SH
+EP = os.environ.get('EP')
+if EP: BASE = os.path.join(HERE, f'ep{EP}'); sys.path.insert(0, BASE); import plan as SH
+else: BASE = HERE; import story as S, shots as SH
 p = sys.argv[1]
 m = json.loads(subprocess.run(['ffprobe', '-v', 'error', '-show_format', '-show_streams', '-of', 'json', p], capture_output=True, text=True).stdout)
 v = [s for s in m['streams'] if s['codec_type'] == 'video'][0]; a = [s for s in m['streams'] if s['codec_type'] == 'audio'][0]
@@ -27,7 +29,7 @@ d = np.array(diffs)
 def envl(path, sr=1000):
     raw = subprocess.run(['ffmpeg', '-v', 'error', '-i', path, '-ac', '1', '-ar', '16000', '-af', 'highpass=f=200,lowpass=f=3500', '-f', 'f32le', '-'], capture_output=True).stdout
     x = np.abs(np.frombuffer(raw, np.float32)); n = len(x) // 16; return x[:n * 16].reshape(n, 16).mean(1)
-eo, ef = envl(os.path.join(PROJ, 'narracao', '01_narracao.mp3')), envl(p)
+eo, ef = envl(os.path.join(PROJ, 'narracao', f'{EP or "01"}_narracao.mp3')), envl(p)
 n = min(len(eo), len(ef)); eo_, ef_ = eo[:n] - eo[:n].mean(), ef[:n] - ef[:n].mean()
 lags = range(-200, 201); cc = [np.dot(eo_[max(0, -L):n - max(0, L)], ef_[max(0, L):n - max(0, -L)]) for L in lags]
 lag = list(lags)[int(np.argmax(cc))]; corr = float(np.corrcoef(eo_, ef_)[0, 1])
@@ -35,10 +37,10 @@ half = n // 2  # deriva de tempo: atraso no 1º e no 2º tempo
 def lag_of(a_, b_):
     c_ = [np.dot(a_[max(0, -L):len(a_) - max(0, L)], b_[max(0, L):len(b_) - max(0, -L)]) for L in range(-100, 101)]; return int(np.argmax(c_)) - 100
 drift = lag_of(eo_[half:], ef_[half:]) - lag_of(eo_[:half], ef_[:half])
-cap_j = json.load(open(os.path.join(HERE, 'out', 'legenda.json')))
+cap_j = json.load(open(os.path.join(BASE, 'out', 'legenda.json')))
 words = cap_j['words']; ch = cap_j['chunks']
 cap_err = max(min(abs(c['s'] - w['s']) for w in words) for c in ch)
-kid_gap, ball_gap = S.collision_report()
+kid_gap, ball_gap = S.collision_report() if not EP else (float('inf'), float('inf'))   # vídeo 02 não tem trajetórias que possam colidir
 dur = float(m['format']['duration']); I = re.findall(r'I:\s+(-?[\d.]+) LUFS', log); pk = re.findall(r'Peak:\s+(-?[\d.]+) dBFS', log)
 r = dict(file=p, duration=dur, video=dict(codec=v['codec_name'], w=v['width'], h=v['height'], fps=v['r_frame_rate'], frames=i, pix_fmt=v['pix_fmt'], unreadable=bad),
          audio=dict(codec=a['codec_name'], sample_rate=a['sample_rate'], channels=a['channels']),
@@ -46,7 +48,7 @@ r = dict(file=p, duration=dur, video=dict(codec=v['codec_name'], w=v['width'], h
          motion=dict(mean=round(float(d.mean()), 3), min=round(float(d.min()), 4), static_frames=int((d < 0.02).sum())),
          loudness_lufs=float(I[-1]) if I else None, true_peak_dbfs=float(pk[-1]) if pk else None,
          narration=dict(lag_ms=lag, drift_ms=drift, envelope_corr=round(corr, 3)), caption_start_max_err_s=round(cap_err, 3),
-         collision_min_gap_m=dict(kid=round(kid_gap, 2), ball=round(ball_gap, 2)), render_resolution='720x1280 (ampliado para 1080x1920)')
+         collision_min_gap_m=dict(kid=round(kid_gap, 2), ball=round(ball_gap, 2)) if not EP else 'n/a', render_resolution='720x1280 (ampliado para 1080x1920)')
 r['checks'] = dict(duration=abs(dur - SH.END) < 0.05, frames=i == round(SH.END * 30), h264=v['codec_name'] == 'h264', aac=a['codec_name'] == 'aac',
                    size_1080x1920=(v['width'], v['height']) == (1080, 1920), fps30=v['r_frame_rate'] == '30/1', no_black=r['black_segments'] == 0,
                    no_freeze=r['freeze_segments'] == 0, no_unreadable=bad == 0, loudness=abs((r['loudness_lufs'] or 0) + 14) <= 1.0,
