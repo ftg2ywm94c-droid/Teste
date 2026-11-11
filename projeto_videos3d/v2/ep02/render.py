@@ -159,6 +159,10 @@ else:
         x4 = B.label('4× mais forte', (0, 0, 0), 0.7, (1.0, 1.0, 1.0), coll=RC, name='rot_x4'); x4.parent = items['bar_big'][0]
         for ch in x4.children: ch.visible_shadow = False
         x4.location = (1.3, -1.05, 0.02); x4.scale = (1e-4,) * 3; items['x4'] = x4
+# desempenho: superfícies emissivas (luzes da cidade, rótulos, setas) não viram fontes de luz amostradas; céu do espaço idem
+for m in bpy.data.materials:
+    if m.name != 'SolSup': m.cycles.emission_sampling = 'NONE'
+if SPACE: sc.world.cycles.sampling_method = 'NONE'
 for (kk, text, col, size, t_on, t_off, posf) in shot.labels: items['lbl_' + kk] = (bill(kk, text, posf(shot.t0), size, col), t_on, t_off, posf)
 for (kk, loc, length, t_on) in getattr(shot, 'arrows', []): items['arr_' + kk] = (arrow(kk, loc, length, P.YEL if kk != 'vento' else P.RED), t_on)
 
@@ -272,7 +276,10 @@ for f in fr:
                 B.set_face(ch, {'alarm': 1.0} if T > P.T_BRAKE + 0.2 and T < P.T_BRAKE + 2.6 else {'neutral': 1.0}, f)
             ev.update(bus_y=yb, bus_v=shot.bus_v(T), lean=lean)
         if shot.name == 'H':
-            bb = shot.bars
+            bb = shot.bars; c0 = shot.cam(T); cp = Vector(c0['pos']); fw = (Vector(c0['look']) - cp).normalized()
+            rt = fw.cross(Vector((0, 0, 1))).normalized(); upv = rt.cross(fw)
+            for kb, dz in (('bar_big', 0.0), ('bar_small', 2.35)):        # barras presas à tela (como um painel)
+                rb = items[kb][0]; rb.location = cp + fw * 22.0 + upv * (5.0 + dz) + rt * 3.2; key(rb, 'location', f=f)
             for kb, t_on in (('bar_big', bb['t_big']), ('bar_small', bb['t_small'])):
                 root, b, lb, length = items[kb]; g = sstep(t_on, t_on + 0.7, T)
                 b.scale = (max(length * g, 1e-4), 1, 1); key(b, 'scale', f=f)

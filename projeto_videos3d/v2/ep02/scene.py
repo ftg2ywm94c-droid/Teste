@@ -104,7 +104,7 @@ def earth_material():
     col = nb.mixc(newly_dry, day, sea_floor); col = nb.mixc(newly_wet, col, deep)
     # faixas de velocidade de rotação (vermelho no Equador -> azul nos polos)
     band = nb.mixc(nb.sstep(0.25, 0.97, nb.math('SQRT', cos2)), (0.05, 0.30, 1.0), (1.0, 0.10, 0.03))
-    KB = nb.value('K_faixas', 0.0); col = nb.mixc(nb.math('MULTIPLY', KB, 0.62), col, band)
+    KB = nb.value('K_faixas', 0.0); col = nb.mixc(nb.math('MULTIPLY', KB, 0.78), col, band)
     nb.link(col, bs.inputs['Base Color'])
     nb.link(nb.mixf(wet, 0.82, 0.32), bs.inputs['Roughness'])
     bs.inputs['Specular IOR Level'].default_value = 0.35

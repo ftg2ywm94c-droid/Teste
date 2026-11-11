@@ -74,7 +74,7 @@ C_cam = ease([(14.2, (8.6, -9.4, 2.3)), (19.9, (8.4, -8.0, 2.2))])
 C_look = ease([(14.2, (-2.5, 6.0, 1.4)), (19.9, (-2.0, 6.0, 1.3))])
 C.cam = lambda T: dict(pos=C_cam(T), look=C_look(T), lens=24)
 C.wind = lambda T: 0.0
-C.labels = [('voce', 'você', YEL, 0.5, 14.42, 99, lambda T: (3.2, -0.2, 2.55)),
+C.labels = [('voce', 'você', YEL, 0.6, 14.42, 99, lambda T: (3.2, -0.2, 2.55)),
             ('ar', 'ar', WHITE, 1.5, 15.30, 99, lambda T: (-6.0, 16.0, 10.2)),
             ('mar', 'mar', BLUE, 0.75, 15.90, 99, lambda T: (-2.6, 0.2, 1.75))]
 C.arrows = [('voce', (3.25, -0.2, 2.08), 0.9, 14.42), ('ar', (-6.6, 16.0, 8.6), 2.8, 15.30), ('mar', (-3.3, 0.2, 1.0), 1.4, 15.90)]
@@ -178,9 +178,9 @@ def _I_lbl(off):
         ps = I.psi(T); E_ = I.earth_pos(T); rin = (-math.cos(ps), -math.sin(ps), 0.0)
         return add(E_, rin, off)
     return f
-I.labels = [('ano', '1 dia = 1 ano', WHITE, 0.42, 54.40, 56.3, _I_lbl(-3.1)),
-            ('sol', '6 meses de sol', YEL, 0.42, 56.45, 58.85, _I_lbl(-3.1)),
-            ('noite', '6 meses de noite', BLUE, 0.42, 58.95, 99, _I_lbl(-3.1))]
+I.labels = [('ano', '1 dia = 1 ano', WHITE, 0.62, 54.40, 56.3, _I_lbl(3.0)),
+            ('sol', '6 meses de sol', YEL, 0.62, 56.45, 58.85, _I_lbl(3.0)),
+            ('noite', '6 meses de noite', BLUE, 0.62, 58.95, 99, _I_lbl(3.0))]
 SHOTS.append(I)
 
 # ---------------------------------------------------------------- J — os mares escorrem para os polos: um continente gigante
@@ -200,7 +200,7 @@ SHOTS.append(J)
 # ---------------------------------------------------------------- K — a boa notícia: desacelera menos de 2 ms por século
 K = Shot('K', 68.90, END, 'globe', 'final: Terra girando normalmente, Lua ao fundo')
 K.spin = lambda T: 0.4 + 0.10 * (T - 68.9)
-K.sun = (math.cos(math.radians(55)), math.sin(math.radians(55)), 0.1)
+K.sun = (math.cos(math.radians(15)), math.sin(math.radians(15)), 0.15)
 K_cam = ease([(68.9, (24.0, -14.0, 6.0)), (72.5, (30.0, -22.0, 5.0)), (76.5, (36.0, -32.0, 4.0))])
 K_look = ease([(68.9, (0.0, 0.0, 0.5)), (76.5, (-4.0, 6.0, 1.0))])
 K.cam = lambda T: dict(pos=K_cam(T), look=K_look(T), lens=38)
