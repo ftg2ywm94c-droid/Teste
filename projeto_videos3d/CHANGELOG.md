@@ -1,9 +1,9 @@
 # Registro de mudanças
 
-## v0.1-poc — versão funcional preservada (tag git `v0.1-poc`)
+## v0.1-poc — versão funcional preservada (commit `be24c75`; tag local `v0.1-poc`)
 - Prova de conceito de 10 s: motor NumPy (`engine/`), planos S1–S3, trilha sintetizada, `output/poc_540x960.mp4` (QC aprovado).
 - `scripts/add_narration.py`: MP3 → MP4 com legenda sincronizada, ducking e −14 LUFS.
-- Para recuperar: `git checkout v0.1-poc`.
+- Para recuperar: `git checkout be24c75 -- projeto_videos3d` (a tag não pôde ser enviada ao GitHub: o acesso desta sessão só permite o branch de trabalho).
 
 ## Em andamento — v0.2 (produção do primeiro vídeo de 60–65 s)
 - `tools/setup_env.sh`: instala Blender 4.2.3 LTS, libEGL e faster-whisper num container novo.
