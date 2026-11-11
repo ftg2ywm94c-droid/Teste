@@ -107,7 +107,9 @@ def whisper_words(path):
     except ImportError:
         return None
     m = WhisperModel('small', device='cpu', compute_type='int8')
-    segs, _ = m.transcribe(path, language='pt', word_timestamps=True)
+    # decodifica com ffmpeg: o leitor interno (PyAV) quebra com av>=15 (argumento metadata_errors)
+    raw = subprocess.run(['ffmpeg', '-v', 'error', '-i', path, '-ac', '1', '-ar', '16000', '-f', 'f32le', '-'], check=True, capture_output=True).stdout
+    segs, _ = m.transcribe(np.frombuffer(raw, np.float32), language='pt', word_timestamps=True)
     return [dict(text=w.word.strip(), start=w.start, end=w.end) for s in segs for w in s.words]
 
 
