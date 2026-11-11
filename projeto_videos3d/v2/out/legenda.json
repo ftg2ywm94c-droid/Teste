@@ -1,0 +1,1500 @@
+{
+"diffs": [],
+"words": [
+{
+"w": "Dez",
+"s": 0.0,
+"e": 0.54,
+"key": true
+},
+{
+"w": "quilômetros",
+"s": 0.54,
+"e": 1.06,
+"key": true
+},
+{
+"w": "por",
+"s": 1.06,
+"e": 1.34,
+"key": true
+},
+{
+"w": "hora",
+"s": 1.34,
+"e": 1.64,
+"key": true
+},
+{
+"w": "acima",
+"s": 1.64,
+"e": 2.14,
+"key": false
+},
+{
+"w": "do",
+"s": 2.14,
+"e": 2.32,
+"key": false
+},
+{
+"w": "limite.",
+"s": 2.32,
+"e": 2.72,
+"key": false
+},
+{
+"w": "O",
+"s": 3.58,
+"e": 3.6,
+"key": false
+},
+{
+"w": "Téo",
+"s": 3.6,
+"e": 3.74,
+"key": false
+},
+{
+"w": "achava",
+"s": 3.74,
+"e": 4.16,
+"key": false
+},
+{
+"w": "que",
+"s": 4.16,
+"e": 4.32,
+"key": false
+},
+{
+"w": "isso",
+"s": 4.32,
+"e": 4.46,
+"key": false
+},
+{
+"w": "não",
+"s": 4.46,
+"e": 4.62,
+"key": false
+},
+{
+"w": "fazia",
+"s": 4.62,
+"e": 4.88,
+"key": false
+},
+{
+"w": "diferença",
+"s": 4.88,
+"e": 5.2,
+"key": false
+},
+{
+"w": "nenhuma.",
+"s": 5.2,
+"e": 5.74,
+"key": false
+},
+{
+"w": "Todo",
+"s": 6.38,
+"e": 6.64,
+"key": false
+},
+{
+"w": "dia,",
+"s": 6.64,
+"e": 6.8,
+"key": false
+},
+{
+"w": "ele",
+"s": 6.8,
+"e": 7.0,
+"key": false
+},
+{
+"w": "cruzava",
+"s": 7.0,
+"e": 7.36,
+"key": false
+},
+{
+"w": "esta",
+"s": 7.36,
+"e": 7.54,
+"key": false
+},
+{
+"w": "rua",
+"s": 7.54,
+"e": 7.82,
+"key": false
+},
+{
+"w": "a",
+"s": 7.82,
+"e": 8.14,
+"key": false
+},
+{
+"w": "sessenta,",
+"s": 8.14,
+"e": 8.86,
+"key": true
+},
+{
+"w": "numa",
+"s": 9.04,
+"e": 9.2,
+"key": false
+},
+{
+"w": "via",
+"s": 9.2,
+"e": 9.38,
+"key": false
+},
+{
+"w": "de",
+"s": 9.38,
+"e": 9.6,
+"key": false
+},
+{
+"w": "cinquenta.",
+"s": 9.6,
+"e": 10.08,
+"key": true
+},
+{
+"w": "Até",
+"s": 10.84,
+"e": 10.98,
+"key": false
+},
+{
+"w": "que",
+"s": 10.98,
+"e": 11.12,
+"key": false
+},
+{
+"w": "uma",
+"s": 11.12,
+"e": 11.4,
+"key": false
+},
+{
+"w": "bola",
+"s": 11.4,
+"e": 11.66,
+"key": false
+},
+{
+"w": "rolou",
+"s": 11.66,
+"e": 12.02,
+"key": false
+},
+{
+"w": "para",
+"s": 12.02,
+"e": 12.22,
+"key": false
+},
+{
+"w": "a",
+"s": 12.22,
+"e": 12.4,
+"key": false
+},
+{
+"w": "rua,",
+"s": 12.4,
+"e": 12.64,
+"key": false
+},
+{
+"w": "trinta",
+"s": 12.64,
+"e": 13.16,
+"key": true
+},
+{
+"w": "e",
+"s": 13.16,
+"e": 13.24,
+"key": true
+},
+{
+"w": "cinco",
+"s": 13.24,
+"e": 13.4,
+"key": true
+},
+{
+"w": "metros",
+"s": 13.4,
+"e": 13.8,
+"key": true
+},
+{
+"w": "à",
+"s": 13.8,
+"e": 14.06,
+"key": false
+},
+{
+"w": "frente.",
+"s": 14.06,
+"e": 14.36,
+"key": false
+},
+{
+"w": "E",
+"s": 15.02,
+"e": 15.14,
+"key": false
+},
+{
+"w": "um",
+"s": 15.14,
+"e": 15.28,
+"key": false
+},
+{
+"w": "menino",
+"s": 15.28,
+"e": 15.62,
+"key": false
+},
+{
+"w": "correu",
+"s": 15.62,
+"e": 16.0,
+"key": false
+},
+{
+"w": "atrás",
+"s": 16.0,
+"e": 16.2,
+"key": false
+},
+{
+"w": "dela.",
+"s": 16.2,
+"e": 16.54,
+"key": false
+},
+{
+"w": "O",
+"s": 17.42,
+"e": 17.56,
+"key": false
+},
+{
+"w": "Téo",
+"s": 17.56,
+"e": 17.64,
+"key": false
+},
+{
+"w": "levou",
+"s": 17.64,
+"e": 18.0,
+"key": false
+},
+{
+"w": "um",
+"s": 18.0,
+"e": 18.16,
+"key": true
+},
+{
+"w": "segundo",
+"s": 18.16,
+"e": 18.52,
+"key": true
+},
+{
+"w": "e",
+"s": 18.52,
+"e": 18.7,
+"key": true
+},
+{
+"w": "meio",
+"s": 18.7,
+"e": 18.86,
+"key": true
+},
+{
+"w": "para",
+"s": 18.86,
+"e": 19.18,
+"key": false
+},
+{
+"w": "perceber",
+"s": 19.18,
+"e": 19.62,
+"key": false
+},
+{
+"w": "e",
+"s": 19.62,
+"e": 19.94,
+"key": false
+},
+{
+"w": "pisar",
+"s": 19.94,
+"e": 20.22,
+"key": false
+},
+{
+"w": "no",
+"s": 20.22,
+"e": 20.4,
+"key": false
+},
+{
+"w": "freio.",
+"s": 20.4,
+"e": 21.22,
+"key": false
+},
+{
+"w": "Nesse",
+"s": 21.44,
+"e": 21.68,
+"key": false
+},
+{
+"w": "tempo,",
+"s": 21.68,
+"e": 22.16,
+"key": false
+},
+{
+"w": "o",
+"s": 22.48,
+"e": 22.6,
+"key": false
+},
+{
+"w": "carro",
+"s": 22.6,
+"e": 22.74,
+"key": false
+},
+{
+"w": "andou",
+"s": 22.74,
+"e": 23.18,
+"key": false
+},
+{
+"w": "vinte",
+"s": 23.18,
+"e": 23.58,
+"key": true
+},
+{
+"w": "e",
+"s": 23.58,
+"e": 23.72,
+"key": true
+},
+{
+"w": "cinco",
+"s": 23.72,
+"e": 23.86,
+"key": true
+},
+{
+"w": "metros",
+"s": 23.86,
+"e": 24.4,
+"key": true
+},
+{
+"w": "sem",
+"s": 24.4,
+"e": 24.74,
+"key": false
+},
+{
+"w": "frear",
+"s": 24.74,
+"e": 25.18,
+"key": false
+},
+{
+"w": "nada.",
+"s": 25.18,
+"e": 25.54,
+"key": false
+},
+{
+"w": "Sobraram",
+"s": 26.3,
+"e": 26.74,
+"key": false
+},
+{
+"w": "só",
+"s": 26.74,
+"e": 27.0,
+"key": false
+},
+{
+"w": "dez.",
+"s": 27.0,
+"e": 27.28,
+"key": true
+},
+{
+"w": "Você",
+"s": 28.06,
+"e": 28.46,
+"key": false
+},
+{
+"w": "acha",
+"s": 28.46,
+"e": 28.64,
+"key": false
+},
+{
+"w": "que",
+"s": 28.64,
+"e": 28.8,
+"key": false
+},
+{
+"w": "deu",
+"s": 28.8,
+"e": 28.9,
+"key": false
+},
+{
+"w": "tempo?",
+"s": 28.9,
+"e": 29.38,
+"key": false
+},
+{
+"w": "Me",
+"s": 29.38,
+"e": 30.02,
+"key": false
+},
+{
+"w": "conta",
+"s": 30.02,
+"e": 30.24,
+"key": false
+},
+{
+"w": "nos",
+"s": 30.24,
+"e": 30.38,
+"key": false
+},
+{
+"w": "comentários.",
+"s": 30.38,
+"e": 31.06,
+"key": true
+},
+{
+"w": "O",
+"s": 32.06,
+"e": 32.22,
+"key": false
+},
+{
+"w": "problema",
+"s": 32.22,
+"e": 32.52,
+"key": false
+},
+{
+"w": "é",
+"s": 32.52,
+"e": 32.66,
+"key": false
+},
+{
+"w": "que",
+"s": 32.66,
+"e": 32.74,
+"key": false
+},
+{
+"w": "a",
+"s": 32.74,
+"e": 32.92,
+"key": false
+},
+{
+"w": "distância",
+"s": 32.92,
+"e": 33.2,
+"key": false
+},
+{
+"w": "de",
+"s": 33.2,
+"e": 33.38,
+"key": false
+},
+{
+"w": "frenagem",
+"s": 33.38,
+"e": 33.96,
+"key": false
+},
+{
+"w": "cresce",
+"s": 33.96,
+"e": 34.46,
+"key": false
+},
+{
+"w": "com",
+"s": 34.46,
+"e": 34.64,
+"key": false
+},
+{
+"w": "o",
+"s": 34.64,
+"e": 34.82,
+"key": false
+},
+{
+"w": "quadrado",
+"s": 34.82,
+"e": 35.26,
+"key": true
+},
+{
+"w": "da",
+"s": 35.26,
+"e": 35.44,
+"key": true
+},
+{
+"w": "velocidade.",
+"s": 35.44,
+"e": 36.04,
+"key": true
+},
+{
+"w": "A",
+"s": 36.7,
+"e": 36.86,
+"key": false
+},
+{
+"w": "cinquenta",
+"s": 36.86,
+"e": 37.22,
+"key": true
+},
+{
+"w": "por",
+"s": 37.22,
+"e": 37.46,
+"key": false
+},
+{
+"w": "hora,",
+"s": 37.46,
+"e": 37.76,
+"key": false
+},
+{
+"w": "o",
+"s": 38.08,
+"e": 38.2,
+"key": false
+},
+{
+"w": "carro",
+"s": 38.2,
+"e": 38.4,
+"key": false
+},
+{
+"w": "para",
+"s": 38.4,
+"e": 38.7,
+"key": false
+},
+{
+"w": "em",
+"s": 38.7,
+"e": 38.9,
+"key": false
+},
+{
+"w": "trinta",
+"s": 38.9,
+"e": 39.2,
+"key": true
+},
+{
+"w": "e",
+"s": 39.2,
+"e": 39.26,
+"key": true
+},
+{
+"w": "cinco",
+"s": 39.26,
+"e": 39.42,
+"key": true
+},
+{
+"w": "metros.",
+"s": 39.42,
+"e": 39.92,
+"key": true
+},
+{
+"w": "A",
+"s": 40.48,
+"e": 40.68,
+"key": false
+},
+{
+"w": "sessenta,",
+"s": 40.68,
+"e": 41.24,
+"key": true
+},
+{
+"w": "precisa",
+"s": 41.48,
+"e": 41.74,
+"key": false
+},
+{
+"w": "de",
+"s": 41.74,
+"e": 42.0,
+"key": false
+},
+{
+"w": "quarenta",
+"s": 42.0,
+"e": 42.44,
+"key": true
+},
+{
+"w": "e",
+"s": 42.44,
+"e": 42.54,
+"key": true
+},
+{
+"w": "cinco.",
+"s": 42.54,
+"e": 42.9,
+"key": true
+},
+{
+"w": "No",
+"s": 43.62,
+"e": 43.94,
+"key": false
+},
+{
+"w": "ponto",
+"s": 43.94,
+"e": 44.28,
+"key": false
+},
+{
+"w": "exato",
+"s": 44.28,
+"e": 44.72,
+"key": false
+},
+{
+"w": "onde",
+"s": 44.72,
+"e": 44.88,
+"key": false
+},
+{
+"w": "o",
+"s": 44.88,
+"e": 45.04,
+"key": false
+},
+{
+"w": "carro",
+"s": 45.04,
+"e": 45.18,
+"key": false
+},
+{
+"w": "a",
+"s": 45.18,
+"e": 45.38,
+"key": false
+},
+{
+"w": "cinquenta",
+"s": 45.38,
+"e": 45.74,
+"key": true
+},
+{
+"w": "já",
+"s": 45.74,
+"e": 45.98,
+"key": false
+},
+{
+"w": "estaria",
+"s": 45.98,
+"e": 46.3,
+"key": false
+},
+{
+"w": "parado,",
+"s": 46.3,
+"e": 47.04,
+"key": false
+},
+{
+"w": "o",
+"s": 47.32,
+"e": 47.46,
+"key": false
+},
+{
+"w": "Téo",
+"s": 47.46,
+"e": 47.62,
+"key": false
+},
+{
+"w": "ainda",
+"s": 47.62,
+"e": 47.92,
+"key": false
+},
+{
+"w": "passaria",
+"s": 47.92,
+"e": 48.36,
+"key": false
+},
+{
+"w": "a",
+"s": 48.36,
+"e": 48.6,
+"key": false
+},
+{
+"w": "mais",
+"s": 48.6,
+"e": 48.84,
+"key": false
+},
+{
+"w": "de",
+"s": 48.84,
+"e": 49.02,
+"key": false
+},
+{
+"w": "quarenta",
+"s": 49.02,
+"e": 49.34,
+"key": true
+},
+{
+"w": "por",
+"s": 49.34,
+"e": 49.56,
+"key": false
+},
+{
+"w": "hora.",
+"s": 49.56,
+"e": 49.82,
+"key": false
+},
+{
+"w": "Por",
+"s": 50.54,
+"e": 50.78,
+"key": false
+},
+{
+"w": "sorte,",
+"s": 50.78,
+"e": 51.18,
+"key": false
+},
+{
+"w": "o",
+"s": 51.48,
+"e": 51.62,
+"key": false
+},
+{
+"w": "menino",
+"s": 51.62,
+"e": 51.84,
+"key": false
+},
+{
+"w": "ouviu",
+"s": 51.84,
+"e": 52.22,
+"key": false
+},
+{
+"w": "a",
+"s": 52.22,
+"e": 52.4,
+"key": false
+},
+{
+"w": "freada",
+"s": 52.4,
+"e": 52.9,
+"key": false
+},
+{
+"w": "e",
+"s": 52.9,
+"e": 53.14,
+"key": false
+},
+{
+"w": "pulou",
+"s": 53.14,
+"e": 53.46,
+"key": false
+},
+{
+"w": "de",
+"s": 53.46,
+"e": 53.68,
+"key": false
+},
+{
+"w": "volta",
+"s": 53.68,
+"e": 53.9,
+"key": false
+},
+{
+"w": "para",
+"s": 53.9,
+"e": 54.12,
+"key": false
+},
+{
+"w": "a",
+"s": 54.12,
+"e": 54.26,
+"key": false
+},
+{
+"w": "calçada.",
+"s": 54.26,
+"e": 54.82,
+"key": false
+},
+{
+"w": "O",
+"s": 55.4,
+"e": 55.6,
+"key": false
+},
+{
+"w": "carro",
+"s": 55.6,
+"e": 55.78,
+"key": false
+},
+{
+"w": "passou",
+"s": 55.78,
+"e": 56.08,
+"key": false
+},
+{
+"w": "por",
+"s": 56.08,
+"e": 56.3,
+"key": false
+},
+{
+"w": "onde",
+"s": 56.3,
+"e": 56.4,
+"key": false
+},
+{
+"w": "ele",
+"s": 56.4,
+"e": 56.72,
+"key": false
+},
+{
+"w": "estava",
+"s": 56.72,
+"e": 56.98,
+"key": false
+},
+{
+"w": "e",
+"s": 56.98,
+"e": 57.26,
+"key": false
+},
+{
+"w": "só",
+"s": 57.26,
+"e": 57.5,
+"key": false
+},
+{
+"w": "parou",
+"s": 57.5,
+"e": 57.78,
+"key": false
+},
+{
+"w": "dez",
+"s": 57.78,
+"e": 58.1,
+"key": true
+},
+{
+"w": "metros",
+"s": 58.1,
+"e": 58.48,
+"key": true
+},
+{
+"w": "depois.",
+"s": 58.48,
+"e": 59.06,
+"key": false
+},
+{
+"w": "Desde",
+"s": 59.7,
+"e": 60.28,
+"key": false
+},
+{
+"w": "então,",
+"s": 60.28,
+"e": 60.82,
+"key": false
+},
+{
+"w": "o",
+"s": 61.24,
+"e": 61.26,
+"key": false
+},
+{
+"w": "Téo",
+"s": 61.26,
+"e": 61.42,
+"key": false
+},
+{
+"w": "dirige",
+"s": 61.42,
+"e": 61.74,
+"key": false
+},
+{
+"w": "a",
+"s": 61.74,
+"e": 61.92,
+"key": false
+},
+{
+"w": "cinquenta.",
+"s": 61.92,
+"e": 62.48,
+"key": true
+},
+{
+"w": "Não",
+"s": 62.96,
+"e": 63.14,
+"key": false
+},
+{
+"w": "por",
+"s": 63.14,
+"e": 63.32,
+"key": false
+},
+{
+"w": "causa",
+"s": 63.32,
+"e": 63.62,
+"key": false
+},
+{
+"w": "dos",
+"s": 63.62,
+"e": 63.84,
+"key": false
+},
+{
+"w": "dez",
+"s": 63.84,
+"e": 64.1,
+"key": true
+},
+{
+"w": "quilômetros",
+"s": 64.1,
+"e": 64.56,
+"key": true
+},
+{
+"w": "por",
+"s": 64.56,
+"e": 64.8,
+"key": true
+},
+{
+"w": "hora.",
+"s": 64.8,
+"e": 65.04,
+"key": true
+},
+{
+"w": "Por",
+"s": 65.66,
+"e": 65.74,
+"key": false
+},
+{
+"w": "causa",
+"s": 65.74,
+"e": 66.06,
+"key": false
+},
+{
+"w": "dos",
+"s": 66.06,
+"e": 66.36,
+"key": false
+},
+{
+"w": "dez",
+"s": 66.36,
+"e": 66.64,
+"key": true
+},
+{
+"w": "metros.",
+"s": 66.64,
+"e": 67.02,
+"key": true
+}
+],
+"chunks": [
+{
+"s": 0.0,
+"e": 1.64,
+"t": "{\\c&H0028D7FF&}DEZ{\\c&HFFFFFF&} {\\c&H0028D7FF&}QUILÔMETROS{\\c&HFFFFFF&} {\\c&H0028D7FF&}POR{\\c&HFFFFFF&} {\\c&H0028D7FF&}HORA{\\c&HFFFFFF&}"
+},
+{
+"s": 1.64,
+"e": 2.72,
+"t": "ACIMA DO LIMITE."
+},
+{
+"s": 3.58,
+"e": 4.16,
+"t": "O TÉO ACHAVA"
+},
+{
+"s": 4.16,
+"e": 4.46,
+"t": "QUE ISSO"
+},
+{
+"s": 4.46,
+"e": 4.88,
+"t": "NÃO FAZIA"
+},
+{
+"s": 4.88,
+"e": 5.2,
+"t": "DIFERENÇA"
+},
+{
+"s": 5.2,
+"e": 5.74,
+"t": "NENHUMA."
+},
+{
+"s": 6.38,
+"e": 6.8,
+"t": "TODO DIA,"
+},
+{
+"s": 6.8,
+"e": 7.54,
+"t": "ELE CRUZAVA ESTA"
+},
+{
+"s": 7.54,
+"e": 8.86,
+"t": "RUA A {\\c&H0028D7FF&}SESSENTA,{\\c&HFFFFFF&}"
+},
+{
+"s": 9.04,
+"e": 9.2,
+"t": "NUMA"
+},
+{
+"s": 9.2,
+"e": 10.08,
+"t": "VIA DE {\\c&H0028D7FF&}CINQUENTA.{\\c&HFFFFFF&}"
+},
+{
+"s": 10.84,
+"e": 11.66,
+"t": "ATÉ QUE UMA BOLA"
+},
+{
+"s": 11.66,
+"e": 12.22,
+"t": "ROLOU PARA"
+},
+{
+"s": 12.22,
+"e": 12.64,
+"t": "A RUA,"
+},
+{
+"s": 12.64,
+"e": 13.8,
+"t": "{\\c&H0028D7FF&}TRINTA{\\c&HFFFFFF&} {\\c&H0028D7FF&}E{\\c&HFFFFFF&} {\\c&H0028D7FF&}CINCO{\\c&HFFFFFF&} {\\c&H0028D7FF&}METROS{\\c&HFFFFFF&}"
+},
+{
+"s": 13.8,
+"e": 14.36,
+"t": "À FRENTE."
+},
+{
+"s": 15.02,
+"e": 15.62,
+"t": "E UM MENINO"
+},
+{
+"s": 15.62,
+"e": 16.0,
+"t": "CORREU"
+},
+{
+"s": 16.0,
+"e": 16.54,
+"t": "ATRÁS DELA."
+},
+{
+"s": 17.42,
+"e": 18.0,
+"t": "O TÉO LEVOU"
+},
+{
+"s": 18.0,
+"e": 19.18,
+"t": "{\\c&H0028D7FF&}UM{\\c&HFFFFFF&} {\\c&H0028D7FF&}SEGUNDO{\\c&HFFFFFF&} {\\c&H0028D7FF&}E{\\c&HFFFFFF&} {\\c&H0028D7FF&}MEIO{\\c&HFFFFFF&} PARA"
+},
+{
+"s": 19.18,
+"e": 20.22,
+"t": "PERCEBER E PISAR"
+},
+{
+"s": 20.22,
+"e": 21.22,
+"t": "NO FREIO."
+},
+{
+"s": 21.44,
+"e": 22.16,
+"t": "NESSE TEMPO,"
+},
+{
+"s": 22.48,
+"e": 23.18,
+"t": "O CARRO ANDOU"
+},
+{
+"s": 23.18,
+"e": 24.4,
+"t": "{\\c&H0028D7FF&}VINTE{\\c&HFFFFFF&} {\\c&H0028D7FF&}E{\\c&HFFFFFF&} {\\c&H0028D7FF&}CINCO{\\c&HFFFFFF&} {\\c&H0028D7FF&}METROS{\\c&HFFFFFF&}"
+},
+{
+"s": 24.4,
+"e": 25.54,
+"t": "SEM FREAR NADA."
+},
+{
+"s": 26.3,
+"e": 27.28,
+"t": "SOBRARAM SÓ {\\c&H0028D7FF&}DEZ.{\\c&HFFFFFF&}"
+},
+{
+"s": 28.06,
+"e": 28.64,
+"t": "VOCÊ ACHA"
+},
+{
+"s": 28.64,
+"e": 29.38,
+"t": "QUE DEU TEMPO?"
+},
+{
+"s": 29.38,
+"e": 30.24,
+"t": "ME CONTA"
+},
+{
+"s": 30.24,
+"e": 31.06,
+"t": "NOS {\\c&H0028D7FF&}COMENTÁRIOS.{\\c&HFFFFFF&}"
+},
+{
+"s": 32.06,
+"e": 32.66,
+"t": "O PROBLEMA É"
+},
+{
+"s": 32.66,
+"e": 33.2,
+"t": "QUE A DISTÂNCIA"
+},
+{
+"s": 33.2,
+"e": 33.96,
+"t": "DE FRENAGEM"
+},
+{
+"s": 33.96,
+"e": 34.46,
+"t": "CRESCE"
+},
+{
+"s": 34.46,
+"e": 36.04,
+"t": "COM O {\\c&H0028D7FF&}QUADRADO{\\c&HFFFFFF&} {\\c&H0028D7FF&}DA{\\c&HFFFFFF&} {\\c&H0028D7FF&}VELOCIDADE.{\\c&HFFFFFF&}"
+},
+{
+"s": 36.7,
+"e": 37.22,
+"t": "A {\\c&H0028D7FF&}CINQUENTA{\\c&HFFFFFF&}"
+},
+{
+"s": 37.22,
+"e": 37.76,
+"t": "POR HORA,"
+},
+{
+"s": 38.08,
+"e": 38.7,
+"t": "O CARRO PARA"
+},
+{
+"s": 38.7,
+"e": 39.92,
+"t": "EM {\\c&H0028D7FF&}TRINTA{\\c&HFFFFFF&} {\\c&H0028D7FF&}E{\\c&HFFFFFF&} {\\c&H0028D7FF&}CINCO{\\c&HFFFFFF&} {\\c&H0028D7FF&}METROS.{\\c&HFFFFFF&}"
+},
+{
+"s": 40.48,
+"e": 41.24,
+"t": "A {\\c&H0028D7FF&}SESSENTA,{\\c&HFFFFFF&}"
+},
+{
+"s": 41.48,
+"e": 41.74,
+"t": "PRECISA"
+},
+{
+"s": 41.74,
+"e": 42.9,
+"t": "DE {\\c&H0028D7FF&}QUARENTA{\\c&HFFFFFF&} {\\c&H0028D7FF&}E{\\c&HFFFFFF&} {\\c&H0028D7FF&}CINCO.{\\c&HFFFFFF&}"
+},
+{
+"s": 43.62,
+"e": 44.72,
+"t": "NO PONTO EXATO"
+},
+{
+"s": 44.72,
+"e": 45.18,
+"t": "ONDE O CARRO"
+},
+{
+"s": 45.18,
+"e": 45.74,
+"t": "A {\\c&H0028D7FF&}CINQUENTA{\\c&HFFFFFF&}"
+},
+{
+"s": 45.74,
+"e": 46.3,
+"t": "JÁ ESTARIA"
+},
+{
+"s": 46.3,
+"e": 47.04,
+"t": "PARADO,"
+},
+{
+"s": 47.32,
+"e": 47.92,
+"t": "O TÉO AINDA"
+},
+{
+"s": 47.92,
+"e": 48.84,
+"t": "PASSARIA A MAIS"
+},
+{
+"s": 48.84,
+"e": 49.34,
+"t": "DE {\\c&H0028D7FF&}QUARENTA{\\c&HFFFFFF&}"
+},
+{
+"s": 49.34,
+"e": 49.82,
+"t": "POR HORA."
+},
+{
+"s": 50.54,
+"e": 51.18,
+"t": "POR SORTE,"
+},
+{
+"s": 51.48,
+"e": 52.22,
+"t": "O MENINO OUVIU"
+},
+{
+"s": 52.22,
+"e": 53.46,
+"t": "A FREADA E PULOU"
+},
+{
+"s": 53.46,
+"e": 54.12,
+"t": "DE VOLTA PARA"
+},
+{
+"s": 54.12,
+"e": 54.82,
+"t": "A CALÇADA."
+},
+{
+"s": 55.4,
+"e": 56.08,
+"t": "O CARRO PASSOU"
+},
+{
+"s": 56.08,
+"e": 56.4,
+"t": "POR ONDE"
+},
+{
+"s": 56.4,
+"e": 57.5,
+"t": "ELE ESTAVA E SÓ"
+},
+{
+"s": 57.5,
+"e": 59.06,
+"t": "PAROU {\\c&H0028D7FF&}DEZ{\\c&HFFFFFF&} {\\c&H0028D7FF&}METROS{\\c&HFFFFFF&} DEPOIS."
+},
+{
+"s": 59.7,
+"e": 60.82,
+"t": "DESDE ENTÃO,"
+},
+{
+"s": 61.24,
+"e": 61.74,
+"t": "O TÉO DIRIGE"
+},
+{
+"s": 61.74,
+"e": 62.48,
+"t": "A {\\c&H0028D7FF&}CINQUENTA.{\\c&HFFFFFF&}"
+},
+{
+"s": 62.96,
+"e": 63.62,
+"t": "NÃO POR CAUSA"
+},
+{
+"s": 63.62,
+"e": 65.04,
+"t": "DOS {\\c&H0028D7FF&}DEZ{\\c&HFFFFFF&} {\\c&H0028D7FF&}QUILÔMETROS{\\c&HFFFFFF&} {\\c&H0028D7FF&}POR{\\c&HFFFFFF&} {\\c&H0028D7FF&}HORA.{\\c&HFFFFFF&}"
+},
+{
+"s": 65.66,
+"e": 67.02,
+"t": "POR CAUSA DOS {\\c&H0028D7FF&}DEZ{\\c&HFFFFFF&} {\\c&H0028D7FF&}METROS.{\\c&HFFFFFF&}"
+}
+],
+"hud": [
+[
+0.15,
+3.02,
+"60 km/h  ·  limite 50"
+],
+[
+12.540000000000001,
+14.76,
+"35 m até o menino"
+],
+[
+17.54,
+21.419999999999998,
+"tempo de reação: 1,5 s"
+],
+[
+33.86,
+36.64,
+"frenagem ∝ velocidade²"
+],
+[
+48.26,
+50.25,
+"ainda a 43 km/h"
+],
+[
+61.14,
+62.9,
+"50 km/h"
+]
+]
+}

@@ -1,3 +1,7 @@
 renders/tmp/
 *.tmp.mp4
 __pycache__/
+assets/polyhaven/
+v2/build/
+v2/frames/
+v2/preview/
