@@ -370,7 +370,7 @@ def build_car(name, paint_rgb, driver=True):
         box('banco', (0.5, 0.5, 0.12), (-0.25, sy, 0.50), interior, C, bevel=0.04).parent = body_root
         box('encosto', (0.12, 0.5, 0.62), (-0.55, sy, 0.95), interior, C, bevel=0.04, rot=(0, math.radians(-12), 0)).parent = body_root
     box('banco_tras', (0.5, 1.4, 0.5), (-1.25, 0, 0.75), interior, C, bevel=0.05).parent = body_root
-    wheel_s = link(bpy.data.objects.new('volante_eixo', None), C); wheel_s.parent = body_root; wheel_s.location = (0.48, 0.38, 1.0); wheel_s.rotation_euler = (0, math.radians(-62), 0)
+    wheel_s = link(bpy.data.objects.new('volante_eixo', None), C); wheel_s.parent = body_root; wheel_s.location = (0.50, 0.38, 0.86); wheel_s.rotation_euler = (0, math.radians(-55), 0)
     vt = bpy.data.meshes.new('volante'); bm = bmesh.new(); bmesh.ops.create_cone(bm, cap_ends=False, segments=24, radius1=0.19, radius2=0.19, depth=0.03); bm.to_mesh(vt)
     vo = link(bpy.data.objects.new('volante', vt), C); vo.data.materials.append(interior); vo.parent = wheel_s
     sol = vo.modifiers.new('s', 'SOLIDIFY'); sol.thickness = 0.03
@@ -399,7 +399,7 @@ def build_car(name, paint_rgb, driver=True):
     drv = None
     if driver:
         drv = build_character(name + '_Teo', TEO_DRIVER, C, seated=True); drv['root'].parent = body_root
-        drv['root'].location = (-0.18, 0.38, 0.58 - drv['hip_z']); drv['root'].rotation_euler = (0, 0, math.radians(90))
+        drv['root'].location = (-0.22, 0.38, 0.64 - drv['hip_z']); drv['root'].rotation_euler = (0, 0, math.radians(90))
     return dict(root=root, body=body_root, wheels=wheels, tail=tail, paint=paint, coll=C, driver=drv)
 
 # ------------------------------------------------------------------ personagens
@@ -456,7 +456,7 @@ def build_character(name, P, C, seated=False):
     hd = sphere(name + '_cabeca', hr, (0, 0, 0), face, C, seg=48); attach(hd, 'head', Vector((0, 0, hip_z + torso + hr + 0.02)))
     if P.get('cap'):
         capm = mat_basic(name + '_Bone', P['cap'], 0.6)
-        cp = sphere(name + '_bone', hr * 1.04, (0, 0, 0), capm, C, scale=(1, 1, 0.55)); attach(cp, 'head', Vector((0, 0.015, hip_z + torso + hr + 0.02 + hr * 0.62)))
+        cp = sphere(name + '_bone', hr * 1.03, (0, 0, 0), capm, C, scale=(1, 1, 0.45)); attach(cp, 'head', Vector((0, 0.02, hip_z + torso + hr + 0.02 + hr * 0.70)))
         ab = box(name + '_aba', (hr * 1.5, hr * 1.1, 0.02), (0, 0, 0), capm, C, bevel=0.01); attach(ab, 'head', Vector((0, -hr * 1.0, hip_z + torso + hr + 0.02 + hr * 0.42)), (math.radians(-10), 0, 0))
     if P.get('hair'):
         hm = mat_basic(name + '_Cabelo', P['hair'], 0.7)
