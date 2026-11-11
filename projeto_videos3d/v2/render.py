@@ -60,7 +60,7 @@ names = getattr(shot, 'strips', [])
 if 'react_story' in names:
     items['react'] = strip('reacao', YEL, S.LANE_R); items['lbl25'] = bill('25 m', (-22.5, S.LANE_R, 2.4), 1.0, YEL)
 if 'gap10' in names:
-    items['gap'] = strip('sobra', RED, S.LANE_R); items['gap'].location.x = -10; items['lbl10'] = bill('10 m', (-5, S.LANE_R, 2.4), 1.0, RED)
+    items['gap'] = strip('sobra', RED, S.LANE_R); items['gap'].location.x = -10; items['lbl10'] = bill('10 m', (-5, S.LANE_R, 2.4) if shot.name != 'E' else (-7.0, S.LANE_R + 0.6, 3.9), 1.0, RED)
 if 'sim50' in names or 'sim60' in names:
     line = B.box('linha_perigo', (0.25, 7.0, 0.006), (S.X_HAZARD, 0, 0.012), B.mat_basic('LinhaPerigo', WHITE, 0.5, emit=WHITE, emit_s=0.6), RC)
     if shot.name == 'F': items['lblP'] = bill('PERIGO', (S.X_HAZARD, 0, 3.0), 1.1, WHITE)
