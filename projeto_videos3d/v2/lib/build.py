@@ -95,7 +95,7 @@ def mat_pbr(name, asset, size_m, tint=(1, 1, 1), var=0.18, rough_mul=1.0, bump=1
     nm = N.new('ShaderNodeNormalMap'); nm.inputs['Strength'].default_value = bump; L.new(nor.outputs[0], nm.inputs['Color']); L.new(nm.outputs[0], b.inputs['Normal'])
     return m
 
-def mat_thin_glass(name, tint=(0.80, 0.86, 0.90)):
+def mat_thin_glass(name, tint=(0.55, 0.62, 0.68)):
     """Vidro fino (sem refração): transparente + reflexo especular por Fresnel. Deixa o sol entrar no carro sem cáusticas."""
     m = bpy.data.materials.get(name)
     if m: return m
@@ -103,7 +103,7 @@ def mat_thin_glass(name, tint=(0.80, 0.86, 0.90)):
     out = N.new('ShaderNodeOutputMaterial'); mix = N.new('ShaderNodeMixShader'); tr = N.new('ShaderNodeBsdfTransparent')
     gl = N.new('ShaderNodeBsdfGlossy'); fr = N.new('ShaderNodeLayerWeight'); fr.inputs['Blend'].default_value = 0.25
     tr.inputs['Color'].default_value = (*tint, 1); gl.inputs['Roughness'].default_value = 0.02
-    add = N.new('ShaderNodeMath'); add.operation = 'ADD'; add.inputs[1].default_value = 0.08; add.use_clamp = True
+    add = N.new('ShaderNodeMath'); add.operation = 'ADD'; add.inputs[1].default_value = 0.16; add.use_clamp = True
     L.new(fr.outputs['Fresnel'], add.inputs[0]); L.new(add.outputs[0], mix.inputs[0]); L.new(tr.outputs[0], mix.inputs[1]); L.new(gl.outputs[0], mix.inputs[2])
     L.new(mix.outputs[0], out.inputs[0]); return m
 
@@ -228,7 +228,7 @@ def speed_sign(x, n, C, side=-1):
     me = face.data; uv = me.uv_layers.new()
     for poly in me.polygons:
         for li in poly.loop_indices:
-            v = me.vertices[me.loops[li].vertex_index].co; uv.data[li].uv = (0.5 - v.y / 0.78, 0.5 + v.x / 0.78)
+            v = me.vertices[me.loops[li].vertex_index].co; uv.data[li].uv = (0.5 + v.y / 0.78, 0.5 + v.x / 0.78)
     back = cyl('placa_tras', 0.385, 0.02, (x + 0.0, side * 4.0, 2.55), pole, C, seg=48, rot=(0, math.radians(90), 0))
 
 HOUSE_COLORS = [(0.95, 0.88, 0.72), (0.78, 0.88, 0.95), (0.96, 0.80, 0.74), (0.86, 0.93, 0.80), (0.98, 0.95, 0.90), (0.92, 0.84, 0.94)]
@@ -362,6 +362,7 @@ def build_car(name, paint_rgb, driver=True):
     g = box('grade', (0.06, 0.8, 0.14), (2.10, 0, 0.50), trim, C, bevel=0.02); g.parent = body_root
     for x in (2.13, -2.15):
         b = box('parachoque', (0.12, 1.72, 0.16), (x, 0, 0.36), trim, C, bevel=0.05); b.parent = body_root
+    box('soleira', (1.62, 1.80, 0.13), (0.01, 0, 0.37), trim, C, bevel=0.03).parent = body_root
     pl = box('placa', (0.02, 0.4, 0.13), (-2.16, 0, 0.56), mat_basic('PlacaCarro', (0.92, 0.92, 0.9), 0.4), C); pl.parent = body_root
     # interior visível pelo vidro: painel, bancos, volante
     box('painel', (0.4, 1.5, 0.25), (0.78, 0, 0.93), interior, C).parent = body_root

@@ -9,7 +9,7 @@ ScaledBorderAndShadow: yes
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Leg,Poppins,92,&H00FFFFFF,&H00FFFFFF,&H00101010,&H78000000,-1,0,0,0,100,100,0,0,1,5,2,2,90,90,560,1
-Style: Hud,Poppins,52,&H00FFFFFF,&H00FFFFFF,&H50000000,&H50000000,-1,0,0,0,100,100,1,0,3,18,0,8,80,80,250,1
+Style: Hud,Poppins,62,&H00FFFFFF,&H00FFFFFF,&H50000000,&H50000000,-1,0,0,0,100,100,1,0,3,18,0,8,80,80,250,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -85,6 +85,6 @@ Dialogue: 1,0:01:05.66,0:01:07.02,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,
 Dialogue: 0,0:00:00.15,0:00:03.02,Hud,,0,0,0,,{\fad(180,180)}60 km/h  ·  limite 50
 Dialogue: 0,0:00:12.54,0:00:14.76,Hud,,0,0,0,,{\fad(180,180)}35 m até o menino
 Dialogue: 0,0:00:17.54,0:00:21.42,Hud,,0,0,0,,{\fad(180,180)}tempo de reação: 1,5 s
-Dialogue: 0,0:00:33.86,0:00:36.64,Hud,,0,0,0,,{\fad(180,180)}frenagem ∝ velocidade²
+Dialogue: 0,0:00:33.86,0:00:36.64,Hud,,0,0,0,,{\fad(180,180)}frenagem cresce com v²
 Dialogue: 0,0:00:48.26,0:00:50.25,Hud,,0,0,0,,{\fad(180,180)}ainda a 43 km/h
 Dialogue: 0,0:01:01.14,0:01:02.90,Hud,,0,0,0,,{\fad(180,180)}50 km/h

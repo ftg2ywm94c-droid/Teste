@@ -5,3 +5,6 @@ assets/polyhaven/
 v2/build/
 v2/frames/
 v2/preview/
+v2/out/*.wav
+v2/out/*.mp4
+v2/out/frames.txt

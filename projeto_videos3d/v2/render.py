@@ -31,6 +31,8 @@ need_blue = shot.name in ('F', 'G')
 blue = B.build_car('CarroAzul', (0.06, 0.28, 0.75), driver=False) if need_blue else None
 kidC = B.new_coll('Menino'); kid = B.build_character('Menino', B.KID, kidC)
 ballc = B.gltf_collection('football')
+_m = sorted([o for o in ballc.objects if o.type == 'MESH'], key=lambda o: o.name)
+for o in _m[1:]: ballc.objects.unlink(o)          # o glTF traz duas bolas (variações); usa só uma
 ball = bpy.data.objects.new('bola', None); ball.instance_type = 'COLLECTION'; ball.instance_collection = ballc; B.link(ball, kidC)
 mins = [min((o.matrix_world @ Vector(c))[k] for o in ballc.objects if o.type == 'MESH' for c in o.bound_box) for k in range(3)]
 maxs = [max((o.matrix_world @ Vector(c))[k] for o in ballc.objects if o.type == 'MESH' for c in o.bound_box) for k in range(3)]
@@ -61,7 +63,7 @@ if 'gap10' in names:
     items['gap'] = strip('sobra', RED, S.LANE_R); items['gap'].location.x = -10; items['lbl10'] = bill('10 m', (-5, S.LANE_R, 2.4), 1.0, RED)
 if 'sim50' in names or 'sim60' in names:
     line = B.box('linha_perigo', (0.25, 7.0, 0.006), (S.X_HAZARD, 0, 0.012), B.mat_basic('LinhaPerigo', WHITE, 0.5, emit=WHITE, emit_s=0.6), RC)
-    if shot.name == 'F': items['lblP'] = bill('PERIGO', (S.X_HAZARD, 0, 3.4), 1.6, WHITE)
+    if shot.name == 'F': items['lblP'] = bill('PERIGO', (S.X_HAZARD, 0, 3.0), 1.1, WHITE)
     for lane, v, tag in ((S.LANE_L, S.V50, '50'), (S.LANE_R, S.V60, '60')):
         if f'sim{tag}' not in names: continue
         items[f'r{tag}'] = strip(f'reacao{tag}', YEL, lane); items[f'b{tag}'] = strip(f'frenagem{tag}', RED, lane)

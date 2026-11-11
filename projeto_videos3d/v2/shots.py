@@ -55,8 +55,8 @@ SHOTS = []
 A = Shot('A', 0.0, 6.30, 'gancho: travelling lateral da roda ao motorista, placa 50 passando')
 A.car = cruise(-175.0, 0.0, V60)
 A.cam = lambda T: (lambda e, xc: dict(
-    pos=(xc + 2.6 - 3.6 * e, LANE_R - 3.0 - 1.6 * e, 0.55 + 0.85 * e),
-    look=(xc + 1.1 - 1.2 * e, LANE_R + 0.1 + 0.25 * e, 0.5 + 0.75 * e), lens=24 + 8 * e))(sstep(0.3, 5.8, T), car_center(A.car(T)[0]))
+    pos=(xc + 2.8 - 3.4 * e, LANE_R + 3.0 + 0.6 * e, 0.55 + 0.75 * e),
+    look=(xc + 1.2 - 1.4 * e, LANE_R + 0.2, 0.5 + 0.62 * e), lens=24 + 8 * e))(sstep(0.3, 5.8, T), car_center(A.car(T)[0]))
 A.face = lambda T: {'neutral': 1.0}
 SHOTS.append(A)
 
@@ -71,8 +71,8 @@ SHOTS.append(B)
 # C — bola e menino: câmera de perseguição atrás do carro, teleobjetiva comprimindo os 35 m
 C = Shot('C', 10.70, 17.30, 'perseguição atrás/acima do carro; bola sai do quintal, menino corre atrás')
 C.tau = lambda T: T - STORY_T0
-C.cam = lambda T: (lambda e, xf: dict(pos=(xf - 9.5 + 2.0 * e, LANE_R - 1.2 + 0.2 * e, 3.4 - 0.4 * e), look=(xf + 30 + 3 * e, LANE_R - 1.2 * e, 0.3 + 0.3 * e),
-                                       lens=30 + 42 * e))(sstep(10.7, 17.3, T), car_front(C.tau(T), V60)[0])
+C.cam = lambda T: (lambda e, xf: dict(pos=(xf - 10.0 + 1.5 * e, LANE_R + 0.6, 3.3 - 0.2 * e), look=(xf + 30 + 3 * e, LANE_R - 0.6 * e, 0.1 + 0.4 * e),
+                                       lens=30 + 52 * e))(sstep(10.7, 17.3, T), car_front(C.tau(T), V60)[0])
 C.face = lambda T: {'neutral': 1.0}
 SHOTS.append(C)
 
@@ -87,9 +87,9 @@ SHOTS.append(D1)
 # D2 — 25 m de reação: vista alta atrás, faixa amarela crescendo; "sobraram só dez"
 D2 = Shot('D2', 21.33, 27.80, 'grua alta atrás do carro: faixa de reação (25 m) e sobra de 10 m')
 D2.tau = pchip([(21.33, 0.62), (24.90, 1.50), (27.80, 1.535)])
-D2.cam = ease([(21.33, (-28.0, LANE_R - 3.0, 3.2, -12.0, LANE_R, 0.8)), (24.9, (-44.0, LANE_R - 4.0, 13.0, -8.0, LANE_R + 0.3, 0.0)),
-               (27.8, (-40.0, LANE_R - 4.5, 15.5, -5.0, LANE_R + 0.3, 0.0))])
-D2.cam = (lambda f: lambda T: (lambda v: dict(pos=v[:3], look=v[3:], lens=30 - 2 * sstep(21.33, 27.8, T)))(f(T)))(D2.cam)
+D2.cam = ease([(21.33, (-37.0, LANE_R - 0.8, 4.0, -15.0, LANE_R, 0.4)), (24.9, (-46.0, LANE_R - 3.0, 13.0, -10.0, LANE_R + 0.2, 0.0)),
+               (27.8, (-44.0, LANE_R - 3.5, 16.0, -9.0, LANE_R + 0.2, 0.0))])
+D2.cam = (lambda f: lambda T: (lambda v: dict(pos=v[:3], look=v[3:], lens=30 + 8 * sstep(24.0, 27.6, T)))(f(T)))(D2.cam)
 D2.face = lambda T: {'alarm': 1.0}
 D2.strips = ['react_story', 'gap10']
 SHOTS.append(D2)
@@ -97,8 +97,8 @@ SHOTS.append(D2)
 # E — CTA: tempo congelado, órbita controlada em volta do carro e do menino
 E = Shot('E', 27.80, 31.80, 'tempo congelado no início da freada; órbita lenta')
 E.tau = lambda T: 1.535
-E.cam = lambda T: (lambda a, e: dict(pos=(-5.5 + 13.5 * math.cos(a), -1.8 + 13.5 * math.sin(a), 4.8 + 1.5 * e), look=(-5.0, -2.0, 0.4), lens=24))(
-    math.radians(-140 + 70 * sstep(27.8, 31.8, T)), sstep(27.8, 31.8, T))
+E.cam = lambda T: (lambda a, e: dict(pos=(-6.0 + 12.5 * math.cos(a), -2.0 + 12.5 * math.sin(a), 6.2 - 1.2 * e), look=(-4.5, -2.1, 0.3), lens=24))(
+    math.radians(-200 + 52 * sstep(27.8, 31.8, T)), sstep(27.8, 31.8, T))
 E.face = lambda T: {'alarm': 1.0}
 E.strips = ['react_story', 'gap10']
 SHOTS.append(E)
@@ -106,8 +106,8 @@ SHOTS.append(E)
 # F — simulação: duas faixas, 50 (azul) e 60 (vermelho); marcas de 35 m e 45 m
 F = Shot('F', 31.80, 43.35, 'simulação lado a lado: frenagem ∝ v²; para em 35 m e 45 m')
 F.T50, F.T60 = 35.60, 38.60   # instante em que cada carro cruza a linha do perigo
-F.cam = ease([(31.8, (-37.0, -9.0, 1.4, -35.0, 0.0, 0.6)), (35.0, (-60.0, -6.0, 14.0, -18.0, 0.0, 0.0)),
-              (39.5, (-50.0, -5.0, 22.0, -8.0, 0.0, 0.0)), (43.35, (-42.0, -4.0, 24.0, -3.0, 0.0, 0.0))])
+F.cam = ease([(31.8, (-41.0, -2.6, 1.5, -33.0, 0.0, 0.5)), (35.0, (-60.0, -5.0, 13.0, -20.0, 0.0, 0.0)),
+              (39.5, (-48.0, -4.0, 20.0, -9.0, 0.0, 0.0)), (43.35, (-32.0, -3.0, 25.0, 0.5, 0.0, 0.0))])
 F.cam = (lambda f: lambda T: (lambda v: dict(pos=v[:3], look=v[3:], lens=24 + 6 * sstep(31.8, 43.35, T)))(f(T)))(F.cam)
 F.face = lambda T: {'focus': 1.0}
 F.strips = ['sim50', 'sim60']
@@ -116,8 +116,8 @@ SHOTS.append(F)
 # G — "no ponto exato...": carro a 50 já parado; o de 60 passa a 43 km/h ao lado (câmera baixa, lenta no final)
 G = Shot('G', 43.35, 50.30, 'carro de 50 parado; carro de 60 passa ao lado a 43 km/h')
 G.tau60 = pchip([(43.35, 0.40), (46.95, 2.14), (50.30, 2.215)])
-G.cam = ease([(43.35, (3.5, -6.2, 0.9, -12.0, -0.3, 0.9)), (46.95, (3.0, -6.6, 1.1, -1.0, 0.0, 0.8)), (50.30, (2.2, -7.0, 1.6, 0.0, 0.0, 0.8))])
-G.cam = (lambda f: lambda T: (lambda v: dict(pos=v[:3], look=v[3:], lens=26 + 6 * sstep(46.0, 50.3, T)))(f(T)))(G.cam)
+G.cam = ease([(43.35, (6.0, -5.0, 1.3, -8.0, 1.2, 0.8)), (46.95, (5.0, -5.1, 1.4, -2.5, 0.0, 0.8)), (50.30, (4.0, -5.2, 1.8, -2.5, 0.0, 0.8))])
+G.cam = (lambda f: lambda T: (lambda v: dict(pos=v[:3], look=v[3:], lens=26 + 12 * sstep(46.0, 50.3, T)))(f(T)))(G.cam)
 G.face = lambda T: {'focus': 1.0}
 G.strips = ['sim50', 'mark50']
 SHOTS.append(G)
@@ -126,8 +126,8 @@ SHOTS.append(G)
 H = Shot('H', 50.30, 59.45, 'menino pula para a calçada; carro passa e para 10 m depois')
 H.tau = pchip([(50.30, 1.40), (54.90, 2.02), (57.75, 3.88), (59.45, 3.95)])
 H.cam = ease([(50.30, (-4.5, 5.6, 1.15, 0.0, -2.4, 0.75)), (54.9, (-3.8, 5.8, 1.25, 0.2, -3.4, 0.65)),
-              (56.4, (-1.5, 6.4, 1.6, 3.5, -2.6, 0.7)), (59.45, (0.5, 8.0, 2.6, 4.2, -2.4, 0.5))])
-H.cam = (lambda f: lambda T: (lambda v: dict(pos=v[:3], look=v[3:], lens=46 - 18 * sstep(54.6, 57.0, T)))(f(T)))(H.cam)
+              (56.4, (-1.0, 5.4, 2.2, 2.4, -2.9, 0.6)), (59.45, (-0.5, 5.6, 3.6, 2.9, -3.3, 0.4))])
+H.cam = (lambda f: lambda T: (lambda v: dict(pos=v[:3], look=v[3:], lens=46 - 24 * sstep(54.6, 57.2, T)))(f(T)))(H.cam)
 H.face = lambda T: {'alarm': 1 - sstep(57.8, 58.6, T), 'relief': sstep(57.8, 58.6, T)}
 H.strips = ['gap10_after']
 SHOTS.append(H)
@@ -135,8 +135,11 @@ SHOTS.append(H)
 # I — epílogo: o Téo a 50, passando a placa; grua sobe para o plano geral
 I = Shot('I', 59.45, END, 'epílogo a 50 km/h: travelling lateral que sobe para plano geral')
 I.car = cruise(-100.0, 59.45, V50)
-I.cam = lambda T: (lambda e, xc: dict(pos=(xc + 3.5 - 7 * e, LANE_R - 4.2 - 7 * e, 1.3 + 13 * e), look=(xc + 0.5 + 6 * e, LANE_R + 0.3, 0.9 - 0.7 * e), lens=28 - 4 * e))(
-    sstep(59.6, 67.6, T), car_center(I.car(T)[0]))
+_xc = lambda T: -100.0 + V50 * (T - 59.45) - FRONT
+I.cam = ease([(59.45, (_xc(59.45) + 2.5, LANE_R + 3.4, 1.2, _xc(59.45) - 0.2, LANE_R + 0.2, 1.1)),
+              (63.50, (_xc(63.50) + 2.5, LANE_R + 3.4, 1.4, _xc(63.50) - 0.2, LANE_R + 0.2, 1.1)),
+              (68.00, (-6.0, 1.2, 6.5, 6.0, -3.7, 0.4))])
+I.cam = (lambda f: lambda T: (lambda v: dict(pos=v[:3], look=v[3:], lens=30 - 6 * sstep(63.5, 67.5, T)))(f(T)))(I.cam)
 I.face = lambda T: {'relief': 1.0}
 SHOTS.append(I)
 

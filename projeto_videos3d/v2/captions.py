@@ -83,7 +83,7 @@ def wt(phrase, which='s'):
 HUD = [(0.15, wt('do limite', 'e') + 0.3, '60 km/h  ·  limite 50'),
        (wt('trinta e cinco metros') - 0.1, wt('à frente', 'e') + 0.4, '35 m até o menino'),
        (wt('levou um segundo') - 0.1, wt('no freio', 'e') + 0.2, 'tempo de reação: 1,5 s'),
-       (wt('cresce com o quadrado') - 0.1, wt('quadrado da velocidade', 'e') + 0.6, 'frenagem ∝ velocidade²'),
+       (wt('cresce com o quadrado') - 0.1, wt('quadrado da velocidade', 'e') + 0.6, 'frenagem cresce com v²'),
        (wt('a mais de quarenta') - 0.1, 50.25, 'ainda a 43 km/h'),
        (wt('o téo dirige') - 0.1, wt('a cinquenta', 'e') + 0.6 if False else 62.9, '50 km/h')]
 head = f"""[Script Info]
@@ -97,7 +97,7 @@ ScaledBorderAndShadow: yes
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Leg,Poppins,92,&H00FFFFFF,&H00FFFFFF,&H00101010,&H78000000,-1,0,0,0,100,100,0,0,1,5,2,2,90,90,560,1
-Style: Hud,Poppins,52,&H00FFFFFF,&H00FFFFFF,&H50000000,&H50000000,-1,0,0,0,100,100,1,0,3,18,0,8,80,80,250,1
+Style: Hud,Poppins,62,&H00FFFFFF,&H00FFFFFF,&H50000000,&H50000000,-1,0,0,0,100,100,1,0,3,18,0,8,80,80,250,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
