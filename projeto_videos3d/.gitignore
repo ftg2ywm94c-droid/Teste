@@ -1,0 +1,3 @@
+renders/tmp/
+*.tmp.mp4
+__pycache__/
