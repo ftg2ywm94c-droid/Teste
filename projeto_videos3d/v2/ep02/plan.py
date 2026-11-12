@@ -109,9 +109,10 @@ def bus_v(T):
 E.bus_y, E.bus_v, E.T_BRAKE = bus_y, bus_v, T_BRAKE
 def _E_cam(T):
     yb = bus_y(T); k = sstep(29.0, 31.6, T)
-    pos = (31.3 + 0.8 * k, yb - 1.4 - 2.0 * k, 2.25 + 0.2 * k)
+    d = sstep(30.6, 34.5, T)   # v0.3: recuo lento para não congelar com o ônibus parado
+    pos = (31.3 + 0.8 * k - 0.6 * d, yb - 1.4 - 2.0 * k - 1.2 * d, 2.25 + 0.2 * k + 0.25 * d)
     look = (36.4, yb + 0.7 - 0.4 * k, 2.15)
-    return dict(pos=pos, look=look, lens=26 - 2 * k)
+    return dict(pos=pos, look=look, lens=26 - 2 * k - 1.5 * d)
 E.cam = _E_cam
 E.wind = lambda T: 0.0
 E.labels = [('bus', '1.600 km/h → 0', RED, 0.32, 30.85, 99, lambda T: (35.0, bus_y(T) + 0.5, 3.75))]
