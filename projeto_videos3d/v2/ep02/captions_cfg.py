@@ -5,7 +5,7 @@ HLW = ('equador', 'equador,', 'polos', 'polos?', 'leste', 'leste.')
 def HUD(wt):
     return [(wt('a boa') - 0.1, 76.4, 'o dia aumenta ~1,78 ms por século')]
 def NOTES(wt):
-    return [(6.95, 14.1, 'giro acelerado na animação'),
+    return [(6.95, 14.1, 'giro acelerado na animação', r'\an2'),  # embaixo: no topo cobriria o rótulo '1 volta por dia'
             (wt('agora imagine'), 28.15, 'ilustração em câmera lenta'),
             (wt('e mesmo uma parada'), 60.4, 'ilustração fora de escala'),
             (wt('sem o giro'), 68.85, 'modelo: Fraczek (Esri) · relevo NOAA ETOPO5')]

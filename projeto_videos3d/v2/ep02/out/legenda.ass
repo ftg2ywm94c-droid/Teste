@@ -97,7 +97,7 @@ Dialogue: 1,0:01:13.58,0:01:14.20,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,
 Dialogue: 1,0:01:14.20,0:01:14.86,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}DE{\c&HFFFFFF&} {\c&H0028D7FF&}SEGUNDO{\c&HFFFFFF&}
 Dialogue: 1,0:01:14.86,0:01:15.70,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}POR{\c&HFFFFFF&} {\c&H0028D7FF&}SÉCULO.{\c&HFFFFFF&}
 Dialogue: 0,0:01:08.90,0:01:16.40,Hud,,0,0,0,,{\fad(180,180)}o dia aumenta ~1,78 ms por século
-Dialogue: 0,0:00:06.95,0:00:14.10,Nota,,0,0,0,,{\fad(200,200)}giro acelerado na animação
+Dialogue: 0,0:00:06.95,0:00:14.10,Nota,,0,0,0,,{\fad(200,200)\an2}giro acelerado na animação
 Dialogue: 0,0:00:19.94,0:00:28.15,Nota,,0,0,0,,{\fad(200,200)}ilustração em câmera lenta
 Dialogue: 0,0:00:51.78,0:01:00.40,Nota,,0,0,0,,{\fad(200,200)}ilustração fora de escala
 Dialogue: 0,0:01:00.68,0:01:08.85,Nota,,0,0,0,,{\fad(200,200)}modelo: Fraczek (Esri) · relevo NOAA ETOPO5
