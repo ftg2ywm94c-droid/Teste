@@ -90,7 +90,7 @@ D_look = eased([(16.3, (0.0, 0.0, 6.2)), (21.0, (0.0, 0.0, 4.0)), (25.0, (0.0, 0
 D.cam = lambda T: dict(pos=D_cam(T), look=add(D_look(T), (0, 0, -4.0)), lens=40)
 D.graph = dict(t_on=16.9, t_off=27.95)
 D.labels = [('nucleo', 'núcleo de ferro', ORANGE, 0.62, 22.05, 99, lambda T: add(sph(VIEW - 30, 0, 3.6), (0, 0, 3.0))),
-            ('cmb', '2.891 km', WHITE, 0.55, 23.80, 99, lambda T: add(on_axis(z_of_depth(2891)), sph(VIEW + 90, 0, 1.6)))]
+            ('cmb', '2.891 km', WHITE, 0.55, 23.80, 99, lambda T: add((0.0, 0.0, z_of_depth(2891) - 0.15), sph(8, 0, 3.4)))]
 SHOTS.append(D)
 
 # ---------------------------------------------------------------- E — no centro: mais de 35 mil km/h
