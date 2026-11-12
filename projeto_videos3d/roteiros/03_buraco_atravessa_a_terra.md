@@ -8,19 +8,19 @@ Status: **aguardando aprovação do roteiro**. Depois da aprovação, o usuário
 Se você pulasse num buraco que atravessa a Terra, quanto tempo levaria para sair do outro lado?
 
 [CONTEXTO 4–15 s]
-Imagine um túnel reto, de um polo ao outro, sem ar dentro. Você pula. Nada te segura, então você cai… e flutua, sem peso, a viagem inteira.
+Imagine um túnel reto, de polo a polo, sem ar. Você pula e cai… flutuando, sem peso, a viagem inteira.
 
 [DESENVOLVIMENTO 15–30 s]
-E tem uma surpresa: quanto mais você desce, mais forte a gravidade puxa, até a fronteira do núcleo de ferro, a quase três mil quilômetros de profundidade. Só depois ela enfraquece. No centro, você passa a mais de trinta e cinco mil quilômetros por hora.
+E tem uma surpresa: quanto mais você desce, mais forte a gravidade puxa, até o núcleo de ferro, a quase três mil quilômetros. Só depois ela enfraquece. No centro, você passa a mais de trinta e cinco mil quilômetros por hora.
 
 [CTA 30–35 s]
 Chuta aí nos comentários: quanto tempo dura a queda?
 
 [REVELAÇÃO 35–50 s]
-Trinta e oito minutos. Você atravessa o planeta, vai freando sozinho e chega do outro lado parado, bem na borda. Se ninguém te segurar, você cai de volta. E fica indo e voltando para sempre.
+Trinta e oito minutos. Você atravessa o planeta, vai freando e chega do outro lado parado, bem na borda. Se ninguém te segurar, cai de volta. E fica indo e voltando para sempre.
 
 [FINAL LÓGICO 50–65 s]
-Na vida real, não dá: o centro da Terra passa de cinco mil graus, e o buraco mais fundo já cavado tem só doze quilômetros. E por que de polo a polo? Porque, em qualquer outro lugar, o giro da Terra jogaria você contra a parede.
+Na vida real, não dá: o centro passa de cinco mil graus, e o buraco mais fundo já cavado tem só doze quilômetros. E por que de polo a polo? Porque em qualquer outro lugar, o giro da Terra te jogaria contra a parede.
 
 ## Base dos números
 - Tempo de queda de um lado ao outro: 38 min 11 s com a densidade real da Terra (modelo sísmico PREM). O valor clássico, que supõe densidade uniforme, é de 42 min 12 s. Fonte: Klotz, "The gravity tunnel in a non-uniform Earth", Am. J. Phys. 83, 231 (2015). Conferido em cálculo próprio com o PREM (Dziewonski e Anderson, 1981): 38,1 min.
