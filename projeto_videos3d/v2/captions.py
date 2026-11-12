@@ -22,6 +22,13 @@ for tag, i1, i2, j1, j2 in sm.get_opcodes():
         diffs.append((tag, ' '.join(S[i1:i2]), ' '.join(x['w'] for x in Wd[j1:j2])))
         if i2 - i1 == j2 - j1:
             for k in range(i2 - i1): tim[i1 + k] = (Wd[j1 + k]['s'], Wd[j1 + k]['e'])
+# palavras do roteiro que a voz não falou (ex.: vídeo 03, "passa a mais" -> "passa mais"): a legenda mostra o que foi dito
+_cfgp = os.path.join(os.path.dirname(os.path.abspath(__file__)), f'ep{EP}', 'captions_cfg.py') if EP else None
+if _cfgp and 'SPOKEN = True' in open(_cfgp).read():
+    drop = set()
+    for tag, i1, i2, j1, j2 in sm.get_opcodes():
+        if tag == 'delete': drop |= set(range(i1, i2))
+    S = [w for i, w in enumerate(S) if i not in drop]; tim = [x for i, x in enumerate(tim) if i not in drop]
 for i in range(len(S)):          # interpola palavras sem par (não deve acontecer neste áudio)
     if tim[i] is None:
         p = next(tim[k][1] for k in range(i - 1, -1, -1) if tim[k]); n = next(tim[k][0] for k in range(i + 1, len(S)) if tim[k]); tim[i] = (p, n)

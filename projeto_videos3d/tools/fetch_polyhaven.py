@@ -5,7 +5,7 @@ import json, os, urllib.request, concurrent.futures as cf
 UA = {'User-Agent': 'video3d-pipeline/0.2'}
 ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'assets', 'polyhaven')
 TEX = ['asphalt_02', 'concrete_pavement', 'leafy_grass', 'painted_plaster_wall', 'grey_plaster_02', 'clay_roof_tiles_02', 'grey_roof_tiles', 'brick_4',
-       'coast_sand_01', 'red_sandstone_pavement']
+       'coast_sand_01', 'red_sandstone_pavement', 'snow_02', 'dark_rock', 'metal_plate']
 MAPS = ['Diffuse', 'nor_gl', 'Rough']
 HDRI = ['kloofendal_48d_partly_cloudy_puresky']
 MODELS = ['island_tree_01', 'tree_small_02', 'shrub_01', 'shrub_02', 'shrub_04', 'street_lamp_01', 'fire_hydrant', 'metal_trash_can', 'football']
