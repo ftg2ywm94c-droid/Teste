@@ -15,6 +15,7 @@
 
 ### Correções após o QC da v0.5
 - As notas "moléculas fora de escala" (2,65 s), "ilustração" (21,35 s) e "ilustração simplificada" (34,45 s) cobriam o contador "20 s" e o painel de altitude. Foram movidas para a parte de baixo.
+- Versão leve para baixar no celular: `04_oxigenio_sumisse_20s_1080x1920_leve.mp4` (59 MB, H.264 em 2 passagens a 6,2 Mbps, SSIM 0,988 em relação ao original). O arquivo de 117 MB não mostrava o botão de baixar no app.
 
 ## v0.4 — vídeo 03 "E se você pulasse num buraco que atravessa a Terra?" entregue (2026-11-13)
 - Arquivo: `v2/ep03/out/03_buraco_atravessa_a_terra_1080x1920.mp4` (66,0 s, 1980 quadros, 30 fps, H.264 + AAC 48 kHz, 65 MB; fora do git por tamanho).
