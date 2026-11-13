@@ -259,13 +259,26 @@ for fc in fcs:
         while d > math.pi: pts[i].co[1] -= 2 * math.pi; d -= 2 * math.pi
         while d < -math.pi: pts[i].co[1] += 2 * math.pi; d += 2 * math.pi
 sc.frame_start, sc.frame_end = fr[0], fr[-1]; sc.frame_step = step
-out = os.path.join(HERE, 'frames' if FINAL else 'preview', shot.name); os.makedirs(out, exist_ok=True)
+out = os.environ.get('RENDER_OUT') or os.path.join(HERE, 'frames' if FINAL else 'preview', shot.name); os.makedirs(out, exist_ok=True)
+# testes de desempenho (desligados por padrão): OPT=wall,b3,ad05
+for o in filter(None, os.environ.get('OPT', '').split(',')):
+    if o == 'wall':
+        if 'ParedeTunel' in bpy.data.materials: bpy.data.materials['ParedeTunel'].cycles.emission_sampling = 'NONE'
+    elif o == 'b3': sc.cycles.max_bounces = 3; sc.cycles.diffuse_bounces = 1; sc.cycles.glossy_bounces = 1
+    elif o == 'ad05': sc.cycles.adaptive_threshold = 0.05
+    elif o == 'ad08': sc.cycles.adaptive_threshold = 0.08
+    elif o == 'lst': sc.cycles.light_sampling_threshold = 0.05
+    elif o == 'mb0': sc.render.use_motion_blur = False
+    elif o == 'rings0':
+        if 'AnelLuz' in bpy.data.materials: bpy.data.materials['AnelLuz'].cycles.emission_sampling = 'NONE'
+    elif o == 'lt0': sc.cycles.use_light_tree = False
+    else: raise SystemExit(f'OPT desconhecida: {o}')
 os.makedirs(os.path.join(HERE, 'events'), exist_ok=True); json.dump(events, open(os.path.join(HERE, 'events', f'{shot.name}.json'), 'w'))
 print(f'[{shot.name}] cena pronta em {time.time() - t0:.1f}s; quadros {fr[0]}–{fr[-1]} ({len(fr)}), {W}x{H}, {spp} spp, passo {step}', flush=True)
 if a.save_blend: os.makedirs(os.path.join(HERE, 'build'), exist_ok=True); bpy.ops.wm.save_as_mainfile(filepath=os.path.join(HERE, 'build', f'{shot.name}.blend'))
 if a.still is not None:
     sc.frame_set(a.still); sc.render.filepath = os.path.join(out, f'still_{a.still:04d}.png'); sc.render.use_overwrite = True
-    bpy.ops.render.render(write_still=True)
+    t1 = time.time(); bpy.ops.render.render(write_still=True); print(f'[{shot.name}] still {time.time() - t1:.1f}s', flush=True)
 else:
     if a.frames:
         f0, f1 = map(int, a.frames.split('-')); sc.frame_start, sc.frame_end = f0, f1
