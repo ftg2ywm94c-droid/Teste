@@ -1,6 +1,6 @@
 # Vídeo 05 — E se TODO o oxigênio sumisse por 20 segundos?
 
-Status: **aguardando aprovação do roteiro**. Depois da aprovação, o usuário grava a narração no ElevenLabs (mesma voz) e envia o MP3.
+Status: **aprovado; narração recebida (narracao/05_narracao.mp3, 73,2 s)**.
 
 Duração alvo: 60–65 s · cerca de 170 palavras. Continuação direta do vídeo 04.
 
@@ -12,7 +12,7 @@ Duração alvo: 60–65 s · cerca de 170 palavras. Continuação direta do víd
 No último vídeo, só o oxigênio do ar sumia. E se sumisse todo o oxigênio do planeta, por vinte segundos? Aí, respirar é o menor problema.
 
 [CONTEXTO]
-Isso é impossível, mas mostra onde o oxigênio está: em quase tudo. Na água, nas rochas, no concreto. E em você: quase dois terços do seu corpo são oxigênio.
+Isso é impossível, mas mostra onde o oxigênio está: em quase tudo. Na água, nas rochas, no concreto e em você. Quase dois terços do seu corpo são oxigênio.
 
 [DESENVOLVIMENTO]
 No primeiro instante, a água perde o oxigênio. O que sobra é hidrogênio, um gás. Rios e oceanos viram gás.
