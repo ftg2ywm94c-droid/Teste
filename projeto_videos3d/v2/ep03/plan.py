@@ -155,9 +155,11 @@ def _J_cam(T):
     """Aproximação contínua até a crosta perto de Kola: alvo vai do centro a Kola; distância cai em escala log (30 -> 1,5)."""
     kl = sstep(54.6, 56.6, T); kd = sstep(54.7, 57.3, T)
     tgt = tuple(a * (1 - kl) + b * kl for a, b in zip((0.0, 0.0, 0.0), add(KOLA, (0.0, 0.0, -0.18))))
-    d0, d1 = sph(VIEW - 6, 6, 1.0), (0.10, 0.99, 0.05)
+    u = min(1.0, max(0.0, (T - 50.1) / 4.6))                        # deriva lenta enquanto o túnel some e o núcleo esquenta
+    d0, d1 = sph(VIEW - 6 - 7 * u, 6 + 3 * u, 1.0), (0.10, 0.99, 0.05)
     dv = tuple(a * (1 - kd) + b * kd for a, b in zip(d0, d1)); n = math.sqrt(sum(x * x for x in dv)); dv = tuple(x / n for x in dv)
-    dist = math.exp(math.log(30.0) * (1 - kd) + math.log(1.5) * kd)
+    w = min(1.0, max(0.0, (T - 56.8) / 2.0))                        # aproximação final lenta em Kola (sem quadro parado)
+    dist = math.exp(math.log(30.0 * (1 - 0.10 * u)) * (1 - kd) + math.log(1.5) * kd) * (1 - 0.14 * w)
     return dict(pos=add(tgt, dv, dist), look=tgt, lens=40 + 10 * kd)
 J.cam = _J_cam
 J.labels = [('calor', '> 5.000 °C', ORANGE, 1.0, 53.85, 55.3, lambda T: add(sph(VIEW, 0, 2.2), (0, 0, 1.6))),
