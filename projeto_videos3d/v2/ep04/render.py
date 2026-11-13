@@ -96,14 +96,20 @@ def look_rot(pos, look, up=(0, 0, 1)):
 def set_input(mat, node, inp, v, f):
     n = mat.node_tree.nodes[node]; n.inputs[inp].default_value = v; n.inputs[inp].keyframe_insert('default_value', frame=f)
 
-DYN = []          # textos que mudam com o tempo: (objeto, função T -> texto)
-def dyn_text(o, fn): DYN.append((o, fn))
-def _upd(scene, depsgraph=None):
-    T = scene.frame_current / P.FPS
+DYN = []          # textos que mudam com o tempo: (objeto, função T -> texto). Viram cópias ligadas/desligadas por escala
+def dyn_text(o, fn): DYN.append((o, fn))   # (trocar o texto num handler não funciona com dados persistentes do Cycles)
+def bake_dyn(frames):
     for o, fn in DYN:
-        b = fn(T)
-        if o.data.body != b: o.data.body = b
-bpy.app.handlers.frame_change_pre.append(_upd)
+        copies = {}
+        for f in frames:
+            b = fn(f / P.FPS)
+            if b not in copies:
+                c = o.copy(); c.data = o.data.copy(); c.data.body = b; RC.objects.link(c); copies[b] = c
+        o.scale = (1e-4,) * 3; o.keyframe_insert('scale', frame=frames[0])
+        for f in frames:
+            b = fn(f / P.FPS)
+            for txt_, c in copies.items():
+                c.scale = (1.0,) * 3 if txt_ == b else (1e-4,) * 3; c.keyframe_insert('scale', frame=f)
 
 items = {}; events = dict(shot=shot.name, fps=P.FPS, frames=[])
 # ================================================================== cenários
@@ -192,8 +198,6 @@ if shot.panel:
             t_ = B.box('tick', (0.012, 0.07 if kpa % 10 else 0.11, 0.004), (0, 0, 0.01), B.mat_basic('Tick', (0.1, 0.1, 0.12), 0.5), RC)
             t_.parent = g; aa = ang(kpa); t_.location = (0.5 * math.sin(-aa + math.pi), 0, 0); t_.location = (0.5 * math.cos(aa + math.pi / 2), -0.05 + 0.5 * math.sin(aa + math.pi / 2), 0.012)
             t_.rotation_euler = (0, 0, aa)
-        zone = sector('zona_verde', 90 - (101.3 - 70) / 40 * 240 + 120 - 90 + 4, 90 - (101.3 - 70) / 40 * 240 + 120 - 90 - 4, 0.56, (0.3, 0.8, 0.4), g, 0.008, 0.8)
-        zone.location = (0, -0.05, 0)
         nd = B.box('ponteiro', (0.025, 0.46, 0.01), (0, 0.23, 0), B.mat_basic('Ponteiro', (0.9, 0.1, 0.08), 0.4, emit=(0.9, 0.1, 0.08), emit_s=1.0), RC)
         piv = B.link(bpy.data.objects.new('pivo', None), RC); piv.parent = g; piv.location = (0, -0.05, 0.02); nd.parent = piv
         cap = B.cyl('eixo', 0.05, 0.02, (0, 0, 0.01), B.mat_basic('Eixo', (0.15, 0.15, 0.17), 0.4), RC, seg=24); cap.parent = piv
@@ -378,6 +382,8 @@ for f in fr:
 if shot.panel and shot.panel[0] == 'pie' and shot.panel[3] == 'gone':
     o = items['pie'][2][1][-1]; dyn_text(o, lambda T: ' 21%' if T < P.T_SOME_B + 0.15 else ' 0%')
 
+bake_dyn(fr)
+
 def all_ads():
     for ob in list(bpy.data.objects) + [cam.data] + list(bpy.data.curves) + list(bpy.data.armatures) + list(bpy.data.lights):
         if getattr(ob, 'animation_data', None) and ob.animation_data.action: yield ob.animation_data
@@ -386,7 +392,7 @@ def all_ads():
 for ad in all_ads():
     for fc in ad.action.fcurves:
         if fc.modifiers: continue                      # curvas com ruído (moléculas, chamas) ficam como estão
-        for kp in fc.keyframe_points: kp.interpolation = 'CONSTANT' if 'hide' in fc.data_path else 'LINEAR'
+        for kp in fc.keyframe_points: kp.interpolation = 'CONSTANT' if ('hide' in fc.data_path or (fc.id_data.name.startswith(('leitura', 'leg')) and fc.data_path == 'scale')) else 'LINEAR'
 fcs = [fc for fc in (cam.animation_data.action.fcurves if cam.animation_data else []) if fc.data_path == 'rotation_euler']
 for fc in fcs:
     pts = fc.keyframe_points

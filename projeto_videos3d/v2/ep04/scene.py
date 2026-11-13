@@ -143,7 +143,7 @@ def build_driver_car(C):
     # fumaça do escapamento: bolinhas cinza translúcidas atrás do carro
     sm = B.mat_basic('Fumaca', (0.55, 0.55, 0.56), 0.9, alpha=0.35); puffs = []
     for i in range(6):
-        p = B.sphere(f'fumaca{i}', 0.09 + 0.03 * i, (-2.35 - 0.22 * i, -0.55, 0.3 + 0.03 * i), sm, car['coll'], seg=16)
+        p = B.sphere(f'fumaca{i}', 0.05 + 0.015 * i, (-2.35 - 0.22 * i, -0.55, 0.3 + 0.03 * i), sm, car['coll'], seg=16)
         p.parent = car['body']; p.visible_shadow = False; puffs.append(p)
     car['puffs'] = puffs
     return car
