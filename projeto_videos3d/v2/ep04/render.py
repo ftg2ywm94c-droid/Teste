@@ -128,7 +128,7 @@ if K == 'rua':
         pO = SC.molecule_proto('O2', SC.O2_COL, glow=1.2); r = random.Random(5); items['back'] = []
         for i in range(70):
             o = bpy.data.objects.new(f'o2volta{i}', None); o.instance_type = 'COLLECTION'; o.instance_collection = pO; B.link(o, RC)
-            o.location = (P.TEO[0] + r.uniform(-6, 6), P.TEO[1] + r.uniform(-5, 2), r.uniform(0.3, 3.2)); o.rotation_euler = (r.uniform(0, 6), r.uniform(0, 6), r.uniform(0, 6))
+            o.location = (P.TEO[0] + r.uniform(-6, 6), P.TEO[1] + r.uniform(-1.2, 2), r.uniform(0.6, 3.2)); o.rotation_euler = (r.uniform(0, 6), r.uniform(0, 6), r.uniform(0, 6))
             items['back'].append((o, r.uniform(0, 0.4), r.uniform(0.18, 0.26)))
 elif K == 'mol':
     items['mols'] = SC.build_molecules()
@@ -252,11 +252,11 @@ def teo_anim(mode, teo, f, T):
         B.set_face(teo, {'relief': 1.0}, f)
     elif mode in ('lying', 'situp', 'sitting'):
         k = {'lying': 0.0, 'sitting': 1.0}.get(mode, sstep(69.15, 69.95, T))
-        r.location = (P.TEO[0] - 0.2, P.TEO[1], P.TEO[2] + 0.10 - hz); r.rotation_euler = (0, 0, math.radians(90))
+        r.location = (P.TEO[0] - 0.2, P.TEO[1], P.TEO[2] + 0.13 - hz); r.rotation_euler = (0, 0, math.radians(-90))   # pernas para -X: de frente para a câmera
         sp = -86 + 96 * k
         B.pose(teo, frame=f, spine=(sp, 0, 0), head=(-6 + 10 * k, 0, 8 * k * math.sin(T * 0.8)),
-               **{'thigh.L': (-90 + 25 * k, 0, -4), 'thigh.R': (-90 + 20 * k, 0, 4), 'shin.L': (40 * k, 0, 0), 'shin.R': (30 * k, 0, 0),
-                  'upper_arm.L': (-10 + 30 * k, 0, -18 - 10 * k), 'upper_arm.R': (-10 + 30 * k, 0, 18 + 10 * k), 'forearm.L': (-15, 0, 0), 'forearm.R': (-15, 0, 0)})
+               **{'thigh.L': (-90 - 22 * k, 0, -5), 'thigh.R': (-90 - 14 * k, 0, 5), 'shin.L': (48 * k, 0, 0), 'shin.R': (34 * k, 0, 0),
+                  'upper_arm.L': (-10 + 40 * k, 0, -18 - 12 * k), 'upper_arm.R': (-10 + 40 * k, 0, 18 + 12 * k), 'forearm.L': (-15 + 10 * k, 0, 0), 'forearm.R': (-15 + 10 * k, 0, 0)})
         B.set_face(teo, {'neutral': 1 - k, 'relief': k} if mode != 'lying' else {'neutral': 1.0}, f)
 
 def car_set(car, x, y, z, yaw, f, dist):
