@@ -1,6 +1,6 @@
 # Vídeo 06 — E se começasse um apocalipse zumbi no Brasil?
 
-Status: **aguardando aprovação do roteiro**. Depois da aprovação, o usuário grava a narração no ElevenLabs (mesma voz) e envia o MP3.
+Status: **aprovado; narração recebida (narracao/06_narracao.mp3, 74,1 s)**.
 
 Duração alvo: 60–65 s · cerca de 165 palavras.
 
@@ -16,7 +16,7 @@ Na Mata Atlântica de Minas Gerais, cientistas descreveram quatro espécies de f
 
 [DESENVOLVIMENTO]
 Mas em gente ele não pega. Quase todo fungo cresce mal acima de trinta graus, e o nosso corpo fica em trinta e sete. O calor do corpo é um escudo.
-E um vírus? A raiva é o mais perto disso: passa pela mordida e pode deixar o animal agressivo. Só que leva semanas para agir, não segundos.
+E o vírus? A raiva é o mais perto disso: passa pela mordida e pode deixar o animal agressivo. Só que leva semanas para agir, não segundos.
 
 [CTA]
 Segue o perfil para o próximo "e se".
