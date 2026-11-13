@@ -153,8 +153,8 @@ def build_mata(n_leaves=14, seed=5):
     ko = B.link(bpy.data.objects.new('LuzMata', key)); ko.location = (6, -14, 22); ko.rotation_euler = (math.radians(40), 0, math.radians(20))
     fill = bpy.data.lights.new('LuzMata2', 'AREA'); fill.energy = 250; fill.size = 20; fill.color = (0.7, 0.9, 1.0)
     fo = B.link(bpy.data.objects.new('LuzMata2', fill)); fo.location = (-12, -6, 4); fo.rotation_euler = (math.radians(80), 0, math.radians(-60))
-    lo = bpy.data.lights.new('LuzBaixo', 'AREA'); lo.energy = 120; lo.size = 4; lo.color = (1.0, 0.95, 0.85)
-    loo = B.link(bpy.data.objects.new('LuzBaixo', lo)); loo.location = (2.6, -2.5, 6.4); loo.rotation_euler = (math.radians(-130), 0, 0)
+    lo = bpy.data.lights.new('LuzBaixo', 'AREA'); lo.energy = 260; lo.size = 4; lo.color = (1.0, 0.95, 0.85)
+    loo = B.link(bpy.data.objects.new('LuzBaixo', lo)); loo.location = (2.6, -2.5, 6.4); loo.rotation_euler = (math.radians(140), 0, 0)
     return dict(stem=stem, leaves=leaves, main=main)
 
 def spores(C, n, center, seed=9):
