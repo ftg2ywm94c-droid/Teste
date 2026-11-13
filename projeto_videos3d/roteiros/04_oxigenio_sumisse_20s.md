@@ -1,6 +1,6 @@
 # Vídeo 04 — E se o oxigênio sumisse por 20 segundos?
 
-Duração alvo: 60–65 s · cerca de 165 palavras · mesma voz do ElevenLabs dos vídeos anteriores.
+Duração alvo: 60–65 s · cerca de 170 palavras · mesma voz do ElevenLabs dos vídeos anteriores.
 
 **Cenário definido no vídeo:** some só o gás oxigênio (O₂) do ar, em todo lugar, inclusive dentro dos pulmões. O oxigênio preso em moléculas (água, rochas, concreto, nosso corpo) continua onde está. Isso evita o exagero dos vídeos virais.
 
@@ -10,19 +10,19 @@ Duração alvo: 60–65 s · cerca de 165 palavras · mesma voz do ElevenLabs do
 E se todo o oxigênio do ar sumisse… por só vinte segundos? Os prédios não caem. O problema é você.
 
 **CONTEXTO**
-O ar é quase oitenta por cento nitrogênio. Só vinte e um por cento é oxigênio — e é só ele que some.
+O ar é quase oitenta por cento nitrogênio. Só vinte e um por cento é oxigênio, e é só ele que some.
 
 **DESENVOLVIMENTO**
-No primeiro instante, a pressão do ar cai um quinto de uma vez. Seus ouvidos estalam, como se você subisse dois mil metros num piscar de olhos.
-Todo fogo apaga. Vela, fogão, motor de carro: tudo morre. Até as turbinas dos aviões se apagam — mas o avião continua planando.
-E prender a respiração não adianta: o oxigênio dos seus pulmões também sumiu. O sangue começa a perder oxigênio para eles.
-Pilotos treinam pra isso: numa despressurização a quase catorze mil metros, sobram de nove a quinze segundos de consciência.
+No primeiro instante, a pressão cai um quinto. Seus ouvidos estalam, como subir dois mil metros num piscar de olhos.
+Todo fogo apaga: vela, fogão, motor de carro. Até as turbinas dos aviões, que seguem planando.
+Prender a respiração não adianta: o oxigênio dos pulmões também sumiu, e o sangue começa a perder oxigênio para eles.
+Num avião despressurizado a quase catorze mil metros, sobram de nove a quinze segundos de consciência.
 
 **CTA**
-Segue o perfil pra ver o próximo "e se".
+Segue o perfil pro próximo "e se".
 
 **REVELAÇÃO**
-E os prédios desmoronando dos vídeos virais? Mito. O oxigênio do concreto, da água e das rochas está preso em moléculas. Quase metade da crosta da Terra é oxigênio — e ele fica onde está.
+E os prédios desmoronando dos vídeos virais? Mito. O oxigênio do concreto, da água e das rochas está preso em moléculas. Quase metade da crosta é oxigênio, e ele fica onde está.
 
 **FINAL LÓGICO**
 No segundo vinte, o ar volta. Os ouvidos estalam de novo, e quem desmaiou acorda. O planeta sai inteiro. O perigo foi quem estava dirigindo.
