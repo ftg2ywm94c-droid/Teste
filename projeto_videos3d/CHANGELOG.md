@@ -5,6 +5,14 @@
 - `scripts/add_narration.py`: MP3 → MP4 com legenda sincronizada, ducking e −14 LUFS.
 - Para recuperar: `git checkout be24c75 -- projeto_videos3d` (a tag não pôde ser enviada ao GitHub: o acesso desta sessão só permite o branch de trabalho).
 
+## v0.6 — vídeo 05 "E se TODO o oxigênio sumisse por 20 segundos?" entregue (2026-11-13)
+- Arquivo: `v2/ep05/out/05_todo_oxigenio_sumisse_1080x1920.mp4` (73,4 s, 2202 quadros, 30 fps, H.264 + AAC, 142 MB). Versão leve: `05_todo_oxigenio_sumisse_1080x1920_leve.mp4` (59 MB, feita automaticamente pelo `assemble.py`). As duas ficam fora do git por tamanho.
+- **Render nativo em 720x1280** (Cycles, 6–8 amostras + OIDN), **ampliado para 1080x1920**.
+- 29 planos com corte e câmera em movimento. Cenários reaproveitados do vídeo 04, mais três novos: prédio que se desfaz em blocos e pó, moléculas de água que perdem o O e mar que vira vapor.
+- Narração original do usuário sem alteração de velocidade: atraso 0 ms, deriva 0 ms, correlação 0,987.
+- QC (`v2/ep05/qc_report_05.json`): todos os itens aprovados. Volume −14,3 LUFS, pico −1,3 dBFS, nenhum quadro preto ou congelado, erro da legenda 0,0 s.
+- Tempo de render: cerca de 7 h em CPU, dividindo o processador com a prévia do vídeo 06. O container reiniciou 1 vez, e o render foi retomado a partir dos quadros salvos.
+
 ## v0.5 — vídeo 04 "E se o oxigênio sumisse por 20 segundos?" entregue (2026-11-13)
 - Arquivo: `v2/ep04/out/04_oxigenio_sumisse_20s_1080x1920.mp4` (74,4 s, 2232 quadros, 30 fps, H.264 + AAC, 117 MB; fora do git por tamanho).
 - **Render nativo em 720x1280** (Cycles, 6–8 amostras + OIDN, light tree desligado), **ampliado para 1080x1920**.
