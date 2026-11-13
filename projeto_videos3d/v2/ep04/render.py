@@ -129,7 +129,7 @@ if K == 'rua':
         for i in range(70):
             o = bpy.data.objects.new(f'o2volta{i}', None); o.instance_type = 'COLLECTION'; o.instance_collection = pO; B.link(o, RC)
             o.location = (P.TEO[0] + r.uniform(-6, 6), P.TEO[1] + r.uniform(-1.2, 2), r.uniform(0.6, 3.2)); o.rotation_euler = (r.uniform(0, 6), r.uniform(0, 6), r.uniform(0, 6))
-            items['back'].append((o, r.uniform(0, 0.4), r.uniform(0.18, 0.26)))
+            items['back'].append((o, r.uniform(0, 0.4), r.uniform(0.10, 0.15)))
 elif K == 'mol':
     items['mols'] = SC.build_molecules()
 elif K == 'ceu':
