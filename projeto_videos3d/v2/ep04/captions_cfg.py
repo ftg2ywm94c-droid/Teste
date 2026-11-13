@@ -6,7 +6,7 @@ HLW = ('você.', 'some.', 'planando.', 'adianta:', 'consciência.', 'Mito.', 'es
 def HUD(wt):
     return []
 def NOTES(wt):
-    return [(2.65, 5.25, 'ilustração: moléculas fora de escala'),
-            (21.35, 24.65, 'ilustração'),
-            (34.45, 40.25, 'ilustração simplificada'),
+    return [(2.65, 5.25, 'ilustração: moléculas fora de escala', r'\an2'),
+            (21.35, 24.65, 'ilustração', r'\an2'),
+            (34.45, 40.25, 'ilustração simplificada', r'\an2'),
             (55.25, 59.65, 'modelo de átomos simplificado', r'\an2')]

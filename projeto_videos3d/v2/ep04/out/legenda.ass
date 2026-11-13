@@ -96,7 +96,7 @@ Dialogue: 1,0:01:11.12,0:01:11.76,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,
 Dialogue: 1,0:01:12.36,0:01:12.88,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O PERIGO
 Dialogue: 1,0:01:12.88,0:01:13.64,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}FOI QUEM ESTAVA
 Dialogue: 1,0:01:13.64,0:01:14.24,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DIRIGINDO.
-Dialogue: 0,0:00:02.65,0:00:05.25,Nota,,0,0,0,,{\fad(200,200)}ilustração: moléculas fora de escala
-Dialogue: 0,0:00:21.35,0:00:24.65,Nota,,0,0,0,,{\fad(200,200)}ilustração
-Dialogue: 0,0:00:34.45,0:00:40.25,Nota,,0,0,0,,{\fad(200,200)}ilustração simplificada
+Dialogue: 0,0:00:02.65,0:00:05.25,Nota,,0,0,0,,{\fad(200,200)\an2}ilustração: moléculas fora de escala
+Dialogue: 0,0:00:21.35,0:00:24.65,Nota,,0,0,0,,{\fad(200,200)\an2}ilustração
+Dialogue: 0,0:00:34.45,0:00:40.25,Nota,,0,0,0,,{\fad(200,200)\an2}ilustração simplificada
 Dialogue: 0,0:00:55.25,0:00:59.65,Nota,,0,0,0,,{\fad(200,200)\an2}modelo de átomos simplificado
