@@ -92,13 +92,13 @@ B5.labels = [('concr', 'concreto', WHITE, 0.55, 19.02, 99, lambda T: (19.2, 8.0,
 B6 = S('B6', 20.30, 25.30, 'rua', 'e em você: quase dois terços do seu corpo')
 B6.cam = cam([(20.3, (19.2, 2.0, 1.5)), (25.3, (19.9, 3.1, 1.62))], [(20.3, (20.5, 4.7, 1.25)), (25.3, (20.5, 4.7, 1.4))], 30)
 B6.teo = 'idle'; B6.panel = ('body', 21.64, 99, 'hi')
-B6.labels = [('voce', 'você', YEL, 0.16, 20.56, 99, lambda T: (20.5, 4.4, 2.25))]
+B6.labels = [('voce', 'você', YEL, 0.14, 20.56, 99, lambda T: (20.5, 4.4, 2.08))]
 
 # ================================================================= DESENVOLVIMENTO
 C1 = S('C1', 25.30, 28.50, 'agua', 'no primeiro instante a água perde o oxigênio')
 C1.cam = cam([(25.3, (6.0, -26.0, 6.0)), (28.5, (1.0, -13.0, 1.0))], [(25.3, (0, 0, 0)), (28.5, (0, 0, 0))], 30)
 C1.vanish = T_AGUA
-C1.labels = [('inst', '1º instante', YEL, 1.2, 25.48, 99, lambda T: (0.0, -6.0, 7.0))]
+C1.labels = [('inst', '1º instante', YEL, 0.7, 25.48, 99, lambda T: _front(C1.cam(T), 7.0, 1.9))]
 C2 = S('C2', 28.50, 32.10, 'agua', 'sobra hidrogênio: um gás')
 C2.cam = cam([(28.5, (-14.0, -16.0, 4.0)), (32.1, (-11.0, -22.0, 2.0))], [(28.5, (0, 0, 0)), (32.1, (0, 0, 0))], 28)
 C2.vanish = T_AGUA
@@ -153,8 +153,8 @@ G4.labels = [('rochas2', 'rochas', WHITE, 1.0, 61.50, 99, lambda T: (0.0, -6.0, 
 G5 = S('G5', 62.10, 65.10, 'rua', 'nem as pessoas')
 G5.cam = cam([(62.1, (18.5, 1.5, 1.6)), (65.1, (19.4, 2.3, 1.5))], [(62.1, (20.5, 4.7, 1.0)), (65.1, (20.5, 4.7, 1.0))], 30)
 G5.crumbled = True; G5.no_teo = True; G5.loose = (0.0, (20.5, 4.9, 1.3), (2.2, 1.6, 1.1), 110, 0.035)
-G5.labels = [('pessoas', 'pessoas', WHITE, 0.2, 62.18, 99, lambda T: (20.5, 4.6, 2.05)),
-             ('remonta', 'não se remontam', RED, 0.2, 63.16, 99, lambda T: (20.5, 4.6, 1.72))]
+G5.labels = [('pessoas', 'pessoas', WHITE, 0.18, 62.18, 99, lambda T: (20.5, 4.6, 1.92)),
+             ('remonta', 'não se remontam', RED, 0.18, 63.16, 99, lambda T: (20.5, 4.6, 1.62))]
 
 # ================================================================= FINAL
 H1 = S('H1', 65.10, 68.20, 'rua', 'por isso os vinte segundos não importam')
