@@ -43,3 +43,13 @@ run(['ffmpeg', '-y', '-v', 'error', '-f', 'concat', '-safe', '0', '-i', os.path.
      '-vf', vf, '-r', '30', '-map', '0:v', '-map', '1:a', '-c:v', 'libx264', '-preset', 'slow', '-crf', '17', '-profile:v', 'high',
      '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-t', f'{SH.END:.3f}', '-movflags', '+faststart', final + '.tmp.mp4'])
 os.replace(final + '.tmp.mp4', final); print('ok', final, 'faltando:', len(missing))
+# versão leve (~6 Mbps) para baixar no celular: o app só mostra o botão de baixar em arquivos menores
+if os.path.getsize(final) > 80e6 and os.environ.get('LEVE', '1') == '1':
+    leve = final.replace('.mp4', '_leve.mp4'); x = ['-c:v', 'libx264', '-preset', 'slow', '-b:v', '6200k', '-maxrate', '9000k', '-bufsize', '12000k']
+    pl = os.path.join(OUT, 'ffpass')
+    run(['ffmpeg', '-y', '-v', 'error', '-i', final] + x + ['-pass', '1', '-passlogfile', pl, '-an', '-f', 'mp4', '/dev/null'])
+    run(['ffmpeg', '-y', '-v', 'error', '-i', final] + x + ['-pass', '2', '-passlogfile', pl, '-profile:v', 'high', '-pix_fmt', 'yuv420p',
+         '-movflags', '+faststart', '-c:a', 'copy', leve])
+    for f in os.listdir(OUT):
+        if f.startswith('ffpass'): os.remove(os.path.join(OUT, f))
+    print('leve', leve, round(os.path.getsize(leve) / 1e6), 'MB')
