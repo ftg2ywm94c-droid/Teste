@@ -16,11 +16,11 @@
   "channels": 2
  },
  "black_segments": 0,
- "freeze_segments": 4,
+ "freeze_segments": 0,
  "motion": {
-  "mean": 10.875,
+  "mean": 10.911,
   "min": 0.0,
-  "static_frames": 103
+  "static_frames": 14
  },
  "loudness_lufs": -14.0,
  "true_peak_dbfs": -1.1,
@@ -40,7 +40,7 @@
   "size_1080x1920": true,
   "fps30": true,
   "no_black": true,
-  "no_freeze": false,
+  "no_freeze": true,
   "no_unreadable": true,
   "loudness": true,
   "no_clipping": true,
@@ -49,5 +49,5 @@
   "captions_on_words": true,
   "no_collision": true
  },
- "pass": false
+ "pass": true
 }

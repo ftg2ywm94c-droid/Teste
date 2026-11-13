@@ -5,6 +5,19 @@
 - `scripts/add_narration.py`: MP3 → MP4 com legenda sincronizada, ducking e −14 LUFS.
 - Para recuperar: `git checkout be24c75 -- projeto_videos3d` (a tag não pôde ser enviada ao GitHub: o acesso desta sessão só permite o branch de trabalho).
 
+## v0.4 — vídeo 03 "E se você pulasse num buraco que atravessa a Terra?" entregue (2026-11-13)
+- Arquivo: `v2/ep03/out/03_buraco_atravessa_a_terra_1080x1920.mp4` (66,0 s, 1980 quadros, 30 fps, H.264 + AAC 48 kHz, 65 MB; fora do git por tamanho).
+- **Render nativo 720x1280** (Cycles, 6–9 amostras + OIDN), **ampliado para 1080x1920**. Não é render nativo em 1080x1920.
+- Narração original do usuário sem alteração de velocidade: atraso 0 ms, deriva 0 ms, correlação 0,995.
+- QC (`v2/ep03/qc_report_03.json`): todos os itens aprovados. Volume −14,0 LUFS, pico −1,1 dBTP, nenhum quadro preto ou congelado, erro da legenda 0,0 s.
+- Física (`v2/ep03/fisica.py`): queda pelo modelo PREM. Ida em 38 min 11 s, velocidade máxima de 35.700 km/h, gravidade de 10,7 m/s² na fronteira do núcleo.
+- Tempo de render: cerca de 9,5 h em CPU. O container reiniciou 3 vezes no meio, e o render retomou cada vez a partir dos quadros já salvos.
+- Texturas da Terra: Solar System Scope (CC BY 4.0).
+
+### Correções após o QC da v0.4
+- Plano J: a câmera ficava parada em 4 trechos (50,3–58,8 s). Ganhou deriva lenta no começo e aproximação final em Kola, e o plano inteiro foi refeito. Os quadros antigos estão em `v2/ep03/frames/_bak_J_v0/`.
+- A nota "tempo acelerado" (36,95–40,45 s) cobria o rótulo "38 min" e foi movida para a parte de baixo.
+
 ## v0.3 — vídeo 02 "E se a Terra parasse de girar" entregue (2026-11-12)
 - Arquivo: `v2/ep02/out/02_terra_parasse_de_girar_1080x1920.mp4` (76,5 s, 2295 quadros, 30 fps, H.264 + AAC 48 kHz, 135 MB; fora do git por tamanho).
 - **Render nativo 720x1280** (Cycles, 6–9 amostras + OIDN), **ampliado para 1080x1920**. Não é render nativo em 1080x1920.

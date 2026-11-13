@@ -7,7 +7,7 @@ def HUD(wt):
     return []
 def NOTES(wt):
     return [(16.35, 27.9, 'personagem e túnel fora de escala'),
-            (36.95, 40.45, 'tempo acelerado'),
+            (36.95, 40.45, 'tempo acelerado', r'\an2'),
             (40.55, 47.35, 'câmera lenta'),
             (47.45, 50.05, 'tempo acelerado'),
             (56.6, 58.75, 'crosta e poço em escala'),

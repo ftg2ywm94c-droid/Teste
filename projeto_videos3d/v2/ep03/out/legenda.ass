@@ -82,7 +82,7 @@ Dialogue: 1,0:01:02.96,0:01:03.66,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,
 Dialogue: 1,0:01:03.66,0:01:04.28,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}TE JOGARIA
 Dialogue: 1,0:01:04.28,0:01:05.12,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}CONTRA A PAREDE.
 Dialogue: 0,0:00:16.35,0:00:27.90,Nota,,0,0,0,,{\fad(200,200)}personagem e túnel fora de escala
-Dialogue: 0,0:00:36.95,0:00:40.45,Nota,,0,0,0,,{\fad(200,200)}tempo acelerado
+Dialogue: 0,0:00:36.95,0:00:40.45,Nota,,0,0,0,,{\fad(200,200)\an2}tempo acelerado
 Dialogue: 0,0:00:40.55,0:00:47.35,Nota,,0,0,0,,{\fad(200,200)}câmera lenta
 Dialogue: 0,0:00:47.45,0:00:50.05,Nota,,0,0,0,,{\fad(200,200)}tempo acelerado
 Dialogue: 0,0:00:56.60,0:00:58.75,Nota,,0,0,0,,{\fad(200,200)}crosta e poço em escala
