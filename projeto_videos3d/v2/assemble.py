@@ -7,7 +7,7 @@ HERE = os.path.dirname(os.path.abspath(__file__)); PROJ = os.path.dirname(HERE);
 EP = os.environ.get('EP')          # ex.: EP=02 usa v2/ep02 (planos, quadros, saída) e narracao/02_narracao.mp3
 if EP:
     BASE = os.path.join(HERE, f'ep{EP}'); sys.path.insert(0, BASE); import plan as SH
-    DEF_NAME = {'02': '02_terra_parasse_de_girar_1080x1920.mp4', '03': '03_buraco_atravessa_a_terra_1080x1920.mp4'}.get(EP, f'{EP}_1080x1920.mp4')
+    DEF_NAME = {'02': '02_terra_parasse_de_girar_1080x1920.mp4', '03': '03_buraco_atravessa_a_terra_1080x1920.mp4', '04': '04_oxigenio_sumisse_20s_1080x1920.mp4'}.get(EP, f'{EP}_1080x1920.mp4')
 else:
     BASE = HERE; import shots as SH
     DEF_NAME = '01_distancia_de_parada_1080x1920.mp4'
