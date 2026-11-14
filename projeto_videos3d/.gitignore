@@ -46,3 +46,5 @@ v2/ep07/build/
 v2/ep07/out/*.wav
 v2/ep07/out/*.mp4
 v2/ep07/out/frames.txt
+v2/ep07/out/contact_sheet.jpg
+v2/ep07/out/qc_report.json
