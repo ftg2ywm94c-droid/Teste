@@ -1,6 +1,6 @@
 # Vídeo 07 — E se um furacão chegasse na Avenida Paulista?
 
-Status: **aguardando aprovação do roteiro**. Primeiro roteiro no formato do `GUIA_ROTEIRO.md` (choque, promessa, escalada, virada, final em loop).
+Status: **aprovado; narração recebida (narracao/07_narracao.mp3, 63,7 s, voz Adam)**. Primeiro roteiro no formato do `GUIA_ROTEIRO.md` (choque, promessa, escalada, virada, final em loop).
 
 Duração estimada: cerca de 68–72 s (162 palavras, números por extenso).
 
