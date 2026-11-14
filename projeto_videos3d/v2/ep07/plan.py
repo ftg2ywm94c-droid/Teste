@@ -146,3 +146,11 @@ H1.labels = [('prox', 'próximo: e se...?', YEL, 1.4, 61.70, 99, follow(H1, 30.0
 BY_NAME = {s.name: s for s in SHOTS}
 for a, b in zip(SHOTS, SHOTS[1:]): assert abs(a.t1 - b.t0) < 1e-6, (a.name, b.name)
 assert SHOTS[0].t0 == 0.0 and abs(SHOTS[-1].t1 - END) < 1e-6
+
+# ---- thumbnail (só existe com THUMB=1; não entra em SHOTS nem no vídeo)
+if os.environ.get('THUMB'):
+    TH = Shot('THUMB', 1.0, 2.0, 'paulista', 'thumbnail: tempestade na Paulista, raio e destroços')
+    _tc = [float(v) for v in os.environ.get('THUMB_CAM', '-6.0,-5.0,1.3,70.0,1.0,12.0,22').split(',')]
+    TH.cam = cam([(1.0, tuple(_tc[0:3])), (2.0, tuple(_tc[0:3]))], [(1.0, tuple(_tc[3:6])), (2.0, tuple(_tc[3:6]))], _tc[6])
+    TH.wind = 1.0; TH.rain = 1.0; TH.debris = float(os.environ.get('THUMB_DEB', '1.0')); TH.flash = (float(os.environ.get('THUMB_FLASH', '1.5')),)
+    BY_NAME['THUMB'] = TH
