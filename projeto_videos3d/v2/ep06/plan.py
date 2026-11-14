@@ -166,3 +166,15 @@ G3.labels = [('morcego', 'morcegos', WHITE, 0.25, 72.42, 99, lambda T: (17.6, 4.
 BY_NAME = {s.name: s for s in SHOTS}
 for a, b in zip(SHOTS, SHOTS[1:]): assert abs(a.t1 - b.t0) < 1e-6, (a.name, b.name)
 assert SHOTS[0].t0 == 0.0 and abs(SHOTS[-1].t1 - END) < 1e-6
+
+# ---- thumbnail (só existe com THUMB=1; não entra em SHOTS nem no vídeo)
+if os.environ.get('THUMB'):
+    TH = Shot('THUMB', 19.0, 20.1, 'cidade', 'thumbnail: horda chegando, Téo em primeiro plano')
+    _tc = [float(v) for v in os.environ.get('THUMB_CAM', '12.6,0.9,0.5,24.0,0.3,1.7,24').split(',')]
+    TH.cam = cam([(19.0, tuple(_tc[0:3])), (20.1, tuple(_tc[0:3]))], [(19.0, tuple(_tc[3:6])), (20.1, tuple(_tc[3:6]))], _tc[6])
+    TH.teo = 'alarm'; TH.teo_pos = tuple(float(v) for v in os.environ.get('THUMB_TEO', '14.6,-0.4,0.0').split(','))
+    TH.teo_rot = float(os.environ.get('THUMB_TEOROT', '-70')); TH.zoff = float(os.environ.get('THUMB_ZOFF', '22')); TH.nz = 12
+    TH.zlayout = [(17.0, -0.5), (17.8, 2.1), (19.6, 0.4), (20.6, -1.7), (21.6, 2.7), (23.4, -0.4), (25.0, 1.4), (26.8, -2.1), (28.6, 0.7), (31.0, 2.3), (33.0, -1.1), (36.0, 0.5)]
+    _sn = [float(v) for v in os.environ.get('THUMB_SUN', '7,5.0,1.0,0.42,0.12,0.10').split(',')]
+    TH.sun = (_sn[0], _sn[1], tuple(_sn[2:5]), _sn[5]); TH.sun_az = float(os.environ.get('THUMB_SUNAZ', '12'))
+    BY_NAME['THUMB'] = TH

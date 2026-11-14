@@ -115,8 +115,12 @@ items = {}; events = dict(shot=shot.name, fps=P.FPS, frames=[])
 C6 = B.new_coll('Ep06')
 # ================================================================== cenários
 if K in ('rua', 'cidade'):
-    R = SC.build_cidade(abandoned=(K == 'cidade')); items.update(R)
+    R = SC.build_cidade(abandoned=(K == 'cidade'), n_zombies=getattr(shot, 'nz', 6)); items.update(R)
     teo = B.build_character('Teo', B.TEO, B.new_coll('TeoCol')); items['teo'] = teo
+    for zd, (zx, zy) in zip(items.get('zombies', []), getattr(shot, 'zlayout', [])): zd['x0'], zd['y0'] = zx, zy
+    if hasattr(shot, 'sun'):
+        el, en, col, wst = shot.sun; sun_ = bpy.data.objects['Sol']; sun_.data.energy = en; sun_.data.color = col
+        sun_.rotation_euler = (0, math.radians(90 - el), math.radians(getattr(shot, 'sun_az', 0.0))); bpy.context.scene.world.node_tree.nodes['Background'].inputs[1].default_value = wst
     if not hasattr(shot, 'teo'):
         for o in teo['root'].children_recursive + [teo['root']]: o.hide_render = True
     car = R['car']
@@ -262,14 +266,14 @@ def walk_pose(teo, f, T):
               'upper_arm.L': (22 * s, 0, -8), 'upper_arm.R': (-22 * s, 0, 8), 'forearm.L': (-18, 0, 0), 'forearm.R': (-18, 0, 0)})
 def teo_anim(mode, teo, f, T):
     r = teo['root']; br = math.sin(T * 1.7); lt = T - shot.t0
-    r.location = P.TEO; r.rotation_euler = (0, 0, 0)
+    r.location = getattr(shot, 'teo_pos', P.TEO); r.rotation_euler = (0, 0, 0)
     arms0 = {'upper_arm.L': (0, 0, -7), 'upper_arm.R': (0, 0, 7), 'forearm.L': (-12, 0, 0), 'forearm.R': (-12, 0, 0)}
     if mode == 'idle':
         B.pose(teo, frame=f, spine=(1.5 * br, 0, 0), head=(-2, 0, 14 * math.sin(T * 0.6)), **arms0); B.set_face(teo, {'neutral': 1.0}, f)
     elif mode == 'alarm':
         k = sstep(0.1, 0.5, lt); r.rotation_euler = (0, 0, math.radians(-25 * k))
         B.pose(teo, frame=f, spine=(-5 * k, 0, 0), head=(-8 * k, 0, -20 * k), **{'upper_arm.L': (-30 * k, 0, -7 - 20 * k), 'upper_arm.R': (-30 * k, 0, 7 + 20 * k), 'forearm.L': (-12 - 40 * k, 0, 0), 'forearm.R': (-12 - 40 * k, 0, 0)})
-        B.set_face(teo, {'alarm': k, 'neutral': 1 - k}, f)
+        B.set_face(teo, {'alarm': k, 'neutral': 1 - k}, f); r.rotation_euler.z += math.radians(getattr(shot, 'teo_rot', 0.0))
     elif mode == 'relief':
         B.pose(teo, frame=f, spine=(1.5 * br, 0, 0), head=(-4, 0, 8 * math.sin(T * 0.8)), **arms0); B.set_face(teo, {'relief': 1.0}, f)
     elif mode == 'wave':
@@ -284,7 +288,7 @@ for f in fr:
     T = f / P.FPS; ev = dict(f=f, T=round(T, 4)); lt = T - shot.t0
     if K in ('rua', 'cidade'):
         if hasattr(shot, 'teo'): teo_anim(shot.teo, items['teo'], f, T); key(items['teo']['root'], 'location', 'rotation_euler', f=f)
-        for zd in items.get('zombies', []): SC.zombie_pose(zd, f, lt + 2.0)
+        for zd in items.get('zombies', []): SC.zombie_pose(zd, f, lt + getattr(shot, 'zoff', 2.0))
         if 'dog' in items: SC.dog_anim(items['dog'], f, T, shot.dog[0])
         if 'bat' in items:
             b_ = items['bat']; u = lt / (shot.t1 - shot.t0)
