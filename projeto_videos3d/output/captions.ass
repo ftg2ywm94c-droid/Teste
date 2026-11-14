@@ -1,0 +1,27 @@
+[Script Info]
+; Tempos ESTIMADOS a partir do roteiro: não há narração gravada nesta prova (sem TTS pt-BR no ambiente).
+; Com edge-tts, substituir por tempos de palavra reais (WordBoundary) antes do corte final.
+ScriptType: v4.00+
+PlayResX: 540
+PlayResY: 960
+WrapStyle: 2
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: W,Poppins,62,&H00FFFFFF,&H00FFFFFF,&H00000000,&H96000000,-1,0,0,0,100,100,0,0,1,5,2,2,40,40,240,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.30,0:00:00.62,W,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}Todo
+Dialogue: 0,0:00:00.62,0:00:01.00,W,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}dia,
+Dialogue: 0,0:00:01.00,0:00:01.45,W,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}o Téo
+Dialogue: 0,0:00:01.45,0:00:01.75,W,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}faz
+Dialogue: 0,0:00:01.75,0:00:02.20,W,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}o mesmo
+Dialogue: 0,0:00:02.20,0:00:02.90,W,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}caminho.
+Dialogue: 0,0:00:03.50,0:00:03.90,W,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}Mas
+Dialogue: 0,0:00:03.90,0:00:04.70,W,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}hoje…
+Dialogue: 0,0:00:05.20,0:00:05.75,W,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}um carro
+Dialogue: 0,0:00:05.75,0:00:06.15,W,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}vinha
+Dialogue: 0,0:00:06.15,0:00:06.65,W,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}rápido
+Dialogue: 0,0:00:06.65,0:00:07.40,W,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}demais.
+Dialogue: 0,0:00:08.75,0:00:09.70,W,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}Ufa!

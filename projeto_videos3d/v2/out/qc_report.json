@@ -1,0 +1,56 @@
+{
+ "file": "v2/out/01_distancia_de_parada_1080x1920.mp4",
+ "duration": 68.0,
+ "video": {
+  "codec": "h264",
+  "w": 1080,
+  "h": 1920,
+  "fps": "30/1",
+  "frames": 2040,
+  "pix_fmt": "yuv420p",
+  "unreadable": 0
+ },
+ "audio": {
+  "codec": "aac",
+  "sample_rate": "48000",
+  "channels": 2
+ },
+ "black_segments": 0,
+ "freeze_segments": 0,
+ "motion": {
+  "mean": 5.703,
+  "min": 0.0729,
+  "static_frames": 0
+ },
+ "loudness_lufs": -13.9,
+ "true_peak_dbfs": -1.4,
+ "narration": {
+  "lag_ms": 0,
+  "drift_ms": 0,
+  "envelope_corr": 0.991
+ },
+ "caption_start_max_err_s": 0.0,
+ "collision_min_gap_m": {
+  "kid": 1.28,
+  "ball": 4.04
+ },
+ "render_resolution": "720x1280 (ampliado para 1080x1920)",
+ "checks": {
+  "duration": true,
+  "frames": true,
+  "h264": true,
+  "aac": true,
+  "size_1080x1920": true,
+  "fps30": true,
+  "no_black": true,
+  "no_freeze": true,
+  "no_unreadable": true,
+  "loudness": true,
+  "no_clipping": true,
+  "narration_aligned": true,
+  "narration_present": true,
+  "captions_on_words": true,
+  "no_collision": true
+ },
+ "pass": true
+}

@@ -1,0 +1,1426 @@
+{
+"diffs": [
+[
+"replace",
+"em gente",
+"engente,"
+],
+[
+"replace",
+"trinta",
+"30"
+],
+[
+"replace",
+"trinta e sete.",
+"37."
+],
+[
+"replace",
+"\"e se\".",
+"ICI."
+]
+],
+"words": [
+{
+"w": "E",
+"s": 0.0,
+"e": 0.24,
+"key": false
+},
+{
+"w": "se",
+"s": 0.24,
+"e": 0.5,
+"key": false
+},
+{
+"w": "começasse",
+"s": 0.5,
+"e": 1.16,
+"key": false
+},
+{
+"w": "um",
+"s": 1.16,
+"e": 1.44,
+"key": false
+},
+{
+"w": "apocalipse",
+"s": 1.44,
+"e": 2.08,
+"key": true
+},
+{
+"w": "zumbi",
+"s": 2.08,
+"e": 2.46,
+"key": true
+},
+{
+"w": "no",
+"s": 2.46,
+"e": 2.62,
+"key": false
+},
+{
+"w": "Brasil?",
+"s": 2.62,
+"e": 3.1,
+"key": false
+},
+{
+"w": "Antes",
+"s": 4.18,
+"e": 4.32,
+"key": false
+},
+{
+"w": "de",
+"s": 4.32,
+"e": 4.48,
+"key": false
+},
+{
+"w": "correr,",
+"s": 4.48,
+"e": 4.88,
+"key": false
+},
+{
+"w": "uma",
+"s": 5.1,
+"e": 5.2,
+"key": false
+},
+{
+"w": "notícia:",
+"s": 5.2,
+"e": 5.74,
+"key": false
+},
+{
+"w": "o",
+"s": 6.16,
+"e": 6.38,
+"key": true
+},
+{
+"w": "fungo",
+"s": 6.38,
+"e": 6.72,
+"key": true
+},
+{
+"w": "zumbi",
+"s": 6.72,
+"e": 7.24,
+"key": true
+},
+{
+"w": "existe.",
+"s": 7.24,
+"e": 7.72,
+"key": true
+},
+{
+"w": "E",
+"s": 8.4,
+"e": 8.44,
+"key": false
+},
+{
+"w": "foi",
+"s": 8.44,
+"e": 8.68,
+"key": false
+},
+{
+"w": "achado",
+"s": 8.68,
+"e": 8.98,
+"key": false
+},
+{
+"w": "aqui.",
+"s": 8.98,
+"e": 9.38,
+"key": false
+},
+{
+"w": "Na",
+"s": 10.16,
+"e": 10.32,
+"key": false
+},
+{
+"w": "Mata",
+"s": 10.32,
+"e": 10.62,
+"key": false
+},
+{
+"w": "Atlântica",
+"s": 10.62,
+"e": 11.08,
+"key": false
+},
+{
+"w": "de",
+"s": 11.22,
+"e": 11.24,
+"key": false
+},
+{
+"w": "Minas",
+"s": 11.24,
+"e": 11.5,
+"key": false
+},
+{
+"w": "Gerais,",
+"s": 11.5,
+"e": 12.08,
+"key": false
+},
+{
+"w": "cientistas",
+"s": 12.38,
+"e": 12.84,
+"key": false
+},
+{
+"w": "descreveram",
+"s": 12.84,
+"e": 13.5,
+"key": false
+},
+{
+"w": "quatro",
+"s": 13.5,
+"e": 13.94,
+"key": true
+},
+{
+"w": "espécies",
+"s": 13.94,
+"e": 14.38,
+"key": true
+},
+{
+"w": "de",
+"s": 14.38,
+"e": 14.68,
+"key": false
+},
+{
+"w": "fungo",
+"s": 14.68,
+"e": 14.92,
+"key": false
+},
+{
+"w": "que",
+"s": 14.92,
+"e": 15.28,
+"key": false
+},
+{
+"w": "controlam",
+"s": 15.28,
+"e": 15.56,
+"key": true
+},
+{
+"w": "formigas.",
+"s": 15.56,
+"e": 16.36,
+"key": true
+},
+{
+"w": "A",
+"s": 16.98,
+"e": 17.14,
+"key": false
+},
+{
+"w": "formiga",
+"s": 17.14,
+"e": 17.42,
+"key": false
+},
+{
+"w": "infectada",
+"s": 17.42,
+"e": 18.04,
+"key": false
+},
+{
+"w": "sobe",
+"s": 18.04,
+"e": 18.24,
+"key": false
+},
+{
+"w": "numa",
+"s": 18.24,
+"e": 18.46,
+"key": false
+},
+{
+"w": "planta,",
+"s": 18.46,
+"e": 19.18,
+"key": false
+},
+{
+"w": "morde",
+"s": 19.4,
+"e": 19.58,
+"key": false
+},
+{
+"w": "uma",
+"s": 19.58,
+"e": 19.88,
+"key": false
+},
+{
+"w": "folha",
+"s": 19.88,
+"e": 20.26,
+"key": false
+},
+{
+"w": "e",
+"s": 20.26,
+"e": 20.46,
+"key": false
+},
+{
+"w": "morre",
+"s": 20.46,
+"e": 20.74,
+"key": false
+},
+{
+"w": "ali.",
+"s": 20.74,
+"e": 21.0,
+"key": false
+},
+{
+"w": "Do",
+"s": 21.82,
+"e": 21.96,
+"key": false
+},
+{
+"w": "corpo",
+"s": 21.96,
+"e": 22.24,
+"key": false
+},
+{
+"w": "dela,",
+"s": 22.24,
+"e": 22.62,
+"key": false
+},
+{
+"w": "o",
+"s": 22.96,
+"e": 23.1,
+"key": false
+},
+{
+"w": "fungo",
+"s": 23.1,
+"e": 23.34,
+"key": false
+},
+{
+"w": "cresce",
+"s": 23.34,
+"e": 23.86,
+"key": false
+},
+{
+"w": "e",
+"s": 23.86,
+"e": 24.1,
+"key": false
+},
+{
+"w": "solta",
+"s": 24.1,
+"e": 24.36,
+"key": false
+},
+{
+"w": "esporos.",
+"s": 24.36,
+"e": 25.14,
+"key": false
+},
+{
+"w": "Mas",
+"s": 25.52,
+"e": 25.72,
+"key": false
+},
+{
+"w": "em",
+"s": 25.72,
+"e": 26.36,
+"key": false
+},
+{
+"w": "gente",
+"s": 26.36,
+"e": 26.36,
+"key": false
+},
+{
+"w": "ele",
+"s": 26.36,
+"e": 26.58,
+"key": false
+},
+{
+"w": "não",
+"s": 26.58,
+"e": 26.8,
+"key": true
+},
+{
+"w": "pega.",
+"s": 26.8,
+"e": 27.08,
+"key": true
+},
+{
+"w": "Quase",
+"s": 27.94,
+"e": 28.46,
+"key": false
+},
+{
+"w": "todo",
+"s": 28.46,
+"e": 28.7,
+"key": false
+},
+{
+"w": "fungo",
+"s": 28.7,
+"e": 29.0,
+"key": false
+},
+{
+"w": "cresce",
+"s": 29.0,
+"e": 29.4,
+"key": false
+},
+{
+"w": "mal",
+"s": 29.4,
+"e": 29.7,
+"key": false
+},
+{
+"w": "acima",
+"s": 29.7,
+"e": 30.06,
+"key": false
+},
+{
+"w": "de",
+"s": 30.06,
+"e": 30.26,
+"key": false
+},
+{
+"w": "trinta",
+"s": 30.26,
+"e": 30.48,
+"key": false
+},
+{
+"w": "graus,",
+"s": 30.48,
+"e": 31.12,
+"key": false
+},
+{
+"w": "e",
+"s": 31.3,
+"e": 31.4,
+"key": false
+},
+{
+"w": "o",
+"s": 31.4,
+"e": 31.5,
+"key": false
+},
+{
+"w": "nosso",
+"s": 31.5,
+"e": 31.7,
+"key": false
+},
+{
+"w": "corpo",
+"s": 31.7,
+"e": 32.04,
+"key": false
+},
+{
+"w": "fica",
+"s": 32.04,
+"e": 32.28,
+"key": false
+},
+{
+"w": "em",
+"s": 32.28,
+"e": 32.48,
+"key": false
+},
+{
+"w": "trinta",
+"s": 32.48,
+"e": 33.96,
+"key": true
+},
+{
+"w": "e",
+"s": 33.96,
+"e": 33.96,
+"key": true
+},
+{
+"w": "sete.",
+"s": 33.96,
+"e": 33.96,
+"key": true
+},
+{
+"w": "O",
+"s": 33.96,
+"e": 34.14,
+"key": false
+},
+{
+"w": "calor",
+"s": 34.14,
+"e": 34.36,
+"key": false
+},
+{
+"w": "do",
+"s": 34.36,
+"e": 34.58,
+"key": false
+},
+{
+"w": "corpo",
+"s": 34.58,
+"e": 34.82,
+"key": false
+},
+{
+"w": "é",
+"s": 34.82,
+"e": 34.96,
+"key": false
+},
+{
+"w": "um",
+"s": 34.96,
+"e": 35.2,
+"key": true
+},
+{
+"w": "escudo.",
+"s": 35.2,
+"e": 35.7,
+"key": true
+},
+{
+"w": "E",
+"s": 36.38,
+"e": 36.48,
+"key": false
+},
+{
+"w": "o",
+"s": 36.48,
+"e": 36.6,
+"key": false
+},
+{
+"w": "vírus?",
+"s": 36.6,
+"e": 37.4,
+"key": false
+},
+{
+"w": "A",
+"s": 37.88,
+"e": 38.16,
+"key": true
+},
+{
+"w": "raiva",
+"s": 38.16,
+"e": 38.48,
+"key": true
+},
+{
+"w": "é",
+"s": 38.48,
+"e": 38.64,
+"key": false
+},
+{
+"w": "o",
+"s": 38.64,
+"e": 38.76,
+"key": false
+},
+{
+"w": "mais",
+"s": 38.76,
+"e": 39.02,
+"key": false
+},
+{
+"w": "perto",
+"s": 39.02,
+"e": 39.3,
+"key": false
+},
+{
+"w": "disso:",
+"s": 39.3,
+"e": 39.78,
+"key": false
+},
+{
+"w": "passa",
+"s": 40.3,
+"e": 40.58,
+"key": false
+},
+{
+"w": "pela",
+"s": 40.58,
+"e": 40.76,
+"key": false
+},
+{
+"w": "mordida",
+"s": 40.76,
+"e": 41.36,
+"key": false
+},
+{
+"w": "e",
+"s": 41.36,
+"e": 41.56,
+"key": false
+},
+{
+"w": "pode",
+"s": 41.56,
+"e": 41.8,
+"key": false
+},
+{
+"w": "deixar",
+"s": 41.8,
+"e": 42.1,
+"key": false
+},
+{
+"w": "o",
+"s": 42.1,
+"e": 42.28,
+"key": false
+},
+{
+"w": "animal",
+"s": 42.28,
+"e": 42.54,
+"key": false
+},
+{
+"w": "agressivo.",
+"s": 42.54,
+"e": 43.46,
+"key": false
+},
+{
+"w": "Só",
+"s": 43.92,
+"e": 44.08,
+"key": false
+},
+{
+"w": "que",
+"s": 44.08,
+"e": 44.24,
+"key": false
+},
+{
+"w": "leva",
+"s": 44.24,
+"e": 44.4,
+"key": false
+},
+{
+"w": "semanas",
+"s": 44.4,
+"e": 44.92,
+"key": true
+},
+{
+"w": "para",
+"s": 44.92,
+"e": 45.2,
+"key": false
+},
+{
+"w": "agir,",
+"s": 45.2,
+"e": 45.78,
+"key": false
+},
+{
+"w": "não",
+"s": 45.84,
+"e": 46.06,
+"key": false
+},
+{
+"w": "segundos.",
+"s": 46.06,
+"e": 46.56,
+"key": false
+},
+{
+"w": "Segue",
+"s": 47.82,
+"e": 48.0,
+"key": false
+},
+{
+"w": "o",
+"s": 48.0,
+"e": 48.16,
+"key": false
+},
+{
+"w": "perfil",
+"s": 48.16,
+"e": 48.4,
+"key": false
+},
+{
+"w": "para",
+"s": 48.4,
+"e": 48.58,
+"key": false
+},
+{
+"w": "o",
+"s": 48.58,
+"e": 48.74,
+"key": false
+},
+{
+"w": "próximo",
+"s": 48.74,
+"e": 49.12,
+"key": false
+},
+{
+"w": "\"e",
+"s": 49.12,
+"e": 50.44,
+"key": false
+},
+{
+"w": "se\".",
+"s": 50.44,
+"e": 50.44,
+"key": false
+},
+{
+"w": "E",
+"s": 50.44,
+"e": 50.64,
+"key": false
+},
+{
+"w": "se",
+"s": 50.64,
+"e": 50.8,
+"key": false
+},
+{
+"w": "mesmo",
+"s": 50.8,
+"e": 51.06,
+"key": false
+},
+{
+"w": "assim",
+"s": 51.06,
+"e": 51.32,
+"key": false
+},
+{
+"w": "acontecesse?",
+"s": 51.32,
+"e": 52.46,
+"key": false
+},
+{
+"w": "Matemáticos",
+"s": 53.12,
+"e": 53.64,
+"key": false
+},
+{
+"w": "já",
+"s": 53.64,
+"e": 53.84,
+"key": false
+},
+{
+"w": "simularam",
+"s": 53.84,
+"e": 54.38,
+"key": false
+},
+{
+"w": "um",
+"s": 54.38,
+"e": 54.6,
+"key": false
+},
+{
+"w": "surto",
+"s": 54.6,
+"e": 54.92,
+"key": false
+},
+{
+"w": "zumbi.",
+"s": 54.92,
+"e": 55.72,
+"key": false
+},
+{
+"w": "A",
+"s": 56.08,
+"e": 56.32,
+"key": false
+},
+{
+"w": "conclusão:",
+"s": 56.32,
+"e": 56.76,
+"key": false
+},
+{
+"w": "esperar",
+"s": 57.08,
+"e": 57.92,
+"key": true
+},
+{
+"w": "é",
+"s": 57.92,
+"e": 58.08,
+"key": true
+},
+{
+"w": "o",
+"s": 58.08,
+"e": 58.22,
+"key": true
+},
+{
+"w": "pior",
+"s": 58.22,
+"e": 58.52,
+"key": true
+},
+{
+"w": "plano.",
+"s": 58.52,
+"e": 58.84,
+"key": true
+},
+{
+"w": "Só",
+"s": 59.8,
+"e": 59.96,
+"key": false
+},
+{
+"w": "agir",
+"s": 59.96,
+"e": 60.24,
+"key": true
+},
+{
+"w": "rápido,",
+"s": 60.24,
+"e": 60.64,
+"key": true
+},
+{
+"w": "e",
+"s": 60.64,
+"e": 61.02,
+"key": false
+},
+{
+"w": "várias",
+"s": 61.02,
+"e": 61.38,
+"key": false
+},
+{
+"w": "vezes,",
+"s": 61.38,
+"e": 61.96,
+"key": false
+},
+{
+"w": "segura",
+"s": 61.96,
+"e": 62.34,
+"key": false
+},
+{
+"w": "o",
+"s": 62.34,
+"e": 62.52,
+"key": false
+},
+{
+"w": "surto.",
+"s": 62.52,
+"e": 63.28,
+"key": false
+},
+{
+"w": "Então,",
+"s": 63.82,
+"e": 64.14,
+"key": false
+},
+{
+"w": "o",
+"s": 64.68,
+"e": 64.86,
+"key": true
+},
+{
+"w": "fungo",
+"s": 64.86,
+"e": 65.08,
+"key": true
+},
+{
+"w": "zumbi",
+"s": 65.08,
+"e": 65.48,
+"key": true
+},
+{
+"w": "existe,",
+"s": 65.48,
+"e": 65.9,
+"key": true
+},
+{
+"w": "mas",
+"s": 66.32,
+"e": 66.52,
+"key": false
+},
+{
+"w": "só",
+"s": 66.52,
+"e": 66.74,
+"key": true
+},
+{
+"w": "para",
+"s": 66.74,
+"e": 66.9,
+"key": true
+},
+{
+"w": "formigas.",
+"s": 66.9,
+"e": 67.62,
+"key": true
+},
+{
+"w": "Para",
+"s": 68.3,
+"e": 68.5,
+"key": false
+},
+{
+"w": "nós,",
+"s": 68.5,
+"e": 68.92,
+"key": false
+},
+{
+"w": "o",
+"s": 69.24,
+"e": 69.38,
+"key": false
+},
+{
+"w": "perigo",
+"s": 69.38,
+"e": 69.62,
+"key": false
+},
+{
+"w": "real",
+"s": 69.62,
+"e": 69.9,
+"key": false
+},
+{
+"w": "continua",
+"s": 69.9,
+"e": 70.36,
+"key": false
+},
+{
+"w": "sendo",
+"s": 70.36,
+"e": 70.64,
+"key": false
+},
+{
+"w": "a",
+"s": 70.64,
+"e": 70.84,
+"key": true
+},
+{
+"w": "raiva,",
+"s": 70.84,
+"e": 71.18,
+"key": true
+},
+{
+"w": "que",
+"s": 71.56,
+"e": 71.68,
+"key": false
+},
+{
+"w": "ainda",
+"s": 71.68,
+"e": 71.92,
+"key": false
+},
+{
+"w": "passa",
+"s": 71.92,
+"e": 72.18,
+"key": false
+},
+{
+"w": "por",
+"s": 72.18,
+"e": 72.42,
+"key": false
+},
+{
+"w": "morcegos",
+"s": 72.42,
+"e": 72.96,
+"key": false
+},
+{
+"w": "e",
+"s": 72.96,
+"e": 73.2,
+"key": false
+},
+{
+"w": "cães",
+"s": 73.2,
+"e": 73.5,
+"key": false
+},
+{
+"w": "sem",
+"s": 73.5,
+"e": 73.7,
+"key": true
+},
+{
+"w": "vacina.",
+"s": 73.7,
+"e": 74.08,
+"key": true
+}
+],
+"chunks": [
+{
+"s": 0.0,
+"e": 1.16,
+"t": "E SE COMEÇASSE"
+},
+{
+"s": 1.16,
+"e": 2.46,
+"t": "UM {\\c&H0028D7FF&}APOCALIPSE{\\c&HFFFFFF&} {\\c&H0028D7FF&}ZUMBI{\\c&HFFFFFF&}"
+},
+{
+"s": 2.46,
+"e": 3.1,
+"t": "NO BRASIL?"
+},
+{
+"s": 4.18,
+"e": 4.88,
+"t": "ANTES DE CORRER,"
+},
+{
+"s": 5.1,
+"e": 5.74,
+"t": "UMA NOTÍCIA:"
+},
+{
+"s": 6.16,
+"e": 6.72,
+"t": "{\\c&H0028D7FF&}O{\\c&HFFFFFF&} {\\c&H0028D7FF&}FUNGO{\\c&HFFFFFF&}"
+},
+{
+"s": 6.72,
+"e": 7.72,
+"t": "{\\c&H0028D7FF&}ZUMBI{\\c&HFFFFFF&} {\\c&H0028D7FF&}EXISTE.{\\c&HFFFFFF&}"
+},
+{
+"s": 8.4,
+"e": 8.98,
+"t": "E FOI ACHADO"
+},
+{
+"s": 8.98,
+"e": 9.38,
+"t": "AQUI."
+},
+{
+"s": 10.16,
+"e": 10.62,
+"t": "NA MATA"
+},
+{
+"s": 10.62,
+"e": 11.22,
+"t": "ATLÂNTICA"
+},
+{
+"s": 11.22,
+"e": 12.08,
+"t": "DE MINAS GERAIS,"
+},
+{
+"s": 12.38,
+"e": 12.84,
+"t": "CIENTISTAS"
+},
+{
+"s": 12.84,
+"e": 13.5,
+"t": "DESCREVERAM"
+},
+{
+"s": 13.5,
+"e": 14.92,
+"t": "{\\c&H0028D7FF&}QUATRO{\\c&HFFFFFF&} {\\c&H0028D7FF&}ESPÉCIES{\\c&HFFFFFF&} DE FUNGO"
+},
+{
+"s": 14.92,
+"e": 16.36,
+"t": "QUE {\\c&H0028D7FF&}CONTROLAM{\\c&HFFFFFF&} {\\c&H0028D7FF&}FORMIGAS.{\\c&HFFFFFF&}"
+},
+{
+"s": 16.98,
+"e": 17.42,
+"t": "A FORMIGA"
+},
+{
+"s": 17.42,
+"e": 18.24,
+"t": "INFECTADA SOBE"
+},
+{
+"s": 18.24,
+"e": 19.18,
+"t": "NUMA PLANTA,"
+},
+{
+"s": 19.4,
+"e": 20.26,
+"t": "MORDE UMA FOLHA"
+},
+{
+"s": 20.26,
+"e": 21.0,
+"t": "E MORRE ALI."
+},
+{
+"s": 21.82,
+"e": 22.62,
+"t": "DO CORPO DELA,"
+},
+{
+"s": 22.96,
+"e": 23.86,
+"t": "O FUNGO CRESCE"
+},
+{
+"s": 23.86,
+"e": 25.14,
+"t": "E SOLTA ESPOROS."
+},
+{
+"s": 25.52,
+"e": 26.36,
+"t": "MAS EM GENTE"
+},
+{
+"s": 26.36,
+"e": 27.08,
+"t": "ELE {\\c&H0028D7FF&}NÃO{\\c&HFFFFFF&} {\\c&H0028D7FF&}PEGA.{\\c&HFFFFFF&}"
+},
+{
+"s": 27.94,
+"e": 29.0,
+"t": "QUASE TODO FUNGO"
+},
+{
+"s": 29.0,
+"e": 30.06,
+"t": "CRESCE MAL ACIMA"
+},
+{
+"s": 30.06,
+"e": 31.12,
+"t": "DE TRINTA GRAUS,"
+},
+{
+"s": 31.3,
+"e": 32.04,
+"t": "E O NOSSO CORPO"
+},
+{
+"s": 32.04,
+"e": 33.96,
+"t": "FICA EM {\\c&H0028D7FF&}TRINTA{\\c&HFFFFFF&} {\\c&H0028D7FF&}E{\\c&HFFFFFF&} {\\c&H0028D7FF&}SETE.{\\c&HFFFFFF&}"
+},
+{
+"s": 33.96,
+"e": 34.82,
+"t": "O CALOR DO CORPO"
+},
+{
+"s": 34.82,
+"e": 35.7,
+"t": "É {\\c&H0028D7FF&}UM{\\c&HFFFFFF&} {\\c&H0028D7FF&}ESCUDO.{\\c&HFFFFFF&}"
+},
+{
+"s": 36.38,
+"e": 37.4,
+"t": "E O VÍRUS?"
+},
+{
+"s": 37.88,
+"e": 39.02,
+"t": "{\\c&H0028D7FF&}A{\\c&HFFFFFF&} {\\c&H0028D7FF&}RAIVA{\\c&HFFFFFF&} É O MAIS"
+},
+{
+"s": 39.02,
+"e": 39.78,
+"t": "PERTO DISSO:"
+},
+{
+"s": 40.3,
+"e": 40.76,
+"t": "PASSA PELA"
+},
+{
+"s": 40.76,
+"e": 41.8,
+"t": "MORDIDA E PODE"
+},
+{
+"s": 41.8,
+"e": 42.54,
+"t": "DEIXAR O ANIMAL"
+},
+{
+"s": 42.54,
+"e": 43.44,
+"t": "AGRESSIVO."
+},
+{
+"s": 43.92,
+"e": 44.4,
+"t": "SÓ QUE LEVA"
+},
+{
+"s": 44.4,
+"e": 45.84,
+"t": "{\\c&H0028D7FF&}SEMANAS{\\c&HFFFFFF&} PARA AGIR,"
+},
+{
+"s": 45.84,
+"e": 46.56,
+"t": "NÃO SEGUNDOS."
+},
+{
+"s": 47.82,
+"e": 48.4,
+"t": "SEGUE O PERFIL"
+},
+{
+"s": 48.4,
+"e": 49.12,
+"t": "PARA O PRÓXIMO"
+},
+{
+"s": 49.12,
+"e": 50.44,
+"t": "\"E SE\"."
+},
+{
+"s": 50.44,
+"e": 51.32,
+"t": "E SE MESMO ASSIM"
+},
+{
+"s": 51.32,
+"e": 52.22,
+"t": "ACONTECESSE?"
+},
+{
+"s": 53.12,
+"e": 53.64,
+"t": "MATEMÁTICOS"
+},
+{
+"s": 53.64,
+"e": 54.38,
+"t": "JÁ SIMULARAM"
+},
+{
+"s": 54.38,
+"e": 55.72,
+"t": "UM SURTO ZUMBI."
+},
+{
+"s": 56.08,
+"e": 56.76,
+"t": "A CONCLUSÃO:"
+},
+{
+"s": 57.08,
+"e": 58.08,
+"t": "{\\c&H0028D7FF&}ESPERAR{\\c&HFFFFFF&} {\\c&H0028D7FF&}É{\\c&HFFFFFF&}"
+},
+{
+"s": 58.08,
+"e": 58.84,
+"t": "{\\c&H0028D7FF&}O{\\c&HFFFFFF&} {\\c&H0028D7FF&}PIOR{\\c&HFFFFFF&} {\\c&H0028D7FF&}PLANO.{\\c&HFFFFFF&}"
+},
+{
+"s": 59.8,
+"e": 60.64,
+"t": "SÓ {\\c&H0028D7FF&}AGIR{\\c&HFFFFFF&} {\\c&H0028D7FF&}RÁPIDO,{\\c&HFFFFFF&}"
+},
+{
+"s": 60.64,
+"e": 61.96,
+"t": "E VÁRIAS VEZES,"
+},
+{
+"s": 61.96,
+"e": 63.28,
+"t": "SEGURA O SURTO."
+},
+{
+"s": 63.82,
+"e": 64.14,
+"t": "ENTÃO,"
+},
+{
+"s": 64.68,
+"e": 65.08,
+"t": "{\\c&H0028D7FF&}O{\\c&HFFFFFF&} {\\c&H0028D7FF&}FUNGO{\\c&HFFFFFF&}"
+},
+{
+"s": 65.08,
+"e": 65.9,
+"t": "{\\c&H0028D7FF&}ZUMBI{\\c&HFFFFFF&} {\\c&H0028D7FF&}EXISTE,{\\c&HFFFFFF&}"
+},
+{
+"s": 66.32,
+"e": 67.62,
+"t": "MAS {\\c&H0028D7FF&}SÓ{\\c&HFFFFFF&} {\\c&H0028D7FF&}PARA{\\c&HFFFFFF&} {\\c&H0028D7FF&}FORMIGAS.{\\c&HFFFFFF&}"
+},
+{
+"s": 68.3,
+"e": 68.92,
+"t": "PARA NÓS,"
+},
+{
+"s": 69.24,
+"e": 69.9,
+"t": "O PERIGO REAL"
+},
+{
+"s": 69.9,
+"e": 71.18,
+"t": "CONTINUA SENDO {\\c&H0028D7FF&}A{\\c&HFFFFFF&} {\\c&H0028D7FF&}RAIVA,{\\c&HFFFFFF&}"
+},
+{
+"s": 71.56,
+"e": 72.18,
+"t": "QUE AINDA PASSA"
+},
+{
+"s": 72.18,
+"e": 72.96,
+"t": "POR MORCEGOS"
+},
+{
+"s": 72.96,
+"e": 74.08,
+"t": "E CÃES {\\c&H0028D7FF&}SEM{\\c&HFFFFFF&} {\\c&H0028D7FF&}VACINA.{\\c&HFFFFFF&}"
+}
+],
+"hud": []
+}

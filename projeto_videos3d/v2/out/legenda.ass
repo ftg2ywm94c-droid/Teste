@@ -1,0 +1,90 @@
+[Script Info]
+; Texto: roteiro aprovado. Tempos: faster-whisper (medium) por palavra, alinhado ao roteiro.
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Leg,Poppins,92,&H00FFFFFF,&H00FFFFFF,&H00101010,&H78000000,-1,0,0,0,100,100,0,0,1,5,2,2,90,90,560,1
+Style: Hud,Poppins,62,&H00FFFFFF,&H00FFFFFF,&H50000000,&H50000000,-1,0,0,0,100,100,1,0,3,18,0,8,80,80,250,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:01.64,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}DEZ{\c&HFFFFFF&} {\c&H0028D7FF&}QUILÔMETROS{\c&HFFFFFF&} {\c&H0028D7FF&}POR{\c&HFFFFFF&} {\c&H0028D7FF&}HORA{\c&HFFFFFF&}
+Dialogue: 1,0:00:01.64,0:00:02.72,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ACIMA DO LIMITE.
+Dialogue: 1,0:00:03.58,0:00:04.16,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O TÉO ACHAVA
+Dialogue: 1,0:00:04.16,0:00:04.46,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}QUE ISSO
+Dialogue: 1,0:00:04.46,0:00:04.88,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NÃO FAZIA
+Dialogue: 1,0:00:04.88,0:00:05.20,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DIFERENÇA
+Dialogue: 1,0:00:05.20,0:00:05.74,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NENHUMA.
+Dialogue: 1,0:00:06.38,0:00:06.80,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}TODO DIA,
+Dialogue: 1,0:00:06.80,0:00:07.54,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ELE CRUZAVA ESTA
+Dialogue: 1,0:00:07.54,0:00:08.86,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}RUA A {\c&H0028D7FF&}SESSENTA,{\c&HFFFFFF&}
+Dialogue: 1,0:00:09.04,0:00:09.20,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NUMA
+Dialogue: 1,0:00:09.20,0:00:10.08,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VIA DE {\c&H0028D7FF&}CINQUENTA.{\c&HFFFFFF&}
+Dialogue: 1,0:00:10.84,0:00:11.66,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ATÉ QUE UMA BOLA
+Dialogue: 1,0:00:11.66,0:00:12.22,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ROLOU PARA
+Dialogue: 1,0:00:12.22,0:00:12.64,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A RUA,
+Dialogue: 1,0:00:12.64,0:00:13.80,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}TRINTA{\c&HFFFFFF&} {\c&H0028D7FF&}E{\c&HFFFFFF&} {\c&H0028D7FF&}CINCO{\c&HFFFFFF&} {\c&H0028D7FF&}METROS{\c&HFFFFFF&}
+Dialogue: 1,0:00:13.80,0:00:14.36,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}À FRENTE.
+Dialogue: 1,0:00:15.02,0:00:15.62,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E UM MENINO
+Dialogue: 1,0:00:15.62,0:00:16.00,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}CORREU
+Dialogue: 1,0:00:16.00,0:00:16.54,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ATRÁS DELA.
+Dialogue: 1,0:00:17.42,0:00:18.00,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O TÉO LEVOU
+Dialogue: 1,0:00:18.00,0:00:19.18,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}UM{\c&HFFFFFF&} {\c&H0028D7FF&}SEGUNDO{\c&HFFFFFF&} {\c&H0028D7FF&}E{\c&HFFFFFF&} {\c&H0028D7FF&}MEIO{\c&HFFFFFF&} PARA
+Dialogue: 1,0:00:19.18,0:00:20.22,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PERCEBER E PISAR
+Dialogue: 1,0:00:20.22,0:00:21.22,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NO FREIO.
+Dialogue: 1,0:00:21.44,0:00:22.16,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NESSE TEMPO,
+Dialogue: 1,0:00:22.48,0:00:23.18,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O CARRO ANDOU
+Dialogue: 1,0:00:23.18,0:00:24.40,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}VINTE{\c&HFFFFFF&} {\c&H0028D7FF&}E{\c&HFFFFFF&} {\c&H0028D7FF&}CINCO{\c&HFFFFFF&} {\c&H0028D7FF&}METROS{\c&HFFFFFF&}
+Dialogue: 1,0:00:24.40,0:00:25.54,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SEM FREAR NADA.
+Dialogue: 1,0:00:26.30,0:00:27.28,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SOBRARAM SÓ {\c&H0028D7FF&}DEZ.{\c&HFFFFFF&}
+Dialogue: 1,0:00:28.06,0:00:28.64,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ ACHA
+Dialogue: 1,0:00:28.64,0:00:29.38,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}QUE DEU TEMPO?
+Dialogue: 1,0:00:29.38,0:00:30.24,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ME CONTA
+Dialogue: 1,0:00:30.24,0:00:31.06,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NOS {\c&H0028D7FF&}COMENTÁRIOS.{\c&HFFFFFF&}
+Dialogue: 1,0:00:32.06,0:00:32.66,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O PROBLEMA É
+Dialogue: 1,0:00:32.66,0:00:33.20,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}QUE A DISTÂNCIA
+Dialogue: 1,0:00:33.20,0:00:33.96,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DE FRENAGEM
+Dialogue: 1,0:00:33.96,0:00:34.46,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}CRESCE
+Dialogue: 1,0:00:34.46,0:00:36.04,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}COM O {\c&H0028D7FF&}QUADRADO{\c&HFFFFFF&} {\c&H0028D7FF&}DA{\c&HFFFFFF&} {\c&H0028D7FF&}VELOCIDADE.{\c&HFFFFFF&}
+Dialogue: 1,0:00:36.70,0:00:37.22,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A {\c&H0028D7FF&}CINQUENTA{\c&HFFFFFF&}
+Dialogue: 1,0:00:37.22,0:00:37.76,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}POR HORA,
+Dialogue: 1,0:00:38.08,0:00:38.70,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O CARRO PARA
+Dialogue: 1,0:00:38.70,0:00:39.92,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}EM {\c&H0028D7FF&}TRINTA{\c&HFFFFFF&} {\c&H0028D7FF&}E{\c&HFFFFFF&} {\c&H0028D7FF&}CINCO{\c&HFFFFFF&} {\c&H0028D7FF&}METROS.{\c&HFFFFFF&}
+Dialogue: 1,0:00:40.48,0:00:41.24,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A {\c&H0028D7FF&}SESSENTA,{\c&HFFFFFF&}
+Dialogue: 1,0:00:41.48,0:00:41.74,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PRECISA
+Dialogue: 1,0:00:41.74,0:00:42.90,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DE {\c&H0028D7FF&}QUARENTA{\c&HFFFFFF&} {\c&H0028D7FF&}E{\c&HFFFFFF&} {\c&H0028D7FF&}CINCO.{\c&HFFFFFF&}
+Dialogue: 1,0:00:43.62,0:00:44.72,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NO PONTO EXATO
+Dialogue: 1,0:00:44.72,0:00:45.18,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ONDE O CARRO
+Dialogue: 1,0:00:45.18,0:00:45.74,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A {\c&H0028D7FF&}CINQUENTA{\c&HFFFFFF&}
+Dialogue: 1,0:00:45.74,0:00:46.30,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}JÁ ESTARIA
+Dialogue: 1,0:00:46.30,0:00:47.04,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PARADO,
+Dialogue: 1,0:00:47.32,0:00:47.92,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O TÉO AINDA
+Dialogue: 1,0:00:47.92,0:00:48.84,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PASSARIA A MAIS
+Dialogue: 1,0:00:48.84,0:00:49.34,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DE {\c&H0028D7FF&}QUARENTA{\c&HFFFFFF&}
+Dialogue: 1,0:00:49.34,0:00:49.82,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}POR HORA.
+Dialogue: 1,0:00:50.54,0:00:51.18,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}POR SORTE,
+Dialogue: 1,0:00:51.48,0:00:52.22,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O MENINO OUVIU
+Dialogue: 1,0:00:52.22,0:00:53.46,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A FREADA E PULOU
+Dialogue: 1,0:00:53.46,0:00:54.12,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DE VOLTA PARA
+Dialogue: 1,0:00:54.12,0:00:54.82,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A CALÇADA.
+Dialogue: 1,0:00:55.40,0:00:56.08,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O CARRO PASSOU
+Dialogue: 1,0:00:56.08,0:00:56.40,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}POR ONDE
+Dialogue: 1,0:00:56.40,0:00:57.50,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ELE ESTAVA E SÓ
+Dialogue: 1,0:00:57.50,0:00:59.06,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PAROU {\c&H0028D7FF&}DEZ{\c&HFFFFFF&} {\c&H0028D7FF&}METROS{\c&HFFFFFF&} DEPOIS.
+Dialogue: 1,0:00:59.70,0:01:00.82,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DESDE ENTÃO,
+Dialogue: 1,0:01:01.24,0:01:01.74,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O TÉO DIRIGE
+Dialogue: 1,0:01:01.74,0:01:02.48,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A {\c&H0028D7FF&}CINQUENTA.{\c&HFFFFFF&}
+Dialogue: 1,0:01:02.96,0:01:03.62,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NÃO POR CAUSA
+Dialogue: 1,0:01:03.62,0:01:05.04,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DOS {\c&H0028D7FF&}DEZ{\c&HFFFFFF&} {\c&H0028D7FF&}QUILÔMETROS{\c&HFFFFFF&} {\c&H0028D7FF&}POR{\c&HFFFFFF&} {\c&H0028D7FF&}HORA.{\c&HFFFFFF&}
+Dialogue: 1,0:01:05.66,0:01:07.02,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}POR CAUSA DOS {\c&H0028D7FF&}DEZ{\c&HFFFFFF&} {\c&H0028D7FF&}METROS.{\c&HFFFFFF&}
+Dialogue: 0,0:00:00.15,0:00:03.02,Hud,,0,0,0,,{\fad(180,180)}60 km/h  ·  limite 50
+Dialogue: 0,0:00:12.54,0:00:14.76,Hud,,0,0,0,,{\fad(180,180)}35 m até o menino
+Dialogue: 0,0:00:17.54,0:00:21.42,Hud,,0,0,0,,{\fad(180,180)}tempo de reação: 1,5 s
+Dialogue: 0,0:00:33.86,0:00:36.64,Hud,,0,0,0,,{\fad(180,180)}frenagem cresce com v²
+Dialogue: 0,0:00:48.26,0:00:50.25,Hud,,0,0,0,,{\fad(180,180)}ainda a 43 km/h
+Dialogue: 0,0:01:01.14,0:01:02.90,Hud,,0,0,0,,{\fad(180,180)}50 km/h

@@ -1,0 +1,53 @@
+{
+ "file": "v2/ep02/out/02_terra_parasse_de_girar_1080x1920.mp4",
+ "duration": 76.5,
+ "video": {
+  "codec": "h264",
+  "w": 1080,
+  "h": 1920,
+  "fps": "30/1",
+  "frames": 2295,
+  "pix_fmt": "yuv420p",
+  "unreadable": 0
+ },
+ "audio": {
+  "codec": "aac",
+  "sample_rate": "48000",
+  "channels": 2
+ },
+ "black_segments": 0,
+ "freeze_segments": 0,
+ "motion": {
+  "mean": 3.852,
+  "min": 0.0,
+  "static_frames": 21
+ },
+ "loudness_lufs": -13.9,
+ "true_peak_dbfs": -1.5,
+ "narration": {
+  "lag_ms": 0,
+  "drift_ms": 0,
+  "envelope_corr": 0.997
+ },
+ "caption_start_max_err_s": 0.0,
+ "collision_min_gap_m": "n/a",
+ "render_resolution": "720x1280 (ampliado para 1080x1920)",
+ "checks": {
+  "duration": true,
+  "frames": true,
+  "h264": true,
+  "aac": true,
+  "size_1080x1920": true,
+  "fps30": true,
+  "no_black": true,
+  "no_freeze": true,
+  "no_unreadable": true,
+  "loudness": true,
+  "no_clipping": true,
+  "narration_aligned": true,
+  "narration_present": true,
+  "captions_on_words": true,
+  "no_collision": true
+ },
+ "pass": true
+}
