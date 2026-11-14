@@ -116,7 +116,7 @@ F1.labels = [('defesa2', 'a defesa', YEL, 5.0, 40.64, 99, lambda T: (14.0, -4.0,
 F2 = S('F2', 41.70, 44.10, 'relevo', 'furacão precisa de mar quente')
 F2.cam = cam([(41.70, (-78.0, -40.0, 38.0)), (44.10, (-72.0, -36.0, 33.0))], [(41.70, (-42.0, 0.0, 3.0)), (44.10, (-40.0, 0.0, 3.0))], 30)
 F2.hur_x = (-46.0, -42.0)
-F2.labels = [('marq', 'mar quente (26 °C ou mais)', RED, 2.6, 42.94, 99, lambda T: (-50.0, -16.0, 2.0))]
+F2.labels = [('marq', 'mar quente (26 °C ou mais)', RED, 2.6, 42.94, 99, lambda T: (-44.0, 0.0, 15.0))]
 F3 = S('F3', 44.10, 48.55, 'relevo', 'São Paulo fica a uns 60 km da costa, em cima da serra')
 F3.cam = cam([(44.10, (-22.0, -50.0, 34.0)), (48.55, (22.0, -52.0, 30.0))], [(44.10, (28.0, 0.0, 5.0)), (48.55, (50.0, 0.0, 7.0))], 30)
 F3.hur_x = (-42.0, -38.0); F3.dim = (45.26, 46.30)
@@ -136,8 +136,8 @@ G1.panel = ('speed', 52.40, 99, (52.40, 52.41), 'strike', 54.58)
 G2 = S('G2', 56.45, 61.25, 'paulista', 'o perigo real é a tempestade comum')
 G2.cam = cam([(56.45, (18.0, -4.0, 1.8)), (61.25, (24.0, -5.5, 2.4))], [(56.45, (30.0, -11.0, 1.0)), (61.25, (30.0, -11.0, 1.2))], 30)
 G2.wind = 0.6; G2.rain = 1.0; G2.tree_down = True; G2.flash = (57.90, 59.60)
-G2.labels = [('tempestade', 'tempestade comum', YEL, 0.42, 57.82, 99, follow(G2, 9.0, 2.45)),
-             ('capaz', 'já mostrou do que é capaz', WHITE, 0.32, 59.40, 99, follow(G2, 9.0, 1.45))]
+G2.labels = [('tempestade', 'tempestade comum', YEL, 0.235, 57.82, 99, follow(G2, 5.0, 1.36)),
+             ('capaz', 'já mostrou do que é capaz', WHITE, 0.18, 59.40, 99, follow(G2, 5.0, 0.81))]
 H1 = S('H1', 61.25, END, 'paulista', 'segue o perfil para o próximo e se')
 H1.cam = cam([(61.25, (-10.0, 0.0, 20.0)), (END, (-50.0, -6.0, 80.0))], [(61.25, (60.0, 0.0, 15.0)), (END, (100.0, 0.0, 15.0))], 30)
 H1.wind = 0.4; H1.rain = 0.7

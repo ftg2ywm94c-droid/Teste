@@ -49,7 +49,7 @@ r = dict(file=p, duration=dur, video=dict(codec=v['codec_name'], w=v['width'], h
          loudness_lufs=float(I[-1]) if I else None, true_peak_dbfs=float(pk[-1]) if pk else None,
          narration=dict(lag_ms=lag, drift_ms=drift, envelope_corr=round(corr, 3)), caption_start_max_err_s=round(cap_err, 3),
          collision_min_gap_m=dict(kid=round(kid_gap, 2), ball=round(ball_gap, 2)) if not EP else 'n/a', render_resolution='720x1280 (ampliado para 1080x1920)')
-r['checks'] = dict(duration=abs(dur - SH.END) < 0.05, frames=i == round(SH.END * 30), h264=v['codec_name'] == 'h264', aac=a['codec_name'] == 'aac',
+r['checks'] = dict(duration=abs(dur - SH.END) < 0.05, frames=abs(i - SH.END * 30) <= 0.5, h264=v['codec_name'] == 'h264', aac=a['codec_name'] == 'aac',
                    size_1080x1920=(v['width'], v['height']) == (1080, 1920), fps30=v['r_frame_rate'] == '30/1', no_black=r['black_segments'] == 0,
                    no_freeze=r['freeze_segments'] == 0, no_unreadable=bad == 0, loudness=abs((r['loudness_lufs'] or 0) + 14) <= 1.0,
                    no_clipping=(r['true_peak_dbfs'] or 0) <= -1.0, narration_aligned=abs(lag) <= 2 and abs(drift) <= 2, narration_present=corr > 0.5,
