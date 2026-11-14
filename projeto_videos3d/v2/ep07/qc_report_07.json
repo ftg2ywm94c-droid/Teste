@@ -18,7 +18,7 @@
  "black_segments": 0,
  "freeze_segments": 0,
  "motion": {
-  "mean": 5.615,
+  "mean": 5.609,
   "min": 0.074,
   "static_frames": 0
  },

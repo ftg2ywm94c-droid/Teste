@@ -5,6 +5,18 @@
 - `scripts/add_narration.py`: MP3 → MP4 com legenda sincronizada, ducking e −14 LUFS.
 - Para recuperar: `git checkout be24c75 -- projeto_videos3d` (a tag não pôde ser enviada ao GitHub: o acesso desta sessão só permite o branch de trabalho).
 
+## v0.8 — vídeo 07 "E se um furacão chegasse na Avenida Paulista?" entregue (2026-11-14)
+- Arquivo: `v2/ep07/out/07_furacao_avenida_paulista_1080x1920.mp4` (63,8 s, 1913 quadros, 30 fps, H.264 + AAC, 133 MB). Versão leve: `07_furacao_avenida_paulista_1080x1920_leve.mp4` (50 MB). As duas ficam fora do git por tamanho.
+- **Render nativo em 720x1280** (Cycles, 8 amostras + OIDN), **ampliado para 1080x1920**.
+- Primeiro roteiro no guia novo (`roteiros/GUIA_ROTEIRO.md`): choque, promessa, escalada em 3 degraus, virada, final em loop e CTA no fim.
+- 22 planos. Cenários novos: Avenida Paulista sob tempestade (chuva, rajadas, destroços, árvore caindo, apagão), globo com furacão e Catarina, e relevo da costa até a serra.
+- Som refeito com mais detalhe: vento com rajadas e uivos, chuva com gotas e escoamento, trovões, árvore, apagão, destroços sincronizados com as palavras, e reverb.
+- Narração original do usuário sem alteração de velocidade: atraso 0 ms, deriva 0 ms, correlação 0,995.
+- QC (`v2/ep07/qc_report_07.json`): todos os itens aprovados. Volume −14,4 LUFS, pico −1,8 dBFS. Mudança no `qc.py`: a contagem de quadros aceita diferença de até meio quadro, porque a narração dura 63,75 s (1912,5 quadros).
+- Correções depois da revisão visual: rótulos dos planos F2 e G2 reposicionados e os planos refeitos. A1 também foi refeito por um carro na frente da câmera. Os quadros antigos estão em `_bak_*`.
+- Tempo de render: cerca de 9 h em CPU. O container reiniciou várias vezes por inatividade. A solução foi manter uma tarefa de acompanhamento sempre ativa.
+- Thumbnail: `thumbnails/07_furacao_paulista_thumb.jpg`. É um render próprio em 1080x1920 nativo (plano THUMB, só existe com `THUMB=1`), com a composição feita por `v2/thumb.py`.
+
 ## v0.7 — vídeo 06 "E se começasse um apocalipse zumbi no Brasil?" entregue (2026-11-14)
 - Arquivo: `v2/ep06/out/06_apocalipse_zumbi_brasil_1080x1920.mp4` (74,3 s, 2228 quadros, 30 fps, H.264 + AAC, 100 MB). Versão leve: `06_apocalipse_zumbi_brasil_1080x1920_leve.mp4` (60 MB). As duas ficam fora do git por tamanho.
 - **Render nativo em 720x1280** (Cycles, 6–8 amostras + OIDN), **ampliado para 1080x1920**.
