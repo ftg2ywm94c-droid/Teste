@@ -108,7 +108,7 @@ def build_paulista(seed=7, towers=True):
         for x in range(int(AX0) + 10, int(AX1), 24): B.instance('street_lamp_01', (x, s * (ROAD_W + 0.9), 0.2), 0.0 if s < 0 else math.pi, 1.0, C)
     # carros parados
     cars = []
-    for i, (x, y, col) in enumerate([(8, -6, (0.7, 0.05, 0.04)), (22, -2, (0.85, 0.85, 0.86)), (36, 6, (0.1, 0.2, 0.5)), (55, -10, (0.15, 0.15, 0.16)), (70, 2, (0.9, 0.75, 0.1))]):
+    for i, (x, y, col) in enumerate([(34, -7, (0.7, 0.05, 0.04)), (22, -2, (0.85, 0.85, 0.86)), (36, 6, (0.1, 0.2, 0.5)), (55, -10, (0.15, 0.15, 0.16)), (70, 2, (0.9, 0.75, 0.1))]):
         c = B.build_car(f'CarroSP{i}', col, driver=False); c['root'].location = (x, y, 0.0); c['root'].rotation_euler = (0, 0, 0 if y < 0 else math.pi); cars.append(c)
     # luz: céu fechado (sol fraco e frio) e relâmpago
     sun = bpy.data.lights.new('Sol', 'SUN'); sun.energy = 1.8; sun.color = (0.78, 0.84, 0.95); sun.angle = math.radians(12)

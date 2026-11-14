@@ -5,6 +5,16 @@
 - `scripts/add_narration.py`: MP3 → MP4 com legenda sincronizada, ducking e −14 LUFS.
 - Para recuperar: `git checkout be24c75 -- projeto_videos3d` (a tag não pôde ser enviada ao GitHub: o acesso desta sessão só permite o branch de trabalho).
 
+## v0.7 — vídeo 06 "E se começasse um apocalipse zumbi no Brasil?" entregue (2026-11-14)
+- Arquivo: `v2/ep06/out/06_apocalipse_zumbi_brasil_1080x1920.mp4` (74,3 s, 2228 quadros, 30 fps, H.264 + AAC, 100 MB). Versão leve: `06_apocalipse_zumbi_brasil_1080x1920_leve.mp4` (60 MB). As duas ficam fora do git por tamanho.
+- **Render nativo em 720x1280** (Cycles, 6–8 amostras + OIDN), **ampliado para 1080x1920**.
+- 27 planos. Cenários novos: cidade abandonada ao entardecer com zumbis estilizados, mata em escala de formiga, fungo e esporos, termômetro, vírus da raiva, cão e morcego. Painéis com a curva dos fungos, o calendário da raiva e o modelo de surto.
+- Narração original do usuário sem alteração de velocidade: atraso 0 ms, deriva 0 ms, correlação 0,976.
+- QC (`v2/ep06/qc_report_06.json`): todos os itens aprovados. Volume −14,1 LUFS, pico −1,4 dBFS.
+- Correção depois do QC: o plano C3 foi refeito porque o rótulo "37 °C" saía cortado.
+- Tempo de render: cerca de 9 h em CPU, dividindo o processador com outras tarefas. O container reiniciou 4 vezes, e o render foi retomado cada vez a partir dos quadros salvos.
+- Thumbnail: `thumbnails/06_apocalipse_zumbi_thumb.jpg`. É um render próprio em 1080x1920 nativo, com a composição feita por `v2/thumb.py`.
+
 ## v0.6 — vídeo 05 "E se TODO o oxigênio sumisse por 20 segundos?" entregue (2026-11-13)
 - Arquivo: `v2/ep05/out/05_todo_oxigenio_sumisse_1080x1920.mp4` (73,4 s, 2202 quadros, 30 fps, H.264 + AAC, 142 MB). Versão leve: `05_todo_oxigenio_sumisse_1080x1920_leve.mp4` (59 MB, feita automaticamente pelo `assemble.py`). As duas ficam fora do git por tamanho.
 - **Render nativo em 720x1280** (Cycles, 6–8 amostras + OIDN), **ampliado para 1080x1920**.
