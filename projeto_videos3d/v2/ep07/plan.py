@@ -59,7 +59,7 @@ A3.hur = HUR_SP; A3.hur_size = 0.13
 A3.labels = [('cat5', 'categoria 5: 250+ km/h', RED, 0.14, 6.22, 99, follow(A3, 3.0, 0.75))]
 A4 = S('A4', 7.60, 11.40, 'paulista', 'só que São Paulo tem uma defesa')
 A4.cam = cam([(7.60, (11.4, -10.2, 1.2)), (11.40, (11.9, -10.8, 1.3))], [(7.60, (13.0, -14.6, 1.7)), (11.40, (13.0, -14.6, 1.8))], 32)
-A4.teo = 'look_up'; A4.wind = 0.5; A4.rain = 1.0
+A4.teo = 'look_up'; A4.wind = 0.5; A4.rain = 1.0; A4.push = (8.84,)  # push só é usado com STYLE2=1
 A4.labels = [('defesa', 'a defesa de SP?', YEL, 0.16, 8.84, 99, lambda T: (13.0, -14.0, 2.3))]
 
 # ================================================================= ESCALADA

@@ -6,6 +6,7 @@ HERE = os.path.dirname(os.path.abspath(__file__)); sys.path[:0] = [os.path.join(
 import build as B
 import scene as SC
 import plan as P
+import style2 as S2
 from story import sstep
 from mathutils import Vector, Matrix, Euler
 
@@ -201,7 +202,14 @@ if shot.panel:
 # ================================================================== Téo
 def teo_anim(mode, teo, f, T):
     r = teo['root']; lt = T - shot.t0; r.location = getattr(shot, 'teo_pos', P.TEO); r.rotation_euler = (0, 0, math.radians(float(os.environ.get('TEO_ROT', '-155'))))
-    if mode == 'look_up':
+    if mode == 'look_up' and S2.ON:
+        seq = [(shot.t0, {'upper_arm.L': (-5, 0, -6), 'upper_arm.R': (-5, 0, 6), 'head': (-6, 0, 0)}),
+               (shot.t0 + 0.35, {'spine': (-4, 0, 0), 'head': (-26, 0, 0), 'upper_arm.L': (-55, 0, -10), 'upper_arm.R': (-20, 0, 18), 'forearm.L': (-95, 0, 0), 'forearm.R': (-30, 0, 0)}),
+               (getattr(shot, 'push', (99,))[0], {'spine': (2, 0, 0), 'head': (-8, 0, 12), 'upper_arm.R': (-70, 0, 20), 'forearm.R': (-115, 0, 0), 'upper_arm.L': (-10, 0, -8), 'forearm.L': (-20, 0, 0)})]
+        rot, idx, k = S2.pose_seq(seq, T); B.pose(teo, frame=f, **rot)
+        faces = [{'neutral': 1.0}, {'alarm': 1.0}, {'focus': 1.0}]; kk = min(max(k, 0.0), 1.0); prev = faces[max(idx - 1, 0)]; cur = faces[idx]
+        B.set_face(teo, {n: prev.get(n, 0) * (1 - kk) + cur.get(n, 0) * kk for n in ('neutral', 'alarm', 'focus')}, f)
+    elif mode == 'look_up':
         k = sstep(0.2, 0.8, lt); g = math.sin(T * 7) * 0.5
         B.pose(teo, frame=f, spine=(-4 * k, 0, 0), head=(-26 * k, 0, 6 * math.sin(T * 0.9)),
                **{'upper_arm.L': (-55 * k, 0, -10), 'upper_arm.R': (-20 * k, 0, 18 * k), 'forearm.L': (-95 * k + 4 * g, 0, 0), 'forearm.R': (-30 * k, 0, 0)})
@@ -213,7 +221,9 @@ def shake(T, a):
 fr = list(shot.frames)
 for f in fr:
     T = f / P.FPS; ev = dict(f=f, T=round(T, 4)); lt = T - shot.t0; u_ = lt / (shot.t1 - shot.t0)
-    c = shot.cam(T); cpos = Vector(c['pos'])
+    c = shot.cam(T)
+    if S2.ON: c = S2.cam_fx(c, T, shot)
+    cpos = Vector(c['pos'])
     if K in ('paulista', 'rua'):
         wind = getattr(shot, 'wind', 0.0)
         SC.gust_pose(items['gusts'], T, f, 18 + 28 * wind, span=(cpos.x - 20, cpos.x + 120), vis=wind)
@@ -286,6 +296,9 @@ for fc in fcs:
         d = pts[i].co[1] - pts[i - 1].co[1]
         while d > math.pi: pts[i].co[1] -= 2 * math.pi; d -= 2 * math.pi
         while d < -math.pi: pts[i].co[1] += 2 * math.pi; d += 2 * math.pi
+if S2.ON:
+    _c0 = shot.cam(shot.t0); _tp = Vector(getattr(shot, 'teo_pos', P.TEO)) + Vector((0, 0, 1.4)) if hasattr(shot, 'teo') else Vector(_c0['look'])
+    S2.finish(sc, cam, focus_dist=(Vector(_c0['pos']) - _tp).length, f_stop=float(os.environ.get('S2_FSTOP', '2.2'))); S2.motion_blur(sc)
 sc.frame_start, sc.frame_end = fr[0], fr[-1]; sc.frame_step = step
 out = os.environ.get('RENDER_OUT') or os.path.join(HERE, 'frames' if FINAL else 'preview', shot.name); os.makedirs(out, exist_ok=True)
 os.makedirs(os.path.join(HERE, 'events'), exist_ok=True); json.dump(events, open(os.path.join(HERE, 'events', f'{shot.name}.json'), 'w'))
