@@ -5,6 +5,11 @@
 - `scripts/add_narration.py`: MP3 → MP4 com legenda sincronizada, ducking e −14 LUFS.
 - Para recuperar: `git checkout be24c75 -- projeto_videos3d` (a tag não pôde ser enviada ao GitHub: o acesso desta sessão só permite o branch de trabalho).
 
+## v0.9 — estilo visual novo aprovado (2026-11-15)
+- Baseado na análise de um short de dicas de animação que o usuário enviou. Adotamos três ideias: câmera que nunca para, snap nas poses e acabamento em camadas. O rosto e as proporções do canal citado não foram copiados.
+- Módulo `v2/lib/style2.py` e guia `v2/ESTILO.md`. Teste antes/depois em `v2/ep07/out/comparacao_estilo2_A4.mp4` (fora do git).
+- Padrão a partir do vídeo 08. O vídeo 07 entregue não muda (lá o estilo só liga com `STYLE2=1`).
+
 ## v0.8 — vídeo 07 "E se um furacão chegasse na Avenida Paulista?" entregue (2026-11-14)
 - Arquivo: `v2/ep07/out/07_furacao_avenida_paulista_1080x1920.mp4` (63,8 s, 1913 quadros, 30 fps, H.264 + AAC, 133 MB). Versão leve: `07_furacao_avenida_paulista_1080x1920_leve.mp4` (50 MB). As duas ficam fora do git por tamanho.
 - **Render nativo em 720x1280** (Cycles, 8 amostras + OIDN), **ampliado para 1080x1920**.
