@@ -5,6 +5,14 @@
 - `scripts/add_narration.py`: MP3 → MP4 com legenda sincronizada, ducking e −14 LUFS.
 - Para recuperar: `git checkout be24c75 -- projeto_videos3d` (a tag não pôde ser enviada ao GitHub: o acesso desta sessão só permite o branch de trabalho).
 
+## v0.10 — vídeo 08 "E se o fogo nunca tivesse sido descoberto?" (2026-11-16)
+- Tema enviado pelo inscrito @desORDEM2026. O comentário dele aparece num cartão próprio (avatar, nome e texto exato), sem copiar a interface da plataforma.
+- Primeiro vídeo inteiro no estilo 2: 17 planos e 1977 quadros, render nativo 720x1280 com 8 amostras, ampliado para 1080x1920.
+- Narração: voz "Spuds Oxley – Grandpa", 65,9 s. A versão longa com a voz Mark (81 s) ficou guardada.
+- Cenários novos em `v2/ep08/scene.py`: savana de dia e de noite, fogueira, ancestrais, estúdio (raízes, aço/cerâmica/vidro, cérebro) e Terra à noite.
+- Thumbnail: plano THUMB (só com `THUMB=1`), `thumbnails/08_thumb.json`.
+- Limitações em `v2/ep08/LIMITACOES.md`.
+
 ## v0.9 — estilo visual novo aprovado (2026-11-15)
 - Baseado na análise de um short de dicas de animação que o usuário enviou. Adotamos três ideias: câmera que nunca para, snap nas poses e acabamento em camadas. O rosto e as proporções do canal citado não foram copiados.
 - Módulo `v2/lib/style2.py` e guia `v2/ESTILO.md`. Teste antes/depois em `v2/ep07/out/comparacao_estilo2_A4.mp4` (fora do git).
