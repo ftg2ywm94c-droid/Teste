@@ -31,3 +31,7 @@ O vídeo 07 continua como foi entregue: lá o estilo só liga com `STYLE2=1`.
   - embaixo: o nome e a descrição do post ficam a partir de ~1550; a legenda fica em ~1270–1360 e as notas de fonte em ~1420–1470 (`captions.py`, `SAFE916`);
   - motion graphics (vídeo 10 em diante): `SAFE` em `v2/ep10/mograph.py`, com gráficos entre y 230 e 1180.
 - O QC confere 1080x1920 (`size_1080x1920`).
+
+## 5. Melhoria contínua do visual (pedido do usuário em 17/11)
+- A cada vídeo, subir um degrau nos gráficos e nas texturas, sem quebrar o que já funciona e medindo o custo no render.
+- Vídeo 10: acabamento procedural em `v2/ep10/scene.py` (`acabamento`, `piso_brilhante`, `luzes_recorte`): metal escovado, papel com fibra, papelão, pintura com variação de brilho, piso escuro brilhante com grade luminosa que some nas bordas e recortes ciano/laranja. Custo medido: cerca de +10% por quadro. Dá para desligar com `ACAB=0`.
