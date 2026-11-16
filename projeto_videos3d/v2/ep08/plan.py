@@ -111,3 +111,11 @@ NOTES = {}   # notas na tela ficam no captions_cfg.py
 BY_NAME = {s.name: s for s in SHOTS}
 for a, b in zip(SHOTS, SHOTS[1:]): assert abs(a.t1 - b.t0) < 1e-6, (a.name, b.name)
 assert SHOTS[0].t0 == 0.0 and abs(SHOTS[-1].t1 - END) < 1e-6
+
+# ---- thumbnail (só existe com THUMB=1; não entra em SHOTS nem no vídeo)
+if os.environ.get('THUMB'):
+    TH = Shot('THUMB', 1.0, 3.0, 'noite', 'thumbnail: Téo assustado na noite, fogueira atrás')
+    _tc = [float(v) for v in os.environ.get('THUMB_CAM', '0.5,-4.2,0.95,0.0,-0.6,1.15,32').split(',')]
+    TH.cam = lambda T: dict(pos=tuple(_tc[0:3]), look=tuple(_tc[3:6]), lens=_tc[6])
+    TH.teo = 'scared'; TH.teo_stand = True; TH.fire = (0.0, 99); TH.fire_behind = True; TH.whip = False
+    BY_NAME['THUMB'] = TH

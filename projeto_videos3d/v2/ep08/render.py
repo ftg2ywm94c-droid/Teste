@@ -163,6 +163,9 @@ if K == 'estudio':
             sm = SC.emit_mat('Energia', (1.0, 0.7, 0.25), 18.0); items['stream'] = []
             for i in range(28):
                 s = B.sphere(f'energia{i}', 0.045, (0, 0, 0), sm, C8, seg=8); s.visible_shadow = False; s.scale = (1e-4,) * 3; items['stream'].append(s)
+if shot.name == 'THUMB':   # só a thumbnail: luz quente baixa no rosto (reflexo da fogueira)
+    tl_ = bpy.data.lights.new('LuzThumb', 'AREA'); tl_.energy = 55; tl_.size = 1.2; tl_.color = (1.0, 0.55, 0.28)
+    tlo = B.link(bpy.data.objects.new('LuzThumb', tl_), C8); tlo.location = (0.5, -2.2, 0.5); tlo.rotation_euler = (math.radians(70), 0, math.radians(15))
 for m in bpy.data.materials: m.cycles.emission_sampling = 'NONE'
 for n in ('LuzFogo',):
     if n in bpy.data.lights: pass
