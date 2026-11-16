@@ -1,0 +1,90 @@
+[Script Info]
+; Texto: roteiro aprovado. Tempos: faster-whisper (medium) por palavra, alinhado ao roteiro.
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Leg,Poppins,92,&H00FFFFFF,&H00FFFFFF,&H00101010,&H78000000,-1,0,0,0,100,100,0,0,1,5,2,2,90,90,560,1
+Style: Nota,Poppins,38,&H00FFFFFF,&H00FFFFFF,&H64000000,&H64000000,-1,0,0,0,100,100,1,0,3,10,0,8,80,80,140,1
+Style: Hud,Poppins,62,&H00FFFFFF,&H00FFFFFF,&H50000000,&H50000000,-1,0,0,0,100,100,1,0,3,18,0,8,80,80,250,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:00.72,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NO GTA,
+Dialogue: 1,0:00:01.12,0:00:01.46,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ É
+Dialogue: 1,0:00:01.46,0:00:02.26,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ATROPELADO,
+Dialogue: 1,0:00:02.56,0:00:03.10,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}LEVANTA
+Dialogue: 1,0:00:03.10,0:00:04.30,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E SAI ANDANDO.
+Dialogue: 1,0:00:04.48,0:00:05.24,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NA VIDA REAL,
+Dialogue: 1,0:00:05.46,0:00:06.78,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ {\c&H0028D7FF&}NEM{\c&HFFFFFF&} {\c&H0028D7FF&}LEVANTARIA.{\c&HFFFFFF&}
+Dialogue: 1,0:00:07.64,0:00:08.62,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O GTA 6 CHEGA
+Dialogue: 1,0:00:08.62,0:00:09.10,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}AGORA,
+Dialogue: 1,0:00:09.36,0:00:09.90,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ENTÃO VAMOS
+Dialogue: 1,0:00:09.90,0:00:10.74,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}TESTAR:
+Dialogue: 1,0:00:11.00,0:00:11.44,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E SE A VIDA
+Dialogue: 1,0:00:11.44,0:00:12.42,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}REAL SEGUISSE
+Dialogue: 1,0:00:12.42,0:00:13.56,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}AS {\c&H0028D7FF&}REGRAS{\c&HFFFFFF&} {\c&H0028D7FF&}DO{\c&HFFFFFF&} {\c&H0028D7FF&}JOGO?{\c&HFFFFFF&}
+Dialogue: 1,0:00:14.54,0:00:15.16,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}COMEÇA PELO
+Dialogue: 1,0:00:15.16,0:00:16.06,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ATROPELAMENTO.
+Dialogue: 1,0:00:16.60,0:00:17.06,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A QUARENTA
+Dialogue: 1,0:00:17.06,0:00:17.64,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}POR HORA,
+Dialogue: 1,0:00:17.82,0:00:18.90,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}UM{\c&HFFFFFF&} {\c&H0028D7FF&}EM{\c&HFFFFFF&} {\c&H0028D7FF&}CADA{\c&HFFFFFF&} {\c&H0028D7FF&}DEZ{\c&HFFFFFF&}
+Dialogue: 1,0:00:18.90,0:00:20.22,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PEDESTRES MORRE.
+Dialogue: 1,0:00:20.38,0:00:21.10,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A SETENTA,
+Dialogue: 1,0:00:21.48,0:00:22.00,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}METADE.
+Dialogue: 1,0:00:22.40,0:00:23.14,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}AGORA A QUEDA.
+Dialogue: 1,0:00:23.88,0:00:24.14,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}CAIR
+Dialogue: 1,0:00:24.14,0:00:25.36,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DE UNS {\c&H0028D7FF&}QUATRO{\c&HFFFFFF&} {\c&H0028D7FF&}ANDARES{\c&HFFFFFF&}
+Dialogue: 1,0:00:25.36,0:00:25.98,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}MATA CERCA
+Dialogue: 1,0:00:25.98,0:00:26.58,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DE METADE
+Dialogue: 1,0:00:26.58,0:00:27.28,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DAS PESSOAS.
+Dialogue: 1,0:00:27.70,0:00:28.48,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E SE VOCÊ
+Dialogue: 1,0:00:28.48,0:00:29.24,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SOBREVIVER,
+Dialogue: 1,0:00:29.64,0:00:29.80,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}NENHUM{\c&HFFFFFF&}
+Dialogue: 1,0:00:29.80,0:00:30.44,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}CACHORRO-QUENTE{\c&HFFFFFF&}
+Dialogue: 1,0:00:30.44,0:00:30.90,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}RESOLVE:
+Dialogue: 1,0:00:31.54,0:00:31.96,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}UM OSSO
+Dialogue: 1,0:00:31.96,0:00:32.88,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}QUEBRADO LEVA,
+Dialogue: 1,0:00:32.88,0:00:33.40,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}EM MÉDIA,
+Dialogue: 1,0:00:33.40,0:00:34.16,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DE {\c&H0028D7FF&}SEIS{\c&HFFFFFF&}
+Dialogue: 1,0:00:34.16,0:00:35.00,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}A{\c&HFFFFFF&} {\c&H0028D7FF&}OITO{\c&HFFFFFF&} {\c&H0028D7FF&}SEMANAS{\c&HFFFFFF&}
+Dialogue: 1,0:00:35.00,0:00:36.16,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PARA COLAR.
+Dialogue: 1,0:00:36.52,0:00:37.28,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}MAS UMA ARTISTA
+Dialogue: 1,0:00:37.28,0:00:37.68,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E DOIS
+Dialogue: 1,0:00:37.68,0:00:38.30,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ESPECIALISTAS
+Dialogue: 1,0:00:38.30,0:00:38.86,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}EM TRAUMA
+Dialogue: 1,0:00:38.86,0:00:39.38,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}CRIARAM
+Dialogue: 1,0:00:39.38,0:00:40.32,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O ÚNICO CORPO
+Dialogue: 1,0:00:40.32,0:00:41.30,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}HUMANO FEITO
+Dialogue: 1,0:00:41.30,0:00:41.96,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PARA {\c&H0028D7FF&}AGUENTAR{\c&HFFFFFF&}
+Dialogue: 1,0:00:41.96,0:00:42.62,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}UM{\c&HFFFFFF&} {\c&H0028D7FF&}ACIDENTE.{\c&HFFFFFF&}
+Dialogue: 1,0:00:43.40,0:00:43.96,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ELE SE CHAMA
+Dialogue: 1,0:00:43.96,0:00:44.46,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}GRAHAM:
+Dialogue: 1,0:00:45.08,0:00:45.96,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}CRÂNIO{\c&HFFFFFF&} {\c&H0028D7FF&}GIGANTE,{\c&HFFFFFF&}
+Dialogue: 1,0:00:46.12,0:00:46.92,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}SEM{\c&HFFFFFF&} {\c&H0028D7FF&}PESCOÇO,{\c&HFFFFFF&}
+Dialogue: 1,0:00:47.18,0:00:48.54,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}BOLSAS{\c&HFFFFFF&} {\c&H0028D7FF&}DE{\c&HFFFFFF&} {\c&H0028D7FF&}AR{\c&HFFFFFF&} NO PEITO.
+Dialogue: 1,0:00:49.20,0:00:49.72,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}É ASSIM
+Dialogue: 1,0:00:49.72,0:00:50.12,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}QUE A GENTE
+Dialogue: 1,0:00:50.12,0:00:51.10,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PRECISARIA SER.
+Dialogue: 1,0:00:51.88,0:00:52.46,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ENTÃO,
+Dialogue: 1,0:00:52.46,0:00:52.94,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}QUANDO O JOGO
+Dialogue: 1,0:00:52.94,0:00:53.50,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}MANDAR VOCÊ
+Dialogue: 1,0:00:53.50,0:00:54.28,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}LEVANTAR,
+Dialogue: 1,0:00:54.48,0:00:54.80,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}LEMBRA:
+Dialogue: 1,0:00:54.80,0:00:55.88,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}AQUI FORA
+Dialogue: 1,0:00:56.08,0:00:56.86,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NÃO TEM BOTÃO
+Dialogue: 1,0:00:56.86,0:00:58.20,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DE {\c&H0028D7FF&}TENTAR{\c&HFFFFFF&} {\c&H0028D7FF&}DE{\c&HFFFFFF&} {\c&H0028D7FF&}NOVO.{\c&HFFFFFF&}
+Dialogue: 1,0:00:59.02,0:00:59.48,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}COMENTA QUAL
+Dialogue: 1,0:00:59.48,0:01:00.14,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}MISSÃO VOCÊ
+Dialogue: 1,0:01:00.14,0:01:01.00,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}QUER VER TESTADA
+Dialogue: 1,0:01:01.00,0:01:01.74,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NA VIDA REAL.
+Dialogue: 0,0:00:01.46,0:00:07.60,Nota,,0,0,0,,{\fad(200,200)\an2}ilustração
+Dialogue: 0,0:00:14.50,0:00:22.40,Nota,,0,0,0,,{\fad(200,200)\an2}ilustração com boneco de teste
+Dialogue: 0,0:00:24.00,0:00:27.60,Nota,,0,0,0,,{\fad(200,200)\an8}ilustração com boneco de teste
+Dialogue: 0,0:00:27.60,0:00:36.40,Nota,,0,0,0,,{\fad(200,200)\an2}ilustração
+Dialogue: 0,0:00:36.40,0:00:51.80,Nota,,0,0,0,,{\fad(200,200)\an2}personagem nosso, inspirado no projeto Graham (TAC, 2016)
+Dialogue: 0,0:00:54.40,0:00:58.90,Nota,,0,0,0,,{\fad(200,200)\an2}ilustração
