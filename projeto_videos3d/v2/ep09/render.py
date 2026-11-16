@@ -188,7 +188,7 @@ def comment_card(name, y, handle='@você', lines=('missão:', ''), tag='comenta 
     return g, parts
 
 if hasattr(shot, 'hud'):
-    hg = panel_root('hud', 2.35, x=-0.62); plate(hg, 1.9, 0.5, alpha=0.75)
+    hg = panel_root('hud', 1.85, x=-0.62); plate(hg, 1.9, 0.5, alpha=0.75)
     hm = SC.emit_mat('Coracao', (1.0, 0.18, 0.2), 2.0)
     for sx in (1, -1):
         o = B.sphere(f'cor{sx}', 0.065, (-0.72 + sx * 0.045, 0.03, 0.02), hm, RC, seg=16); o.parent = hg; o.visible_shadow = False
@@ -214,7 +214,7 @@ if shot.panel:
         txt('ri_src', 'fonte: AAA Foundation (2011), dados dos EUA', 0.055, (0.65, 0.67, 0.72), g, (0, -0.47, 0.02))
         items['icons'] = icons; items['res'] = res; items['panel'] = g
     elif kind == 'queda':
-        g = panel_root('queda', -1.75); plate(g, 2.8, 0.95)
+        g = panel_root('queda', 1.45); plate(g, 2.8, 0.95)
         txt('qd_t', '~4 andares (12 a 15 m)', 0.14, (1, 1, 1), g, (0, 0.22, 0.02))
         r_ = txt('qd_r', 'cerca de metade não sobrevive', 0.11, P.RED, g, (0, -0.08, 0.02)); hide(r_); items['res'] = r_
         txt('qd_src', 'estimativa clássica de estudos de trauma (adultos)', 0.055, (0.65, 0.67, 0.72), g, (0, -0.34, 0.02))

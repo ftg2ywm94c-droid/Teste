@@ -10,7 +10,7 @@ def HUD(wt):
 def NOTES(wt):
     return [(1.46, 7.60, 'ilustração', r'\an2'),
             (14.50, 22.40, 'ilustração com boneco de teste', r'\an2'),
-            (24.00, 27.60, 'ilustração com boneco de teste', r'\an8'),
+            (24.00, 27.60, 'ilustração com boneco de teste', r'\an2'),
             (27.60, 36.40, 'ilustração', r'\an2'),
             (36.40, 51.80, 'personagem nosso, inspirado no projeto Graham (TAC, 2016)', r'\an2'),
             (54.40, 58.90, 'ilustração', r'\an2')]

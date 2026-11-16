@@ -78,7 +78,7 @@ E2.cam = cam([(43.30, (1.0, -3.6, 1.35)), (48.6, (0.6, -3.0, 1.3)), (51.80, (0.9
 E2.armored = 'lit'; E2.compare = 49.2; E2.push = (45.08,)
 E2.labels = [('cranio', 'crânio gigante', YEL, 0.15, 45.08, 99, lambda T: (0.0, -0.2, 2.05)),
              ('pescoco', 'sem pescoço', YEL, 0.15, 46.12, 99, lambda T: (0.38, -0.35, 1.6)),
-             ('bolsas', 'bolsas de ar no peito', YEL, 0.15, 47.18, 99, lambda T: (0.0, -0.4, 0.78))]
+             ('bolsas', 'bolsas de ar no peito', YEL, 0.15, 47.18, 99, lambda T: (0.0, -0.45, 0.95))]
 TR4 = S('TR4', 51.80, 54.40, 'trailer', 'quando o jogo mandar você levantar (trailer: queda de prédio)'); TR4.src = 67.90
 # ================================================================= FINAL EM LOOP
 F1 = S('F1', 54.40, 58.90, 'rua', 'aqui fora não tem botão de tentar de novo')
