@@ -35,3 +35,7 @@ Todo ano, você trabalha uns cinco meses só para pagar imposto. E se o Brasil c
 - "ANP; queda também teve desoneração federal" e "segundo os estados (Comsefaz)" na gasolina.
 - "ilustração" no café e na balança.
 - Sem bandeira de partido, sem políticos atuais, sem logos.
+
+## Áudio
+- MP3 do usuário: voz "Brittney – Social Media Voice" (ElevenLabs v3), 65,41 s, guardado sem mudanças em `narracao/10_narracao_original.mp3`.
+- A voz leu "nos EUA" errado (algo como "nos Itaúzulati", aos 35,5 s). Com a aprovação do usuário, cortei só esse trecho (35,49–36,50 s do original, transição de 15 ms). Não gerei voz nova e não mudei a velocidade. Resultado: `narracao/10_narracao.mp3`, 64,42 s. A frase ficou "O Kansas cortou impostos prometendo crescimento", e a tela mostra "KANSAS (EUA)".
