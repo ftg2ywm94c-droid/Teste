@@ -76,11 +76,11 @@ Dialogue: 1,0:01:01.92,0:01:02.54,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,
 Dialogue: 1,0:01:02.54,0:01:03.36,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}IMPOSTO VOCÊ
 Dialogue: 1,0:01:03.36,0:01:03.82,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}CORTARIA
 Dialogue: 1,0:01:03.82,0:01:04.30,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PRIMEIRO.
-Dialogue: 0,0:00:00.00,0:00:04.90,Nota,,0,0,0,,{\fad(200,200)\an2}estimativa do IBPT (2025)
-Dialogue: 0,0:00:09.75,0:00:15.75,Nota,,0,0,0,,{\fad(200,200)\an2}Tesouro Nacional (2024) · OCDE/CEPAL (2023)
-Dialogue: 0,0:00:15.75,0:00:20.40,Nota,,0,0,0,,{\fad(200,200)\an2}Tesouro Nacional (2024): impostos sobre bens e serviços
-Dialogue: 0,0:00:24.40,0:00:28.40,Nota,,0,0,0,,{\fad(200,200)\an2}a queda também teve corte de tributos federais
-Dialogue: 0,0:00:28.40,0:00:34.40,Nota,,0,0,0,,{\fad(200,200)\an2}segundo os estados (Comsefaz)
-Dialogue: 0,0:00:34.40,0:00:43.70,Nota,,0,0,0,,{\fad(200,200)\an2}Kansas, EUA, 2012 a 2017
-Dialogue: 0,0:00:43.70,0:00:56.66,Nota,,0,0,0,,{\fad(200,200)\an2}ilustração
-Dialogue: 0,0:00:56.66,0:01:01.55,Nota,,0,0,0,,{\fad(200,200)\an2}estimativa do IBPT (2025)
+Dialogue: 0,0:00:00.00,0:00:04.90,Nota,,0,0,450,,{\fad(200,200)\an2}estimativa do IBPT (2025)
+Dialogue: 0,0:00:09.75,0:00:15.75,Nota,,0,0,450,,{\fad(200,200)\an2}Tesouro Nacional (2024) · OCDE/CEPAL (2023)
+Dialogue: 0,0:00:15.75,0:00:20.40,Nota,,0,0,450,,{\fad(200,200)\an2}Tesouro Nacional (2024): impostos sobre bens e serviços
+Dialogue: 0,0:00:24.40,0:00:28.40,Nota,,0,0,450,,{\fad(200,200)\an2}a queda também teve corte de tributos federais
+Dialogue: 0,0:00:28.40,0:00:34.40,Nota,,0,0,450,,{\fad(200,200)\an2}segundo os estados (Comsefaz)
+Dialogue: 0,0:00:34.40,0:00:43.70,Nota,,0,0,450,,{\fad(200,200)\an2}Kansas, EUA, 2012 a 2017
+Dialogue: 0,0:00:43.70,0:00:56.66,Nota,,0,0,450,,{\fad(200,200)\an2}ilustração
+Dialogue: 0,0:00:56.66,0:01:01.55,Nota,,0,0,450,,{\fad(200,200)\an2}estimativa do IBPT (2025)

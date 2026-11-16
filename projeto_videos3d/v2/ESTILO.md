@@ -22,3 +22,12 @@ O vídeo 07 continua como foi entregue: lá o estilo só liga com `STYLE2=1`.
 ## Custo
 - No teste, o render ficou cerca de 27% mais lento (1967 s contra 1546 s no plano A4), quase tudo por causa do desfoque de movimento.
 - Se o prazo apertar, deixar o desfoque de movimento só nos planos com chicote.
+
+## 4. Formato 9:16 e zonas seguras (vale a partir do vídeo 09)
+- Tudo é feito para 9:16, que é o formato de envio para TikTok, Reels e Shorts. O vídeo final sai em 1080x1920 (render nativo de 720x1280 ampliado, declarado como ampliação), e a thumbnail sai em 1080x1920.
+- As zonas seguras valem para a tela de 1080x1920:
+  - topo: as abas do aplicativo ocupam o alto da tela; texto e gráfico começam em y ≥ 230;
+  - direita: os botões (curtir, comentar, compartilhar) ficam da metade para baixo; abaixo de y = 600, nada importante passa de x = 930;
+  - embaixo: o nome e a descrição do post ficam a partir de ~1550; a legenda fica em ~1270–1360 e as notas de fonte em ~1420–1470 (`captions.py`, `SAFE916`);
+  - motion graphics (vídeo 10 em diante): `SAFE` em `v2/ep10/mograph.py`, com gráficos entre y 230 e 1180.
+- O QC confere 1080x1920 (`size_1080x1920`).

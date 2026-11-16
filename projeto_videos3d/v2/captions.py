@@ -131,7 +131,9 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 L = [f"Dialogue: 1,{ts(s)},{ts(e)},Leg,,0,0,0,,{{\\fad(40,30)\\fscx92\\fscy92\\t(0,90,\\fscx100\\fscy100)}}{t}" for s, e, t in ev]
 L += [f"Dialogue: 0,{ts(s)},{ts(e)},Hud,,0,0,0,,{{\\fad(180,180)}}{t}" for s, e, t in HUD]
 NOTES = CFG.NOTES(wt) if EP and hasattr(CFG, 'NOTES') else []
-L += [f"Dialogue: 0,{ts(n[0])},{ts(n[1])},Nota,,0,0,0,,{{\\fad(200,200){n[3] if len(n) > 3 else ''}}}{n[2]}" for n in NOTES]  # 4º campo opcional: tags ASS (posição)
+SAFE916 = bool(EP) and EP.isdigit() and int(EP) >= 9      # zonas seguras do 9:16 (TikTok/Reels/Shorts): notas fora da faixa de nome/descrição (embaixo) e das abas (em cima)
+def _mv(tags): return (450 if '\\an2' in tags else 230) if SAFE916 else 0
+L += [f"Dialogue: 0,{ts(n[0])},{ts(n[1])},Nota,,0,0,{_mv(n[3] if len(n) > 3 else '')},,{{\\fad(200,200){n[3] if len(n) > 3 else ''}}}{n[2]}" for n in NOTES]  # 4º campo opcional: tags ASS (posição)
 open(out, 'w').write(head + '\n'.join(L) + '\n')
 json.dump(dict(diffs=diffs, words=[dict(w=S[i], s=tim[i][0], e=tim[i][1], key=hl[i]) for i in range(len(S))],
                chunks=[dict(s=s, e=e, t=t) for s, e, t in ev], hud=HUD), open(out.replace('.ass', '.json'), 'w'), ensure_ascii=False, indent=0)

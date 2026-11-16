@@ -10,6 +10,8 @@ import plan as P
 ROOT = os.path.abspath(os.path.join(HERE, '..', '..'))
 FONT = os.path.join(ROOT, 'fonts', 'Poppins-Bold.ttf')
 W, H = 1080, 1920
+# zonas seguras do 9:16 (TikTok, Reels, Shorts): abas em cima, botões na direita do meio para baixo, legenda e descrição embaixo
+SAFE = dict(top=230, bottom=1180, left=60, right_mid=930)
 _fc = {}
 def font(sz):
     sz = max(8, int(round(sz)))
@@ -93,7 +95,8 @@ def el_atag(cv, T, ev, e):
     al = life(T, t_on, t_off); xy = anchor_xy(ev, anc)
     if al <= 0 or not xy: return
     box = label_box(text, size, color); x, y = xy
-    x = clamp(x, box.width / 2 + 40, W - box.width / 2 - 40); y = clamp(y - box.height / 2 - 18, 230, 1180)
+    y = clamp(y - box.height / 2 - 18, SAFE['top'], SAFE['bottom'])
+    x = clamp(x, box.width / 2 + SAFE['left'], (SAFE['right_mid'] if y > 600 else W - SAFE['left']) - box.width / 2)
     paste(cv, box, x, y, out_back((T - t_on) / 0.2), al)
     d = ImageDraw.Draw(cv); s = out_back((T - t_on) / 0.2)
     if s > 0.5 and al > 0.5:
