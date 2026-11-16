@@ -1,22 +1,14 @@
 # Vídeo 08 — "E se o fogo nunca tivesse sido descoberto?"
 
-**Status:** roteiro aguardando aprovação (2026-11-16).
+**Status:** aprovado; narração final recebida (2026-11-16): voz "Spuds Oxley – Grandpa", 65,9 s, `narracao/08_narracao.mp3`. A versão 1 (voz Mark, 81 s, roteiro longo) foi guardada em `narracao/08_narracao_v1_mark.mp3`.
 **Origem do tema:** comentário do inscrito @desORDEM2026 ("E se o fogo nunca tivesse sido descoberto?"), print enviado pelo usuário em `assets/comentarios/08_print_comentario.png`.
 **Abordagem:** gancho com a consequência mais física (passar metade do dia mastigando); escalada em 3 degraus: comida, noite, mundo moderno. A virada é o cérebro: sem fogo, talvez nem existisse alguém para fazer a pergunta. O final volta à mastigação (loop), e o CTA convida o público a mandar o próximo tema, como fez o inscrito.
 **Estilo:** primeiro vídeo com o estilo 2 (`v2/ESTILO.md`): câmera viva, snap nas poses do Téo e acabamento em camadas.
 
-## Narração (≈ 62 s)
-Sem fogo, você passaria quase metade do dia mastigando.
-Essa pergunta veio de um inscrito, o desORDEM2026: e se o fogo nunca tivesse sido descoberto?
-E o pior nem é a comida. Fica até o final.
-Primeiro, a cozinha. Comida crua rende menos energia. Um primata do nosso tamanho passaria quase metade do dia comendo. A gente passa uns cinco por cento.
-Depois, a noite. Sem fogueira, o dia acaba quando o sol se põe. E entre caçadores-coletores de hoje, a conversa do dia é sobre trabalho. À noite, em volta do fogo, vira história.
-Agora pensa no mundo de hoje. Sem fogo não tem aço, não tem cerâmica, não tem vidro. E quase sessenta por cento da eletricidade do planeta ainda vem de queimar alguma coisa.
-Só que tem um detalhe que muda tudo.
-Seu cérebro pesa uns dois por cento do corpo, mas gasta uns vinte por cento da energia. Uma das hipóteses mais fortes da ciência diz que foi a comida cozida que bancou esse cérebro.
-Ou seja: sem fogo, talvez nem existisse alguém pra fazer essa pergunta.
-E você ainda estaria mastigando.
-Comenta o próximo "e se". O próximo vídeo pode ser o seu.
+## Narração final (roteiro enxuto, 148 palavras, 65,9 s)
+Sem fogo, você passaria quase metade do dia mastigando. Essa pergunta veio de um inscrito, o desordem dois mil e vinte e seis: e se o fogo nunca tivesse sido descoberto? E o pior nem é a comida. Comida crua rende menos energia. Um primata do nosso tamanho passaria metade do dia comendo. A gente passa cinco por cento. Sem fogueira, a noite é só escuridão. E é em volta do fogo que a conversa vira história. Sem fogo não tem aço, cerâmica nem vidro. E quase sessenta por cento da eletricidade do mundo vem de queimar alguma coisa. Mas tem um detalhe que muda tudo: seu cérebro gasta um quinto da sua energia. E a ciência suspeita que foi a comida cozida que pagou essa conta. Sem fogo, talvez nem existisse alguém pra perguntar. E você ainda estaria mastigando. Comenta o próximo e se. Pode ser o seu.
+
+O roteiro longo, de 194 palavras, ficou com 81–90 s na voz e foi encurtado. As fontes não mudaram.
 
 ## Comentário na tela (0–6 s)
 - Cartão do comentário com avatar, `@desORDEM2026` e o texto exato "E se o fogo nunca tivesse sido descoberto?". Etiqueta pequena: "tema enviado por um inscrito".
