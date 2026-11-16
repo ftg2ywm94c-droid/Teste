@@ -1,0 +1,1162 @@
+{
+"diffs": [
+[
+"replace",
+"@desORDEM2026:",
+"Desordem dois mil e vinte e seis."
+],
+[
+"replace",
+"e se.",
+"S,"
+]
+],
+"words": [
+{
+"w": "Sem",
+"s": 0.0,
+"e": 0.4,
+"key": false
+},
+{
+"w": "fogo,",
+"s": 0.4,
+"e": 1.08,
+"key": false
+},
+{
+"w": "você",
+"s": 1.26,
+"e": 1.54,
+"key": false
+},
+{
+"w": "passaria",
+"s": 1.54,
+"e": 1.98,
+"key": false
+},
+{
+"w": "quase",
+"s": 1.98,
+"e": 2.34,
+"key": false
+},
+{
+"w": "metade",
+"s": 2.34,
+"e": 2.96,
+"key": true
+},
+{
+"w": "do",
+"s": 2.96,
+"e": 3.18,
+"key": true
+},
+{
+"w": "dia",
+"s": 3.18,
+"e": 3.44,
+"key": true
+},
+{
+"w": "mastigando.",
+"s": 3.44,
+"e": 4.56,
+"key": true
+},
+{
+"w": "Essa",
+"s": 5.08,
+"e": 5.4,
+"key": false
+},
+{
+"w": "pergunta",
+"s": 5.4,
+"e": 5.86,
+"key": false
+},
+{
+"w": "veio",
+"s": 5.86,
+"e": 6.18,
+"key": false
+},
+{
+"w": "de",
+"s": 6.18,
+"e": 6.34,
+"key": false
+},
+{
+"w": "um",
+"s": 6.34,
+"e": 6.6,
+"key": true
+},
+{
+"w": "inscrito,",
+"s": 6.6,
+"e": 7.06,
+"key": true
+},
+{
+"w": "o",
+"s": 7.32,
+"e": 7.46,
+"key": false
+},
+{
+"w": "@desORDEM2026:",
+"s": 7.46,
+"e": 10.24,
+"key": false
+},
+{
+"w": "e",
+"s": 10.24,
+"e": 10.44,
+"key": false
+},
+{
+"w": "se",
+"s": 10.44,
+"e": 10.6,
+"key": false
+},
+{
+"w": "o",
+"s": 10.6,
+"e": 10.8,
+"key": false
+},
+{
+"w": "fogo",
+"s": 10.8,
+"e": 11.16,
+"key": false
+},
+{
+"w": "nunca",
+"s": 11.16,
+"e": 11.62,
+"key": false
+},
+{
+"w": "tivesse",
+"s": 11.62,
+"e": 12.24,
+"key": false
+},
+{
+"w": "sido",
+"s": 12.24,
+"e": 12.56,
+"key": false
+},
+{
+"w": "descoberto?",
+"s": 12.56,
+"e": 13.84,
+"key": false
+},
+{
+"w": "E",
+"s": 14.06,
+"e": 14.22,
+"key": false
+},
+{
+"w": "o",
+"s": 14.22,
+"e": 14.36,
+"key": false
+},
+{
+"w": "pior",
+"s": 14.36,
+"e": 14.7,
+"key": false
+},
+{
+"w": "nem",
+"s": 14.7,
+"e": 15.04,
+"key": false
+},
+{
+"w": "é",
+"s": 15.04,
+"e": 15.24,
+"key": false
+},
+{
+"w": "a",
+"s": 15.24,
+"e": 15.42,
+"key": false
+},
+{
+"w": "comida.",
+"s": 15.42,
+"e": 15.74,
+"key": false
+},
+{
+"w": "Comida",
+"s": 16.44,
+"e": 16.88,
+"key": false
+},
+{
+"w": "crua",
+"s": 16.88,
+"e": 17.24,
+"key": false
+},
+{
+"w": "rende",
+"s": 17.24,
+"e": 17.7,
+"key": false
+},
+{
+"w": "menos",
+"s": 17.7,
+"e": 18.06,
+"key": true
+},
+{
+"w": "energia.",
+"s": 18.06,
+"e": 18.6,
+"key": true
+},
+{
+"w": "Um",
+"s": 19.36,
+"e": 19.64,
+"key": false
+},
+{
+"w": "primata",
+"s": 19.64,
+"e": 20.1,
+"key": false
+},
+{
+"w": "do",
+"s": 20.1,
+"e": 20.32,
+"key": false
+},
+{
+"w": "nosso",
+"s": 20.32,
+"e": 20.58,
+"key": false
+},
+{
+"w": "tamanho",
+"s": 20.58,
+"e": 21.14,
+"key": false
+},
+{
+"w": "passaria",
+"s": 21.14,
+"e": 21.88,
+"key": false
+},
+{
+"w": "metade",
+"s": 21.88,
+"e": 22.52,
+"key": true
+},
+{
+"w": "do",
+"s": 22.52,
+"e": 22.76,
+"key": true
+},
+{
+"w": "dia",
+"s": 22.76,
+"e": 22.98,
+"key": true
+},
+{
+"w": "comendo.",
+"s": 22.98,
+"e": 23.74,
+"key": false
+},
+{
+"w": "A",
+"s": 24.08,
+"e": 24.24,
+"key": false
+},
+{
+"w": "gente",
+"s": 24.24,
+"e": 24.48,
+"key": false
+},
+{
+"w": "passa",
+"s": 24.48,
+"e": 24.9,
+"key": false
+},
+{
+"w": "cinco",
+"s": 24.9,
+"e": 25.38,
+"key": true
+},
+{
+"w": "por",
+"s": 25.38,
+"e": 25.66,
+"key": true
+},
+{
+"w": "cento.",
+"s": 25.66,
+"e": 26.76,
+"key": true
+},
+{
+"w": "Sem",
+"s": 26.76,
+"e": 27.12,
+"key": false
+},
+{
+"w": "fogueira,",
+"s": 27.12,
+"e": 27.84,
+"key": false
+},
+{
+"w": "a",
+"s": 28.14,
+"e": 28.26,
+"key": false
+},
+{
+"w": "noite",
+"s": 28.26,
+"e": 28.5,
+"key": false
+},
+{
+"w": "é",
+"s": 28.5,
+"e": 28.76,
+"key": false
+},
+{
+"w": "só",
+"s": 28.76,
+"e": 28.96,
+"key": true
+},
+{
+"w": "escuridão.",
+"s": 28.96,
+"e": 29.96,
+"key": true
+},
+{
+"w": "E",
+"s": 30.24,
+"e": 30.38,
+"key": false
+},
+{
+"w": "é",
+"s": 30.38,
+"e": 30.52,
+"key": false
+},
+{
+"w": "em",
+"s": 30.52,
+"e": 30.68,
+"key": false
+},
+{
+"w": "volta",
+"s": 30.68,
+"e": 30.9,
+"key": false
+},
+{
+"w": "do",
+"s": 30.9,
+"e": 31.18,
+"key": false
+},
+{
+"w": "fogo",
+"s": 31.18,
+"e": 31.52,
+"key": false
+},
+{
+"w": "que",
+"s": 31.52,
+"e": 31.64,
+"key": false
+},
+{
+"w": "a",
+"s": 31.64,
+"e": 31.84,
+"key": false
+},
+{
+"w": "conversa",
+"s": 31.84,
+"e": 32.36,
+"key": false
+},
+{
+"w": "vira",
+"s": 32.36,
+"e": 32.74,
+"key": true
+},
+{
+"w": "história.",
+"s": 32.74,
+"e": 33.2,
+"key": true
+},
+{
+"w": "Sem",
+"s": 34.14,
+"e": 34.38,
+"key": false
+},
+{
+"w": "fogo",
+"s": 34.38,
+"e": 34.8,
+"key": false
+},
+{
+"w": "não",
+"s": 34.82,
+"e": 35.04,
+"key": false
+},
+{
+"w": "tem",
+"s": 35.04,
+"e": 35.24,
+"key": false
+},
+{
+"w": "aço,",
+"s": 35.24,
+"e": 35.72,
+"key": false
+},
+{
+"w": "cerâmica",
+"s": 36.06,
+"e": 36.68,
+"key": true
+},
+{
+"w": "nem",
+"s": 36.88,
+"e": 37.06,
+"key": false
+},
+{
+"w": "vidro.",
+"s": 37.06,
+"e": 37.84,
+"key": false
+},
+{
+"w": "E",
+"s": 38.12,
+"e": 38.4,
+"key": false
+},
+{
+"w": "quase",
+"s": 38.4,
+"e": 38.86,
+"key": false
+},
+{
+"w": "sessenta",
+"s": 38.86,
+"e": 39.52,
+"key": true
+},
+{
+"w": "por",
+"s": 39.52,
+"e": 39.8,
+"key": true
+},
+{
+"w": "cento",
+"s": 39.8,
+"e": 40.02,
+"key": true
+},
+{
+"w": "da",
+"s": 40.02,
+"e": 40.26,
+"key": false
+},
+{
+"w": "eletricidade",
+"s": 40.26,
+"e": 41.02,
+"key": false
+},
+{
+"w": "do",
+"s": 41.02,
+"e": 41.24,
+"key": false
+},
+{
+"w": "mundo",
+"s": 41.24,
+"e": 41.66,
+"key": false
+},
+{
+"w": "vem",
+"s": 41.66,
+"e": 42.24,
+"key": false
+},
+{
+"w": "de",
+"s": 42.24,
+"e": 42.42,
+"key": false
+},
+{
+"w": "queimar",
+"s": 42.42,
+"e": 42.88,
+"key": false
+},
+{
+"w": "alguma",
+"s": 42.88,
+"e": 43.28,
+"key": false
+},
+{
+"w": "coisa.",
+"s": 43.28,
+"e": 43.66,
+"key": false
+},
+{
+"w": "Mas",
+"s": 44.42,
+"e": 44.72,
+"key": false
+},
+{
+"w": "tem",
+"s": 44.72,
+"e": 45.0,
+"key": false
+},
+{
+"w": "um",
+"s": 45.0,
+"e": 45.24,
+"key": false
+},
+{
+"w": "detalhe",
+"s": 45.24,
+"e": 45.58,
+"key": false
+},
+{
+"w": "que",
+"s": 45.58,
+"e": 45.8,
+"key": false
+},
+{
+"w": "muda",
+"s": 45.8,
+"e": 46.14,
+"key": false
+},
+{
+"w": "tudo:",
+"s": 46.14,
+"e": 46.58,
+"key": false
+},
+{
+"w": "seu",
+"s": 47.3,
+"e": 47.52,
+"key": false
+},
+{
+"w": "cérebro",
+"s": 47.52,
+"e": 47.98,
+"key": false
+},
+{
+"w": "gasta",
+"s": 47.98,
+"e": 48.36,
+"key": false
+},
+{
+"w": "um",
+"s": 48.36,
+"e": 48.7,
+"key": true
+},
+{
+"w": "quinto",
+"s": 48.7,
+"e": 48.98,
+"key": true
+},
+{
+"w": "da",
+"s": 48.98,
+"e": 49.28,
+"key": false
+},
+{
+"w": "sua",
+"s": 49.28,
+"e": 49.4,
+"key": false
+},
+{
+"w": "energia.",
+"s": 49.4,
+"e": 49.98,
+"key": false
+},
+{
+"w": "E",
+"s": 50.62,
+"e": 50.9,
+"key": false
+},
+{
+"w": "a",
+"s": 50.9,
+"e": 51.08,
+"key": false
+},
+{
+"w": "ciência",
+"s": 51.08,
+"e": 51.42,
+"key": false
+},
+{
+"w": "suspeita",
+"s": 51.42,
+"e": 52.06,
+"key": false
+},
+{
+"w": "que",
+"s": 52.06,
+"e": 52.44,
+"key": false
+},
+{
+"w": "foi",
+"s": 52.44,
+"e": 52.66,
+"key": false
+},
+{
+"w": "a",
+"s": 52.66,
+"e": 52.92,
+"key": false
+},
+{
+"w": "comida",
+"s": 52.92,
+"e": 53.24,
+"key": true
+},
+{
+"w": "cozida",
+"s": 53.24,
+"e": 53.78,
+"key": true
+},
+{
+"w": "que",
+"s": 53.78,
+"e": 54.02,
+"key": false
+},
+{
+"w": "pagou",
+"s": 54.02,
+"e": 54.3,
+"key": true
+},
+{
+"w": "essa",
+"s": 54.3,
+"e": 54.52,
+"key": true
+},
+{
+"w": "conta.",
+"s": 54.52,
+"e": 54.9,
+"key": true
+},
+{
+"w": "Sem",
+"s": 55.66,
+"e": 56.04,
+"key": false
+},
+{
+"w": "fogo,",
+"s": 56.04,
+"e": 56.8,
+"key": false
+},
+{
+"w": "talvez",
+"s": 57.02,
+"e": 57.3,
+"key": false
+},
+{
+"w": "nem",
+"s": 57.3,
+"e": 57.8,
+"key": false
+},
+{
+"w": "existisse",
+"s": 57.8,
+"e": 58.42,
+"key": false
+},
+{
+"w": "alguém",
+"s": 58.42,
+"e": 58.76,
+"key": false
+},
+{
+"w": "para",
+"s": 58.76,
+"e": 59.04,
+"key": false
+},
+{
+"w": "perguntar.",
+"s": 59.04,
+"e": 59.98,
+"key": false
+},
+{
+"w": "E",
+"s": 60.26,
+"e": 60.4,
+"key": false
+},
+{
+"w": "você",
+"s": 60.4,
+"e": 60.72,
+"key": false
+},
+{
+"w": "ainda",
+"s": 60.72,
+"e": 61.14,
+"key": false
+},
+{
+"w": "estaria",
+"s": 61.14,
+"e": 61.66,
+"key": false
+},
+{
+"w": "mastigando.",
+"s": 61.66,
+"e": 62.7,
+"key": true
+},
+{
+"w": "Comenta",
+"s": 63.3,
+"e": 63.6,
+"key": false
+},
+{
+"w": "o",
+"s": 63.6,
+"e": 63.82,
+"key": false
+},
+{
+"w": "próximo",
+"s": 63.82,
+"e": 64.14,
+"key": false
+},
+{
+"w": "e",
+"s": 64.14,
+"e": 65.02,
+"key": false
+},
+{
+"w": "se.",
+"s": 65.02,
+"e": 65.02,
+"key": false
+},
+{
+"w": "Pode",
+"s": 65.02,
+"e": 65.24,
+"key": true
+},
+{
+"w": "ser",
+"s": 65.24,
+"e": 65.5,
+"key": true
+},
+{
+"w": "o",
+"s": 65.5,
+"e": 65.68,
+"key": true
+},
+{
+"w": "seu.",
+"s": 65.68,
+"e": 65.86,
+"key": true
+}
+],
+"chunks": [
+{
+"s": 0.0,
+"e": 1.08,
+"t": "SEM FOGO,"
+},
+{
+"s": 1.26,
+"e": 1.98,
+"t": "VOCÊ PASSARIA"
+},
+{
+"s": 1.98,
+"e": 2.34,
+"t": "QUASE"
+},
+{
+"s": 2.34,
+"e": 4.34,
+"t": "{\\c&H0028D7FF&}METADE{\\c&HFFFFFF&} {\\c&H0028D7FF&}DO{\\c&HFFFFFF&} {\\c&H0028D7FF&}DIA{\\c&HFFFFFF&} {\\c&H0028D7FF&}MASTIGANDO.{\\c&HFFFFFF&}"
+},
+{
+"s": 5.08,
+"e": 5.86,
+"t": "ESSA PERGUNTA"
+},
+{
+"s": 5.86,
+"e": 7.06,
+"t": "VEIO DE {\\c&H0028D7FF&}UM{\\c&HFFFFFF&} {\\c&H0028D7FF&}INSCRITO,{\\c&HFFFFFF&}"
+},
+{
+"s": 7.32,
+"e": 8.36,
+"t": "O @DESORDEM2026:"
+},
+{
+"s": 10.24,
+"e": 11.16,
+"t": "E SE O FOGO"
+},
+{
+"s": 11.16,
+"e": 12.24,
+"t": "NUNCA TIVESSE"
+},
+{
+"s": 12.24,
+"e": 13.46,
+"t": "SIDO DESCOBERTO?"
+},
+{
+"s": 14.06,
+"e": 15.24,
+"t": "E O PIOR NEM É"
+},
+{
+"s": 15.24,
+"e": 15.74,
+"t": "A COMIDA."
+},
+{
+"s": 16.44,
+"e": 17.24,
+"t": "COMIDA CRUA"
+},
+{
+"s": 17.24,
+"e": 18.6,
+"t": "RENDE {\\c&H0028D7FF&}MENOS{\\c&HFFFFFF&} {\\c&H0028D7FF&}ENERGIA.{\\c&HFFFFFF&}"
+},
+{
+"s": 19.36,
+"e": 20.1,
+"t": "UM PRIMATA"
+},
+{
+"s": 20.1,
+"e": 20.58,
+"t": "DO NOSSO"
+},
+{
+"s": 20.58,
+"e": 21.88,
+"t": "TAMANHO PASSARIA"
+},
+{
+"s": 21.88,
+"e": 23.74,
+"t": "{\\c&H0028D7FF&}METADE{\\c&HFFFFFF&} {\\c&H0028D7FF&}DO{\\c&HFFFFFF&} {\\c&H0028D7FF&}DIA{\\c&HFFFFFF&} COMENDO."
+},
+{
+"s": 24.08,
+"e": 24.9,
+"t": "A GENTE PASSA"
+},
+{
+"s": 24.9,
+"e": 26.56,
+"t": "{\\c&H0028D7FF&}CINCO{\\c&HFFFFFF&} {\\c&H0028D7FF&}POR{\\c&HFFFFFF&} {\\c&H0028D7FF&}CENTO.{\\c&HFFFFFF&}"
+},
+{
+"s": 26.76,
+"e": 27.84,
+"t": "SEM FOGUEIRA,"
+},
+{
+"s": 28.14,
+"e": 29.86,
+"t": "A NOITE É {\\c&H0028D7FF&}SÓ{\\c&HFFFFFF&} {\\c&H0028D7FF&}ESCURIDÃO.{\\c&HFFFFFF&}"
+},
+{
+"s": 30.24,
+"e": 30.9,
+"t": "E É EM VOLTA"
+},
+{
+"s": 30.9,
+"e": 31.52,
+"t": "DO FOGO"
+},
+{
+"s": 31.52,
+"e": 32.36,
+"t": "QUE A CONVERSA"
+},
+{
+"s": 32.36,
+"e": 33.2,
+"t": "{\\c&H0028D7FF&}VIRA{\\c&HFFFFFF&} {\\c&H0028D7FF&}HISTÓRIA.{\\c&HFFFFFF&}"
+},
+{
+"s": 34.14,
+"e": 34.82,
+"t": "SEM FOGO"
+},
+{
+"s": 34.82,
+"e": 35.72,
+"t": "NÃO TEM AÇO,"
+},
+{
+"s": 36.06,
+"e": 36.68,
+"t": "{\\c&H0028D7FF&}CERÂMICA{\\c&HFFFFFF&}"
+},
+{
+"s": 36.88,
+"e": 37.84,
+"t": "NEM VIDRO."
+},
+{
+"s": 38.12,
+"e": 38.86,
+"t": "E QUASE"
+},
+{
+"s": 38.86,
+"e": 40.02,
+"t": "{\\c&H0028D7FF&}SESSENTA{\\c&HFFFFFF&} {\\c&H0028D7FF&}POR{\\c&HFFFFFF&} {\\c&H0028D7FF&}CENTO{\\c&HFFFFFF&}"
+},
+{
+"s": 40.02,
+"e": 41.02,
+"t": "DA ELETRICIDADE"
+},
+{
+"s": 41.02,
+"e": 41.66,
+"t": "DO MUNDO"
+},
+{
+"s": 41.66,
+"e": 42.88,
+"t": "VEM DE QUEIMAR"
+},
+{
+"s": 42.88,
+"e": 43.66,
+"t": "ALGUMA COISA."
+},
+{
+"s": 44.42,
+"e": 45.24,
+"t": "MAS TEM UM"
+},
+{
+"s": 45.24,
+"e": 45.8,
+"t": "DETALHE QUE"
+},
+{
+"s": 45.8,
+"e": 46.58,
+"t": "MUDA TUDO:"
+},
+{
+"s": 47.3,
+"e": 47.98,
+"t": "SEU CÉREBRO"
+},
+{
+"s": 47.98,
+"e": 48.98,
+"t": "GASTA {\\c&H0028D7FF&}UM{\\c&HFFFFFF&} {\\c&H0028D7FF&}QUINTO{\\c&HFFFFFF&}"
+},
+{
+"s": 48.98,
+"e": 49.98,
+"t": "DA SUA ENERGIA."
+},
+{
+"s": 50.62,
+"e": 51.42,
+"t": "E A CIÊNCIA"
+},
+{
+"s": 51.42,
+"e": 52.06,
+"t": "SUSPEITA"
+},
+{
+"s": 52.06,
+"e": 53.78,
+"t": "QUE FOI A {\\c&H0028D7FF&}COMIDA{\\c&HFFFFFF&} {\\c&H0028D7FF&}COZIDA{\\c&HFFFFFF&}"
+},
+{
+"s": 53.78,
+"e": 54.9,
+"t": "QUE {\\c&H0028D7FF&}PAGOU{\\c&HFFFFFF&} {\\c&H0028D7FF&}ESSA{\\c&HFFFFFF&} {\\c&H0028D7FF&}CONTA.{\\c&HFFFFFF&}"
+},
+{
+"s": 55.66,
+"e": 56.8,
+"t": "SEM FOGO,"
+},
+{
+"s": 57.02,
+"e": 57.3,
+"t": "TALVEZ"
+},
+{
+"s": 57.3,
+"e": 58.42,
+"t": "NEM EXISTISSE"
+},
+{
+"s": 58.42,
+"e": 59.04,
+"t": "ALGUÉM PARA"
+},
+{
+"s": 59.04,
+"e": 59.94,
+"t": "PERGUNTAR."
+},
+{
+"s": 60.26,
+"e": 61.14,
+"t": "E VOCÊ AINDA"
+},
+{
+"s": 61.14,
+"e": 61.66,
+"t": "ESTARIA"
+},
+{
+"s": 61.66,
+"e": 62.559999999999995,
+"t": "{\\c&H0028D7FF&}MASTIGANDO.{\\c&HFFFFFF&}"
+},
+{
+"s": 63.3,
+"e": 63.6,
+"t": "COMENTA"
+},
+{
+"s": 63.6,
+"e": 65.02,
+"t": "O PRÓXIMO E SE."
+},
+{
+"s": 65.02,
+"e": 65.86,
+"t": "{\\c&H0028D7FF&}PODE{\\c&HFFFFFF&} {\\c&H0028D7FF&}SER{\\c&HFFFFFF&} {\\c&H0028D7FF&}O{\\c&HFFFFFF&} {\\c&H0028D7FF&}SEU.{\\c&HFFFFFF&}"
+}
+],
+"hud": []
+}

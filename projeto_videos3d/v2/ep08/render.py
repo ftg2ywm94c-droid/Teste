@@ -138,6 +138,8 @@ if K in ('dia', 'noite'):
             st_ = SC.rock_mesh(f'assento_anc{i}', 0.36, (x, y, 0.0), C8, 120 + i, B.mat_basic('Pedra', (0.36, 0.33, 0.30), 0.85)); st_.scale = (1.0, 0.9, 1.05)
             anc.append(a_)
         items['anc'] = anc
+        fl_ = bpy.data.lights.new('LuzRostos', 'AREA'); fl_.energy = 60; fl_.size = 2.5; fl_.color = (1.0, 0.7, 0.45)
+        flo = B.link(bpy.data.objects.new('LuzRostos', fl_), C8); flo.location = (P.FIRE[0], P.FIRE[1] - 0.6, 1.0); flo.rotation_euler = (math.radians(90), 0, 0)
     if hasattr(shot, 'teo'):
         teo = B.build_character('Teo', B.TEO, B.new_coll('TeoCol')); items['teo'] = teo
         if shot.teo in ('chew',):
@@ -355,6 +357,7 @@ for f in fr:
     if shot.panel:
         kind = shot.panel[0]; L = 35.0 / c['lens']; g = items['panel']
         s = 0.85 * L * snap_pop(T, shot.panel[1], shot.panel[2]) / 5
+        if kind in ('relogio', 'energia', 'eletricidade', 'quinto'): s *= 1.15
         if kind == 'card_top': s *= 0.62
         elif kind in ('card', 'card_fade', 'cta'): s *= 0.8
         g.scale = (s,) * 3; g.location = (0.0, g['y0'] * L / 5, -1.0); key(g, 'scale', 'location', f=f)

@@ -6,8 +6,10 @@
 **Estilo:** primeiro vídeo com o estilo 2 (`v2/ESTILO.md`): câmera viva, snap nas poses do Téo e acabamento em camadas.
 
 ## Narração final (roteiro enxuto, 148 palavras, 65,9 s)
-Sem fogo, você passaria quase metade do dia mastigando. Essa pergunta veio de um inscrito, o desordem dois mil e vinte e seis: e se o fogo nunca tivesse sido descoberto? E o pior nem é a comida. Comida crua rende menos energia. Um primata do nosso tamanho passaria metade do dia comendo. A gente passa cinco por cento. Sem fogueira, a noite é só escuridão. E é em volta do fogo que a conversa vira história. Sem fogo não tem aço, cerâmica nem vidro. E quase sessenta por cento da eletricidade do mundo vem de queimar alguma coisa. Mas tem um detalhe que muda tudo: seu cérebro gasta um quinto da sua energia. E a ciência suspeita que foi a comida cozida que pagou essa conta. Sem fogo, talvez nem existisse alguém pra perguntar. E você ainda estaria mastigando. Comenta o próximo e se. Pode ser o seu.
+Sem fogo, você passaria quase metade do dia mastigando. Essa pergunta veio de um inscrito, o @desORDEM2026: e se o fogo nunca tivesse sido descoberto? E o pior nem é a comida. Comida crua rende menos energia. Um primata do nosso tamanho passaria metade do dia comendo. A gente passa cinco por cento. Sem fogueira, a noite é só escuridão. E é em volta do fogo que a conversa vira história. Sem fogo não tem aço, cerâmica nem vidro. E quase sessenta por cento da eletricidade do mundo vem de queimar alguma coisa. Mas tem um detalhe que muda tudo: seu cérebro gasta um quinto da sua energia. E a ciência suspeita que foi a comida cozida que pagou essa conta. Sem fogo, talvez nem existisse alguém para perguntar. E você ainda estaria mastigando. Comenta o próximo e se. Pode ser o seu.
 
+## Base: histórico da narração
+Na legenda, o nome do inscrito aparece como @desORDEM2026 (na narração: "desordem dois mil e vinte e seis").
 O roteiro longo, de 194 palavras, ficou com 81–90 s na voz e foi encurtado. As fontes não mudaram.
 
 ## Comentário na tela (0–6 s)

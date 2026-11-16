@@ -1,0 +1,79 @@
+[Script Info]
+; Texto: roteiro aprovado. Tempos: faster-whisper (medium) por palavra, alinhado ao roteiro.
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Leg,Poppins,92,&H00FFFFFF,&H00FFFFFF,&H00101010,&H78000000,-1,0,0,0,100,100,0,0,1,5,2,2,90,90,560,1
+Style: Nota,Poppins,38,&H00FFFFFF,&H00FFFFFF,&H64000000,&H64000000,-1,0,0,0,100,100,1,0,3,10,0,8,80,80,140,1
+Style: Hud,Poppins,62,&H00FFFFFF,&H00FFFFFF,&H50000000,&H50000000,-1,0,0,0,100,100,1,0,3,18,0,8,80,80,250,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:01.08,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SEM FOGO,
+Dialogue: 1,0:00:01.26,0:00:01.98,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ PASSARIA
+Dialogue: 1,0:00:01.98,0:00:02.34,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}QUASE
+Dialogue: 1,0:00:02.34,0:00:04.34,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}METADE{\c&HFFFFFF&} {\c&H0028D7FF&}DO{\c&HFFFFFF&} {\c&H0028D7FF&}DIA{\c&HFFFFFF&} {\c&H0028D7FF&}MASTIGANDO.{\c&HFFFFFF&}
+Dialogue: 1,0:00:05.08,0:00:05.86,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ESSA PERGUNTA
+Dialogue: 1,0:00:05.86,0:00:07.06,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VEIO DE {\c&H0028D7FF&}UM{\c&HFFFFFF&} {\c&H0028D7FF&}INSCRITO,{\c&HFFFFFF&}
+Dialogue: 1,0:00:07.32,0:00:08.36,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O @DESORDEM2026:
+Dialogue: 1,0:00:10.24,0:00:11.16,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E SE O FOGO
+Dialogue: 1,0:00:11.16,0:00:12.24,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NUNCA TIVESSE
+Dialogue: 1,0:00:12.24,0:00:13.46,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SIDO DESCOBERTO?
+Dialogue: 1,0:00:14.06,0:00:15.24,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E O PIOR NEM É
+Dialogue: 1,0:00:15.24,0:00:15.74,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A COMIDA.
+Dialogue: 1,0:00:16.44,0:00:17.24,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}COMIDA CRUA
+Dialogue: 1,0:00:17.24,0:00:18.60,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}RENDE {\c&H0028D7FF&}MENOS{\c&HFFFFFF&} {\c&H0028D7FF&}ENERGIA.{\c&HFFFFFF&}
+Dialogue: 1,0:00:19.36,0:00:20.10,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}UM PRIMATA
+Dialogue: 1,0:00:20.10,0:00:20.58,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DO NOSSO
+Dialogue: 1,0:00:20.58,0:00:21.88,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}TAMANHO PASSARIA
+Dialogue: 1,0:00:21.88,0:00:23.74,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}METADE{\c&HFFFFFF&} {\c&H0028D7FF&}DO{\c&HFFFFFF&} {\c&H0028D7FF&}DIA{\c&HFFFFFF&} COMENDO.
+Dialogue: 1,0:00:24.08,0:00:24.90,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A GENTE PASSA
+Dialogue: 1,0:00:24.90,0:00:26.56,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}CINCO{\c&HFFFFFF&} {\c&H0028D7FF&}POR{\c&HFFFFFF&} {\c&H0028D7FF&}CENTO.{\c&HFFFFFF&}
+Dialogue: 1,0:00:26.76,0:00:27.84,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SEM FOGUEIRA,
+Dialogue: 1,0:00:28.14,0:00:29.86,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A NOITE É {\c&H0028D7FF&}SÓ{\c&HFFFFFF&} {\c&H0028D7FF&}ESCURIDÃO.{\c&HFFFFFF&}
+Dialogue: 1,0:00:30.24,0:00:30.90,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E É EM VOLTA
+Dialogue: 1,0:00:30.90,0:00:31.52,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DO FOGO
+Dialogue: 1,0:00:31.52,0:00:32.36,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}QUE A CONVERSA
+Dialogue: 1,0:00:32.36,0:00:33.20,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}VIRA{\c&HFFFFFF&} {\c&H0028D7FF&}HISTÓRIA.{\c&HFFFFFF&}
+Dialogue: 1,0:00:34.14,0:00:34.82,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SEM FOGO
+Dialogue: 1,0:00:34.82,0:00:35.72,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NÃO TEM AÇO,
+Dialogue: 1,0:00:36.06,0:00:36.68,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}CERÂMICA{\c&HFFFFFF&}
+Dialogue: 1,0:00:36.88,0:00:37.84,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NEM VIDRO.
+Dialogue: 1,0:00:38.12,0:00:38.86,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E QUASE
+Dialogue: 1,0:00:38.86,0:00:40.02,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}SESSENTA{\c&HFFFFFF&} {\c&H0028D7FF&}POR{\c&HFFFFFF&} {\c&H0028D7FF&}CENTO{\c&HFFFFFF&}
+Dialogue: 1,0:00:40.02,0:00:41.02,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DA ELETRICIDADE
+Dialogue: 1,0:00:41.02,0:00:41.66,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DO MUNDO
+Dialogue: 1,0:00:41.66,0:00:42.88,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VEM DE QUEIMAR
+Dialogue: 1,0:00:42.88,0:00:43.66,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ALGUMA COISA.
+Dialogue: 1,0:00:44.42,0:00:45.24,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}MAS TEM UM
+Dialogue: 1,0:00:45.24,0:00:45.80,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DETALHE QUE
+Dialogue: 1,0:00:45.80,0:00:46.58,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}MUDA TUDO:
+Dialogue: 1,0:00:47.30,0:00:47.98,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SEU CÉREBRO
+Dialogue: 1,0:00:47.98,0:00:48.98,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}GASTA {\c&H0028D7FF&}UM{\c&HFFFFFF&} {\c&H0028D7FF&}QUINTO{\c&HFFFFFF&}
+Dialogue: 1,0:00:48.98,0:00:49.98,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DA SUA ENERGIA.
+Dialogue: 1,0:00:50.62,0:00:51.42,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E A CIÊNCIA
+Dialogue: 1,0:00:51.42,0:00:52.06,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SUSPEITA
+Dialogue: 1,0:00:52.06,0:00:53.78,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}QUE FOI A {\c&H0028D7FF&}COMIDA{\c&HFFFFFF&} {\c&H0028D7FF&}COZIDA{\c&HFFFFFF&}
+Dialogue: 1,0:00:53.78,0:00:54.90,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}QUE {\c&H0028D7FF&}PAGOU{\c&HFFFFFF&} {\c&H0028D7FF&}ESSA{\c&HFFFFFF&} {\c&H0028D7FF&}CONTA.{\c&HFFFFFF&}
+Dialogue: 1,0:00:55.66,0:00:56.80,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SEM FOGO,
+Dialogue: 1,0:00:57.02,0:00:57.30,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}TALVEZ
+Dialogue: 1,0:00:57.30,0:00:58.42,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NEM EXISTISSE
+Dialogue: 1,0:00:58.42,0:00:59.04,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ALGUÉM PARA
+Dialogue: 1,0:00:59.04,0:00:59.94,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PERGUNTAR.
+Dialogue: 1,0:01:00.26,0:01:01.14,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E VOCÊ AINDA
+Dialogue: 1,0:01:01.14,0:01:01.66,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ESTARIA
+Dialogue: 1,0:01:01.66,0:01:02.56,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}MASTIGANDO.{\c&HFFFFFF&}
+Dialogue: 1,0:01:03.30,0:01:03.60,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}COMENTA
+Dialogue: 1,0:01:03.60,0:01:05.02,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O PRÓXIMO E SE.
+Dialogue: 1,0:01:05.02,0:01:05.86,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}PODE{\c&HFFFFFF&} {\c&H0028D7FF&}SER{\c&HFFFFFF&} {\c&H0028D7FF&}O{\c&HFFFFFF&} {\c&H0028D7FF&}SEU.{\c&HFFFFFF&}
+Dialogue: 0,0:00:00.00,0:00:05.08,Nota,,0,0,0,,{\fad(200,200)\an2}ilustração
+Dialogue: 0,0:00:19.36,0:00:26.76,Nota,,0,0,0,,{\fad(200,200)\an2}fonte: Organ et al., PNAS (2011)
+Dialogue: 0,0:00:26.76,0:00:34.14,Nota,,0,0,0,,{\fad(200,200)\an2}ilustração
+Dialogue: 0,0:00:34.14,0:00:38.12,Nota,,0,0,0,,{\fad(200,200)\an2}ilustração
+Dialogue: 0,0:00:50.62,0:00:55.66,Nota,,0,0,0,,{\fad(200,200)\an2}hipótese de Wrangham (2009), ainda em debate
+Dialogue: 0,0:01:00.26,0:01:03.30,Nota,,0,0,0,,{\fad(200,200)\an2}ilustração
