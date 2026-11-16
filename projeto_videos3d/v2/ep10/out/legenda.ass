@@ -1,0 +1,86 @@
+[Script Info]
+; Texto: roteiro aprovado. Tempos: faster-whisper (medium) por palavra, alinhado ao roteiro.
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Leg,Poppins,92,&H00FFFFFF,&H00FFFFFF,&H00101010,&H78000000,-1,0,0,0,100,100,0,0,1,5,2,2,90,90,560,1
+Style: Nota,Poppins,38,&H00FFFFFF,&H00FFFFFF,&H64000000,&H64000000,-1,0,0,0,100,100,1,0,3,10,0,8,80,80,140,1
+Style: Hud,Poppins,62,&H00FFFFFF,&H00FFFFFF,&H50000000,&H50000000,-1,0,0,0,100,100,1,0,3,18,0,8,80,80,250,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:00.72,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}TODO ANO,
+Dialogue: 1,0:00:00.72,0:00:01.26,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ TRABALHA
+Dialogue: 1,0:00:01.26,0:00:03.52,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}UNS {\c&H0028D7FF&}CINCO{\c&HFFFFFF&} {\c&H0028D7FF&}MESES{\c&HFFFFFF&} SÓ PARA
+Dialogue: 1,0:00:03.52,0:00:04.64,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PAGAR IMPOSTO.
+Dialogue: 1,0:00:04.98,0:00:05.44,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E SE O BRASIL
+Dialogue: 1,0:00:05.44,0:00:06.50,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}COBRASSE MENOS?
+Dialogue: 1,0:00:06.98,0:00:07.98,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}TEM UM DETALHE
+Dialogue: 1,0:00:07.98,0:00:09.22,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}QUE MUDA TUDO.
+Dialogue: 1,0:00:09.92,0:00:10.36,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O BRASIL
+Dialogue: 1,0:00:10.36,0:00:11.18,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ARRECADA QUASE
+Dialogue: 1,0:00:11.18,0:00:12.42,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}UM{\c&HFFFFFF&} {\c&H0028D7FF&}TERÇO{\c&HFFFFFF&} DE TUDO
+Dialogue: 1,0:00:12.42,0:00:13.12,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}QUE PRODUZ:
+Dialogue: 1,0:00:13.48,0:00:14.88,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A {\c&H0028D7FF&}MAIOR{\c&HFFFFFF&} {\c&H0028D7FF&}CARGA{\c&HFFFFFF&} DA AMÉRICA
+Dialogue: 1,0:00:14.88,0:00:15.58,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}LATINA.
+Dialogue: 1,0:00:15.88,0:00:16.32,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E MAIS
+Dialogue: 1,0:00:16.32,0:00:17.62,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DE {\c&H0028D7FF&}QUARENTA{\c&HFFFFFF&} {\c&H0028D7FF&}POR{\c&HFFFFFF&} {\c&H0028D7FF&}CENTO{\c&HFFFFFF&}
+Dialogue: 1,0:00:17.62,0:00:19.10,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VEM {\c&H0028D7FF&}ESCONDIDO{\c&HFFFFFF&} {\c&H0028D7FF&}NO{\c&HFFFFFF&} {\c&H0028D7FF&}PREÇO{\c&HFFFFFF&}
+Dialogue: 1,0:00:19.10,0:00:19.74,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DO QUE VOCÊ
+Dialogue: 1,0:00:19.74,0:00:20.04,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}COMPRA.
+Dialogue: 1,0:00:20.60,0:00:21.70,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}EM 2022,
+Dialogue: 1,0:00:22.22,0:00:22.56,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O PAÍS
+Dialogue: 1,0:00:22.56,0:00:24.36,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}CORTOU O ICMS
+Dialogue: 1,0:00:24.36,0:00:25.22,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DA GASOLINA,
+Dialogue: 1,0:00:25.50,0:00:26.36,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E O PREÇO CAIU
+Dialogue: 1,0:00:26.36,0:00:27.60,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}QUASE {\c&H0028D7FF&}NOVE{\c&HFFFFFF&} {\c&H0028D7FF&}POR{\c&HFFFFFF&} {\c&H0028D7FF&}CENTO{\c&HFFFFFF&}
+Dialogue: 1,0:00:27.60,0:00:28.44,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}EM UMA SEMANA.
+Dialogue: 1,0:00:28.44,0:00:29.72,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SÓ QUE A CONTA
+Dialogue: 1,0:00:29.72,0:00:30.40,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NÃO SOME:
+Dialogue: 1,0:00:30.96,0:00:31.98,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}OS ESTADOS DIZEM
+Dialogue: 1,0:00:31.98,0:00:32.52,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}QUE PERDERAM
+Dialogue: 1,0:00:32.52,0:00:34.30,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}MAIS DE {\c&H0028D7FF&}CEM{\c&HFFFFFF&} {\c&H0028D7FF&}BILHÕES.{\c&HFFFFFF&}
+Dialogue: 1,0:00:34.62,0:00:35.44,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O {\c&H0028D7FF&}KANSAS,{\c&HFFFFFF&}
+Dialogue: 1,0:00:35.44,0:00:36.82,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}CORTOU IMPOSTOS
+Dialogue: 1,0:00:36.82,0:00:37.30,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PROMETENDO
+Dialogue: 1,0:00:37.30,0:00:38.12,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}CRESCIMENTO.
+Dialogue: 1,0:00:38.62,0:00:39.46,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A ARRECADAÇÃO
+Dialogue: 1,0:00:39.46,0:00:40.32,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DESPENCOU,
+Dialogue: 1,0:00:40.52,0:00:41.80,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O CRESCIMENTO {\c&H0028D7FF&}NÃO{\c&HFFFFFF&} {\c&H0028D7FF&}VEIO,{\c&HFFFFFF&}
+Dialogue: 1,0:00:41.80,0:00:42.72,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E VOLTARAM
+Dialogue: 1,0:00:42.72,0:00:43.32,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ATRÁS.
+Dialogue: 1,0:00:43.86,0:00:45.06,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}AGORA O DETALHE:
+Dialogue: 1,0:00:45.28,0:00:45.84,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}UM PACOTE
+Dialogue: 1,0:00:45.84,0:00:47.08,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DE CAFÉ PAGA
+Dialogue: 1,0:00:47.08,0:00:48.06,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O {\c&H0028D7FF&}MESMO{\c&HFFFFFF&} {\c&H0028D7FF&}IMPOSTO{\c&HFFFFFF&}
+Dialogue: 1,0:00:48.06,0:00:48.78,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PARA QUEM GANHA
+Dialogue: 1,0:00:48.78,0:00:50.06,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}MIL OU CEM MIL.
+Dialogue: 1,0:00:50.46,0:00:50.88,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PARA QUEM
+Dialogue: 1,0:00:50.88,0:00:51.68,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}GANHA POUCO,
+Dialogue: 1,0:00:52.02,0:00:53.10,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PESA MUITO MAIS.
+Dialogue: 1,0:00:53.54,0:00:54.12,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A PERGUNTA
+Dialogue: 1,0:00:54.12,0:00:54.80,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NÃO É SÓ
+Dialogue: 1,0:00:54.80,0:00:55.70,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}QUANTO COBRAR.
+Dialogue: 1,0:00:55.98,0:00:56.66,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}É DE QUEM.
+Dialogue: 1,0:00:56.66,0:00:58.30,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NO PRÓXIMO CAFÉ,
+Dialogue: 1,0:00:58.30,0:00:58.78,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}LEMBRA:
+Dialogue: 1,0:00:59.12,0:00:59.56,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ATÉ O FIM
+Dialogue: 1,0:00:59.56,0:01:00.36,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DE MAIO,
+Dialogue: 1,0:01:00.36,0:01:01.20,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ELE NÃO É SEU.
+Dialogue: 1,0:01:01.92,0:01:02.54,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}COMENTA QUAL
+Dialogue: 1,0:01:02.54,0:01:03.36,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}IMPOSTO VOCÊ
+Dialogue: 1,0:01:03.36,0:01:03.82,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}CORTARIA
+Dialogue: 1,0:01:03.82,0:01:04.30,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PRIMEIRO.
+Dialogue: 0,0:00:00.00,0:00:04.90,Nota,,0,0,0,,{\fad(200,200)\an2}estimativa do IBPT (2025)
+Dialogue: 0,0:00:09.75,0:00:15.75,Nota,,0,0,0,,{\fad(200,200)\an2}Tesouro Nacional (2024) · OCDE/CEPAL (2023)
+Dialogue: 0,0:00:15.75,0:00:20.40,Nota,,0,0,0,,{\fad(200,200)\an2}Tesouro Nacional (2024): impostos sobre bens e serviços
+Dialogue: 0,0:00:24.40,0:00:28.40,Nota,,0,0,0,,{\fad(200,200)\an2}a queda também teve corte de tributos federais
+Dialogue: 0,0:00:28.40,0:00:34.40,Nota,,0,0,0,,{\fad(200,200)\an2}segundo os estados (Comsefaz)
+Dialogue: 0,0:00:34.40,0:00:43.70,Nota,,0,0,0,,{\fad(200,200)\an2}Kansas, EUA, 2012 a 2017
+Dialogue: 0,0:00:43.70,0:00:56.66,Nota,,0,0,0,,{\fad(200,200)\an2}ilustração
+Dialogue: 0,0:00:56.66,0:01:01.55,Nota,,0,0,0,,{\fad(200,200)\an2}estimativa do IBPT (2025)

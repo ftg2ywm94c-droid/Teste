@@ -7,7 +7,7 @@ HERE = os.path.dirname(os.path.abspath(__file__)); PROJ = os.path.dirname(HERE);
 EP = os.environ.get('EP')          # ex.: EP=02 usa v2/ep02 (planos, quadros, saída) e narracao/02_narracao.mp3
 if EP:
     BASE = os.path.join(HERE, f'ep{EP}'); sys.path.insert(0, BASE); import plan as SH
-    DEF_NAME = {'02': '02_terra_parasse_de_girar_1080x1920.mp4', '03': '03_buraco_atravessa_a_terra_1080x1920.mp4', '04': '04_oxigenio_sumisse_20s_1080x1920.mp4', '05': '05_todo_oxigenio_sumisse_1080x1920.mp4', '06': '06_apocalipse_zumbi_brasil_1080x1920.mp4', '07': '07_furacao_avenida_paulista_1080x1920.mp4', '08': '08_fogo_nunca_descoberto_1080x1920.mp4', '09': '09_vida_real_regras_gta_1080x1920.mp4'}.get(EP, f'{EP}_1080x1920.mp4')
+    DEF_NAME = {'02': '02_terra_parasse_de_girar_1080x1920.mp4', '03': '03_buraco_atravessa_a_terra_1080x1920.mp4', '04': '04_oxigenio_sumisse_20s_1080x1920.mp4', '05': '05_todo_oxigenio_sumisse_1080x1920.mp4', '06': '06_apocalipse_zumbi_brasil_1080x1920.mp4', '07': '07_furacao_avenida_paulista_1080x1920.mp4', '08': '08_fogo_nunca_descoberto_1080x1920.mp4', '09': '09_vida_real_regras_gta_1080x1920.mp4', '10': '10_brasil_menos_impostos_1080x1920.mp4'}.get(EP, f'{EP}_1080x1920.mp4')
 else:
     BASE = HERE; import shots as SH
     DEF_NAME = '01_distancia_de_parada_1080x1920.mp4'
@@ -39,7 +39,20 @@ run(['ffmpeg', '-y', '-v', 'error', '-i', NARR, '-i', os.path.join(OUT, 'sfx.wav
 vf = ('scale=1080:1920:flags=lanczos,unsharp=5:5:0.45:5:5:0.0,eq=contrast=1.03:saturation=1.05,'
       f"ass={os.path.join(OUT, 'legenda.ass')}:fontsdir={os.path.join(PROJ, 'fonts')},format=yuv420p")
 final = os.path.join(OUT, os.environ.get('OUT_NAME', DEF_NAME))
-run(['ffmpeg', '-y', '-v', 'error', '-f', 'concat', '-safe', '0', '-i', os.path.join(OUT, 'frames.txt'), '-i', os.path.join(OUT, 'mix.wav'),
+MG = os.path.join(BASE, 'mg')          # camada de motion graphics em 1080x1920 (vídeo 10 em diante), sobreposta depois da ampliação do 3D
+if EP and os.path.isdir(MG):
+    mg_missing = [p for s in SH.SHOTS for f in s.frames for p in [os.path.join(MG, s.name, f'{f:04d}.png')] if not os.path.exists(p)]
+    if mg_missing: sys.exit(f'faltam {len(mg_missing)} quadros de motion graphics (ex.: {mg_missing[:3]})')
+    with open(os.path.join(OUT, 'mg.txt'), 'w') as f:
+        for s in SH.SHOTS:
+            for fr_ in s.frames: f.write(f"file '{os.path.join(MG, s.name, f'{fr_:04d}.png')}'\nduration {1 / SH.FPS:.6f}\n")
+    a3d, a_ass = vf.split(',ass=')
+    fcv = f"[0:v]{a3d}[b];[1:v]format=rgba[o];[b][o]overlay=0:0,ass={a_ass}[v]"
+    run(['ffmpeg', '-y', '-v', 'error', '-f', 'concat', '-safe', '0', '-i', os.path.join(OUT, 'frames.txt'), '-f', 'concat', '-safe', '0', '-i', os.path.join(OUT, 'mg.txt'),
+         '-i', os.path.join(OUT, 'mix.wav'), '-filter_complex', fcv, '-r', '30', '-map', '[v]', '-map', '2:a', '-c:v', 'libx264', '-preset', 'slow', '-crf', '17', '-profile:v', 'high',
+         '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-t', f'{SH.END:.3f}', '-movflags', '+faststart', final + '.tmp.mp4'])
+else:
+  run(['ffmpeg', '-y', '-v', 'error', '-f', 'concat', '-safe', '0', '-i', os.path.join(OUT, 'frames.txt'), '-i', os.path.join(OUT, 'mix.wav'),
      '-vf', vf, '-r', '30', '-map', '0:v', '-map', '1:a', '-c:v', 'libx264', '-preset', 'slow', '-crf', '17', '-profile:v', 'high',
      '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-t', f'{SH.END:.3f}', '-movflags', '+faststart', final + '.tmp.mp4'])
 os.replace(final + '.tmp.mp4', final); print('ok', final, 'faltando:', len(missing))
