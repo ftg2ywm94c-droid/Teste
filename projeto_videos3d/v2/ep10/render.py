@@ -135,6 +135,7 @@ elif K == 'tesoura':
     teo = B.build_character('Teo', B.TEO, B.new_coll('TeoCol')); items['teo'] = teo; place_teo(teo, (0, 0, 0), 0)
 if hasattr(shot, 'scissors') or K == 'tesoura':
     ts = SC.tesoura('Tesoura', C, 1.6); items['scissors'] = ts
+if os.environ.get('ACAB', '1') == '1': SC.acabamento(); SC.luzes_recorte()           # texturas procedurais, piso com grade e recortes coloridos (melhoria de 17/11)
 for m in bpy.data.materials: m.cycles.emission_sampling = 'NONE'
 if getattr(shot, 'dim', 0): sc.view_settings.exposure -= 1.6 * shot.dim
 

@@ -223,3 +223,66 @@ def tesoura(name, C, s=1.0):
 
 def tesoura_pose(Tz, open_deg):
     for hv, sd in zip(Tz['halves'], (1, -1)): hv.rotation_euler = (0, math.radians(sd * open_deg / 2), 0)
+
+# ------------------------------------------------------------------ acabamento de superfície (procedural, sem imagens externas)
+# Aplicado por cima dos materiais básicos depois de montar a cena: variação de rugosidade, microrrelevo e leve variação de cor,
+# para os objetos não parecerem de plástico liso. Piso do palco: brilhante, com manchas suaves e grade luminosa que some nas bordas.
+KINDS = {'metal': ('Ouro', 'CofreAco', 'Latao', 'Lamina', 'Argola', 'AlcaAco', 'Eixo'),
+         'pintado': ('CofreCorpo', 'CofrePorta', 'BombaVermelha', 'BombaBranca', 'Col_', 'Arrec', 'PizzaResto', 'PizzaFatia', 'Pedestal', 'BaseCal', 'BaseBomba', 'CaboTesoura', 'SetaVerde'),
+         'papel': ('Papel', 'EtqBranca', 'EtqVermelha', 'PacoteFaixa', 'FaixaCal'),
+         'papelao': ('Pacote_',)}
+def _detail(mat, scale, rough_var, bump, col_var=0.0, stretch=(1, 1, 1), seed=0.0):
+    nt = mat.node_tree; b = next((n for n in nt.nodes if n.bl_idname == 'ShaderNodeBsdfPrincipled'), None)
+    if b is None or b.inputs['Roughness'].is_linked: return
+    N = nt.nodes.new; L = nt.links.new
+    tc = N('ShaderNodeTexCoord'); mp = N('ShaderNodeMapping'); mp.inputs['Scale'].default_value = stretch; mp.inputs['Location'].default_value = (seed, seed * 1.7, 0)
+    L(tc.outputs['Object'], mp.inputs['Vector'])
+    nz = N('ShaderNodeTexNoise'); nz.inputs['Scale'].default_value = scale; nz.inputs['Detail'].default_value = 8; nz.inputs['Roughness'].default_value = 0.6
+    L(mp.outputs['Vector'], nz.inputs['Vector'])
+    r0 = b.inputs['Roughness'].default_value
+    mr = N('ShaderNodeMapRange'); mr.inputs['To Min'].default_value = max(0.02, r0 - rough_var); mr.inputs['To Max'].default_value = min(1.0, r0 + rough_var)
+    L(nz.outputs['Fac'], mr.inputs['Value']); L(mr.outputs['Result'], b.inputs['Roughness'])
+    bp_ = N('ShaderNodeBump'); bp_.inputs['Strength'].default_value = bump; bp_.inputs['Distance'].default_value = 0.002
+    L(nz.outputs['Fac'], bp_.inputs['Height']); L(bp_.outputs['Normal'], b.inputs['Normal'])
+    if col_var and not b.inputs['Base Color'].is_linked:
+        c = b.inputs['Base Color'].default_value; hsv = N('ShaderNodeHueSaturation'); hsv.inputs['Color'].default_value = c
+        mv = N('ShaderNodeMapRange'); mv.inputs['To Min'].default_value = 1 - col_var; mv.inputs['To Max'].default_value = 1 + col_var
+        L(nz.outputs['Fac'], mv.inputs['Value']); L(mv.outputs['Result'], hsv.inputs['Value']); L(hsv.outputs['Color'], b.inputs['Base Color'])
+
+def piso_brilhante(mat):
+    nt = mat.node_tree; b = next(n for n in nt.nodes if n.bl_idname == 'ShaderNodeBsdfPrincipled'); N = nt.nodes.new; L = nt.links.new
+    b.inputs['Base Color'].default_value = (0.025, 0.03, 0.04, 1); b.inputs['Coat Weight'].default_value = 0.35; b.inputs['Coat Roughness'].default_value = 0.12
+    tc = N('ShaderNodeTexCoord')
+    nz = N('ShaderNodeTexNoise'); nz.inputs['Scale'].default_value = 0.9; nz.inputs['Detail'].default_value = 4; L(tc.outputs['Object'], nz.inputs['Vector'])
+    mr = N('ShaderNodeMapRange'); mr.inputs['To Min'].default_value = 0.12; mr.inputs['To Max'].default_value = 0.42; L(nz.outputs['Fac'], mr.inputs['Value']); L(mr.outputs['Result'], b.inputs['Roughness'])
+    sep = N('ShaderNodeSeparateXYZ'); L(tc.outputs['Object'], sep.inputs['Vector'])
+    def line(o):
+        m1 = N('ShaderNodeMath'); m1.operation = 'MULTIPLY'; m1.inputs[1].default_value = 1.25; L(o, m1.inputs[0])
+        fr = N('ShaderNodeMath'); fr.operation = 'PINGPONG'; fr.inputs[1].default_value = 0.5; L(m1.outputs[0], fr.inputs[0])
+        lt = N('ShaderNodeMath'); lt.operation = 'LESS_THAN'; lt.inputs[1].default_value = 0.011; L(fr.outputs[0], lt.inputs[0]); return lt.outputs[0]
+    mx = N('ShaderNodeMath'); mx.operation = 'MAXIMUM'; L(line(sep.outputs['X']), mx.inputs[0]); L(line(sep.outputs['Y']), mx.inputs[1])
+    ln = N('ShaderNodeVectorMath'); ln.operation = 'LENGTH'; L(tc.outputs['Object'], ln.inputs[0])
+    fd = N('ShaderNodeMapRange'); fd.inputs['From Min'].default_value = 1.5; fd.inputs['From Max'].default_value = 6.5; fd.inputs['To Min'].default_value = 1.0; fd.inputs['To Max'].default_value = 0.0
+    L(ln.outputs['Value'], fd.inputs['Value'])
+    em = N('ShaderNodeMath'); em.operation = 'MULTIPLY'; L(mx.outputs[0], em.inputs[0]); L(fd.outputs['Result'], em.inputs[1])
+    es = N('ShaderNodeMath'); es.operation = 'MULTIPLY'; es.inputs[1].default_value = 0.7; L(em.outputs[0], es.inputs[0])
+    b.inputs['Emission Color'].default_value = (0.10, 0.62, 0.70, 1); L(es.outputs[0], b.inputs['Emission Strength'])
+
+def acabamento():
+    import bpy as _b
+    for m in _b.data.materials:
+        if not m.use_nodes: continue
+        n = m.name
+        if n == 'ChaoEstudio': piso_brilhante(m); continue
+        if n.startswith(KINDS['metal']): _detail(m, 60, 0.12, 0.04, 0.0, stretch=(1, 1, 30))
+        elif n.startswith(KINDS['pintado']): _detail(m, 45, 0.07, 0.02, 0.03)
+        elif n.startswith(KINDS['papel']): _detail(m, 140, 0.05, 0.06, 0.02)
+        elif n.startswith(KINDS['papelao']): _detail(m, 35, 0.08, 0.12, 0.06)
+
+def luzes_recorte():
+    """Duas luzes de recorte coloridas atrás (ciano à esquerda, laranja à direita): separam os objetos do fundo escuro."""
+    import bpy as _b
+    for nm, loc, col, e in (('RecorteCiano', (-4.5, 4.5, 3.0), (0.3, 0.85, 1.0), 260), ('RecorteLaranja', (4.5, 4.0, 2.6), (1.0, 0.55, 0.2), 200)):
+        l = _b.data.lights.new(nm, 'AREA'); l.energy = e; l.size = 2.5; l.color = col
+        o = B.link(_b.data.objects.new(nm, l)); o.location = loc
+        d = Vector((0, 0, 1.0)) - Vector(loc); o.rotation_euler = d.to_track_quat('-Z', 'Y').to_euler()
