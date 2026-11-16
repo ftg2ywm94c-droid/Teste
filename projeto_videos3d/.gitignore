@@ -48,3 +48,12 @@ v2/ep07/out/*.mp4
 v2/ep07/out/frames.txt
 v2/ep07/out/contact_sheet.jpg
 v2/ep07/out/qc_report.json
+v2/ep08/frames/
+v2/ep08/preview/
+v2/ep08/stills/
+v2/ep08/build/
+v2/ep08/out/*.wav
+v2/ep08/out/*.mp4
+v2/ep08/out/frames.txt
+v2/ep08/out/contact_sheet.jpg
+v2/ep08/out/qc_report.json

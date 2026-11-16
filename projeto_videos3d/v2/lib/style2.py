@@ -88,7 +88,12 @@ def finish(sc, cam, focus_dist, f_stop=2.2, grade=((0.98, 1.0, 1.04), (1.0, 1.0,
     bl = N('CompositorNodeBlur'); bl.filter_type = 'FAST_GAUSS'; bl.use_relative = True; bl.factor_x = bl.factor_y = 30
     mx = N('CompositorNodeMixRGB'); mx.blend_type = 'MULTIPLY'; mx.inputs[0].default_value = vignette
     inv = N('CompositorNodeInvert'); inv.inputs[0].default_value = 0.0      # máscara: 1 no centro, cai nas bordas
-    L(rl.outputs['Image'], gl.inputs['Image']); L(gl.outputs['Image'], df.inputs['Image']); L(rl.outputs['Depth'], df.inputs['Z'])
+    L(rl.outputs['Image'], gl.inputs['Image']); L(gl.outputs['Image'], df.inputs['Image'])
+    # painéis e cartões presos à câmera (Z < 1,5 m) ficam nítidos: Z' = Z + (Z < 1,5) * (foco - Z)
+    lt_ = N('CompositorNodeMath'); lt_.operation = 'LESS_THAN'; lt_.inputs[1].default_value = 1.5; L(rl.outputs['Depth'], lt_.inputs[0])
+    sb_ = N('CompositorNodeMath'); sb_.operation = 'SUBTRACT'; sb_.inputs[0].default_value = focus_dist; L(rl.outputs['Depth'], sb_.inputs[1])
+    ml_ = N('CompositorNodeMath'); ml_.operation = 'MULTIPLY'; L(lt_.outputs[0], ml_.inputs[0]); L(sb_.outputs[0], ml_.inputs[1])
+    ad_ = N('CompositorNodeMath'); ad_.operation = 'ADD'; L(rl.outputs['Depth'], ad_.inputs[0]); L(ml_.outputs[0], ad_.inputs[1]); L(ad_.outputs[0], df.inputs['Z'])
     L(df.outputs['Image'], cb.inputs['Image']); L(cb.outputs['Image'], ld.inputs['Image'])
     L(em.outputs['Mask'], bl.inputs['Image']); L(bl.outputs['Image'], inv.inputs['Color'])
     L(ld.outputs['Image'], mx.inputs[1]); L(inv.outputs['Color'], mx.inputs[2]); L(mx.outputs['Image'], comp.inputs['Image'])
