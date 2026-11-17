@@ -417,12 +417,12 @@ const fxAlert = (p: Pen, stage: number, hot: boolean, silent: boolean) => {
   g.save(); g.beginPath(); g.roundRect(45, 60, 310, 640, 36); g.clip(); g.fillStyle = gr; g.fillRect(45, 60, 310, 640); g.restore();
   p.poly([[200, 110], [270, 235], [130, 235]], "#f3d35a", 10); font(g, 86); g.fillStyle = "#241726"; g.fillText("!", 200, 192);
   g.fillStyle = "#fff";
-  if (stage >= 1) { font(g, 36); g.fillText("DEFESA CIVIL", 200, 290); }
-  if (stage >= 2) { rr(g, 58, 320, 284, 70, 18, "#fff", "#fff", 0); font(g, 29); g.fillStyle = "#c22f28"; g.fillText("ALERTA SEVERO", 200, 356); }
-  if (stage >= 3) { g.fillStyle = "#fff"; font(g, 46); g.fillText("VENDAVAL", 200, 440); font(g, 27); g.fillText("rajadas acima de", 200, 500); font(g, 54); g.fillStyle = "#f3d35a"; g.fillText("90 km/h", 200, 560); }
+  if (stage >= 1) { font(g, 40); g.fillText("DEFESA CIVIL", 200, 286); }
+  if (stage >= 2) { rr(g, 58, 316, 284, 140, 22, "#fff", "#241726", 6); font(g, 60); g.fillStyle = "#c22f28"; g.fillText("ALERTA", 200, 356); g.fillText("SEVERO", 200, 418); }
+  if (stage >= 3) { g.fillStyle = "#fff"; font(g, 50); g.fillText("VENDAVAL", 200, 500); font(g, 28); g.fillText("rajadas acima de", 200, 548); font(g, 56); g.fillStyle = "#f3d35a"; g.fillText("90 km/h", 200, 600); }
   if (silent) { // sino cortado = modo silencioso
-    rr(g, 255, 620, 80, 60, 16, "rgba(0,0,0,0.35)", "#fff", 0);
-    p.poly([[278, 666], [282, 640], [295, 630], [308, 640], [312, 666]], "#fff", 0); g.strokeStyle = "#fff"; g.lineWidth = 6; g.beginPath(); g.moveTo(268, 680); g.lineTo(322, 626); g.stroke();
+    rr(g, 262, 638, 70, 52, 14, "rgba(0,0,0,0.35)", "#fff", 0);
+    p.poly([[282, 678], [286, 655], [297, 646], [308, 655], [312, 678]], "#fff", 0); g.strokeStyle = "#fff"; g.lineWidth = 6; g.beginPath(); g.moveTo(272, 688); g.lineTo(322, 642); g.stroke();
   }
   rr(g, 160, 30, 80, 16, 8, "#111", "#111", 0);
 };

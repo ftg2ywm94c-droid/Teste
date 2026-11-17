@@ -138,7 +138,7 @@ const CAMS: Record<number, Key[]> = {
   // a sala: você no sofá, o celular dispara
   2: [{ f: 0, s: (f) => dolly([600.0, 1.35, -1.9], [600.0, 1.0, 3.2], f, S0(2), 0.0026, { fov: 48 }) }],
   // a tela do celular (perto) e mais perto no "vendaval"
-  3: [{ f: 0, s: (f) => dolly([600.0, 1.28, -0.4], [600.0, 1.2, 3.0], f, S0(3), 0.0022, { fov: 40, roll: -0.012 }) }],
+  3: [{ f: 0, s: (f) => dolly([600.0, 1.26, 0.1], [600.0, 1.2, 3.0], f, S0(3), 0.0022, { fov: 40, roll: -0.012 }) }],
   4: [{ f: 0, s: (f) => dolly([600.0, 1.24, 0.5], [600.0, 1.2, 3.0], f, S0(4), 0.0022, { fov: 40, roll: 0.01 }) }],
   // pela janela: a rua do outro lado, parada (moldura da janela na frente da câmera)
   5: [{ f: 0, s: (f) => dolly([-4.0, 2.6, 10.6], [-4.0, 2.2, -20], f, S0(5), 0.0018, { fov: 50 }) }],
