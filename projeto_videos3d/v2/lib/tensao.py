@@ -247,7 +247,7 @@ def render(cues, end, cortes=()):
 if __name__ == '__main__':
     EP = os.environ['EP']; HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); BASE = os.path.join(HERE, f'ep{EP}')
     spec = importlib.util.spec_from_file_location('tcfg', os.path.join(BASE, 'tensao_cfg.py')); cfg = importlib.util.module_from_spec(spec); spec.loader.exec_module(cfg)
-    cortes = ()
+    cortes = tuple(getattr(cfg, 'CORTES', ()))
     if getattr(cfg, 'WHOOSH_CORTES', True) and os.path.exists(os.path.join(BASE, 'plan.py')):
         sys.path[:0] = [os.path.join(HERE, 'lib'), HERE, BASE]
         import plan as P; cortes = [s.t0 for s in P.SHOTS[1:]]

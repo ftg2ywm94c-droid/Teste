@@ -12,3 +12,5 @@ CUES = [
     ('whoosh', 26.86, 0.3), ('whoosh', 34.86, 0.3), ('whoosh', 62.72, 0.3),  # Dia um / dois / três
     ('falha', 41.1, 0.55), ('falha', 43.5, 0.45),                          # sinal some / Pix não passa
 ]
+# cortes de plano da versão na skill Xavier (os de 'Dia um/dois/três' já têm whoosh próprio)
+CORTES = [3.94, 10.2, 17.24, 19.78, 41.82, 44.96, 52.22, 67.4]

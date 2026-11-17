@@ -39,7 +39,8 @@ fc = ('[0:a]aresample=48000,pan=stereo|c0=c0|c1=c0,asplit=2[v][key];'
       'apad=whole_dur=' + f'{SH.END:.3f}' + ',atrim=0:' + f'{SH.END:.3f}' + ',loudnorm=I=-14:TP=-1.5:LRA=9,aresample=48000[mix]')
 run(['ffmpeg', '-y', '-v', 'error', '-i', NARR, '-i', os.path.join(OUT, 'sfx.wav'), '-i', os.path.join(OUT, 'music.wav'),
      *(['-i', TENS] if HAS_T else []), '-filter_complex', fc, '-map', '[mix]', '-ar', '48000', '-c:a', 'pcm_s16le', os.path.join(OUT, 'mix.wav')])
-vf = ('scale=1080:1920:flags=lanczos,unsharp=5:5:0.45:5:5:0.0,eq=contrast=1.03:saturation=1.05,'
+UP = 'scale=1080:1920:flags=lanczos,unsharp=5:5:0.45:5:5:0.0,' if not getattr(SH, 'NATIVE', False) else ''   # 3D nativo em 1080x1920: sem ampliar
+vf = (UP + 'eq=contrast=1.03:saturation=1.05,'
       f"ass={os.path.join(OUT, 'legenda.ass')}:fontsdir={os.path.join(PROJ, 'fonts')},format=yuv420p")
 final = os.path.join(OUT, os.environ.get('OUT_NAME', DEF_NAME))
 MG = os.path.join(BASE, 'mg')          # camada de motion graphics em 1080x1920 (vídeo 10 em diante), sobreposta depois da ampliação do 3D
