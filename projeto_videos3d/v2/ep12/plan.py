@@ -16,3 +16,4 @@ class Shot:
     @property
     def frames(self): return range(self.a, self.b)
 SHOTS = [Shot(n, _cuts[i], _cuts[i + 1]) for i, n in enumerate(_names)]
+LIMITER = 0.8   # ~-1,9 dBFS a 192 kHz: golpes de vento/estalo passavam de -1 dBTP depois do AAC

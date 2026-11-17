@@ -61,10 +61,10 @@ Dialogue: 1,0:00:41.64,0:00:42.44,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,
 Dialogue: 1,0:00:42.92,0:00:43.28,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ELA TÁ
 Dialogue: 1,0:00:43.28,0:00:44.18,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}INCLINANDO.
 Dialogue: 1,0:00:44.44,0:00:45.66,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}NA{\c&HFFFFFF&} {\c&H0028D7FF&}SUA{\c&HFFFFFF&} {\c&H0028D7FF&}DIREÇÃO.{\c&HFFFFFF&}
-Dialogue: 1,0:00:46.02,0:00:46.56,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O CELULAR
-Dialogue: 1,0:00:46.56,0:00:47.86,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}TÁ COM OITO
-Dialogue: 1,0:00:48.14,0:00:48.14,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}POR CENTO.
-Dialogue: 1,0:00:48.14,0:00:49.96,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ TEM {\c&H0028D7FF&}DEZ{\c&HFFFFFF&} {\c&H0028D7FF&}SEGUNDOS.{\c&HFFFFFF&}
+Dialogue: 1,0:00:46.02,0:00:46.56,Leg,,0,0,330,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O CELULAR
+Dialogue: 1,0:00:46.56,0:00:47.35,Leg,,0,0,330,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}TÁ COM OITO
+Dialogue: 1,0:00:47.35,0:00:48.14,Leg,,0,0,330,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}POR CENTO.
+Dialogue: 1,0:00:48.14,0:00:49.96,Leg,,0,0,330,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ TEM {\c&H0028D7FF&}DEZ{\c&HFFFFFF&} {\c&H0028D7FF&}SEGUNDOS.{\c&HFFFFFF&}
 Dialogue: 1,0:00:50.34,0:00:51.16,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}OPÇÃO A:
 Dialogue: 1,0:00:51.38,0:00:51.68,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ
 Dialogue: 1,0:00:51.68,0:00:52.42,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SAI CORRENDO

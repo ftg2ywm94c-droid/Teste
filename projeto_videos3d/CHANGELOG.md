@@ -5,6 +5,15 @@
 - `scripts/add_narration.py`: MP3 → MP4 com legenda sincronizada, ducking e −14 LUFS.
 - Para recuperar: `git checkout be24c75 -- projeto_videos3d` (a tag não pôde ser enviada ao GitHub: o acesso desta sessão só permite o branch de trabalho).
 
+## v0.15 — vídeo 12 "Vendaval: você sai ou fica?" (suspense em 2ª pessoa, escolha A/B) (2026-11-17)
+- Cenas na skill Xavier (`teste_xavier/src/videos/vendaval/`, composição `VendavalShort`), 18 planos cortados nas palavras-chave, render nativo 1080x1920 (2135 quadros).
+- Chuva e vento mais nítidos (pedido do usuário): camada 2D em `v2/ep12/mograph.py` (gotas em duas profundidades, respingos, rajadas e folhas) por cima das gotas 3D. No som, gotas agudas sintetizadas e rajadas mais fortes.
+- "ALERTA SEVERO" em duas linhas grandes na tela do celular (pedido do usuário).
+- `v2/assemble.py`: limitador opcional `LIMITER` no `plan.py`, rodando a 192 kHz para segurar picos entre amostras. Sem o atributo, nada muda nos vídeos anteriores.
+- `v2/captions.py`: (1) trocas desiguais roteiro x voz ("oito por cento" falado como "8%") dividem o tempo dito em vez de gerar legenda de duração zero; (2) `LEG_MV` opcional no `captions_cfg.py` desloca a legenda num trecho (no ep12, desce no plano da bateria para não cobrir o "8%"). Legendas antigas não foram regeradas.
+- `v2/ep12/captions_cfg.py`: as expressões de destaque estavam com maiúsculas e pontuação e não casavam; corrigidas.
+- QC aprovado: −13,6 LUFS, TP −1,1, correlação da narração 0,96, atraso e deriva 0 ms. Limitações em `v2/ep12/LIMITACOES.md`.
+
 ## v0.14 — vídeo 11 v2: efeitos sonoros com presença (2026-11-17)
 - Pedido do usuário: caprichar mais nos efeitos. Diagnóstico: na v1 os efeitos ficavam 30–50 dB abaixo da voz, porque eram abaixados junto com a música.
 - `v2/assemble.py`: canal opcional de efeitos `SFX_BUS = (ganho, razão)` no `plan.py`, com ducking leve. Sem esse atributo, a mixagem é a mesma de antes (vídeos 01–10 inalterados).

@@ -22,6 +22,9 @@ for tag, i1, i2, j1, j2 in sm.get_opcodes():
         diffs.append((tag, ' '.join(S[i1:i2]), ' '.join(x['w'] for x in Wd[j1:j2])))
         if i2 - i1 == j2 - j1:
             for k in range(i2 - i1): tim[i1 + k] = (Wd[j1 + k]['s'], Wd[j1 + k]['e'])
+        elif tag == 'replace' and j2 > j1:     # ex.: "oito por cento" falado como "8%": divide o tempo dito entre as palavras do roteiro
+            s0, e0 = Wd[j1]['s'], Wd[j2 - 1]['e']; d_ = (e0 - s0) / (i2 - i1)
+            for k in range(i2 - i1): tim[i1 + k] = (s0 + k * d_, s0 + (k + 1) * d_)
 # palavras do roteiro que a voz não falou (ex.: vídeo 03, "passa a mais" -> "passa mais"): a legenda mostra o que foi dito
 _cfgp = os.path.join(os.path.dirname(os.path.abspath(__file__)), f'ep{EP}', 'captions_cfg.py') if EP else None
 if _cfgp and 'SPOKEN = True' in open(_cfgp).read():
@@ -128,7 +131,11 @@ Style: Hud,Poppins,62,&H00FFFFFF,&H00FFFFFF,&H50000000,&H50000000,-1,0,0,0,100,1
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
-L = [f"Dialogue: 1,{ts(s)},{ts(e)},Leg,,0,0,0,,{{\\fad(40,30)\\fscx92\\fscy92\\t(0,90,\\fscx100\\fscy100)}}{t}" for s, e, t in ev]
+# opcional (captions_cfg.LEG_MV): [(t0, t1, margem_inferior)] desloca a legenda num trecho em que ela cobriria algo da cena
+_MV = getattr(CFG, 'LEG_MV', []) if EP else []
+def _mv(s):
+    return next((m for a_, b_, m in _MV if a_ <= s < b_), 0)
+L = [f"Dialogue: 1,{ts(s)},{ts(e)},Leg,,0,0,{_mv(s)},,{{\\fad(40,30)\\fscx92\\fscy92\\t(0,90,\\fscx100\\fscy100)}}{t}" for s, e, t in ev]
 L += [f"Dialogue: 0,{ts(s)},{ts(e)},Hud,,0,0,0,,{{\\fad(180,180)}}{t}" for s, e, t in HUD]
 NOTES = CFG.NOTES(wt) if EP and hasattr(CFG, 'NOTES') else []
 SAFE916 = bool(EP) and EP.isdigit() and int(EP) >= 9      # zonas seguras do 9:16 (TikTok/Reels/Shorts): notas fora da faixa de nome/descrição (embaixo) e das abas (em cima)
