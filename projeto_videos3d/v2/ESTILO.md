@@ -42,3 +42,9 @@ Todo vídeo em produção ganha uma camada sonora de tensão, original e sinteti
 `v2/epXX/tensao_cfg.py` presas aos tempos da narração: drone grave, pulso, relógio, coração, cluster agudo, subida (riser) antes das
 revelações, braam nos números fortes e "queda" para o silêncio. Ela entra no leito de efeitos + música e é abaixada pela voz
 (sidechain), então a narração continua intacta e na frente. Peso padrão 0,75 (`W_TENSAO`). Sem `out/tensao.wav`, a montagem é a antiga.
+
+## 7. CTA obrigatório no fim da narração
+
+Todo roteiro termina com CTA falado: pedido de inscrição/seguir + gancho para o próximo ("…e fica atento para o próximo. E se..."),
+ou um pedido de comentário. Em vídeo com produto de afiliado, a frase do produto ("o que aparece no vídeo está no link da bio")
+vem logo antes e o CTA de inscrição fecha o vídeo. Manter curto (≤ 5 s).
