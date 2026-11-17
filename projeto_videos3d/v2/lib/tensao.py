@@ -12,6 +12,12 @@ Tipos de deixa (tempos em segundos da narração):
   ('reverso', t, d, g)          sopro reverso que termina em t
   ('braam', t, g)               impacto grave de metais sintéticos (número forte / revelação)
   ('queda', t, g)               "sub drop" curto (corte para o silêncio)
+  ('whoosh', t, g)              passagem de ar centrada em t (além dos whooshes automáticos nos cortes do plan.py)
+  ('zumbido', t, d, g)          zumbido no ouvido depois de um impacto
+  ('desliga', t, g)             energia caindo (hum + apito descendo) que termina em t
+  ('falha', t, g)               falha digital / sinal caindo
+v2 (17/11): braam em camadas com sopro reverso antes, riser de Shepard com rufar, reverb de sala com pré-atraso,
+saturação leve e alargamento estéreo no barramento, whoosh automático nos cortes (WHOOSH_CORTES no cfg).
 Uso: EP=09 python3 v2/lib/tensao.py"""
 import os, sys, math, importlib.util
 import numpy as np
@@ -113,7 +119,95 @@ def ir(seconds=2.4, seed=3):
     r = np.random.default_rng(seed); n = int(seconds * SR); e = np.exp(-np.arange(n) / SR * 3.2)
     return lp(r.standard_normal(n) * e, 4500) * 0.035, lp(r.standard_normal(n) * e, 4500) * 0.035
 
-def render(cues, end):
+
+# ------------------------------------------------------------------ v2 (17/11): camadas mais ricas
+def sat(x, k=1.8): return np.tanh(k * x) / np.tanh(k)
+
+def braam2(d=3.6, root=36.7):
+    """Impacto cinematográfico em camadas: sub com queda de pitch + metais saturados com filtro que fecha +
+    'clang' metálico inarmônico + estalo de ruído. Estéreo por desafinação L/R."""
+    x = tt(d); out = []
+    for side, det in ((0, 1.0), (1, 1.006)):
+        f_sub = (root * 2) * np.exp(-x * 5) + root; sub = np.sin(2 * np.pi * np.cumsum(f_sub) / SR) * np.exp(-x * 1.3) * 1.3
+        br = np.zeros_like(x)
+        for f, g in ((root, 1.0), (root * 1.5, 0.75), (root * 2, 0.9), (root * 3, 0.4), (root * 2 * 1.0595, 0.3), (root * 4, 0.15)):
+            br += g * (saw(f * det, x, 0.1 * side) + saw(f * det * 1.004, x, 0.37))
+        cut = 160 + 2200 * np.exp(-x * 2.6); fb = np.zeros_like(br); blk = 1200
+        for i in range(0, len(br), blk):
+            fb[i:i + blk] = lp(br[max(0, i - 4800):i + blk], float(cut[i]), 2)[-len(br[i:i + blk]):]
+        fb = sat(fb * 0.5, 2.2) * np.minimum(x / 0.03, 1) * np.exp(-x * 0.95)
+        cl = np.zeros_like(x)
+        for f, k in ((223, 5), (347.5, 6), (511, 7), (781, 9), (1203, 11), (1740, 14)):
+            cl += np.sin(2 * np.pi * f * det * x + side) * np.exp(-x * k)
+        crack = hp(rng.standard_normal(len(x)), 1500) * np.exp(-x * 40) * 0.5
+        out.append(sub + 0.55 * fb + 0.12 * cl + crack)
+    return out[0], out[1]
+
+def subida2(d):
+    """Riser: escala de Shepard subindo + ruído com filtro que abre + rufar que acelera; corta seco no fim."""
+    x = tt(d); p = x / d; o = np.zeros_like(x)
+    for k in range(6):  # Shepard: oitavas com janela gaussiana em log-frequência
+        lf = (k + 2.2 * p) % 6; f = 55 * 2 ** lf; a = np.exp(-((lf - 3) ** 2) / 2.2)
+        o += a * np.sin(2 * np.pi * np.cumsum(f) / SR)
+    n = rng.standard_normal(len(x)); nz = np.zeros_like(x); edges = np.linspace(0, len(x), 13).astype(int)
+    for a_, b_ in zip(edges[:-1], edges[1:]):
+        c = 300 * 2 ** (5.2 * (a_ + b_) / 2 / len(x)); nz[a_:b_] = bp(n[max(0, a_ - 2000):b_], c * 0.6, min(c * 1.8, 20000))[-(b_ - a_):]
+    roll = np.zeros_like(x); s = 0.0
+    while s < d - 0.02:
+        q = s / d; step = 0.22 * (1 - q) ** 1.6 + 0.025; seg = tt(0.06)
+        hit_ = bp(rng.standard_normal(len(seg)), 180, 4000) * np.exp(-seg * 55) * (0.3 + q)
+        i = int(s * SR); roll[i:i + len(seg)] += hit_[:len(roll) - i]; s += step
+    o = (0.45 * o + 0.5 * nz + 0.5 * roll) * p ** 1.8
+    o[-int(0.006 * SR):] *= np.linspace(1, 0, int(0.006 * SR))
+    return o, np.roll(o, int(0.011 * SR))
+
+def whoosh(d=0.55, up=True):
+    """Passagem de ar com pan da esquerda para a direita (transições entre planos)."""
+    x = tt(d); p = x / d; n = rng.standard_normal(len(x)); o = np.zeros_like(x); edges = np.linspace(0, len(x), 9).astype(int)
+    for a_, b_ in zip(edges[:-1], edges[1:]):
+        q = (a_ + b_) / 2 / len(x); c = 500 * 2 ** ((3.0 * q) if up else (3.0 * (1 - q)))
+        o[a_:b_] = bp(n[max(0, a_ - 1500):b_], c * 0.5, c * 2.0)[-(b_ - a_):]
+    e = np.sin(np.pi * p) ** 2.2; o *= e; pan = p
+    return o * np.sqrt(1 - pan) * 1.2, o * np.sqrt(pan) * 1.2
+
+def zumbido(d=2.5, f=4200):
+    """Zumbido no ouvido depois de um impacto (tinnitus): seno agudo que some devagar."""
+    x = tt(d); o = np.sin(2 * np.pi * f * x) * np.minimum(x / 0.05, 1) * np.exp(-x * 1.4) * 0.35
+    return o, np.sin(2 * np.pi * f * 1.003 * x) * np.minimum(x / 0.05, 1) * np.exp(-x * 1.4) * 0.35
+
+def desliga(d=1.4):
+    """Energia caindo: zumbido elétrico de 60 Hz com harmônicos + apito que desce de tom e para."""
+    x = tt(d); p = x / d; f = 60 * (1 - 0.75 * p ** 1.5)
+    ph = 2 * np.pi * np.cumsum(f) / SR; hum = sum(np.sin(h * ph) / h for h in (1, 2, 3, 5, 7))
+    whine = np.sin(2 * np.pi * np.cumsum(5200 * (1 - 0.9 * p)) / SR) * 0.12
+    o = sat((hum * 0.6 + whine) * (1 - p) ** 1.2, 1.5)
+    clunk = lp(rng.standard_normal(int(0.2 * SR)), 300) * np.exp(-tt(0.2) * 25); o[-len(clunk):] += clunk * 0.8
+    return o, np.roll(o, int(0.005 * SR))
+
+def falha(d=0.6):
+    """Falha digital (sinal caindo): rajadas curtas picotadas de ruído e tom quadrado."""
+    x = tt(d); o = np.zeros_like(x); s = 0.0
+    while s < d - 0.03:
+        L_ = rng.uniform(0.015, 0.06); seg = tt(L_); f = rng.choice([700, 1400, 2100, 3300])
+        b = (np.sign(np.sin(2 * np.pi * f * seg)) * 0.4 + rng.standard_normal(len(seg)) * 0.6) * rng.uniform(0.3, 1)
+        i = int(s * SR); o[i:i + len(seg)] += b[:len(o) - i]; s += L_ + rng.uniform(0.0, 0.05)
+    o = bp(o, 300, 7000)
+    return o * 0.8, np.roll(o, int(0.013 * SR)) * 0.8
+
+def ir2(seconds=3.2, pre=0.025, seed=5):
+    """Sala grande e escura: pré-atraso, reflexões iniciais e cauda que escurece com o tempo."""
+    r = np.random.default_rng(seed); n = int(seconds * SR); tl = np.arange(n) / SR
+    outs = []
+    for ch in range(2):
+        tail = r.standard_normal(n) * np.exp(-tl * 2.3)
+        dark = lp(tail, 1800); bright = lp(tail, 7000); mixw = np.exp(-tl * 3)
+        h = (bright * mixw + dark * (1 - mixw)) * 0.03
+        for k in range(8):  # reflexões iniciais
+            j = int((0.008 + r.uniform(0, 0.06)) * SR); h[j] += r.uniform(0.1, 0.35) * (1 if r.random() > 0.5 else -1)
+        h = np.concatenate([np.zeros(int(pre * SR)), h]); outs.append(h)
+    return outs[0], outs[1]
+
+def render(cues, end, cortes=()):
     N = int(end * SR) + 1; L = np.zeros(N); R = np.zeros(N); WL = np.zeros(N); WR = np.zeros(N)
     def put(sig, at, g, wet):
         l, r = sig; i = int(at * SR)
@@ -128,20 +222,35 @@ def render(cues, end):
         elif k == 'relogio': put(relogio(c[2] - c[1], c[3]), c[1], c[4], 0.25)
         elif k == 'coracao': put(coracao(c[2] - c[1], c[3]), c[1], c[4], 0.1)
         elif k == 'cluster': put(cluster(c[2] - c[1]), c[1], c[3], 0.6)
-        elif k == 'subida': put(subida(c[2] - c[1]), c[1], c[3], 0.4)
+        elif k == 'subida': put(subida2(c[2] - c[1]), c[1], c[3], 0.4)
         elif k == 'reverso': put(reverso(c[2]), c[1] - c[2], c[3], 0.5)
-        elif k == 'braam': put(braam(), c[1], c[2], 0.7)
+        elif k == 'braam': put(braam2(), c[1], c[2], 0.75); put(reverso(0.5), c[1] - 0.5, c[2] * 0.35, 0.6)
+        elif k == 'whoosh': put(whoosh(c[2] if len(c) > 3 else 0.55), c[1] - 0.28, c[-1], 0.5)
+        elif k == 'zumbido': put(zumbido(c[2]), c[1], c[3], 0.2)
+        elif k == 'desliga': put(desliga(), c[1] - 1.3, c[2], 0.4)
+        elif k == 'falha': put(falha(), c[1], c[2], 0.3)
         elif k == 'queda': put(queda(), c[1], c[2], 0.4)
         else: raise ValueError(k)
-    il, ir_ = ir()
+    # whoosh automático em cada corte de plano, menos onde já há impacto/queda/desliga a menos de 0,35 s
+    fortes = [c[1] for c in cues if c[0] in ('braam', 'queda', 'desliga', 'whoosh')]
+    for tc_ in cortes:
+        if 0.3 < tc_ < end - 0.3 and all(abs(tc_ - f) > 0.35 for f in fortes):
+            put(whoosh(0.5, up=bool(int(tc_ * 10) % 2)), tc_ - 0.28, 0.22, 0.5)
+    il, ir_ = ir2()
     L += fftconvolve(WL, il)[:N]; R += fftconvolve(WR, ir_)[:N]
     st = np.stack([L, R], 1); st = hp(st.T, 25).T
+    st = sat(st / (np.abs(st).max() + 1e-9) * 1.4, 1.3)  # cola do barramento: saturação leve
+    m, s = (st[:, 0] + st[:, 1]) / 2, (st[:, 0] - st[:, 1]) / 2; s = s * 1.35; st = np.stack([m + s, m - s], 1)  # um pouco mais largo
     pk = np.abs(st).max() + 1e-9; st *= 10 ** (-3 / 20) / pk  # pico a −3 dBFS; o nível final é dado pelo peso no assemble
     return st
 
 if __name__ == '__main__':
     EP = os.environ['EP']; HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); BASE = os.path.join(HERE, f'ep{EP}')
     spec = importlib.util.spec_from_file_location('tcfg', os.path.join(BASE, 'tensao_cfg.py')); cfg = importlib.util.module_from_spec(spec); spec.loader.exec_module(cfg)
-    st = render(cfg.CUES, cfg.END); os.makedirs(os.path.join(BASE, 'out'), exist_ok=True)
+    cortes = ()
+    if getattr(cfg, 'WHOOSH_CORTES', True) and os.path.exists(os.path.join(BASE, 'plan.py')):
+        sys.path[:0] = [os.path.join(HERE, 'lib'), HERE, BASE]
+        import plan as P; cortes = [s.t0 for s in P.SHOTS[1:]]
+    st = render(cfg.CUES, cfg.END, cortes); os.makedirs(os.path.join(BASE, 'out'), exist_ok=True)
     dst = os.path.join(BASE, 'out', 'tensao.wav'); wavfile.write(dst, SR, (st * 32767).astype(np.int16))
     print(dst, f'{len(st) / SR:.2f}s', len(cfg.CUES), 'deixas')

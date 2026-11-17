@@ -36,7 +36,7 @@ O vídeo 07 continua como foi entregue: lá o estilo só liga com `STYLE2=1`.
 - A cada vídeo, subir um degrau nos gráficos e nas texturas, sem quebrar o que já funciona e medindo o custo no render.
 - Vídeo 10: acabamento procedural em `v2/ep10/scene.py` (`acabamento`, `piso_brilhante`, `luzes_recorte`): metal escovado, papel com fibra, papelão, pintura com variação de brilho, piso escuro brilhante com grade luminosa que some nas bordas e recortes ciano/laranja. Custo medido: cerca de +10% por quadro. Dá para desligar com `ACAB=0`.
 
-## 6. Camada de tensão / suspense (desde 17/11/2026)
+## 6. Camada de tensão / suspense (desde 17/11/2026; v2 com impactos em camadas, riser de Shepard, whoosh nos cortes, zumbido, queda de energia e falha digital)
 
 Todo vídeo em produção ganha uma camada sonora de tensão, original e sintetizada (`v2/lib/tensao.py`), com deixas por episódio em
 `v2/epXX/tensao_cfg.py` presas aos tempos da narração: drone grave, pulso, relógio, coração, cluster agudo, subida (riser) antes das

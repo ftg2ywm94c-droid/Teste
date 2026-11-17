@@ -8,4 +8,7 @@ CUES = [
     ('pulso', 34.86, 44.5, 96, 0.35), ('braam', 44.12, 0.7),                               # dia dois: sinal / Pix não passa
     ('subida', 61.0, 62.72, 0.35),                                                         # dia três (sem impacto: alívio)
     ('cluster', 71.3, 72.5, 0.4), ('queda', 72.34, 0.5),                                   # "E se..." (gancho)
+    ('desliga', 18.56, 0.8), ('zumbido', 18.6, 2.6, 0.35),                # tudo apaga
+    ('whoosh', 26.86, 0.3), ('whoosh', 34.86, 0.3), ('whoosh', 62.72, 0.3),  # Dia um / dois / três
+    ('falha', 41.1, 0.55), ('falha', 43.5, 0.45),                          # sinal some / Pix não passa
 ]

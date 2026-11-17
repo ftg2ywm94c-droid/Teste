@@ -9,4 +9,5 @@ CUES = [
     ('subida', 37.6, 39.46, 0.5), ('braam', 39.46, 0.8), ('queda', 41.18, 0.5),            # Kansas despencou / não veio
     ('cluster', 43.86, 45.28, 0.5), ('drone', 45.0, 53.4, 0.4),                            # o detalhe: café
     ('subida', 54.6, 56.40, 0.45), ('braam', 56.40, 0.8),                                  # "de quem?"
+    ('zumbido', 39.6, 1.8, 0.2), ('zumbido', 56.5, 1.6, 0.2),
 ]

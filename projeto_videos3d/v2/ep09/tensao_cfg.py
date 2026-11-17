@@ -8,4 +8,5 @@ CUES = [
     ('coracao', 27.7, 36.0, 72, 0.4),
     ('cluster', 36.5, 43.4, 0.5), ('subida', 41.9, 43.96, 0.55), ('braam', 43.96, 0.8),  # Graham
     ('drone', 51.8, 58.5, 0.6), ('pulso', 51.88, 54.8, 100, 0.4), ('subida', 53.3, 54.8, 0.5), ('queda', 54.8, 0.7),
+    ('zumbido', 1.7, 2.6, 0.3),                                           # depois do atropelamento
 ]
