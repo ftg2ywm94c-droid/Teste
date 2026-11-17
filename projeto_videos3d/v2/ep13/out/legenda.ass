@@ -1,0 +1,83 @@
+[Script Info]
+; Texto: roteiro aprovado. Tempos: faster-whisper (medium) por palavra, alinhado ao roteiro.
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Leg,Poppins,92,&H00FFFFFF,&H00FFFFFF,&H00101010,&H78000000,-1,0,0,0,100,100,0,0,1,5,2,2,90,90,560,1
+Style: Nota,Poppins,38,&H00FFFFFF,&H00FFFFFF,&H64000000,&H64000000,-1,0,0,0,100,100,1,0,3,10,0,8,80,80,140,1
+Style: Hud,Poppins,62,&H00FFFFFF,&H00FFFFFF,&H50000000,&H50000000,-1,0,0,0,100,100,1,0,3,18,0,8,80,80,250,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:01.24,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}MEIA-NOITE{\c&HFFFFFF&} {\c&H0028D7FF&}E{\c&HFFFFFF&} {\c&H0028D7FF&}DEZ.{\c&HFFFFFF&}
+Dialogue: 1,0:00:01.46,0:00:01.96,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ PEGA
+Dialogue: 1,0:00:01.96,0:00:03.50,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O {\c&H0028D7FF&}ÚLTIMO{\c&HFFFFFF&} {\c&H0028D7FF&}ÔNIBUS{\c&HFFFFFF&} DA LINHA.
+Dialogue: 1,0:00:03.50,0:00:04.34,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SÓ TEM VOCÊ
+Dialogue: 1,0:00:04.34,0:00:05.62,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E O MOTORISTA.
+Dialogue: 1,0:00:05.84,0:00:06.36,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ SENTA
+Dialogue: 1,0:00:06.36,0:00:07.06,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NO FUNDO,
+Dialogue: 1,0:00:07.48,0:00:08.28,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ENCOSTA A CABEÇA
+Dialogue: 1,0:00:08.28,0:00:08.86,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NA JANELA
+Dialogue: 1,0:00:08.86,0:00:10.42,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E QUASE DORME.
+Dialogue: 1,0:00:10.42,0:00:11.30,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ATÉ QUE {\c&H0028D7FF&}UM{\c&HFFFFFF&} {\c&H0028D7FF&}CELULAR{\c&HFFFFFF&}
+Dialogue: 1,0:00:11.30,0:00:12.26,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}COMEÇA A TOCAR.
+Dialogue: 1,0:00:12.58,0:00:13.38,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}NÃO{\c&HFFFFFF&} {\c&H0028D7FF&}É{\c&HFFFFFF&} {\c&H0028D7FF&}O{\c&HFFFFFF&} {\c&H0028D7FF&}SEU.{\c&HFFFFFF&}
+Dialogue: 1,0:00:13.64,0:00:14.32,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ELE TÁ NO BANCO
+Dialogue: 1,0:00:14.32,0:00:15.08,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DA FRENTE,
+Dialogue: 1,0:00:15.54,0:00:15.98,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SOZINHO.
+Dialogue: 1,0:00:16.42,0:00:17.12,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NINGUÉM PEGA.
+Dialogue: 1,0:00:17.60,0:00:18.24,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ELE PARA.
+Dialogue: 1,0:00:18.24,0:00:19.80,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E TOCA DE NOVO.
+Dialogue: 1,0:00:20.28,0:00:21.26,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ SE APROXIMA
+Dialogue: 1,0:00:21.26,0:00:21.82,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E VÊ A TELA
+Dialogue: 1,0:00:21.82,0:00:22.54,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ACESA.
+Dialogue: 1,0:00:22.80,0:00:23.18,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}NÚMERO{\c&HFFFFFF&}
+Dialogue: 1,0:00:23.18,0:00:24.10,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}DESCONHECIDO.{\c&HFFFFFF&}
+Dialogue: 1,0:00:24.10,0:00:25.40,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E UMA MENSAGEM:
+Dialogue: 1,0:00:25.84,0:00:26.62,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}NÃO{\c&HFFFFFF&} {\c&H0028D7FF&}DESCE{\c&HFFFFFF&}
+Dialogue: 1,0:00:26.62,0:00:27.28,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}NO{\c&HFFFFFF&} {\c&H0028D7FF&}PRÓXIMO{\c&HFFFFFF&}
+Dialogue: 1,0:00:27.28,0:00:27.72,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}PONTO.{\c&HFFFFFF&}
+Dialogue: 1,0:00:28.36,0:00:28.88,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ OLHA
+Dialogue: 1,0:00:28.88,0:00:29.90,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PRO MOTORISTA.
+Dialogue: 1,0:00:30.14,0:00:30.82,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ELE TE ENCARA
+Dialogue: 1,0:00:30.82,0:00:32.30,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}PELO{\c&HFFFFFF&} {\c&H0028D7FF&}RETROVISOR{\c&HFFFFFF&} E {\c&H0028D7FF&}DESVIA{\c&HFFFFFF&}
+Dialogue: 1,0:00:32.30,0:00:33.02,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O OLHAR.
+Dialogue: 1,0:00:33.32,0:00:34.02,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}CHEGA OUTRA
+Dialogue: 1,0:00:34.02,0:00:34.84,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}MENSAGEM:
+Dialogue: 1,0:00:35.12,0:00:36.04,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}ELE{\c&HFFFFFF&} {\c&H0028D7FF&}JÁ{\c&HFFFFFF&} {\c&H0028D7FF&}SABE{\c&HFFFFFF&}
+Dialogue: 1,0:00:36.04,0:00:36.86,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}QUE{\c&HFFFFFF&} {\c&H0028D7FF&}VOCÊ{\c&HFFFFFF&} {\c&H0028D7FF&}VIU.{\c&HFFFFFF&}
+Dialogue: 1,0:00:37.42,0:00:37.90,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O ÔNIBUS
+Dialogue: 1,0:00:37.90,0:00:38.88,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}COMEÇA A {\c&H0028D7FF&}FREAR.{\c&HFFFFFF&}
+Dialogue: 1,0:00:39.12,0:00:40.44,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O PRÓXIMO PONTO {\c&H0028D7FF&}É{\c&HFFFFFF&} {\c&H0028D7FF&}O{\c&HFFFFFF&} {\c&H0028D7FF&}SEU.{\c&HFFFFFF&}
+Dialogue: 1,0:00:40.86,0:00:41.76,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A PORTA ABRE.
+Dialogue: 1,0:00:42.16,0:00:42.64,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}LÁ FORA,
+Dialogue: 1,0:00:42.64,0:00:43.84,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A RUA TÁ VAZIA.
+Dialogue: 1,0:00:44.06,0:00:45.48,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SÓ {\c&H0028D7FF&}UM{\c&HFFFFFF&} {\c&H0028D7FF&}POSTE{\c&HFFFFFF&} {\c&H0028D7FF&}PISCANDO.{\c&HFFFFFF&}
+Dialogue: 1,0:00:45.94,0:00:46.80,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O CELULAR VIBRA
+Dialogue: 1,0:00:46.80,0:00:47.88,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}UMA ÚLTIMA VEZ:
+Dialogue: 1,0:00:48.40,0:00:49.52,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}FICA{\c&HFFFFFF&} {\c&H0028D7FF&}SENTADO.{\c&HFFFFFF&}
+Dialogue: 1,0:00:49.80,0:00:51.64,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ TEM {\c&H0028D7FF&}CINCO{\c&HFFFFFF&} {\c&H0028D7FF&}SEGUNDOS.{\c&HFFFFFF&}
+Dialogue: 1,0:00:52.04,0:00:53.64,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}OPÇÃO{\c&HFFFFFF&} {\c&H0028D7FF&}A:{\c&HFFFFFF&} VOCÊ DESCE
+Dialogue: 1,0:00:53.64,0:00:54.30,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NO SEU PONTO,
+Dialogue: 1,0:00:54.30,0:00:54.58,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}COMO
+Dialogue: 1,0:00:54.58,0:00:55.62,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}FAZ TODO DIA.
+Dialogue: 1,0:00:55.62,0:00:56.90,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}OPÇÃO{\c&HFFFFFF&} {\c&H0028D7FF&}B:{\c&HFFFFFF&}
+Dialogue: 1,0:00:57.20,0:00:57.72,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ FICA
+Dialogue: 1,0:00:57.72,0:00:58.48,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NO ÔNIBUS
+Dialogue: 1,0:00:58.48,0:00:59.32,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E DESCOBRE
+Dialogue: 1,0:00:59.32,0:00:59.90,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PRA ONDE
+Dialogue: 1,0:00:59.90,0:01:00.58,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ELE VAI.
+Dialogue: 1,0:01:01.00,0:01:02.70,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}COMENTA {\c&H0028D7FF&}A{\c&HFFFFFF&} {\c&H0028D7FF&}OU{\c&HFFFFFF&} {\c&H0028D7FF&}B.{\c&HFFFFFF&}
+Dialogue: 1,0:01:03.08,0:01:04.02,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A RESPOSTA MAIS
+Dialogue: 1,0:01:04.02,0:01:05.22,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}COMENTADA DECIDE
+Dialogue: 1,0:01:05.22,0:01:06.38,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O {\c&H0028D7FF&}PRÓXIMO{\c&HFFFFFF&} {\c&H0028D7FF&}EPISÓDIO.{\c&HFFFFFF&}
+Dialogue: 1,0:01:06.76,0:01:07.54,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SE INSCREVE
+Dialogue: 1,0:01:07.54,0:01:08.32,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PRA NÃO PERDER
+Dialogue: 1,0:01:08.32,0:01:09.22,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A CONTINUAÇÃO.
+Dialogue: 1,0:01:09.66,0:01:10.48,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}VOCÊ{\c&HFFFFFF&} {\c&H0028D7FF&}DECIDE...{\c&HFFFFFF&}
+Dialogue: 0,0:00:00.00,0:00:03.40,Nota,,0,0,450,,{\fad(200,200)\an2}história de ficção
