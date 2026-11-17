@@ -18,16 +18,16 @@
  "black_segments": 0,
  "freeze_segments": 0,
  "motion": {
-  "mean": 4.759,
+  "mean": 4.769,
   "min": 0.0006,
   "static_frames": 4
  },
  "loudness_lufs": -14.0,
- "true_peak_dbfs": -1.5,
+ "true_peak_dbfs": -1.4,
  "narration": {
   "lag_ms": 0,
   "drift_ms": 0,
-  "envelope_corr": 0.998
+  "envelope_corr": 0.997
  },
  "caption_start_max_err_s": 0.0,
  "collision_min_gap_m": "n/a",

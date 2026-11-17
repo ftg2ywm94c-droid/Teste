@@ -23,7 +23,7 @@
   "static_frames": 4
  },
  "loudness_lufs": -14.0,
- "true_peak_dbfs": -1.5,
+ "true_peak_dbfs": -1.4,
  "narration": {
   "lag_ms": 0,
   "drift_ms": 0,
