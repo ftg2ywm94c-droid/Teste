@@ -435,6 +435,8 @@ const BUILD: Record<Build, { a: number; torso: number; legs: number; tw: number 
 export type FrontOpts = {
   phase?: number; expr?: Expr; mode?: "march" | "stroll" | "stand" | "sit" | "fall"; look?: number; blink?: boolean | number; lift?: number;
   prop?: Prop; tilt?: number; headTilt?: number; wave?: number;
+  /** sentado: altura do assento acima da sola, em unidades do desenho (quadril no assento, pés no chão, joelho dobrado) */
+  seatH?: number;
   /** canvas angle the key light comes FROM (painted crescent + thick outline side) */
   light?: number; facing?: -1 | 0 | 1; seed?: number;
 };
@@ -446,13 +448,13 @@ const footStroke = (p: Pen, a: P2, b: P2, w: number, col: string) => {
 
 export const bodyFront = (p: Pen, o: Outfit, opts: FrontOpts) => {
   const { phase = 0, expr = "neutral", mode = "march", look = 0, blink = false, lift = 60, prop = null, tilt = 0, headTilt = 0, wave,
-    light = DEF_LIGHT, facing = 0, seed = 1 } = opts;
+    light = DEF_LIGHT, facing = 0, seed = 1, seatH } = opts;
   const Bd = BUILD[o.build ?? "adult"], skin = o.skin ?? SKIN, two = Math.PI * 2, lid = lidOf(blink);
   const H = headBlob(seed, Bd.a, facing), W = 2 * H.a, HH = 2 * H.b, u = W / 100;
   const tall = (1 + Bd.torso + Bd.legs) * HH, sole = 975;
   // body bob 5 % (march) / 3 % (stroll) of the height, lowest at contact (phase 0 and 0.5)
   const bob = mode === "march" ? 0.025 * tall * Math.cos(2 * two * phase) : mode === "stroll" ? 0.015 * tall * Math.cos(2 * two * phase) : 0;
-  const torsoBot = mode === "sit" ? sole - 0.2 * HH : sole - Bd.legs * HH + bob;
+  const torsoBot = mode === "sit" ? sole - (seatH ?? 0.2 * HH) : sole - Bd.legs * HH + bob;
   const chin = torsoBot - Bd.torso * HH, hc = chin - H.b, crown = hc - H.b, hipY = torsoBot - 0.12 * HH;
   const thick = thickAngle(light), ow = 5 * u;
   const legCol = mix(o.pants, INK, 0.55), armCol = mix(o.jacket, INK, 0.5), footCol = o.boots;
@@ -461,7 +463,9 @@ export const bodyFront = (p: Pen, o: Outfit, opts: FrontOpts) => {
   p.rot = null;
   if (mode === "sit") {
     for (const side of [-1, 1]) {
-      const h: P2 = [300 + side * 15 * u, hipY], k: P2 = [300 + side * 36 * u, hipY + 0.2 * HH], f: P2 = [300 + side * 44 * u, sole - 8 * u];
+      // com seatH: coxa vindo para a frente (encurtada de frente), joelho na beira do assento, canela descendo até o pé no chão
+      const h: P2 = [300 + side * 15 * u, hipY], k: P2 = seatH ? [300 + side * 30 * u, torsoBot + 0.07 * HH] : [300 + side * 36 * u, hipY + 0.2 * HH],
+        f: P2 = seatH ? [300 + side * 33 * u, sole - 8 * u] : [300 + side * 44 * u, sole - 8 * u];
       p.stroke(curve(h, k, f), legW, legCol);
       footStroke(p, [f[0] - side * 2 * u, f[1]], [f[0] + side * 12 * u, f[1] - 5 * u], footW, footCol);
     }

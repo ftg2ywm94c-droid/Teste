@@ -8,7 +8,7 @@ import {
   Pen, bodyFront, bodySide, KID, fxNote, fxBurst, fxSplash, fxStars, fxCreak, fxRing, fxBlob, fxShadow, fxContact, fxPlank, fxDrum,
   Outfit, Expr, FrontOpts, SideOpts,
 } from "./toon";
-import { FPS, D0, SHOTS, V3, smooth, clamp01, easeOut, T_SINK, T_WAR, T_NOT, T_OFF, T_FRIDGE, T_HOURS, W, windAt, leanAt, BOLTS, L, POLE_X, POLE_Z, poleOff, FRONT_SEAT, CUSHION_Y, PHONE_NEAR, DOOR_U } from "./story";
+import { FPS, D0, SHOTS, V3, smooth, clamp01, easeOut, T_SINK, T_WAR, T_NOT, T_OFF, T_FRIDGE, T_HOURS, W, windAt, leanAt, BOLTS, L, POLE_X, POLE_Z, poleOff, FRONT_SEAT, CUSHION_Y, FLOOR_Y, PHONE_NEAR, DOOR_U, busX, busMoving, intOff, BZ } from "./story";
 import { LIGHTS } from "./lights";
 import { NOINK } from "./ink";
 import { cardShade, blobMaterial, CARD_K } from "./cardshade";
@@ -508,7 +508,7 @@ const wrap = (g: CanvasRenderingContext2D, text: string, maxW: number) => {
 const MSGS = ["NÃO DESCE NO PRÓXIMO PONTO.", "ELE JÁ SABE QUE VOCÊ VIU.", "FICA SENTADO."];
 type CallMode = "dark" | "ring" | "notif" | "chat";
 /** o celular desconhecido: tocando, tela de bloqueio com notificação, ou a conversa com n mensagens (a última "pulando") */
-const fxCall = (p: Pen, mode: CallMode, n: number, u: number, k = 2) => hi(p, k, (g) => {
+const fxCall = (p: Pen, mode: CallMode, n: number, u: number, k = 2, hand = false) => hi(p, k, (g) => {
   rr(g, 20, 20, 360, 720, 60, "#1c1e26", "#241726", 14);
   g.save(); g.beginPath(); g.roundRect(45, 60, 310, 640, 36); g.clip();
   if (mode === "dark") { const gr = g.createLinearGradient(45, 60, 355, 700); gr.addColorStop(0, "#151a26"); gr.addColorStop(0.5, "#0a0d14"); gr.addColorStop(1, "#05070b"); g.fillStyle = gr; g.fillRect(45, 60, 310, 640);
@@ -552,6 +552,13 @@ const fxCall = (p: Pen, mode: CallMode, n: number, u: number, k = 2) => hi(p, k,
   }
   g.restore();
   rr(g, 160, 30, 80, 16, 8, "#111", "#111", 0);
+  if (hand) { // a sua mão segurando o aparelho: dedos dobrados na borda esquerda, polegar na direita, palma embaixo
+    const sk = "#ecd0b6", sh = "#c9a88e", ink = "#241726"; g.lineWidth = 7; g.strokeStyle = ink; g.lineJoin = "round";
+    g.fillStyle = sk; g.beginPath(); g.moveTo(-10, 760); g.quadraticCurveTo(10, 610, 70, 600); g.lineTo(330, 600); g.quadraticCurveTo(400, 620, 410, 760); g.closePath(); g.fill(); g.stroke();
+    for (let i = 0; i < 4; i++) { const y = 400 + i * 52; rr(g, 4, y, 46, 44, 20, i % 2 ? sk : "#f0d6be", ink, 7); }
+    g.fillStyle = sk; g.beginPath(); g.moveTo(372, 660); g.quadraticCurveTo(388, 560, 352, 500); g.quadraticCurveTo(330, 486, 318, 512); g.quadraticCurveTo(330, 580, 322, 650); g.closePath(); g.fill(); g.stroke();
+    g.fillStyle = sh; g.beginPath(); g.ellipse(200, 700, 120, 26, 0, 0, 7); g.fill();
+  }
 });
 /** brilho frio em volta do celular aceso */
 const fxHalo = (p: Pen) => { const g = p.g, gr = g.createRadialGradient(128, 128, 8, 128, 128, 128); gr.addColorStop(0, "rgba(150,190,255,0.75)"); gr.addColorStop(0.4, "rgba(120,160,255,0.25)"); gr.addColorStop(1, "rgba(120,160,255,0)"); g.fillStyle = gr; g.fillRect(0, 0, 256, 256); };
@@ -604,21 +611,22 @@ const callState = (id: number, t: number): [CallMode, number, number] => {
   }
 };
 const ringing = (id: number, t: number) => { const [m] = callState(id, t); return m === "ring"; };
-/** o celular no banco da frente (em pé, encostado), tamanho real */
-const phoneOnSeat = (id: number, t: number, out: Stage, cam: CamInfo) => {
-  const [m, n, u] = callState(id, t), jx = ringing(id, t) ? buzz(t, 0, 999) : 0;
-  const [x, y, z] = L(id, t, FRONT_SEAT[0] + 0.04 + jx, CUSHION_Y + 0.125, FRONT_SEAT[2]);
-  if (m !== "dark") { // o brilho fica atrás do aparelho (afastado da câmera)
-    const dx = x - cam.pos.x, dy = y - cam.pos.y, dz = z - cam.pos.z, dn = Math.hypot(dx, dy, dz) || 1, s2 = m === "ring" ? q(0.6 + 0.1 * Math.sin(t * 18), 40) : 0.45;
-    out.fx.push({ key: "halo", cw: 256, ch: 256, draw: fxHalo, soft: true, x: x + (dx / dn) * 0.06, y: y + (dy / dn) * 0.06, z: z + (dz / dn) * 0.06, w: s2, h: s2 });
-  }
-  out.fx.push({ key: `ph|${m}|${n}|${u}`, cw: 800, ch: 1520, draw: (pp) => fxCall(pp, m, n, u, 2), x, y, z, w: 0.13, h: 0.25 });
+/** o celular deitado no assento do banco da frente (tamanho real, tela para cima, topo para o encosto). Tocando, ele vibra e
+ *  "anda" alguns milímetros e gira um pouco; com o ônibus andando, treme junto com o banco */
+const phoneOnSeat = (id: number, t: number, out: Stage, _cam: CamInfo) => {
+  const [m, n, u] = callState(id, t), r = ringing(id, t), mov = busMoving(id, t);
+  const walk = r ? 0.004 * Math.sin(t * 2.1) : 0, jx = (r ? buzz(t, 0, 999) * 0.5 : 0) + (mov ? 0.0015 * Math.sin(t * 37) : 0);
+  const [x, y, z] = L(id, t, FRONT_SEAT[0] + 0.03 + jx, CUSHION_Y + 0.007, FRONT_SEAT[2] + walk);
+  const rot = Math.PI / 2 + 0.12 + (r ? 0.05 * Math.sin(t * 1.3) + (buzz(t, 0, 999) ? 0.015 : 0) : 0);
+  if (m !== "dark") { const s2 = m === "ring" ? q(0.42 + 0.06 * Math.sin(t * 18), 40) : 0.32;   // luz da tela no tecido do banco
+    out.fx.push({ key: "halo", cw: 256, ch: 256, draw: fxHalo, soft: true, flat: true, x, y: y - 0.003, z, w: s2, h: s2 }); }
+  out.fx.push({ key: `phF|${m}|${n}|${u}`, cw: 800, ch: 1520, draw: (pp) => fxCall(pp, m, n, u, 2), x, y, z, w: 0.078, h: 0.158, flat: true, rot: q(rot, 200) });
 };
 /** o celular "na mão", enchendo a tela */
 const phoneNear = (id: number, t: number, out: Stage) => {
   const [m, n, u] = callState(id, t), jx = id === 16 && t >= W.vibra - 0.05 && t < W.vibra + 0.6 ? buzz(t, W.vibra - 0.05, 99) * 0.6 : 0;
   const [x, y, z] = L(id, t, PHONE_NEAR[id][0], PHONE_NEAR[id][1], PHONE_NEAR[id][2] + jx);
-  out.fx.push({ key: `phN|${m}|${n}|${u}`, cw: 800, ch: 1520, draw: (pp) => fxCall(pp, m, n, u, 2), x, y, z, w: 0.155, h: 0.295 });
+  out.fx.push({ key: `phN|${m}|${n}|${u}`, cw: 800, ch: 1520, draw: (pp) => fxCall(pp, m, n, u, 2, true), x, y, z, w: 0.155, h: 0.295 });
 };
 const driver = (id: number, t: number, out: Stage) => {
   const [x, y, z] = L(id, t, 5.0, 1.36, -0.73);
@@ -628,15 +636,30 @@ const mirror = (id: number, t: number, out: Stage, look: number, ahead: boolean)
   const [x, y, z] = L(id, t, 5.78, 2.24, 0);
   out.fx.push({ key: `mir|${q(look, 10)}|${ahead}`, cw: 920, ch: 340, draw: (pp) => fxMirror(pp, look, ahead), x, y, z, w: 0.5, h: 0.185 });
 };
+/** luz do ônibus no chão (planos de fora): faróis na pista à frente, janelas acesas dos dois lados, porta aberta na calçada */
+const fxHead = (p: Pen) => { const g = p.g, gr = g.createRadialGradient(80, 128, 4, 80, 128, 420); gr.addColorStop(0, "rgba(255,244,214,0.55)"); gr.addColorStop(0.45, "rgba(255,240,205,0.2)"); gr.addColorStop(1, "rgba(255,240,205,0)"); g.fillStyle = gr; g.fillRect(0, 0, 512, 256); };
+const fxSpill = (p: Pen) => { const g = p.g, gr = g.createLinearGradient(0, 0, 0, 128); gr.addColorStop(0, "rgba(190,215,255,0.32)"); gr.addColorStop(1, "rgba(190,215,255,0)"); g.fillStyle = gr; g.fillRect(0, 0, 512, 128);
+  g.globalCompositeOperation = "destination-out"; for (let x = 0; x < 512; x += 64) g.fillRect(x, 0, 6, 128); };
+const busLight = (id: number, t: number, out: Stage) => {
+  const bx = busX(id, t), off = intOff(t);
+  out.fx.push({ key: "beam", cw: 512, ch: 256, draw: fxHead, soft: true, flat: true, x: bx + 6 + 4.2, y: D0 + 0.05, z: BZ, w: 9, h: 3.6 });
+  if (!off) for (const sv of [-1, 1])
+    out.fx.push({ key: "spill", cw: 512, ch: 128, draw: fxSpill, soft: true, flat: true, x: bx - 0.3, y: D0 + (sv > 0 ? 0.075 : 0.045), z: BZ + sv * 2.0, w: 11.2, h: 1.5, rot: sv > 0 ? Math.PI : 0 });
+};
 const pool = (t: number, out: Stage) => { if (!poleOff(t)) out.fx.push({ key: "pool", cw: 512, ch: 512, draw: fxPool, soft: true, flat: true, x: POLE_X + 0.6, y: D0 + 0.08, z: POLE_Z + 0.4, w: 5.5, h: 4.2 }); };
 
 const onibus = (id: number, cam: CamInfo, t: number, out: Stage) => {
   const c = SHOTS[id - 1].crowd;
-  const sitBack = (expr: Expr, blink: number | boolean, headTilt = 0, look = 0) => {
-    const [x, y, z] = L(id, t, -5.42, 0.86, 0.85);
-    out.places.push(person(cam, YOU, x, y + 0.02, z, { side: false, mirror: false }, { mode: "sit", expr, blink, look, headTilt }, {}, 0.86));
+  /** sentado de verdade: o cartão fica na beira do assento, a sola no piso, o quadril na altura do assento; balança com o ônibus */
+  const SEAT_H = (CUSHION_Y - FLOOR_Y) / SU;
+  const seated = (u: number, v: number, fo: FrontOpts) => {
+    const [x, , z] = L(id, t, u + 0.24, 0, v), sway = busMoving(id, t) ? q(0.012 * Math.sin(t * 2.3) + 0.005 * Math.sin(t * 7.1), 300) : 0;
+    const pl = person(cam, YOU, x, FLOOR_Y, z, { side: false, mirror: false }, { ...fo, mode: "sit", seatH: SEAT_H }, {}); pl.roll = sway;
+    out.places.push(pl); blob(out, x, FLOOR_Y, z);
   };
+  const sitBack = (expr: Expr, blink: number | boolean, headTilt = 0, look = 0) => seated(-5.42, 0.85, { expr, blink, look, headTilt });
   if (["b_ext", "b_brake", "b_optA", "b_choice", "b_door", "b_cta"].includes(c)) pool(t, out);
+  if (["b_ext", "b_brake", "b_optA", "b_choice", "b_cta"].includes(c)) busLight(id, t, out);
   switch (c) {
     case "b_wide": driver(id, t, out); phoneOnSeat(id, t, out, cam); break;
     case "b_doze": { const k = smooth((t - W.encosta) / 2.6), lid = 0.25 + 0.6 * k + (t > W.dorme ? 0.12 : 0);
@@ -651,13 +674,11 @@ const onibus = (id: number, cam: CamInfo, t: number, out: Stage) => {
     case "b_door": break;
     case "b_you5": { const [x, , z] = L(id, t, 3.0, 0, 0.12);
       out.places.push(person(cam, YOU, x, D0 + 0.4, z, { side: false, mirror: false }, { mode: "stand", expr: t >= W.cinco ? "shock" : "nervous", blink: lidAt(t, 900, [W.cinco]), look: q(Math.sin(t * 2.2), 4) }, {}));
-      driver(id, t, out); break; }
+      blob(out, x, D0 + 0.4, z); driver(id, t, out); break; }
     case "b_optA": { const [x, , z] = L(id, t, (DOOR_U[0] + DOOR_U[1]) / 2, 0, 1.2);
       out.places.push(person(cam, YOU, x, D0 + 0.4, z, { side: false, mirror: false }, { mode: "stand", expr: "nervous", blink: lidAt(t, 900), look: q(Math.sin(t * 1.3) * 0.8, 4) }, {}));
-      break; }
-    case "b_optB": { const [x, y, z] = L(id, t, FRONT_SEAT[0], CUSHION_Y - 0.12, FRONT_SEAT[2]);
-      out.places.push(person(cam, YOU, x, y + 0.02, z, { side: false, mirror: false }, { mode: "sit", expr: t >= W.descobre ? "stern" : "nervous", blink: lidAt(t, 900, [W.descobre]), look: 0 }, {}, 0.86));
-      break; }
+      blob(out, x, D0 + 0.4, z); break; }
+    case "b_optB": seated(FRONT_SEAT[0], FRONT_SEAT[2], { expr: t >= W.descobre ? "stern" : "nervous", blink: lidAt(t, 900, [W.descobre]), look: 0 }); break;
   }
 };
 

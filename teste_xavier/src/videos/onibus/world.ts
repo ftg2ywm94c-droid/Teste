@@ -99,6 +99,8 @@ export class World {
   private big = new THREE.Group();                          // a árvore enorme da frente da sua casa
   private lamp!: THREE.Mesh;
   private bus = new THREE.Group();                          // o ônibus inteiro (fora + dentro), referencial u = x, v = z
+  private busBody = new THREE.Group();                      // carroceria sobre a suspensão (inclina na freada); as rodas ficam fora dela
+  private wheels: THREE.Group[] = [];
   private doorL!: THREE.Group; private doorR!: THREE.Group;
   private ceil: THREE.Mesh[] = []; private ceilOn!: THREE.MeshBasicMaterial; private ceilOff!: THREE.MeshBasicMaterial;
   private glass: THREE.Mesh[] = []; private tail!: THREE.MeshBasicMaterial;
@@ -338,7 +340,7 @@ export class World {
   }
 
   private buildBus(M: Record<string, THREE.Material>) {
-    const g = this.bus, ob = new Batch(), nb = new Batch(); // ob: projeta sombra; nb: teto e faixas altas (não projetam)
+    const g = this.busBody, ob = new Batch(), nb = new Batch(); this.bus.add(g); // ob: projeta sombra; nb: teto e faixas altas (não projetam)
     const P = {
       body: lam("busBody", () => ({ color: "#2c8a96" })), stripe: lam("busStripe", () => ({ color: "#f2efe6" })), skirt: lam("busSkirt", () => ({ color: "#1f5f6a" })),
       inner: lam("busInner", () => ({ color: "#b4bcc6" })), floor: lam("busFloorHD", () => ({ map: rep(ctex("busFloor", 512, 512, (c) => {
@@ -363,7 +365,19 @@ export class World {
     // piso, saia e rodas
     box(ob, U0, 0.22, -VW, U1, FL, VW, P.floor, true);
     box(ob, U0, 0.22, -VW - 0.02, U1, 0.62, -VW, P.skirt); box(ob, U0, 0.22, VW, U1, 0.62, VW + 0.02, P.skirt);
-    for (const u of [-3.9, 5.05]) for (const sv of [-1, 1]) { const w = new THREE.CylinderGeometry(0.5, 0.5, 0.3, 24); w.rotateX(Math.PI / 2); w.translate(u, 0.5, sv * 1.18); ob.add(w, P.black); }
+    { // rodas: pneu + calota com 8 parafusos e raios (para ver o giro); cada uma num grupo próprio que gira no eixo
+      const hub = new THREE.MeshLambertMaterial({ map: ctex("busHub", 256, 256, (c) => {
+        c.fillStyle = "#1c1d22"; c.fillRect(0, 0, 256, 256); c.fillStyle = "#9aa3ad"; c.beginPath(); c.arc(128, 128, 84, 0, 7); c.fill();
+        c.fillStyle = "#6b737e"; for (let k = 0; k < 5; k++) { c.save(); c.translate(128, 128); c.rotate((k / 5) * Math.PI * 2); c.fillRect(-9, 18, 18, 62); c.restore(); }
+        c.fillStyle = "#3a3d46"; c.beginPath(); c.arc(128, 128, 26, 0, 7); c.fill();
+        c.fillStyle = "#d9dde2"; for (let k = 0; k < 8; k++) { const a = (k / 8) * Math.PI * 2; c.beginPath(); c.arc(128 + Math.cos(a) * 42, 128 + Math.sin(a) * 42, 7, 0, 7); c.fill(); }
+        c.strokeStyle = "#241726"; c.lineWidth = 6; c.beginPath(); c.arc(128, 128, 84, 0, 7); c.stroke(); }) });
+      for (const u of [-3.9, 5.05]) for (const sv of [-1, 1]) {
+        const wg = new THREE.Group(), wb = new Batch(); const tyre = new THREE.CylinderGeometry(0.5, 0.5, 0.3, 32); tyre.rotateX(Math.PI / 2); wb.add(tyre, P.black); wb.build(wg, true);
+        const disc = new THREE.Mesh(new THREE.CircleGeometry(0.42, 32), hub); disc.position.z = sv * 0.152; if (sv < 0) disc.rotation.y = Math.PI; wg.add(disc);
+        wg.position.set(u, 0.5, sv * 1.18); this.bus.add(wg); this.wheels.push(wg);
+      }
+    }
     // paredes laterais: baixa (com a porta da frente aberta no lado +v), colunas entre janelas, faixa alta
     const wallSide = (sv: number) => {
       const v0 = sv > 0 ? VW - 0.06 : -VW, v1 = sv > 0 ? VW : -VW + 0.06;
@@ -413,12 +427,12 @@ export class World {
       if (!(u > -0.75 && u < 0.75) && !(u > DOOR_U[0] - 0.4 && u < DOOR_U[1] + 0.2)) seat(u, 0.38, 1.22);
     }
     // banco do fundo, mais alto, de lado a lado
-    box(ob, -5.9, 0.4, -1.22, -5.15, 0.85, 1.22, P.seatB); seat(-5.42, -1.22, 1.22, 0.98);
-    box(ob, -5.95, 0.98, -1.22, -5.75, 1.85, 1.22, P.seatB);
+    box(ob, -5.9, 0.4, -1.22, -5.15, 0.76, 1.22, P.seatB); seat(-5.42, -1.22, 1.22, 0.88);
+    box(ob, -5.95, 0.88, -1.22, -5.75, 1.75, 1.22, P.seatB);
     // porta do meio fechada (lado +v)
     box(ob, -0.68, FL, VW - 0.07, 0.68, WT, VW - 0.03, P.inner); box(ob, -0.03, FL, VW - 0.075, 0.03, WT, VW - 0.025, P.steel);
     // barras: verticais nas bordas do corredor, corrimãos no teto, botões de parada vermelhos
-    for (const u of [-4.6, -2.9, -1.0, 1.0, 2.9]) for (const sv of [-1, 1]) {
+    for (const u of [-2.9, -1.0, 1.0, 2.9]) for (const sv of [-1, 1]) {
       cy(ob, V(u, FL, sv * 0.36), V(u, RF, sv * 0.36), 0.025, P.steel);
       box(ob, u - 0.04, 1.42, sv * 0.36 - 0.04, u + 0.04, 1.52, sv * 0.36 + 0.04, P.red);
     }
@@ -448,13 +462,25 @@ export class World {
     for (const sv of [-1, 1]) for (let u = -5.3; u < 4.4; u += 1.6) {
       const m = new THREE.Mesh(new THREE.BoxGeometry(1.2, 0.03, 0.16), this.ceilOn); m.position.set(u + 0.6, RF - 0.015, sv * 0.75); m.layers.set(NOINK); g.add(m); this.ceil.push(m);
     }
-    this.root.add(g);
+    this.root.add(this.bus);
   }
   private glassOut = new THREE.MeshBasicMaterial({ color: new THREE.Color(0.5, 0.66, 0.9), transparent: true, opacity: 0.85, side: THREE.FrontSide });
 
   private poseBus(id: number, t: number) {
-    const x = busX(id, t);
-    this.bus.position.set(x, D0, BZ); this.bus.updateMatrixWorld(true);
+    const x = busX(id, t), h = 0.05, v = (busX(id, t + h) - busX(id, t - h)) / (2 * h), acc = (busX(id, t + h) - 2 * x + busX(id, t - h)) / (h * h);
+    this.bus.position.set(x, D0, BZ);
+    // rodas: giram com a distância andada (raio 0,5 m)
+    for (const wg of this.wheels) wg.rotation.z = -x / 0.5;
+    // suspensão (só de fora; dentro a câmera já treme): freando o nariz mergulha, ao parar balança e assenta; acelerando agacha atrás
+    let pitch = 0, bob = 0;
+    if (!SHOTS[id - 1].inside) {
+      pitch = THREE.MathUtils.clamp(acc * 0.0042, -0.02, 0.02);
+      if (id === 14 && t >= W.seu) { const s = t - W.seu; pitch = -0.012 * Math.exp(-s * 3.2) * Math.cos(2 * Math.PI * 1.3 * s); }
+      if (v > 0.5) { pitch += 0.0018 * Math.sin(t * 5.3) + 0.0011 * Math.sin(t * 11.7); bob = 0.006 * Math.sin(t * 8.9) + 0.003 * Math.sin(t * 15.1); }
+      else bob = 0.0012 * Math.sin(t * 2 * Math.PI * 24);   // motor em marcha lenta
+    }
+    this.busBody.rotation.set(0, 0, pitch); this.busBody.position.set(0, bob, 0);
+    this.bus.updateMatrixWorld(true);
     // a porta da frente abre no "abre" e fica aberta (planos parados)
     const open = [15, 16, 17, 18, 20].includes(id) ? (id === 15 ? smooth01((t - W.porta - 0.05) / 0.7) : 1) : 0;
     const mid = (DOOR_U[0] + DOOR_U[1]) / 2, half = (DOOR_U[1] - DOOR_U[0]) / 4;

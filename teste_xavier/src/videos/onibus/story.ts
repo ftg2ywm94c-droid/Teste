@@ -150,11 +150,11 @@ const CAMS: Record<number, Key[]> = {
   // dentro: do fundo, o corredor vazio até o motorista
   2: [{ f: 0, s: B(2, [-5.0, 2.05, 0.15], [6, 1.55, -0.2], 0.002, { fov: 58 }) }],
   // você no fundo, cabeça na janela (câmera entre as barras)
-  3: [{ f: 0, s: B(3, [-3.75, 1.62, -0.55], [-5.42, 1.42, 0.85], 0.0024, { fov: 50 }) }],
+  3: [{ f: 0, s: B(3, [-3.55, 1.6, -0.95], [-5.18, 1.3, 0.85], 0.0024, { fov: 50 }) }],
   // o celular acende no banco da frente (câmera no corredor, à frente do banco)
   4: [{ f: 0, s: B(4, [4.2, 1.38, 0.0], [3.57, 0.99, -0.8], 0.0026, { fov: 46, roll: -0.01 }) }],
   // você acordou: olha lá para a frente
-  5: [{ f: 0, s: B(5, [-3.75, 1.6, -0.55], [-5.42, 1.42, 0.85], 0.003, { fov: 46, roll: 0.012 }) }],
+  5: [{ f: 0, s: B(5, [-3.55, 1.58, -0.95], [-5.18, 1.32, 0.85], 0.003, { fov: 46, roll: 0.012 }) }],
   // o celular sozinho no banco, o ônibus vazio atrás
   6: [{ f: 0, s: B(6, [4.25, 1.72, 0.3], [3.4, 1.0, -0.8], 0.0022, { fov: 56 }) }],
   // ele para... e toca de novo
@@ -209,11 +209,11 @@ export const camAt = (id: number, f: number): Cam => {
 export type Dof = { f: number; dur?: number; cInf: number; focus?: (f: number) => V3 };
 type FocL = [number, V3, boolean]; // [cInf, ponto, no referencial do ônibus?]
 const FOC: Record<number, FocL> = {
-  1: [4, [-6, 1.6, 2], false], 2: [6, [4.5, 1.4, -0.4], true], 3: [10, [-5.42, 1.3, 0.85], true], 4: [12, PHONE_LOOK, true],
-  5: [10, [-5.42, 1.35, 0.85], true], 6: [8, PHONE_LOOK, true], 7: [12, PHONE_LOOK, true], 8: [6, PHONE_LOOK, true],
+  1: [4, [-6, 1.6, 2], false], 2: [6, [4.5, 1.4, -0.4], true], 3: [10, [-5.18, 1.3, 0.85], true], 4: [12, PHONE_LOOK, true],
+  5: [10, [-5.18, 1.32, 0.85], true], 6: [8, PHONE_LOOK, true], 7: [12, PHONE_LOOK, true], 8: [6, PHONE_LOOK, true],
   9: [16, PHONE_NEAR[9], true], 10: [16, PHONE_NEAR[10], true], 11: [8, [5.0, 1.6, -0.7], true], 12: [14, [5.78, 2.24, 0], true],
   13: [16, PHONE_NEAR[13], true], 14: [4, [9, 1.6, 2.4], false], 15: [5, [3.9, 1.6, 3.0], true], 16: [16, PHONE_NEAR[16], true],
-  17: [10, [3.0, 1.45, 0.12], true], 18: [6, [12.1, 1.5, 3.2], false], 19: [10, [3.55, 1.3, -0.8], true], 20: [4, [10, 1.6, 2.4], false],
+  17: [10, [3.0, 1.45, 0.12], true], 18: [6, [12.1, 1.5, 3.2], false], 19: [10, [3.79, 1.3, -0.8], true], 20: [4, [10, 1.6, 2.4], false],
   21: [4, [6, 1.6, 2], false],
 };
 export const DOF: Dof[] = SHOTS.map((s) => ({ f: s.a, cInf: FOC[s.id][0], focus: (f: number) => { const [, p, loc] = FOC[s.id]; return loc ? L(s.id, f / FPS, ...p) : p; } }));
