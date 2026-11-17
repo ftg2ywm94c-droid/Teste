@@ -5,6 +5,17 @@
 - `scripts/add_narration.py`: MP3 → MP4 com legenda sincronizada, ducking e −14 LUFS.
 - Para recuperar: `git checkout be24c75 -- projeto_videos3d` (a tag não pôde ser enviada ao GitHub: o acesso desta sessão só permite o branch de trabalho).
 
+## v0.12 — vídeo 10 "E se o Brasil cobrasse menos impostos?" + teste da skill Xavier (2026-11-17)
+- Vídeo 10: 64,4 s, 1933 quadros, 15 planos. **Render nativo em 720x1280** (Cycles, 8 amostras + OIDN), **ampliado para 1080x1920**. Os motion graphics são desenhados em 1080x1920.
+- Arquivo: `v2/ep10/out/10_brasil_menos_impostos_1080x1920.mp4` (37 MB, fora do git).
+- Som: efeitos, música e camada de tensão v2 (`v2/ep10/tensao_cfg.py`).
+- QC (`v2/ep10/qc_report_10.json`): aprovado. −14,1 LUFS, TP −1,0, correlação da narração 0,998, atraso e deriva 0 ms.
+- Thumbnail: `thumbnails/10_thumb.json`, sobre um render próprio em 1080x1920 nativo. Limitações em `v2/ep10/LIMITACOES.md`.
+- Camada de tensão v2 (`v2/lib/tensao.py`): braam em camadas, subida Shepard, whoosh automático nos cortes e reverb de sala escura. O vídeo 09 foi remontado com ela (v3), e a v2 ficou guardada.
+- Biblioteca de sons reais CC0 (OpenGameArt) em `assets/sfx_cc0/`, com 14 sons e créditos em `CREDITOS.md`.
+- Vídeo 11 (afiliado, apagão): roteiro, legendas e camada de tensão prontos.
+- Teste da skill Xavier (Remotion + three.js) em `teste_xavier/`: 6 s do vídeo 11 em 1080x1920 nativo (`teste_xavier/entrega/`). Fica aguardando a decisão do usuário.
+
 ## v0.11 — vídeo 09 "E se a vida real seguisse as regras do GTA?" + zonas seguras 9:16 + tensão (2026-11-17)
 - Vídeo 09 (61,9 s, 1857 quadros, render nativo 720x1280 ampliado para 1080x1920). A versão 1 (antes dos ajustes) foi guardada em `v2/ep09/out/..._v1.mp4` (fora do git), e os quadros antigos em `v2/ep09/frames_v1/`.
 - Zonas seguras 9:16 (TikTok, Reels, Shorts): o HUD desceu, o painel da queda subiu e as notas saíram da faixa da legenda. Os planos A1, B1, D1, D2 e E2 foram refeitos. Regras em `v2/ESTILO.md` §4.
