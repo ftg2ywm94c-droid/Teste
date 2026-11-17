@@ -1,0 +1,8 @@
+{
+ "base": "thumbnails/_11_base/still_0480.png",
+ "grade": {"sky": [120, 150, 255], "sky_amt": 0.0, "sky_to": 0.4, "contrast": 1.2, "sat": 1.2, "vignette": 0.55, "shadow_tint": [0, 5, 30]},
+ "title_top": 260,
+ "title": [["E SE FALTASSE", [255, 255, 255], 130], ["LUZ POR", [255, 210, 20], 150], ["3 DIAS?", [255, 210, 20], 230]],
+ "inset": {"src": "thumbnails/_11_base/still_1880.png", "crop": [160, 560, 940, 1340], "center": [770, 1370], "diam": 360,
+           "ring": [70, 225, 140], "tag": ["CARGA EXTRA", [70, 225, 140], [0, 0, 0], 34]}
+}

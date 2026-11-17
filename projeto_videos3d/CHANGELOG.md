@@ -5,6 +5,15 @@
 - `scripts/add_narration.py`: MP3 → MP4 com legenda sincronizada, ducking e −14 LUFS.
 - Para recuperar: `git checkout be24c75 -- projeto_videos3d` (a tag não pôde ser enviada ao GitHub: o acesso desta sessão só permite o branch de trabalho).
 
+## v0.13 — vídeo 11 "E se faltasse luz por 3 dias?" (afiliado) na skill Xavier (2026-11-17)
+- Vídeo 11: 72,5 s, 2176 quadros, 13 planos. **Render nativo em 1080x1920** (Remotion + three.js, `teste_xavier/src/videos/luz/`, `scripts/render_luz.sh`), sem ampliação (`NATIVE = True` em `v2/ep11/plan.py`; `assemble.py` pula a ampliação).
+- Arquivo: `v2/ep11/out/11_luz_3_dias_1080x1920.mp4` (32 MB, fora do git).
+- Títulos em 1080x1920 (`v2/ep11/mograph.py`), sobrepostos pelo `assemble.py`. Correção: "≈" não existe na Poppins (virava um quadrado) e foi trocado por "~4 H". O título também saiu de cima do relógio e foi para a direita (novo parâmetro de centro x).
+- Som: sons reais CC0 e efeitos sintetizados (`v2/ep11/audio.py`), camada de tensão com cortes de `tensao_cfg.CORTES`.
+- QC (`v2/ep11/qc_report_11.json`): aprovado. −13,9 LUFS, TP −1,4, correlação da narração 0,998, atraso e deriva 0 ms.
+- Thumbnail: `thumbnails/11_thumb.json` sobre quadros nativos (S03 chuva + recorte do power bank no S11). Limitações em `v2/ep11/LIMITACOES.md`, com #publi no cartão final.
+- `v2/lib/tensao.py` aceita `CORTES` no cfg. `v2/qc.py` registra `RENDER_RES` do plano.
+
 ## v0.12 — vídeo 10 "E se o Brasil cobrasse menos impostos?" + teste da skill Xavier (2026-11-17)
 - Vídeo 10: 64,4 s, 1933 quadros, 15 planos. **Render nativo em 720x1280** (Cycles, 8 amostras + OIDN), **ampliado para 1080x1920**. Os motion graphics são desenhados em 1080x1920.
 - Arquivo: `v2/ep10/out/10_brasil_menos_impostos_1080x1920.mp4` (37 MB, fora do git).
