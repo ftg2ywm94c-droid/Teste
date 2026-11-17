@@ -48,3 +48,11 @@ revelações, braam nos números fortes e "queda" para o silêncio. Ela entra no
 Todo roteiro termina com CTA falado: pedido de inscrição/seguir + gancho para o próximo ("…e fica atento para o próximo. E se..."),
 ou um pedido de comentário. Em vídeo com produto de afiliado, a frase do produto ("o que aparece no vídeo está no link da bio")
 vem logo antes e o CTA de inscrição fecha o vídeo. Manter curto (≤ 5 s).
+
+## 8. Referência aprovada: vídeo 10 (impostos), "o melhor até agora" (usuário, 17/11/2026)
+O que fez funcionar, a repetir:
+- Um corte por ideia, preso à palavra-chave da narração (15 planos em 64 s, nenhum com mais de 6 s).
+- Número grande na tela no exato momento em que é falado (5 MESES, 1/3, 43%, 2022, R$ 6,49) com a fonte em nota pequena.
+- Objeto 3D simples e legível como metáfora de cada dado (cofre, cadeado, pizza, bomba de gasolina, balança, café).
+- Match cuts entre objetos (bomba → cofre) e câmera sempre em movimento.
+- Final em loop com o começo (o café) + pergunta para comentar.
