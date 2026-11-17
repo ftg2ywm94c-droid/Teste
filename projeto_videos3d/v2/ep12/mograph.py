@@ -21,6 +21,46 @@ def card(d, x0, y0, x1, y1, col, k, letter, label, lpx=46):
     text(d, cx, cy - int(r * 0.95), letter, INK, int(r * 1.5), k, stroke=0)
     lines = label.split('\n'); lh = int(lpx * 1.12); y = cy - lh * len(lines) // 2
     for ln in lines: text(d, (cx + r + x1) // 2, y, ln, WHT, lpx, k); y += lh
+
+# ---- clima nítido em 2D (chuva, respingos, rajadas, folhas) por cima do 3D nos planos de tempestade ----
+import math, random
+WX = {'S06_vento_chega': (0.0, 1.0, 0.0), 'S08_arvores': (1.0, 1.0, 1.0), 'S12_arvore': (1.0, 0.9, 1.0), 'S13_inclina': (1.0, 1.0, 0.0),
+      'S15_opcao_a': (1.0, 1.0, 1.0), 'S17_escolha': (0.9, 0.8, 1.0)}   # plano: (chuva, vento, respingos no chão)
+def wind_lvl(t): return 0.0 if t < 23.64 else min(1.0, 0.15 + 0.85 * ((t - 23.64) / 7.0)) if t < 30.7 else 1.0
+R0 = random.Random(12); DROPS = [(R0.random() * 1300 - 100, R0.random() * 2200, 0.6 + 0.8 * R0.random(), R0.random() < 0.35) for _ in range(340)]
+LEAVES = [(R0.random() * 1920, R0.random(), 0.6 + 0.8 * R0.random(), R0.random() * 6.28, R0.choice([(79, 154, 67), (98, 174, 76), (138, 106, 58), (62, 126, 56)])) for _ in range(40)]
+def weather(t, name):
+    if name not in WX: return None
+    rain, wnd, spl = WX[name]; w = wnd * wind_lvl(t)
+    im = Image.new('RGBA', (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    slant = 0.18 + 0.22 * w
+    if rain:
+        for x0, y0, sp, near in DROPS:
+            v = (2400 if near else 1500) * sp; L = (150 if near else 80) * sp
+            y = (y0 + v * t) % 2200 - 140; x = (x0 + slant * v * t) % 1300 - 110
+            a = int((200 if near else 120) * rain)
+            d.line([(x, y), (x - slant * L, y - L)], fill=(225, 235, 255, a), width=4 if near else 2)
+    if spl:   # respingos: anéis curtos que nascem e somem no chão (metade de baixo)
+        f = int(t * 30)
+        for k in range(26):
+            r = random.Random(f // 3 * 97 + k); x = r.random() * W; y = 1450 + r.random() * 430; u = (f % 3) / 3
+            rx, ry = 10 + 22 * u, 3 + 6 * u; a = int(170 * (1 - u) * spl)
+            d.ellipse((x - rx, y - ry, x + rx, y + ry), outline=(225, 235, 255, a), width=3)
+            for s_ in (-1, 1): d.line([(x, y), (x + s_ * 14 * (0.5 + u), y - 16 * (1 - u))], fill=(225, 235, 255, a), width=2)
+    if w > 0.05:
+        for k in range(5):   # rajadas: arcos longos e finos varrendo da esquerda para a direita
+            r = random.Random(k * 31); ph = (t * (0.7 + 0.3 * r.random()) + r.random()) % 1; y = 250 + r.random() * 1400
+            x = -700 + ph * 2400; L = 500 + 300 * r.random(); a = int(150 * w * math.sin(math.pi * ph))
+            pts = [(x + i * L / 12, y + 40 * math.sin(i / 12 * math.pi + k) - i * 3) for i in range(13)]
+            d.line(pts, fill=(235, 242, 255, a), width=3 + k % 3, joint='curve')
+        n = int(len(LEAVES) * w)
+        for y0, ph0, sp, rot0, col in LEAVES[:n]:   # folhas cruzando a tela, girando
+            ph = (ph0 + t * 0.55 * sp) % 1; x = -80 + ph * 1240; y = y0 + 120 * math.sin(ph * 9 + rot0) + ph * 160
+            a = rot0 + t * 9 * sp; rx, ry = 22 * sp, 9 * sp
+            poly = [(x + rx * math.cos(a + q_) * (1 if i % 2 == 0 else 0.4), y + rx * math.sin(a + q_) * (1 if i % 2 == 0 else 0.4)) for i, q_ in enumerate([0, math.pi / 2, math.pi, 3 * math.pi / 2])]
+            d.polygon(poly, fill=col + (235,), outline=(36, 23, 38, 220))
+    return im
+
 COUNT0, COUNT1 = 48.78, 60.06           # "você tem 10 segundos" ... "E aí" (o 1 fica parado na escolha)
 def frame(t):
     im = Image.new('RGBA', (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(im); n = 0
@@ -50,7 +90,8 @@ def main():
         for fr in s.frames:
             dst = os.path.join(dd, f'{fr:04d}.png')
             if os.path.lexists(dst): os.remove(dst)
-            im, n = frame(fr / P.FPS)
+            im, n = frame(fr / P.FPS); wx = weather(fr / P.FPS, s.name)
+            if wx is not None: wx.alpha_composite(im); im = wx; n += 1
             if not n: os.link(blank, dst); continue
             im.save(dst, compress_level=1); c += 1
         print(s.name, 'ok', c, 'quadros com título')

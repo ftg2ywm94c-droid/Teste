@@ -165,13 +165,23 @@ lev = np.array([wind_level(i / SR) for i in range(0, N, 480)]); lev = np.interp(
 wb = wind(END) * lev[:, None] ** 1.3
 rain = np.zeros((N, 2)); a0 = int(28.4 * SR); rl = loop('chuva_loop.flac', END - 28.4); rain[a0:a0 + len(rl)] = rl[:N - a0]
 rain *= np.clip((np.arange(N) / SR - 28.4) / 2.0, 0, 1)[:, None] * np.clip((67.6 - np.arange(N) / SR) / 0.9, 0, 1)[:, None]
-sfx += muffle_split(wb * 1.0 + rain * 0.8); EV += [(23.64, 'vento (sintetizado, rajadas) — abafado dentro de casa'), (28.4, 'chuva')]
+# gotas nítidas: milhares de estalinhos curtos e agudos (2-9 kHz) espalhados no estéreo, por cima do loop de chuva
+def patter(d, rate=420):
+    n = int(d * SR); out = np.zeros((n, 2)); k = int(rate * d); pos = rng.integers(0, n - 400, k)
+    for i, p0 in enumerate(pos):
+        L = rng.integers(60, 260); c = rng.standard_normal(L) * np.exp(-np.arange(L) / (L / 4)) * (0.3 + 0.7 * rng.random())
+        pan = rng.random(); out[p0:p0 + L, 0] += c * np.sqrt(1 - pan); out[p0:p0 + L, 1] += c * np.sqrt(pan)
+    return sosfilt(sos('highpass', 2000), out, axis=0) * 0.5
+pt = np.zeros((N, 2)); pp = patter(END - 28.4); pt[a0:a0 + len(pp)] = pp[:N - a0]
+pt *= np.clip((np.arange(N) / SR - 28.4) / 2.0, 0, 1)[:, None] * np.clip((67.6 - np.arange(N) / SR) / 0.9, 0, 1)[:, None]
+sfx += muffle_split(wb * 1.25 + rain * 1.1 + pt * 1.3)
+EV += [(23.64, 'vento (sintetizado, rajadas) — abafado dentro de casa'), (28.4, 'chuva + gotas nítidas (sintetizadas)')]
 
 CORTES = [s.t0 for s in P.SHOTS[1:]]
 for i, c in enumerate(CORTES): put(load(f'swish_{(1, 4, 7, 10, 13)[i % 5]}.flac'), c - 0.06, 0.45)
 EV.append((0.0, 'swish em cada corte'))
 for t, nm, f0 in [(1.0, 'impacto_hit_01.flac', 58), (22.1, 'impacto_hit_04.flac', 52), (50.34, 'impacto_hit_03.flac', 62), (54.34, 'impacto_hit_03.flac', 66), (60.06, 'impacto_metal_hit_02.flac', 55)]:
-    put(riser(), t - 0.45, 0.5); put(hit(nm, 0.8, f0), t, 0.85, tag='título: whoosh + impacto')
+    put(riser(), t - 0.45, 0.4); put(hit(nm, 0.8, f0), t, 0.22 if t < 2 else 0.42, tag='título: whoosh + impacto')
 
 # 0-23: noite calma, alarme, a rua parada
 put(fade(loop('grilos_loop.flac', 20.5), 0.8, 0.08), 0.0, 0.5, tag='noite: grilos (param no "calma demais")')
@@ -190,8 +200,8 @@ put(fade(load('chuva_trovao.flac', 0, 4.0), 0.02, 1.0), 29.2, 0.85, tag='trovão
 put(load('whoosh_ar.flac', 0, 0.8), 31.8, 0.7, tag='telha voando'); put(load('impacto_rock_hit_01.flac'), 32.95, 0.8); put(load('impacto_hit_03.flac'), 33.05, 0.6, tag='telha cai lá fora')
 for a in (34.52, 34.82, 35.14, 35.52): put(fade(loop('zumbido_eletrico.flac', 0.12), 0.005, 0.03), a, 0.5)
 EV.append((34.52, 'a luz pisca: zumbido'))
-put(load('disjuntor_desliga.flac'), 35.75, 1.1, tag='apaga'); put(sweep(300, 30, 1.0, 0.45), 35.8, 1.0); put(boom(1.8, 44), 35.82, 1.0)
-put(load('maquina_desligando.flac'), 35.78, 0.7, tag='geladeira desliga')
+put(load('disjuntor_desliga.flac'), 35.75, 0.5, tag='apaga'); put(sweep(300, 30, 1.0, 0.45), 35.8, 0.25); put(boom(1.8, 44), 36.3, 0.55)
+put(load('maquina_desligando.flac'), 35.78, 0.4, tag='geladeira desliga')
 # 36-46: escuro, estalo, a árvore inclina
 put(load('chuva_trovao.flac', 5.0, 3.0), 37.95, 0.7, tag='trovão')
 put(estalo(), 38.54, 1.2, tag='estalo grave')
@@ -202,7 +212,7 @@ put(estalo(), 44.44, 1.1, tag='na sua direção: estalo'); put(fade(load('chuva_
 # 46-60: bateria, contagem, opções
 put(bipe(440, 0.12), 46.96, 0.8); put(bipe(440, 0.12), 47.2, 0.8, tag='bateria fraca: bipe duplo')
 STEP = (60.06 - 48.78) / 9.5
-for k in range(10): put(tique(), 48.78 + k * STEP, 1.0); put(boom(0.4, 80, 0.4), 48.78 + k * STEP, 0.5)
+for k in range(10): put(tique(), 48.78 + k * STEP, 0.45); put(boom(0.4, 80, 0.4), 48.78 + k * STEP, 0.12)
 EV.append((48.78, 'contagem: tique + grave a cada número'))
 put(load('whoosh_ar.flac', 0, 1.2), 51.5, 0.9, tag='A: porta abre, o vento entra'); passos(51.75, 9)
 put(fade(load('chuva_trovao.flac', 0, 3.0), 0.02, 1.0), 52.1, 0.7)
