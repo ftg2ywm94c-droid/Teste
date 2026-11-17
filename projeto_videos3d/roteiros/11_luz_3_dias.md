@@ -6,6 +6,7 @@ Status: roteiro para aprovação. Vídeo com produto de afiliado (Mercado Livre)
 
 E se faltasse luz na sua casa por três dias? Não é exagero. Em 2020, quase todo o Amapá ficou no escuro por quase quatro dias. Em 2024, um temporal deixou mais de dois milhões de clientes sem luz em São Paulo. Hora zero: tudo apaga. A geladeira fechada segura o frio por umas quatro horas. Depois, carne e leite viram risco. Dia um: em muitos prédios, a água sobe com bomba elétrica. Sem luz, a caixa d'água vai secando. Dia dois: as antenas de celular dependem de gerador e bateria. Quando falham, o sinal some, a maquininha para e o Pix não passa. Aí, o que sobra é o seu celular: lanterna, rádio e o único jeito de avisar que você está bem. Por isso, vale ter uma carga extra, como esse power bank magnético de cinco mil miliampères, que gruda atrás do iPhone e carrega sem fio. Dia três: a luz volta. Mas quem se preparou passou por isso bem diferente. Não se esqueça de se inscrever e ficar atento para o próximo. E se...
 
+## Base
 (Final trocado pelo usuário no MP3 para ter CTA de inscrição; o "link na bio" do produto vai no cartão final e na descrição.)
 
 ## Plano visual (rascunho)
