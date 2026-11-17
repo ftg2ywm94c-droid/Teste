@@ -5,6 +5,14 @@
 - `scripts/add_narration.py`: MP3 → MP4 com legenda sincronizada, ducking e −14 LUFS.
 - Para recuperar: `git checkout be24c75 -- projeto_videos3d` (a tag não pôde ser enviada ao GitHub: o acesso desta sessão só permite o branch de trabalho).
 
+## v0.11 — vídeo 09 "E se a vida real seguisse as regras do GTA?" + zonas seguras 9:16 + tensão (2026-11-17)
+- Vídeo 09 (61,9 s, 1857 quadros, render nativo 720x1280 ampliado para 1080x1920). A versão 1 (antes dos ajustes) foi guardada em `v2/ep09/out/..._v1.mp4` (fora do git), e os quadros antigos em `v2/ep09/frames_v1/`.
+- Zonas seguras 9:16 (TikTok, Reels, Shorts): o HUD desceu, o painel da queda subiu e as notas saíram da faixa da legenda. Os planos A1, B1, D1, D2 e E2 foram refeitos. Regras em `v2/ESTILO.md` §4.
+- Camada de tensão/suspense (`v2/lib/tensao.py` + `v2/epXX/tensao_cfg.py`) para os vídeos 09, 10 e 11. Ela entra no leito de efeitos e é abaixada pela voz. Sem o arquivo, a montagem antiga é usada (§6).
+- QC: aprovado, −14 LUFS, TP −1,5, correlação da narração 0,997. Thumbnail: `thumbnails/09_thumb.json`.
+- Materiais e texturas melhorados no vídeo 10 (§5). Regra de CTA no fim do roteiro (§7).
+- Quadros dos vídeos 01–05 apagados com autorização do usuário para liberar disco. Os MP4 entregues foram mantidos.
+
 ## v0.10 — vídeo 08 "E se o fogo nunca tivesse sido descoberto?" (2026-11-16)
 - Tema enviado pelo inscrito @desORDEM2026. O comentário dele aparece num cartão próprio (avatar, nome e texto exato), sem copiar a interface da plataforma.
 - Primeiro vídeo inteiro no estilo 2: 17 planos e 1977 quadros, render nativo 720x1280 com 8 amostras, ampliado para 1080x1920.
