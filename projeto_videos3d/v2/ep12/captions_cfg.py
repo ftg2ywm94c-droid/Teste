@@ -1,8 +1,9 @@
 """Legenda do vídeo 12 (vendaval à noite, escolha A/B). SPOKEN: a legenda mostra só o que a voz disse."""
 SPOKEN = True
-KEYPH = ['11 da noite,', 'Alerta severo.', '90 quilômetros por hora.', 'Calma demais.', 'o vento chega.', 'a luz pisca', 'e apaga.',
-         'estalo grave.', 'na sua direção.', '10 segundos.', 'Opção A,', 'Opção B,', 'A ou B?']
-HLW = ('apaga.', 'direção.', 'escolhe?')
+# minúsculas e sem pontuação: o casamento é feito com as palavras do roteiro já limpas
+KEYPH = ['onze da noite', 'alerta severo', 'noventa quilômetros por hora', 'calma demais', 'o vento chega', 'a luz pisca',
+         'e apaga', 'estalo grave', 'na sua direção', 'dez segundos', 'opção a', 'opção b', 'a ou b']
+HLW = ('apaga', 'direção', 'escolhe')
 def HUD(wt):
     return []
 def NOTES(wt):
