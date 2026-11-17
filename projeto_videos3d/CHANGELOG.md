@@ -5,6 +5,14 @@
 - `scripts/add_narration.py`: MP3 → MP4 com legenda sincronizada, ducking e −14 LUFS.
 - Para recuperar: `git checkout be24c75 -- projeto_videos3d` (a tag não pôde ser enviada ao GitHub: o acesso desta sessão só permite o branch de trabalho).
 
+## v0.14 — vídeo 11 v2: efeitos sonoros com presença (2026-11-17)
+- Pedido do usuário: caprichar mais nos efeitos. Diagnóstico: na v1 os efeitos ficavam 30–50 dB abaixo da voz, porque eram abaixados junto com a música.
+- `v2/assemble.py`: canal opcional de efeitos `SFX_BUS = (ganho, razão)` no `plan.py`, com ducking leve. Sem esse atributo, a mixagem é a mesma de antes (vídeos 01–10 inalterados).
+- `v2/ep11/audio.py` v2 (49 eventos, antes 27): swish em cada corte, whoosh + impacto grave em cada título, power down (Amapá, "apaga", gerador), power up e luzes acendendo em onda no estéreo, grilos, gorgolejo da caixa d'água, estática real no rádio e no sinal, tom de "sinal perdido", alerta no "risco", aplausos na volta da luz e sino no "inscrever". A v1 está em `v2/ep11/audio_v1.py`, e o MP4 v1 em `out/..._v1.mp4` (fora do git).
+- Efeitos em relação à voz (medidos): ações de −1 a −9 dB, ambientes de −10 a −20 dB.
+- 20 sons CC0 novos do OpenGameArt em `assets/sfx_cc0/`, com créditos em `CREDITOS.md`.
+- QC aprovado: −13,9 LUFS, TP −1,4, correlação da narração 0,990, atraso e deriva 0 ms. Regra registrada em `v2/ESTILO.md` §9.
+
 ## v0.13 — vídeo 11 "E se faltasse luz por 3 dias?" (afiliado) na skill Xavier (2026-11-17)
 - Vídeo 11: 72,5 s, 2176 quadros, 13 planos. **Render nativo em 1080x1920** (Remotion + three.js, `teste_xavier/src/videos/luz/`, `scripts/render_luz.sh`), sem ampliação (`NATIVE = True` em `v2/ep11/plan.py`; `assemble.py` pula a ampliação).
 - Arquivo: `v2/ep11/out/11_luz_3_dias_1080x1920.mp4` (32 MB, fora do git).

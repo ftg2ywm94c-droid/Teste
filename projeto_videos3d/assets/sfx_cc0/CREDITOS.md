@@ -15,5 +15,15 @@ Arquivos originais em `raw/` (fora do git); aqui ficam as versões convertidas (
 | porao_gotejando.flac | https://opengameart.org/content/dripping-water-loop | qubodup |
 | disjuntor_desliga.flac / disjuntor_liga.flac | https://opengameart.org/content/sfx-circuit-breaker | cleytonkauffman |
 | clique_1/3/5/7.flac | https://opengameart.org/content/10-clicks-and-switches | starninjas |
+| whoosh_ar.flac | https://opengameart.org/content/air-whoosh | pyranostudios |
+| swish_1/4/7/10/13.flac | https://opengameart.org/content/swishes-sound-pack | artisticdude |
+| grilos_loop.flac | https://opengameart.org/content/crickets-ambient-noise-loopable | wolfgang |
+| impacto_*.flac | https://opengameart.org/content/75-cc0-breaking-falling-hit-sfx | rubberduck |
+| estatica_1/2.flac (6 s) | https://opengameart.org/content/frequency-static-sound-effects | bretbernhoft |
+| alerta.flac | https://opengameart.org/content/alertnotification-sound | frosty-ham |
+| bolhas_loop.flac / bolha_1/2.flac | https://opengameart.org/content/bubble-sound-effects | bmaczero |
+| aplausos.flac (14 s) | https://opengameart.org/content/applause-in-a-large-hall-or-church | expl0it3r |
+
+Licenças CC0 dos sons novos conferidas em 17/11/2026 (pedido de efeitos mais caprichados no vídeo 11).
 
 Celular vibrando e encaixe magnético: sintetizados (não achei versão CC0 boa).

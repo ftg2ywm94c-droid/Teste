@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Som do vídeo 11 (versão na skill Xavier): sons reais CC0 (assets/sfx_cc0, OpenGameArt) + efeitos sintetizados
+"""Som do vídeo 11 — v2 (efeitos com mais presença; a v1 está em audio_v1.py): sons reais CC0 (assets/sfx_cc0, OpenGameArt) + efeitos sintetizados
 (vibração do celular, encaixe magnético, bipes da maquininha, chiado de rádio, aviso de mensagem, carga) + trilha
 (pad em ré menor que abre para ré maior no "dia três"). Tempos = palavras da narração (analysis/narracao/11_words.json).
 Saída: v2/ep11/out/sfx.wav e music.wav (48 kHz estéreo). A camada de tensão é v2/ep11/out/tensao.wav (tensao.py)."""
@@ -65,37 +65,80 @@ def relogio(d, bpm=120):
         x = tone(1900 if k % 2 else 1500, 0.03, 60) * 0.5; i = int(k * step * SR); m[i:i + len(x)] += x[:len(m) - i]
     return st(m)
 
-# ---- linha do tempo ----
-put(fade(loop('geladeira_loop.flac', 3.94), 0.4, 0.4), 0.0, 0.35, tag='casa: zumbido da geladeira')
-put(fade(loop('zumbido_eletrico.flac', 2.0), 0.05, 0.8), 3.95, 0.12, tag='Amapá: zumbido que morre')
-put(fade(load('gotas.flac', 0, 6.0), 0.3, 1.0), 4.2, 0.35, tag='Amapá: silêncio com gotas')
-put(fade(loop('chuva_loop.flac', 7.1), 0.15, 0.25), 10.18, 0.9, tag='SP: chuva')
-put(load('chuva_trovao.flac', 0, 5.0), 11.96, 0.7, tag='SP: trovão (temporal)')
-put(load('chuva_trovao.flac', 5.0, 4.0), 15.6, 0.5, tag='SP: trovão 2')
-put(fade(loop('geladeira_loop.flac', 1.33), 0.1, 0.02), 17.23, 0.6, tag='hora zero: geladeira ligada')
-put(load('disjuntor_desliga.flac'), 18.51, 1.2, tag='apaga: disjuntor')
-put(load('maquina_desligando.flac'), 18.46, 0.8, tag='apaga: geladeira desligando')
-put(relogio(22.6 - 19.9, 120), 19.9, 0.3, tag='geladeira: relógio de 4 h')
-put(bipe(880, 0.12), 25.66, 0.6, tag='risco: aviso')
-put(load('maquina_desligando.flac'), 30.2, 0.45, tag='bomba parando')
-put(load('clique_5.flac'), 30.24, 0.8, tag='bomba: clique')
-put(fade(load('porao_gotejando.flac', 0, 2.2), 0.05, 0.6), 31.5, 0.6, tag='torneira pingando até secar')
-put(fade(loop('gerador_loop.flac', 2.2), 0.3, 0.5), 37.9, 0.55, tag='antena: gerador')
-put(load('maquina_desligando.flac'), 39.75, 0.5, tag='gerador falha')
-put(fade(loop('zumbido_eletrico.flac', 1.2), 0.02, 0.4), 39.8, 0.15)
-put(load('clique_1.flac'), 41.1, 0.8, tag='sinal some')
-for k in range(2): put(bipe(2200), 42.05 + k * 0.16, 0.8)
+# ---- sintetizados v2: impactos de título, power down/up, sinal perdido, sino do CTA ----
+def boom(d=1.4, f0=58, g=1.0):      # grave de impacto (sub com queda de afinação)
+    t = np.arange(int(d * SR)) / SR; f = f0 * (1 + 0.6 * np.exp(-t * 9))
+    return st(np.sin(2 * np.pi * np.cumsum(f) / SR) * env(d, 0.002, 3.2) * g)
+def riser(d=0.45):                  # whoosh de entrada (ruído filtrado que sobe)
+    x = bp(rng.standard_normal(int(d * SR)), 300, 6000); t = np.linspace(0, 1, len(x))
+    return fade(st(x * t ** 2.2 * 0.5), 0.01, 0.03)
+def hit(name='impacto_hit_01.flac', g=1.0, f0=58):
+    h = load(name); b = boom(1.2, f0); m = np.zeros((max(len(h), len(b)), 2)); m[:len(h)] += h * g; m[:len(b)] += b * 0.8; return m
+def sweep(f0, f1, d, g=0.4):        # power down (f0>f1) / power up (f0<f1): dente de serra filtrado
+    t = np.arange(int(d * SR)) / SR; f = f0 * (f1 / f0) ** (t / d); ph = 2 * np.pi * np.cumsum(f) / SR
+    m = lp(((ph / np.pi) % 2 - 1) * 0.5 + np.sin(ph) * 0.5, 1800) * g
+    return fade(st(m), 0.02, 0.15)
+def sinal_perdido(): return st(np.concatenate([tone(f, 0.14, 9) * 0.4 for f in (988, 784, 523)]))
+def sino(): return st(sum(tone(f, 1.6, 2.6) * g for f, g in [(1318.5, 0.35), (2637, 0.12), (3956, 0.05)]))
+def ondas_cliques(t0, n=9, dt=0.11):  # luzes acendendo em onda pela rua: cliques espalhados no estéreo
+    for k in range(n):
+        c = load(('clique_1.flac', 'clique_3.flac', 'clique_5.flac', 'clique_7.flac')[k % 4]); pan = -0.8 + 1.6 * k / (n - 1)
+        put(np.stack([c[:, 0] * np.sqrt((1 - pan) / 2), c[:, 1] * np.sqrt((1 + pan) / 2)], 1), t0 + k * dt, 1.0)
+
+# ---- linha do tempo (v2: mais presença, impactos nos títulos e swish nos cortes) ----
+CORTES = [3.9, 10.17, 17.2, 18.53, 19.7, 26.83, 34.83, 41.77, 44.93, 52.2, 62.7, 67.4]
+for i, c in enumerate(CORTES): put(load(f'swish_{(1, 4, 7, 10, 13)[i % 5]}.flac'), c - 0.06, 0.5)
+EV.append((0.0, 'swish em cada corte'))
+TITULOS = [(5.14, 'impacto_hit_01.flac', 58), (10.25, 'impacto_hit_04.flac', 52), (17.24, 'impacto_metal_hit_02.flac', 60),
+           (22.1, 'impacto_hit_03.flac', 64), (26.86, 'impacto_hit_01.flac', 55), (34.86, 'impacto_hit_04.flac', 50),
+           (62.72, 'impacto_metal_hit_01.flac', 70), (67.4, 'impacto_hit_03.flac', 66)]
+for t, nm, f0 in TITULOS: put(riser(), t - 0.45, 0.55); put(hit(nm, 0.8, f0), t, 0.85, tag='título: whoosh + impacto')
+
+put(fade(loop('geladeira_loop.flac', 3.94), 0.4, 0.4), 0.0, 1.0, tag='casa: zumbido da geladeira')
+put(fade(loop('grilos_loop.flac', 3.9), 0.6, 0.3), 0.0, 0.25, tag='noite: grilos')
+put(fade(loop('zumbido_eletrico.flac', 2.0), 0.05, 0.8), 3.95, 0.25, tag='Amapá: zumbido que morre')
+put(sweep(260, 35, 1.1, 0.35), 3.92, 1.0, tag='Amapá: power down')
+put(fade(loop('grilos_loop.flac', 6.2), 0.4, 0.6), 4.0, 0.45, tag='Amapá: grilos no escuro')
+put(fade(load('gotas.flac', 0, 6.0), 0.3, 1.0), 4.2, 0.5)
+put(fade(loop('chuva_loop.flac', 7.1), 0.15, 0.25), 10.18, 1.0, tag='SP: chuva')
+put(load('chuva_trovao.flac', 0, 5.0), 11.96, 1.0, tag='SP: trovão (temporal)'); put(boom(2.2, 42), 11.96, 0.7)
+put(load('chuva_trovao.flac', 5.0, 4.0), 15.6, 0.8, tag='SP: trovão 2'); put(boom(1.8, 38), 15.6, 0.5)
+put(fade(loop('geladeira_loop.flac', 1.33), 0.1, 0.02), 17.23, 0.8, tag='hora zero: geladeira ligada')
+put(load('disjuntor_desliga.flac'), 18.51, 1.3, tag='apaga: disjuntor')
+put(sweep(320, 30, 1.0, 0.45), 18.53, 1.0, tag='apaga: power down'); put(boom(1.8, 46), 18.56, 1.0, tag='apaga: grave')
+put(load('maquina_desligando.flac'), 18.46, 1.0, tag='apaga: geladeira desligando')
+put(fade(loop('grilos_loop.flac', 7.0), 0.8, 0.8), 19.7, 0.3, tag='cozinha escura: grilos lá fora')
+put(relogio(22.6 - 19.9, 120), 19.9, 1.0, tag='geladeira: relógio de 4 h')
+put(load('alerta.flac'), 25.66, 0.8, tag='risco: alerta')
+put(load('maquina_desligando.flac'), 30.2, 0.7, tag='bomba parando')
+put(load('clique_5.flac'), 30.24, 1.0, tag='bomba: clique')
+put(fade(loop('bolhas_loop.flac', 2.6), 0.2, 0.8), 30.6, 0.45, tag='caixa d’água: gorgolejo')
+for k, tk in enumerate((31.6, 32.5, 33.4)): put(load(f'bolha_{k % 2 + 1}.flac'), tk, 0.6)
+put(fade(load('porao_gotejando.flac', 0, 2.2), 0.05, 0.6), 32.9, 0.8, tag='torneira pingando até secar')
+put(fade(loop('gerador_loop.flac', 2.2), 0.3, 0.5), 37.9, 0.8, tag='antena: gerador')
+put(load('maquina_desligando.flac'), 39.75, 0.8, tag='gerador falha'); put(sweep(220, 40, 0.8, 0.3), 39.8, 1.0)
+put(fade(loop('zumbido_eletrico.flac', 1.2), 0.02, 0.4), 39.8, 0.3)
+put(fade(load('estatica_2.flac', 0, 0.7), 0.01, 0.2), 41.0, 0.55, tag='sinal some: estática')
+put(sinal_perdido(), 41.1, 0.9, tag='sinal perdido')
+for k in range(2): put(bipe(2200), 42.05 + k * 0.16, 1.0)
 EV.append((42.05, 'maquininha: bipes'))
-put(erro(), 44.12, 0.9, tag='Pix não passa: erro')
-put(vibra(), 45.0, 0.9, tag='celular vibrando')
-put(lanterna(), 48.12, 1.0, tag='lanterna: clique')
-put(chiado(1.7), 49.04, 0.7, tag='rádio sintonizando')
-put(mensagem(), 50.94, 0.8, tag='mensagem enviada')
-put(snap(), 59.12, 1.0, tag='power bank: encaixe magnético')
-put(carga(), 60.78, 0.7, tag='carga começando')
-put(load('disjuntor_liga.flac'), 63.7, 1.1, tag='a luz volta: disjuntor')
-put(fade(loop('geladeira_loop.flac', 4.5), 0.5, 1.0), 64.0, 0.35, tag='geladeira volta')
-put(fade(loop('zumbido_eletrico.flac', 0.8), 0.02, 0.5), 63.86, 0.12)
+put(erro(), 44.12, 0.75, tag='Pix não passa: erro'); put(boom(0.8, 70), 44.12, 0.5)
+put(vibra(), 45.0, 0.6, tag='celular vibrando')
+put(lanterna(), 48.12, 1.2, tag='lanterna: clique'); put(riser(0.25), 47.9, 0.4)
+put(fade(load('estatica_1.flac', 0, 1.7), 0.05, 0.4), 49.04, 0.6, tag='rádio sintonizando (estática real)')
+put(chiado(1.7), 49.04, 0.4)
+put(load('whoosh_ar.flac', 0, 0.6), 50.7, 0.45); put(mensagem(), 50.94, 1.0, tag='mensagem enviada')
+put(riser(0.5), 58.6, 0.7, tag='power bank: aproximação')
+put(snap(), 59.12, 1.3, tag='power bank: encaixe magnético'); put(load('impacto_metal_hit_01.flac'), 59.12, 0.5)
+put(carga(), 60.78, 1.0, tag='carga começando')
+put(sweep(40, 330, 0.9, 0.35), 62.9, 1.0, tag='dia 3: power up')
+put(load('disjuntor_liga.flac'), 63.7, 1.6, tag='a luz volta: disjuntor')
+ondas_cliques(63.8); EV.append((63.8, 'luzes acendendo em onda'))
+put(fade(loop('zumbido_eletrico.flac', 0.8), 0.02, 0.5), 63.86, 0.25)
+put(fade(loop('geladeira_loop.flac', 4.5), 0.5, 1.0), 64.0, 0.8, tag='geladeira volta')
+put(fade(load('aplausos.flac', 0, 4.2), 0.6, 1.4), 64.3, 0.45, tag='vizinhos comemoram')
+put(sino(), 69.46, 0.6, tag='inscrever: sino')
+put(load('whoosh_ar.flac', 0, 0.8), 72.0, 0.5, tag='E se...: whoosh final')
 
 # ---- trilha: pad em ré menor (tensão) que abre para ré maior no dia três ----
 def pad(freqs, d, g=0.06):

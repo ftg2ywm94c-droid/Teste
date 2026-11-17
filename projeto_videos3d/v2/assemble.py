@@ -32,10 +32,20 @@ def run(c): print('$', ' '.join(c[:6]), '...'); subprocess.run(c, check=True)
 # camada de tensão/suspense opcional (v2/lib/tensao.py): entra no leito e é abaixada pela voz junto com efeitos e música
 TENS = os.path.join(OUT, 'tensao.wav'); HAS_T = os.path.exists(TENS); W_T = os.environ.get('W_TENSAO', '0.75')
 BED = (f'[1:a][2:a][3:a]amix=inputs=3:weights=1 0.55 {W_T}:normalize=0[bed];' if HAS_T else '[1:a][2:a]amix=inputs=2:weights=1 0.55:normalize=0[bed];')
-fc = ('[0:a]aresample=48000,pan=stereo|c0=c0|c1=c0,asplit=2[v][key];'
+SFX_BUS = getattr(SH, 'SFX_BUS', None)   # (ganho, razão do ducking) — efeitos num canal próprio, só levemente abaixados pela voz
+if SFX_BUS:   # vídeos a partir do 11: efeitos fora do leito (música/tensão continuam abaixadas como antes)
+    g_sfx, r_sfx = SFX_BUS
+    BED = (f'[2:a][3:a]amix=inputs=2:weights=0.55 {W_T}:normalize=0[bed];' if HAS_T else '[2:a]volume=0.55[bed];')
+    fc = ('[0:a]aresample=48000,pan=stereo|c0=c0|c1=c0,asplit=3[v][key][key2];' + BED +
+          '[bed][key]sidechaincompress=threshold=0.02:ratio=5:attack=20:release=300:makeup=1[duck];'
+          f'[1:a]volume={g_sfx}[sx];[sx][key2]sidechaincompress=threshold=0.05:ratio={r_sfx}:attack=10:release=200:makeup=1[sd];'
+          '[v]volume=1.0[vv];[vv][duck][sd]amix=inputs=3:weights=1 0.62 1:normalize=0:duration=longest,')
+else:
+  fc = ('[0:a]aresample=48000,pan=stereo|c0=c0|c1=c0,asplit=2[v][key];'
       + BED +
       '[bed][key]sidechaincompress=threshold=0.02:ratio=5:attack=20:release=300:makeup=1[duck];'
-      '[v]volume=1.0[vv];[vv][duck]amix=inputs=2:weights=1 0.62:normalize=0:duration=longest,'
+      '[v]volume=1.0[vv];[vv][duck]amix=inputs=2:weights=1 0.62:normalize=0:duration=longest,')
+fc += (
       'apad=whole_dur=' + f'{SH.END:.3f}' + ',atrim=0:' + f'{SH.END:.3f}' + ',loudnorm=I=-14:TP=-1.5:LRA=9,aresample=48000[mix]')
 run(['ffmpeg', '-y', '-v', 'error', '-i', NARR, '-i', os.path.join(OUT, 'sfx.wav'), '-i', os.path.join(OUT, 'music.wav'),
      *(['-i', TENS] if HAS_T else []), '-filter_complex', fc, '-map', '[mix]', '-ar', '48000', '-c:a', 'pcm_s16le', os.path.join(OUT, 'mix.wav')])

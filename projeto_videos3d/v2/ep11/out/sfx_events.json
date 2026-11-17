@@ -4,16 +4,36 @@
 "casa: zumbido da geladeira"
 ],
 [
+0.0,
+"noite: grilos"
+],
+[
+0.0,
+"swish em cada corte"
+],
+[
+3.92,
+"Amapá: power down"
+],
+[
 3.95,
 "Amapá: zumbido que morre"
 ],
 [
-4.2,
-"Amapá: silêncio com gotas"
+4.0,
+"Amapá: grilos no escuro"
+],
+[
+5.14,
+"título: whoosh + impacto"
 ],
 [
 10.18,
 "SP: chuva"
+],
+[
+10.25,
+"título: whoosh + impacto"
 ],
 [
 11.96,
@@ -28,6 +48,10 @@
 "hora zero: geladeira ligada"
 ],
 [
+17.24,
+"título: whoosh + impacto"
+],
+[
 18.46,
 "apaga: geladeira desligando"
 ],
@@ -36,12 +60,32 @@
 "apaga: disjuntor"
 ],
 [
+18.53,
+"apaga: power down"
+],
+[
+18.56,
+"apaga: grave"
+],
+[
+19.7,
+"cozinha escura: grilos lá fora"
+],
+[
 19.9,
 "geladeira: relógio de 4 h"
 ],
 [
+22.1,
+"título: whoosh + impacto"
+],
+[
 25.66,
-"risco: aviso"
+"risco: alerta"
+],
+[
+26.86,
+"título: whoosh + impacto"
 ],
 [
 30.2,
@@ -52,8 +96,16 @@
 "bomba: clique"
 ],
 [
-31.5,
+30.6,
+"caixa d’água: gorgolejo"
+],
+[
+32.9,
 "torneira pingando até secar"
+],
+[
+34.86,
+"título: whoosh + impacto"
 ],
 [
 37.9,
@@ -64,8 +116,12 @@
 "gerador falha"
 ],
 [
+41.0,
+"sinal some: estática"
+],
+[
 41.1,
-"sinal some"
+"sinal perdido"
 ],
 [
 42.05,
@@ -85,11 +141,15 @@
 ],
 [
 49.04,
-"rádio sintonizando"
+"rádio sintonizando (estática real)"
 ],
 [
 50.94,
 "mensagem enviada"
+],
+[
+58.6,
+"power bank: aproximação"
 ],
 [
 59.12,
@@ -100,11 +160,39 @@
 "carga começando"
 ],
 [
+62.72,
+"título: whoosh + impacto"
+],
+[
+62.9,
+"dia 3: power up"
+],
+[
 63.7,
 "a luz volta: disjuntor"
 ],
 [
+63.8,
+"luzes acendendo em onda"
+],
+[
 64.0,
 "geladeira volta"
+],
+[
+64.3,
+"vizinhos comemoram"
+],
+[
+67.4,
+"título: whoosh + impacto"
+],
+[
+69.46,
+"inscrever: sino"
+],
+[
+72.0,
+"E se...: whoosh final"
 ]
 ]

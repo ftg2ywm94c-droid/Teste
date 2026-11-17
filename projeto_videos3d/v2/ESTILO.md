@@ -56,3 +56,10 @@ O que fez funcionar, a repetir:
 - Objeto 3D simples e legível como metáfora de cada dado (cofre, cadeado, pizza, bomba de gasolina, balança, café).
 - Match cuts entre objetos (bomba → cofre) e câmera sempre em movimento.
 - Final em loop com o começo (o café) + pergunta para comentar.
+
+## 9. Efeitos sonoros com presença (pedido do usuário após o vídeo 11)
+- Diagnóstico da v1 do vídeo 11: os efeitos ficavam 30–50 dB abaixo da voz, porque eram abaixados junto com a música sempre que havia fala. Quase não se ouviam.
+- Regra: efeitos num canal próprio (`SFX_BUS = (ganho, razão)` no `plan.py`; no vídeo 11, `(2.0, 2)`), com ducking leve. Música e tensão continuam no leito abaixado.
+- Alvo, medido no trecho do evento, depois do ducking: efeitos de ação (apagar, encaixe, impacto de título, trovão) de −2 a −10 dB da voz; ambientes (chuva, grilos, geladeira) de −12 a −20 dB. Nada acima da voz.
+- Camadas mínimas por vídeo: swish em todo corte, whoosh + impacto grave em todo título/número grande, um ambiente por cenário, e "power down/up" ou equivalente nas viradas da história.
+- Medir sempre (efeito isolado passando pela mesma cadeia × voz) antes de declarar pronto. O QC da narração (correlação ≥ 0,9) garante que a voz continua clara.
