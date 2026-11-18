@@ -529,7 +529,7 @@ const fxCall = (p: Pen, mode: CallMode, n: number, u: number, k = 2, hand = fals
     if (mode === "notif") {
       font(g, 88); g.fillStyle = "#e8eeff"; g.fillText("00:11", 200, 190); font(g, 22); g.fillStyle = "#9fb4e0"; g.fillText("quarta-feira", 200, 250);
       rr(g, 60, 300, 280, 96, 22, "rgba(255,255,255,0.14)", "#000", 0); font(g, 19); g.fillStyle = "#e2453c"; g.textAlign = "left"; g.fillText("Chamada perdida", 80, 330);
-      g.fillStyle = "#fff"; font(g, 21); g.textAlign = "left"; g.fillText("Número desconhecido", 80, 366);
+      g.fillStyle = "#fff"; font(g, 21); g.textAlign = "left"; g.fillText("Número desconhecido", 80, 366, 262);
       if (u > 0) { const sc = 0.85 + 0.15 * u; g.save(); g.translate(200, 470); g.scale(sc, sc); g.globalAlpha = Math.min(1, u * 1.4);
         rr(g, -140, -50, 280, 100, 22, "#f2f4f8", "#000", 0); g.textAlign = "left"; font(g, 21); g.fillStyle = "#3a4f80"; g.textAlign = "left"; g.fillText("Mensagem · agora", -118, -18);
         font(g, 23); g.fillStyle = "#10182c"; g.textAlign = "left"; g.fillText("1 nova mensagem", -118, 20); g.restore(); }
@@ -537,7 +537,7 @@ const fxCall = (p: Pen, mode: CallMode, n: number, u: number, k = 2, hand = fals
     }
     if (mode === "chat") {
       g.fillStyle = "#0e1730"; g.fillRect(45, 60, 310, 92); p.ell(95, 112, 26, 26, "#3a4f80", 0); font(g, 30); g.fillStyle = "#fff"; g.fillText("?", 95, 114);
-      font(g, 22); g.textAlign = "left"; g.fillText("Número desconhecido", 132, 104); font(g, 17); g.textAlign = "left"; g.fillStyle = "#3ccf7a"; g.fillText("online", 132, 130); g.textAlign = "center";
+      font(g, 20); g.textAlign = "left"; g.fillText("Número desconhecido", 132, 104, 212); font(g, 17); g.textAlign = "left"; g.fillStyle = "#3ccf7a"; g.fillText("online", 132, 130); g.textAlign = "center";
       let y = 186;
       for (let i = 0; i < n; i++) {
         const last = i === n - 1, a = last ? Math.min(1, u * 1.6) : 1, sc = last ? 0.7 + 0.3 * easeOut(u) : 1;

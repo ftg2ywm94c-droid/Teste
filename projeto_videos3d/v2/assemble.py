@@ -7,7 +7,7 @@ HERE = os.path.dirname(os.path.abspath(__file__)); PROJ = os.path.dirname(HERE);
 EP = os.environ.get('EP')          # ex.: EP=02 usa v2/ep02 (planos, quadros, saída) e narracao/02_narracao.mp3
 if EP:
     BASE = os.path.join(HERE, f'ep{EP}'); sys.path.insert(0, BASE); import plan as SH
-    DEF_NAME = {'02': '02_terra_parasse_de_girar_1080x1920.mp4', '03': '03_buraco_atravessa_a_terra_1080x1920.mp4', '04': '04_oxigenio_sumisse_20s_1080x1920.mp4', '05': '05_todo_oxigenio_sumisse_1080x1920.mp4', '06': '06_apocalipse_zumbi_brasil_1080x1920.mp4', '07': '07_furacao_avenida_paulista_1080x1920.mp4', '08': '08_fogo_nunca_descoberto_1080x1920.mp4', '09': '09_vida_real_regras_gta_1080x1920.mp4', '10': '10_brasil_menos_impostos_1080x1920.mp4', '11': '11_luz_3_dias_1080x1920.mp4', '12': '12_vendaval_escolha_1080x1920.mp4'}.get(EP, f'{EP}_1080x1920.mp4')
+    DEF_NAME = {'02': '02_terra_parasse_de_girar_1080x1920.mp4', '03': '03_buraco_atravessa_a_terra_1080x1920.mp4', '04': '04_oxigenio_sumisse_20s_1080x1920.mp4', '05': '05_todo_oxigenio_sumisse_1080x1920.mp4', '06': '06_apocalipse_zumbi_brasil_1080x1920.mp4', '07': '07_furacao_avenida_paulista_1080x1920.mp4', '08': '08_fogo_nunca_descoberto_1080x1920.mp4', '09': '09_vida_real_regras_gta_1080x1920.mp4', '10': '10_brasil_menos_impostos_1080x1920.mp4', '11': '11_luz_3_dias_1080x1920.mp4', '12': '12_vendaval_escolha_1080x1920.mp4', '13': '13_ultimo_onibus_ep1_1080x1920.mp4', '14': '14_vendaval_ep2_1080x1920.mp4'}.get(EP, f'{EP}_1080x1920.mp4')
 else:
     BASE = HERE; import shots as SH
     DEF_NAME = '01_distancia_de_parada_1080x1920.mp4'
