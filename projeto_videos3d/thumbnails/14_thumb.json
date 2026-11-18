@@ -1,0 +1,8 @@
+{
+ "base": "thumbnails/_14_base/base.png",
+ "grade": {"sky": [120, 150, 255], "sky_amt": 0.0, "sky_to": 0.4, "contrast": 1.2, "sat": 1.15, "vignette": 0.5, "shadow_tint": [0, 5, 30]},
+ "title_top": 150,
+ "title": [["A ÁRVORE CAIU.", [255, 210, 20], 140], ["VOCÊ AJUDA", [255, 255, 255], 125], ["OU LIGA 193?", [255, 210, 20], 150]],
+ "inset": {"src": "thumbnails/_14_base/inset.png", "crop": [100, 1030, 800, 1730], "center": [300, 1380], "diam": 400,
+           "ring": [230, 40, 40], "tag": ["EP. 2", [230, 40, 40], [255, 255, 255], 36]}
+}

@@ -5,6 +5,14 @@
 - `scripts/add_narration.py`: MP3 → MP4 com legenda sincronizada, ducking e −14 LUFS.
 - Para recuperar: `git checkout be24c75 -- projeto_videos3d` (a tag não pôde ser enviada ao GitHub: o acesso desta sessão só permite o branch de trabalho).
 
+## v0.17 — vídeo 14 "Vendaval · Ep. 2" (continuação do 12, a maioria escolheu B) (2026-11-18)
+- Cenas na skill Xavier (`teste_xavier/src/videos/vendaval2/`, composição `Vendaval2Short`), 20 planos cortados nas palavras-chave, render nativo 1080x1920 (2022 quadros).
+- Queda da árvore com física de haste rígida girando na base, impacto no "estrondo", destroços com trajetória balística, goteira com gotas em queda livre e ondas na poça, fumaça, fio faiscando, porta do banheiro com dobradiça.
+- Conferência dos quadros antes da montagem: planos 11 a 13 refeitos. A fumaça virou translúcida, saindo pela fresta de baixo da porta. A parede ganhou o vão da porta, com um corredor escuro e o brilho das faíscas atrás. A fresta da sala ficou mais larga.
+- Cartão "B · FICAR E LIGAR 193" desce para baixo da legenda no plano do celular, para não cobrir o "193".
+- Fontes da orientação sobre fio caído (Governo do RS) em `v2/ep14/LIMITACOES.md`.
+- QC aprovado: −13,4 LUFS, TP −1,4, correlação da narração 0,967, atraso e deriva 0 ms. Thumbnail `thumbnails/14_vendaval_ep2_thumb.png/.jpg`.
+
 ## v0.16 — vídeo 13 "O último ônibus" (série "Você decide", Ep. 1) (2026-11-18)
 - Cenas na skill Xavier (`teste_xavier/src/videos/onibus/`, composição `OnibusShort`), 21 planos cortados nas palavras-chave, render nativo 1080x1920 (2118 quadros).
 - Física (pedido do usuário): pessoa sentada com o quadril no assento e os pés no chão, as duas pernas visíveis (no banco do fundo o cartão fica quase paralelo ao encosto), celular deitado no banco vibrando, suspensão do ônibus (mergulho na freada, balanço ao parar, marcha lenta), rodas girando com a distância andada, luz das janelas no chão.

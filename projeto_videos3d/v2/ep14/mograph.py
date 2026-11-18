@@ -74,7 +74,7 @@ def frame(t):
     if 0.2 <= t < 2.8:
         k = env(t, 0.2, 2.8); text(d, W / 2, 340, 'vocês escolheram', WHT, 58, k); card(d, 175, 440, 905, 620, GRN, k, 'B', 'BANHEIRO', 60); n += 1
     if 48.3 <= t < 53.2: card(d, 60, 300, 790, 520, RED, env(t, 48.3, 53.2), 'A', 'ATRAVESSAR\nE AJUDAR', 52); n += 1
-    if 53.22 <= t < 58.25: card(d, 60, 300, 790, 520, GRN, env(t, 53.22, 58.25), 'B', 'FICAR E\nLIGAR 193', 56); n += 1
+    if 53.22 <= t < 58.25: card(d, 60, 1395, 790, 1590, GRN, env(t, 53.22, 58.25), 'B', 'FICAR E\nLIGAR 193', 56); n += 1
     if 58.3 <= t < 63.6:
         k = env(t, 58.3, 63.6)
         card(d, 50, 300, 525, 480, RED, k, 'A', 'AJUDAR', 50); card(d, 555, 300, 1030, 480, GRN, k, 'B', 'LIGAR 193', 42)
