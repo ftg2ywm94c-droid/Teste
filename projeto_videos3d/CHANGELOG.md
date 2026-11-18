@@ -5,6 +5,14 @@
 - `scripts/add_narration.py`: MP3 → MP4 com legenda sincronizada, ducking e −14 LUFS.
 - Para recuperar: `git checkout be24c75 -- projeto_videos3d` (a tag não pôde ser enviada ao GitHub: o acesso desta sessão só permite o branch de trabalho).
 
+## v0.16 — vídeo 13 "O último ônibus" (série "Você decide", Ep. 1) (2026-11-18)
+- Cenas na skill Xavier (`teste_xavier/src/videos/onibus/`, composição `OnibusShort`), 21 planos cortados nas palavras-chave, render nativo 1080x1920 (2118 quadros).
+- Física (pedido do usuário): pessoa sentada com o quadril no assento e os pés no chão, as duas pernas visíveis (no banco do fundo o cartão fica quase paralelo ao encosto), celular deitado no banco vibrando, suspensão do ônibus (mergulho na freada, balanço ao parar, marcha lenta), rodas girando com a distância andada, luz das janelas no chão.
+- Conferência dos quadros antes da montagem: a rua aparecia clara como de dia pelas janelas nos planos internos. Agora, nos planos de dentro, o vidro (laterais e traseiro) e o vão da porta escurecem a rua. 12 planos internos refeitos.
+- Tela do celular: "Número desconhecido" saía cortado; o texto agora cabe na largura. 4 planos de tela refeitos.
+- `v2/assemble.py`: nomes de saída dos vídeos 13 e 14.
+- QC aprovado: −13,9 LUFS, TP −1,4, correlação da narração 0,945, atraso e deriva 0 ms. Thumbnail `thumbnails/13_ultimo_onibus_thumb.png/.jpg`. Limitações em `v2/ep13/LIMITACOES.md`.
+
 ## v0.15 — vídeo 12 "Vendaval: você sai ou fica?" (suspense em 2ª pessoa, escolha A/B) (2026-11-17)
 - Cenas na skill Xavier (`teste_xavier/src/videos/vendaval/`, composição `VendavalShort`), 18 planos cortados nas palavras-chave, render nativo 1080x1920 (2135 quadros).
 - Chuva e vento mais nítidos (pedido do usuário): camada 2D em `v2/ep12/mograph.py` (gotas em duas profundidades, respingos, rajadas e folhas) por cima das gotas 3D. No som, gotas agudas sintetizadas e rajadas mais fortes.
