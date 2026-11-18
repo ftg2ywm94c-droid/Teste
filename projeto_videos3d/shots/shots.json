@@ -1,0 +1,32 @@
+{
+ "title": "Prova de conceito — Téo e a faixa", "fps": 30, "size": "540x960", "duration": 10.0,
+ "narration_status": "A GRAVAR na ElevenLabs (ver narracao/ROTEIRO_ELEVENLABS.md); sincronizar com scripts/add_narration.py",
+ "shots": [
+  {"id": "S1", "start": 0.0, "end": 5.0, "narration": "Todo dia, o Téo faz o mesmo caminho. Mas hoje…", "narration_at": 0.30,
+   "environment": "rua de bairro, calçada, casas, árvores, postes", "characters": ["Téo"], "props": ["carro rosa ao fundo"],
+   "action": "Téo caminha pela calçada (ciclo de caminhada com pés plantados), olha para a câmera e sorri; carro cresce no horizonte",
+   "expressions": "neutro-feliz, piscadas em 1,15 s e 3,95 s, olhar lateral 1,9–4,1 s",
+   "camera": "tracking à frente do personagem com push-in", "lens": "vfov 58°→46°", "camera_path": "offset (6.6,1.75,-1.55)→(3.1,1.30,-1.75) com ease, look-at na cabeça",
+   "light": "sol direcional + ambiente céu/chão", "palette": "céu azul, verdes, teal/laranja no personagem", "transition_out": "corte seco",
+   "sfx": ["passos sincronizados ao contato", "ambiente + pássaros", "ostinato musical"], "accept": ["pés sem deslizar", "sombra conectada", "câmera em movimento contínuo"]},
+  {"id": "S2", "start": 5.0, "end": 7.6, "narration": "um carro vinha rápido demais.", "narration_at": 5.15,
+   "environment": "mesma rua, faixa de pedestres", "characters": ["Téo"], "props": ["carro", "placa"],
+   "action": "Téo faz a curva até o meio-fio; o carro vem de frente e começa a frear (mergulho do nariz)", "expressions": "sorriso some, cabeça vira para o carro",
+   "camera": "sobre o ombro, dolly leve com pan acompanhando o carro", "lens": "vfov 54°→50°", "camera_path": "(3.6,1.45,4.9)→(2.3,2.0,6.0), sobe e recua para revelar o carro",
+   "light": "idem", "palette": "idem + rosa do carro como cor de atenção", "transition_out": "corte na ação (início do susto)",
+   "sfx": ["motor com ganho por distância", "freada", "passos"], "accept": ["rodas giram conforme a distância", "desaceleração constante até parar antes da faixa"]},
+  {"id": "S3", "start": 7.6, "end": 10.0, "narration": "Ufa!", "narration_at": 8.60,
+   "environment": "contra-plano do outro lado da rua", "characters": ["Téo"], "props": ["frente do carro"],
+   "action": "pulinho de susto, braços para cima, squash na aterrissagem; carro para com rebote de suspensão; alívio", "expressions": "olhos arregalados, boca aberta, sobrancelhas → sorriso",
+   "camera": "push-in com tremor no instante da parada", "lens": "vfov 44°→38°", "camera_path": "(-2.2,1.2,-2.8)→(-3.0,1.45,-2.3)",
+   "light": "idem", "palette": "idem", "transition_out": "fim",
+   "sfx": ["boing do pulo", "baque da parada", "acorde de resolução"], "accept": ["reação sincronizada à freada", "carro visível no quadro final"]}
+ ],
+ "captions": [
+  {"start": 0.30, "end": 0.62, "text": "Todo"}, {"start": 0.62, "end": 1.00, "text": "dia,"}, {"start": 1.00, "end": 1.45, "text": "o Téo"},
+  {"start": 1.45, "end": 1.75, "text": "faz"}, {"start": 1.75, "end": 2.20, "text": "o mesmo"}, {"start": 2.20, "end": 2.90, "text": "caminho."},
+  {"start": 3.50, "end": 3.90, "text": "Mas"}, {"start": 3.90, "end": 4.70, "text": "hoje…"},
+  {"start": 5.20, "end": 5.75, "text": "um carro"}, {"start": 5.75, "end": 6.15, "text": "vinha"}, {"start": 6.15, "end": 6.65, "text": "rápido"}, {"start": 6.65, "end": 7.40, "text": "demais."},
+  {"start": 8.75, "end": 9.70, "text": "Ufa!"}
+ ]
+}

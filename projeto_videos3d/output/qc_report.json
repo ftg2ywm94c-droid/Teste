@@ -1,0 +1,42 @@
+{
+ "file": "output/poc_540x960.mp4",
+ "duration": 10.0,
+ "video": {
+  "codec": "h264",
+  "w": 540,
+  "h": 960,
+  "fps": "30/1",
+  "frames": 300,
+  "pix_fmt": "yuv420p"
+ },
+ "audio": {
+  "codec": "aac",
+  "sample_rate": "48000",
+  "channels": 2
+ },
+ "black_segments": 0,
+ "freeze_segments": 0,
+ "motion": {
+  "mean": 3.830514368883934,
+  "min": 0.4137037037037037,
+  "static_frames": 0,
+  "hard_cuts_at_s": [
+   5.0,
+   7.6
+  ]
+ },
+ "loudness_lufs": -16.8,
+ "true_peak_dbfs": -2.5,
+ "checks": {
+  "duration_ok": true,
+  "h264": true,
+  "aac": true,
+  "fps30": true,
+  "vertical_9x16": true,
+  "no_black": true,
+  "no_freeze": true,
+  "always_moving": true,
+  "no_clipping": true
+ },
+ "pass": true
+}

@@ -1,0 +1,1272 @@
+{
+"diffs": [
+[
+"replace",
+"quarenta",
+"40"
+],
+[
+"replace",
+"dez",
+"10"
+],
+[
+"replace",
+"setenta,",
+"70,"
+],
+[
+"replace",
+"cachorro-quente",
+"cachorro -quente"
+],
+[
+"replace",
+"seis",
+"6"
+],
+[
+"replace",
+"oito",
+"8"
+],
+[
+"replace",
+"o",
+"um"
+]
+],
+"words": [
+{
+"w": "No",
+"s": 0.0,
+"e": 0.24,
+"key": false
+},
+{
+"w": "GTA,",
+"s": 0.24,
+"e": 0.72,
+"key": false
+},
+{
+"w": "você",
+"s": 1.12,
+"e": 1.34,
+"key": false
+},
+{
+"w": "é",
+"s": 1.34,
+"e": 1.46,
+"key": false
+},
+{
+"w": "atropelado,",
+"s": 1.46,
+"e": 2.26,
+"key": false
+},
+{
+"w": "levanta",
+"s": 2.56,
+"e": 3.1,
+"key": false
+},
+{
+"w": "e",
+"s": 3.1,
+"e": 3.26,
+"key": false
+},
+{
+"w": "sai",
+"s": 3.26,
+"e": 3.42,
+"key": false
+},
+{
+"w": "andando.",
+"s": 3.42,
+"e": 4.3,
+"key": false
+},
+{
+"w": "Na",
+"s": 4.48,
+"e": 4.62,
+"key": false
+},
+{
+"w": "vida",
+"s": 4.62,
+"e": 4.86,
+"key": false
+},
+{
+"w": "real,",
+"s": 4.86,
+"e": 5.24,
+"key": false
+},
+{
+"w": "você",
+"s": 5.46,
+"e": 5.78,
+"key": false
+},
+{
+"w": "nem",
+"s": 5.78,
+"e": 6.08,
+"key": true
+},
+{
+"w": "levantaria.",
+"s": 6.08,
+"e": 6.78,
+"key": true
+},
+{
+"w": "O",
+"s": 7.64,
+"e": 7.82,
+"key": false
+},
+{
+"w": "GTA",
+"s": 7.82,
+"e": 8.14,
+"key": false
+},
+{
+"w": "6",
+"s": 8.14,
+"e": 8.36,
+"key": false
+},
+{
+"w": "chega",
+"s": 8.36,
+"e": 8.62,
+"key": false
+},
+{
+"w": "agora,",
+"s": 8.62,
+"e": 9.1,
+"key": false
+},
+{
+"w": "então",
+"s": 9.36,
+"e": 9.58,
+"key": false
+},
+{
+"w": "vamos",
+"s": 9.58,
+"e": 9.9,
+"key": false
+},
+{
+"w": "testar:",
+"s": 9.9,
+"e": 10.74,
+"key": false
+},
+{
+"w": "e",
+"s": 11.0,
+"e": 11.0,
+"key": false
+},
+{
+"w": "se",
+"s": 11.0,
+"e": 11.16,
+"key": false
+},
+{
+"w": "a",
+"s": 11.16,
+"e": 11.24,
+"key": false
+},
+{
+"w": "vida",
+"s": 11.24,
+"e": 11.44,
+"key": false
+},
+{
+"w": "real",
+"s": 11.44,
+"e": 11.94,
+"key": false
+},
+{
+"w": "seguisse",
+"s": 11.94,
+"e": 12.42,
+"key": false
+},
+{
+"w": "as",
+"s": 12.42,
+"e": 12.62,
+"key": false
+},
+{
+"w": "regras",
+"s": 12.62,
+"e": 12.98,
+"key": true
+},
+{
+"w": "do",
+"s": 12.98,
+"e": 13.16,
+"key": true
+},
+{
+"w": "jogo?",
+"s": 13.16,
+"e": 13.56,
+"key": true
+},
+{
+"w": "Começa",
+"s": 14.54,
+"e": 14.88,
+"key": false
+},
+{
+"w": "pelo",
+"s": 14.88,
+"e": 15.16,
+"key": false
+},
+{
+"w": "atropelamento.",
+"s": 15.16,
+"e": 16.06,
+"key": false
+},
+{
+"w": "A",
+"s": 16.6,
+"e": 16.74,
+"key": false
+},
+{
+"w": "quarenta",
+"s": 16.74,
+"e": 17.06,
+"key": false
+},
+{
+"w": "por",
+"s": 17.06,
+"e": 17.3,
+"key": false
+},
+{
+"w": "hora,",
+"s": 17.3,
+"e": 17.64,
+"key": false
+},
+{
+"w": "um",
+"s": 17.82,
+"e": 18.06,
+"key": true
+},
+{
+"w": "em",
+"s": 18.06,
+"e": 18.24,
+"key": true
+},
+{
+"w": "cada",
+"s": 18.24,
+"e": 18.56,
+"key": true
+},
+{
+"w": "dez",
+"s": 18.56,
+"e": 18.9,
+"key": true
+},
+{
+"w": "pedestres",
+"s": 18.9,
+"e": 19.46,
+"key": false
+},
+{
+"w": "morre.",
+"s": 19.46,
+"e": 20.22,
+"key": false
+},
+{
+"w": "A",
+"s": 20.38,
+"e": 20.58,
+"key": false
+},
+{
+"w": "setenta,",
+"s": 20.58,
+"e": 21.1,
+"key": false
+},
+{
+"w": "metade.",
+"s": 21.48,
+"e": 22.0,
+"key": false
+},
+{
+"w": "Agora",
+"s": 22.4,
+"e": 22.72,
+"key": false
+},
+{
+"w": "a",
+"s": 22.72,
+"e": 22.86,
+"key": false
+},
+{
+"w": "queda.",
+"s": 22.86,
+"e": 23.14,
+"key": false
+},
+{
+"w": "Cair",
+"s": 23.88,
+"e": 24.14,
+"key": false
+},
+{
+"w": "de",
+"s": 24.14,
+"e": 24.3,
+"key": false
+},
+{
+"w": "uns",
+"s": 24.3,
+"e": 24.52,
+"key": false
+},
+{
+"w": "quatro",
+"s": 24.52,
+"e": 24.78,
+"key": true
+},
+{
+"w": "andares",
+"s": 24.78,
+"e": 25.36,
+"key": true
+},
+{
+"w": "mata",
+"s": 25.36,
+"e": 25.66,
+"key": false
+},
+{
+"w": "cerca",
+"s": 25.66,
+"e": 25.98,
+"key": false
+},
+{
+"w": "de",
+"s": 25.98,
+"e": 26.18,
+"key": false
+},
+{
+"w": "metade",
+"s": 26.18,
+"e": 26.58,
+"key": false
+},
+{
+"w": "das",
+"s": 26.58,
+"e": 26.78,
+"key": false
+},
+{
+"w": "pessoas.",
+"s": 26.78,
+"e": 27.28,
+"key": false
+},
+{
+"w": "E",
+"s": 27.7,
+"e": 28.0,
+"key": false
+},
+{
+"w": "se",
+"s": 28.0,
+"e": 28.18,
+"key": false
+},
+{
+"w": "você",
+"s": 28.18,
+"e": 28.48,
+"key": false
+},
+{
+"w": "sobreviver,",
+"s": 28.48,
+"e": 29.24,
+"key": false
+},
+{
+"w": "nenhum",
+"s": 29.64,
+"e": 29.8,
+"key": true
+},
+{
+"w": "cachorro-quente",
+"s": 29.8,
+"e": 30.44,
+"key": true
+},
+{
+"w": "resolve:",
+"s": 30.44,
+"e": 30.9,
+"key": false
+},
+{
+"w": "um",
+"s": 31.54,
+"e": 31.68,
+"key": false
+},
+{
+"w": "osso",
+"s": 31.68,
+"e": 31.96,
+"key": false
+},
+{
+"w": "quebrado",
+"s": 31.96,
+"e": 32.62,
+"key": false
+},
+{
+"w": "leva,",
+"s": 32.62,
+"e": 32.88,
+"key": false
+},
+{
+"w": "em",
+"s": 32.88,
+"e": 33.1,
+"key": false
+},
+{
+"w": "média,",
+"s": 33.1,
+"e": 33.4,
+"key": false
+},
+{
+"w": "de",
+"s": 33.4,
+"e": 33.88,
+"key": false
+},
+{
+"w": "seis",
+"s": 33.88,
+"e": 34.16,
+"key": true
+},
+{
+"w": "a",
+"s": 34.16,
+"e": 34.28,
+"key": true
+},
+{
+"w": "oito",
+"s": 34.28,
+"e": 34.6,
+"key": true
+},
+{
+"w": "semanas",
+"s": 34.6,
+"e": 35.0,
+"key": true
+},
+{
+"w": "para",
+"s": 35.0,
+"e": 35.26,
+"key": false
+},
+{
+"w": "colar.",
+"s": 35.26,
+"e": 36.3,
+"key": false
+},
+{
+"w": "Mas",
+"s": 36.52,
+"e": 36.64,
+"key": false
+},
+{
+"w": "uma",
+"s": 36.64,
+"e": 36.9,
+"key": false
+},
+{
+"w": "artista",
+"s": 36.9,
+"e": 37.28,
+"key": false
+},
+{
+"w": "e",
+"s": 37.28,
+"e": 37.4,
+"key": false
+},
+{
+"w": "dois",
+"s": 37.4,
+"e": 37.68,
+"key": false
+},
+{
+"w": "especialistas",
+"s": 37.68,
+"e": 38.3,
+"key": false
+},
+{
+"w": "em",
+"s": 38.3,
+"e": 38.52,
+"key": false
+},
+{
+"w": "trauma",
+"s": 38.52,
+"e": 38.86,
+"key": false
+},
+{
+"w": "criaram",
+"s": 38.86,
+"e": 39.38,
+"key": false
+},
+{
+"w": "o",
+"s": 39.38,
+"e": 39.74,
+"key": false
+},
+{
+"w": "único",
+"s": 39.74,
+"e": 39.98,
+"key": false
+},
+{
+"w": "corpo",
+"s": 39.98,
+"e": 40.32,
+"key": false
+},
+{
+"w": "humano",
+"s": 40.32,
+"e": 40.74,
+"key": false
+},
+{
+"w": "feito",
+"s": 40.74,
+"e": 41.3,
+"key": false
+},
+{
+"w": "para",
+"s": 41.3,
+"e": 41.58,
+"key": false
+},
+{
+"w": "aguentar",
+"s": 41.58,
+"e": 41.96,
+"key": true
+},
+{
+"w": "um",
+"s": 41.96,
+"e": 42.12,
+"key": true
+},
+{
+"w": "acidente.",
+"s": 42.12,
+"e": 42.62,
+"key": true
+},
+{
+"w": "Ele",
+"s": 43.4,
+"e": 43.56,
+"key": false
+},
+{
+"w": "se",
+"s": 43.56,
+"e": 43.78,
+"key": false
+},
+{
+"w": "chama",
+"s": 43.78,
+"e": 43.96,
+"key": false
+},
+{
+"w": "Graham:",
+"s": 43.96,
+"e": 44.46,
+"key": false
+},
+{
+"w": "crânio",
+"s": 45.08,
+"e": 45.38,
+"key": true
+},
+{
+"w": "gigante,",
+"s": 45.38,
+"e": 45.96,
+"key": true
+},
+{
+"w": "sem",
+"s": 46.12,
+"e": 46.26,
+"key": true
+},
+{
+"w": "pescoço,",
+"s": 46.26,
+"e": 46.92,
+"key": true
+},
+{
+"w": "bolsas",
+"s": 47.18,
+"e": 47.66,
+"key": true
+},
+{
+"w": "de",
+"s": 47.66,
+"e": 47.78,
+"key": true
+},
+{
+"w": "ar",
+"s": 47.78,
+"e": 47.92,
+"key": true
+},
+{
+"w": "no",
+"s": 47.92,
+"e": 48.12,
+"key": false
+},
+{
+"w": "peito.",
+"s": 48.12,
+"e": 48.54,
+"key": false
+},
+{
+"w": "É",
+"s": 49.2,
+"e": 49.44,
+"key": false
+},
+{
+"w": "assim",
+"s": 49.44,
+"e": 49.72,
+"key": false
+},
+{
+"w": "que",
+"s": 49.72,
+"e": 49.86,
+"key": false
+},
+{
+"w": "a",
+"s": 49.86,
+"e": 49.92,
+"key": false
+},
+{
+"w": "gente",
+"s": 49.92,
+"e": 50.12,
+"key": false
+},
+{
+"w": "precisaria",
+"s": 50.12,
+"e": 50.7,
+"key": false
+},
+{
+"w": "ser.",
+"s": 50.7,
+"e": 51.1,
+"key": false
+},
+{
+"w": "Então,",
+"s": 51.88,
+"e": 52.34,
+"key": false
+},
+{
+"w": "quando",
+"s": 52.46,
+"e": 52.68,
+"key": false
+},
+{
+"w": "o",
+"s": 52.68,
+"e": 52.78,
+"key": false
+},
+{
+"w": "jogo",
+"s": 52.78,
+"e": 52.94,
+"key": false
+},
+{
+"w": "mandar",
+"s": 52.94,
+"e": 53.24,
+"key": false
+},
+{
+"w": "você",
+"s": 53.24,
+"e": 53.5,
+"key": false
+},
+{
+"w": "levantar,",
+"s": 53.5,
+"e": 54.28,
+"key": false
+},
+{
+"w": "lembra:",
+"s": 54.48,
+"e": 54.8,
+"key": false
+},
+{
+"w": "aqui",
+"s": 54.8,
+"e": 55.5,
+"key": false
+},
+{
+"w": "fora",
+"s": 55.5,
+"e": 55.88,
+"key": false
+},
+{
+"w": "não",
+"s": 56.08,
+"e": 56.24,
+"key": false
+},
+{
+"w": "tem",
+"s": 56.24,
+"e": 56.4,
+"key": false
+},
+{
+"w": "botão",
+"s": 56.4,
+"e": 56.86,
+"key": false
+},
+{
+"w": "de",
+"s": 56.86,
+"e": 57.0,
+"key": false
+},
+{
+"w": "tentar",
+"s": 57.0,
+"e": 57.44,
+"key": true
+},
+{
+"w": "de",
+"s": 57.44,
+"e": 57.74,
+"key": true
+},
+{
+"w": "novo.",
+"s": 57.74,
+"e": 58.2,
+"key": true
+},
+{
+"w": "Comenta",
+"s": 59.02,
+"e": 59.28,
+"key": false
+},
+{
+"w": "qual",
+"s": 59.28,
+"e": 59.48,
+"key": false
+},
+{
+"w": "missão",
+"s": 59.48,
+"e": 59.92,
+"key": false
+},
+{
+"w": "você",
+"s": 59.92,
+"e": 60.14,
+"key": false
+},
+{
+"w": "quer",
+"s": 60.14,
+"e": 60.3,
+"key": false
+},
+{
+"w": "ver",
+"s": 60.3,
+"e": 60.5,
+"key": false
+},
+{
+"w": "testada",
+"s": 60.5,
+"e": 61.0,
+"key": false
+},
+{
+"w": "na",
+"s": 61.0,
+"e": 61.2,
+"key": false
+},
+{
+"w": "vida",
+"s": 61.2,
+"e": 61.46,
+"key": false
+},
+{
+"w": "real.",
+"s": 61.46,
+"e": 61.74,
+"key": false
+}
+],
+"chunks": [
+{
+"s": 0.0,
+"e": 0.72,
+"t": "NO GTA,"
+},
+{
+"s": 1.12,
+"e": 1.46,
+"t": "VOCÊ É"
+},
+{
+"s": 1.46,
+"e": 2.26,
+"t": "ATROPELADO,"
+},
+{
+"s": 2.56,
+"e": 3.1,
+"t": "LEVANTA"
+},
+{
+"s": 3.1,
+"e": 4.3,
+"t": "E SAI ANDANDO."
+},
+{
+"s": 4.48,
+"e": 5.24,
+"t": "NA VIDA REAL,"
+},
+{
+"s": 5.46,
+"e": 6.78,
+"t": "VOCÊ {\\c&H0028D7FF&}NEM{\\c&HFFFFFF&} {\\c&H0028D7FF&}LEVANTARIA.{\\c&HFFFFFF&}"
+},
+{
+"s": 7.64,
+"e": 8.62,
+"t": "O GTA 6 CHEGA"
+},
+{
+"s": 8.62,
+"e": 9.1,
+"t": "AGORA,"
+},
+{
+"s": 9.36,
+"e": 9.9,
+"t": "ENTÃO VAMOS"
+},
+{
+"s": 9.9,
+"e": 10.74,
+"t": "TESTAR:"
+},
+{
+"s": 11.0,
+"e": 11.44,
+"t": "E SE A VIDA"
+},
+{
+"s": 11.44,
+"e": 12.42,
+"t": "REAL SEGUISSE"
+},
+{
+"s": 12.42,
+"e": 13.56,
+"t": "AS {\\c&H0028D7FF&}REGRAS{\\c&HFFFFFF&} {\\c&H0028D7FF&}DO{\\c&HFFFFFF&} {\\c&H0028D7FF&}JOGO?{\\c&HFFFFFF&}"
+},
+{
+"s": 14.54,
+"e": 15.16,
+"t": "COMEÇA PELO"
+},
+{
+"s": 15.16,
+"e": 16.06,
+"t": "ATROPELAMENTO."
+},
+{
+"s": 16.6,
+"e": 17.06,
+"t": "A QUARENTA"
+},
+{
+"s": 17.06,
+"e": 17.64,
+"t": "POR HORA,"
+},
+{
+"s": 17.82,
+"e": 18.9,
+"t": "{\\c&H0028D7FF&}UM{\\c&HFFFFFF&} {\\c&H0028D7FF&}EM{\\c&HFFFFFF&} {\\c&H0028D7FF&}CADA{\\c&HFFFFFF&} {\\c&H0028D7FF&}DEZ{\\c&HFFFFFF&}"
+},
+{
+"s": 18.9,
+"e": 20.22,
+"t": "PEDESTRES MORRE."
+},
+{
+"s": 20.38,
+"e": 21.1,
+"t": "A SETENTA,"
+},
+{
+"s": 21.48,
+"e": 22.0,
+"t": "METADE."
+},
+{
+"s": 22.4,
+"e": 23.14,
+"t": "AGORA A QUEDA."
+},
+{
+"s": 23.88,
+"e": 24.14,
+"t": "CAIR"
+},
+{
+"s": 24.14,
+"e": 25.36,
+"t": "DE UNS {\\c&H0028D7FF&}QUATRO{\\c&HFFFFFF&} {\\c&H0028D7FF&}ANDARES{\\c&HFFFFFF&}"
+},
+{
+"s": 25.36,
+"e": 25.98,
+"t": "MATA CERCA"
+},
+{
+"s": 25.98,
+"e": 26.58,
+"t": "DE METADE"
+},
+{
+"s": 26.58,
+"e": 27.28,
+"t": "DAS PESSOAS."
+},
+{
+"s": 27.7,
+"e": 28.48,
+"t": "E SE VOCÊ"
+},
+{
+"s": 28.48,
+"e": 29.24,
+"t": "SOBREVIVER,"
+},
+{
+"s": 29.64,
+"e": 29.8,
+"t": "{\\c&H0028D7FF&}NENHUM{\\c&HFFFFFF&}"
+},
+{
+"s": 29.8,
+"e": 30.44,
+"t": "{\\c&H0028D7FF&}CACHORRO-QUENTE{\\c&HFFFFFF&}"
+},
+{
+"s": 30.44,
+"e": 30.9,
+"t": "RESOLVE:"
+},
+{
+"s": 31.54,
+"e": 31.96,
+"t": "UM OSSO"
+},
+{
+"s": 31.96,
+"e": 32.88,
+"t": "QUEBRADO LEVA,"
+},
+{
+"s": 32.88,
+"e": 33.4,
+"t": "EM MÉDIA,"
+},
+{
+"s": 33.4,
+"e": 34.16,
+"t": "DE {\\c&H0028D7FF&}SEIS{\\c&HFFFFFF&}"
+},
+{
+"s": 34.16,
+"e": 35.0,
+"t": "{\\c&H0028D7FF&}A{\\c&HFFFFFF&} {\\c&H0028D7FF&}OITO{\\c&HFFFFFF&} {\\c&H0028D7FF&}SEMANAS{\\c&HFFFFFF&}"
+},
+{
+"s": 35.0,
+"e": 36.16,
+"t": "PARA COLAR."
+},
+{
+"s": 36.52,
+"e": 37.28,
+"t": "MAS UMA ARTISTA"
+},
+{
+"s": 37.28,
+"e": 37.68,
+"t": "E DOIS"
+},
+{
+"s": 37.68,
+"e": 38.3,
+"t": "ESPECIALISTAS"
+},
+{
+"s": 38.3,
+"e": 38.86,
+"t": "EM TRAUMA"
+},
+{
+"s": 38.86,
+"e": 39.38,
+"t": "CRIARAM"
+},
+{
+"s": 39.38,
+"e": 40.32,
+"t": "O ÚNICO CORPO"
+},
+{
+"s": 40.32,
+"e": 41.3,
+"t": "HUMANO FEITO"
+},
+{
+"s": 41.3,
+"e": 41.96,
+"t": "PARA {\\c&H0028D7FF&}AGUENTAR{\\c&HFFFFFF&}"
+},
+{
+"s": 41.96,
+"e": 42.62,
+"t": "{\\c&H0028D7FF&}UM{\\c&HFFFFFF&} {\\c&H0028D7FF&}ACIDENTE.{\\c&HFFFFFF&}"
+},
+{
+"s": 43.4,
+"e": 43.96,
+"t": "ELE SE CHAMA"
+},
+{
+"s": 43.96,
+"e": 44.46,
+"t": "GRAHAM:"
+},
+{
+"s": 45.08,
+"e": 45.96,
+"t": "{\\c&H0028D7FF&}CRÂNIO{\\c&HFFFFFF&} {\\c&H0028D7FF&}GIGANTE,{\\c&HFFFFFF&}"
+},
+{
+"s": 46.12,
+"e": 46.92,
+"t": "{\\c&H0028D7FF&}SEM{\\c&HFFFFFF&} {\\c&H0028D7FF&}PESCOÇO,{\\c&HFFFFFF&}"
+},
+{
+"s": 47.18,
+"e": 48.54,
+"t": "{\\c&H0028D7FF&}BOLSAS{\\c&HFFFFFF&} {\\c&H0028D7FF&}DE{\\c&HFFFFFF&} {\\c&H0028D7FF&}AR{\\c&HFFFFFF&} NO PEITO."
+},
+{
+"s": 49.2,
+"e": 49.72,
+"t": "É ASSIM"
+},
+{
+"s": 49.72,
+"e": 50.12,
+"t": "QUE A GENTE"
+},
+{
+"s": 50.12,
+"e": 51.1,
+"t": "PRECISARIA SER."
+},
+{
+"s": 51.88,
+"e": 52.46,
+"t": "ENTÃO,"
+},
+{
+"s": 52.46,
+"e": 52.94,
+"t": "QUANDO O JOGO"
+},
+{
+"s": 52.94,
+"e": 53.5,
+"t": "MANDAR VOCÊ"
+},
+{
+"s": 53.5,
+"e": 54.28,
+"t": "LEVANTAR,"
+},
+{
+"s": 54.48,
+"e": 54.8,
+"t": "LEMBRA:"
+},
+{
+"s": 54.8,
+"e": 55.88,
+"t": "AQUI FORA"
+},
+{
+"s": 56.08,
+"e": 56.86,
+"t": "NÃO TEM BOTÃO"
+},
+{
+"s": 56.86,
+"e": 58.2,
+"t": "DE {\\c&H0028D7FF&}TENTAR{\\c&HFFFFFF&} {\\c&H0028D7FF&}DE{\\c&HFFFFFF&} {\\c&H0028D7FF&}NOVO.{\\c&HFFFFFF&}"
+},
+{
+"s": 59.02,
+"e": 59.48,
+"t": "COMENTA QUAL"
+},
+{
+"s": 59.48,
+"e": 60.14,
+"t": "MISSÃO VOCÊ"
+},
+{
+"s": 60.14,
+"e": 61.0,
+"t": "QUER VER TESTADA"
+},
+{
+"s": 61.0,
+"e": 61.74,
+"t": "NA VIDA REAL."
+}
+],
+"hud": []
+}

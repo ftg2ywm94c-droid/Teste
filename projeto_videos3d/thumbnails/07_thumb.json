@@ -1,0 +1,8 @@
+{
+ "base": "thumbnails/07_base_render.png",
+ "grade": {"sky": [70, 105, 135], "sky_amt": 0.85, "sky_to": 0.55, "contrast": 1.3, "sat": 1.25, "vignette": 0.65, "shadow_tint": [0, 12, 32]},
+ "title_top": 95,
+ "title": [["E SE UM", [255, 255, 255], 150], ["FURACÃO", [255, 70, 50], 215], ["NA PAULISTA?", [255, 210, 20], 140]],
+ "inset": {"src": "thumbnails/07_inset_furacao.png", "crop": [121, 484, 521, 884], "center": [815, 1060], "diam": 370,
+           "tag": ["O BRASIL JÁ TEVE UM", [255, 210, 20], [0, 0, 0], 44]}
+}

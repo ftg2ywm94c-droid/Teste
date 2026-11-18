@@ -1,0 +1,90 @@
+[Script Info]
+; Texto: roteiro aprovado. Tempos: faster-whisper (medium) por palavra, alinhado ao roteiro.
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Leg,Poppins,92,&H00FFFFFF,&H00FFFFFF,&H00101010,&H78000000,-1,0,0,0,100,100,0,0,1,5,2,2,90,90,560,1
+Style: Nota,Poppins,38,&H00FFFFFF,&H00FFFFFF,&H64000000,&H64000000,-1,0,0,0,100,100,1,0,3,10,0,8,80,80,140,1
+Style: Hud,Poppins,62,&H00FFFFFF,&H00FFFFFF,&H50000000,&H50000000,-1,0,0,0,100,100,1,0,3,18,0,8,80,80,250,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:01.04,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SE VOCÊ PULASSE
+Dialogue: 1,0:00:01.04,0:00:01.62,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NUM BURACO
+Dialogue: 1,0:00:01.62,0:00:02.28,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}QUE ATRAVESSA
+Dialogue: 1,0:00:02.28,0:00:02.80,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A TERRA,
+Dialogue: 1,0:00:03.60,0:00:04.08,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}QUANTO TEMPO
+Dialogue: 1,0:00:04.08,0:00:04.48,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}LEVARIA
+Dialogue: 1,0:00:04.48,0:00:04.94,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PARA SAIR
+Dialogue: 1,0:00:04.94,0:00:05.78,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DO OUTRO LADO?
+Dialogue: 1,0:00:06.66,0:00:06.96,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}IMAGINE
+Dialogue: 1,0:00:06.96,0:00:07.94,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}UM TÚNEL RETO,
+Dialogue: 1,0:00:08.22,0:00:09.38,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DE POLO A POLO,
+Dialogue: 1,0:00:09.38,0:00:09.94,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SEM AR.
+Dialogue: 1,0:00:10.76,0:00:11.98,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ PULA E CAI…
+Dialogue: 1,0:00:12.66,0:00:13.36,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}FLUTUANDO,
+Dialogue: 1,0:00:13.62,0:00:14.30,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}SEM{\c&HFFFFFF&} {\c&H0028D7FF&}PESO,{\c&HFFFFFF&}
+Dialogue: 1,0:00:14.62,0:00:15.14,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A VIAGEM
+Dialogue: 1,0:00:15.14,0:00:15.78,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}INTEIRA.
+Dialogue: 1,0:00:16.56,0:00:17.02,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E TEM UMA
+Dialogue: 1,0:00:17.02,0:00:17.56,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SURPRESA:
+Dialogue: 1,0:00:18.12,0:00:18.72,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}QUANTO MAIS
+Dialogue: 1,0:00:18.72,0:00:19.54,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ DESCE,
+Dialogue: 1,0:00:19.70,0:00:20.98,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}MAIS{\c&HFFFFFF&} {\c&H0028D7FF&}FORTE{\c&HFFFFFF&} A GRAVIDADE
+Dialogue: 1,0:00:20.98,0:00:21.38,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PUXA,
+Dialogue: 1,0:00:21.72,0:00:23.20,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ATÉ O {\c&H0028D7FF&}NÚCLEO{\c&HFFFFFF&} {\c&H0028D7FF&}DE{\c&HFFFFFF&} {\c&H0028D7FF&}FERRO,{\c&HFFFFFF&}
+Dialogue: 1,0:00:23.20,0:00:24.18,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A QUASE {\c&H0028D7FF&}TRÊS{\c&HFFFFFF&}
+Dialogue: 1,0:00:24.18,0:00:25.06,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}MIL{\c&HFFFFFF&} {\c&H0028D7FF&}QUILÔMETROS.{\c&HFFFFFF&}
+Dialogue: 1,0:00:25.64,0:00:26.56,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SÓ DEPOIS
+Dialogue: 1,0:00:26.56,0:00:27.64,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ELA ENFRAQUECE.
+Dialogue: 1,0:00:28.16,0:00:28.72,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NO CENTRO,
+Dialogue: 1,0:00:29.00,0:00:29.46,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ PASSA
+Dialogue: 1,0:00:29.46,0:00:30.50,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}MAIS DE {\c&H0028D7FF&}TRINTA{\c&HFFFFFF&}
+Dialogue: 1,0:00:30.50,0:00:30.84,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}E{\c&HFFFFFF&} {\c&H0028D7FF&}CINCO{\c&HFFFFFF&}
+Dialogue: 1,0:00:30.84,0:00:31.64,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}MIL{\c&HFFFFFF&} {\c&H0028D7FF&}QUILÔMETROS{\c&HFFFFFF&}
+Dialogue: 1,0:00:31.64,0:00:32.24,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}POR{\c&HFFFFFF&} {\c&H0028D7FF&}HORA.{\c&HFFFFFF&}
+Dialogue: 1,0:00:33.10,0:00:33.52,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}CHUTA AÍ NOS
+Dialogue: 1,0:00:33.52,0:00:34.18,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}COMENTÁRIOS:
+Dialogue: 1,0:00:34.88,0:00:35.38,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}QUANTO TEMPO
+Dialogue: 1,0:00:35.38,0:00:35.98,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DURA A QUEDA?
+Dialogue: 1,0:00:37.02,0:00:37.66,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}TRINTA{\c&HFFFFFF&} {\c&H0028D7FF&}E{\c&HFFFFFF&} {\c&H0028D7FF&}OITO{\c&HFFFFFF&}
+Dialogue: 1,0:00:37.66,0:00:38.22,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}MINUTOS.{\c&HFFFFFF&}
+Dialogue: 1,0:00:39.06,0:00:39.76,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ ATRAVESSA
+Dialogue: 1,0:00:39.76,0:00:40.36,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O PLANETA,
+Dialogue: 1,0:00:40.64,0:00:41.42,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VAI FREANDO
+Dialogue: 1,0:00:41.42,0:00:42.32,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E CHEGA DO OUTRO
+Dialogue: 1,0:00:42.32,0:00:43.24,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}LADO PARADO,
+Dialogue: 1,0:00:43.42,0:00:44.70,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}BEM NA BORDA.
+Dialogue: 1,0:00:45.08,0:00:45.50,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SE NINGUÉM
+Dialogue: 1,0:00:45.50,0:00:46.44,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}TE SEGURAR,
+Dialogue: 1,0:00:46.44,0:00:47.14,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}CAI DE VOLTA.
+Dialogue: 1,0:00:47.88,0:00:48.70,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E FICA INDO
+Dialogue: 1,0:00:48.70,0:00:49.50,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E VOLTANDO
+Dialogue: 1,0:00:49.50,0:00:50.20,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PARA SEMPRE.
+Dialogue: 1,0:00:50.20,0:00:51.72,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NA VIDA REAL,
+Dialogue: 1,0:00:51.72,0:00:52.20,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NÃO DÁ:
+Dialogue: 1,0:00:52.70,0:00:53.38,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O CENTRO PASSA
+Dialogue: 1,0:00:53.38,0:00:54.72,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DE {\c&H0028D7FF&}CINCO{\c&HFFFFFF&} {\c&H0028D7FF&}MIL{\c&HFFFFFF&} {\c&H0028D7FF&}GRAUS,{\c&HFFFFFF&}
+Dialogue: 1,0:00:54.96,0:00:55.84,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E O BURACO MAIS
+Dialogue: 1,0:00:55.84,0:00:56.74,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}FUNDO JÁ CAVADO
+Dialogue: 1,0:00:56.74,0:00:58.18,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}TEM SÓ {\c&H0028D7FF&}DOZE{\c&HFFFFFF&} {\c&H0028D7FF&}QUILÔMETROS.{\c&HFFFFFF&}
+Dialogue: 1,0:00:59.16,0:00:59.78,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E POR QUE DE
+Dialogue: 1,0:00:59.78,0:01:00.46,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}POLO A POLO?
+Dialogue: 1,0:01:01.08,0:01:01.30,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PORQUE
+Dialogue: 1,0:01:01.30,0:01:01.86,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}EM QUALQUER
+Dialogue: 1,0:01:01.86,0:01:02.54,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}OUTRO LUGAR,
+Dialogue: 1,0:01:02.96,0:01:03.66,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O GIRO DA TERRA
+Dialogue: 1,0:01:03.66,0:01:04.28,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}TE JOGARIA
+Dialogue: 1,0:01:04.28,0:01:05.12,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}CONTRA A PAREDE.
+Dialogue: 0,0:00:16.35,0:00:27.90,Nota,,0,0,0,,{\fad(200,200)}personagem e túnel fora de escala
+Dialogue: 0,0:00:36.95,0:00:40.45,Nota,,0,0,0,,{\fad(200,200)\an2}tempo acelerado
+Dialogue: 0,0:00:40.55,0:00:47.35,Nota,,0,0,0,,{\fad(200,200)}câmera lenta
+Dialogue: 0,0:00:47.45,0:00:50.05,Nota,,0,0,0,,{\fad(200,200)}tempo acelerado
+Dialogue: 0,0:00:56.60,0:00:58.75,Nota,,0,0,0,,{\fad(200,200)}crosta e poço em escala
+Dialogue: 0,0:00:58.85,0:01:02.45,Nota,,0,0,0,,{\fad(200,200)}rotação acelerada
+Dialogue: 0,0:01:02.55,0:01:05.95,Nota,,0,0,0,,{\fad(200,200)}tempo acelerado · na vida real, bateria na parede em ~20 s

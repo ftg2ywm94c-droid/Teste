@@ -1,0 +1,88 @@
+[Script Info]
+; Texto: roteiro aprovado. Tempos: faster-whisper (medium) por palavra, alinhado ao roteiro.
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Leg,Poppins,92,&H00FFFFFF,&H00FFFFFF,&H00101010,&H78000000,-1,0,0,0,100,100,0,0,1,5,2,2,90,90,560,1
+Style: Nota,Poppins,38,&H00FFFFFF,&H00FFFFFF,&H64000000,&H64000000,-1,0,0,0,100,100,1,0,3,10,0,8,80,80,140,1
+Style: Hud,Poppins,62,&H00FFFFFF,&H00FFFFFF,&H50000000,&H50000000,-1,0,0,0,100,100,1,0,3,18,0,8,80,80,250,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:01.16,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E SE COMEÇASSE
+Dialogue: 1,0:00:01.16,0:00:02.46,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}UM {\c&H0028D7FF&}APOCALIPSE{\c&HFFFFFF&} {\c&H0028D7FF&}ZUMBI{\c&HFFFFFF&}
+Dialogue: 1,0:00:02.46,0:00:03.10,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NO BRASIL?
+Dialogue: 1,0:00:04.18,0:00:04.88,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ANTES DE CORRER,
+Dialogue: 1,0:00:05.10,0:00:05.74,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}UMA NOTÍCIA:
+Dialogue: 1,0:00:06.16,0:00:06.72,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}O{\c&HFFFFFF&} {\c&H0028D7FF&}FUNGO{\c&HFFFFFF&}
+Dialogue: 1,0:00:06.72,0:00:07.72,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}ZUMBI{\c&HFFFFFF&} {\c&H0028D7FF&}EXISTE.{\c&HFFFFFF&}
+Dialogue: 1,0:00:08.40,0:00:08.98,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E FOI ACHADO
+Dialogue: 1,0:00:08.98,0:00:09.38,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}AQUI.
+Dialogue: 1,0:00:10.16,0:00:10.62,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NA MATA
+Dialogue: 1,0:00:10.62,0:00:11.22,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ATLÂNTICA
+Dialogue: 1,0:00:11.22,0:00:12.08,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DE MINAS GERAIS,
+Dialogue: 1,0:00:12.38,0:00:12.84,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}CIENTISTAS
+Dialogue: 1,0:00:12.84,0:00:13.50,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DESCREVERAM
+Dialogue: 1,0:00:13.50,0:00:14.92,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}QUATRO{\c&HFFFFFF&} {\c&H0028D7FF&}ESPÉCIES{\c&HFFFFFF&} DE FUNGO
+Dialogue: 1,0:00:14.92,0:00:16.36,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}QUE {\c&H0028D7FF&}CONTROLAM{\c&HFFFFFF&} {\c&H0028D7FF&}FORMIGAS.{\c&HFFFFFF&}
+Dialogue: 1,0:00:16.98,0:00:17.42,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A FORMIGA
+Dialogue: 1,0:00:17.42,0:00:18.24,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}INFECTADA SOBE
+Dialogue: 1,0:00:18.24,0:00:19.18,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NUMA PLANTA,
+Dialogue: 1,0:00:19.40,0:00:20.26,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}MORDE UMA FOLHA
+Dialogue: 1,0:00:20.26,0:00:21.00,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E MORRE ALI.
+Dialogue: 1,0:00:21.82,0:00:22.62,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DO CORPO DELA,
+Dialogue: 1,0:00:22.96,0:00:23.86,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O FUNGO CRESCE
+Dialogue: 1,0:00:23.86,0:00:25.14,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E SOLTA ESPOROS.
+Dialogue: 1,0:00:25.52,0:00:26.36,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}MAS EM GENTE
+Dialogue: 1,0:00:26.36,0:00:27.08,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ELE {\c&H0028D7FF&}NÃO{\c&HFFFFFF&} {\c&H0028D7FF&}PEGA.{\c&HFFFFFF&}
+Dialogue: 1,0:00:27.94,0:00:29.00,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}QUASE TODO FUNGO
+Dialogue: 1,0:00:29.00,0:00:30.06,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}CRESCE MAL ACIMA
+Dialogue: 1,0:00:30.06,0:00:31.12,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DE TRINTA GRAUS,
+Dialogue: 1,0:00:31.30,0:00:32.04,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E O NOSSO CORPO
+Dialogue: 1,0:00:32.04,0:00:33.96,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}FICA EM {\c&H0028D7FF&}TRINTA{\c&HFFFFFF&} {\c&H0028D7FF&}E{\c&HFFFFFF&} {\c&H0028D7FF&}SETE.{\c&HFFFFFF&}
+Dialogue: 1,0:00:33.96,0:00:34.82,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O CALOR DO CORPO
+Dialogue: 1,0:00:34.82,0:00:35.70,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}É {\c&H0028D7FF&}UM{\c&HFFFFFF&} {\c&H0028D7FF&}ESCUDO.{\c&HFFFFFF&}
+Dialogue: 1,0:00:36.38,0:00:37.40,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E O VÍRUS?
+Dialogue: 1,0:00:37.88,0:00:39.02,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}A{\c&HFFFFFF&} {\c&H0028D7FF&}RAIVA{\c&HFFFFFF&} É O MAIS
+Dialogue: 1,0:00:39.02,0:00:39.78,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PERTO DISSO:
+Dialogue: 1,0:00:40.30,0:00:40.76,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PASSA PELA
+Dialogue: 1,0:00:40.76,0:00:41.80,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}MORDIDA E PODE
+Dialogue: 1,0:00:41.80,0:00:42.54,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DEIXAR O ANIMAL
+Dialogue: 1,0:00:42.54,0:00:43.44,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}AGRESSIVO.
+Dialogue: 1,0:00:43.92,0:00:44.40,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SÓ QUE LEVA
+Dialogue: 1,0:00:44.40,0:00:45.84,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}SEMANAS{\c&HFFFFFF&} PARA AGIR,
+Dialogue: 1,0:00:45.84,0:00:46.56,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NÃO SEGUNDOS.
+Dialogue: 1,0:00:47.82,0:00:48.40,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SEGUE O PERFIL
+Dialogue: 1,0:00:48.40,0:00:49.12,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PARA O PRÓXIMO
+Dialogue: 1,0:00:49.12,0:00:50.44,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}"E SE".
+Dialogue: 1,0:00:50.44,0:00:51.32,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E SE MESMO ASSIM
+Dialogue: 1,0:00:51.32,0:00:52.22,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ACONTECESSE?
+Dialogue: 1,0:00:53.12,0:00:53.64,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}MATEMÁTICOS
+Dialogue: 1,0:00:53.64,0:00:54.38,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}JÁ SIMULARAM
+Dialogue: 1,0:00:54.38,0:00:55.72,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}UM SURTO ZUMBI.
+Dialogue: 1,0:00:56.08,0:00:56.76,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A CONCLUSÃO:
+Dialogue: 1,0:00:57.08,0:00:58.08,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}ESPERAR{\c&HFFFFFF&} {\c&H0028D7FF&}É{\c&HFFFFFF&}
+Dialogue: 1,0:00:58.08,0:00:58.84,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}O{\c&HFFFFFF&} {\c&H0028D7FF&}PIOR{\c&HFFFFFF&} {\c&H0028D7FF&}PLANO.{\c&HFFFFFF&}
+Dialogue: 1,0:00:59.80,0:01:00.64,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SÓ {\c&H0028D7FF&}AGIR{\c&HFFFFFF&} {\c&H0028D7FF&}RÁPIDO,{\c&HFFFFFF&}
+Dialogue: 1,0:01:00.64,0:01:01.96,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E VÁRIAS VEZES,
+Dialogue: 1,0:01:01.96,0:01:03.28,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SEGURA O SURTO.
+Dialogue: 1,0:01:03.82,0:01:04.14,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ENTÃO,
+Dialogue: 1,0:01:04.68,0:01:05.08,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}O{\c&HFFFFFF&} {\c&H0028D7FF&}FUNGO{\c&HFFFFFF&}
+Dialogue: 1,0:01:05.08,0:01:05.90,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}ZUMBI{\c&HFFFFFF&} {\c&H0028D7FF&}EXISTE,{\c&HFFFFFF&}
+Dialogue: 1,0:01:06.32,0:01:07.62,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}MAS {\c&H0028D7FF&}SÓ{\c&HFFFFFF&} {\c&H0028D7FF&}PARA{\c&HFFFFFF&} {\c&H0028D7FF&}FORMIGAS.{\c&HFFFFFF&}
+Dialogue: 1,0:01:08.30,0:01:08.92,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PARA NÓS,
+Dialogue: 1,0:01:09.24,0:01:09.90,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O PERIGO REAL
+Dialogue: 1,0:01:09.90,0:01:11.18,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}CONTINUA SENDO {\c&H0028D7FF&}A{\c&HFFFFFF&} {\c&H0028D7FF&}RAIVA,{\c&HFFFFFF&}
+Dialogue: 1,0:01:11.56,0:01:12.18,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}QUE AINDA PASSA
+Dialogue: 1,0:01:12.18,0:01:12.96,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}POR MORCEGOS
+Dialogue: 1,0:01:12.96,0:01:14.08,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E CÃES {\c&H0028D7FF&}SEM{\c&HFFFFFF&} {\c&H0028D7FF&}VACINA.{\c&HFFFFFF&}
+Dialogue: 0,0:00:00.00,0:00:06.16,Nota,,0,0,0,,{\fad(200,200)\an2}ficção: personagens estilizados
+Dialogue: 0,0:00:06.16,0:00:08.40,Nota,,0,0,0,,{\fad(200,200)\an2}ilustração: fungo e formiga fora de escala
+Dialogue: 0,0:00:12.38,0:00:25.52,Nota,,0,0,0,,{\fad(200,200)\an2}ilustração simplificada
+Dialogue: 0,0:00:36.38,0:00:40.30,Nota,,0,0,0,,{\fad(200,200)\an2}ilustração: vírus ampliado milhões de vezes
+Dialogue: 0,0:01:03.82,0:01:08.30,Nota,,0,0,0,,{\fad(200,200)\an2}ilustração simplificada

@@ -1,0 +1,1327 @@
+{
+"diffs": [
+[
+"delete",
+"a",
+""
+]
+],
+"words": [
+{
+"w": "Se",
+"s": 0.0,
+"e": 0.22,
+"key": false
+},
+{
+"w": "você",
+"s": 0.22,
+"e": 0.62,
+"key": false
+},
+{
+"w": "pulasse",
+"s": 0.62,
+"e": 1.04,
+"key": false
+},
+{
+"w": "num",
+"s": 1.04,
+"e": 1.2,
+"key": false
+},
+{
+"w": "buraco",
+"s": 1.2,
+"e": 1.62,
+"key": false
+},
+{
+"w": "que",
+"s": 1.62,
+"e": 1.86,
+"key": false
+},
+{
+"w": "atravessa",
+"s": 1.86,
+"e": 2.28,
+"key": false
+},
+{
+"w": "a",
+"s": 2.28,
+"e": 2.48,
+"key": false
+},
+{
+"w": "Terra,",
+"s": 2.48,
+"e": 2.8,
+"key": false
+},
+{
+"w": "quanto",
+"s": 3.6,
+"e": 3.72,
+"key": false
+},
+{
+"w": "tempo",
+"s": 3.72,
+"e": 4.08,
+"key": false
+},
+{
+"w": "levaria",
+"s": 4.08,
+"e": 4.48,
+"key": false
+},
+{
+"w": "para",
+"s": 4.48,
+"e": 4.66,
+"key": false
+},
+{
+"w": "sair",
+"s": 4.66,
+"e": 4.94,
+"key": false
+},
+{
+"w": "do",
+"s": 4.94,
+"e": 5.16,
+"key": false
+},
+{
+"w": "outro",
+"s": 5.16,
+"e": 5.48,
+"key": false
+},
+{
+"w": "lado?",
+"s": 5.48,
+"e": 5.78,
+"key": false
+},
+{
+"w": "Imagine",
+"s": 6.66,
+"e": 6.96,
+"key": false
+},
+{
+"w": "um",
+"s": 6.96,
+"e": 7.14,
+"key": false
+},
+{
+"w": "túnel",
+"s": 7.14,
+"e": 7.44,
+"key": false
+},
+{
+"w": "reto,",
+"s": 7.44,
+"e": 7.94,
+"key": false
+},
+{
+"w": "de",
+"s": 8.22,
+"e": 8.36,
+"key": false
+},
+{
+"w": "polo",
+"s": 8.36,
+"e": 8.74,
+"key": false
+},
+{
+"w": "a",
+"s": 8.74,
+"e": 8.74,
+"key": false
+},
+{
+"w": "polo,",
+"s": 8.74,
+"e": 9.26,
+"key": false
+},
+{
+"w": "sem",
+"s": 9.38,
+"e": 9.6,
+"key": false
+},
+{
+"w": "ar.",
+"s": 9.6,
+"e": 9.94,
+"key": false
+},
+{
+"w": "Você",
+"s": 10.76,
+"e": 11.1,
+"key": false
+},
+{
+"w": "pula",
+"s": 11.1,
+"e": 11.42,
+"key": false
+},
+{
+"w": "e",
+"s": 11.42,
+"e": 11.68,
+"key": false
+},
+{
+"w": "cai…",
+"s": 11.68,
+"e": 11.98,
+"key": false
+},
+{
+"w": "flutuando,",
+"s": 12.66,
+"e": 13.36,
+"key": false
+},
+{
+"w": "sem",
+"s": 13.62,
+"e": 13.9,
+"key": true
+},
+{
+"w": "peso,",
+"s": 13.9,
+"e": 14.3,
+"key": true
+},
+{
+"w": "a",
+"s": 14.62,
+"e": 14.76,
+"key": false
+},
+{
+"w": "viagem",
+"s": 14.76,
+"e": 15.14,
+"key": false
+},
+{
+"w": "inteira.",
+"s": 15.14,
+"e": 15.78,
+"key": false
+},
+{
+"w": "E",
+"s": 16.56,
+"e": 16.72,
+"key": false
+},
+{
+"w": "tem",
+"s": 16.72,
+"e": 16.84,
+"key": false
+},
+{
+"w": "uma",
+"s": 16.84,
+"e": 17.02,
+"key": false
+},
+{
+"w": "surpresa:",
+"s": 17.02,
+"e": 17.56,
+"key": false
+},
+{
+"w": "quanto",
+"s": 18.12,
+"e": 18.48,
+"key": false
+},
+{
+"w": "mais",
+"s": 18.48,
+"e": 18.72,
+"key": false
+},
+{
+"w": "você",
+"s": 18.72,
+"e": 19.1,
+"key": false
+},
+{
+"w": "desce,",
+"s": 19.1,
+"e": 19.54,
+"key": false
+},
+{
+"w": "mais",
+"s": 19.7,
+"e": 20.04,
+"key": true
+},
+{
+"w": "forte",
+"s": 20.04,
+"e": 20.32,
+"key": true
+},
+{
+"w": "a",
+"s": 20.32,
+"e": 20.5,
+"key": false
+},
+{
+"w": "gravidade",
+"s": 20.5,
+"e": 20.98,
+"key": false
+},
+{
+"w": "puxa,",
+"s": 20.98,
+"e": 21.38,
+"key": false
+},
+{
+"w": "até",
+"s": 21.72,
+"e": 21.9,
+"key": false
+},
+{
+"w": "o",
+"s": 21.9,
+"e": 22.06,
+"key": false
+},
+{
+"w": "núcleo",
+"s": 22.06,
+"e": 22.4,
+"key": true
+},
+{
+"w": "de",
+"s": 22.4,
+"e": 22.64,
+"key": true
+},
+{
+"w": "ferro,",
+"s": 22.64,
+"e": 23.06,
+"key": true
+},
+{
+"w": "a",
+"s": 23.2,
+"e": 23.38,
+"key": false
+},
+{
+"w": "quase",
+"s": 23.38,
+"e": 23.78,
+"key": false
+},
+{
+"w": "três",
+"s": 23.78,
+"e": 24.18,
+"key": true
+},
+{
+"w": "mil",
+"s": 24.18,
+"e": 24.34,
+"key": true
+},
+{
+"w": "quilômetros.",
+"s": 24.34,
+"e": 25.06,
+"key": true
+},
+{
+"w": "Só",
+"s": 25.64,
+"e": 26.2,
+"key": false
+},
+{
+"w": "depois",
+"s": 26.2,
+"e": 26.56,
+"key": false
+},
+{
+"w": "ela",
+"s": 26.56,
+"e": 26.74,
+"key": false
+},
+{
+"w": "enfraquece.",
+"s": 26.74,
+"e": 27.84,
+"key": false
+},
+{
+"w": "No",
+"s": 28.16,
+"e": 28.24,
+"key": false
+},
+{
+"w": "centro,",
+"s": 28.24,
+"e": 28.72,
+"key": false
+},
+{
+"w": "você",
+"s": 29.0,
+"e": 29.22,
+"key": false
+},
+{
+"w": "passa",
+"s": 29.22,
+"e": 29.46,
+"key": false
+},
+{
+"w": "mais",
+"s": 29.46,
+"e": 29.86,
+"key": false
+},
+{
+"w": "de",
+"s": 29.86,
+"e": 30.18,
+"key": false
+},
+{
+"w": "trinta",
+"s": 30.18,
+"e": 30.5,
+"key": true
+},
+{
+"w": "e",
+"s": 30.5,
+"e": 30.62,
+"key": true
+},
+{
+"w": "cinco",
+"s": 30.62,
+"e": 30.84,
+"key": true
+},
+{
+"w": "mil",
+"s": 30.84,
+"e": 31.12,
+"key": true
+},
+{
+"w": "quilômetros",
+"s": 31.12,
+"e": 31.64,
+"key": true
+},
+{
+"w": "por",
+"s": 31.64,
+"e": 31.92,
+"key": true
+},
+{
+"w": "hora.",
+"s": 31.92,
+"e": 32.24,
+"key": true
+},
+{
+"w": "Chuta",
+"s": 33.1,
+"e": 33.26,
+"key": false
+},
+{
+"w": "aí",
+"s": 33.26,
+"e": 33.38,
+"key": false
+},
+{
+"w": "nos",
+"s": 33.38,
+"e": 33.52,
+"key": false
+},
+{
+"w": "comentários:",
+"s": 33.52,
+"e": 34.18,
+"key": false
+},
+{
+"w": "quanto",
+"s": 34.88,
+"e": 35.1,
+"key": false
+},
+{
+"w": "tempo",
+"s": 35.1,
+"e": 35.38,
+"key": false
+},
+{
+"w": "dura",
+"s": 35.38,
+"e": 35.58,
+"key": false
+},
+{
+"w": "a",
+"s": 35.58,
+"e": 35.76,
+"key": false
+},
+{
+"w": "queda?",
+"s": 35.76,
+"e": 35.98,
+"key": false
+},
+{
+"w": "Trinta",
+"s": 37.02,
+"e": 37.34,
+"key": true
+},
+{
+"w": "e",
+"s": 37.34,
+"e": 37.46,
+"key": true
+},
+{
+"w": "oito",
+"s": 37.46,
+"e": 37.66,
+"key": true
+},
+{
+"w": "minutos.",
+"s": 37.66,
+"e": 38.22,
+"key": true
+},
+{
+"w": "Você",
+"s": 39.06,
+"e": 39.36,
+"key": false
+},
+{
+"w": "atravessa",
+"s": 39.36,
+"e": 39.76,
+"key": false
+},
+{
+"w": "o",
+"s": 39.76,
+"e": 39.96,
+"key": false
+},
+{
+"w": "planeta,",
+"s": 39.96,
+"e": 40.36,
+"key": false
+},
+{
+"w": "vai",
+"s": 40.64,
+"e": 40.82,
+"key": false
+},
+{
+"w": "freando",
+"s": 40.82,
+"e": 41.42,
+"key": false
+},
+{
+"w": "e",
+"s": 41.42,
+"e": 41.62,
+"key": false
+},
+{
+"w": "chega",
+"s": 41.62,
+"e": 41.84,
+"key": false
+},
+{
+"w": "do",
+"s": 41.84,
+"e": 42.06,
+"key": false
+},
+{
+"w": "outro",
+"s": 42.06,
+"e": 42.32,
+"key": false
+},
+{
+"w": "lado",
+"s": 42.32,
+"e": 42.6,
+"key": false
+},
+{
+"w": "parado,",
+"s": 42.6,
+"e": 43.24,
+"key": false
+},
+{
+"w": "bem",
+"s": 43.42,
+"e": 43.6,
+"key": false
+},
+{
+"w": "na",
+"s": 43.6,
+"e": 43.8,
+"key": false
+},
+{
+"w": "borda.",
+"s": 43.8,
+"e": 44.88,
+"key": false
+},
+{
+"w": "Se",
+"s": 45.08,
+"e": 45.24,
+"key": false
+},
+{
+"w": "ninguém",
+"s": 45.24,
+"e": 45.5,
+"key": false
+},
+{
+"w": "te",
+"s": 45.5,
+"e": 45.78,
+"key": false
+},
+{
+"w": "segurar,",
+"s": 45.78,
+"e": 46.36,
+"key": false
+},
+{
+"w": "cai",
+"s": 46.44,
+"e": 46.56,
+"key": false
+},
+{
+"w": "de",
+"s": 46.56,
+"e": 46.8,
+"key": false
+},
+{
+"w": "volta.",
+"s": 46.8,
+"e": 47.14,
+"key": false
+},
+{
+"w": "E",
+"s": 47.88,
+"e": 48.06,
+"key": false
+},
+{
+"w": "fica",
+"s": 48.06,
+"e": 48.28,
+"key": false
+},
+{
+"w": "indo",
+"s": 48.28,
+"e": 48.7,
+"key": false
+},
+{
+"w": "e",
+"s": 48.7,
+"e": 49.0,
+"key": false
+},
+{
+"w": "voltando",
+"s": 49.0,
+"e": 49.5,
+"key": false
+},
+{
+"w": "para",
+"s": 49.5,
+"e": 49.82,
+"key": false
+},
+{
+"w": "sempre.",
+"s": 49.82,
+"e": 50.2,
+"key": false
+},
+{
+"w": "Na",
+"s": 50.2,
+"e": 51.18,
+"key": false
+},
+{
+"w": "vida",
+"s": 51.18,
+"e": 51.42,
+"key": false
+},
+{
+"w": "real,",
+"s": 51.42,
+"e": 51.72,
+"key": false
+},
+{
+"w": "não",
+"s": 51.72,
+"e": 51.94,
+"key": false
+},
+{
+"w": "dá:",
+"s": 51.94,
+"e": 52.2,
+"key": false
+},
+{
+"w": "o",
+"s": 52.7,
+"e": 52.84,
+"key": false
+},
+{
+"w": "centro",
+"s": 52.84,
+"e": 53.12,
+"key": false
+},
+{
+"w": "passa",
+"s": 53.12,
+"e": 53.38,
+"key": false
+},
+{
+"w": "de",
+"s": 53.38,
+"e": 53.66,
+"key": false
+},
+{
+"w": "cinco",
+"s": 53.66,
+"e": 53.9,
+"key": true
+},
+{
+"w": "mil",
+"s": 53.9,
+"e": 54.06,
+"key": true
+},
+{
+"w": "graus,",
+"s": 54.06,
+"e": 54.72,
+"key": true
+},
+{
+"w": "e",
+"s": 54.96,
+"e": 55.04,
+"key": false
+},
+{
+"w": "o",
+"s": 55.04,
+"e": 55.16,
+"key": false
+},
+{
+"w": "buraco",
+"s": 55.16,
+"e": 55.46,
+"key": false
+},
+{
+"w": "mais",
+"s": 55.46,
+"e": 55.84,
+"key": false
+},
+{
+"w": "fundo",
+"s": 55.84,
+"e": 56.08,
+"key": false
+},
+{
+"w": "já",
+"s": 56.08,
+"e": 56.32,
+"key": false
+},
+{
+"w": "cavado",
+"s": 56.32,
+"e": 56.74,
+"key": false
+},
+{
+"w": "tem",
+"s": 56.74,
+"e": 56.92,
+"key": false
+},
+{
+"w": "só",
+"s": 56.92,
+"e": 57.22,
+"key": false
+},
+{
+"w": "doze",
+"s": 57.22,
+"e": 57.58,
+"key": true
+},
+{
+"w": "quilômetros.",
+"s": 57.58,
+"e": 58.18,
+"key": true
+},
+{
+"w": "E",
+"s": 59.16,
+"e": 59.28,
+"key": false
+},
+{
+"w": "por",
+"s": 59.28,
+"e": 59.48,
+"key": false
+},
+{
+"w": "que",
+"s": 59.48,
+"e": 59.54,
+"key": false
+},
+{
+"w": "de",
+"s": 59.54,
+"e": 59.78,
+"key": false
+},
+{
+"w": "polo",
+"s": 59.78,
+"e": 60.08,
+"key": false
+},
+{
+"w": "a",
+"s": 60.08,
+"e": 60.08,
+"key": false
+},
+{
+"w": "polo?",
+"s": 60.08,
+"e": 60.46,
+"key": false
+},
+{
+"w": "Porque",
+"s": 61.08,
+"e": 61.3,
+"key": false
+},
+{
+"w": "em",
+"s": 61.3,
+"e": 61.6,
+"key": false
+},
+{
+"w": "qualquer",
+"s": 61.6,
+"e": 61.86,
+"key": false
+},
+{
+"w": "outro",
+"s": 61.86,
+"e": 62.14,
+"key": false
+},
+{
+"w": "lugar,",
+"s": 62.14,
+"e": 62.54,
+"key": false
+},
+{
+"w": "o",
+"s": 62.96,
+"e": 63.06,
+"key": false
+},
+{
+"w": "giro",
+"s": 63.06,
+"e": 63.24,
+"key": false
+},
+{
+"w": "da",
+"s": 63.24,
+"e": 63.48,
+"key": false
+},
+{
+"w": "Terra",
+"s": 63.48,
+"e": 63.66,
+"key": false
+},
+{
+"w": "te",
+"s": 63.66,
+"e": 63.9,
+"key": false
+},
+{
+"w": "jogaria",
+"s": 63.9,
+"e": 64.28,
+"key": false
+},
+{
+"w": "contra",
+"s": 64.28,
+"e": 64.64,
+"key": false
+},
+{
+"w": "a",
+"s": 64.64,
+"e": 64.84,
+"key": false
+},
+{
+"w": "parede.",
+"s": 64.84,
+"e": 65.12,
+"key": false
+}
+],
+"chunks": [
+{
+"s": 0.0,
+"e": 1.04,
+"t": "SE VOCÊ PULASSE"
+},
+{
+"s": 1.04,
+"e": 1.62,
+"t": "NUM BURACO"
+},
+{
+"s": 1.62,
+"e": 2.28,
+"t": "QUE ATRAVESSA"
+},
+{
+"s": 2.28,
+"e": 2.8,
+"t": "A TERRA,"
+},
+{
+"s": 3.6,
+"e": 4.08,
+"t": "QUANTO TEMPO"
+},
+{
+"s": 4.08,
+"e": 4.48,
+"t": "LEVARIA"
+},
+{
+"s": 4.48,
+"e": 4.94,
+"t": "PARA SAIR"
+},
+{
+"s": 4.94,
+"e": 5.78,
+"t": "DO OUTRO LADO?"
+},
+{
+"s": 6.66,
+"e": 6.96,
+"t": "IMAGINE"
+},
+{
+"s": 6.96,
+"e": 7.94,
+"t": "UM TÚNEL RETO,"
+},
+{
+"s": 8.22,
+"e": 9.38,
+"t": "DE POLO A POLO,"
+},
+{
+"s": 9.38,
+"e": 9.94,
+"t": "SEM AR."
+},
+{
+"s": 10.76,
+"e": 11.98,
+"t": "VOCÊ PULA E CAI…"
+},
+{
+"s": 12.66,
+"e": 13.36,
+"t": "FLUTUANDO,"
+},
+{
+"s": 13.62,
+"e": 14.3,
+"t": "{\\c&H0028D7FF&}SEM{\\c&HFFFFFF&} {\\c&H0028D7FF&}PESO,{\\c&HFFFFFF&}"
+},
+{
+"s": 14.62,
+"e": 15.14,
+"t": "A VIAGEM"
+},
+{
+"s": 15.14,
+"e": 15.78,
+"t": "INTEIRA."
+},
+{
+"s": 16.56,
+"e": 17.02,
+"t": "E TEM UMA"
+},
+{
+"s": 17.02,
+"e": 17.56,
+"t": "SURPRESA:"
+},
+{
+"s": 18.12,
+"e": 18.72,
+"t": "QUANTO MAIS"
+},
+{
+"s": 18.72,
+"e": 19.54,
+"t": "VOCÊ DESCE,"
+},
+{
+"s": 19.7,
+"e": 20.98,
+"t": "{\\c&H0028D7FF&}MAIS{\\c&HFFFFFF&} {\\c&H0028D7FF&}FORTE{\\c&HFFFFFF&} A GRAVIDADE"
+},
+{
+"s": 20.98,
+"e": 21.38,
+"t": "PUXA,"
+},
+{
+"s": 21.72,
+"e": 23.2,
+"t": "ATÉ O {\\c&H0028D7FF&}NÚCLEO{\\c&HFFFFFF&} {\\c&H0028D7FF&}DE{\\c&HFFFFFF&} {\\c&H0028D7FF&}FERRO,{\\c&HFFFFFF&}"
+},
+{
+"s": 23.2,
+"e": 24.18,
+"t": "A QUASE {\\c&H0028D7FF&}TRÊS{\\c&HFFFFFF&}"
+},
+{
+"s": 24.18,
+"e": 25.06,
+"t": "{\\c&H0028D7FF&}MIL{\\c&HFFFFFF&} {\\c&H0028D7FF&}QUILÔMETROS.{\\c&HFFFFFF&}"
+},
+{
+"s": 25.64,
+"e": 26.56,
+"t": "SÓ DEPOIS"
+},
+{
+"s": 26.56,
+"e": 27.639999999999997,
+"t": "ELA ENFRAQUECE."
+},
+{
+"s": 28.16,
+"e": 28.72,
+"t": "NO CENTRO,"
+},
+{
+"s": 29.0,
+"e": 29.46,
+"t": "VOCÊ PASSA"
+},
+{
+"s": 29.46,
+"e": 30.5,
+"t": "MAIS DE {\\c&H0028D7FF&}TRINTA{\\c&HFFFFFF&}"
+},
+{
+"s": 30.5,
+"e": 30.84,
+"t": "{\\c&H0028D7FF&}E{\\c&HFFFFFF&} {\\c&H0028D7FF&}CINCO{\\c&HFFFFFF&}"
+},
+{
+"s": 30.84,
+"e": 31.64,
+"t": "{\\c&H0028D7FF&}MIL{\\c&HFFFFFF&} {\\c&H0028D7FF&}QUILÔMETROS{\\c&HFFFFFF&}"
+},
+{
+"s": 31.64,
+"e": 32.24,
+"t": "{\\c&H0028D7FF&}POR{\\c&HFFFFFF&} {\\c&H0028D7FF&}HORA.{\\c&HFFFFFF&}"
+},
+{
+"s": 33.1,
+"e": 33.52,
+"t": "CHUTA AÍ NOS"
+},
+{
+"s": 33.52,
+"e": 34.18,
+"t": "COMENTÁRIOS:"
+},
+{
+"s": 34.88,
+"e": 35.38,
+"t": "QUANTO TEMPO"
+},
+{
+"s": 35.38,
+"e": 35.98,
+"t": "DURA A QUEDA?"
+},
+{
+"s": 37.02,
+"e": 37.66,
+"t": "{\\c&H0028D7FF&}TRINTA{\\c&HFFFFFF&} {\\c&H0028D7FF&}E{\\c&HFFFFFF&} {\\c&H0028D7FF&}OITO{\\c&HFFFFFF&}"
+},
+{
+"s": 37.66,
+"e": 38.22,
+"t": "{\\c&H0028D7FF&}MINUTOS.{\\c&HFFFFFF&}"
+},
+{
+"s": 39.06,
+"e": 39.76,
+"t": "VOCÊ ATRAVESSA"
+},
+{
+"s": 39.76,
+"e": 40.36,
+"t": "O PLANETA,"
+},
+{
+"s": 40.64,
+"e": 41.42,
+"t": "VAI FREANDO"
+},
+{
+"s": 41.42,
+"e": 42.32,
+"t": "E CHEGA DO OUTRO"
+},
+{
+"s": 42.32,
+"e": 43.24,
+"t": "LADO PARADO,"
+},
+{
+"s": 43.42,
+"e": 44.699999999999996,
+"t": "BEM NA BORDA."
+},
+{
+"s": 45.08,
+"e": 45.5,
+"t": "SE NINGUÉM"
+},
+{
+"s": 45.5,
+"e": 46.44,
+"t": "TE SEGURAR,"
+},
+{
+"s": 46.44,
+"e": 47.14,
+"t": "CAI DE VOLTA."
+},
+{
+"s": 47.88,
+"e": 48.7,
+"t": "E FICA INDO"
+},
+{
+"s": 48.7,
+"e": 49.5,
+"t": "E VOLTANDO"
+},
+{
+"s": 49.5,
+"e": 50.2,
+"t": "PARA SEMPRE."
+},
+{
+"s": 50.2,
+"e": 51.72,
+"t": "NA VIDA REAL,"
+},
+{
+"s": 51.72,
+"e": 52.2,
+"t": "NÃO DÁ:"
+},
+{
+"s": 52.7,
+"e": 53.38,
+"t": "O CENTRO PASSA"
+},
+{
+"s": 53.38,
+"e": 54.72,
+"t": "DE {\\c&H0028D7FF&}CINCO{\\c&HFFFFFF&} {\\c&H0028D7FF&}MIL{\\c&HFFFFFF&} {\\c&H0028D7FF&}GRAUS,{\\c&HFFFFFF&}"
+},
+{
+"s": 54.96,
+"e": 55.84,
+"t": "E O BURACO MAIS"
+},
+{
+"s": 55.84,
+"e": 56.74,
+"t": "FUNDO JÁ CAVADO"
+},
+{
+"s": 56.74,
+"e": 58.18,
+"t": "TEM SÓ {\\c&H0028D7FF&}DOZE{\\c&HFFFFFF&} {\\c&H0028D7FF&}QUILÔMETROS.{\\c&HFFFFFF&}"
+},
+{
+"s": 59.16,
+"e": 59.78,
+"t": "E POR QUE DE"
+},
+{
+"s": 59.78,
+"e": 60.46,
+"t": "POLO A POLO?"
+},
+{
+"s": 61.08,
+"e": 61.3,
+"t": "PORQUE"
+},
+{
+"s": 61.3,
+"e": 61.86,
+"t": "EM QUALQUER"
+},
+{
+"s": 61.86,
+"e": 62.54,
+"t": "OUTRO LUGAR,"
+},
+{
+"s": 62.96,
+"e": 63.66,
+"t": "O GIRO DA TERRA"
+},
+{
+"s": 63.66,
+"e": 64.28,
+"t": "TE JOGARIA"
+},
+{
+"s": 64.28,
+"e": 65.12,
+"t": "CONTRA A PAREDE."
+}
+],
+"hud": []
+}

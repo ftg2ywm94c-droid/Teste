@@ -1,0 +1,17 @@
+{
+ "fps": 30,
+ "preview_size": "540x960",
+ "final_size": "1080x1920",
+ "supersampling": 2,
+ "renderer": "engine/rt.py (NumPy)",
+ "audio": {
+  "sr": 48000,
+  "codec": "aac"
+ },
+ "caption": {
+  "font": "Poppins Bold",
+  "size": 50,
+  "outline": 4.5,
+  "margin_v": 235
+ }
+}

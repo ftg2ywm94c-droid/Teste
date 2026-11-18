@@ -1,0 +1,1408 @@
+{
+"diffs": [
+[
+"replace",
+"Meia-noite",
+"Meia noite"
+],
+[
+"replace",
+"pro",
+"para o"
+],
+[
+"replace",
+"poste",
+"pós te"
+],
+[
+"replace",
+"pra",
+"para"
+],
+[
+"replace",
+"pra",
+"para"
+]
+],
+"words": [
+{
+"w": "Meia-noite",
+"s": 0.0,
+"e": 0.88,
+"key": true
+},
+{
+"w": "e",
+"s": 0.88,
+"e": 0.98,
+"key": true
+},
+{
+"w": "dez.",
+"s": 0.98,
+"e": 1.24,
+"key": true
+},
+{
+"w": "Você",
+"s": 1.46,
+"e": 1.7,
+"key": false
+},
+{
+"w": "pega",
+"s": 1.7,
+"e": 1.96,
+"key": false
+},
+{
+"w": "o",
+"s": 1.96,
+"e": 2.18,
+"key": false
+},
+{
+"w": "último",
+"s": 2.18,
+"e": 2.42,
+"key": true
+},
+{
+"w": "ônibus",
+"s": 2.42,
+"e": 2.78,
+"key": true
+},
+{
+"w": "da",
+"s": 2.78,
+"e": 3.04,
+"key": false
+},
+{
+"w": "linha.",
+"s": 3.04,
+"e": 3.36,
+"key": false
+},
+{
+"w": "Só",
+"s": 3.5,
+"e": 3.66,
+"key": false
+},
+{
+"w": "tem",
+"s": 3.66,
+"e": 3.82,
+"key": false
+},
+{
+"w": "você",
+"s": 3.82,
+"e": 4.34,
+"key": false
+},
+{
+"w": "e",
+"s": 4.34,
+"e": 4.62,
+"key": false
+},
+{
+"w": "o",
+"s": 4.62,
+"e": 4.82,
+"key": false
+},
+{
+"w": "motorista.",
+"s": 4.82,
+"e": 5.62,
+"key": false
+},
+{
+"w": "Você",
+"s": 5.84,
+"e": 6.08,
+"key": false
+},
+{
+"w": "senta",
+"s": 6.08,
+"e": 6.36,
+"key": false
+},
+{
+"w": "no",
+"s": 6.36,
+"e": 6.62,
+"key": false
+},
+{
+"w": "fundo,",
+"s": 6.62,
+"e": 7.06,
+"key": false
+},
+{
+"w": "encosta",
+"s": 7.48,
+"e": 7.86,
+"key": false
+},
+{
+"w": "a",
+"s": 7.86,
+"e": 8.0,
+"key": false
+},
+{
+"w": "cabeça",
+"s": 8.0,
+"e": 8.28,
+"key": false
+},
+{
+"w": "na",
+"s": 8.28,
+"e": 8.48,
+"key": false
+},
+{
+"w": "janela",
+"s": 8.48,
+"e": 8.86,
+"key": false
+},
+{
+"w": "e",
+"s": 8.86,
+"e": 9.02,
+"key": false
+},
+{
+"w": "quase",
+"s": 9.02,
+"e": 9.48,
+"key": false
+},
+{
+"w": "dorme.",
+"s": 9.48,
+"e": 10.28,
+"key": false
+},
+{
+"w": "Até",
+"s": 10.42,
+"e": 10.56,
+"key": false
+},
+{
+"w": "que",
+"s": 10.56,
+"e": 10.68,
+"key": false
+},
+{
+"w": "um",
+"s": 10.68,
+"e": 10.92,
+"key": true
+},
+{
+"w": "celular",
+"s": 10.92,
+"e": 11.3,
+"key": true
+},
+{
+"w": "começa",
+"s": 11.3,
+"e": 11.72,
+"key": false
+},
+{
+"w": "a",
+"s": 11.72,
+"e": 11.88,
+"key": false
+},
+{
+"w": "tocar.",
+"s": 11.88,
+"e": 12.26,
+"key": false
+},
+{
+"w": "Não",
+"s": 12.58,
+"e": 12.82,
+"key": true
+},
+{
+"w": "é",
+"s": 12.82,
+"e": 13.04,
+"key": true
+},
+{
+"w": "o",
+"s": 13.04,
+"e": 13.22,
+"key": true
+},
+{
+"w": "seu.",
+"s": 13.22,
+"e": 13.38,
+"key": true
+},
+{
+"w": "Ele",
+"s": 13.64,
+"e": 13.84,
+"key": false
+},
+{
+"w": "tá",
+"s": 13.84,
+"e": 13.96,
+"key": false
+},
+{
+"w": "no",
+"s": 13.96,
+"e": 14.12,
+"key": false
+},
+{
+"w": "banco",
+"s": 14.12,
+"e": 14.32,
+"key": false
+},
+{
+"w": "da",
+"s": 14.32,
+"e": 14.66,
+"key": false
+},
+{
+"w": "frente,",
+"s": 14.66,
+"e": 15.08,
+"key": false
+},
+{
+"w": "sozinho.",
+"s": 15.54,
+"e": 15.98,
+"key": false
+},
+{
+"w": "Ninguém",
+"s": 16.42,
+"e": 16.7,
+"key": false
+},
+{
+"w": "pega.",
+"s": 16.7,
+"e": 17.12,
+"key": false
+},
+{
+"w": "Ele",
+"s": 17.6,
+"e": 17.88,
+"key": false
+},
+{
+"w": "para.",
+"s": 17.88,
+"e": 18.24,
+"key": false
+},
+{
+"w": "E",
+"s": 18.24,
+"e": 18.9,
+"key": false
+},
+{
+"w": "toca",
+"s": 18.9,
+"e": 19.16,
+"key": false
+},
+{
+"w": "de",
+"s": 19.16,
+"e": 19.44,
+"key": false
+},
+{
+"w": "novo.",
+"s": 19.44,
+"e": 19.8,
+"key": false
+},
+{
+"w": "Você",
+"s": 20.28,
+"e": 20.52,
+"key": false
+},
+{
+"w": "se",
+"s": 20.52,
+"e": 20.9,
+"key": false
+},
+{
+"w": "aproxima",
+"s": 20.9,
+"e": 21.26,
+"key": false
+},
+{
+"w": "e",
+"s": 21.26,
+"e": 21.36,
+"key": false
+},
+{
+"w": "vê",
+"s": 21.36,
+"e": 21.54,
+"key": false
+},
+{
+"w": "a",
+"s": 21.54,
+"e": 21.64,
+"key": false
+},
+{
+"w": "tela",
+"s": 21.64,
+"e": 21.82,
+"key": false
+},
+{
+"w": "acesa.",
+"s": 21.82,
+"e": 22.54,
+"key": false
+},
+{
+"w": "Número",
+"s": 22.8,
+"e": 23.18,
+"key": true
+},
+{
+"w": "desconhecido.",
+"s": 23.18,
+"e": 24.1,
+"key": true
+},
+{
+"w": "E",
+"s": 24.1,
+"e": 24.5,
+"key": false
+},
+{
+"w": "uma",
+"s": 24.5,
+"e": 24.7,
+"key": false
+},
+{
+"w": "mensagem:",
+"s": 24.7,
+"e": 25.4,
+"key": false
+},
+{
+"w": "não",
+"s": 25.84,
+"e": 26.2,
+"key": true
+},
+{
+"w": "desce",
+"s": 26.2,
+"e": 26.62,
+"key": true
+},
+{
+"w": "no",
+"s": 26.62,
+"e": 26.84,
+"key": true
+},
+{
+"w": "próximo",
+"s": 26.84,
+"e": 27.28,
+"key": true
+},
+{
+"w": "ponto.",
+"s": 27.28,
+"e": 27.72,
+"key": true
+},
+{
+"w": "Você",
+"s": 28.36,
+"e": 28.64,
+"key": false
+},
+{
+"w": "olha",
+"s": 28.64,
+"e": 28.88,
+"key": false
+},
+{
+"w": "pro",
+"s": 28.88,
+"e": 29.16,
+"key": false
+},
+{
+"w": "motorista.",
+"s": 29.16,
+"e": 29.9,
+"key": false
+},
+{
+"w": "Ele",
+"s": 30.14,
+"e": 30.28,
+"key": false
+},
+{
+"w": "te",
+"s": 30.28,
+"e": 30.54,
+"key": false
+},
+{
+"w": "encara",
+"s": 30.54,
+"e": 30.82,
+"key": false
+},
+{
+"w": "pelo",
+"s": 30.82,
+"e": 31.06,
+"key": true
+},
+{
+"w": "retrovisor",
+"s": 31.06,
+"e": 31.74,
+"key": true
+},
+{
+"w": "e",
+"s": 31.74,
+"e": 32.02,
+"key": false
+},
+{
+"w": "desvia",
+"s": 32.02,
+"e": 32.3,
+"key": true
+},
+{
+"w": "o",
+"s": 32.3,
+"e": 32.44,
+"key": false
+},
+{
+"w": "olhar.",
+"s": 32.44,
+"e": 33.02,
+"key": false
+},
+{
+"w": "Chega",
+"s": 33.32,
+"e": 33.64,
+"key": false
+},
+{
+"w": "outra",
+"s": 33.64,
+"e": 34.02,
+"key": false
+},
+{
+"w": "mensagem:",
+"s": 34.02,
+"e": 34.84,
+"key": false
+},
+{
+"w": "ele",
+"s": 35.12,
+"e": 35.38,
+"key": true
+},
+{
+"w": "já",
+"s": 35.38,
+"e": 35.8,
+"key": true
+},
+{
+"w": "sabe",
+"s": 35.8,
+"e": 36.04,
+"key": true
+},
+{
+"w": "que",
+"s": 36.04,
+"e": 36.32,
+"key": true
+},
+{
+"w": "você",
+"s": 36.32,
+"e": 36.64,
+"key": true
+},
+{
+"w": "viu.",
+"s": 36.64,
+"e": 36.86,
+"key": true
+},
+{
+"w": "O",
+"s": 37.42,
+"e": 37.52,
+"key": false
+},
+{
+"w": "ônibus",
+"s": 37.52,
+"e": 37.9,
+"key": false
+},
+{
+"w": "começa",
+"s": 37.9,
+"e": 38.26,
+"key": false
+},
+{
+"w": "a",
+"s": 38.26,
+"e": 38.36,
+"key": false
+},
+{
+"w": "frear.",
+"s": 38.36,
+"e": 38.88,
+"key": true
+},
+{
+"w": "O",
+"s": 39.12,
+"e": 39.22,
+"key": false
+},
+{
+"w": "próximo",
+"s": 39.22,
+"e": 39.56,
+"key": false
+},
+{
+"w": "ponto",
+"s": 39.56,
+"e": 39.86,
+"key": false
+},
+{
+"w": "é",
+"s": 39.86,
+"e": 40.08,
+"key": true
+},
+{
+"w": "o",
+"s": 40.08,
+"e": 40.24,
+"key": true
+},
+{
+"w": "seu.",
+"s": 40.24,
+"e": 40.44,
+"key": true
+},
+{
+"w": "A",
+"s": 40.86,
+"e": 40.98,
+"key": false
+},
+{
+"w": "porta",
+"s": 40.98,
+"e": 41.32,
+"key": false
+},
+{
+"w": "abre.",
+"s": 41.32,
+"e": 41.76,
+"key": false
+},
+{
+"w": "Lá",
+"s": 42.16,
+"e": 42.38,
+"key": false
+},
+{
+"w": "fora,",
+"s": 42.38,
+"e": 42.64,
+"key": false
+},
+{
+"w": "a",
+"s": 42.64,
+"e": 42.8,
+"key": false
+},
+{
+"w": "rua",
+"s": 42.8,
+"e": 42.92,
+"key": false
+},
+{
+"w": "tá",
+"s": 42.92,
+"e": 43.14,
+"key": false
+},
+{
+"w": "vazia.",
+"s": 43.14,
+"e": 43.84,
+"key": false
+},
+{
+"w": "Só",
+"s": 44.06,
+"e": 44.22,
+"key": false
+},
+{
+"w": "um",
+"s": 44.22,
+"e": 44.46,
+"key": true
+},
+{
+"w": "poste",
+"s": 44.46,
+"e": 44.78,
+"key": true
+},
+{
+"w": "piscando.",
+"s": 44.78,
+"e": 45.48,
+"key": true
+},
+{
+"w": "O",
+"s": 45.94,
+"e": 46.06,
+"key": false
+},
+{
+"w": "celular",
+"s": 46.06,
+"e": 46.46,
+"key": false
+},
+{
+"w": "vibra",
+"s": 46.46,
+"e": 46.8,
+"key": false
+},
+{
+"w": "uma",
+"s": 46.8,
+"e": 47.08,
+"key": false
+},
+{
+"w": "última",
+"s": 47.08,
+"e": 47.44,
+"key": false
+},
+{
+"w": "vez:",
+"s": 47.44,
+"e": 47.88,
+"key": false
+},
+{
+"w": "fica",
+"s": 48.4,
+"e": 48.62,
+"key": true
+},
+{
+"w": "sentado.",
+"s": 48.62,
+"e": 49.58,
+"key": true
+},
+{
+"w": "Você",
+"s": 49.8,
+"e": 50.04,
+"key": false
+},
+{
+"w": "tem",
+"s": 50.04,
+"e": 50.38,
+"key": false
+},
+{
+"w": "cinco",
+"s": 50.38,
+"e": 50.88,
+"key": true
+},
+{
+"w": "segundos.",
+"s": 50.88,
+"e": 51.64,
+"key": true
+},
+{
+"w": "Opção",
+"s": 52.04,
+"e": 52.36,
+"key": true
+},
+{
+"w": "A:",
+"s": 52.36,
+"e": 52.82,
+"key": true
+},
+{
+"w": "você",
+"s": 53.02,
+"e": 53.34,
+"key": false
+},
+{
+"w": "desce",
+"s": 53.34,
+"e": 53.64,
+"key": false
+},
+{
+"w": "no",
+"s": 53.64,
+"e": 53.84,
+"key": false
+},
+{
+"w": "seu",
+"s": 53.84,
+"e": 54.04,
+"key": false
+},
+{
+"w": "ponto,",
+"s": 54.04,
+"e": 54.3,
+"key": false
+},
+{
+"w": "como",
+"s": 54.3,
+"e": 54.58,
+"key": false
+},
+{
+"w": "faz",
+"s": 54.58,
+"e": 54.9,
+"key": false
+},
+{
+"w": "todo",
+"s": 54.9,
+"e": 55.32,
+"key": false
+},
+{
+"w": "dia.",
+"s": 55.32,
+"e": 55.62,
+"key": false
+},
+{
+"w": "Opção",
+"s": 55.62,
+"e": 56.4,
+"key": true
+},
+{
+"w": "B:",
+"s": 56.4,
+"e": 56.9,
+"key": true
+},
+{
+"w": "você",
+"s": 57.2,
+"e": 57.42,
+"key": false
+},
+{
+"w": "fica",
+"s": 57.42,
+"e": 57.72,
+"key": false
+},
+{
+"w": "no",
+"s": 57.72,
+"e": 57.92,
+"key": false
+},
+{
+"w": "ônibus",
+"s": 57.92,
+"e": 58.48,
+"key": false
+},
+{
+"w": "e",
+"s": 58.48,
+"e": 58.74,
+"key": false
+},
+{
+"w": "descobre",
+"s": 58.74,
+"e": 59.32,
+"key": false
+},
+{
+"w": "pra",
+"s": 59.32,
+"e": 59.64,
+"key": false
+},
+{
+"w": "onde",
+"s": 59.64,
+"e": 59.9,
+"key": false
+},
+{
+"w": "ele",
+"s": 59.9,
+"e": 60.2,
+"key": false
+},
+{
+"w": "vai.",
+"s": 60.2,
+"e": 60.58,
+"key": false
+},
+{
+"w": "Comenta",
+"s": 61.0,
+"e": 61.38,
+"key": false
+},
+{
+"w": "A",
+"s": 61.38,
+"e": 61.82,
+"key": true
+},
+{
+"w": "ou",
+"s": 61.82,
+"e": 62.2,
+"key": true
+},
+{
+"w": "B.",
+"s": 62.2,
+"e": 62.7,
+"key": true
+},
+{
+"w": "A",
+"s": 63.08,
+"e": 63.24,
+"key": false
+},
+{
+"w": "resposta",
+"s": 63.24,
+"e": 63.6,
+"key": false
+},
+{
+"w": "mais",
+"s": 63.6,
+"e": 64.02,
+"key": false
+},
+{
+"w": "comentada",
+"s": 64.02,
+"e": 64.88,
+"key": false
+},
+{
+"w": "decide",
+"s": 64.88,
+"e": 65.22,
+"key": false
+},
+{
+"w": "o",
+"s": 65.22,
+"e": 65.5,
+"key": false
+},
+{
+"w": "próximo",
+"s": 65.5,
+"e": 65.82,
+"key": true
+},
+{
+"w": "episódio.",
+"s": 65.82,
+"e": 66.38,
+"key": true
+},
+{
+"w": "Se",
+"s": 66.76,
+"e": 67.04,
+"key": false
+},
+{
+"w": "inscreve",
+"s": 67.04,
+"e": 67.54,
+"key": false
+},
+{
+"w": "pra",
+"s": 67.54,
+"e": 67.74,
+"key": false
+},
+{
+"w": "não",
+"s": 67.74,
+"e": 67.94,
+"key": false
+},
+{
+"w": "perder",
+"s": 67.94,
+"e": 68.32,
+"key": false
+},
+{
+"w": "a",
+"s": 68.32,
+"e": 68.6,
+"key": false
+},
+{
+"w": "continuação.",
+"s": 68.6,
+"e": 69.22,
+"key": false
+},
+{
+"w": "Você",
+"s": 69.66,
+"e": 69.98,
+"key": true
+},
+{
+"w": "decide...",
+"s": 69.98,
+"e": 70.48,
+"key": true
+}
+],
+"chunks": [
+{
+"s": 0.0,
+"e": 1.24,
+"t": "{\\c&H0028D7FF&}MEIA-NOITE{\\c&HFFFFFF&} {\\c&H0028D7FF&}E{\\c&HFFFFFF&} {\\c&H0028D7FF&}DEZ.{\\c&HFFFFFF&}"
+},
+{
+"s": 1.46,
+"e": 1.96,
+"t": "VOCÊ PEGA"
+},
+{
+"s": 1.96,
+"e": 3.5,
+"t": "O {\\c&H0028D7FF&}ÚLTIMO{\\c&HFFFFFF&} {\\c&H0028D7FF&}ÔNIBUS{\\c&HFFFFFF&} DA LINHA."
+},
+{
+"s": 3.5,
+"e": 4.34,
+"t": "SÓ TEM VOCÊ"
+},
+{
+"s": 4.34,
+"e": 5.62,
+"t": "E O MOTORISTA."
+},
+{
+"s": 5.84,
+"e": 6.36,
+"t": "VOCÊ SENTA"
+},
+{
+"s": 6.36,
+"e": 7.06,
+"t": "NO FUNDO,"
+},
+{
+"s": 7.48,
+"e": 8.28,
+"t": "ENCOSTA A CABEÇA"
+},
+{
+"s": 8.28,
+"e": 8.86,
+"t": "NA JANELA"
+},
+{
+"s": 8.86,
+"e": 10.42,
+"t": "E QUASE DORME."
+},
+{
+"s": 10.42,
+"e": 11.3,
+"t": "ATÉ QUE {\\c&H0028D7FF&}UM{\\c&HFFFFFF&} {\\c&H0028D7FF&}CELULAR{\\c&HFFFFFF&}"
+},
+{
+"s": 11.3,
+"e": 12.26,
+"t": "COMEÇA A TOCAR."
+},
+{
+"s": 12.58,
+"e": 13.38,
+"t": "{\\c&H0028D7FF&}NÃO{\\c&HFFFFFF&} {\\c&H0028D7FF&}É{\\c&HFFFFFF&} {\\c&H0028D7FF&}O{\\c&HFFFFFF&} {\\c&H0028D7FF&}SEU.{\\c&HFFFFFF&}"
+},
+{
+"s": 13.64,
+"e": 14.32,
+"t": "ELE TÁ NO BANCO"
+},
+{
+"s": 14.32,
+"e": 15.08,
+"t": "DA FRENTE,"
+},
+{
+"s": 15.54,
+"e": 15.98,
+"t": "SOZINHO."
+},
+{
+"s": 16.42,
+"e": 17.12,
+"t": "NINGUÉM PEGA."
+},
+{
+"s": 17.6,
+"e": 18.24,
+"t": "ELE PARA."
+},
+{
+"s": 18.24,
+"e": 19.8,
+"t": "E TOCA DE NOVO."
+},
+{
+"s": 20.28,
+"e": 21.26,
+"t": "VOCÊ SE APROXIMA"
+},
+{
+"s": 21.26,
+"e": 21.82,
+"t": "E VÊ A TELA"
+},
+{
+"s": 21.82,
+"e": 22.54,
+"t": "ACESA."
+},
+{
+"s": 22.8,
+"e": 23.18,
+"t": "{\\c&H0028D7FF&}NÚMERO{\\c&HFFFFFF&}"
+},
+{
+"s": 23.18,
+"e": 24.1,
+"t": "{\\c&H0028D7FF&}DESCONHECIDO.{\\c&HFFFFFF&}"
+},
+{
+"s": 24.1,
+"e": 25.4,
+"t": "E UMA MENSAGEM:"
+},
+{
+"s": 25.84,
+"e": 26.62,
+"t": "{\\c&H0028D7FF&}NÃO{\\c&HFFFFFF&} {\\c&H0028D7FF&}DESCE{\\c&HFFFFFF&}"
+},
+{
+"s": 26.62,
+"e": 27.28,
+"t": "{\\c&H0028D7FF&}NO{\\c&HFFFFFF&} {\\c&H0028D7FF&}PRÓXIMO{\\c&HFFFFFF&}"
+},
+{
+"s": 27.28,
+"e": 27.72,
+"t": "{\\c&H0028D7FF&}PONTO.{\\c&HFFFFFF&}"
+},
+{
+"s": 28.36,
+"e": 28.88,
+"t": "VOCÊ OLHA"
+},
+{
+"s": 28.88,
+"e": 29.9,
+"t": "PRO MOTORISTA."
+},
+{
+"s": 30.14,
+"e": 30.82,
+"t": "ELE TE ENCARA"
+},
+{
+"s": 30.82,
+"e": 32.3,
+"t": "{\\c&H0028D7FF&}PELO{\\c&HFFFFFF&} {\\c&H0028D7FF&}RETROVISOR{\\c&HFFFFFF&} E {\\c&H0028D7FF&}DESVIA{\\c&HFFFFFF&}"
+},
+{
+"s": 32.3,
+"e": 33.02,
+"t": "O OLHAR."
+},
+{
+"s": 33.32,
+"e": 34.02,
+"t": "CHEGA OUTRA"
+},
+{
+"s": 34.02,
+"e": 34.84,
+"t": "MENSAGEM:"
+},
+{
+"s": 35.12,
+"e": 36.04,
+"t": "{\\c&H0028D7FF&}ELE{\\c&HFFFFFF&} {\\c&H0028D7FF&}JÁ{\\c&HFFFFFF&} {\\c&H0028D7FF&}SABE{\\c&HFFFFFF&}"
+},
+{
+"s": 36.04,
+"e": 36.86,
+"t": "{\\c&H0028D7FF&}QUE{\\c&HFFFFFF&} {\\c&H0028D7FF&}VOCÊ{\\c&HFFFFFF&} {\\c&H0028D7FF&}VIU.{\\c&HFFFFFF&}"
+},
+{
+"s": 37.42,
+"e": 37.9,
+"t": "O ÔNIBUS"
+},
+{
+"s": 37.9,
+"e": 38.88,
+"t": "COMEÇA A {\\c&H0028D7FF&}FREAR.{\\c&HFFFFFF&}"
+},
+{
+"s": 39.12,
+"e": 40.44,
+"t": "O PRÓXIMO PONTO {\\c&H0028D7FF&}É{\\c&HFFFFFF&} {\\c&H0028D7FF&}O{\\c&HFFFFFF&} {\\c&H0028D7FF&}SEU.{\\c&HFFFFFF&}"
+},
+{
+"s": 40.86,
+"e": 41.76,
+"t": "A PORTA ABRE."
+},
+{
+"s": 42.16,
+"e": 42.64,
+"t": "LÁ FORA,"
+},
+{
+"s": 42.64,
+"e": 43.84,
+"t": "A RUA TÁ VAZIA."
+},
+{
+"s": 44.06,
+"e": 45.48,
+"t": "SÓ {\\c&H0028D7FF&}UM{\\c&HFFFFFF&} {\\c&H0028D7FF&}POSTE{\\c&HFFFFFF&} {\\c&H0028D7FF&}PISCANDO.{\\c&HFFFFFF&}"
+},
+{
+"s": 45.94,
+"e": 46.8,
+"t": "O CELULAR VIBRA"
+},
+{
+"s": 46.8,
+"e": 47.88,
+"t": "UMA ÚLTIMA VEZ:"
+},
+{
+"s": 48.4,
+"e": 49.519999999999996,
+"t": "{\\c&H0028D7FF&}FICA{\\c&HFFFFFF&} {\\c&H0028D7FF&}SENTADO.{\\c&HFFFFFF&}"
+},
+{
+"s": 49.8,
+"e": 51.64,
+"t": "VOCÊ TEM {\\c&H0028D7FF&}CINCO{\\c&HFFFFFF&} {\\c&H0028D7FF&}SEGUNDOS.{\\c&HFFFFFF&}"
+},
+{
+"s": 52.04,
+"e": 53.64,
+"t": "{\\c&H0028D7FF&}OPÇÃO{\\c&HFFFFFF&} {\\c&H0028D7FF&}A:{\\c&HFFFFFF&} VOCÊ DESCE"
+},
+{
+"s": 53.64,
+"e": 54.3,
+"t": "NO SEU PONTO,"
+},
+{
+"s": 54.3,
+"e": 54.58,
+"t": "COMO"
+},
+{
+"s": 54.58,
+"e": 55.62,
+"t": "FAZ TODO DIA."
+},
+{
+"s": 55.62,
+"e": 56.9,
+"t": "{\\c&H0028D7FF&}OPÇÃO{\\c&HFFFFFF&} {\\c&H0028D7FF&}B:{\\c&HFFFFFF&}"
+},
+{
+"s": 57.2,
+"e": 57.72,
+"t": "VOCÊ FICA"
+},
+{
+"s": 57.72,
+"e": 58.48,
+"t": "NO ÔNIBUS"
+},
+{
+"s": 58.48,
+"e": 59.32,
+"t": "E DESCOBRE"
+},
+{
+"s": 59.32,
+"e": 59.9,
+"t": "PRA ONDE"
+},
+{
+"s": 59.9,
+"e": 60.58,
+"t": "ELE VAI."
+},
+{
+"s": 61.0,
+"e": 62.7,
+"t": "COMENTA {\\c&H0028D7FF&}A{\\c&HFFFFFF&} {\\c&H0028D7FF&}OU{\\c&HFFFFFF&} {\\c&H0028D7FF&}B.{\\c&HFFFFFF&}"
+},
+{
+"s": 63.08,
+"e": 64.02,
+"t": "A RESPOSTA MAIS"
+},
+{
+"s": 64.02,
+"e": 65.22,
+"t": "COMENTADA DECIDE"
+},
+{
+"s": 65.22,
+"e": 66.38,
+"t": "O {\\c&H0028D7FF&}PRÓXIMO{\\c&HFFFFFF&} {\\c&H0028D7FF&}EPISÓDIO.{\\c&HFFFFFF&}"
+},
+{
+"s": 66.76,
+"e": 67.54,
+"t": "SE INSCREVE"
+},
+{
+"s": 67.54,
+"e": 68.32,
+"t": "PRA NÃO PERDER"
+},
+{
+"s": 68.32,
+"e": 69.22,
+"t": "A CONTINUAÇÃO."
+},
+{
+"s": 69.66,
+"e": 70.48,
+"t": "{\\c&H0028D7FF&}VOCÊ{\\c&HFFFFFF&} {\\c&H0028D7FF&}DECIDE...{\\c&HFFFFFF&}"
+}
+],
+"hud": []
+}

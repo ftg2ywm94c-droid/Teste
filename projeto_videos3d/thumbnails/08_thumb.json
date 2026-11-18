@@ -1,0 +1,8 @@
+{
+ "base": "thumbnails/08_base_render.png",
+ "grade": {"sky": [255, 150, 70], "sky_amt": 0.0, "sky_to": 0.55, "contrast": 1.22, "sat": 1.3, "vignette": 0.55, "shadow_tint": [0, 8, 30]},
+ "title_top": 95,
+ "title": [["E SE O FOGO", [255, 255, 255], 150], ["NUNCA", [255, 120, 30], 230], ["EXISTISSE?", [255, 210, 20], 160]],
+ "inset": {"src": "thumbnails/08_inset_mastigando.png", "crop": [130, 380, 550, 800], "center": [800, 860], "diam": 330,
+           "ring": [255, 120, 30], "tag": ["METADE DO DIA MASTIGANDO", [255, 210, 20], [0, 0, 0], 36]}
+}
