@@ -39,3 +39,17 @@ Período: 01/05 a 17/11/2026. 1.200 inscritos, 30 vídeos e 22 mil views no tota
 ## Pendências
 - Metricool: a marca ainda não tem nenhuma rede conectada. Falta ligar Instagram e TikTok em app.metricool.com/brands/connections.
 - vidIQ: só o YouTube está ligado. Crédito: 250 no total, 15 usados nesta leitura.
+
+## Correção (18/11, depois do print do usuário)
+A primeira leitura usou o relatório do Analytics até 17/11. Esse relatório chega com 1–2 dias de atraso, então quatro vídeos recentes ficaram de fora. Contagem pública em 18/11:
+| Vídeo | Tema | Views | Curtidas | Comentários |
+|---|---|---|---|---|
+| U4NvvPdB8zE | Vendaval: você sai ou fica? (A/B), há ~15 h | 1.257 | 46 | 5 (+10 inscritos, o Short que mais gerou inscritos no canal) |
+| 8pKn4t-K-HM | E se: menos impostos | 1.380 | 42 | 2 |
+| HuRbOQ3U9Ik | E se: fogo nunca descoberto | 1.279 | 31 | 1 |
+| KYVKRVqcBNs | Furacão (título "15 de novembro de 2026") | 504 | 29 | 0 |
+
+Ajustes nas conclusões:
+- A frase "máximo de 2 comentários" vale só para os vídeos antigos. O primeiro episódio com escolha A/B já teve 5 comentários e +10 inscritos em 15 h, o melhor resultado do canal. É a evidência a favor do formato de série.
+- "Menos impostos" (1.380 views) foi bem, então economia explicada como curiosidade funciona. Os que foram mal eram notícia política do momento (eleição, Venezuela, preço da gasolina).
+- O furacão, com título de data, teve o pior resultado da semana. É mais um sinal de que o título precisa dizer o tema.
