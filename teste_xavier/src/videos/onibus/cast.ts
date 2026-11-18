@@ -652,12 +652,13 @@ const onibus = (id: number, cam: CamInfo, t: number, out: Stage) => {
   const c = SHOTS[id - 1].crowd;
   /** sentado de verdade: o cartão fica um pouco à frente da beira do assento (o cartão gira para a câmera e não pode entrar no assento), a sola no piso, o quadril na altura do assento; balança com o ônibus */
   const SEAT_H = (CUSHION_Y - FLOOR_Y) / SU;
-  const seated = (u: number, v: number, fo: FrontOpts) => {
+  // yaw: no banco do fundo o cartão fica quase paralelo ao encosto (senão a perna do lado de trás entra no painel do banco)
+  const seated = (u: number, v: number, fo: FrontOpts, yaw?: number) => {
     const [x, , z] = L(id, t, u + 0.36, 0, v), sway = busMoving(id, t) ? q(0.012 * Math.sin(t * 2.3) + 0.005 * Math.sin(t * 7.1), 300) : 0;
-    const pl = person(cam, YOU, x, FLOOR_Y, z, { side: false, mirror: false }, { ...fo, mode: "sit", seatH: SEAT_H }, {}); pl.roll = sway;
+    const pl = person(cam, YOU, x, FLOOR_Y, z, { side: false, mirror: false }, { ...fo, mode: "sit", seatH: SEAT_H }, {}); pl.roll = sway; if (yaw !== undefined) pl.yaw = yaw;
     out.places.push(pl); blob(out, x, FLOOR_Y, z);
   };
-  const sitBack = (expr: Expr, blink: number | boolean, headTilt = 0, look = 0) => seated(-5.42, 0.85, { expr, blink, look, headTilt });
+  const sitBack = (expr: Expr, blink: number | boolean, headTilt = 0, look = 0) => seated(-5.42, 0.85, { expr, blink, look, headTilt }, 1.92);
   if (["b_ext", "b_brake", "b_optA", "b_choice", "b_door", "b_cta"].includes(c)) pool(t, out);
   if (["b_ext", "b_brake", "b_optA", "b_choice", "b_cta"].includes(c)) busLight(id, t, out);
   switch (c) {

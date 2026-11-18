@@ -403,6 +403,9 @@ export class World {
     for (const sv of [-1, 1]) box(ob, U1 - 0.06, 1.24, sv > 0 ? VW - 0.1 : -VW, U1, 2.5, sv > 0 ? VW : -VW + 0.1, P.body);
     box(ob, U0, FL - 0.18, -VW, U0 + 0.06, 1.5, VW, P.body); box(nb, U0, 2.4, -VW, U0 + 0.06, RF, VW, P.body);
     for (const sv of [-1, 1]) box(ob, U0, 1.5, sv > 0 ? VW - 0.25 : -VW, U0 + 0.06, 2.4, sv > 0 ? VW : -VW + 0.25, P.body);
+    // vidro traseiro (atrás do banco do fundo) e véu noturno no vão da porta, visto só de dentro
+    { const rp = new THREE.Mesh(new THREE.PlaneGeometry(2 * VW - 0.5, 0.9), this.glassOut); rp.position.set(U0 - 0.012, 1.95, 0); rp.rotation.y = -Math.PI / 2; rp.layers.set(NOINK); g.add(rp); this.glass.push(rp);
+      this.doorVeil = new THREE.Mesh(new THREE.PlaneGeometry(DOOR_U[1] - DOOR_U[0], 2.3), this.veilMat); this.doorVeil.position.set((DOOR_U[0] + DOOR_U[1]) / 2, FL + 1.15, VW + 0.03); this.doorVeil.layers.set(NOINK); g.add(this.doorVeil); }
     // letreiro (fora, na frente): NOTURNO
     { const sign = new THREE.Mesh(new THREE.PlaneGeometry(1.9, 0.3), new THREE.MeshBasicMaterial({ map: ctex("busSign", 512, 80, (c) => {
         c.fillStyle = "#120c06"; c.fillRect(0, 0, 512, 80); c.fillStyle = "#ffb43a"; c.font = "bold 56px 'DejaVu Sans Mono', monospace"; c.textAlign = "center"; c.textBaseline = "middle"; c.fillText("NOTURNO", 256, 42); }), color: new THREE.Color(1.6, 1.6, 1.6) }));
@@ -465,6 +468,8 @@ export class World {
     }
     this.root.add(this.bus);
   }
+  private doorVeil!: THREE.Mesh;
+  private veilMat = new THREE.MeshBasicMaterial({ color: new THREE.Color(0.03, 0.05, 0.12), transparent: true, opacity: 0.78, side: THREE.DoubleSide, depthWrite: false });
   private glassOut = new THREE.MeshBasicMaterial({ color: new THREE.Color(0.5, 0.66, 0.9), transparent: true, opacity: 0.85, side: THREE.FrontSide });
 
   private poseBus(id: number, t: number) {
@@ -489,7 +494,12 @@ export class World {
     this.doorR.position.set(mid + half + 0.6 * open, 0, 1.3 - 0.03 + 0.06 * open);
     const off = intOff(t);
     for (const m of this.ceil) m.material = off ? this.ceilOff : this.ceilOn;
-    this.glassOut.opacity = off ? 0.2 : 0.85;
+    // de dentro, à noite, o vidro escurece a rua (a cabine acesa ofusca o lado de fora); com a luz apagada a rua aparece mais
+    const ins = SHOTS[id - 1].inside;
+    this.doorVeil.visible = ins;
+    this.glassOut.side = ins ? THREE.DoubleSide : THREE.FrontSide;
+    if (ins) { this.glassOut.color.setRGB(0.05, 0.07, 0.15); this.glassOut.opacity = off ? 0.5 : 0.93; }
+    else { this.glassOut.color.setRGB(0.5, 0.66, 0.9); this.glassOut.opacity = off ? 0.2 : 0.85; }
     const braking = id === 14 && t < W.seu + 0.4;
     this.tail.color.setRGB(braking ? 4.0 : 1.6, braking ? 0.3 : 0.12, braking ? 0.2 : 0.08);
   }
@@ -572,6 +582,8 @@ export class World {
       const k = intOff(t) ? 0.22 : 1;
       TONE.uLitCol.value.set(1.32 * k, 1.4 * k, 1.58 * k); TONE.uShadeCol.value.set(0.36 * k, 0.4 * k, 0.55 * k); TONE.uShadeLift.value.set(0.06, 0.07, 0.11);
       CHAR.uCharTint.value.set(0.96 * k + 0.04, 1.0 * k + 0.04, 1.1 * k + 0.08); CHAR.uCharShade.value = 0.86;
+      // a luz da cabine não ilumina a rua: o que está longe (casas) afunda no azul da noite
+      this.fog.near = 9; this.fog.far = 24;
     }
     // ---- cast + effects ----
     const right = V(0, 0, 0).setFromMatrixColumn(cam.matrixWorld, 0);
