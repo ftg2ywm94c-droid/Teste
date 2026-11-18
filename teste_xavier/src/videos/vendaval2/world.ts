@@ -312,7 +312,10 @@ export class World {
     // BATH (800,0): banheiro sem janela: azulejo, vaso, pia, espelho, porta trancada
     b.add(quadUp(797.6, 802.4, -4, 3.5, 6, 9, D0 + 0.02), M.tileFloor);
     const az = lam("bathTile", () => ({ map: stoneHD("bathTileHD", ["#d8e8ea", "#d0e2e5", "#e0eeef", "#c8dcdf"], "#9fb8bc") }));
-    bx(797.3, 0, 3.4, 802.7, 2.8, 3.7, az); bx(797.3, 0, -4, 797.6, 2.8, 3.7, az); bx(802.4, 0, -4, 802.7, 2.8, 3.7, az);
+    bx(797.3, 0, 3.4, 799.3, 2.8, 3.7, az); bx(800.7, 0, 3.4, 802.7, 2.8, 3.7, az); bx(799.3, 2.12, 3.4, 800.7, 2.8, 3.7, az); bx(797.3, 0, -4, 797.6, 2.8, 3.7, az);
+    // atrás da porta: o corredor escuro que dá na sala (só aparece pela fresta)
+    { const hd = lam("hallDark", () => ({ color: "#14121e" })); bx(798.6, 0, 6.2, 801.4, 2.7, 6.3, hd); bx(798.5, 0, 3.7, 798.6, 2.7, 6.3, hd); bx(801.4, 0, 3.7, 801.5, 2.7, 6.3, hd);
+      bx(798.6, 2.7, 3.7, 801.4, 2.8, 6.3, hd); b.add(quadUp(798.6, 801.4, 3.7, 6.2, 1, 1, D0 + 0.05), lam("hallFloor", () => ({ color: "#1d1a24" }))); } bx(802.4, 0, -4, 802.7, 2.8, 3.7, az);
     bx(799.3, 0, 3.3, 799.4, 2.12, 3.4, M.white); bx(800.6, 0, 3.3, 800.7, 2.12, 3.4, M.white); bx(799.3, 2.05, 3.3, 800.7, 2.12, 3.4, M.white);
     bx(801.0, 0, 2.4, 801.6, 0.42, 3.1, M.white, 3); bx(800.98, 0.42, 2.38, 801.62, 0.47, 3.12, M.white, 2); bx(801.0, 0.47, 2.95, 801.6, 0.95, 3.3, M.white, 2);
     b.add(cyl(0.12, 0.1, 0.78, 12), M.white, at(798.5, D0, 3.0)); bx(798.1, 0.78, 2.7, 798.9, 0.9, 3.35, M.white, 2);
@@ -355,7 +358,7 @@ export class World {
         g.fillStyle = gr; g.beginPath(); for (let i = 0; i < 24; i++) { const a = (i / 24) * Math.PI * 2, r = 90 + 26 * Math.sin(i * 2.7); g.lineTo(128 + Math.cos(a) * r, 128 + Math.sin(a) * r); } g.closePath(); g.fill(); }) })));
       b.add(quadUp(801.2, 802.0, 0.8, 1.6, 1, 1, D0 + 0.03), lam("puddle", () => ({ color: "#2a3a5c" })));
       const db = new Batch();
-      db.add(boxGeo(V(0, 0.02, -0.05), V(1.2, 2.05, 0.05)), M.woodLight);
+      db.add(boxGeo(V(0, 0.05, -0.05), V(1.2, 2.05, 0.05)), M.woodLight);
       db.add(boxGeo(V(0.12, 0.98, -0.11), V(0.22, 1.04, -0.05)), M.steel); db.add(boxGeo(V(0.1, 1.18, -0.09), V(0.3, 1.24, -0.05)), M.steel);
       db.build(this.bathDoor); this.bathDoor.position.set(799.4, D0, 3.35); R.add(this.bathDoor);
     }

@@ -548,11 +548,15 @@ const fxRipple = (p: Pen, u: number) => { const g = p.g; g.strokeStyle = `rgba(1
 /** fumaça: tufos irregulares (vários círculos esfumados sobrepostos), cinza escuro */
 const fxPuff = (p: Pen) => { const g = p.g;
   for (let i = 0; i < 9; i++) { const x = 70 + 116 * hh(i, 41), y = 70 + 116 * hh(i, 42), r = 30 + 40 * hh(i, 43), gr = g.createRadialGradient(x, y, 2, x, y, r);
-    gr.addColorStop(0, "rgba(92,88,96,0.42)"); gr.addColorStop(1, "rgba(92,88,96,0)"); g.fillStyle = gr; g.fillRect(0, 0, 256, 256); } };
+    gr.addColorStop(0, "rgba(70,66,74,0.55)"); gr.addColorStop(1, "rgba(70,66,74,0)"); g.fillStyle = gr; g.fillRect(0, 0, 256, 256); } };
+/** fumaça clara e translúcida (aditiva) para a fresta da porta: sem contorno, em fiapos */
+const fxPuffL = (p: Pen) => { const g = p.g;
+  for (let i = 0; i < 12; i++) { const x = 60 + 136 * hh(i, 51), y = 60 + 136 * hh(i, 52), r = 22 + 46 * hh(i, 53), gr = g.createRadialGradient(x, y, 2, x, y, r);
+    gr.addColorStop(0, "rgba(150,150,165,0.32)"); gr.addColorStop(1, "rgba(150,150,165,0)"); g.fillStyle = gr; g.fillRect(0, 0, 256, 256); } };
 const fxDust = (p: Pen, seed: number) => { const g = p.g; for (let i = 0; i < 70; i++) { g.fillStyle = `rgba(220,210,190,${0.4 + 0.5 * hh(i, seed)})`; const r = 2 + 4 * hh(i, seed + 3); g.fillRect(hh(i, seed + 1) * 1024, hh(i, seed + 2) * 1024, r, r); } };
 /** a fresta da porta vista de dentro do banheiro: tudo escuro menos uma faixa vertical */
-const fxCrack = (p: Pen) => { const g = p.g; g.fillStyle = "#07060b"; g.fillRect(0, 0, 540, 960); g.clearRect(250, 40, 120, 900);
-  g.fillStyle = "#c08a5a"; g.fillRect(370, 0, 40, 960); g.strokeStyle = "#241726"; g.lineWidth = 6; g.strokeRect(370, -10, 40, 980); g.fillStyle = "#e9e3d6"; g.fillRect(212, 0, 38, 960); g.strokeRect(212, -10, 38, 980); };
+const fxCrack = (p: Pen) => { const g = p.g; g.fillStyle = "#07060b"; g.fillRect(0, 0, 540, 960); g.clearRect(170, 20, 230, 920);
+  g.fillStyle = "#c08a5a"; g.fillRect(400, 0, 44, 960); g.strokeStyle = "#241726"; g.lineWidth = 6; g.strokeRect(400, -10, 44, 980); g.fillStyle = "#e9e3d6"; g.fillRect(130, 0, 40, 960); g.strokeRect(130, -10, 40, 980); };
 const fxShaft = (p: Pen) => { const g = p.g, gr = g.createLinearGradient(0, 0, 0, 1024); gr.addColorStop(0, "rgba(170,195,255,0.45)"); gr.addColorStop(1, "rgba(170,195,255,0)"); g.fillStyle = gr;
   g.beginPath(); g.moveTo(380, 0); g.lineTo(640, 0); g.lineTo(900, 1024); g.lineTo(220, 1024); g.closePath(); g.fill(); };
 
@@ -620,9 +624,12 @@ const ep2 = (id: number, cam: CamInfo, t: number, out: Stage) => {
         }
       }
       break; }
-    case "w_smoke": for (let k = 0; k < 5; k++) { const s = (t * 0.35 + k / 5) % 1;
-      out.fx.push({ key: "puff", cw: 256, ch: 256, draw: fxPuff, x: 799.6 + k * 0.2 + 0.2 * Math.sin(t + k), y: D0 + 0.06 + s * 0.35, z: 3.22 - s * 0.45, w: 0.16 + s * 0.3, h: 0.16 + s * 0.3 }); }
-      break;
+    case "w_smoke": {
+      // fumaça escura passando pela fresta de baixo da porta e subindo em fiapos; as faíscas da sala piscam pela fresta
+      for (let k = 0; k < 11; k++) { const s = (t * 0.32 + k / 11) % 1, x0 = 799.5 + (k % 6) * 0.2;
+        out.fx.push({ key: "puff", cw: 256, ch: 256, draw: fxPuffL, soft: true, x: x0 + 0.12 * Math.sin(t * 0.9 + k) + 0.25 * s * Math.sin(k * 1.7), y: D0 + 0.05 + s * s * 0.9, z: 3.28 - s * 0.55, w: 0.14 + s * 0.42, h: 0.12 + s * 0.4 }); }
+      if (sparkAt(t)) out.fx.push({ key: "sglow2", cw: 256, ch: 256, draw: (pp) => fxGlow(pp, "rgba(170,210,255,0.95)"), soft: true, x: 800.0, y: 0.06, z: 3.48, w: 1.5, h: 0.5 });
+      break; }
     case "w_door": if (doorAt(id, t) > 0.02 && sparkAt(t)) out.fx.push({ key: "sglow", cw: 256, ch: 256, draw: (pp) => fxGlow(pp, "rgba(170,210,255,0.9)"), soft: true, x: 800.1, y: 0.4, z: 4.2, w: 1.6, h: 1.6 }); break;
     case "w_peek": case "w_wire": case "w_optA": {
       if (sparkAt(t)) { const sd = Math.floor(t * 15) % 6;

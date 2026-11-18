@@ -60,7 +60,7 @@ export const BOLTS = [9.0, 35.6, 45.2, 59.6];   // sem clarão no estrondo (a qu
 const hh = (i: number) => { const x = Math.sin(i * 127.1 + 31.7) * 43758.5453; return x - Math.floor(x); };
 export const sparkAt = (t: number) => { const n = Math.floor(t * 15); return hh(n) < 0.42 || (hh(n + 77) < 0.25 && (t * 30) % 2 < 1); };
 /** abertura da porta do banheiro (rad): uma fresta no "abre uma fresta"; atravessa a sala na opção A */
-export const doorAt = (id: number, t: number) => (id === 12 ? 0.42 * smooth((t - W.voceAbre - 0.4) / 1.2) : id >= 13 && id !== 15 && id !== 16 && id !== 18 ? 0.42 : 0);
+export const doorAt = (id: number, t: number) => (id === 12 ? 0.45 * smooth((t - W.voceAbre - 0.4) / 1.2) : id >= 13 && id !== 15 && id !== 16 && id !== 18 ? 0.42 : 0);
 
 // ---------------- shots ----------------
 export type Light = "day" | "golden" | "night";
@@ -175,9 +175,9 @@ const CAMS: Record<number, Key[]> = {
   // a goteira: de baixo, olhando a mancha no teto e as gotas
   10: [{ f: 0, s: (f) => dolly([800.9, 0.55, -0.4], [801.6, 1.7, 1.2], f, S0(10), 0.0022, { fov: 62 }) }],
   // fumaça entrando pela fresta de baixo da porta
-  11: [{ f: 0, s: (f) => dolly([800.35, 0.42, 2.0], [800.0, 0.2, 3.3], f, S0(11), 0.003, { fov: 50 }) }],
+  11: [{ f: 0, s: (f) => dolly([800.3, 0.85, 1.25], [800.0, 0.3, 3.35], f, S0(11), 0.003, { fov: 58 }) }],
   // a porta abre uma fresta
-  12: [{ f: 0, s: (f) => dolly([800.55, 1.5, 1.2], [799.9, 1.2, 3.3], f, S0(12), 0.0026, { fov: 50 }) }],
+  12: [{ f: 0, s: (f) => dolly([800.95, 1.55, 0.55], [800.4, 1.1, 3.5], f, S0(12), 0.0026, { fov: 56 }) }],
   // pela fresta: a sala no escuro, cheia de galhos
   13: [{ f: 0, s: (f) => dolly([597.8, 1.55, -4.2], [600.6, 1.6, 3.4], f, S0(13), 0.002, { fov: 54 }) }],
   // o fio solto perto da janela quebrada
@@ -217,7 +217,7 @@ export type Dof = { f: number; dur?: number; cInf: number; focus?: (f: number) =
 const FOC: Record<number, [number, V3]> = {
   1: [10, [800, 1.1, 2.4]], 2: [8, [800.3, 1.2, 2.4]], 3: [16, PHONE_NEAR[3]], 4: [4, [1.5, 4.0, 9]], 5: [4, [3.0, 4.4, 11]], 6: [8, [800, 1.2, 2.4]],
   7: [6, [2.8, 4.5, 11.8]], 8: [4, [2.4, 4.5, 11.5]], 9: [10, [800, 1.2, 2.4]], 10: [10, [801.6, 1.6, 1.2]], 11: [12, [800.0, 0.1, 3.3]],
-  12: [8, [799.9, 1.2, 3.3]], 13: [6, [600.4, 1.4, 3.0]], 14: [12, [602.8, 0.2, 2.8]], 15: [16, PHONE_NEAR[15]], 16: [4, [10.5, 4.0, 12]],
+  12: [8, [800.5, 1.1, 3.3]], 13: [6, [600.4, 1.4, 3.0]], 14: [12, [602.8, 0.2, 2.8]], 15: [16, PHONE_NEAR[15]], 16: [4, [10.5, 4.0, 12]],
   17: [8, [599.2, 1.0, 0.5]], 18: [16, PHONE_NEAR[18]], 19: [4, [2.4, 4.6, 11.8]], 20: [4, [2.4, 4.6, 11.8]],
 };
 export const DOF: Dof[] = SHOTS.map((s) => ({ f: s.a, cInf: FOC[s.id][0], focus: () => FOC[s.id][1] }));
