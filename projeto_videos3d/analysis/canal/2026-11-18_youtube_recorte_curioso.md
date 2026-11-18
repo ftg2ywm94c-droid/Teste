@@ -53,3 +53,17 @@ Ajustes nas conclusões:
 - A frase "máximo de 2 comentários" vale só para os vídeos antigos. O primeiro episódio com escolha A/B já teve 5 comentários e +10 inscritos em 15 h, o melhor resultado do canal. É a evidência a favor do formato de série.
 - "Menos impostos" (1.380 views) foi bem, então economia explicada como curiosidade funciona. Os que foram mal eram notícia política do momento (eleição, Venezuela, preço da gasolina).
 - O furacão, com título de data, teve o pior resultado da semana. É mais um sinal de que o título precisa dizer o tema.
+
+## Análise completa (os 30 vídeos, contagem pública de 18/11)
+Total: 23.421 views em 30 Shorts. Retenção dos 4 vídeos mais novos ainda indisponível, porque o Analytics chega com 1–2 dias de atraso.
+
+| Grupo | Vídeos | Média de views | Curtidas/views | Comentários |
+|---|---|---|---|---|
+| 3D, 06–17/11 (1 por dia, 64–96 s, temas de ciência/catástrofe) | 13 | 1.281 | 2,98% | 14 |
+| 3D, 26–29/10 (8 vídeos em 4 dias, todos de 61 s, vários de política/economia) | 8 | 530 | 1,60% | 2 |
+| Stop motion, ago–set (81–121 s) | 9 | 281 | 3,16% | 1 |
+
+- O vendaval A/B chegou à média do grupo de novembro (1.257) em ~15 h. Tem o maior número de comentários do canal (5) e o maior ganho de inscritos (+10).
+- Os títulos com data ("15 de novembro de 2026", "7 de setembro de 2026") estão entre os piores do grupo de cada um: 504 e 8 views.
+- O lote de outubro (vários por dia, 61 s, política) rendeu menos da metade de novembro.
+- Stop motion tem boa taxa de curtida, mas pouca distribuição. Os dois que passaram de 600 tinham pergunta ou "segredo" no título (tubarão, girafa).
