@@ -650,10 +650,10 @@ const pool = (t: number, out: Stage) => { if (!poleOff(t)) out.fx.push({ key: "p
 
 const onibus = (id: number, cam: CamInfo, t: number, out: Stage) => {
   const c = SHOTS[id - 1].crowd;
-  /** sentado de verdade: o cartão fica na beira do assento, a sola no piso, o quadril na altura do assento; balança com o ônibus */
+  /** sentado de verdade: o cartão fica um pouco à frente da beira do assento (o cartão gira para a câmera e não pode entrar no assento), a sola no piso, o quadril na altura do assento; balança com o ônibus */
   const SEAT_H = (CUSHION_Y - FLOOR_Y) / SU;
   const seated = (u: number, v: number, fo: FrontOpts) => {
-    const [x, , z] = L(id, t, u + 0.24, 0, v), sway = busMoving(id, t) ? q(0.012 * Math.sin(t * 2.3) + 0.005 * Math.sin(t * 7.1), 300) : 0;
+    const [x, , z] = L(id, t, u + 0.36, 0, v), sway = busMoving(id, t) ? q(0.012 * Math.sin(t * 2.3) + 0.005 * Math.sin(t * 7.1), 300) : 0;
     const pl = person(cam, YOU, x, FLOOR_Y, z, { side: false, mirror: false }, { ...fo, mode: "sit", seatH: SEAT_H }, {}); pl.roll = sway;
     out.places.push(pl); blob(out, x, FLOOR_Y, z);
   };

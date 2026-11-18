@@ -464,8 +464,8 @@ export const bodyFront = (p: Pen, o: Outfit, opts: FrontOpts) => {
   if (mode === "sit") {
     for (const side of [-1, 1]) {
       // com seatH: coxa vindo para a frente (encurtada de frente), joelho na beira do assento, canela descendo até o pé no chão
-      const h: P2 = [300 + side * 15 * u, hipY], k: P2 = seatH ? [300 + side * 30 * u, torsoBot + 0.07 * HH] : [300 + side * 36 * u, hipY + 0.2 * HH],
-        f: P2 = seatH ? [300 + side * 33 * u, sole - 8 * u] : [300 + side * 44 * u, sole - 8 * u];
+      const h: P2 = [300 + side * 15 * u, hipY], k: P2 = seatH ? [300 + side * 26 * u, torsoBot + 0.07 * HH] : [300 + side * 36 * u, hipY + 0.2 * HH],
+        f: P2 = seatH ? [300 + side * 28 * u, sole - 8 * u] : [300 + side * 44 * u, sole - 8 * u];
       p.stroke(curve(h, k, f), legW, legCol);
       footStroke(p, [f[0] - side * 2 * u, f[1]], [f[0] + side * 12 * u, f[1] - 5 * u], footW, footCol);
     }

@@ -424,7 +424,8 @@ export class World {
     for (let k = 0; k < 10; k++) {
       const u = FRONT_SEAT[0] - 0.85 * k;
       seat(u, -1.22, -0.38);
-      if (!(u > -0.75 && u < 0.75) && !(u > DOOR_U[0] - 0.4 && u < DOOR_U[1] + 0.2)) seat(u, 0.38, 1.22);
+      // lado da porta: sem banco nas portas e na última fileira antes do fundo (deixa você inteiro à vista, de pernas no chão)
+      if (!(u > -0.75 && u < 0.75) && !(u > DOOR_U[0] - 0.4 && u < DOOR_U[1] + 0.2) && k < 9) seat(u, 0.38, 1.22);
     }
     // banco do fundo, mais alto, de lado a lado
     box(ob, -5.9, 0.4, -1.22, -5.15, 0.76, 1.22, P.seatB); seat(-5.42, -1.22, 1.22, 0.88);
