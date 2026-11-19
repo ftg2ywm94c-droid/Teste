@@ -67,3 +67,20 @@ Total: 23.421 views em 30 Shorts. Retenção dos 4 vídeos mais novos ainda indi
 - Os títulos com data ("15 de novembro de 2026", "7 de setembro de 2026") estão entre os piores do grupo de cada um: 504 e 8 views.
 - O lote de outubro (vários por dia, 61 s, política) rendeu menos da metade de novembro.
 - Stop motion tem boa taxa de curtida, mas pouca distribuição. Os dois que passaram de 600 tinham pergunta ou "segredo" no título (tubarão, girafa).
+
+## Leitura de 19/11
+| Vídeo | Publicado (BRT) | Views | Coment. | % assistido | Inscritos |
+|---|---|---|---|---|---|
+| Vendaval Ep. 2 | 18/11 11:29 | 1.242 (~1 dia) | 8 | ainda sem dado (atraso do Analytics) | — |
+| Vendaval Ep. 1 | 17/11 19:53 | 1.528 | 9 | ainda sem dado | +10 (Studio) |
+| Impostos | 17/11 10:34 | 1.405 | 2 | ainda sem dado | — |
+| Fogo | 16/11 17:00 | 1.294 | 1 | 37,3 | 5 |
+| Furacão (título de data) | 16/11 13:00 | 516 | 0 | 78,9 | 0 |
+| Planeta | 16/11 11:00 | 1.116 | 1 | 59,3 | 1 |
+| Oxigênio 2 | 15/11 18:00 | 1.528 | 0 | 43,6 | 6 |
+
+- Os dois episódios do vendaval têm 17 comentários juntos, contra 0–2 dos outros vídeos.
+- O furacão foi bem assistido (79%), mas pouca gente o viu: o problema foi a entrada (título "15 de novembro"), não o conteúdo.
+- O fogo teve o menor % assistido (37%), mesmo com 1,3 mil views: o meio do vídeo perdeu as pessoas.
+- Horário de postagem: nos nossos dados, o horário pesa menos que tema e título. Os vídeos com mais de 1,4 mil views saíram entre 11:30 e 13:00 e às 18:00/19:53.
+- TikTok (Metricool, horários de público, BRT): picos às 10h, 12h e 18h. Dias úteis são mais fortes que o fim de semana; quarta, quinta e sexta são os melhores.

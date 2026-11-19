@@ -49,6 +49,7 @@ Criado em 18/11/2026. Todo roteiro, gancho, título e CTA passam por este checkl
 
 ## 4. Postagem
 - **1 vídeo por dia por rede.** Pode ser o mesmo nas três redes no mesmo dia.
+- **Horário (BRT):** YouTube às 12h, que é o horário da maioria dos nossos vídeos com mais de 1,4 mil views. TikTok às 10h, ou às 18h como segunda opção. Instagram às 12h até termos dados próprios. Dias úteis rendem mais que o fim de semana.
 - **Sempre o MP4 original**, nunca o baixado com marca d'água de outra rede.
 - **Comentário fixado com a escolha**, mais a nota de segurança quando houver risco real.
 - **Ligar os episódios**: na descrição do novo, o link do anterior; e editar o anterior com o link do novo.
@@ -75,4 +76,4 @@ O que fazer com cada leitura:
 |---|---|---|---|
 | 17/11 | Vendaval Ep. 1 (A/B) | primeiro episódio com escolha | 1.257 views em 15 h, 5 comentários, +10 inscritos |
 | — | Ônibus Ep. 1 | título/legenda do playbook | aguardando publicação |
-| — | Vendaval Ep. 2 | título 86/100, legenda com "Manda pra…" | aguardando publicação |
+| 18/11 11:29 | Vendaval Ep. 2 | título 86/100, legenda com "Manda pra…" | ~1 dia: 1.242 views, 8 comentários |
