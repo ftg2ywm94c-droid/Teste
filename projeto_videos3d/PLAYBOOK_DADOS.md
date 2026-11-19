@@ -40,6 +40,15 @@ Criado em 18/11/2026. Todo roteiro, gancho, título e CTA passam por este checkl
    - envio: "Manda pra quem escolheria diferente de você".
 9. **Fim que volta ao começo quando der** (loop): a última imagem casa com a primeira.
 
+### Lições do Things Explained (1,15 mi de views, mesmo estilo 3D toon que o nosso)
+- **Pergunta fixa no topo da tela durante o vídeo todo** (ex.: "O QUE EMPURROU O CAMINHÃO?"), além da legenda.
+- **O quadro 0 mostra uma coisa estranha acontecendo** (o tranco sozinho), não só um texto.
+- **Cortes a cada 1–3 s.** Nos nossos vídeos, mirar no máximo 3 s por plano nos trechos de explicação.
+- **Uma imagem de "raio-X"/corte** que explique o mecanismo sozinha.
+- **Um personagem secundário com humor** (mentor, vizinho, motorista) para virar história, não aula.
+- **Final com frase de efeito que volta ao começo (loop).** Nos vídeos "E se…?" de curiosidade, o CTA falado pode sair. Na série A/B, o CTA continua, porque é ele que gera os comentários.
+- **Duração testável: 2:00–2:17** nos vídeos de explicação, já que os maiores sucessos deles passam de 2 min.
+
 ## 3. Regras de título, legenda e tags
 - **YouTube:** `[Série] Ep. N: [situação concreta]. [pergunta]?`. Sem data, sem "E se ?" sozinho, sem hashtag no título. Testar 2 opções no vidIQ (`score_title`) e usar a maior.
 - **Legenda TikTok/IG:** primeira linha = a premissa do quadro 0, depois "Comenta A ou B 👇" e "📩 Manda pra quem…". No Instagram, "Ep. 1 no perfil" no lugar de link.
