@@ -12,6 +12,13 @@ Regra: nenhum número ou afirmação sobre um vídeo vai para o usuário sem ter
 5. **Dado faltando = dizer que falta.** Por exemplo: "% assistido ainda não saiu", "Metricool sem dados do Instagram". Nunca preencher o buraco com suposição.
 6. **Erro encontrado = corrigir no arquivo de análise** com data, e avisar o usuário.
 
+### Pesquisa de referência obrigatória (antes de cada vídeo)
+1. Buscar o **mesmo tema** em YouTube Shorts (PT e EN, `vidiq_outliers`) e em TikTok/Instagram (EN/PT/ES, `vidiq_instagram_tiktok_outlier_search`).
+2. Ficar só com posts acima de 5× a mediana do criador, e anotar título, 1ª linha da legenda, hashtags, duração e quadro 0.
+3. Usar como padrão só o que aparece em **2 ou mais** posts.
+4. Traduzir e adaptar para o português, sem copiar o texto literal, e testar 2 títulos no `score_title`.
+5. Salvar a tabela em `analysis/canal/AAAA-MM-DD_referencias_<tema>.md` e mandar ao usuário junto com o pacote de postagem, **antes** da publicação.
+
 ## 1. De onde vêm as regras
 
 **Nosso canal** (detalhes em `analysis/canal/`):
