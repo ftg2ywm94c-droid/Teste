@@ -14,7 +14,7 @@ Conta: 139 seguidores, 234 curtidas, 24 vídeos, sem bio.
 - 07/11 E se a Lua desaparecesse? (77 s): 133
 - 17/11 E se um furacão chegasse ao Brasil? (64 s): 125
 - 13/11 Porque existe limite de velocidade? (68 s): 38
-- 18/11 Qual você escolheria? (71 s, publicado hoje): 26 · 1 · 1
+- 18/11 Qual você escolheria? (71 s): 26 · 1 · 1. **Confirmado em 20/11 (vídeo assistido via vidIQ): é o Vendaval Ep. 1 (A/B), não o ônibus.** O ônibus ainda não foi publicado em nenhuma rede.
 - 27–29/10: 7 vídeos de exatamente 60 s, vários no mesmo dia, todos entre 118 e 147 views
 
 ## Leitura
