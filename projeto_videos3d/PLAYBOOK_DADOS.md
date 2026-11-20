@@ -2,6 +2,16 @@
 
 Criado em 18/11/2026. Todo roteiro, gancho, título e CTA passam por este checklist antes de eu mandar para aprovação. Atualizo o arquivo a cada leitura de métricas.
 
+## 0. Protocolo de verificação (vale para toda análise)
+Regra: nenhum número ou afirmação sobre um vídeo vai para o usuário sem ter sido conferido na fonte. O que não deu para conferir é apresentado como dúvida, nunca como fato.
+
+1. **Identificar o vídeo pelo conteúdo, nunca pela duração ou pela data.** Comparar título, legenda, ID ou o próprio vídeo (assistir com `vidiq_watch_shortform_content`, ou o usuário confirma). Se não der para ter certeza, perguntar.
+2. **Lista completa e atual antes de analisar.** Puxar a lista de vídeos publicados no dia da análise (`vidiq_user_videos` no YouTube, `vidiq_tiktok_profile_videos` no TikTok) e conferir que nenhum ficou de fora. O relatório de Analytics chega com 1–2 dias de atraso e sozinho não serve.
+3. **Não afirmar onde um vídeo está publicado** sem ver o post (link, ID ou confirmação do usuário).
+4. **Separar o que é medido do que é estimativa.** Na resposta, cada número diz de onde veio (vidIQ/Analytics, Metricool, contagem pública, print do usuário). Médias de mercado e horários "padrão" ficam marcados como estimativa.
+5. **Dado faltando = dizer que falta.** Por exemplo: "% assistido ainda não saiu", "Metricool sem dados do Instagram". Nunca preencher o buraco com suposição.
+6. **Erro encontrado = corrigir no arquivo de análise** com data, e avisar o usuário.
+
 ## 1. De onde vêm as regras
 
 **Nosso canal** (detalhes em `analysis/canal/`):
