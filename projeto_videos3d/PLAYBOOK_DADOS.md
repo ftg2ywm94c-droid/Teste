@@ -101,5 +101,5 @@ O que fazer com cada leitura:
 | Data | Vídeo | Mudança testada | Resultado em 48 h / 7 d |
 |---|---|---|---|
 | 17/11 | Vendaval Ep. 1 (A/B) | primeiro episódio com escolha | 1.257 views em 15 h, 5 comentários, +10 inscritos |
-| — | Ônibus Ep. 1 | título/legenda do playbook | aguardando publicação |
+| 21/11 | Ônibus Ep. 1 | título/legenda do playbook, escolha na 1ª linha da legenda | Instagram: mais de 150 mil views (informado pelo usuário em 21/11; ainda não conferido na fonte: Instagram não conectado no Metricool/vidIQ) |
 | 18/11 11:29 | Vendaval Ep. 2 | título 86/100, legenda com "Manda pra…" | ~1 dia: 1.242 views, 8 comentários |
