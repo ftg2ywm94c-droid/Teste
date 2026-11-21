@@ -1,6 +1,6 @@
 """Narração com VoxCPM2 (Apache-2.0) clonando a voz aprovada (amostra gerada por nós). Frase a frase, N tentativas,
 escolhe pela transcrição + tom dentro da faixa da voz aprovada. Uso: narrar_vox.py roteiro.txt saida.wav ref.wav "texto da ref" [N]"""
-import sys, re, json, difflib, numpy as np, torch, torchaudio as ta, torchaudio.functional as F, soundfile as sf
+import os, sys, re, json, difflib, numpy as np, torch, torchaudio as ta, torchaudio.functional as F, soundfile as sf
 from voxcpm import VoxCPM
 from faster_whisper import WhisperModel
 txt, out, ref, reftext = sys.argv[1:5]; N = int(sys.argv[5]) if len(sys.argv) > 5 else 3
@@ -24,7 +24,7 @@ def score(a, s):
     w = F.resample(torch.tensor(a, dtype=torch.float32)[None], SR, 16000).squeeze().numpy()
     seg, _ = wm.transcribe(w, language="pt"); hyp = " ".join(x.text for x in seg)
     r = difflib.SequenceMatcher(None, norm(s), norm(hyp)).ratio(); hz = f0(a); wps = len(s.split()) / (len(a) / SR)
-    pen = 0.3 if not (160 <= hz <= 215) else 0.0
+    pen = 0.3 if not (float(os.environ.get('F0_LO', 160)) <= hz <= float(os.environ.get('F0_HI', 215))) else 0.0
     return r - pen - 0.15 * max(0, abs(wps - 2.6) - 0.7), hyp, hz, wps
 def trim(a, thr=0.01):
     idx = np.nonzero(np.abs(a) > thr)[0]
