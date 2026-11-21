@@ -1,6 +1,6 @@
 # 16 — Vendaval · Ep. 3 (a maioria escolheu B no Ep. 2: ficar e ligar 193)
 
-Status: roteiro para aprovação.
+Status: confirmado em 21/11 — o usuário informou que a maioria escolheu B no Ep. 2. Aguardando a narração em MP3.
 Continuidade: Ep. 2 (vídeo 14). Você está no banheiro e a árvore caiu sobre a sala. O fio solto faísca perto da janela, e o celular tem 6 %. A vizinha avisou que tem alguém preso na casa ao lado.
 Aplicando `PLAYBOOK_DADOS.md`:
 - quadro 0 = celular "6 %" discando 193, com o som de discagem;
@@ -19,7 +19,8 @@ Na vida real: nunca atravesse um cômodo com fio caído, nem para ajudar alguém
 
 ## Na tela
 - **Quadro 0:** a tela do celular "6 %" discando 193, com o som de chamada. Texto grande: "VOCÊ LIGOU PRO 193." Texto pequeno: "vocês escolheram B · EP. 3".
-- **Pergunta fixa no topo:** "OS BOMBEIROS VÃO CHEGAR A TEMPO?"
+- **Sem pergunta fixa no topo** (o usuário não gostou dela no vídeo 15).
+- **Aviso de escolha no fim** (no IG do Ônibus Ep. 1, metade saiu por volta dos 36 s): "no final, você decide de novo" logo após o quadro 0 e "NO FINAL: A OU B" no topo, perto da metade do vídeo.
 - **Celular:** "chamando… 193 Bombeiros" → "em chamada 00:41" → bateria "3 %" → tela apagando.
 - **Escuridão:** só a chuva e a lanterna apagada. Uma luz vermelha de sirene passa longe pela fresta da porta e some.
 - **Batidas na porta da frente:** a câmera da fresta mostra a sala escura, com o fio faiscando no meio do caminho até a porta.
