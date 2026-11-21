@@ -35,7 +35,11 @@ def frame(t):
         k = env(t, -1, 3.05, 0.1, 0.2); text(d, W / 2, 330, 'A PORTA FECHOU.', WHT, 104, k)
         if t >= 0.0: text(d, W / 2, 470, 'E ELE NÃO PAROU.', YEL, 104, env(t, 0.9, 3.05, 0.12, 0.2) if t >= 0.9 else 0.0)
         n += 1
-    if 3.05 <= t < 8.0: badge(d, 230, env(t, 3.05, 8.0, 0.2, 0.3)); text(d, W / 2, 330, 'vocês escolheram B', WHT, 52, env(t, 3.2, 8.0)); n += 1
+    if 3.05 <= t < 8.0:
+        badge(d, 230, env(t, 3.05, 8.0, 0.2, 0.3)); text(d, W / 2, 330, 'vocês escolheram B', WHT, 52, env(t, 3.2, 8.0))
+        if t >= 3.6: text(d, W / 2, 400, 'no final, você decide de novo', YEL, 46, env(t, 3.6, 8.0))
+        n += 1
+    if 28.0 <= t < 40.0: text(d, W / 2, 196, 'no final: A ou B', WHT, 38, env(t, 28.0, 40.0, 0.3, 0.3)); n += 1   # metade sai ~36 s (IG Ep. 1)
     if 3.05 <= t < 65.75:                 # pergunta fixa no topo (lição do Things Explained)
         k = env(t, 3.05, 65.75, 0.3, 0.2); s2 = 'PRA ONDE ELE TÁ INDO?'; fo = f(50); w = d.textlength(s2, font=fo)
         d.rounded_rectangle(((W - w) / 2 - 28, 112, (W + w) / 2 + 28, 188), 30, fill=(16, 16, 16, int(170 * k)))

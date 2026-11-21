@@ -75,7 +75,7 @@ Regra: nenhum número ou afirmação sobre um vídeo vai para o usuário sem ter
 
 ## 4. Postagem
 - **1 vídeo por dia por rede.** Pode ser o mesmo nas três redes no mesmo dia.
-- **Horário (BRT):** YouTube às 12h, que é o horário da maioria dos nossos vídeos com mais de 1,4 mil views. TikTok às 10h, ou às 18h como segunda opção. Instagram às 12h até termos dados próprios. Dias úteis rendem mais que o fim de semana.
+- **Horário (BRT):** YouTube às 12h, que é o horário da maioria dos nossos vídeos com mais de 1,4 mil views. TikTok às 10h, ou às 18h como segunda opção. Instagram: o Ônibus Ep. 1 (172 mil) saiu numa sexta às 18:15, mas o Vendaval Ep. 1 saiu às 18:46 e ficou em 2,8 mil: o horário sozinho não explica; a legenda e o gancho pesaram mais. Manter 18h para a série e medir. Dias úteis rendem mais que o fim de semana.
 - **Sempre o MP4 original**, nunca o baixado com marca d'água de outra rede.
 - **Comentário fixado com a escolha**, mais a nota de segurança quando houver risco real.
 - **Ligar os episódios**: na descrição do novo, o link do anterior; e editar o anterior com o link do novo.
@@ -90,7 +90,7 @@ Regra: nenhum número ou afirmação sobre um vídeo vai para o usuário sem ter
 | Inscritos por vídeo | vidIQ | 0–10 | 20 |
 | TikTok: vídeos que passam do teste (>300 views) | vidIQ / Metricool | 5 em 20 | metade |
 | TikTok: % que assiste até o fim | Metricool (sincronizando) | — | medir |
-| Instagram | Metricool (não conectado) | — | medir |
+| Instagram: views / % assistido / comentários | vidIQ (insights do dono, conectado em 21/11) | mediana ~2,3 mil / ~32% / 0 (sem o Ônibus Ep. 1) | 20 mil / 45% / 1% das views |
 
 O que fazer com cada leitura:
 - **% assistido caiu antes de 3 s** → o problema é o gancho: troco imagem, texto e som do quadro 0.
@@ -101,5 +101,5 @@ O que fazer com cada leitura:
 | Data | Vídeo | Mudança testada | Resultado em 48 h / 7 d |
 |---|---|---|---|
 | 17/11 | Vendaval Ep. 1 (A/B) | primeiro episódio com escolha | 1.257 views em 15 h, 5 comentários, +10 inscritos |
-| 21/11 | Ônibus Ep. 1 | título/legenda do playbook, escolha na 1ª linha da legenda | Instagram: mais de 150 mil views (informado pelo usuário em 21/11; ainda não conferido na fonte: Instagram não conectado no Metricool/vidIQ) |
+| 20/11 18:15 | Ônibus Ep. 1 | legenda do playbook (escolha na 1ª linha + "Manda pra…"), 5 hashtags de tema | Instagram (insights do dono, vidIQ, 21/11): 172.742 views, 3.227 comentários, 52% assistido, pulo 26% — 36x a média do perfil |
 | 18/11 11:29 | Vendaval Ep. 2 | título 86/100, legenda com "Manda pra…" | ~1 dia: 1.242 views, 8 comentários |
