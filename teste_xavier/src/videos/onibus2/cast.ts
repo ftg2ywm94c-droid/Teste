@@ -540,7 +540,7 @@ const fxCall = (p: Pen, mode: CallMode, n: number, u: number, k = 2, hand = fals
       g.fillStyle = "#0e1730"; g.fillRect(45, 60, 310, 92); p.ell(95, 112, 26, 26, "#3a4f80", 0); font(g, 30); g.fillStyle = "#fff"; g.fillText("?", 95, 114);
       font(g, 20); g.textAlign = "left"; g.fillText("Número desconhecido", 132, 104, 212); font(g, 17); g.textAlign = "left"; g.fillStyle = "#3ccf7a"; g.fillText("online", 132, 130); g.textAlign = "center";
       let y = 186;
-      for (let i = Math.max(0, n - 3); i < n; i++) {
+      for (let i = Math.max(0, n - (n >= 4 ? 2 : 3)); i < n; i++) {
         const last = i === n - 1, a = last ? Math.min(1, u * 1.6) : 1, sc = last ? 0.7 + 0.3 * easeOut(u) : 1;
         font(g, 34); const lines = wrap(g, MSGS[i], 236), h = 30 + lines.length * 42;
         g.save(); g.globalAlpha = a; g.translate(62, y); g.scale(sc, sc);

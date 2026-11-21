@@ -505,7 +505,7 @@ export class World {
     box(b, X0, 0, Z0 + 0.02, X1, 1.2, Z0 + 0.06, dark); box(b, X0, 0, Z1 - 0.06, X1, 1.2, Z1 - 0.02, dark);
     box(nb, X0 - 0.5, H, Z0 - 0.5, X1 + 0.5, H + 0.3, Z1 + 0.5, roofM, true);
     for (let x = X0 + 6; x < X1; x += 12) { box(nb, x - 0.2, H - 0.7, Z0, x + 0.2, H, Z1, roofM, true);
-      for (const z of [-27, -12.75, 3.0]) if (!(z === 3.0 && x < GX + 10)) box(b, x - 0.3, 0, z - 0.3, x + 0.3, H - 0.7, z + 0.3, colM); }
+      for (const z of [-27, -12.75]) box(b, x - 0.3, 0, z - 0.3, x + 0.3, H - 0.7, z + 0.3, colM); }
     // fachada de fora: letreiro GARAGEM em cima do portão
     { const sg = new THREE.Mesh(new THREE.PlaneGeometry(6.5, 0.9), new THREE.MeshBasicMaterial({ map: ctex("garSign", 512, 72, (c) => {
         c.fillStyle = "#1c1e24"; c.fillRect(0, 0, 512, 72); c.fillStyle = "#d9dde2"; c.font = "bold 50px 'DejaVu Sans', sans-serif"; c.textAlign = "center"; c.textBaseline = "middle"; c.fillText("GARAGEM", 256, 38); }), color: new THREE.Color(0.7, 0.7, 0.75) }));
