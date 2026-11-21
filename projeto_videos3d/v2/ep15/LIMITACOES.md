@@ -9,3 +9,4 @@
 - Som: efeitos sintetizados (motor seguindo a velocidade, cliques das lâmpadas, lâmpada do fundo piscando, grilos na rua escura, zumbido das lâmpadas de sódio, porta pneumática, freio, vibração e toque genérico do celular, contagem, passos) e trilha de tensão (`lib/tensao.py`, 24 deixas). Nenhum toque de fabricante.
 - Avisos novos (dado do Instagram do Ep. 1: metade sai por volta dos 36 s): "no final, você decide de novo" (3,6–8 s) e "no final: A ou B" (28–40 s). Ainda não medidos.
 - O motorista continua só de costas e pelos olhos no retrovisor; a fala "ÚLTIMA PARADA" aparece como texto na tela.
+- Revisão 2 (pedido do usuário): saiu a pergunta fixa do topo "PRA ONDE ELE TÁ INDO?". O aviso "NO FINAL: A OU B" (28–40 s) passou para o lugar dela, no topo, com fundo escuro. Versão anterior: `v2/ep15/mograph_v1_bak.py` e `v2/ep15/out/15_ultimo_onibus_parte2_v1_com_pergunta.mp4` (local, fora do git). QC da revisão aprovado (mesmos valores).

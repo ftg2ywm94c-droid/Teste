@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Títulos do vídeo 15 em 1080x1920 (camada RGBA sobre o 3D): gancho "A PORTA FECHOU. / E ELE NÃO PAROU.", selo "VOCÊ DECIDE · PARTE 2"
-com "vocês escolheram B", pergunta fixa no topo "PRA ONDE ELE TÁ INDO?", "ÚLTIMA PARADA.", contagem de 5 segundos, cartões A e B,
+com "vocês escolheram B", "ÚLTIMA PARADA.", contagem de 5 segundos, cartões A e B,
 a escolha ("a mais comentada vira a PARTE 3"), o pedido de envio e o fecho. Faixa dos títulos: y 220-700 (a legenda fica em ~1260-1360).
 Uso: python3 v2/ep15/mograph.py -> v2/ep15/mg/<plano>/NNNN.png."""
 import os, sys
@@ -39,9 +39,8 @@ def frame(t):
         badge(d, 230, env(t, 3.05, 8.0, 0.2, 0.3)); text(d, W / 2, 330, 'vocês escolheram B', WHT, 52, env(t, 3.2, 8.0))
         if t >= 3.6: text(d, W / 2, 400, 'no final, você decide de novo', YEL, 46, env(t, 3.6, 8.0))
         n += 1
-    if 28.0 <= t < 40.0: text(d, W / 2, 196, 'no final: A ou B', WHT, 38, env(t, 28.0, 40.0, 0.3, 0.3)); n += 1   # metade sai ~36 s (IG Ep. 1)
-    if 3.05 <= t < 65.75:                 # pergunta fixa no topo (lição do Things Explained)
-        k = env(t, 3.05, 65.75, 0.3, 0.2); s2 = 'PRA ONDE ELE TÁ INDO?'; fo = f(50); w = d.textlength(s2, font=fo)
+    if 28.0 <= t < 40.0:                  # metade sai ~36 s (IG Ep. 1); a pergunta fixa do topo saiu a pedido do usuário
+        k = env(t, 28.0, 40.0, 0.3, 0.3); s2 = 'NO FINAL: A OU B'; fo = f(50); w = d.textlength(s2, font=fo)
         d.rounded_rectangle(((W - w) / 2 - 28, 112, (W + w) / 2 + 28, 188), 30, fill=(16, 16, 16, int(170 * k)))
         text(d, W / 2, 120, s2, YEL, 50, k, stroke=0); n += 1
     if 51.0 <= t < 52.4: text(d, W / 2, 380, 'ÚLTIMA PARADA.', WHT, 116, env(t, 51.0, 52.4, 0.12, 0.2)); n += 1
