@@ -595,6 +595,7 @@ const fxMirror = (p: Pen, look: number, ahead: boolean) => hi(p, 2, (g) => {
 });
 
 const YOU: Who = { i: 900, o: MODERN(2), okey: "you2" };
+const STRANGER: Who = { i: 901, o: { jacket: "#2e313b", pants: "#1f222a", boots: "#15161b", hat: "cap", cap: "#1b1c22", skin: "#c99067", hair: "#1a1410" }, okey: "stranger" };
 const fwdOf = (cam: CamInfo) => { const x = cam.right.z, z = -cam.right.x, n = Math.hypot(x, z) || 1; return [x / n, z / n]; };
 const buzz = (t: number, a: number, b: number) => (t >= a && t < b ? 0.006 * Math.sign(Math.sin(t * 90)) * ((t - a) % 0.9 < 0.55 ? 1 : 0) : 0);
 /** estado da tela do celular em cada plano */
@@ -667,9 +668,9 @@ const sodiumPools = (id: number, t: number, cam: CamInfo, out: Stage) => {
 const onibus = (id: number, cam: CamInfo, t: number, out: Stage) => {
   const c = SHOTS[id - 1].crowd;
   const SEAT_H = (CUSHION_Y - FLOOR_Y) / SU;
-  const seated = (u: number, v: number, fo: FrontOpts, yaw?: number) => {
+  const seated = (u: number, v: number, fo: FrontOpts, yaw?: number, who: Who = YOU) => {
     const [x, , z] = L(id, t, u + 0.36, 0, v), sway = busMoving(id, t) ? q(0.012 * Math.sin(t * 2.3) + 0.005 * Math.sin(t * 7.1), 300) : 0;
-    const pl = person(cam, YOU, x, FLOOR_Y, z, { side: false, mirror: false }, { ...fo, mode: "sit", seatH: SEAT_H }, {}); pl.roll = sway; if (yaw !== undefined) pl.yaw = yaw;
+    const pl = person(cam, who, x, FLOOR_Y, z, { side: false, mirror: false }, { ...fo, mode: "sit", seatH: SEAT_H }, {}); pl.roll = sway; if (yaw !== undefined) pl.yaw = yaw;
     out.places.push(pl); blob(out, x, FLOOR_Y, z);
   };
   if (["c_leave"].includes(c)) pool(t, out);
@@ -679,7 +680,8 @@ const onibus = (id: number, cam: CamInfo, t: number, out: Stage) => {
     case "c_vibra": phoneOnSeat(id, t, out, cam); break;
     case "c_screen": phoneNear(id, t, out); break;
     case "c_mirror": mirror(id, t, out, 1.15, false); break;
-    case "c_someone": if (someoneAt(id, t)) { const [x, y, z] = L(id, t, -5.38, 1.36, 0.85); out.fx.push({ key: "shadowMan", cw: 800, ch: 1000, draw: fxShadowMan, x, y, z, w: 0.62, h: 0.78 }); } break;
+    case "c_someone": // uma pessoa comum sentada no banco do fundo (no seu lugar): roupa escura, boné baixo, olhando pra frente sem piscar
+      if (someoneAt(id, t)) seated(-5.42, 0.85, { expr: "stern", blink: 0.45, look: 0, headTilt: 0 }, 1.92, STRANGER); break;
     case "c_speak": driver(id, t, out); mirror(id, t, out, t < W.fala ? 1.15 : 0, false); break;
     case "c_you5": seated(FRONT_SEAT[0], FRONT_SEAT[2], { expr: t >= W.cinco ? "shock" : "nervous", blink: lidAt(t, 900, [W.cinco]), look: q(Math.sin(t * 2.2) * 0.6, 4) }); phoneOnSeat(id, t, out, cam); break;
     case "c_optB": { const [x, , z] = L(id, t, (DOOR_U[0] + DOOR_U[1]) / 2, 0, 1.2);

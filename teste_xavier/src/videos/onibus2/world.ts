@@ -556,7 +556,7 @@ export class World {
     const ins = SHOTS[id - 1].inside;
     this.doorVeil.visible = ins && !inGarage(id);
     this.glassOut.side = ins ? THREE.DoubleSide : THREE.FrontSide;
-    if (ins) { this.glassOut.color.setRGB(0.05, 0.07, 0.15); this.glassOut.opacity = off ? 0.5 : 0.93; }
+    if (ins) { this.glassOut.color.setRGB(0.04, 0.05, 0.11); this.glassOut.opacity = inGarage(id) ? (off ? 0.6 : 0.93) : 0.95; }
     else { this.glassOut.color.setRGB(0.5, 0.66, 0.9); this.glassOut.opacity = off ? 0.2 : 0.85; }
     const braking = inGarage(id) && busMoving(id, t) && t > W.o2 + 4;
     this.tail.color.setRGB(braking ? 4.0 : 1.6, braking ? 0.3 : 0.12, braking ? 0.2 : 0.08);

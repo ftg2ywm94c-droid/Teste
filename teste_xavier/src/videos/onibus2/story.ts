@@ -198,9 +198,9 @@ const CAMS: Record<number, Key[]> = {
   // o retrovisor: os olhos dele virados pro fundo
   8: [{ f: 0, s: B(8, [4.35, 2.02, -0.15], [5.85, 2.24, 0.0], 0.003, { fov: 32 }) }],
   // o banco do fundo, onde você estava, sob a única lâmpada acesa
-  9: [{ f: 0, s: B(9, [-2.3, 1.95, -0.1], [-5.42, 1.15, 0.5], 0.0026, { fov: 46 }) }],
+  9: [{ f: 0, s: B(9, [-3.55, 1.6, -0.95], [-5.06, 1.3, 0.85], 0.0022, { fov: 50 }) }],
   // tem alguém sentado lá (mais perto)
-  10: [{ f: 0, s: B(10, [-3.45, 1.62, 0.0], [-5.42, 1.32, 0.7], 0.0034, { fov: 46, roll: 0.012 }) }],
+  10: [{ f: 0, s: B(10, [-3.55, 1.6, -0.95], [-5.06, 1.3, 0.85], 0.0034, { fov: 46, roll: 0.012 }) }],
   // de fora: a entrada da garagem enorme, o ônibus entrando
   11: [{ f: 0, s: Wd(11, [GX - 44, 2.6, 15], [GX - 18, 3.2, 1], 0.0016, { fov: 52 }) }],
   // de cima: dezenas de ônibus parados, letreiros acesos
@@ -248,7 +248,7 @@ type FocL = [number, V3, boolean]; // [cInf, ponto, no referencial do ônibus?]
 const FOC: Record<number, FocL> = {
   1: [6, [3.9, 1.6, 1.3], true], 2: [4, [STOP_X + 6, 1.7, 2.2], false], 3: [10, [6.0, 2.7, 0], true], 4: [4, [10, 1.6, 2], false],
   5: [6, [4.5, 1.4, -0.4], true], 6: [12, PHONE_LOOK, true], 7: [16, PHONE_NEAR[7], true], 8: [14, [5.78, 2.24, 0], true],
-  9: [6, [-5.42, 1.3, 0.85], true], 10: [6, [-5.42, 1.35, 0.85], true], 11: [4, [GX - 22, 2, 2], false], 12: [3, [GX + 8, 1.5, -8], false],
+  9: [10, [-5.06, 1.3, 0.85], true], 10: [10, [-5.06, 1.32, 0.85], true], 11: [4, [GX - 22, 2, 2], false], 12: [3, [GX + 8, 1.5, -8], false],
   13: [10, [GX + 13.4, 1.55, -6.6], false], 14: [5, [3.9, 1.6, 3.0], true], 15: [8, [5.0, 1.7, -0.5], true], 16: [16, PHONE_NEAR[16], true],
   17: [10, [3.91, 1.3, -0.8], true], 18: [16, PHONE_NEAR[18], true], 19: [6, [GARAGE_STOP + 3.9, 1.5, 3.2], false], 20: [4, [GX + 8, 1.6, 1], false],
   21: [5, [GX + 14, 1.8, 0], false],

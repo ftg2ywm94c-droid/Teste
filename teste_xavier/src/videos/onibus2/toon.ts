@@ -464,10 +464,15 @@ export const bodyFront = (p: Pen, o: Outfit, opts: FrontOpts) => {
   if (mode === "sit") {
     for (const side of [-1, 1]) {
       // com seatH: coxa vindo para a frente (encurtada de frente), joelho na beira do assento, canela descendo até o pé no chão
-      const h: P2 = [300 + side * 15 * u, hipY], k: P2 = seatH ? [300 + side * 26 * u, torsoBot + 0.07 * HH] : [300 + side * 36 * u, hipY + 0.2 * HH],
-        f: P2 = seatH ? [300 + side * 28 * u, sole - 8 * u] : [300 + side * 44 * u, sole - 8 * u];
-      p.stroke(curve(h, k, f), legW, legCol);
+      const h: P2 = [300 + side * 15 * u, hipY], k: P2 = seatH ? [300 + side * 40 * u, torsoBot + 0.1 * HH] : [300 + side * 36 * u, hipY + 0.2 * HH],
+        f: P2 = seatH ? [300 + side * 36 * u, sole - 8 * u] : [300 + side * 44 * u, sole - 8 * u];
+      p.stroke(seatH ? [k, [k[0] - side * 2 * u, (k[1] + f[1]) / 2], f] : curve(h, k, f), legW, legCol);
       footStroke(p, [f[0] - side * 2 * u, f[1]], [f[0] + side * 12 * u, f[1] - 5 * u], footW, footCol);
+    }
+    if (seatH) { // o colo: as duas coxas vindo pra frente sobre o assento, joelhos afastados (lê como sentado de frente)
+      const kneeY = torsoBot + 0.1 * HH, lapTop = torsoBot - 0.05 * HH;
+      p.poly([[300 - 30 * u, lapTop], [300 + 30 * u, lapTop], [300 + 47 * u, kneeY + 6 * u], [300 + 33 * u, kneeY + 10 * u], [300, kneeY - 2 * u],
+        [300 - 33 * u, kneeY + 10 * u], [300 - 47 * u, kneeY + 6 * u]], mix(o.pants, INK, 0.3), 4 * u);
     }
   } else if (mode === "fall") {
     const legs: [P2, P2, P2][] = [
@@ -514,7 +519,8 @@ export const bodyFront = (p: Pen, o: Outfit, opts: FrontOpts) => {
   const rifle = !!o.rifle && (mode === "march" || mode === "stand" || mode === "stroll");
   type Arm = { pts: [P2, P2, P2]; front: boolean };
   const arms: Arm[] = [];
-  if (mode === "sit") for (const side of [-1, 1]) arms.push({ pts: [sh(side), [tcx + side * (1.1 * T.a + 6 * u), sh(side)[1] + 0.4 * HH], [tcx + side * (1.2 * T.a + 10 * u), torsoBot + 0.04 * HH]], front: false });
+  if (mode === "sit" && seatH) for (const side of [-1, 1]) arms.push({ pts: [sh(side), [tcx + side * (1.05 * T.a + 6 * u), sh(side)[1] + 0.42 * HH], [300 + side * 38 * u, torsoBot + 0.06 * HH]], front: true }); // mãos nos joelhos
+  else if (mode === "sit") for (const side of [-1, 1]) arms.push({ pts: [sh(side), [tcx + side * (1.1 * T.a + 6 * u), sh(side)[1] + 0.4 * HH], [tcx + side * (1.2 * T.a + 10 * u), torsoBot + 0.04 * HH]], front: false });
   else if (mode === "fall") for (const side of [-1, 1]) arms.push({ pts: [sh(side), [tcx + side * (1.15 * T.a + 12 * u), sh(side)[1] - 0.25 * HH], [tcx + side * (1.3 * T.a + 24 * u), sh(side)[1] - 0.68 * HH]], front: false });
   else {
     arms.push({ pts: prop === "shako" ? hang(-1, 0) : hang(-1, -sw), front: false });
