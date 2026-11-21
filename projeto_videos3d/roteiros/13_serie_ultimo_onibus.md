@@ -15,4 +15,13 @@ escolhido e os fatos da história, para nenhum episódio contradizer o anterior.
 ## Escolhas
 | Episódio | Pergunta | A | B | Venceu |
 |---|---|---|---|---|
-| 1 | Descer no seu ponto ou ficar no ônibus? | descer no seu ponto | ficar e descobrir pra onde ele vai | (aguardando os comentários) |
+| 1 | Descer no seu ponto ou ficar no ônibus? | descer no seu ponto | ficar e descobrir pra onde ele vai | **B** (informado pelo usuário em 21/11) |
+| 2 | Atender a ligação ou descer e correr pela garagem? | atender a ligação | descer e correr pela garagem | (aguardando) |
+
+## Fatos fixos acrescentados no Ep. 2
+- A porta fechou com você dentro. O ônibus passou direto pelo seu ponto. O letreiro mudou para "FORA DE SERVIÇO".
+- Saiu da rota para uma rua sem poste aceso. As luzes do teto apagaram da frente para o fundo.
+- 00:16: "BOA ESCOLHA. AGORA NÃO OLHA PRO RETROVISOR."
+- Pelo retrovisor, o motorista olhava para o banco do fundo, onde você estava antes. Ali havia uma silhueta (não revelada).
+- O ônibus entrou numa garagem com dezenas de ônibus parados, todos com o letreiro aceso e sem motorista.
+- O motorista falou pela primeira vez: "Última parada." O celular desconhecido começou a tocar.
