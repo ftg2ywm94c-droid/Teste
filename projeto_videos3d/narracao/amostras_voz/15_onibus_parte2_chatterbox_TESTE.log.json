@@ -1,0 +1,184 @@
+[
+ {
+  "i": 0,
+  "frase": "A porta fecha com você lá dentro.",
+  "score": 1.0,
+  "ouvido": " A porta fecha com você lá dentro.",
+  "palavras_s": 2.9
+ },
+ {
+  "i": 1,
+  "frase": "E o ônibus passa direto pelo seu ponto.",
+  "score": 0.988,
+  "ouvido": " e o ônibus passa direto pelo seu ponto.",
+  "palavras_s": 3.18
+ },
+ {
+  "i": 2,
+  "frase": "No letreiro, NOTURNO vira FORA DE SERVIÇO.",
+  "score": 1.0,
+  "ouvido": " No letreiro, Noturno vira fora de serviço.",
+  "palavras_s": 2.56
+ },
+ {
+  "i": 3,
+  "frase": "Ele sai da rota e entra numa rua sem nenhum poste aceso.",
+  "score": 0.984,
+  "ouvido": " Ele sai da rota e entra numa rua sem nenhum poste aceso.",
+  "palavras_s": 3.21
+ },
+ {
+  "i": 4,
+  "frase": "As luzes do teto começam a apagar, uma por uma, da frente pro fundo.",
+  "score": 0.897,
+  "ouvido": " As luzes do teto começam a apagar, uma por uma, da frente para o fundo.",
+  "palavras_s": 2.84
+ },
+ {
+  "i": 5,
+  "frase": "O celular vibra no banco da frente.",
+  "score": 0.994,
+  "ouvido": " O celular vibra no banco da frente.",
+  "palavras_s": 3.14
+ },
+ {
+  "i": 6,
+  "frase": "Boa escolha.",
+  "score": 1.0,
+  "ouvido": " Boa Escolha!",
+  "palavras_s": 2.26
+ },
+ {
+  "i": 7,
+  "frase": "Agora não olha pro retrovisor.",
+  "score": 0.727,
+  "ouvido": " Agora não olha para o retrovisor.",
+  "palavras_s": 2.56
+ },
+ {
+  "i": 8,
+  "frase": "Você olha.",
+  "score": 1.0,
+  "ouvido": " Você olha.",
+  "palavras_s": 2.64
+ },
+ {
+  "i": 9,
+  "frase": "O motorista não tá te encarando.",
+  "score": 0.833,
+  "ouvido": " o motorista não está te encarando.",
+  "palavras_s": 3.07
+ },
+ {
+  "i": 10,
+  "frase": "Ele tá olhando pro banco do fundo.",
+  "score": 0.667,
+  "ouvido": " Ele está olhando para o Banco do Fundo.",
+  "palavras_s": 2.34
+ },
+ {
+  "i": 11,
+  "frase": "Pro lugar onde você tava sentado agora há pouco.",
+  "score": 0.722,
+  "ouvido": " para o lugar onde você estava sentado agora há pouco.",
+  "palavras_s": 3.2
+ },
+ {
+  "i": 12,
+  "frase": "E tem alguém sentado lá.",
+  "score": 0.977,
+  "ouvido": " e tem alguém sentado lá.",
+  "palavras_s": 3.25
+ },
+ {
+  "i": 13,
+  "frase": "O ônibus entra numa garagem enorme.",
+  "score": 1.0,
+  "ouvido": " O ônibus entra numa garagem enorme.",
+  "palavras_s": 2.49
+ },
+ {
+  "i": 14,
+  "frase": "Dezenas de ônibus parados, todos com o letreiro aceso, e nenhum motorista.",
+  "score": 1.0,
+  "ouvido": " Dezenas de ônibus parados, todos com o letreiro aceso e nenhum motorista.",
+  "palavras_s": 2.54
+ },
+ {
+  "i": 15,
+  "frase": "A porta abre.",
+  "score": 0.991,
+  "ouvido": " A porta abre.",
+  "palavras_s": 3.16
+ },
+ {
+  "i": 16,
+  "frase": "Pela primeira vez, o motorista fala: última parada.",
+  "score": 1.0,
+  "ouvido": " Pela primeira vez, o motorista fala. Última parada.",
+  "palavras_s": 2.54
+ },
+ {
+  "i": 17,
+  "frase": "E o celular começa a tocar.",
+  "score": 0.961,
+  "ouvido": " e o celular começa a tocar.",
+  "palavras_s": 3.36
+ },
+ {
+  "i": 18,
+  "frase": "Número desconhecido.",
+  "score": 0.948,
+  "ouvido": " número desconhecido.",
+  "palavras_s": 1.55
+ },
+ {
+  "i": 19,
+  "frase": "Você tem cinco segundos.",
+  "score": 1.0,
+  "ouvido": " Você tem cinco segundos.",
+  "palavras_s": 2.38
+ },
+ {
+  "i": 20,
+  "frase": "Opção A: você atende a ligação.",
+  "score": 1.0,
+  "ouvido": " Opção A, você atende a ligação.",
+  "palavras_s": 2.67
+ },
+ {
+  "i": 21,
+  "frase": "Opção B: você desce e corre pela garagem.",
+  "score": 1.0,
+  "ouvido": " opção B. Você desce e corre pela garagem.",
+  "palavras_s": 2.65
+ },
+ {
+  "i": 22,
+  "frase": "Comenta A ou B.",
+  "score": 0.99,
+  "ouvido": " Comenta A ou B.",
+  "palavras_s": 3.16
+ },
+ {
+  "i": 23,
+  "frase": "A mais comentada vira a parte três.",
+  "score": 0.857,
+  "ouvido": " A mais comentada vira a parte 3.",
+  "palavras_s": 2.94
+ },
+ {
+  "i": 24,
+  "frase": "Manda pra quem escolheria diferente de você e se inscreve pra não perder.",
+  "score": 0.846,
+  "ouvido": " Manda para quem escolheria diferente de você e se inscreve para não perder.",
+  "palavras_s": 2.98
+ },
+ {
+  "i": 25,
+  "frase": "Você decide...",
+  "score": 1.0,
+  "ouvido": " você decide.",
+  "palavras_s": 2.15
+ }
+]
