@@ -5,6 +5,13 @@
 - `scripts/add_narration.py`: MP3 → MP4 com legenda sincronizada, ducking e −14 LUFS.
 - Para recuperar: `git checkout be24c75 -- projeto_videos3d` (a tag não pôde ser enviada ao GitHub: o acesso desta sessão só permite o branch de trabalho).
 
+## v0.18 — vídeo 15 "O último ônibus · Parte 2" (continuação do 13, a maioria escolheu B) (2026-11-21)
+- Cenas na skill Xavier (`teste_xavier/src/videos/onibus2/`, composição `Onibus2Short`), 21 planos cortados nas palavras do MP3 do usuário, render nativo 1080x1920 (2279 quadros).
+- Novidades: letreiro trocando para FORA DE SERVIÇO, luzes do teto apagando uma por uma, rua sem postes, garagem com 18 ônibus parados e luz de sódio, passageiro sentado no banco do fundo (desenho da pessoa sentada melhorado no `toon.ts` da cópia onibus2).
+- A silhueta preta foi trocada por uma pessoa comum sentada, a pedido do usuário.
+- Avisos de que há escolha no fim, guiados pelo Instagram do Ep. 1 (`analysis/canal/2026-11-21_instagram_eselab3d.md`).
+- QC aprovado: −13,9 LUFS, TP −1,8, correlação da narração 0,959, atraso e deriva 0 ms. Thumbnail `thumbnails/15_ultimo_onibus_parte2_thumb.png/.jpg`. Pacote de postagem em `v2/ep15/POSTAGEM.md`.
+
 ## v0.17 — vídeo 14 "Vendaval · Ep. 2" (continuação do 12, a maioria escolheu B) (2026-11-18)
 - Cenas na skill Xavier (`teste_xavier/src/videos/vendaval2/`, composição `Vendaval2Short`), 20 planos cortados nas palavras-chave, render nativo 1080x1920 (2022 quadros).
 - Queda da árvore com física de haste rígida girando na base, impacto no "estrondo", destroços com trajetória balística, goteira com gotas em queda livre e ondas na poça, fumaça, fio faiscando, porta do banheiro com dobradiça.
