@@ -8,7 +8,7 @@ _fr = [s.strip() for s in re.split(r'(?<=[.!?…])\s+', open(txt).read().strip()
 sents, cur = [], ""
 for f in _fr:
     brk = f.lower().startswith(("opção", "comenta", "manda", "você decide"))
-    if cur and (brk or len((cur + " " + f).split()) > 24): sents.append(cur); cur = f
+    if cur and (brk or len((cur + " " + f).split()) > int(os.environ.get('MAXW', 24))): sents.append(cur); cur = f
     else: cur = (cur + " " + f).strip()
     if f.lower().startswith("opção"): sents.append(cur); cur = ""
 if cur: sents.append(cur)
@@ -38,7 +38,7 @@ for i, s in enumerate(sents):
     best = None
     for k in range(N):
         torch.manual_seed(100 * i + k)
-        a = trim(m.generate(text=s, reference_wav_path=ref, prompt_wav_path=ref, prompt_text=reftext, cfg_value=1.6, inference_timesteps=20))
+        a = trim(m.generate(text=s, reference_wav_path=ref, prompt_wav_path=ref, prompt_text=reftext, cfg_value=float(os.environ.get('CFG', 1.6)), inference_timesteps=int(os.environ.get('STEPS', 20))))
         sc, hyp, hz, wps = score(a, s)
         if best is None or sc > best[0]: best = (sc, a, hyp, hz, wps)
         if sc > 0.96: break
