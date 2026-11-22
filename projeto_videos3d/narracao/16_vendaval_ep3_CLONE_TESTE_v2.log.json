@@ -1,0 +1,58 @@
+[
+ {
+  "i": 0,
+  "frase": "Seis por cento. Você liga pros bombeiros. Cento e noventa e três. Chama uma vez. Duas. Atendem. Você fala tudo: o endereço, a árvore, o fio soltando faísca, a vizinha pedindo socorro.",
+  "score": 0.78,
+  "ouvido": "6%, você liga para os bombeiros, 193, chama uma vez, duas, atendem.  Você fala tudo.  O endereço, a árvore, o fio soltando faísca, a vizinha pedindo socorro.",
+  "f0": 178,
+  "palavras_s": 2.3
+ },
+ {
+  "i": 1,
+  "frase": "Do outro lado, uma voz calma: não chega perto do fio, fica onde você está, a equipe já tá indo. Três por cento. A ligação cai. O celular apaga. Agora é só escuridão e chuva. Lá longe, uma sirene. Ela vai chegando, chegando... e para.",
+  "score": 0.955,
+  "ouvido": "Do outro lado, uma voz calma. Não chega perto do fio. Fica onde você está. A equipe  já está indo. 3%. A ligação cai. O celular apaga. Agora é só escuridão e chuva. Lá  longe, uma sirene. Ela vai chegando, chegando e para...",
+  "f0": 205,
+  "palavras_s": 2.78
+ },
+ {
+  "i": 2,
+  "frase": "Silêncio. Aí batem na porta da frente. Forte. É a vizinha, gritando: abre! O meu filho tá preso, eu não consigo tirar ele sozinha! Entre você e a porta tem a sala inteira no escuro. E no meio dela, o fio. Ainda soltando faísca.",
+  "score": 0.989,
+  "ouvido": "Silêncio!  Aí batem na porta da frente, forte, é a vizinha gritando.  Abre!  O meu filho está preso, eu não consigo tirar ele sozinha.  Entre você e a porta tem a sala inteira no escuro, e no meio dela, o fio, ainda soltando  o faísca.",
+  "f0": 198,
+  "palavras_s": 2.79
+ },
+ {
+  "i": 3,
+  "frase": "Opção A: você atravessa a sala e abre a porta pra ela.",
+  "score": 1.0,
+  "ouvido": "Opção A. Você atravessa a sala e abre a porta para ela.",
+  "f0": 198,
+  "palavras_s": 3.09
+ },
+ {
+  "i": 4,
+  "frase": "Opção B: você fica no banheiro e grita pra ela esperar os bombeiros na rua.",
+  "score": 1.0,
+  "ouvido": "Opção B. Você fica no banheiro e grita para ela esperar os bombeiros na rua.",
+  "f0": 195,
+  "palavras_s": 3.11
+ },
+ {
+  "i": 5,
+  "frase": "Comenta A ou B. A mais comentada vira o episódio quatro.",
+  "score": 0.952,
+  "ouvido": "Comenta A ou B. A mais comentada vira o episódio...",
+  "f0": 211,
+  "palavras_s": 3.21
+ },
+ {
+  "i": 6,
+  "frase": "Manda pra quem escolheria diferente de você e se inscreve pra não perder. E se...",
+  "score": 0.996,
+  "ouvido": "Manda pra quem escolheria diferente de você e se inscreve pra não perder.  E se",
+  "f0": 216,
+  "palavras_s": 3.33
+ }
+]
