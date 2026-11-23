@@ -5,6 +5,13 @@
 - `scripts/add_narration.py`: MP3 → MP4 com legenda sincronizada, ducking e −14 LUFS.
 - Para recuperar: `git checkout be24c75 -- projeto_videos3d` (a tag não pôde ser enviada ao GitHub: o acesso desta sessão só permite o branch de trabalho).
 
+## v0.19 — vídeo 16 "Vendaval · Ep. 3" (continuação do 14, a maioria escolheu B) (2026-11-23)
+- Cenas na skill Xavier (`teste_xavier/src/videos/vendaval3/`, composição `Vendaval3Short`), 23 planos cortados nas palavras do MP3 do usuário, render nativo 1080x1920 (2308 quadros; render retomado uma vez após o limite de tempo).
+- Novidades: tela do celular com discagem, cronômetro da chamada, onda de áudio, bateria 3% e tela apagando; escurecimento da cena quando o celular apaga; sirene vermelha se aproximando e parando; vizinha com lanterna batendo na porta; paredes novas na sala.
+- Sem pergunta fixa no topo; avisos "no final, você decide de novo" e "NO FINAL: A OU B"; fecho "EP. 4: O FINAL".
+- Conferência pós-render: rajada de faíscas forçada na palavra "faísca" (imagem e som), quadros 1640–1689 refeitos.
+- QC aprovado: −13,9 LUFS, TP −1,8, correlação da narração 0,967, deriva 0 ms. Thumbnail `thumbnails/16_vendaval_ep3_thumb.png/.jpg`. Pacote de postagem em `v2/ep16/POSTAGEM.md`.
+
 ## v0.18 — vídeo 15 "O último ônibus · Parte 2" (continuação do 13, a maioria escolheu B) (2026-11-21)
 - Cenas na skill Xavier (`teste_xavier/src/videos/onibus2/`, composição `Onibus2Short`), 21 planos cortados nas palavras do MP3 do usuário, render nativo 1080x1920 (2279 quadros).
 - Novidades: letreiro trocando para FORA DE SERVIÇO, luzes do teto apagando uma por uma, rua sem postes, garagem com 18 ônibus parados e luz de sódio, passageiro sentado no banco do fundo (desenho da pessoa sentada melhorado no `toon.ts` da cópia onibus2).
