@@ -61,7 +61,7 @@ export const sirenX = (t: number) => (t < W.ela ? -95 : -95 + 72 * easeOut((t - 
 export const sirenK = (t: number) => (t < W.sirene - 0.6 ? 0 : t < W.silencio ? clamp01((t - W.sirene + 0.6) / 0.8) : Math.max(0, 1 - (t - W.silencio) / 1.0));
 export const sirenPulse = (t: number) => 0.55 + 0.45 * Math.sign(Math.sin(t * 2 * Math.PI * 2.2));
 /** escuridão (0..1) dentro do banheiro depois que o celular apaga */
-export const darkAt = (id: number, t: number) => (id === 10 ? smooth((t - W.apaga) / 0.25) : [11, 14, 21].includes(id) ? 1 : 0);
+export const darkAt = (id: number, t: number) => (id === 10 ? smooth((t - W.apaga) / 0.25) : [11, 14, 21].includes(id) ? 1 : [18, 19, 20].includes(id) ? 0.55 : 0);
 /** batidas na porta da frente */
 export const KNOCKS = [W.batem, W.batem + 0.3, W.batem + 0.6, W.forte, W.forte + 0.28, W.forte + 0.56, W.abre - 0.2];
 
