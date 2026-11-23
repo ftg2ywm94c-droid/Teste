@@ -103,3 +103,10 @@ O que fazer com cada leitura:
 | 17/11 | Vendaval Ep. 1 (A/B) | primeiro episódio com escolha | 1.257 views em 15 h, 5 comentários, +10 inscritos |
 | 20/11 18:15 | Ônibus Ep. 1 | legenda do playbook (escolha na 1ª linha + "Manda pra…"), 5 hashtags de tema | Instagram (insights do dono, vidIQ, 21/11): 172.742 views, 3.227 comentários, 52% assistido, pulo 26% — 36x a média do perfil |
 | 18/11 11:29 | Vendaval Ep. 2 | título 86/100, legenda com "Manda pra…" | ~1 dia: 1.242 views, 8 comentários |
+
+## 7. Monetização (decisão de 23/11/2026)
+- Os episódios ficam limpos: nada de anúncio de curso ou produto dentro deles. Proteger a retenção e a escolha A/B do fim.
+- Antes de vender qualquer coisa, esperar para ver se os resultados se repetem nos próximos episódios.
+- Quando chegar a hora: testar a demanda com 2–3 posts de bastidores separados ("comenta QUERO") e só construir o produto se a resposta justificar.
+- Se virar produto, vender o método (formato, roteiros, playbook com dados reais) e não o código. Antes, conferir a licença da skill e da voz. Sem promessa de resultado.
+- Retorno sem curso: acompanhar os requisitos do YouTube Shorts (YPP) e das recompensas do TikTok, e publis com marcas que combinem com o público de suspense.
