@@ -53,7 +53,9 @@ export const lampOn = (_id: number, _t: number) => false;
 export const BOLTS = [11.0, 44.6, 68.2];
 /** a faísca do fio solto (true = faiscando neste quadro) */
 const hh = (i: number) => { const x = Math.sin(i * 127.1 + 31.7) * 43758.5453; return x - Math.floor(x); };
-export const sparkAt = (t: number) => { const n = Math.floor(t * 15); return hh(n) < 0.42 || (hh(n + 77) < 0.25 && (t * 30) % 2 < 1); };
+/** na palavra "faísca" a faísca é forçada (rajada 2 de cada 3 quadros), para a imagem bater com a narração */
+const sparkBurst = (t: number) => t >= W.faisca && t < W.faisca + 0.98;
+export const sparkAt = (t: number) => { if (sparkBurst(t)) return Math.floor(t * 30 + 1e-6) % 3 < 2; const n = Math.floor(t * 15); return hh(n) < 0.42 || (hh(n + 77) < 0.25 && (t * 30) % 2 < 1); };
 /** a porta do banheiro fica fechada no episódio 3 (você fica lá dentro) */
 export const doorAt = (_id: number, _t: number) => 0;
 /** sirene: x do carro na rua (vem de longe pela esquerda e para), 0..1 de intensidade e o pulso das luzes */

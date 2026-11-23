@@ -216,6 +216,7 @@ for tk in (11.0, 44.6, 68.2): put(fade(load('chuva_trovao.flac', 0, 3.0), 0.02, 
 EV.append((11.0, 'trovões nos relâmpagos'))
 # faíscas do fio (mesma função do story.ts)
 def spark_at(t):
+    if 54.82 <= t < 54.82 + 0.98: return int(t * 30 + 1e-6) % 3 < 2  # rajada na palavra "faísca" (igual ao story.ts)
     h = lambda i: (np.sin(i * 127.1 + 31.7) * 43758.5453) % 1; n = int(t * 15)
     return h(n) < 0.42 or (h(n + 77) < 0.25 and (t * 30) % 2 < 1)
 for a_, b_, g in [(12.1, 13.76, 0.55), (47.88, 51.32, 0.25), (51.32, 56.38, 0.55), (56.38, 60.92, 0.35)]:
