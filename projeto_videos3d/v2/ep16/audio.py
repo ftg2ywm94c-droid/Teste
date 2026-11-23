@@ -1,0 +1,251 @@
+#!/usr/bin/env python3
+"""Som do vídeo 16 (Vendaval · Ep. 3) — regra do ESTILO §9: efeitos com presença, canal próprio.
+Sons reais CC0 (assets/sfx_cc0) + sintetizados: tempestade, a árvore rangendo e caindo, vidro, telhas, silêncio, goteira e
+faíscas sincronizadas com a imagem, vibração do celular, discagem do 193. Abafado dentro do banheiro.
+Saída: v2/ep16/out/sfx.wav, music.wav, sfx_events.json."""
+import os, subprocess, numpy as np
+from scipy.io import wavfile
+from scipy.signal import butter, sosfilt
+
+SR = 48000; END = 76.93; N = int(END * SR)
+HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(os.path.dirname(HERE))
+S = os.path.join(ROOT, 'assets', 'sfx_cc0'); OUT = os.path.join(HERE, 'out'); os.makedirs(OUT, exist_ok=True)
+rng = np.random.default_rng(16)
+
+def load(name, t0=0.0, d=None):
+    c = ['ffmpeg', '-v', 'error', '-ss', str(t0), '-i', os.path.join(S, name)] + (['-t', str(d)] if d else []) + ['-ac', '2', '-ar', str(SR), '-f', 'f32le', '-']
+    return np.frombuffer(subprocess.run(c, capture_output=True, check=True).stdout, np.float32).reshape(-1, 2).astype(np.float64)
+def loop(name, d):
+    x = load(name); reps = int(np.ceil(d * SR / len(x))) + 1; return np.tile(x, (reps, 1))[:int(d * SR)]
+def fade(x, a=0.05, b=0.3):
+    x = x.copy(); na, nb = min(len(x), int(a * SR)), min(len(x), int(b * SR))
+    x[:na] *= np.linspace(0, 1, na)[:, None]; x[len(x) - nb:] *= np.linspace(1, 0, nb)[:, None]; return x
+sos = lambda k, f, o=2: butter(o, f, k, fs=SR, output='sos')
+bp = lambda x, lo, hi: sosfilt(sos('bandpass', [lo, hi]), x, axis=0)
+lp = lambda x, f: sosfilt(sos('lowpass', f), x, axis=0)
+def env(d, a=0.003, k=6.0):
+    t = np.arange(int(d * SR)) / SR; return np.minimum(1, t / max(a, 1e-4)) * np.exp(-k * t)
+def st(m, pan=0.0): return np.stack([m * np.sqrt((1 - pan) / 2), m * np.sqrt((1 + pan) / 2)], 1)
+def tone(f, d, k=5.0, a=0.003): t = np.arange(int(d * SR)) / SR; return np.sin(2 * np.pi * f * t) * env(d, a, k)
+
+sfx = np.zeros((N, 2)); mus = np.zeros((N, 2)); EV = []
+def put(x, at, g=1.0, bus=None, tag=''):
+    b = sfx if bus is None else bus; i = int(at * SR)
+    if i < 0: x = x[-i:]; i = 0
+    n = min(len(x), N - i)
+    if n > 0: b[i:i + n] += x[:n] * g
+    if tag: EV.append((round(at, 2), tag))
+
+# ---- sintetizados ----
+def vibra(d=0.9):        # celular vibrando: 2 pulsos de zumbido 160 Hz com chacoalhar
+    t = np.arange(int(d * SR)) / SR; gate = ((t % 0.45) < 0.28).astype(float)
+    m = (np.sin(2 * np.pi * 160 * t) + 0.4 * np.sign(np.sin(2 * np.pi * 320 * t))) * gate
+    return st(lp(m, 900) * 0.5)
+def snap():              # encaixe magnético: clique seco + baque grave + tilintar metálico curto
+    c = rng.standard_normal(int(0.02 * SR)) * env(0.02, 0.0005, 260)
+    th = tone(70, 0.25, 18) * 0.9
+    ring = sum(tone(f, 0.35, 16) * g for f, g in [(2350, 0.18), (3720, 0.1), (5100, 0.06)])
+    m = np.zeros(int(0.4 * SR)); m[:len(c)] += c * 1.4; m[:len(th)] += th; m[:len(ring)] += ring
+    return st(m)
+def bipe(f=2200, d=0.09): return st(tone(f, d, 8) * 0.5)
+def erro():              # bipe de erro duplo grave
+    m = np.zeros(int(0.5 * SR)); a = np.sign(tone(330, 0.16, 3)) * env(0.16, 0.002, 4) * 0.35
+    m[:len(a)] += a; m[int(0.22 * SR):int(0.22 * SR) + len(a)] += a; return st(lp(m, 2500))
+def chiado(d):           # rádio sintonizando: ruído em banda com varredura
+    x = bp(rng.standard_normal(int(d * SR)), 600, 3200) * 0.25
+    t = np.arange(len(x)) / SR; sw = np.sin(2 * np.pi * (300 + 900 * t / d) * t) * 0.12 * (t > d * 0.6)
+    return fade(st(x + sw), 0.05, 0.25)
+def mensagem(): return st(np.concatenate([tone(1320, 0.09, 14), tone(1760, 0.18, 10)]) * 0.45)
+def carga():             # carga começando: arpejo ascendente suave
+    m = np.zeros(int(0.9 * SR))
+    for i, f in enumerate((523, 659, 784, 1047)): x = tone(f, 0.5, 6) * 0.3; m[int(i * 0.09 * SR):int(i * 0.09 * SR) + len(x)] += x
+    return st(m)
+def lanterna(): return load('clique_3.flac')
+def relogio(d, bpm=120):
+    m = np.zeros(int(d * SR)); step = 60 / bpm
+    for k in range(int(d / step)):
+        x = tone(1900 if k % 2 else 1500, 0.03, 60) * 0.5; i = int(k * step * SR); m[i:i + len(x)] += x[:len(m) - i]
+    return st(m)
+
+# ---- sintetizados v2: impactos de título, power down/up, sinal perdido, sino do CTA ----
+def boom(d=1.4, f0=58, g=1.0):      # grave de impacto (sub com queda de afinação)
+    t = np.arange(int(d * SR)) / SR; f = f0 * (1 + 0.6 * np.exp(-t * 9))
+    return st(np.sin(2 * np.pi * np.cumsum(f) / SR) * env(d, 0.002, 3.2) * g)
+def riser(d=0.45):                  # whoosh de entrada (ruído filtrado que sobe)
+    x = bp(rng.standard_normal(int(d * SR)), 300, 6000); t = np.linspace(0, 1, len(x))
+    return fade(st(x * t ** 2.2 * 0.5), 0.01, 0.03)
+def hit(name='impacto_hit_01.flac', g=1.0, f0=58):
+    h = load(name); b = boom(1.2, f0); m = np.zeros((max(len(h), len(b)), 2)); m[:len(h)] += h * g; m[:len(b)] += b * 0.8; return m
+def sweep(f0, f1, d, g=0.4):        # power down (f0>f1) / power up (f0<f1): dente de serra filtrado
+    t = np.arange(int(d * SR)) / SR; f = f0 * (f1 / f0) ** (t / d); ph = 2 * np.pi * np.cumsum(f) / SR
+    m = lp(((ph / np.pi) % 2 - 1) * 0.5 + np.sin(ph) * 0.5, 1800) * g
+    return fade(st(m), 0.02, 0.15)
+def sinal_perdido(): return st(np.concatenate([tone(f, 0.14, 9) * 0.4 for f in (988, 784, 523)]))
+def sino(): return st(sum(tone(f, 1.6, 2.6) * g for f, g in [(1318.5, 0.35), (2637, 0.12), (3956, 0.05)]))
+def ondas_cliques(t0, n=9, dt=0.11):  # luzes acendendo em onda pela rua: cliques espalhados no estéreo
+    for k in range(n):
+        c = load(('clique_1.flac', 'clique_3.flac', 'clique_5.flac', 'clique_7.flac')[k % 4]); pan = -0.8 + 1.6 * k / (n - 1)
+        put(np.stack([c[:, 0] * np.sqrt((1 - pan) / 2), c[:, 1] * np.sqrt((1 + pan) / 2)], 1), t0 + k * dt, 1.0)
+
+# ---- sintetizados v2: impactos de título, power down/up, sinal perdido, sino do CTA ----
+def boom(d=1.4, f0=58, g=1.0):      # grave de impacto (sub com queda de afinação)
+    t = np.arange(int(d * SR)) / SR; f = f0 * (1 + 0.6 * np.exp(-t * 9))
+    return st(np.sin(2 * np.pi * np.cumsum(f) / SR) * env(d, 0.002, 3.2) * g)
+def riser(d=0.45):                  # whoosh de entrada (ruído filtrado que sobe)
+    x = bp(rng.standard_normal(int(d * SR)), 300, 6000); t = np.linspace(0, 1, len(x))
+    return fade(st(x * t ** 2.2 * 0.5), 0.01, 0.03)
+def hit(name='impacto_hit_01.flac', g=1.0, f0=58):
+    h = load(name); b = boom(1.2, f0); m = np.zeros((max(len(h), len(b)), 2)); m[:len(h)] += h * g; m[:len(b)] += b * 0.8; return m
+def sweep(f0, f1, d, g=0.4):        # power down (f0>f1) / power up (f0<f1): dente de serra filtrado
+    t = np.arange(int(d * SR)) / SR; f = f0 * (f1 / f0) ** (t / d); ph = 2 * np.pi * np.cumsum(f) / SR
+    m = lp(((ph / np.pi) % 2 - 1) * 0.5 + np.sin(ph) * 0.5, 1800) * g
+    return fade(st(m), 0.02, 0.15)
+def sinal_perdido(): return st(np.concatenate([tone(f, 0.14, 9) * 0.4 for f in (988, 784, 523)]))
+def sino(): return st(sum(tone(f, 1.6, 2.6) * g for f, g in [(1318.5, 0.35), (2637, 0.12), (3956, 0.05)]))
+def ondas_cliques(t0, n=9, dt=0.11):  # luzes acendendo em onda pela rua: cliques espalhados no estéreo
+    for k in range(n):
+        c = load(('clique_1.flac', 'clique_3.flac', 'clique_5.flac', 'clique_7.flac')[k % 4]); pan = -0.8 + 1.6 * k / (n - 1)
+        put(np.stack([c[:, 0] * np.sqrt((1 - pan) / 2), c[:, 1] * np.sqrt((1 + pan) / 2)], 1), t0 + k * dt, 1.0)
+
+
+# ---- vídeo 12 ----
+import sys; sys.path.insert(0, HERE); import plan as P
+def shot_at(t):
+    for s in P.SHOTS:
+        if s.t0 <= t < s.t1: return s.name
+    return P.SHOTS[-1].name
+BATH = ('S01', 'S02', 'S03', 'S07', 'S08', 'S09', 'S10', 'S11', 'S14', 'S21'); ROOM = ('S05', 'S15', 'S18', 'S19', 'S20')
+def wind_level(t):   # igual ao story.ts: depois da queda, só vento fraco e chuva
+    return 0.32
+def bed_mask(kind):
+    """ganho por amostra para ambientes externos: 1 fora, 0.45 dentro (abafado), 0.25 no banheiro"""
+    t = np.arange(N) / SR; g = np.ones(N)
+    for s in P.SHOTS:
+        a, b = int(s.t0 * SR), int(s.t1 * SR)
+        g[a:b] = 0.3 if s.name.startswith(BATH) else (0.65 if s.name.startswith(ROOM) else 1.0)
+    k = int(0.06 * SR); g = np.convolve(g, np.ones(k) / k, 'same'); return g
+def muffle_split(x):
+    """mistura de versão aberta e abafada conforme o plano"""
+    g = bed_mask('x'); lo = lp(x, 420); return x * g[:, None] + lo * (1 - g[:, None]) * 0.9
+def wind(d):            # vento: ruído em duas bandas com rajadas lentas e uivo
+    n = int(d * SR); t = np.arange(n) / SR; x = rng.standard_normal(n)
+    gust = 0.55 + 0.45 * np.sin(2 * np.pi * 0.17 * t + 1) * np.sin(2 * np.pi * 0.071 * t + 2) + 0.25 * np.sin(2 * np.pi * 0.43 * t)
+    low = lp(x, 180) * 2.2; mid = bp(x, 350, 1400) * 0.7
+    howl = np.sin(2 * np.pi * np.cumsum(520 + 260 * np.sin(2 * np.pi * 0.11 * t) + 120 * gust) / SR) * 0.04 * gust
+    m = (low + mid * np.clip(gust, 0, 1.4)) * (0.6 + 0.4 * gust) + howl
+    return np.stack([m, np.roll(m, 900)], 1) * 0.5
+def assobio(d):         # assobio fino na fresta: ruído em banda estreita com afinação oscilando
+    n = int(d * SR); t = np.arange(n) / SR; x = rng.standard_normal(n); out = np.zeros(n)
+    for k in range(0, n, 2400):
+        f0 = 1500 + 350 * np.sin(2 * np.pi * 0.7 * t[k]) + 150 * np.sin(2 * np.pi * 2.3 * t[k]); seg = x[k:k + 2400]
+        out[k:k + len(seg)] = bp(seg, f0 * 0.97, f0 * 1.03)
+    tone_ = np.sin(2 * np.pi * np.cumsum(1500 + 350 * np.sin(2 * np.pi * 0.7 * t)) / SR) * 0.15
+    return fade(st((out * 3 + tone_) * 0.6), 0.3, 0.4)
+def rangido(d=1.1, f0=70):  # madeira rangendo: dente de serra com afinação tremida, filtrado
+    n = int(d * SR); t = np.arange(n) / SR; f = f0 * (1 + 0.25 * np.sin(2 * np.pi * 3.1 * t) + 0.1 * rng.standard_normal(n).cumsum() / np.sqrt(n))
+    ph = np.cumsum(f) / SR; m = bp(((ph % 1) * 2 - 1), 120, 900) * env(d, 0.15, 1.8)
+    return st(m * 0.9)
+def estalo():           # estalo grave: rachado seco + grave ressonante + rangido
+    c = rng.standard_normal(int(0.05 * SR)) * env(0.05, 0.0005, 70)
+    m = np.zeros(int(1.6 * SR)); m[:len(c)] += bp(c, 300, 5000) * 2.0
+    x = st(m) + boom(1.6, 48, 1.0) * 0.9; r = rangido(1.2, 62); x[:len(r)] += r * 0.8; return x
+def alarme(d):          # alarme de emergência genérico do celular: dois tons alternados, envelope em blocos
+    n = int(d * SR); t = np.arange(n) / SR; f = np.where((t % 0.5) < 0.25, 870, 1050)
+    m = np.sign(np.sin(2 * np.pi * np.cumsum(f) / SR)) * 0.22 + np.sin(2 * np.pi * np.cumsum(f) / SR) * 0.3
+    gate = ((t % 1.6) < 1.25).astype(float); return fade(st(lp(m * gate, 4000)), 0.01, 0.2)
+def passos(t0, n, dt=0.27):
+    for k in range(n):
+        m = boom(0.25, 90, 0.4); m[:int(0.08 * SR)] += st(lp(rng.standard_normal(int(0.08 * SR)) * env(0.08, 0.002, 40), 900) * 1.2); put(m, t0 + k * dt, 0.6)
+def tique():
+    m = tone(850, 0.06, 40) * 0.3; m[:int(0.04 * SR)] += tone(1700, 0.04, 70) * 0.6; return st(m)
+
+# leito: vento + chuva + gotas nítidas, abafado por plano (banheiro / sala / rua)
+lev = np.full(N, 0.32)
+wb = wind(END) * lev[:, None] ** 1.3
+rain = loop('chuva_loop.flac', END) * (0.6 + 0.55 * lev)[:, None]
+def patter(d, rate=420):
+    n = int(d * SR); out = np.zeros((n, 2)); k = int(rate * d); pos = rng.integers(0, n - 400, k)
+    for p0 in pos:
+        L = rng.integers(60, 260); c = rng.standard_normal(L) * np.exp(-np.arange(L) / (L / 4)) * (0.3 + 0.7 * rng.random())
+        pan = rng.random(); out[p0:p0 + L, 0] += c * np.sqrt(1 - pan); out[p0:p0 + L, 1] += c * np.sqrt(pan)
+    return sosfilt(sos('highpass', 2000), out, axis=0) * 0.5
+pt = patter(END) * (0.5 + 0.6 * lev)[:, None]
+sfx += muffle_split(wb * 1.4 + rain * 1.2 + pt * 1.3) * 0.32
+EV += [(0.0, 'chuva + vento fraco + gotas (abafado no banheiro)')]
+CORTES = [s.t0 for s in P.SHOTS[1:]]
+for i, c in enumerate(CORTES): put(load(f'swish_{(1, 4, 7, 10, 13)[i % 5]}.flac'), c - 0.06, 0.28)
+for t, nm, f0, g in [(0.25, 'impacto_hit_01.flac', 58, 0.22), (56.38, 'impacto_hit_03.flac', 62, 0.3), (60.92, 'impacto_hit_03.flac', 66, 0.24),
+                     (66.58, 'impacto_metal_hit_02.flac', 55, 0.3), (76.04, 'impacto_hit_04.flac', 52, 0.25)]:
+    put(riser(), t - 0.45, 0.4); put(hit(nm, 0.8, f0), t, g, tag='título: whoosh + impacto')
+# o celular: 6 %, discando 1-9-3, chamando duas vezes, atendem
+put(bipe(440, 0.12), 0.35, 0.9); put(bipe(440, 0.12), 0.59, 0.9, tag='6 %: bipe duplo')
+DT = {'1': (697, 1209), '9': (852, 1477), '3': (697, 1477)}
+for i, d in enumerate('193'): x = tone(DT[d][0], 0.14, 2) * 0.25 + tone(DT[d][1], 0.14, 2) * 0.25; put(st(x), 2.6 + i * 0.24, 1.2)
+EV.append((2.6, 'discando 1-9-3 (DTMF)'))
+for tk in (5.0, 6.86): put(st(tone(425, 1.0, 0.3) * 0.25), tk, 1.0)
+EV.append((5.0, 'chamando: tom 425 Hz no "chama uma vez" e no "duas"'))
+put(load('clique_1.flac'), 7.38, 1.2, tag='atendem: clique')
+line = bp(rng.standard_normal(int(16.7 * SR)), 300, 3400) * 0.02; put(fade(st(line), 0.05, 0.1), 7.4, 1.0, tag='linha aberta: chiado baixo (sem voz inventada)')
+put(bipe(440, 0.12), 22.8, 1.0); put(bipe(440, 0.12), 23.04, 1.0); put(bipe(440, 0.12), 23.28, 1.0, tag='3 %: bipe triplo')
+put(sinal_perdido(), 24.1, 1.0, tag='a ligação cai')
+put(sweep(900, 90, 0.7, 0.3), 25.9, 1.0, tag='o celular apaga: power down')
+# escuridão: a goteira do banheiro
+def plink():
+    x = tone(1350 + 300 * rng.random(), 0.12, 30) * 0.4; x[:int(0.06 * SR)] += tone(700, 0.06, 50) * 0.2; return st(x)
+t = 26.6
+while t < 30.4: put(plink(), t, 2.0); t += 0.95
+EV.append((26.6, 'goteira no escuro'))
+# a sirene: vem de longe, chega e para (mesmos tempos do story.ts: aparece ~30,9 s, chega até 35,74 s)
+def sirene(d):
+    n = int(d * SR); t = np.arange(n) / SR; f = 700 + 520 * (0.5 - 0.5 * np.cos(2 * np.pi * t / 1.6))   # sobe e desce (wail)
+    ph = 2 * np.pi * np.cumsum(f) / SR; m = np.sin(ph) * 0.6 + 0.25 * np.sign(np.sin(ph)); return lp(m, 3500)
+T1, T2, T3 = 30.9, 35.74, 37.0
+sr_ = sirene(T3 + 0.6 - T1); tt = np.arange(len(sr_)) / SR + T1
+near = np.clip((tt - 32.42) / (T2 - 32.42), 0, 1) ** 1.5
+gain = (0.08 + 0.92 * near) * np.clip((tt - T1) / 0.8, 0, 1) * np.where(tt < T2, 1.0, np.exp(-(tt - T2) * 9))
+far = lp(sr_, 900); x = far * (1 - near) + sr_ * near
+put(st(x * gain * 0.55, -0.4), T1, 1.0, tag='sirene: longe -> chegando -> para (35,74 s)')
+put(boom(0.6, 60, 0.4), T2, 0.4, tag='e para: freio grave')
+# batem na porta da frente (KNOCKS do story.ts)
+def knock(g=1.0):
+    m = boom(0.35, 85, 0.9); c = bp(rng.standard_normal(int(0.03 * SR)) * env(0.03, 0.0005, 120), 400, 3000) * 1.5; m[:len(c)] += st(c); return m * g
+KN = [38.94, 39.24, 39.54, 40.66, 40.94, 41.22, 43.32]
+for i, tk in enumerate(KN): put(knock(1.3 if tk >= 40.6 else 1.0), tk, 0.9)
+EV.append((38.94, 'batidas na porta (sincronizadas)'))
+for tk in (11.0, 44.6, 68.2): put(fade(load('chuva_trovao.flac', 0, 3.0), 0.02, 1.0), tk, 0.45)
+EV.append((11.0, 'trovões nos relâmpagos'))
+# faíscas do fio (mesma função do story.ts)
+def spark_at(t):
+    h = lambda i: (np.sin(i * 127.1 + 31.7) * 43758.5453) % 1; n = int(t * 15)
+    return h(n) < 0.42 or (h(n + 77) < 0.25 and (t * 30) % 2 < 1)
+for a_, b_, g in [(12.1, 13.76, 0.55), (47.88, 51.32, 0.25), (51.32, 56.38, 0.55), (56.38, 60.92, 0.35)]:
+    prev = False
+    for i in range(int(a_ * 30), int(b_ * 30)):
+        on = spark_at(i / 30)
+        if on and not prev:
+            c = bp(rng.standard_normal(int(0.08 * SR)) * env(0.08, 0.0005, 35), 1200, 9000) * 1.2
+            put(st(c, rng.random() * 0.4 - 0.2), i / 30, g); put(fade(loop('zumbido_eletrico.flac', 0.07), 0.003, 0.02), i / 30, g * 0.8)
+        prev = on
+EV.append((12.1, 'faíscas do fio (sincronizadas com a imagem)'))
+# opção A: passos no vidro e nos galhos
+for k in range(9):
+    m = boom(0.22, 95, 0.3); m[:int(0.06 * SR)] += st(bp(rng.standard_normal(int(0.06 * SR)), 2500, 8000) * 0.5); put(m, 57.5 + k * 0.45, 1.4)
+EV.append((57.5, 'A: passos no vidro e nos galhos'))
+put(bipe(1760, 0.08), 68.44, 1.4, tag='COMENTA: pop')
+put(load('whoosh_ar.flac', 0, 0.8), 76.0, 0.45, tag='E se...: whoosh final')
+
+def pad(freqs, d, g=0.06):
+    t = np.arange(int(d * SR)) / SR; m = np.zeros_like(t)
+    for f in freqs:
+        for det in (-0.6, 0.6): m += np.sin(2 * np.pi * (f + det) * t + rng.uniform(0, 6))
+    m = lp(m, 1200) * g / len(freqs); a = np.minimum(1, t / 1.2) * np.minimum(1, (d - t) / 1.0)
+    return np.stack([m * a, np.roll(m, 240) * a], 1)
+for a, b, fr in [(0.0, 24.1, (73.4, 110, 146.8, 174.6)), (24.1, 38.0, (69.3, 103.8, 138.6, 164.8)), (38.0, 56.4, (65.4, 98, 130.8, 155.6)),
+                 (56.4, 66.6, (61.7, 92.5, 123.5, 146.8)), (66.6, END, (73.4, 110, 146.8, 185))]:
+    put(pad(fr, b - a + 1.0), a, 1.0, bus=mus)
+pk = max(np.abs(sfx).max(), 1e-9); sfx *= min(1.0, 0.89 / pk)
+pk = max(np.abs(mus).max(), 1e-9); mus *= 0.5 / pk
+wavfile.write(os.path.join(OUT, 'sfx.wav'), SR, (sfx * 32767).astype(np.int16))
+wavfile.write(os.path.join(OUT, 'music.wav'), SR, (mus * 32767).astype(np.int16))
+import json; json.dump(sorted(EV), open(os.path.join(OUT, 'sfx_events.json'), 'w'), ensure_ascii=False, indent=0)
+print('ok', len(EV), 'eventos')
