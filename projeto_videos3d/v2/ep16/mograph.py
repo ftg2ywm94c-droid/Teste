@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Títulos do vídeo 16 (Vendaval · Ep. 3) em 1080x1920 (camada RGBA sobre o 3D): gancho "VOCÊ LIGOU / PRO 193.", selo
 "VOCÊ DECIDE · EP. 3" com "vocês escolheram B" e "no final, você decide de novo", aviso "NO FINAL: A OU B" no meio, "SILÊNCIO.",
-cartões A e B, a escolha ("a mais comentada vira o EP. 4"), o pedido de envio e o fecho. Sem pergunta fixa no topo (pedido do usuário).
+cartões A e B, a escolha ("a mais comentada vira o FINAL", o Ep. 4 encerra a série), o pedido de envio e o fecho. Sem pergunta fixa no topo (pedido do usuário).
 Uso: python3 v2/ep16/mograph.py -> v2/ep16/mg/<plano>/NNNN.png."""
 import os, sys
 from PIL import Image, ImageDraw, ImageFont
@@ -51,12 +51,12 @@ def frame(t):
         k = env(t, 66.58, 75.9)
         card(d, 50, 300, 525, 480, RED, k, 'A', 'ABRIR', 50); card(d, 555, 300, 1030, 480, GRN, k, 'B', 'ESPERAR', 46)
         text(d, W / 2, 520, 'COMENTA A OU B', YEL, 84, k)
-        if t >= 68.44: text(d, W / 2, 640, 'a mais comentada vira o EP. 4', WHT, 50, env(t, 68.44, 75.9))
+        if t >= 68.44: text(d, W / 2, 640, 'a mais comentada vira o FINAL', WHT, 50, env(t, 68.44, 75.9))
         if t >= 71.58: text(d, W / 2, 730, 'manda pra quem escolheria diferente', WHT, 44, env(t, 71.58, 75.9))
         n += 1
     if t >= 76.04:             # fecho
         k = env(t, 76.04, 99, 0.12); text(d, W / 2, 330, 'VOCÊ DECIDE', YEL, 130, k)
-        text(d, W / 2, 500, 'EP. 4 EM BREVE', WHT, 64, k); n += 1
+        text(d, W / 2, 500, 'EP. 4: O FINAL', WHT, 64, k); n += 1
     return im, n
 def main():
     mg = os.path.join(HERE, 'mg'); os.makedirs(mg, exist_ok=True)
