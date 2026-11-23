@@ -25,7 +25,7 @@ A mais comentada vira o FINAL!
 📩 Manda pra quem escolheria diferente de você.
 Ep. 1 e 2 no perfil.
 
-#suspense #vocedecide #ese #vendaval #historiadeterror
+#suspense #historiadeterror #pov #animacao3d #vocedecide
 ```
 Mesmo formato do Ep. 1 do ônibus (o que mais performou no IG): escolha na 1ª linha, premissa com detalhe concreto, CTA de comentário e de envio, 5 hashtags do tema.
 

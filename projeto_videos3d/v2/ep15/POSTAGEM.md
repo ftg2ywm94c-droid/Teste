@@ -24,7 +24,7 @@ A mais comentada vira a Parte 3!
 📩 Manda pra quem escolheria diferente de você.
 Parte 1 no perfil.
 
-#suspense #vocedecide #ese #ultimoonibus #historiadeterror
+#suspense #historiadeterror #pov #animacao3d #vocedecide
 ```
 Mesmo formato do Ep. 1 (172 mil views no IG): escolha na 1ª linha, premissa com detalhe concreto, CTA de comentário e de envio, 5 hashtags do tema.
 

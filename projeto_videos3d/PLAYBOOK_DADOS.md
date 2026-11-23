@@ -69,7 +69,7 @@ Regra: nenhum número ou afirmação sobre um vídeo vai para o usuário sem ter
 ## 3. Regras de título, legenda e tags
 - **YouTube:** `[Série] Ep. N: [situação concreta]. [pergunta]?`. Sem data, sem "E se ?" sozinho, sem hashtag no título. Testar 2 opções no vidIQ (`score_title`) e usar a maior.
 - **Legenda TikTok/IG:** primeira linha = a premissa do quadro 0, depois "Comenta A ou B 👇" e "📩 Manda pra quem…". No Instagram, "Ep. 1 no perfil" no lugar de link.
-- **Hashtags (5, só do tema):** #suspense #vocedecide #ese + 2 do tema. Proibidas: #claude, #fyp, #insightcreatorsearch, #puzzle e outras sem relação.
+- **Hashtags (5, só do tema):** usar as do Ônibus Ep. 1 (316 mil views, conferido na legenda real em 23/11): #suspense #historiadeterror #pov #animacao3d #vocedecide. Proibidas: #claude, #fyp, #insightcreatorsearch, #puzzle e outras sem relação.
 - **Tags do YouTube:** tema, sinônimos, "você decide", "escolha a ou b", "história de suspense", "história de ficção", "recorte curioso".
 - **Rótulo de IA:** marcar no TikTok e no Instagram (voz sintética). No YouTube não é exigido, porque é animação.
 
