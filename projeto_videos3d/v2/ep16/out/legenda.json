@@ -1,0 +1,1468 @@
+{
+"diffs": [
+[
+"replace",
+"Seis por cento.",
+"6 %"
+],
+[
+"replace",
+"pros",
+"para os"
+],
+[
+"replace",
+"Cento e noventa e três.",
+"193"
+],
+[
+"replace",
+"Duas.",
+"2"
+],
+[
+"replace",
+"Três por cento.",
+"3 %"
+],
+[
+"replace",
+"pra",
+"para"
+],
+[
+"replace",
+"pra",
+"para"
+],
+[
+"replace",
+"quatro.",
+"4."
+],
+[
+"replace",
+"pra",
+"para"
+],
+[
+"replace",
+"pra",
+"para"
+],
+[
+"delete",
+"## Comentário fixado (para o usuário publicar) Vendaval · Ep. 3 🌪️ Comenta A (atravessar a sala e abrir a porta) ou B (ficar no banheiro e mandar ela esperar os bombeiros na rua). A mais comentada vira o Ep. 4. Na vida real: nunca atravesse um cômodo com fio caído, nem para ajudar alguém. Ligue 193 (Bombeiros) ou 199 (Defesa Civil) e avise a companhia de energia. ## Na tela - **Quadro 0:** a tela do celular \"6 %\" discando 193, com o som de chamada. Texto grande: \"VOCÊ LIGOU PRO 193.\" Texto pequeno: \"vocês escolheram B · EP. 3\". - **Sem pergunta fixa no topo** (o usuário não gostou dela no vídeo 15). - **Aviso de escolha no fim** (no IG do Ônibus Ep. 1, metade saiu por volta dos 36 s): \"no final, você decide de novo\" logo após o quadro 0 e \"NO FINAL: A OU B\" no topo, perto da metade do vídeo. - **Celular:** \"chamando… 193 Bombeiros\" → \"em chamada 00:41\" → bateria \"3 %\" → tela apagando. - **Escuridão:** só a chuva e a lanterna apagada. Uma luz vermelha de sirene passa longe pela fresta da porta e some. - **Batidas na porta da frente:** a câmera da fresta mostra a sala escura, com o fio faiscando no meio do caminho até a porta. - **Cartões:** \"A · ATRAVESSAR E ABRIR A PORTA\" (vermelho) / \"B · FICAR E MANDAR ESPERAR NA RUA\" (verde), contagem, \"COMENTA A OU B\" e \"a mais comentada vira o EP. 4\". - **Nota pequena:** \"história de ficção · fio caído: não chegue perto · emergência: Bombeiros 193 · Defesa Civil 199\". ## Fontes (o que é fato no roteiro) - A orientação do atendente é a mesma já conferida no vídeo 14: não se aproximar de fio caído e ficar em local seguro (Governo do RS, links em `v2/ep14/LIMITACOES.md`). - 193 = Corpo de Bombeiros, 199 = Defesa Civil. ## Cuidados - Ficção. O filho preso não aparece ferido, só é mencionado. - A opção A continua sendo a arriscada (o fio no caminho). A nota na tela e o comentário fixado dizem o que fazer na vida real.",
+""
+]
+],
+"words": [
+{
+"w": "Seis",
+"s": 0.0,
+"e": 0.43333333333333335,
+"key": true
+},
+{
+"w": "por",
+"s": 0.43333333333333335,
+"e": 0.8666666666666667,
+"key": true
+},
+{
+"w": "cento.",
+"s": 0.8666666666666667,
+"e": 1.3,
+"key": true
+},
+{
+"w": "Você",
+"s": 1.3,
+"e": 1.72,
+"key": false
+},
+{
+"w": "liga",
+"s": 1.72,
+"e": 2.06,
+"key": false
+},
+{
+"w": "pros",
+"s": 2.06,
+"e": 2.38,
+"key": false
+},
+{
+"w": "bombeiros.",
+"s": 2.38,
+"e": 3.36,
+"key": false
+},
+{
+"w": "Cento",
+"s": 4.36,
+"e": 4.488,
+"key": true
+},
+{
+"w": "e",
+"s": 4.488,
+"e": 4.6160000000000005,
+"key": true
+},
+{
+"w": "noventa",
+"s": 4.6160000000000005,
+"e": 4.744,
+"key": true
+},
+{
+"w": "e",
+"s": 4.744,
+"e": 4.872,
+"key": true
+},
+{
+"w": "três.",
+"s": 4.872,
+"e": 5.0,
+"key": true
+},
+{
+"w": "Chama",
+"s": 5.0,
+"e": 5.5,
+"key": false
+},
+{
+"w": "uma",
+"s": 5.5,
+"e": 5.9,
+"key": false
+},
+{
+"w": "vez.",
+"s": 5.9,
+"e": 6.42,
+"key": false
+},
+{
+"w": "Duas.",
+"s": 6.86,
+"e": 7.38,
+"key": false
+},
+{
+"w": "Atendem.",
+"s": 7.38,
+"e": 8.44,
+"key": true
+},
+{
+"w": "Você",
+"s": 8.76,
+"e": 8.96,
+"key": false
+},
+{
+"w": "fala",
+"s": 8.96,
+"e": 9.2,
+"key": false
+},
+{
+"w": "tudo:",
+"s": 9.2,
+"e": 9.76,
+"key": false
+},
+{
+"w": "o",
+"s": 10.06,
+"e": 10.22,
+"key": false
+},
+{
+"w": "endereço,",
+"s": 10.22,
+"e": 10.94,
+"key": false
+},
+{
+"w": "a",
+"s": 11.2,
+"e": 11.38,
+"key": false
+},
+{
+"w": "árvore,",
+"s": 11.38,
+"e": 11.84,
+"key": false
+},
+{
+"w": "o",
+"s": 12.1,
+"e": 12.26,
+"key": true
+},
+{
+"w": "fio",
+"s": 12.26,
+"e": 12.38,
+"key": true
+},
+{
+"w": "soltando",
+"s": 12.38,
+"e": 12.86,
+"key": true
+},
+{
+"w": "faísca,",
+"s": 12.86,
+"e": 13.52,
+"key": true
+},
+{
+"w": "a",
+"s": 13.76,
+"e": 14.0,
+"key": false
+},
+{
+"w": "vizinha",
+"s": 14.0,
+"e": 14.32,
+"key": false
+},
+{
+"w": "pedindo",
+"s": 14.32,
+"e": 14.72,
+"key": false
+},
+{
+"w": "socorro.",
+"s": 14.72,
+"e": 15.44,
+"key": false
+},
+{
+"w": "Do",
+"s": 15.68,
+"e": 15.96,
+"key": false
+},
+{
+"w": "outro",
+"s": 15.96,
+"e": 16.22,
+"key": false
+},
+{
+"w": "lado,",
+"s": 16.22,
+"e": 16.56,
+"key": false
+},
+{
+"w": "uma",
+"s": 16.78,
+"e": 16.84,
+"key": false
+},
+{
+"w": "voz",
+"s": 16.84,
+"e": 17.12,
+"key": false
+},
+{
+"w": "calma:",
+"s": 17.12,
+"e": 17.7,
+"key": false
+},
+{
+"w": "não",
+"s": 18.14,
+"e": 18.44,
+"key": true
+},
+{
+"w": "chega",
+"s": 18.44,
+"e": 18.72,
+"key": true
+},
+{
+"w": "perto",
+"s": 18.72,
+"e": 19.04,
+"key": true
+},
+{
+"w": "do",
+"s": 19.04,
+"e": 19.28,
+"key": true
+},
+{
+"w": "fio,",
+"s": 19.28,
+"e": 19.72,
+"key": true
+},
+{
+"w": "fica",
+"s": 19.86,
+"e": 20.12,
+"key": false
+},
+{
+"w": "onde",
+"s": 20.12,
+"e": 20.32,
+"key": false
+},
+{
+"w": "você",
+"s": 20.32,
+"e": 20.78,
+"key": false
+},
+{
+"w": "está,",
+"s": 20.78,
+"e": 20.94,
+"key": false
+},
+{
+"w": "a",
+"s": 21.14,
+"e": 21.34,
+"key": false
+},
+{
+"w": "equipe",
+"s": 21.34,
+"e": 21.56,
+"key": false
+},
+{
+"w": "já",
+"s": 21.56,
+"e": 21.78,
+"key": false
+},
+{
+"w": "tá",
+"s": 21.78,
+"e": 21.94,
+"key": false
+},
+{
+"w": "indo.",
+"s": 21.94,
+"e": 22.24,
+"key": false
+},
+{
+"w": "Três",
+"s": 22.76,
+"e": 23.2,
+"key": true
+},
+{
+"w": "por",
+"s": 23.2,
+"e": 23.64,
+"key": true
+},
+{
+"w": "cento.",
+"s": 23.64,
+"e": 24.08,
+"key": true
+},
+{
+"w": "A",
+"s": 24.08,
+"e": 24.26,
+"key": true
+},
+{
+"w": "ligação",
+"s": 24.26,
+"e": 24.68,
+"key": true
+},
+{
+"w": "cai.",
+"s": 24.68,
+"e": 25.02,
+"key": true
+},
+{
+"w": "O",
+"s": 25.02,
+"e": 25.54,
+"key": true
+},
+{
+"w": "celular",
+"s": 25.54,
+"e": 26.0,
+"key": true
+},
+{
+"w": "apaga.",
+"s": 26.0,
+"e": 26.78,
+"key": true
+},
+{
+"w": "Agora",
+"s": 27.2,
+"e": 27.44,
+"key": false
+},
+{
+"w": "é",
+"s": 27.44,
+"e": 27.92,
+"key": false
+},
+{
+"w": "só",
+"s": 27.92,
+"e": 28.16,
+"key": false
+},
+{
+"w": "escuridão",
+"s": 28.16,
+"e": 28.88,
+"key": true
+},
+{
+"w": "e",
+"s": 28.88,
+"e": 29.18,
+"key": false
+},
+{
+"w": "chuva.",
+"s": 29.18,
+"e": 30.06,
+"key": false
+},
+{
+"w": "Lá",
+"s": 30.42,
+"e": 30.66,
+"key": false
+},
+{
+"w": "longe,",
+"s": 30.66,
+"e": 31.1,
+"key": false
+},
+{
+"w": "uma",
+"s": 31.26,
+"e": 31.48,
+"key": true
+},
+{
+"w": "sirene.",
+"s": 31.48,
+"e": 32.26,
+"key": true
+},
+{
+"w": "Ela",
+"s": 32.42,
+"e": 32.58,
+"key": false
+},
+{
+"w": "vai",
+"s": 32.58,
+"e": 32.84,
+"key": false
+},
+{
+"w": "chegando,",
+"s": 32.84,
+"e": 33.72,
+"key": false
+},
+{
+"w": "chegando...",
+"s": 34.08,
+"e": 34.88,
+"key": false
+},
+{
+"w": "e",
+"s": 34.88,
+"e": 35.74,
+"key": true
+},
+{
+"w": "para.",
+"s": 35.74,
+"e": 36.1,
+"key": true
+},
+{
+"w": "Silêncio.",
+"s": 37.0,
+"e": 37.66,
+"key": true
+},
+{
+"w": "Aí",
+"s": 38.02,
+"e": 38.5,
+"key": false
+},
+{
+"w": "batem",
+"s": 38.94,
+"e": 39.1,
+"key": false
+},
+{
+"w": "na",
+"s": 39.1,
+"e": 39.26,
+"key": false
+},
+{
+"w": "porta",
+"s": 39.26,
+"e": 39.54,
+"key": true
+},
+{
+"w": "da",
+"s": 39.54,
+"e": 39.82,
+"key": true
+},
+{
+"w": "frente.",
+"s": 39.82,
+"e": 40.16,
+"key": true
+},
+{
+"w": "Forte.",
+"s": 40.66,
+"e": 41.02,
+"key": true
+},
+{
+"w": "É",
+"s": 41.4,
+"e": 41.52,
+"key": false
+},
+{
+"w": "a",
+"s": 41.52,
+"e": 41.66,
+"key": false
+},
+{
+"w": "vizinha,",
+"s": 41.66,
+"e": 42.1,
+"key": false
+},
+{
+"w": "gritando:",
+"s": 42.1,
+"e": 43.04,
+"key": false
+},
+{
+"w": "abre!",
+"s": 43.52,
+"e": 43.7,
+"key": false
+},
+{
+"w": "O",
+"s": 44.06,
+"e": 44.2,
+"key": false
+},
+{
+"w": "meu",
+"s": 44.2,
+"e": 44.34,
+"key": false
+},
+{
+"w": "filho",
+"s": 44.34,
+"e": 44.46,
+"key": false
+},
+{
+"w": "tá",
+"s": 44.46,
+"e": 44.74,
+"key": true
+},
+{
+"w": "preso,",
+"s": 44.74,
+"e": 45.28,
+"key": true
+},
+{
+"w": "eu",
+"s": 45.38,
+"e": 45.54,
+"key": false
+},
+{
+"w": "não",
+"s": 45.54,
+"e": 45.76,
+"key": false
+},
+{
+"w": "consigo",
+"s": 45.76,
+"e": 46.2,
+"key": false
+},
+{
+"w": "tirar",
+"s": 46.2,
+"e": 46.48,
+"key": false
+},
+{
+"w": "ele",
+"s": 46.48,
+"e": 46.74,
+"key": false
+},
+{
+"w": "sozinha!",
+"s": 46.74,
+"e": 47.42,
+"key": false
+},
+{
+"w": "Entre",
+"s": 47.88,
+"e": 48.14,
+"key": false
+},
+{
+"w": "você",
+"s": 48.14,
+"e": 48.6,
+"key": false
+},
+{
+"w": "e",
+"s": 48.6,
+"e": 48.7,
+"key": false
+},
+{
+"w": "a",
+"s": 48.7,
+"e": 48.92,
+"key": false
+},
+{
+"w": "porta",
+"s": 48.92,
+"e": 49.24,
+"key": false
+},
+{
+"w": "tem",
+"s": 49.28,
+"e": 49.48,
+"key": false
+},
+{
+"w": "a",
+"s": 49.48,
+"e": 49.7,
+"key": false
+},
+{
+"w": "sala",
+"s": 49.7,
+"e": 49.98,
+"key": false
+},
+{
+"w": "inteira",
+"s": 49.98,
+"e": 50.68,
+"key": false
+},
+{
+"w": "no",
+"s": 50.68,
+"e": 50.92,
+"key": true
+},
+{
+"w": "escuro.",
+"s": 50.92,
+"e": 51.32,
+"key": true
+},
+{
+"w": "E",
+"s": 51.32,
+"e": 51.66,
+"key": false
+},
+{
+"w": "no",
+"s": 51.66,
+"e": 51.86,
+"key": false
+},
+{
+"w": "meio",
+"s": 51.86,
+"e": 52.16,
+"key": false
+},
+{
+"w": "dela,",
+"s": 52.16,
+"e": 52.6,
+"key": false
+},
+{
+"w": "o",
+"s": 52.9,
+"e": 53.12,
+"key": true
+},
+{
+"w": "fio.",
+"s": 53.12,
+"e": 53.5,
+"key": true
+},
+{
+"w": "Ainda",
+"s": 53.82,
+"e": 54.1,
+"key": false
+},
+{
+"w": "soltando",
+"s": 54.1,
+"e": 54.82,
+"key": false
+},
+{
+"w": "faísca.",
+"s": 54.82,
+"e": 55.96,
+"key": false
+},
+{
+"w": "Opção",
+"s": 56.38,
+"e": 56.62,
+"key": true
+},
+{
+"w": "A:",
+"s": 56.62,
+"e": 57.14,
+"key": true
+},
+{
+"w": "você",
+"s": 57.32,
+"e": 57.68,
+"key": false
+},
+{
+"w": "atravessa",
+"s": 57.68,
+"e": 58.22,
+"key": false
+},
+{
+"w": "a",
+"s": 58.22,
+"e": 58.48,
+"key": false
+},
+{
+"w": "sala",
+"s": 58.48,
+"e": 58.72,
+"key": false
+},
+{
+"w": "e",
+"s": 58.72,
+"e": 59.22,
+"key": false
+},
+{
+"w": "abre",
+"s": 59.22,
+"e": 59.4,
+"key": false
+},
+{
+"w": "a",
+"s": 59.4,
+"e": 59.56,
+"key": false
+},
+{
+"w": "porta",
+"s": 59.56,
+"e": 59.76,
+"key": false
+},
+{
+"w": "pra",
+"s": 59.76,
+"e": 60.06,
+"key": false
+},
+{
+"w": "ela.",
+"s": 60.06,
+"e": 60.34,
+"key": false
+},
+{
+"w": "Opção",
+"s": 60.92,
+"e": 61.36,
+"key": true
+},
+{
+"w": "B:",
+"s": 61.36,
+"e": 61.86,
+"key": true
+},
+{
+"w": "você",
+"s": 62.16,
+"e": 62.46,
+"key": false
+},
+{
+"w": "fica",
+"s": 62.46,
+"e": 62.72,
+"key": false
+},
+{
+"w": "no",
+"s": 62.72,
+"e": 62.92,
+"key": false
+},
+{
+"w": "banheiro",
+"s": 62.92,
+"e": 63.36,
+"key": false
+},
+{
+"w": "e",
+"s": 63.36,
+"e": 63.76,
+"key": false
+},
+{
+"w": "grita",
+"s": 63.76,
+"e": 64.06,
+"key": false
+},
+{
+"w": "pra",
+"s": 64.06,
+"e": 64.3,
+"key": false
+},
+{
+"w": "ela",
+"s": 64.3,
+"e": 64.52,
+"key": false
+},
+{
+"w": "esperar",
+"s": 64.52,
+"e": 64.9,
+"key": false
+},
+{
+"w": "os",
+"s": 64.9,
+"e": 65.1,
+"key": false
+},
+{
+"w": "bombeiros",
+"s": 65.1,
+"e": 65.44,
+"key": false
+},
+{
+"w": "na",
+"s": 65.44,
+"e": 65.72,
+"key": false
+},
+{
+"w": "rua.",
+"s": 65.72,
+"e": 65.96,
+"key": false
+},
+{
+"w": "Comenta",
+"s": 66.58,
+"e": 66.92,
+"key": false
+},
+{
+"w": "A",
+"s": 66.92,
+"e": 67.44,
+"key": true
+},
+{
+"w": "ou",
+"s": 67.44,
+"e": 67.68,
+"key": true
+},
+{
+"w": "B.",
+"s": 67.68,
+"e": 68.12,
+"key": true
+},
+{
+"w": "A",
+"s": 68.44,
+"e": 68.68,
+"key": false
+},
+{
+"w": "mais",
+"s": 68.68,
+"e": 68.86,
+"key": false
+},
+{
+"w": "comentada",
+"s": 68.86,
+"e": 69.64,
+"key": false
+},
+{
+"w": "vira",
+"s": 69.76,
+"e": 70.06,
+"key": false
+},
+{
+"w": "o",
+"s": 70.06,
+"e": 70.22,
+"key": false
+},
+{
+"w": "episódio",
+"s": 70.22,
+"e": 70.56,
+"key": true
+},
+{
+"w": "quatro.",
+"s": 70.56,
+"e": 71.28,
+"key": true
+},
+{
+"w": "Manda",
+"s": 71.58,
+"e": 71.82,
+"key": false
+},
+{
+"w": "pra",
+"s": 71.82,
+"e": 72.0,
+"key": false
+},
+{
+"w": "quem",
+"s": 72.0,
+"e": 72.18,
+"key": false
+},
+{
+"w": "escolheria",
+"s": 72.18,
+"e": 72.74,
+"key": false
+},
+{
+"w": "diferente",
+"s": 72.74,
+"e": 73.14,
+"key": false
+},
+{
+"w": "de",
+"s": 73.14,
+"e": 73.38,
+"key": false
+},
+{
+"w": "você",
+"s": 73.38,
+"e": 73.74,
+"key": false
+},
+{
+"w": "e",
+"s": 73.74,
+"e": 74.06,
+"key": false
+},
+{
+"w": "se",
+"s": 74.06,
+"e": 74.34,
+"key": false
+},
+{
+"w": "inscreve",
+"s": 74.34,
+"e": 74.78,
+"key": false
+},
+{
+"w": "pra",
+"s": 74.78,
+"e": 75.04,
+"key": false
+},
+{
+"w": "não",
+"s": 75.04,
+"e": 75.22,
+"key": false
+},
+{
+"w": "perder.",
+"s": 75.22,
+"e": 75.58,
+"key": false
+},
+{
+"w": "E",
+"s": 76.04,
+"e": 76.46,
+"key": false
+},
+{
+"w": "se...",
+"s": 76.46,
+"e": 76.9,
+"key": false
+}
+],
+"chunks": [
+{
+"s": 0.0,
+"e": 1.3,
+"t": "{\\c&H0028D7FF&}SEIS{\\c&HFFFFFF&} {\\c&H0028D7FF&}POR{\\c&HFFFFFF&} {\\c&H0028D7FF&}CENTO.{\\c&HFFFFFF&}"
+},
+{
+"s": 1.3,
+"e": 2.38,
+"t": "VOCÊ LIGA PROS"
+},
+{
+"s": 2.38,
+"e": 3.28,
+"t": "BOMBEIROS."
+},
+{
+"s": 4.36,
+"e": 4.744,
+"t": "{\\c&H0028D7FF&}CENTO{\\c&HFFFFFF&} {\\c&H0028D7FF&}E{\\c&HFFFFFF&} {\\c&H0028D7FF&}NOVENTA{\\c&HFFFFFF&}"
+},
+{
+"s": 4.744,
+"e": 5.0,
+"t": "{\\c&H0028D7FF&}E{\\c&HFFFFFF&} {\\c&H0028D7FF&}TRÊS.{\\c&HFFFFFF&}"
+},
+{
+"s": 5.0,
+"e": 6.42,
+"t": "CHAMA UMA VEZ."
+},
+{
+"s": 6.86,
+"e": 7.38,
+"t": "DUAS."
+},
+{
+"s": 7.38,
+"e": 8.28,
+"t": "{\\c&H0028D7FF&}ATENDEM.{\\c&HFFFFFF&}"
+},
+{
+"s": 8.76,
+"e": 9.76,
+"t": "VOCÊ FALA TUDO:"
+},
+{
+"s": 10.06,
+"e": 10.94,
+"t": "O ENDEREÇO,"
+},
+{
+"s": 11.2,
+"e": 11.84,
+"t": "A ÁRVORE,"
+},
+{
+"s": 12.1,
+"e": 13.52,
+"t": "{\\c&H0028D7FF&}O{\\c&HFFFFFF&} {\\c&H0028D7FF&}FIO{\\c&HFFFFFF&} {\\c&H0028D7FF&}SOLTANDO{\\c&HFFFFFF&} {\\c&H0028D7FF&}FAÍSCA,{\\c&HFFFFFF&}"
+},
+{
+"s": 13.76,
+"e": 14.32,
+"t": "A VIZINHA"
+},
+{
+"s": 14.32,
+"e": 15.44,
+"t": "PEDINDO SOCORRO."
+},
+{
+"s": 15.68,
+"e": 16.56,
+"t": "DO OUTRO LADO,"
+},
+{
+"s": 16.78,
+"e": 17.7,
+"t": "UMA VOZ CALMA:"
+},
+{
+"s": 18.14,
+"e": 18.72,
+"t": "{\\c&H0028D7FF&}NÃO{\\c&HFFFFFF&} {\\c&H0028D7FF&}CHEGA{\\c&HFFFFFF&}"
+},
+{
+"s": 18.72,
+"e": 19.86,
+"t": "{\\c&H0028D7FF&}PERTO{\\c&HFFFFFF&} {\\c&H0028D7FF&}DO{\\c&HFFFFFF&} {\\c&H0028D7FF&}FIO,{\\c&HFFFFFF&}"
+},
+{
+"s": 19.86,
+"e": 20.32,
+"t": "FICA ONDE"
+},
+{
+"s": 20.32,
+"e": 20.94,
+"t": "VOCÊ ESTÁ,"
+},
+{
+"s": 21.14,
+"e": 21.56,
+"t": "A EQUIPE"
+},
+{
+"s": 21.56,
+"e": 22.24,
+"t": "JÁ TÁ INDO."
+},
+{
+"s": 22.76,
+"e": 24.08,
+"t": "{\\c&H0028D7FF&}TRÊS{\\c&HFFFFFF&} {\\c&H0028D7FF&}POR{\\c&HFFFFFF&} {\\c&H0028D7FF&}CENTO.{\\c&HFFFFFF&}"
+},
+{
+"s": 24.08,
+"e": 25.02,
+"t": "{\\c&H0028D7FF&}A{\\c&HFFFFFF&} {\\c&H0028D7FF&}LIGAÇÃO{\\c&HFFFFFF&} {\\c&H0028D7FF&}CAI.{\\c&HFFFFFF&}"
+},
+{
+"s": 25.02,
+"e": 26.78,
+"t": "{\\c&H0028D7FF&}O{\\c&HFFFFFF&} {\\c&H0028D7FF&}CELULAR{\\c&HFFFFFF&} {\\c&H0028D7FF&}APAGA.{\\c&HFFFFFF&}"
+},
+{
+"s": 27.2,
+"e": 28.16,
+"t": "AGORA É SÓ"
+},
+{
+"s": 28.16,
+"e": 30.06,
+"t": "{\\c&H0028D7FF&}ESCURIDÃO{\\c&HFFFFFF&} E CHUVA."
+},
+{
+"s": 30.42,
+"e": 31.1,
+"t": "LÁ LONGE,"
+},
+{
+"s": 31.26,
+"e": 32.26,
+"t": "{\\c&H0028D7FF&}UMA{\\c&HFFFFFF&} {\\c&H0028D7FF&}SIRENE.{\\c&HFFFFFF&}"
+},
+{
+"s": 32.42,
+"e": 32.84,
+"t": "ELA VAI"
+},
+{
+"s": 32.84,
+"e": 33.72,
+"t": "CHEGANDO,"
+},
+{
+"s": 34.08,
+"e": 34.88,
+"t": "CHEGANDO..."
+},
+{
+"s": 34.88,
+"e": 36.1,
+"t": "{\\c&H0028D7FF&}E{\\c&HFFFFFF&} {\\c&H0028D7FF&}PARA.{\\c&HFFFFFF&}"
+},
+{
+"s": 37.0,
+"e": 37.66,
+"t": "{\\c&H0028D7FF&}SILÊNCIO.{\\c&HFFFFFF&}"
+},
+{
+"s": 38.02,
+"e": 38.5,
+"t": "AÍ"
+},
+{
+"s": 38.94,
+"e": 40.16,
+"t": "BATEM NA {\\c&H0028D7FF&}PORTA{\\c&HFFFFFF&} {\\c&H0028D7FF&}DA{\\c&HFFFFFF&} {\\c&H0028D7FF&}FRENTE.{\\c&HFFFFFF&}"
+},
+{
+"s": 40.66,
+"e": 41.02,
+"t": "{\\c&H0028D7FF&}FORTE.{\\c&HFFFFFF&}"
+},
+{
+"s": 41.4,
+"e": 42.1,
+"t": "É A VIZINHA,"
+},
+{
+"s": 42.1,
+"e": 43.0,
+"t": "GRITANDO:"
+},
+{
+"s": 43.52,
+"e": 43.77,
+"t": "ABRE!"
+},
+{
+"s": 44.06,
+"e": 45.38,
+"t": "O MEU FILHO {\\c&H0028D7FF&}TÁ{\\c&HFFFFFF&} {\\c&H0028D7FF&}PRESO,{\\c&HFFFFFF&}"
+},
+{
+"s": 45.38,
+"e": 46.2,
+"t": "EU NÃO CONSIGO"
+},
+{
+"s": 46.2,
+"e": 46.48,
+"t": "TIRAR"
+},
+{
+"s": 46.48,
+"e": 47.42,
+"t": "ELE SOZINHA!"
+},
+{
+"s": 47.88,
+"e": 48.6,
+"t": "ENTRE VOCÊ"
+},
+{
+"s": 48.6,
+"e": 49.28,
+"t": "E A PORTA"
+},
+{
+"s": 49.28,
+"e": 49.98,
+"t": "TEM A SALA"
+},
+{
+"s": 49.98,
+"e": 51.32,
+"t": "INTEIRA {\\c&H0028D7FF&}NO{\\c&HFFFFFF&} {\\c&H0028D7FF&}ESCURO.{\\c&HFFFFFF&}"
+},
+{
+"s": 51.32,
+"e": 52.6,
+"t": "E NO MEIO DELA,"
+},
+{
+"s": 52.9,
+"e": 53.5,
+"t": "{\\c&H0028D7FF&}O{\\c&HFFFFFF&} {\\c&H0028D7FF&}FIO.{\\c&HFFFFFF&}"
+},
+{
+"s": 53.82,
+"e": 54.82,
+"t": "AINDA SOLTANDO"
+},
+{
+"s": 54.82,
+"e": 55.72,
+"t": "FAÍSCA."
+},
+{
+"s": 56.38,
+"e": 58.22,
+"t": "{\\c&H0028D7FF&}OPÇÃO{\\c&HFFFFFF&} {\\c&H0028D7FF&}A:{\\c&HFFFFFF&} VOCÊ ATRAVESSA"
+},
+{
+"s": 58.22,
+"e": 59.4,
+"t": "A SALA E ABRE"
+},
+{
+"s": 59.4,
+"e": 60.34,
+"t": "A PORTA PRA ELA."
+},
+{
+"s": 60.92,
+"e": 61.86,
+"t": "{\\c&H0028D7FF&}OPÇÃO{\\c&HFFFFFF&} {\\c&H0028D7FF&}B:{\\c&HFFFFFF&}"
+},
+{
+"s": 62.16,
+"e": 62.72,
+"t": "VOCÊ FICA"
+},
+{
+"s": 62.72,
+"e": 63.36,
+"t": "NO BANHEIRO"
+},
+{
+"s": 63.36,
+"e": 64.06,
+"t": "E GRITA"
+},
+{
+"s": 64.06,
+"e": 64.9,
+"t": "PRA ELA ESPERAR"
+},
+{
+"s": 64.9,
+"e": 65.44,
+"t": "OS BOMBEIROS"
+},
+{
+"s": 65.44,
+"e": 65.96,
+"t": "NA RUA."
+},
+{
+"s": 66.58,
+"e": 68.12,
+"t": "COMENTA {\\c&H0028D7FF&}A{\\c&HFFFFFF&} {\\c&H0028D7FF&}OU{\\c&HFFFFFF&} {\\c&H0028D7FF&}B.{\\c&HFFFFFF&}"
+},
+{
+"s": 68.44,
+"e": 69.76,
+"t": "A MAIS COMENTADA"
+},
+{
+"s": 69.76,
+"e": 71.28,
+"t": "VIRA O {\\c&H0028D7FF&}EPISÓDIO{\\c&HFFFFFF&} {\\c&H0028D7FF&}QUATRO.{\\c&HFFFFFF&}"
+},
+{
+"s": 71.58,
+"e": 72.18,
+"t": "MANDA PRA QUEM"
+},
+{
+"s": 72.18,
+"e": 72.74,
+"t": "ESCOLHERIA"
+},
+{
+"s": 72.74,
+"e": 73.14,
+"t": "DIFERENTE"
+},
+{
+"s": 73.14,
+"e": 73.74,
+"t": "DE VOCÊ"
+},
+{
+"s": 73.74,
+"e": 74.78,
+"t": "E SE INSCREVE"
+},
+{
+"s": 74.78,
+"e": 75.58,
+"t": "PRA NÃO PERDER."
+},
+{
+"s": 76.04,
+"e": 76.9,
+"t": "E SE..."
+}
+],
+"hud": []
+}
