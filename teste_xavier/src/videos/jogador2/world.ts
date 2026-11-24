@@ -384,9 +384,11 @@ export class World {
       b.add(tri(V(-190, D0 + 3.6, -302), V(-190, D0 + 4.8, -306), V(-190, D0 + 3.6, -310)), plank); b.add(tri(V(-182, D0 + 3.6, -310), V(-182, D0 + 4.8, -306), V(-182, D0 + 3.6, -302)), plank);
       bx(-187.3, 0, -303.9, -185.9, 0.75, -302.9, M.gen, 3); bx(-187.35, 0.75, -303.95, -185.85, 0.8, -302.85, M.pole);
       // antena da internet de rádio no telhado
-      bar(b, V(-202.2, D0 + 4.0, -299.2), V(-202.2, D0 + 8.0, -299.2), 0.05, M.steel);
-      b.add(boxGeo(V(-202.55, D0 + 7.3, -299.05), V(-201.85, D0 + 7.85, -298.95)), lam("dishGrey", () => ({ color: "#d4d8de" })));
-      bx(-202.25, 7.45, -298.95, -202.15, 7.7, -298.75, M.pole);
+      bar(b, V(-202.2, D0 + 4.0, -298.2), V(-202.2, D0 + 9.2, -298.2), 0.07, M.steel);
+      bar(b, V(-202.2, D0 + 8.0, -298.2), V(-201.2, D0 + 6.0, -298.2), 0.03, M.steel); bar(b, V(-202.2, D0 + 8.0, -298.2), V(-203.2, D0 + 6.0, -298.2), 0.03, M.steel);
+      { const grid = lam("dishGrid", () => ({ map: ctex("dishGrid", 256, 192, (g) => { g.fillStyle = "#c9ced6"; g.fillRect(0, 0, 256, 192); g.strokeStyle = "#5c6370"; g.lineWidth = 6;
+          for (let x = 0; x <= 256; x += 32) { g.beginPath(); g.moveTo(x, 0); g.lineTo(x, 192); g.stroke(); } for (let y = 0; y <= 192; y += 32) { g.beginPath(); g.moveTo(0, y); g.lineTo(256, y); g.stroke(); } }) }));
+        b.add(boxGeo(V(-202.9, D0 + 8.2, -298.05), V(-201.5, D0 + 9.25, -297.97)), grid); bx(-202.3, 8.6, -297.97, -202.1, 8.8, -297.6, M.pole); }
       // cerca de madeira
       for (let x = -216; x <= -180; x += 2.4) bx(x - 0.06, 0, -287.06, x + 0.06, 1.15, -286.94, porch);
       bx(-216, 0.55, -287.03, -180, 0.62, -286.97, porch); bx(-216, 0.95, -287.03, -180, 1.02, -286.97, porch);

@@ -770,7 +770,7 @@ const ep4 = (id: number, cam: CamInfo, t: number, out: Stage) => {
   const c = SHOTS[id - 1].crowd;
   /** você no sofá, de frente para a TV */
   const sit = (expr: Expr, look = 0, swaps: number[] = []) => {
-    out.places.push(person(cam, YOU, 599.35, D0, 2.98, { side: false, mirror: false }, { mode: "sit", seatH: SEAT_H, expr, blink: lidAt(t, 900, swaps), look }, {}));
+    out.places.push(person(cam, YOU, 599.35, D0, 2.44, { side: false, mirror: false }, { mode: "sit", seatH: SEAT_H, expr, blink: lidAt(t, 900, swaps), look }, {}));
   };
   const tvGlow = () => { if (!tvOn(id, t)) return;
     out.fx.push({ key: "tvwash", cw: 256, ch: 256, draw: (pp) => fxGlow(pp, "rgba(120,170,255,0.5)"), soft: true, x: 600.0, y: 1.1, z: -0.2, w: 3.4, h: 2.2 });
@@ -785,7 +785,7 @@ const ep4 = (id: number, cam: CamInfo, t: number, out: Stage) => {
     case "j_cut": case "j_choice": sit(c === "j_cut" ? (t < W.caiu ? "grin" : "shock") : "nervous", 0, [W.caiu]); lampGlow(); tvGlow(); ledGlow(); break;
     case "j_dark": case "j_face": case "j_decide": sit(c === "j_decide" ? "shock" : "nervous", c === "j_face" ? 1 : 0); tvGlow(); ledGlow(0.8); break;
     case "j_led": ledGlow(1.6); break;
-    case "j_pad": sit("nervous", -1); tvGlow(); out.fx.push({ key: "pad", cw: 512, ch: 300, draw: fxPad, x: 599.35, y: D0 + 0.78, z: 2.55, w: 0.36, h: 0.21 }); break;
+    case "j_pad": sit("nervous", -1); tvGlow(); out.fx.push({ key: "pad", cw: 512, ch: 300, draw: fxPad, x: 599.35, y: D0 + 0.74, z: 2.2, w: 0.36, h: 0.21 }); break;
     case "j_side": case "j_vib": case "j_optA": sit(c === "j_side" ? "nervous" : "shock", 1); tvGlow(); break;
     case "j_buy": out.places.push(person(cam, YOU, 599.6, D0, 1.7, { side: false, mirror: false }, { mode: "stand", expr: "grin", blink: lidAt(t, 900), look: 0 }, {}));
       blob(out, 599.6, D0, 1.7); out.fx.push({ key: "cbox", cw: 400, ch: 480, draw: fxBox, x: 599.6, y: D0 + 0.95, z: 1.45, w: 0.42, h: 0.5 }); lampGlow(); break;
