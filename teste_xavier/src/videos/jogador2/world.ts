@@ -362,7 +362,7 @@ export class World {
       this.tvMat.map = this.tvTex;
       const scr = new THREE.Mesh(new THREE.PlaneGeometry(1.68, 0.945), this.tvMat); scr.position.set(600.0, D0 + 1.11, -0.595); scr.layers.set(NOINK); R.add(scr);
       this.led = new THREE.Mesh(new THREE.BoxGeometry(0.012, 0.09, 0.004), this.ledOnM); this.led.position.set(601.015, D0 + 0.62, -0.548); this.led.layers.set(NOINK); R.add(this.led);
-      const cb = new Batch(); cb.add(boxGeo(V(-0.3, 0, -0.26), V(0.3, 0.17, 0.26), 4), lam("cushion", () => ({ color: "#f0d48a" }))); cb.build(this.cushion);
+      const cb = new Batch(); cb.add(new THREE.SphereGeometry(1, 28, 14).scale(0.32, 0.1, 0.27).translate(0, 0.1, 0), lam("cushion", () => ({ color: "#f6e2a8", emissive: new THREE.Color("#3d3018") }))); cb.build(this.cushion);
       this.cushion.position.set(600.85, D0 + 0.45, 2.92); R.add(this.cushion);
       this.roomWin = new THREE.Mesh(new THREE.PlaneGeometry(1.8, 1.3), lam("nightOut", () => ({ color: "#0c1226" }))); this.roomWin.position.set(603.5, D0 + 1.85, 4.0); this.roomWin.rotation.y = Math.PI; R.add(this.roomWin);
     }
