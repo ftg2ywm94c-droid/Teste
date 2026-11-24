@@ -120,3 +120,9 @@ v2/ep16/out/*.wav
 v2/ep16/out/*.mp4
 v2/ep16/out/frames.txt
 v2/ep16/out/mg.txt
+v2/ep18/frames/
+v2/ep18/mg/
+v2/ep18/out/*.wav
+v2/ep18/out/*.mp4
+v2/ep18/out/frames.txt
+v2/ep18/out/mg.txt
