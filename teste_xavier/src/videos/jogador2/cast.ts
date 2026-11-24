@@ -765,6 +765,12 @@ const fxBox = (p: Pen) => hi(p, 1, (g) => {
   g.fillStyle = "#ffffff"; g.beginPath(); g.roundRect(150, 100, 100, 220, 30); g.fill(); g.stroke(); g.fillStyle = "#17171c"; g.fillRect(190, 104, 20, 212);
   g.fillStyle = "#e0ac7e"; g.lineWidth = 8; for (const x of [40, 360]) { g.beginPath(); g.ellipse(x, 300, 38, 52, 0, 0, 7); g.fill(); g.stroke(); }
 });
+/** linhas de vibração em volta da almofada */
+const fxVib = (p: Pen, ph: number) => hi(p, 1, (g) => {
+  g.strokeStyle = "rgba(255,255,255,0.9)"; g.lineWidth = 9; g.lineCap = "round";
+  for (const sx of [-1, 1]) for (let k = 0; k < 3; k++) { const r = 70 + k * 34 + ph * 10;
+    g.beginPath(); g.arc(256 + sx * 60, 160, r, sx > 0 ? -0.5 : Math.PI - 0.5 + 0.0, sx > 0 ? 0.5 : Math.PI + 0.5); g.stroke(); }
+});
 const SEAT_H = 0.45 / SU;
 const ep4 = (id: number, cam: CamInfo, t: number, out: Stage) => {
   const c = SHOTS[id - 1].crowd;
@@ -786,7 +792,14 @@ const ep4 = (id: number, cam: CamInfo, t: number, out: Stage) => {
     case "j_dark": case "j_face": case "j_decide": sit(c === "j_decide" ? "shock" : "nervous", c === "j_face" ? 1 : 0); tvGlow(); ledGlow(0.8); break;
     case "j_led": ledGlow(1.6); break;
     case "j_pad": sit("nervous", -1); tvGlow(); out.fx.push({ key: "pad", cw: 512, ch: 300, draw: fxPad, x: 599.35, y: D0 + 0.74, z: 2.2, w: 0.36, h: 0.21 }); break;
-    case "j_side": case "j_vib": case "j_optA": sit(c === "j_side" ? "nervous" : "shock", 1); tvGlow(); break;
+    case "j_side": case "j_vib": case "j_optA": { sit(c === "j_side" ? "nervous" : "shock", 1); tvGlow();
+      const v = vibAt(id, t), on = v !== 0, pul = 0.6 + 0.4 * Math.abs(Math.sin(t * 7));
+      // uma luz azul fraca vazando por baixo da almofada (já no "do seu lado"; forte quando vibra)
+      const a = q((on ? 0.85 : 0.35) * pul, 10);
+      out.fx.push({ key: `under|${a}`, cw: 256, ch: 256, draw: (pp) => fxGlow(pp, `rgba(80,160,255,${a})`), soft: true, x: 600.85, y: D0 + 0.47, z: 2.62, w: 0.7, h: 0.22 });
+      out.fx.push({ key: `underF|${a}`, cw: 256, ch: 256, draw: (pp) => fxGlow(pp, `rgba(80,160,255,${0.6 * a})`), soft: true, flat: true, x: 600.85, y: D0 + 0.455, z: 2.75, w: 1.0, h: 0.7 });
+      if (on) { const ph = q((t * 6) % 1, 4); out.fx.push({ key: `vib|${ph}`, cw: 512, ch: 320, draw: (pp) => fxVib(pp, ph), x: 600.85, y: D0 + 0.62, z: 2.85, w: 0.9, h: 0.56 }); }
+      break; }
     case "j_buy": out.places.push(person(cam, YOU, 599.6, D0, 1.7, { side: false, mirror: false }, { mode: "stand", expr: "grin", blink: lidAt(t, 900), look: 0 }, {}));
       blob(out, 599.6, D0, 1.7); out.fx.push({ key: "cbox", cw: 400, ch: 480, draw: fxBox, x: 599.6, y: D0 + 0.95, z: 1.45, w: 0.42, h: 0.5 }); lampGlow(); break;
     case "j_dogs": dogs(); break;
