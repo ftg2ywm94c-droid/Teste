@@ -7,3 +7,5 @@ def HUD(wt):
     return []
 def NOTES(wt):
     return [(0.0, 3.0, 'história de ficção', r'\an2')]
+# v2: a legenda descia sobre o texto da TV ("INSTALANDO… 99%" nos planos 1-2 e "JOGADOR 2" no plano 12); desce para baixo do rack
+LEG_MV = [(0.0, 6.82, 330), (35.38, 37.68, 330)]

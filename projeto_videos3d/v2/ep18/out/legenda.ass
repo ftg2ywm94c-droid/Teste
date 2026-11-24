@@ -14,14 +14,14 @@ Style: Hud,Poppins,62,&H00FFFFFF,&H00FFFFFF,&H50000000,&H50000000,-1,0,0,0,100,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 1,0:00:00.00,0:00:01.02,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}TRÊS{\c&HFFFFFF&} {\c&H0028D7FF&}E{\c&HFFFFFF&} {\c&H0028D7FF&}DOZE{\c&HFFFFFF&}
-Dialogue: 1,0:00:01.02,0:00:02.16,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}DA{\c&HFFFFFF&} {\c&H0028D7FF&}MANHÃ.{\c&HFFFFFF&}
-Dialogue: 1,0:00:02.16,0:00:03.20,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}FALTAVA {\c&H0028D7FF&}UM{\c&HFFFFFF&} {\c&H0028D7FF&}POR{\c&HFFFFFF&} {\c&H0028D7FF&}CENTO{\c&HFFFFFF&}
-Dialogue: 1,0:00:03.20,0:00:03.68,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PRO JOGO
-Dialogue: 1,0:00:03.68,0:00:04.54,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}MAIS ESPERADO
-Dialogue: 1,0:00:04.54,0:00:05.08,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DA DÉCADA
-Dialogue: 1,0:00:05.08,0:00:05.52,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}TERMINAR
-Dialogue: 1,0:00:05.52,0:00:06.26,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DE INSTALAR.
+Dialogue: 1,0:00:00.00,0:00:01.02,Leg,,0,0,330,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}TRÊS{\c&HFFFFFF&} {\c&H0028D7FF&}E{\c&HFFFFFF&} {\c&H0028D7FF&}DOZE{\c&HFFFFFF&}
+Dialogue: 1,0:00:01.02,0:00:02.16,Leg,,0,0,330,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}DA{\c&HFFFFFF&} {\c&H0028D7FF&}MANHÃ.{\c&HFFFFFF&}
+Dialogue: 1,0:00:02.16,0:00:03.20,Leg,,0,0,330,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}FALTAVA {\c&H0028D7FF&}UM{\c&HFFFFFF&} {\c&H0028D7FF&}POR{\c&HFFFFFF&} {\c&H0028D7FF&}CENTO{\c&HFFFFFF&}
+Dialogue: 1,0:00:03.20,0:00:03.68,Leg,,0,0,330,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PRO JOGO
+Dialogue: 1,0:00:03.68,0:00:04.54,Leg,,0,0,330,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}MAIS ESPERADO
+Dialogue: 1,0:00:04.54,0:00:05.08,Leg,,0,0,330,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DA DÉCADA
+Dialogue: 1,0:00:05.08,0:00:05.52,Leg,,0,0,330,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}TERMINAR
+Dialogue: 1,0:00:05.52,0:00:06.26,Leg,,0,0,330,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DE INSTALAR.
 Dialogue: 1,0:00:06.82,0:00:07.86,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E {\c&H0028D7FF&}A{\c&HFFFFFF&} {\c&H0028D7FF&}LUZ{\c&HFFFFFF&} {\c&H0028D7FF&}DO{\c&HFFFFFF&} {\c&H0028D7FF&}SÍTIO{\c&HFFFFFF&}
 Dialogue: 1,0:00:07.86,0:00:08.44,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}CAIU.{\c&HFFFFFF&}
 Dialogue: 1,0:00:09.28,0:00:09.74,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ MORA
@@ -50,8 +50,8 @@ Dialogue: 1,0:00:30.24,0:00:30.70,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,
 Dialogue: 1,0:00:31.46,0:00:33.00,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A TV {\c&H0028D7FF&}LIGA{\c&HFFFFFF&} {\c&H0028D7FF&}SOZINHA.{\c&HFFFFFF&}
 Dialogue: 1,0:00:33.38,0:00:33.92,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NA TELA,
 Dialogue: 1,0:00:34.10,0:00:34.96,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}UMA MENSAGEM:
-Dialogue: 1,0:00:35.38,0:00:36.22,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}JOGADOR{\c&HFFFFFF&} {\c&H0028D7FF&}DOIS{\c&HFFFFFF&}
-Dialogue: 1,0:00:36.22,0:00:37.04,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}CONECTADO.{\c&HFFFFFF&}
+Dialogue: 1,0:00:35.38,0:00:36.22,Leg,,0,0,330,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}JOGADOR{\c&HFFFFFF&} {\c&H0028D7FF&}DOIS{\c&HFFFFFF&}
+Dialogue: 1,0:00:36.22,0:00:37.04,Leg,,0,0,330,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}CONECTADO.{\c&HFFFFFF&}
 Dialogue: 1,0:00:37.68,0:00:38.82,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ SÓ TEM {\c&H0028D7FF&}UM{\c&HFFFFFF&} {\c&H0028D7FF&}CONTROLE.{\c&HFFFFFF&}
 Dialogue: 1,0:00:39.60,0:00:40.42,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}OS CACHORROS,
 Dialogue: 1,0:00:40.42,0:00:40.98,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}QUE LATIAM

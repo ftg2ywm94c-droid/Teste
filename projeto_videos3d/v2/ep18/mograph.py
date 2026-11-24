@@ -33,12 +33,12 @@ def backing(d, y0, y1, k, a=170):
 def frame(t):
     im = Image.new('RGBA', (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(im); n = 0
     if t < 3.0:                           # gancho: a ameaça no quadro 0 (99 % e a luz cai)
-        k = env(t, -1, 3.0, 0.1, 0.2); backing(d, 150, 450, k, 190)
-        text(d, W / 2, 180, 'FALTAVA 1%', WHT, 110, k); text(d, W / 2, 310, 'E A LUZ CAIU.', YEL, 104, k); n += 1
+        k = env(t, -1, 3.0, 0.1, 0.2); backing(d, 540, 840, k, 190)   # v2: abaixo do relógio 03:12 da TV (antes cobria metade dele)
+        text(d, W / 2, 570, 'FALTAVA 1%', WHT, 110, k); text(d, W / 2, 700, 'E A LUZ CAIU.', YEL, 104, k); n += 1
     if 3.0 <= t < 8.6:
-        k = env(t, 3.0, 8.6, 0.2, 0.3); backing(d, 200, 420, k, 160)
-        badge(d, 230, k)
-        if t >= 3.4: text(d, W / 2, 330, 'no final, você decide', YEL, 50, env(t, 3.4, 8.6))
+        k = env(t, 3.0, 8.6, 0.2, 0.3); backing(d, 360, 580, k, 160)   # v2: abaixo do relógio da TV
+        badge(d, 390, k)
+        if t >= 3.4: text(d, W / 2, 490, 'no final, você decide', YEL, 50, env(t, 3.4, 8.6))
         n += 1
     if 26.0 <= t < 36.0:                  # aviso de que há escolha (metade do público sai perto da metade do vídeo)
         k = env(t, 26.0, 36.0, 0.3, 0.3); s2 = 'NO FINAL: A OU B'; fo = f(50); w = d.textlength(s2, font=fo)

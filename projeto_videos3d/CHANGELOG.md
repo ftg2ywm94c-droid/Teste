@@ -5,6 +5,19 @@
 - `scripts/add_narration.py`: MP3 → MP4 com legenda sincronizada, ducking e −14 LUFS.
 - Para recuperar: `git checkout be24c75 -- projeto_videos3d` (a tag não pôde ser enviada ao GitHub: o acesso desta sessão só permite o branch de trabalho).
 
+## v0.20: vídeo 18 "Jogador 2 · Ep. 1" (série nova, suspense na espera pelo GTA 6) (2026-11-24)
+- Cenas na skill Xavier (`teste_xavier/src/videos/jogador2/`, composição `Jogador2Short`). São 21 planos cortados nas palavras do MP3 do usuário, com render nativo 1080x1920 (1938 quadros).
+- Novidades:
+  - sala do sítio com TV de tela animada (instalando 99%, chiado, "JOGADOR 2 CONECTADO") e console e controle genéricos com LED;
+  - sítio com casa, galpão com gerador, antena de rádio, milharal balançando e dois cachorros que latem e param;
+  - almofada vibrando com brilho azul.
+- Personagem sentado na beira do sofá, sem afundar (pedido do usuário).
+- Ajustes pós-render:
+  - efeitos abaixados (correlação da narração de 0,585 para 0,893);
+  - legenda, gancho e selo tirados de cima do texto da TV;
+  - plano 12 refeito com a câmera mais longe.
+- QC aprovado: −14,4 LUFS, TP −1,7, deriva 0 ms. Thumbnail em `thumbnails/18_jogador2_ep1_thumb.png/.jpg` e pacote de postagem em `v2/ep18/POSTAGEM.md`.
+
 ## v0.19 — vídeo 16 "Vendaval · Ep. 3" (continuação do 14, a maioria escolheu B) (2026-11-23)
 - Cenas na skill Xavier (`teste_xavier/src/videos/vendaval3/`, composição `Vendaval3Short`), 23 planos cortados nas palavras do MP3 do usuário, render nativo 1080x1920 (2308 quadros; render retomado uma vez após o limite de tempo).
 - Novidades: tela do celular com discagem, cronômetro da chamada, onda de áudio, bateria 3% e tela apagando; escurecimento da cena quando o celular apaga; sirene vermelha se aproximando e parando; vizinha com lanterna batendo na porta; paredes novas na sala.

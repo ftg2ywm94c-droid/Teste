@@ -201,7 +201,7 @@ const CAMS: Record<number, Key[]> = {
   // a TV liga sozinha
   11: [{ f: 0, s: (f) => dolly([602.9, 1.35, 2.1], [600.0, 1.0, -0.6], f, S0(11), 0.0024, { fov: 52 }) }],
   // a mensagem na tela
-  12: [{ f: 0, s: (f) => dolly([600.0, 1.12, 1.15], [600.0, 1.1, -0.62], f, S0(12), 0.0026, { fov: 42 }) }],
+  12: [{ f: 0, s: (f) => dolly([600.0, 1.12, 2.15], [600.0, 1.1, -0.62], f, S0(12), 0.0012, { fov: 42 }) }],   // v2: mais longe, "JOGADOR 2" cabe inteiro no 9:16
   // você e o único controle
   13: [{ f: 0, s: (f) => dolly([599.45, 1.08, 1.1], [599.4, 0.95, 2.44], f, S0(13), 0.0026, { fov: 46 }) }],
   // os cachorros na varanda

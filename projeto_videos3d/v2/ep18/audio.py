@@ -145,15 +145,15 @@ def hum(d, f=120, g=0.05):  # zumbido elétrico da TV / ventoinha do console
 g = ext_mask()
 amb = wind(END) * 0.55 + grilos(END)
 tt = np.arange(N) / SR; amb[:, :] *= np.where(tt < PARAM, 1.0, np.where(tt < PARAM + 0.05, 1 - (tt - PARAM) / 0.05, 0.0) + 0.0)[:, None] * 0.6 + 0.4  # grilos e vento: somem pela metade no "param"
-sfx += muffle(amb, g) * 0.5
+sfx += muffle(amb, g) * 0.2   # v2: 0.5 -> 0.2 (mascarava a voz, QC corr 0.585)
 EV += [(0.0, 'sítio: vento + grilos (abafado dentro da sala; caem no "param")')]
 # cachorros latindo lá fora (os dois), até o "param"
 prev = False
 for i in range(int(8.0 * 30), int(PARAM * 30)):
     t = i / 30; on = bark_at(t)
     if on and not prev:
-        gi = g[min(N - 1, int(t * SR))]; put(lp(latido(520), 3000 if gi > 0.6 else 700), t, 0.55 * (0.35 + 0.65 * gi))
-        put(lp(latido(680), 3000 if gi > 0.6 else 700), t + 0.11, 0.4 * (0.35 + 0.65 * gi))
+        gi = g[min(N - 1, int(t * SR))]; put(lp(latido(520), 3000 if gi > 0.6 else 700), t, 0.28 * (0.35 + 0.65 * gi))
+        put(lp(latido(680), 3000 if gi > 0.6 else 700), t + 0.11, 0.2 * (0.35 + 0.65 * gi))
     prev = on
 EV.append((8.0, 'cachorros latindo (igual à imagem) até o "param" (41,54 s)'))
 put(boom(0.9, 50, 0.6), PARAM + 0.02, 0.35, tag='param: silêncio seco')
@@ -172,7 +172,7 @@ put(st(np.concatenate([tone(660, 0.12, 12), tone(990, 0.3, 7)]) * 0.45), 35.38, 
 def vib(d):
     t = np.arange(int(d * SR)) / SR; gate = ((t % 0.6) < 0.4).astype(float)
     m = (np.sin(2 * np.pi * 150 * t) + 0.5 * np.sign(np.sin(2 * np.pi * 300 * t))) * gate
-    return fade(st(lp(m, 1100) * 0.45), 0.02, 0.2)
+    return fade(st(lp(m, 700) * 0.12), 0.02, 0.2)   # v2: 0.45 -> 0.12, filtro 1100 -> 700 Hz (não cobre a voz)
 put(vib(57.2 - 45.2), 45.2, 1.0, tag='a almofada vibrando')
 CORTES = [s.t0 for s in P.SHOTS[1:]]
 for i, c in enumerate(CORTES): put(load(f'swish_{(1, 4, 7, 10, 13)[i % 5]}.flac'), c - 0.06, 0.24)
