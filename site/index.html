@@ -71,6 +71,27 @@ section { margin-bottom: 32px; }
 .badge { flex: none; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font-size: 15px; color: #fff; }
 .a { background: var(--red); } .b { background: var(--green); } .c { background: var(--yellow); color: #111; }
 
+/* Motor de Produção */
+.motor { position: relative; overflow: hidden; border-radius: 20px; padding: 24px 20px; margin: 0 0 32px;
+  background: linear-gradient(160deg, #2a1d00 0%, #1a2155 55%); border: 2px solid var(--yellow); box-shadow: 0 0 50px rgba(255,210,20,.18); }
+.motor .kicker { display: inline-block; background: var(--yellow); color: #111; font-size: 12px; letter-spacing: 1.5px; padding: 4px 10px; border-radius: 6px; }
+.motor h2.big { font-size: 30px; line-height: 1.1; color: var(--ink); letter-spacing: 0; text-transform: none; margin: 12px 0 8px; }
+.motor h2.big span { color: var(--yellow); }
+.motor .lead { font-size: 16px; margin-bottom: 16px; }
+.proof { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+.proof div { background: rgba(0,0,0,.28); border-radius: 12px; padding: 12px; text-align: center; }
+.proof b { display: block; font-size: 24px; color: var(--yellow); line-height: 1.1; }
+.proof small { color: var(--muted); font-size: 12px; }
+.learn { list-style: none; padding: 0; display: grid; gap: 8px; margin-bottom: 18px; font-size: 15px; }
+.learn li { display: flex; gap: 10px; } .learn li::before { content: "▸"; color: var(--yellow); }
+.wait { display: grid; gap: 10px; }
+.wait input { font: inherit; font-size: 16px; padding: 14px; border-radius: 12px; border: 2px solid var(--line); background: #0b1030; color: var(--ink); width: 100%; }
+.wait input:focus { outline: none; border-color: var(--yellow); }
+.wait button { font: inherit; font-size: 17px; padding: 15px; border: 0; border-radius: 12px; background: var(--yellow); color: #111; cursor: pointer; }
+.wait button:hover { filter: brightness(1.08); }
+.fine { color: var(--muted); font-size: 12px; margin-top: 10px; }
+.hidden { display: none; }
+
 footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 8px; }
 footer p + p { margin-top: 6px; }
 </style>
@@ -87,6 +108,30 @@ footer p + p { margin-top: 6px; }
 
   <!-- Links das redes: preencha a URL em LINKS (no script lá embaixo). Botão sem URL fica escondido. -->
   <nav class="social" id="social" aria-label="Redes sociais"></nav>
+
+  <section class="motor" id="motor" aria-labelledby="motor-t">
+    <span class="kicker">EM BREVE · LISTA DE ESPERA</span>
+    <h2 class="big" id="motor-t">Motor de Produção: <span>aprenda a criar vídeos assim</span></h2>
+    <p class="lead">O método que a gente usa para fazer as séries de suspense em 3D com IA, do roteiro ao post.</p>
+    <div class="proof">
+      <div><b>316 mil</b><small>views no Ônibus Ep. 1 (Instagram)</small></div>
+      <div><b>A ou B</b><small>o público decide o próximo episódio</small></div>
+    </div>
+    <ul class="learn">
+      <li>O formato "Você decide": gancho, escolha A/B e continuação</li>
+      <li>Roteiro e narração que seguram até o fim</li>
+      <li>Produção das cenas 3D com IA, passo a passo</li>
+      <li>Postagem guiada por dados: horário, legenda e o que medir</li>
+    </ul>
+    <form class="wait" name="lista-espera" method="POST" data-netlify="true" netlify-honeypot="site" action="/obrigado.html">
+      <input type="hidden" name="form-name" value="lista-espera">
+      <p class="hidden"><label>Não preencha: <input name="site"></label></p>
+      <input type="email" name="email" placeholder="Seu melhor e-mail" required autocomplete="email" aria-label="E-mail">
+      <input type="text" name="instagram" placeholder="Seu @ no Instagram (opcional)" aria-label="Instagram">
+      <button type="submit">Quero entrar na lista de espera</button>
+    </form>
+    <p class="fine">Sem cobrança agora. Seu e-mail é usado só para avisar do lançamento, e você pode pedir para sair quando quiser. Resultados de views variam de vídeo para vídeo.</p>
+  </section>
 
   <section>
     <h2>Como funciona</h2>
