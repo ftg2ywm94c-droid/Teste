@@ -49,3 +49,16 @@ Custo no vidIQ: cada voz tem menos de 1000 caracteres, então 28 créditos por v
 ## Ideias para a Parte 2 (não decididas)
 - A: você chega no Thor, e a sirene da Noite Livre toca no meio da rua.
 - B: o Thor vem com o chamado, mas não vem sozinho: uma das máscaras segue ele até o portão.
+
+## Produção (24/11/2026)
+- As cenas já estão prontas na skill Xavier (`teste_xavier/src/videos/noitelivre/`, composição `NoiteLivreShort`), com 22 planos. Os quadros de conferência ficam em `analysis/19_noite_livre_quadros.jpg`.
+- Novidades no desenho dos personagens (`toon.ts` da cópia):
+  - cabelo comprido (mãe e Bia);
+  - boca que abre e fecha enquanto o personagem fala (`talk`);
+  - máscara lisa genérica, de frente e de perfil.
+- Cenário novo:
+  - telejornal genérico na TV (AO VIVO, relógio 21:57/21:58, faixa), com tudo dentro da faixa central que aparece no 9:16;
+  - cortina que a mãe fecha e a caminha vazia do Thor;
+  - muro e portão meio aberto na frente da casa;
+  - Thor latindo no meio da rua e três máscaras na esquina.
+- **Os tempos ainda são provisórios** (`LINES` no `story.ts`). Quando chegarem os áudios (créditos do vidIQ renovam em 09/12, mais a narração do usuário), os tempos e as bocas passam a vir dos áudios reais.

@@ -9,6 +9,7 @@ import { OnibusShort, ONIBUS_FRAMES } from "./videos/onibus/Onibus";
 import { Vendaval2Short, VENDAVAL2_FRAMES } from "./videos/vendaval2/Vendaval2";
 import { Vendaval3Short, VENDAVAL3_FRAMES } from "./videos/vendaval3/Vendaval3";
 import { Jogador2Short, JOGADOR2_FRAMES } from "./videos/jogador2/Jogador2";
+import { NoiteLivreShort, NOITELIVRE_FRAMES } from "./videos/noitelivre/NoiteLivre";
 import { Onibus2Short, ONIBUS2_FRAMES } from "./videos/onibus2/Onibus2";
 // Cada desenho novo: copie templates/pisa/ para src/videos/<nome>/, renomeie e registre aqui.
 export const Root: React.FC = () => (
@@ -21,6 +22,7 @@ export const Root: React.FC = () => (
     <Composition id="Vendaval2Short" component={Vendaval2Short} durationInFrames={VENDAVAL2_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="Vendaval3Short" component={Vendaval3Short} durationInFrames={VENDAVAL3_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="Jogador2Short" component={Jogador2Short} durationInFrames={JOGADOR2_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="NoiteLivreShort" component={NoiteLivreShort} durationInFrames={NOITELIVRE_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="Onibus2Short" component={Onibus2Short} durationInFrames={ONIBUS2_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="BridgeShort" component={BridgeShort} durationInFrames={BRIDGE_FRAMES} fps={30} width={1080} height={1920} />
   </>
