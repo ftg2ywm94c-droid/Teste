@@ -30,3 +30,10 @@
 4. Eliel: a mais áspera e grave, mas marcada como meia-idade.
 
 A conta tem 7 das 10 vagas de voz ocupadas. Para testar as 4, é preciso liberar uma vaga, por exemplo tirando a Fabi ou a Elena Vinter, que foram reprovadas como narradoras do vídeo 19. Isso depende de autorização do usuário.
+
+## Decisão (26/11/2026)
+- **O usuário escolheu o Eliel** (`y3X5crcIDtFawPx7bcNq`), ouvindo as amostras. A voz foi adicionada à conta como "Eliel - Narrador", e agora são 8 de 10 vagas. Não foi preciso tirar nenhuma voz.
+- **Teste em pt-BR** (`teste_Eliel_suspense.mp3`):
+  - frase de suspense de 25 palavras, gerada com eleven_multilingual_v2, stability 0,4, similarity 0,8 e style 0,35;
+  - o Whisper medium transcreveu exatamente o texto pedido;
+  - duração 9,27 s, ou 2,7 palavras/s. A meta das referências é ~3/s, e o ritmo vai ser ajustado pelo texto do roteiro, sem mudar a velocidade do áudio.
