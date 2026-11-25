@@ -196,7 +196,8 @@ const CAMS: Record<number, Key[]> = {
   22: dl(22, [601.9, 1.45, 1.3], [603.2, 1.4, 3.7], 52),
   23: dl(23, [597.0, 1.75, -2.4], [597.0, 1.0, 2.0], 58, 0.0016),
   // o fecho em loop: a mesma câmera do quadro 0 do plano 1, parada
-  24: [{ f: 0, s: () => ({ pos: [600.0, 1.85, -0.9], look: [600.0, 0.95, 2.5], fov: 66 }) }],
+  // loop: the same slow zoom as shot 1, arriving at shot 1's frame-0 lens exactly on the frame after the last one (no freeze before the seam)
+  24: [{ f: 0, s: (f) => ({ pos: [600.0, 1.85, -0.9], look: [600.0, 0.95, 2.5], fov: (360 / Math.PI) * Math.atan(Math.tan((66 * Math.PI) / 360) * Math.exp(-0.0012 * (f - TOTAL))) }) }],
 };
 /** impact kicks: flip sign every frame, decay over 7 frames */
 const KICKS: number[] = [];

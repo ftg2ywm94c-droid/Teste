@@ -17,11 +17,11 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 Dialogue: 1,0:00:00.00,0:00:00.78,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}IMAGINA:
 Dialogue: 1,0:00:01.04,0:00:01.52,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O GOVERNO
 Dialogue: 1,0:00:01.52,0:00:03.24,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ANUNCIA A {\c&H0028D7FF&}NOITE{\c&HFFFFFF&} {\c&H0028D7FF&}LIVRE.{\c&HFFFFFF&}
-Dialogue: 1,0:00:03.60,0:00:04.04,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DAS DEZ
-Dialogue: 1,0:00:04.04,0:00:04.86,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DA NOITE ÀS SEIS
-Dialogue: 1,0:00:04.86,0:00:05.54,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DA MANHÃ,
-Dialogue: 1,0:00:05.70,0:00:06.44,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}NADA{\c&HFFFFFF&} {\c&H0028D7FF&}É{\c&HFFFFFF&} {\c&H0028D7FF&}CRIME.{\c&HFFFFFF&}
-Dialogue: 1,0:00:06.44,0:00:08.12,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E FALTAM {\c&H0028D7FF&}TRÊS{\c&HFFFFFF&} {\c&H0028D7FF&}MINUTOS.{\c&HFFFFFF&}
+Dialogue: 1,0:00:03.60,0:00:04.04,Leg,,0,0,330,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DAS DEZ
+Dialogue: 1,0:00:04.04,0:00:04.86,Leg,,0,0,330,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DA NOITE ÀS SEIS
+Dialogue: 1,0:00:04.86,0:00:05.54,Leg,,0,0,330,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DA MANHÃ,
+Dialogue: 1,0:00:05.70,0:00:06.44,Leg,,0,0,330,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}NADA{\c&HFFFFFF&} {\c&H0028D7FF&}É{\c&HFFFFFF&} {\c&H0028D7FF&}CRIME.{\c&HFFFFFF&}
+Dialogue: 1,0:00:06.44,0:00:08.12,Leg,,0,0,330,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E FALTAM {\c&H0028D7FF&}TRÊS{\c&HFFFFFF&} {\c&H0028D7FF&}MINUTOS.{\c&HFFFFFF&}
 Dialogue: 1,0:00:08.96,0:00:09.44,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ATENÇÃO.
 Dialogue: 1,0:00:09.44,0:00:10.80,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}FALTAM {\c&H0028D7FF&}TRÊS{\c&HFFFFFF&} {\c&H0028D7FF&}MINUTOS{\c&HFFFFFF&} PARA
 Dialogue: 1,0:00:10.80,0:00:11.98,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O INÍCIO DA {\c&H0028D7FF&}NOITE{\c&HFFFFFF&} {\c&H0028D7FF&}LIVRE.{\c&HFFFFFF&}
@@ -59,7 +59,7 @@ Dialogue: 1,0:00:36.06,0:00:36.56,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,
 Dialogue: 1,0:00:36.56,0:00:37.16,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}ESSA{\c&HFFFFFF&} {\c&H0028D7FF&}PORTA.{\c&HFFFFFF&}
 Dialogue: 1,0:00:37.46,0:00:37.80,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}MÃE!
 Dialogue: 1,0:00:37.80,0:00:38.52,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}É{\c&HFFFFFF&} {\c&H0028D7FF&}O{\c&HFFFFFF&} {\c&H0028D7FF&}THOR!{\c&HFFFFFF&}
-Dialogue: 1,0:00:39.02,0:00:40.12,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}FALTAM {\c&H0028D7FF&}DOIS{\c&HFFFFFF&} {\c&H0028D7FF&}MINUTOS.{\c&HFFFFFF&}
+Dialogue: 1,0:00:39.02,0:00:40.12,Leg,,0,0,330,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}FALTAM {\c&H0028D7FF&}DOIS{\c&HFFFFFF&} {\c&H0028D7FF&}MINUTOS.{\c&HFFFFFF&}
 Dialogue: 1,0:00:40.62,0:00:41.16,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SE CORRER...
 Dialogue: 1,0:00:41.66,0:00:42.22,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DÁ PRA CHEGAR
 Dialogue: 1,0:00:42.22,0:00:43.30,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NELE EM {\c&H0028D7FF&}TRINTA{\c&HFFFFFF&} {\c&H0028D7FF&}SEGUNDOS.{\c&HFFFFFF&}

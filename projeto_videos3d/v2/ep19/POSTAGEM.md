@@ -1,6 +1,8 @@
-# Vídeo 19: A Noite Livre · Ep. 1 (rascunho do pacote de postagem, 25/11/2026)
+# Vídeo 19: A Noite Livre · Ep. 1 (pacote de postagem, 25/11/2026)
 
-Rascunho feito **antes** do vídeo, com base nos dados abaixo. O título só vai ser fechado depois de pontuado no vidIQ: em 25/11 sobraram 2 créditos, e eles renovam em 09/12.
+Arquivos: `v2/ep19/out/19_noite_livre_ep1_1080x1920.mp4` (64,6 s) e `thumbnails/19_noite_livre_ep1_capa.jpg` (capa: o quadro de **45,0 s** do próprio vídeo).
+
+Os títulos abaixo **não foram pontuados**. Em 25/11 sobraram 2 créditos do vidIQ, que renovam em 09/12. A ordem sugerida segue o padrão observado nas referências, não uma nota.
 
 ## Dados usados
 - **Instagram @eselab.3d** (vidIQ owner insights, 25/11):
@@ -61,8 +63,20 @@ A mais comentada vira a PARTE 2!
 **Comentário fixado:** "A = corre e pega o Thor 🐕 · B = fica trancado e chama pela janela 🪟 · A mais votada vira a PARTE 2."
 
 ## Capa (quadro do próprio vídeo, como as referências)
-- Escolher **um quadro do vídeo com texto de impacto já na imagem**: o plano das máscaras virando ("ELE VIU" no topo, "21:59 · FALTA 1 MIN" no HUD).
-- No upload, escolher esse quadro como capa: no YouTube, pelo app, no quadro do Short; no Instagram e no TikTok, na capa do vídeo.
-- Eu informo o segundo exato depois do render.
+- **Segundo exato: 45,0 s** (plano 17, logo depois da fala "E se eles chegarem primeiro?"). O quadro tem "ELE VIU" no topo, o HUD em "21:58 · FALTAM 2 MIN" e os três mascarados com os facões, sem legenda por cima. O arquivo é `thumbnails/19_noite_livre_ep1_capa.jpg`.
+- No upload:
+  - YouTube: escolha o quadro em 0:45 pelo app;
+  - Instagram e TikTok: na capa do vídeo, arraste até 0:45, ou envie o JPG.
 
-Rótulo de IA: marcar no Instagram e no TikTok (as vozes dos personagens são de IA).
+**Rótulo de IA:** marcar no Instagram, no TikTok e no YouTube ("conteúdo alterado ou sintético"). **Todas as vozes são de IA (ElevenLabs)**, inclusive a da narradora (Ana Dias).
+
+## Risco de alcance (facões com vermelho)
+- Os mascarados seguram facões com vermelho escorrendo (pedido do usuário). O desenho é cartoon e não mostra nenhum ferimento nem ataque.
+- Mesmo assim, esse tipo de imagem pode levar restrição de idade no YouTube ou reduzir a distribuição no TikTok e no Instagram.
+- Na capa (0:45) os facões aparecem, mas sem destaque: ficam embaixo, nas mãos. O título e a legenda não falam de sangue.
+
+## O que medir em 48 h e em 7 dias
+- **Pulos nos 3 primeiros segundos** comparados com o Ônibus Ep. 1 (27%). É o primeiro vídeo com HUD, palavra-chave por plano e voz no quadro 0.
+- **Distribuição:** se as views pararem bem abaixo da média logo nas primeiras horas, ou se aparecer aviso de restrição, a suspeita principal é o vermelho nos facões. Anote antes de mexer.
+- **Loop:** veja se o % assistido passa de 100% (repetições). O fim emenda no quadro 0.
+- **Comentários A/B por view**, para comparar com o 1,57% do Ônibus Ep. 1.

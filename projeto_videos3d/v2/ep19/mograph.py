@@ -91,7 +91,10 @@ def frame(t):
         k = env(t, P.W['comenta'], P.W['se'])
         card(d, 50, 380, 525, 560, RED, k, 'A', 'PEGAR', 50); card(d, 555, 380, 1030, 560, GRN, k, 'B', 'JANELA', 50)
         text(d, W / 2, 600, 'COMENTA A OU B', YEL, 84, k)
-        if t >= 60.04: text(d, W / 2, 720, 'a mais comentada vira a PARTE 2', WHT, 50, env(t, 60.04, P.W['se']))
+        if t >= 60.04:   # fundo escuro: a frase fica por cima das cabeças da família no sofá
+            k2 = env(t, 60.04, P.W['se']); w2 = d.textlength('a mais comentada vira a PARTE 2', font=f(50))
+            d.rounded_rectangle((W / 2 - w2 / 2 - 30, 708, W / 2 + w2 / 2 + 30, 792), 36, fill=(10, 12, 24, int(200 * k2)))
+            text(d, W / 2, 720, 'a mais comentada vira a PARTE 2', WHT, 50, k2)
     return im, n
 
 def main():

@@ -8,3 +8,5 @@ def HUD(wt):
     return []
 def NOTES(wt):
     return [(0.0, 3.0, 'história de ficção', r'\an2')]
+# a legenda desce nos dois trechos em que cobriria o letreiro do telejornal (S02_tv 3,55–8,36 s e a TV em 21:58, 38,86–40,53 s)
+LEG_MV = [(3.55, 8.36, 330), (38.86, 40.53, 330)]

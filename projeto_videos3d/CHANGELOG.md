@@ -5,6 +5,31 @@
 - `scripts/add_narration.py`: MP3 → MP4 com legenda sincronizada, ducking e −14 LUFS.
 - Para recuperar: `git checkout be24c75 -- projeto_videos3d` (a tag não pôde ser enviada ao GitHub: o acesso desta sessão só permite o branch de trabalho).
 
+## v0.21: vídeo 19 "A Noite Livre · Ep. 1" (série nova, elenco de vozes de IA e o processo das referências) (2026-11-25)
+- Cenas na skill Xavier (`teste_xavier/src/videos/noitelivre/`, composição `NoiteLivreShort`): 24 planos cortados nos tempos das falas, render nativo 1080x1920, 1937 quadros.
+- Elenco de vozes ElevenLabs, com a tensão das falas subindo junto com a história:
+  - narradora Ana Dias;
+  - TV Diego, pai Will, mãe Roberta, Bia Keren.
+  - As bocas abrem e fecham pelo áudio real (`talk.ts`).
+- Personagens e cenário novos:
+  - mãe e Bia com cabelo comprido;
+  - três mascarados com máscara lisa e facão com vermelho escorrendo;
+  - Thor latindo e abanando o rabo;
+  - telejornal "AO VIVO", cortina, portão meio aberto e rua.
+- Processo novo, tirado de `analysis/refs/MANUAL_REFERENCIAS.md`:
+  - voz no quadro 0;
+  - HUD com relógio de 21:57 a 21:59;
+  - palavra-chave no topo de cada plano;
+  - "CLAC!" e "AU! AU!" carimbados, e um círculo na máscara;
+  - reviravolta antes da escolha (o Thor abana o rabo);
+  - final em loop;
+  - capa tirada de um quadro do vídeo (45,0 s).
+- Ajustes pós-render:
+  - o plano 24 deixou de ser estático (o QC achou ~2 s parados);
+  - a legenda desce nos letreiros da TV;
+  - a frase da Parte 2 ganhou um fundo escuro.
+- QC: −14,3 LUFS, TP −1,8, correlação da narração 0,912, deriva 0 ms. Só o item `frames` reprova, por 0,6 quadro (explicado em `v2/ep19/LIMITACOES.md`). Pacote de postagem em `v2/ep19/POSTAGEM.md`.
+
 ## v0.20: vídeo 18 "Jogador 2 · Ep. 1" (série nova, suspense na espera pelo GTA 6) (2026-11-24)
 - Cenas na skill Xavier (`teste_xavier/src/videos/jogador2/`, composição `Jogador2Short`). São 21 planos cortados nas palavras do MP3 do usuário, com render nativo 1080x1920 (1938 quadros).
 - Novidades:

@@ -1,6 +1,6 @@
 # 19 — A Noite Livre · Ep. 1 (formato com elenco de vozes)
 
-Status: roteiro para aprovação (24/11/2026).
+Status: produzido e entregue (25/11/2026), `v2/ep19/out/19_noite_livre_ep1_1080x1920.mp4`.
 Referência de formato: `analysis/canal/2026-11-24_referencia_noite_de_crime.md`. A história é original. Não copia cenas nem falas do reel de referência e não usa o nome dos filmes.
 Duração estimada: ~65 s, 9:16, escolha A/B no fim.
 
