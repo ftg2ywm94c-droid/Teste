@@ -451,7 +451,7 @@ const hatOn = (p: Pen, o: Outfit, hp: P2[], H: Blob, cx: number, hc: number, lig
 export type Arms = [P2[], P2[]];
 /** held prop; for the hammer the number is the strike 0 (raised) .. 1 (struck) */
 const skinHand = (o: Outfit) => o.skin ?? "#ffe2c2";
-export type Prop = null | "icecream" | "shako" | ["hammer", number] | "phone" | "phoneLit";
+export type Prop = null | "icecream" | "shako" | ["hammer", number] | "phone" | "phoneLit" | ["keys", number, number];
 
 const BUILD: Record<Build, { a: number; torso: number; legs: number; tw: number }> = {
   adult: { a: 118, torso: 1.1, legs: 1.4, tw: 0.8 },
@@ -576,10 +576,13 @@ export const bodyFront = (p: Pen, o: Outfit, opts: FrontOpts) => {
       arms.push({ pts: [S, [tcx + 1.1 * T.a + 10 * u + 3 * u * wave, S[1] - 0.22 * HH], [tcx + 1.18 * T.a + 16 * u + 12 * u * wave, S[1] - 0.6 * HH]], front: false });
     } else if (prop === "phone" || prop === "phoneLit") {   // piloto: o celular seguro na mão direita, na altura do peito
       const S = sh(1);
-      arms.push({ pts: [S, [tcx + 1.08 * T.a + 6 * u, S[1] + 0.5 * HH], [tcx + 0.42 * T.a, S[1] + 0.34 * HH]], front: true });
+      arms.push({ pts: [S, [tcx + 1.1 * T.a + 6 * u, S[1] + 0.48 * HH], [tcx + 0.62 * T.a, S[1] + 0.3 * HH]], front: true });
     } else if (prop === "icecream") {
       const S = sh(1);
       arms.push({ pts: [S, [tcx + 1.05 * T.a + 4 * u, S[1] + 0.45 * HH], [tcx + 0.5 * T.a, S[1] + 0.4 * HH]], front: true });
+    } else if (Array.isArray(prop) && prop[0] === "keys") {   // piloto: o braço caído, a mão um pouco à frente, segurando o chaveiro
+      const S = sh(1);
+      arms.push({ pts: [S, [tcx + 1.12 * T.a + 5 * u, S[1] + 0.46 * HH], [tcx + 1.02 * T.a + 6 * u, S[1] + 0.86 * HH]], front: true });
     } else if (Array.isArray(prop)) {
       const S = sh(1), k = clamp(prop[1], 0, 1);
       const E = lerp2([tcx + 1.1 * T.a + 10 * u, S[1] - 0.15 * HH], [tcx + 1.2 * T.a + 10 * u, S[1] + 0.3 * HH], k);
@@ -635,13 +638,52 @@ export const bodyFront = (p: Pen, o: Outfit, opts: FrontOpts) => {
       p.ell(hx, hy - 19 * u, 11 * u, 10 * u, "#f7c6d9", 2.2 * u);
       p.dot(hx, hy, 5.5 * u);
     } else if (prop === "phone" || prop === "phoneLit") {
-      // aparelho de pé na mão (a mão envolve a base, o polegar por cima da borda), tela virada pra você, lanterna atrás
-      const pw = 17 * u, ph = 32 * u, x0 = hx - pw / 2, y0 = hy - ph * 0.78;
-      p.poly([[x0, y0], [x0 + pw, y0], [x0 + pw, y0 + ph], [x0, y0 + ph]], "#22252e", 2.2 * u);
-      p.poly([[x0 + 2 * u, y0 + 3 * u], [x0 + pw - 2 * u, y0 + 3 * u], [x0 + pw - 2 * u, y0 + ph - 3 * u], [x0 + 2 * u, y0 + ph - 3 * u]], prop === "phoneLit" ? "#cfe6ff" : "#2c3a5c", 0);
-      if (prop === "phoneLit") p.ell(x0 + pw - 4 * u, y0 + 5 * u, 2.2 * u, 2.2 * u, "#fffbe8", 0);
-      p.ell(hx, hy + 2 * u, 7.5 * u, 6 * u, skinHand(o), 1.8 * u);      // palma segurando a base
-      p.ell(hx - pw / 2 + 1 * u, hy - 6 * u, 3.2 * u, 4.5 * u, skinHand(o), 1.4 * u);   // polegar na borda
+      // a câmera está NA FRENTE de quem segura: vê as COSTAS do aparelho (capinha, bloco de câmeras, LED da lanterna) e os
+      // quatro dedos dando a volta na borda de fora; o polegar fica do lado da tela (escondido). Leve inclinação na mão.
+      const g = p.g, pw = 21 * u, ph = 40 * u, cx2 = hx - 2 * u, cy2 = hy - ph * 0.32, ang2 = rad(-7);
+      const lit = prop === "phoneLit", sk = skinHand(o), skD = mul(sk, [0.82, 0.8, 0.8]);
+      g.save(); g.translate(cx2, cy2); g.rotate(ang2);
+      // palma por trás (a base da mão aparece na borda de fora, embaixo)
+      g.fillStyle = skD; g.strokeStyle = INK; g.lineWidth = 1.8 * u;
+      g.beginPath(); g.ellipse(pw * 0.42, ph * 0.3, 7.5 * u, 10 * u, -0.3, 0, 7); g.fill(); g.stroke();
+      // o aparelho: corpo com quina arredondada, borda mais clara (espessura) e reflexo
+      g.fillStyle = "#4a4f5c"; g.beginPath(); g.roundRect(-pw / 2 - 1.2 * u, -ph / 2, pw + 1.2 * u, ph, 4.5 * u); g.fill();
+      g.fillStyle = "#2b2f39"; g.beginPath(); g.roundRect(-pw / 2, -ph / 2, pw, ph, 4.2 * u); g.fill();
+      g.lineWidth = 2.0 * u; g.strokeStyle = INK; g.beginPath(); g.roundRect(-pw / 2 - 1.2 * u, -ph / 2, pw + 1.2 * u, ph, 4.5 * u); g.stroke();
+      g.fillStyle = "rgba(255,255,255,0.10)"; g.beginPath(); g.moveTo(-pw / 2 + 3 * u, -ph / 2 + 2 * u); g.lineTo(-pw / 2 + 7 * u, -ph / 2 + 2 * u); g.lineTo(-pw / 2 + 3 * u, ph / 2 - 8 * u); g.closePath(); g.fill();
+      // bloco de câmeras (canto de cima, do lado de dentro) + LED da lanterna
+      const bx0 = -pw / 2 + 2.6 * u, by0 = -ph / 2 + 2.6 * u;
+      g.fillStyle = "#1c1f26"; g.beginPath(); g.roundRect(bx0, by0, 10.5 * u, 11 * u, 3 * u); g.fill(); g.lineWidth = 1.2 * u; g.stroke();
+      for (const [lx, ly] of [[bx0 + 3.2 * u, by0 + 3.2 * u], [bx0 + 3.2 * u, by0 + 7.8 * u]]) { g.fillStyle = "#0b0c10"; g.beginPath(); g.arc(lx, ly, 2.2 * u, 0, 7); g.fill(); g.strokeStyle = "#6c7280"; g.lineWidth = 0.9 * u; g.stroke(); }
+      const lx = bx0 + 7.8 * u, ly = by0 + 3.2 * u;
+      if (lit) { const gr = g.createRadialGradient(lx, ly, 0, lx, ly, 9 * u); gr.addColorStop(0, "rgba(255,255,245,1)"); gr.addColorStop(0.35, "rgba(240,248,255,0.75)"); gr.addColorStop(1, "rgba(220,235,255,0)"); g.fillStyle = gr; g.beginPath(); g.arc(lx, ly, 9 * u, 0, 7); g.fill(); }
+      g.fillStyle = lit ? "#ffffff" : "#c9b98a"; g.beginPath(); g.arc(lx, ly, 1.5 * u, 0, 7); g.fill();
+      // os quatro dedos: saem da borda de fora e deitam sobre as costas do aparelho (pontas arredondadas, unha clarinha)
+      for (let k = 0; k < 4; k++) {
+        const fy = -ph * 0.02 + k * 4.6 * u, fl = (k === 3 ? 6.5 : 9) * u, fx1 = pw / 2 + 1.5 * u, fx0 = fx1 - fl;
+        g.fillStyle = sk; g.strokeStyle = INK; g.lineWidth = 1.5 * u;
+        g.beginPath(); g.roundRect(fx0, fy, fl + 2.5 * u, 4.2 * u, 2.1 * u); g.fill(); g.stroke();
+        g.fillStyle = "rgba(255,255,255,0.35)"; g.beginPath(); g.ellipse(fx0 + 2.2 * u, fy + 2.1 * u, 1.2 * u, 1.0 * u, 0, 0, 7); g.fill();
+      }
+      g.restore();
+    } else if (Array.isArray(prop) && prop[0] === "keys") {
+      // a argola enganchada no indicador (o dedo passa POR DENTRO dela), as duas chaves penduradas balançando e um brilho
+      const g = p.g, sway = prop[1], glint = prop[2], sk = skinHand(o);
+      const rx = hx + 2 * u, ry = hy + 6 * u;
+      g.save(); g.translate(rx, ry); g.rotate(sway * 0.35);
+      g.strokeStyle = "#c9ccd2"; g.lineWidth = 2.2 * u; g.beginPath(); g.arc(0, 4 * u, 6.5 * u, Math.PI * 0.9, Math.PI * 2.1); g.stroke();   // metade de trás da argola
+      for (const [a, L] of [[0.28, 24], [-0.22, 20]] as const) { g.save(); g.translate(0, 10 * u); g.rotate(a);
+        g.fillStyle = "#e0b64a"; g.strokeStyle = INK; g.lineWidth = 1.4 * u; g.beginPath(); g.arc(0, 3.5 * u, 4.2 * u, 0, 7); g.fill(); g.stroke();
+        g.beginPath(); g.rect(-1.6 * u, 7 * u, 3.2 * u, L * u * 0.62); g.fill(); g.stroke();
+        for (let k = 0; k < 3; k++) { g.beginPath(); g.rect(1.6 * u, (10 + k * 3.6) * u, 2.4 * u, 1.8 * u); g.fill(); g.stroke(); }
+        g.restore(); }
+      g.restore();
+      p.ell(hx, hy, 6.2 * u, 5.4 * u, sk, 1.8 * u);                                     // a mão fechada
+      p.ell(hx + 3.5 * u, hy + 4.5 * u, 2.6 * u, 3.6 * u, sk, 1.4 * u);                   // o indicador dobrado
+      g.save(); g.translate(rx, ry); g.rotate(sway * 0.35); g.strokeStyle = "#c9ccd2"; g.lineWidth = 2.2 * u;
+      g.beginPath(); g.arc(0, 4 * u, 6.5 * u, Math.PI * 0.1, Math.PI * 0.9); g.stroke(); g.restore();          // metade da frente da argola, por cima do dedo
+      if (glint > 0) { g.save(); g.translate(rx + 4 * u, ry + 20 * u); g.fillStyle = `rgba(255,255,240,${glint})`; g.beginPath();
+        for (let k = 0; k < 8; k++) { const a = (k * Math.PI) / 4, r = k % 2 ? 1.2 * u : 6 * u; g.lineTo(Math.cos(a) * r, Math.sin(a) * r); } g.fill(); g.restore(); }
     } else if (Array.isArray(prop)) {
       const ang = rad(-70 + 105 * clamp(prop[1], 0, 1));
       const Rh = (pts: P2[]) => rotPts(pts, ang, hx, hy);

@@ -113,7 +113,7 @@ export class World {
   // PILOTO: luzes reais (o poste da esquina e a lanterna do celular) e a lâmpada que acende/apaga
   private poleLight = new THREE.SpotLight("#ffb766", 0, 22, 0.95, 0.55, 1.4);
   private farLight = new THREE.SpotLight("#ffc98a", 0, 24, 0.9, 0.6, 1.4);
-  private torch = new THREE.SpotLight("#eef4ff", 0, 30, 0.33, 0.45, 1.1);
+  private torch = new THREE.SpotLight("#eef4ff", 0, 30, 0.25, 0.5, 1.0);
   private poleBulb!: THREE.Mesh; private bulbWarm = new THREE.MeshBasicMaterial({ color: new THREE.Color(5.0, 3.4, 1.6), fog: true });                                         // vídeo 20: a maçaneta da porta da frente (gira)
   private frustum = new THREE.Frustum();
   private m4 = new THREE.Matrix4(); private v = new THREE.Vector3(); private sph = new THREE.Sphere();
@@ -502,14 +502,14 @@ export class World {
       // postes de concreto com braço, luminária e fios (o da esquina z 15,3; o do fim da rua z -4, sem luz)
       const conc = lam("poleConc", () => ({ map: rep(stoneHD("poleConcHD", ["#9a978f", "#918e86", "#a39f97", "#8a877f"], "#77746d"), 1, 4) }));
       const lampM = lam("lampHead", () => ({ color: "#3d4048" })), bolt = lam("bolt", () => ({ color: "#6c6f76" }));
-      for (const z of [15.3, -4.0, 34.0]) {
+      for (const z of [15.3, -9.0, 34.0]) {
         b.add(cyl(0.16, 0.11, 7.4, 14), conc, at(2004.1, D0 + 0.16, z));
         bar(b, V(2004.1, D0 + 6.9, z), V(2002.8, D0 + 7.15, z), 0.05, M.pole);
         bx(2002.55, 6.95, z - 0.18, 2003.05, 7.15, z + 0.18, lampM, 2);
         for (const yy of [1.2, 3.0, 5.6]) for (const s2 of [-1, 1]) b.add(new THREE.SphereGeometry(0.025, 6, 4), bolt, at(2004.1 + s2 * 0.13, D0 + yy, z - 0.1));
         bx(2003.95, 2.3, z - 0.22, 2004.25, 2.75, z - 0.12, lam("poleBox", () => ({ color: "#5c6a5a" })));
       }
-      for (const dy of [6.3, 6.55]) bar(b, V(2004.1, D0 + dy, -4.0), V(2004.1, D0 + dy - 0.35, 15.3), 0.012, M.pole), bar(b, V(2004.1, D0 + dy, 15.3), V(2004.1, D0 + dy - 0.3, 34.0), 0.012, M.pole);
+      for (const dy of [6.3, 6.55]) bar(b, V(2004.1, D0 + dy, -9.0), V(2004.1, D0 + dy - 0.35, 15.3), 0.012, M.pole), bar(b, V(2004.1, D0 + dy, 15.3), V(2004.1, D0 + dy - 0.3, 34.0), 0.012, M.pole);
       this.poleBulb = new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.04, 0.28), this.bulbWarm); this.poleBulb.position.set(2002.8, D0 + 6.93, 15.3); this.poleBulb.layers.set(NOINK); R.add(this.poleBulb);
       const far = new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.04, 0.28), this.bulbWarm); far.position.set(2002.8, D0 + 6.93, 34.0); far.layers.set(NOINK); R.add(far);
       // luzes reais
@@ -598,7 +598,7 @@ export class World {
     // PILOTO: o poste que pisca e apaga, o do fundo aceso, a lanterna presa ao celular na sua mão
     const pk = poleAt(t); this.poleLight.intensity = 900 * pk; this.poleBulb.material = pk ? this.bulbWarm : this.glowOff;
     this.farLight.intensity = 700;
-    const z = youZ(t); this.torch.intensity = torchOn(t) ? 1400 : 0; this.torch.position.set(1999.98, D0 + 1.2, z - 0.2); this.torch.target.position.set(...torchAim(t));
+    const z = youZ(t); this.torch.intensity = torchOn(t) ? 700 : 0; this.torch.position.set(1999.98, D0 + 1.2, z - 0.2); this.torch.target.position.set(...torchAim(t));
   }
 
   /** desenha a tela da TV: telejornal genérico com o apresentador falando e o relógio */

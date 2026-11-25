@@ -952,16 +952,17 @@ const ep7 = (id: number, cam: CamInfo, t: number, out: Stage) => {
   const c = SHOTS[id - 1].crowd, z = youZ(t), walking = t < 4.5;
   const you = (expr: Expr, prop: Prop) => {
     out.places.push(person(cam, YOU, 2000.12, D0, z, { side: false, mirror: false }, { mode: walking ? "stroll" : "stand", phase: t * 0.9, expr, blink: lidAt(t, YOU.i), look: 0, prop }, {}));
-    blob(out, 2000.12, D0, z); };
-  const fig = () => { out.places.push(person(cam, FIG, 2000.85, D0, -1.5, { side: false, mirror: false }, { mode: "stand", expr: "neutral", blink: 0, look: 0 }, {})); blob(out, 2000.85, D0, -1.5);
-    const gl = q(Math.max(0, Math.sin(t * 5.0)) * (torchOn(t) ? 1 : 0), 5);
-    out.fx.push({ key: `keys|${gl}`, cw: 256, ch: 300, draw: (pp) => fxKeys(pp, gl), x: 2001.18, y: D0 + 0.78, z: -1.45, w: 0.16, h: 0.19 }); };
+    blob(out, 2000.12, D0, z);
+    // a tela do celular ilumina o queixo de baixo pra cima (luz azulada fraca)
+    if (prop) out.fx.push({ key: "screenG", cw: 256, ch: 256, draw: (pp) => fxGlow(pp, "rgba(150,190,255,0.32)"), soft: true, x: 2000.1, y: D0 + 1.2, z: z - 0.12, w: 0.42, h: 0.3 }); };
+  const fig = () => { const gl = q(Math.max(0, Math.sin(t * 5.0)) * (torchOn(t) ? 1 : 0), 5), sw = q(0.5 * Math.sin(t * 2.3), 10);
+    out.places.push(person(cam, FIG, 2000.85, D0, -1.5, { side: false, mirror: false }, { mode: "stand", expr: "neutral", blink: 0, look: 0, prop: ["keys", sw, gl] }, {})); blob(out, 2000.85, D0, -1.5); };
   const torchFx = () => { if (torchOn(t)) out.fx.push({ key: "torchG", cw: 256, ch: 256, draw: (pp) => fxGlow(pp, "rgba(235,245,255,0.9)"), soft: true, x: 1999.98, y: D0 + 1.2, z: z - 0.22, w: 0.14, h: 0.14 }); };
   const bulbFx = () => { if (poleAt(t)) out.fx.push({ key: "poleG", cw: 256, ch: 256, draw: (pp) => fxGlow(pp, "rgba(255,190,110,0.75)"), soft: true, x: 2002.8, y: D0 + 6.85, z: 15.3, w: 1.6, h: 1.0 }); };
   switch (c) {
     case "p_walk": you("nervous", null); bulbFx(); break;
     case "p_pole": you(t < W.apaga ? "nervous" : "shock", "phone"); bulbFx(); break;
-    case "p_hand": you("nervous", torchOn(t) ? "phoneLit" : "phone"); torchFx(); break;
+    case "p_hand": you("nervous", torchOn(t) ? "phoneLit" : "phone"); break;   // o LED aceso já vem desenhado no aparelho
     case "p_pov": fig(); break;
     case "p_key": fig(); break;
   }
