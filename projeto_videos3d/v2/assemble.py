@@ -46,7 +46,7 @@ else:
       '[bed][key]sidechaincompress=threshold=0.02:ratio=5:attack=20:release=300:makeup=1[duck];'
       '[v]volume=1.0[vv];[vv][duck]amix=inputs=2:weights=1 0.62:normalize=0:duration=longest,')
 fc += (
-      'apad=whole_dur=' + f'{SH.END:.3f}' + ',atrim=0:' + f'{SH.END:.3f}' + ',loudnorm=I=-14:TP=-1.5:LRA=9,aresample=48000'
+      'apad=whole_dur=' + f'{SH.END:.3f}' + ',atrim=0:' + f'{SH.END:.3f}' + ',loudnorm=I=' + str(getattr(SH, 'LOUD_I', -14)) + ':TP=-1.5:LRA=9,aresample=48000'
       + (f",aresample=192000,alimiter=limit={SH.LIMITER}:attack=0.1:release=60:level=0:asc=1,aresample=48000" if getattr(SH, 'LIMITER', None) else '') + '[mix]')  # opcional: limitador a 4x (pega picos entre amostras) para o pico real ficar abaixo de -1 dBTP após o AAC
 run(['ffmpeg', '-y', '-v', 'error', '-i', NARR, '-i', os.path.join(OUT, 'sfx.wav'), '-i', os.path.join(OUT, 'music.wav'),
      *(['-i', TENS] if HAS_T else []), '-filter_complex', fc, '-map', '[mix]', '-ar', '48000', '-c:a', 'pcm_s16le', os.path.join(OUT, 'mix.wav')])

@@ -5,6 +5,7 @@ FPS = 30; END = 76.01
 NATIVE = True
 SFX_BUS = (2.0, 2)
 LIMITER = 0.8
+LOUD_I = -12.8   # o limitador (pico -1,9 dBFS) tira ~1,2 dB depois do loudnorm: alvo compensado para o MP4 sair em -14 LUFS
 RENDER_RES = '1080x1920 nativo (Remotion + three.js, skill Xavier)'
 W = dict(relogio=1.9, senta=4.4, cel=7.4, msg1=9.8, foto=13.5, msg2=15.2, chuva=16.8, bate=18.8, corredor=22.3, olho=25.6, ela=28.9,
          casaco=30.8, janela=33.3, celia=35.1, marido=41.5, rua=44.4, macaneta=49.8, vibra=52.8, msg3=54.9, porta2=56.2, digitando=59.6,

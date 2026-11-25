@@ -74,7 +74,7 @@ export const curtainAt = (id: number, t: number) => (id === 14 ? 1 - 0.45 * smoo
 /** o despertador pisca 03:00 (liga no 1º quadro, apaga no "celular acende") */
 export const alarmAt = (t: number) => t < W.cel + 0.4 && Math.floor(t * 2.2) % 2 === 0;
 /** a tela do celular acesa */
-export const phoneOn = (t: number) => t >= W.acende;
+export const phoneOn = (t: number) => t >= W.acende && t < 2235 / FPS;   // no plano do loop (S27, quadro 2235+) o celular volta apagado, igual ao quadro 0
 /** a maçaneta girando (radianos) */
 export const knobAt = (t: number) => -0.55 * smooth((t - W.gira) / 1.4);
 

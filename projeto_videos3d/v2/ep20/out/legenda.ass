@@ -16,7 +16,7 @@ Style: Hud,Poppins,62,&H00FFFFFF,&H00FFFFFF,&H50000000,&H50000000,-1,0,0,0,100,1
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 Dialogue: 1,0:00:00.00,0:00:01.60,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}TRÊS{\c&HFFFFFF&} {\c&H0028D7FF&}DA{\c&HFFFFFF&} {\c&H0028D7FF&}MANHÃ.{\c&HFFFFFF&}
 Dialogue: 1,0:00:01.86,0:00:02.78,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SEU DESPERTADOR
-Dialogue: 1,0:00:02.78,0:00:03.72,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}TOCA{\c&HFFFFFF&} {\c&H0028D7FF&}SOZINHO.{\c&HFFFFFF&}
+Dialogue: 1,0:00:02.78,0:00:03.72,Leg,,0,0,380,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}TOCA{\c&HFFFFFF&} {\c&H0028D7FF&}SOZINHO.{\c&HFFFFFF&}
 Dialogue: 1,0:00:04.38,0:00:05.14,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ NUNCA
 Dialogue: 1,0:00:05.14,0:00:06.02,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}COLOCOU ALARME
 Dialogue: 1,0:00:06.02,0:00:06.82,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PRA ESSA HORA.

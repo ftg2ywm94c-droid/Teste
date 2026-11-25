@@ -5,6 +5,13 @@
 - `scripts/add_narration.py`: MP3 → MP4 com legenda sincronizada, ducking e −14 LUFS.
 - Para recuperar: `git checkout be24c75 -- projeto_videos3d` (a tag não pôde ser enviada ao GitHub: o acesso desta sessão só permite o branch de trabalho).
 
+## v0.22: vídeo 20 "A Visita · Ep. 1", versão 2 (celular na mão e luz real) (2026-11-25)
+- Render v2 completo, nativo 1080x1920, 2280 quadros (os da v1 guardados em `v2/ep20/frames_v1/`): celular visto de costas na mão, tela iluminando o rosto, luzes práticas (tela, despertador, luar, varanda, fresta, portão).
+- `assemble.py`: opção `LOUD_I` por episódio (padrão −14, os outros vídeos não mudam); vídeo 20 em −12,8 para compensar o limitador.
+- Legenda desce sob o carimbo "BIP BIP" no plano 2; celular apagado no plano do loop (só o plano 27 refeito).
+- QC: −14,1 LUFS, TP −1,6, atraso e deriva 0 ms; só `frames` reprova por 0,7 quadro. Detalhes em `v2/ep20/LIMITACOES.md` e `v2/ep20/qc_report_20.json`. Capa: quadro de 33,1 s.
+- Postagem passa a ser entregue em blocos no chat (sem `POSTAGEM.md`), a pedido do usuário.
+
 ## v0.21: vídeo 19 "A Noite Livre · Ep. 1" (série nova, elenco de vozes de IA e o processo das referências) (2026-11-25)
 - Cenas na skill Xavier (`teste_xavier/src/videos/noitelivre/`, composição `NoiteLivreShort`): 24 planos cortados nos tempos das falas, render nativo 1080x1920, 1937 quadros.
 - Elenco de vozes ElevenLabs, com a tensão das falas subindo junto com a história:
