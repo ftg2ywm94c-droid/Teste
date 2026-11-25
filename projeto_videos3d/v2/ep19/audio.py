@@ -135,10 +135,25 @@ def latido(f0=560):
     ph = 2 * np.pi * np.cumsum(f) / SR; m = (np.sign(np.sin(ph)) * 0.5 + np.sin(ph)) * env(d, 0.004, 9)
     m = bp(m + rng.standard_normal(len(t)) * 0.35 * env(d, 0.002, 14), 300, 2600); return st(m * 0.9)
 PARA = 46.78; BARK0 = 24.59
+def _barks():   # recorta os latidos de assets/sfx_ia/latido_ia_1.mp3 pelas rajadas de energia
+    c = ['ffmpeg', '-v', 'error', '-i', os.path.join(ROOT, 'assets', 'sfx_ia', 'latido_ia_1.mp3'), '-ac', '2', '-ar', str(SR), '-f', 'f32le', '-']
+    x = np.frombuffer(subprocess.run(c, capture_output=True, check=True).stdout, np.float32).reshape(-1, 2).astype(np.float64)
+    h = int(0.01 * SR); e = np.array([np.sqrt((x[i:i + h] ** 2).mean()) for i in range(0, len(x) - h, h)]); on = 20 * np.log10(e + 1e-6) > 20 * np.log10(e.max()) - 20
+    out = []; i = 0
+    while i < len(on):
+        if on[i]:
+            j = i
+            while j < len(on) and on[j]: j += 1
+            if j - i >= 4:
+                a, b = max(0, (i - 2) * h), min(len(x), (j + 10) * h); seg = x[a:b].copy(); k = int(0.03 * SR); seg[-k:] *= np.linspace(1, 0, k)[:, None]; out.append(seg / np.abs(seg).max())
+            i = j
+        else: i += 1
+    return out
+BARKS = _barks()
 def bark_at(t): return t < PARA and (int(t * 4.6) % 3 != 2)   # igual ao story.ts (barkAt)
 def hum(d, f=60, g=0.03):
     t = np.arange(int(d * SR)) / SR; m = np.sin(2 * np.pi * f * t) * 0.6 + np.sin(2 * np.pi * 2 * f * t) * 0.3
-    return fade(st(bp(rng.standard_normal(len(t)), 600, 3000) * 0.15 + m * g), 0.3, 0.3)
+    return fade(st(m * g), 0.3, 0.3)   # 26/11: sem o ruído 600–3000 Hz (era o chiado contínuo da sala)
 def clac():             # tranca girando: dois cliques metálicos + baque
     m = np.zeros(int(0.35 * SR))
     for i0, f in ((0.0, 2600), (0.09, 3400)):
@@ -152,9 +167,9 @@ def vento_rabo(d):      # abanar de rabo: sopro suave ritmado (3,2/s, igual à i
     return st(x * (0.5 + 0.5 * np.sin(2 * np.pi * 3.2 * t)) ** 2 * 0.12)
 
 g = ext_mask()
-amb = grilos(END) + cidade(END)
+amb = loop('grilos_loop.flac', END) * 0.35 + cidade(END)   # 26/11: grilos reais CC0 (as senoides de 4,3 kHz soavam como chiado)
 sfx += muffle(amb, g) * 0.25
-EV += [(0.0, 'noite: grilos + cidade ao longe (abafado dentro da sala)')]
+EV += [(0.0, 'noite: grilos reais (CC0) + cidade ao longe (abafado dentro da sala)')]
 # a TV ligada na sala (zumbido baixo), só nos planos de dentro
 for s in P.SHOTS:
     if not s.name.startswith(EXT): put(hum(s.t1 - s.t0, 60, 0.02), s.t0, 0.6)
@@ -162,15 +177,18 @@ EV.append((0.0, 'TV ligada: zumbido baixo nos planos da sala'))
 put(cortina(1.4), 16.9, 0.9, tag='a cortina fechando')
 put(clac(), 19.02, 1.2, tag='CLAC: tranca')
 # o Thor latindo: começa a ser ouvido no portão aberto; cheio na rua, abafado dentro; para em "para de latir"
-prev = False
+prev = False; EVB = []
 for i in range(int(BARK0 * 30), int(PARA * 30)):
     t = i / 30; on = bark_at(t)
     if on and not prev:
-        gi = g[min(N - 1, int(t * SR))]; put(lp(latido(560), 3200 if gi > 0.6 else 650), t, 0.32 * (0.3 + 0.7 * gi))
+        gi = g[min(N - 1, int(t * SR))]; nb = len(EVB)
+        for j, dt in enumerate((0.0, 0.22)):   # dois latidos por abertura de boca
+            b = BARKS[(nb * 2 + j) % len(BARKS)]; put(b if gi > 0.6 else lp(b, 650), t + dt, 0.42 * (0.3 + 0.7 * gi))
+        EVB.append(t)
     prev = on
-EV.append((BARK0, 'Thor latindo (igual à imagem) até "para de latir" (46,78 s)'))
+EV.append((BARK0, 'Thor latindo: latido real gerado na ElevenLabs (assets/sfx_ia), igual à imagem, até "para de latir" (46,78 s)'))
 put(boom(0.9, 50, 0.6), PARA + 0.02, 0.3, tag='para de latir: silêncio seco')
-put(vento_rabo(50.53 - 47.76), 47.76, 0.8, tag='rabo abanando')
+# 26/11: sem o sopro de ruído no abanar do rabo (soava como chiado); o silêncio depois do latido fica mais forte
 # impactos de título
 CORTES = [s.t0 for s in P.SHOTS[1:]]
 for i, c in enumerate(CORTES): put(load(f'swish_{(1, 4, 7, 10, 13)[i % 5]}.flac'), c - 0.06, 0.2)
