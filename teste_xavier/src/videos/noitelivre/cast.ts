@@ -814,7 +814,7 @@ const ep4 = (id: number, cam: CamInfo, t: number, out: Stage) => {
 const PAI: Who = { i: 901, o: { jacket: "#4f6d8f", pants: "#3b3f52", boots: "#3a2a22", hat: "hair", hair: "#3a2a22", moustache: "#3a2a22", skin: "#e8b991" }, okey: "pai" };
 const MAE: Who = { i: 902, o: { jacket: "#b84a62", pants: "#46405a", boots: "#4a3426", hat: "hair", hair: "#4a2c1c", long: true, skin: "#f0c9a5" }, okey: "mae" };
 const BIA: Who = { i: 903, o: { jacket: "#e0a33a", pants: "#2f3a5a", boots: "#2a2230", hat: "hair", hair: "#1f1a24", long: true, skin: "#d9a47c" }, okey: "bia" };
-const MASK = (v: number): Who => ({ i: 910 + v, o: { jacket: ["#2a2a33", "#33302e", "#262b33"][v], pants: "#1d1d24", boots: "#141018", hat: "hair", hair: "#1b1b22", mask: "#ece7da" }, okey: "mask" + v });
+const MASK = (v: number): Who => ({ i: 910 + v, o: { jacket: ["#2a2a33", "#33302e", "#262b33"][v], pants: "#1d1d24", boots: "#141018", hat: "hair", hair: "#1b1b22", mask: "#ece7da", machete: true }, okey: "mask" + v + "m" });
 const MASKS: [number, number][] = [[-13.2, -4.8], [-12.0, -4.4], [-10.8, -4.9]];
 const ep5 = (id: number, cam: CamInfo, t: number, out: Stage) => {
   const c = SHOTS[id - 1].crowd;

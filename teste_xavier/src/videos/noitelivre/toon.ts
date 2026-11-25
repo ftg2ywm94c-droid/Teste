@@ -18,6 +18,7 @@ export type Outfit = {
   jacket: string; pants: string; boots: string; hat?: string | null; belt?: string | null; buttons?: string; rifle?: boolean;
   sash?: string; sword?: boolean; moustache?: string; skin?: string; head?: number; cap?: string; hair?: string; dress?: string;
   /** cabelo comprido (atrás da cabeça, até o ombro) */ long?: boolean; /** máscara lisa no rosto (cor) */ mask?: string;
+  /** facão na mão (com vermelho escorrendo) */ machete?: boolean;
   build?: Build;
 };
 type P2 = [number, number];
@@ -472,6 +473,22 @@ const footStroke = (p: Pen, a: P2, b: P2, w: number, col: string) => {
   p.stroke([a, b], w, col);
 };
 
+/** facão segurado pela mão (hx, hy), lâmina para baixo e um pouco para fora (dir = ±1), com vermelho escuro escorrendo e duas gotas */
+const machete = (p: Pen, hx: number, hy: number, u: number, HH: number, dir: number) => {
+  const y0 = hy + 10 * u, L = 1.12 * HH, BLOOD = "#8e0f18";
+  p.band([[hx, hy - 6 * u], [hx + dir * 1.5 * u, y0 + 3 * u]], "#3a2418", 6.5 * u, 1.6 * u, "round");          // cabo
+  const A: P2 = [hx - dir * 4 * u, y0], B: P2 = [hx + dir * 4 * u, y0], C: P2 = [hx + dir * 24 * u, y0 + L * 0.9], D: P2 = [hx + dir * 2 * u, y0 + L];
+  p.poly([A, B, C, D], "#aeb6c0", 2.2 * u);                                                                    // lâmina
+  p.stroke([[hx + dir * 1.2 * u, y0 + 4 * u], [hx + dir * 7 * u, y0 + L * 0.85]], 1.2 * u, "#e4e9ef");          // brilho do fio
+  const k = 0.55, lA = lerp2(A, D, k), lB = lerp2(B, C, k);
+  p.poly([lA, lB, [C[0], C[1]], [D[0], D[1]]], BLOOD, 0);                                                         // vermelho na ponta
+  p.poly([lA, [lA[0] + dir * 2 * u, lA[1] - 9 * u], [lA[0] + dir * 4 * u, lA[1]]], BLOOD, 0);                   // escorrendo para cima no fio
+  p.poly([A, B, C, D], null, 2.2 * u);
+  p.ell(D[0] + dir * 3 * u, D[1] + 9 * u, 3.6 * u, 5 * u, BLOOD, 0);                                          // gotas caindo
+  p.ell(D[0] + dir * 5 * u, D[1] + 24 * u, 2.6 * u, 3.6 * u, BLOOD, 0);
+  p.dot(hx, hy, 5.5 * u);                                                                                         // a mão por cima do cabo
+};
+
 export const bodyFront = (p: Pen, o: Outfit, opts: FrontOpts) => {
   const { phase = 0, expr = "neutral", mode = "march", look = 0, blink = false, lift = 60, prop = null, tilt = 0, headTilt = 0, wave,
     light = DEF_LIGHT, facing = 0, seed = 1, seatH, talk = 0 } = opts;
@@ -621,6 +638,7 @@ export const bodyFront = (p: Pen, o: Outfit, opts: FrontOpts) => {
       p.dot(hx, hy, 5.5 * u);
     }
   }
+  if (o.machete && (mode === "stand" || mode === "march" || mode === "stroll")) { const [mx, my] = arms[arms.length - 1].pts[2]; machete(p, mx, my, u, HH, 1); }
   if (prop === "shako") { // carried by the left hand
     const [hx, hy] = arms[0].pts[2];
     p.poly([[hx - 14 * u, hy + 3 * u], [hx + 14 * u, hy + 3 * u], [hx + 16 * u, hy + 30 * u], [hx - 16 * u, hy + 30 * u]], "#3a3d47", 2.2 * u);
@@ -751,6 +769,7 @@ export const bodySide = (p: Pen, o: Outfit, opts: SideOpts) => {
     p.band([lerp2(B0, B1, 0.6), B1], "#8d949c", 2.4 * u, 1.2 * u, "round");
   }
   p.stroke(curve(near[0], near[1], near[2]), 5.2 * u, armCol); p.dot(near[2][0], near[2][1], 5.5 * u);
+  if (o.machete && (mode === "stand" || mode === "march")) machete(p, near[2][0], near[2][1], u, HH, 1);
   // ---- head ----
   const hx = 300 + 4 * u;
   hatBehind(p, o, H, hx, hc, light, thick, ow, true);
