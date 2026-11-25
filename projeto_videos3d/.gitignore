@@ -127,3 +127,10 @@ v2/ep18/out/*.mp4
 v2/ep18/out/frames.txt
 v2/ep18/out/mg.txt
 analysis/refs/videos/
+v2/ep19/frames/
+v2/ep19/mg/
+v2/ep19/out/*.wav
+v2/ep19/out/*.mp4
+v2/ep19/out/frames.txt
+v2/ep19/out/mg.txt
+narracao/19_vozes/*.wav

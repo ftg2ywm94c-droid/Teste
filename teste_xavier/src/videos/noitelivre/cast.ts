@@ -8,7 +8,7 @@ import {
   Pen, bodyFront, bodySide, KID, fxNote, fxBurst, fxSplash, fxStars, fxCreak, fxRing, fxBlob, fxShadow, fxContact, fxPlank, fxDrum,
   Outfit, Expr, FrontOpts, SideOpts,
 } from "./toon";
-import { FPS, D0, SHOTS, V3, smooth, clamp01, easeOut, T_SINK, T_WAR, T_NOT, T_OFF, T_FRIDGE, T_HOURS, W, windAt, leanAt, BOLTS, sparkAt, PHONE_NEAR, fallen, doorAt, sirenX, sirenK, sirenPulse, darkAt, KNOCKS, tvOn, ledOn, lampOn, barkAt, vibAt, talkAt } from "./story";
+import { FPS, D0, SHOTS, V3, smooth, clamp01, easeOut, T_SINK, T_WAR, T_NOT, T_OFF, T_FRIDGE, T_HOURS, W, windAt, leanAt, BOLTS, sparkAt, PHONE_NEAR, fallen, doorAt, sirenX, sirenK, sirenPulse, darkAt, KNOCKS, tvOn, ledOn, lampOn, barkAt, vibAt, talkAt, wagAt } from "./story";
 import { LIGHTS } from "./lights";
 import { NOINK } from "./ink";
 import { cardShade, blobMaterial, CARD_K } from "./cardshade";
@@ -727,13 +727,15 @@ const ep3 = (id: number, cam: CamInfo, t: number, out: Stage) => {
 
 // ================= vídeo 18: Jogador 2 · Ep. 1 =================
 /** cachorro de desenho, de lado (olhando para a esquerda), latindo ou quieto de orelha em pé */
-const fxDog = (p: Pen, bark: boolean, col: string) => hi(p, 1, (g) => {
+const fxDog = (p: Pen, bark: boolean, col: string, wag = 0) => hi(p, 1, (g) => {
   g.lineJoin = "round"; g.lineCap = "round"; g.lineWidth = 9; g.strokeStyle = "#1a1320";
   const dark = "#5a3a24";
   g.fillStyle = col; // corpo
   g.beginPath(); g.ellipse(300, 240, 130, 62, 0, 0, 7); g.fill(); g.stroke();
   for (const [x, d] of [[210, 0], [250, 1], [350, 0], [390, 1]] as const) { g.fillStyle = d ? dark : col; g.beginPath(); g.roundRect(x - 16, 270, 32, 92, 14); g.fill(); g.stroke(); }
-  g.fillStyle = col; g.beginPath(); g.moveTo(420, 220); g.quadraticCurveTo(480, 150, 470, 120); g.lineWidth = 16; g.strokeStyle = "#1a1320"; g.stroke(); g.lineWidth = 9;
+  { const tx = 462 + 36 * wag, ty = 118 + 40 * Math.abs(wag), cx2 = 476 + 24 * wag;   // rabo: contorno escuro + cor do pelo (aparece no escuro), abana com wag
+    g.lineCap = "round"; g.beginPath(); g.moveTo(420, 220); g.quadraticCurveTo(cx2, 150, tx, ty); g.lineWidth = 30; g.strokeStyle = "#1a1320"; g.stroke();
+    g.beginPath(); g.moveTo(420, 220); g.quadraticCurveTo(cx2, 150, tx, ty); g.lineWidth = 16; g.strokeStyle = col; g.stroke(); g.lineWidth = 9; g.strokeStyle = "#1a1320"; g.fillStyle = col; }
   g.beginPath(); g.ellipse(160, 165, 68, 58, 0, 0, 7); g.fill(); g.stroke();            // cabeça
   g.beginPath(); g.ellipse(100, bark ? 172 : 182, 50, 30, 0, 0, 7); g.fill(); g.stroke(); // focinho
   if (bark) { g.fillStyle = "#7a1f2b"; g.beginPath(); g.moveTo(58, 192); g.lineTo(130, 196); g.lineTo(70, 232); g.closePath(); g.fill(); g.stroke(); }
@@ -826,14 +828,14 @@ const ep5 = (id: number, cam: CamInfo, t: number, out: Stage) => {
     out.fx.push({ key: "tvwash", cw: 256, ch: 256, draw: (pp) => fxGlow(pp, "rgba(120,170,255,0.45)"), soft: true, x: 600.0, y: 1.1, z: -0.2, w: 3.4, h: 2.2 });
     out.fx.push({ key: "tvfloor", cw: 256, ch: 256, draw: (pp) => fxGlow(pp, "rgba(110,160,255,0.3)"), soft: true, flat: true, x: 600.0, y: D0 + 0.05, z: 0.8, w: 4.0, h: 3.2 }); };
   const lampGlow = () => out.fx.push({ key: "lampG", cw: 256, ch: 256, draw: (pp) => fxGlow(pp, "rgba(255,210,140,0.55)"), soft: true, x: 596.8, y: D0 + 1.45, z: 3.3, w: 2.2, h: 2.2 });
-  const thor = () => { const b = barkAt(t);
-    out.fx.push({ key: `thor|${b}`, cw: 512, ch: 384, draw: (pp) => fxDog(pp, b, "#c98a4a"), x: 1.5, y: D0 + 0.36, z: -3.0, w: 0.95, h: 0.71 }); blob(out, 1.5, D0, -3.0, 0.6); };
+  const thor = () => { const b = barkAt(t), wg = q(wagAt(t), 4);
+    out.fx.push({ key: `thor|${b}|${wg}`, cw: 512, ch: 384, draw: (pp) => fxDog(pp, b, "#c98a4a", wg), x: 1.5, y: D0 + 0.36, z: -3.0, w: 0.95, h: 0.71 }); blob(out, 1.5, D0, -3.0, 0.6); };
   const masks = (turn = -1) => MASKS.forEach(([x, z], i) => {
     const front = i === 1 && turn >= 0 && t >= turn;
     const view = front ? { side: false, mirror: false } : viewOf(cam, x, z, 1, 0.25);
     out.places.push(person(cam, MASK(i), x, D0, z, view, { mode: "stand", expr: "neutral", blink: 0, look: 0 }, { mode: "stand", expr: "neutral", blink: 0 })); blob(out, x, D0, z); });
   switch (c) {
-    case "n_sofa": case "n_faces": sofa("nervous"); tvGlow(); lampGlow(); break;
+    case "n_sofa": case "n_faces": case "n_loop": sofa("nervous"); tvGlow(); lampGlow(); break;
     case "n_tv": case "n_anchor": case "n_tv2": tvGlow(); break;
     case "n_curtain": stand(MAE, 603.0, 3.45, "stern", 1); lampGlow(); break;
     case "n_lock": stand(PAI, 594.4, 3.45, "stern", -1); break;
@@ -851,7 +853,8 @@ const ep5 = (id: number, cam: CamInfo, t: number, out: Stage) => {
     case "n_thor": thor(); break;
     case "n_masks": masks(); thor(); break;
     case "n_turn": masks(W.vira + 1.0); break;
-    case "n_cta": thor(); masks(); break;
+    case "n_wag": thor(); break;
+    case "n_wagmask": thor(); masks(0); break;   // a máscara do meio de frente, olhando o Thor abanar o rabo
   }
 };
 /** chuva diante da câmera (mesma do vídeo 12) com densidade dada */

@@ -7,8 +7,10 @@
 //   S6 today: the finished tower stands, tourists cheer  | "…e ela não caiu."
 export const FPS = 30;
 // Vídeo 19 "A Noite Livre · Ep. 1": a família trancada, o Thor na rua, 3 máscaras na esquina. Elenco de vozes.
-// TEMPOS PROVISÓRIOS (estimados pela contagem de palavras) até chegarem os áudios: narração do usuário + vozes do vidIQ.
-export const TOTAL = 1932;
+// Tempos REAIS: narração (ElevenLabs, Ana Dias) + falas dos personagens, faixa narracao/19_narracao.mp3 (64,58 s).
+// Palavras em projeto_videos3d/analysis/narracao/19_words.json; falas em narracao/19_vozes/19_linhas.json.
+import { TALK } from "./talk";
+export const TOTAL = 1937;
 export const T0 = 0;
 export const D0 = 0; // ground height (m)
 export type V3 = [number, number, number];
@@ -17,25 +19,14 @@ export const clamp01 = (x: number) => Math.max(0, Math.min(1, x));
 export const smooth = (x: number) => { const u = clamp01(x); return u * u * (3 - 2 * u); };
 export const easeOut = (u: number) => 1 - (1 - clamp01(u)) ** 4;
 
-/** falas: quem fala, início e fim (s). Provisório. */
 export type Who = "narr" | "tv" | "pai" | "mae" | "bia";
-export const LINES: { who: Who; a: number; b: number }[] = [
-  { who: "narr", a: 0.0, b: 7.0 }, { who: "tv", a: 7.3, b: 15.3 }, { who: "mae", a: 15.6, b: 18.4 }, { who: "pai", a: 18.7, b: 20.7 },
-  { who: "bia", a: 21.0, b: 22.5 }, { who: "pai", a: 22.8, b: 24.5 }, { who: "bia", a: 24.9, b: 28.3 }, { who: "narr", a: 28.6, b: 36.8 },
-  { who: "mae", a: 37.1, b: 38.5 }, { who: "bia", a: 38.8, b: 40.0 }, { who: "tv", a: 40.3, b: 41.5 }, { who: "pai", a: 41.8, b: 44.6 },
-  { who: "mae", a: 44.9, b: 46.6 }, { who: "narr", a: 47.0, b: 63.4 },
-];
-/** boca aberta 0..1 enquanto o personagem fala (provisório: sílabas ~4,3/s; depois vem do envelope do áudio dele) */
-export const talkAt = (who: Who, t: number) => {
-  const L = LINES.find((l) => l.who === who && t >= l.a && t < l.b); if (!L) return 0;
-  const u = t - L.a, v = 0.5 + 0.35 * Math.sin(u * 2 * Math.PI * 4.3) + 0.25 * Math.sin(u * 2 * Math.PI * 7.1 + 1.3);
-  return Math.round(clamp01(v) * 3) / 3;
-};
+/** boca 0..1 de cada personagem, tirada do envelope do áudio dele (talk.ts) */
+export const talkAt = (who: Who, t: number) => { const s2 = TALK[who]; if (!s2) return 0; const c = s2.charCodeAt(Math.round(t * 30)) - 48; return c > 0 ? c / 3 : 0; };
 /** marcos (s) */
 export const W = {
-  inicio: 0, tv1: 3.6, ancora: 7.3, rostos: 11.0, cortina: 15.6, tranca: 18.7, cade: 21.0, quintal: 22.8, portao: 24.9, ultimo: 26.8,
-  rua: 30.0, esquina: 33.0, porta: 36.9, thor: 38.8, dois: 40.2, correr: 41.8, vira: 44.8, decide: 47.0, opcaoA: 49.0, opcaoB: 53.5,
-  comenta: 57.5, se: 61.5,
+  inicio: 0, tv1: 3.55, ancora: 8.36, rostos: 12.25, cortina: 16.24, tranca: 18.76, cade: 21.12, quintal: 22.39, portao: 24.59, ultimo: 25.85,
+  rua: 28.5, esquina: 32.2, porta: 35.93, thor: 37.32, dois: 38.86, correr: 40.53, vira: 43.62, quieto: 45.37, abana: 47.76, mascaras: 48.55,
+  decide: 50.53, opcaoA: 52.1, opcaoB: 54.6, comenta: 58.2, se: 62.55, trancado: 19.02, latirPara: 46.78,
   // nomes herdados (código antigo)
   caiu: -100, liga: -100, jogador: -100, alguma: -100, param: -100,
   seis: -100, liga0: -100, n193: -100, chama: -100, duas: -100, atendem: -100, fala: -100, endereco: -100, arvore: -100, fio: -100,
@@ -70,15 +61,18 @@ export const sirenPulse = (_t: number) => 0;
 export const darkAt = (id: number, _t: number) => (ROOM.includes(id) ? 0.3 : 0);
 /** a TV: telejornal com o relógio (21:57 / 21:58) */
 export type TvState = "news57" | "news58" | "off";
-export const tvState = (id: number, t: number): TvState => (ROOM.includes(id) ? (t >= W.dois ? "news58" : "news57") : "off");
+export const tvState = (id: number, t: number): TvState => (id === 24 ? "news57" : ROOM.includes(id) ? (t >= W.dois ? "news58" : "news57") : "off");
 export const tvOn = (id: number, t: number) => tvState(id, t) !== "off";
 export const ledOn = (_id: number, _t: number) => false;
 export const vibAt = (_id: number, _t: number) => 0;
 /** o Thor late sem parar na rua */
-export const barkAt = (t: number) => Math.floor(t * 4.6) % 3 !== 2;
+/** o Thor late sem parar até "para de latir" (depois fica quieto e abana o rabo) */
+export const barkAt = (t: number) => t < W.latirPara && Math.floor(t * 4.6) % 3 !== 2;
+/** rabo abanando (radianos) depois que para de latir */
+export const wagAt = (t: number) => (t < W.latirPara ? 0 : 0.5 * Math.sin(t * 2 * Math.PI * 3.2));
 export const KNOCKS: number[] = [];
 /** a cortina: 0 aberta .. 1 fechada (a mãe fecha no plano 5; no plano 20 você abre uma fresta) */
-export const curtainAt = (id: number, t: number) => (id < 5 ? 0 : id === 5 ? smooth((t - W.cortina - 0.6) / 1.4) : id === 20 ? 0.55 : 1);
+export const curtainAt = (id: number, t: number) => (id < 5 || id === 24 ? 0 : id === 5 ? smooth((t - W.cortina - 0.6) / 1.4) : id === 22 ? 0.55 : 1);
 
 // ---------------- shots ----------------
 export type Light = "day" | "golden" | "night";
@@ -86,17 +80,17 @@ export type Crowd = string;
 export type ShotDef = { id: number; a: number; b: number; light: Light; crowd: Crowd };
 const F = (t: number) => Math.round(t * FPS);
 const CUT = [0, ...[W.tv1, W.ancora, W.rostos, W.cortina, W.tranca, W.cade, W.quintal, W.portao, W.ultimo, W.rua, W.esquina, W.porta, W.thor,
-  W.dois, W.correr, W.vira, W.decide, W.opcaoA, W.opcaoB, W.comenta, W.se].map((t) => F(t)), TOTAL];
+  W.dois, W.correr, W.vira, W.quieto, W.mascaras, W.decide, W.opcaoA, W.opcaoB, W.comenta, W.se].map((t) => F(t)), TOTAL];
 const DEF: [Light, Crowd][] = [
   ["night", "n_sofa"],     // 1 imagina: a família no sofá olhando a TV
   ["night", "n_tv"],       // 2 a TV: NOITE LIVRE 22H, 21:57
-  ["night", "n_anchor"],   // 3 o apresentador: faltam três minutos
-  ["night", "n_faces"],    // 4 os rostos ouvindo
+  ["night", "n_anchor"],   // 3 o apresentador: atenção, faltam três minutos
+  ["night", "n_faces"],    // 4 os rostos ouvindo (a polícia não vai atender)
   ["night", "n_curtain"],  // 5 mãe: fecha essa cortina
   ["night", "n_lock"],     // 6 pai: tudo trancado
   ["night", "n_bed"],      // 7 Bia: cadê o Thor? (caminha vazia)
   ["night", "n_peek"],     // 8 pai: tava no quintal
-  ["night", "n_gate"],     // 9 o portão aberto (lá fora)
+  ["night", "n_gate"],     // 9 o portão tá aberto (lá fora)
   ["night", "n_look"],     // 10 quem foi o último? todos olham pra você / foi você
   ["night", "n_thor"],     // 11 o Thor latindo no meio da rua
   ["night", "n_masks"],    // 12 três máscaras na esquina
@@ -105,13 +99,15 @@ const DEF: [Light, Crowd][] = [
   ["night", "n_tv2"],      // 15 TV: faltam dois minutos (21:58)
   ["night", "n_pai"],      // 16 pai: se correr...
   ["night", "n_turn"],     // 17 e se eles chegarem primeiro? (uma máscara vira pra casa)
-  ["night", "n_you"],      // 18 você decide
-  ["night", "n_optA"],     // 19 opção A: a porta
-  ["night", "n_optB"],     // 20 opção B: a janela
-  ["night", "n_choice"],   // 21 comenta A ou B
-  ["night", "n_cta"],      // 22 a casa vista da rua / E se...
+  ["night", "n_wag"],      // 18 aí o Thor para de latir e abana o rabo
+  ["night", "n_wagmask"],  // 19 pra uma das máscaras
+  ["night", "n_you"],      // 20 você decide
+  ["night", "n_optA"],     // 21 opção A: a porta
+  ["night", "n_optB"],     // 22 opção B: a janela
+  ["night", "n_choice"],   // 23 comenta A ou B
+  ["night", "n_loop"],     // 24 E se... (= quadro 0: o vídeo emenda no começo)
 ];
-const ROOM = [1, 2, 3, 4, 5, 6, 7, 8, 10, 13, 14, 15, 16, 18, 19, 20, 21];
+const ROOM = [1, 2, 3, 4, 5, 6, 7, 8, 10, 13, 14, 15, 16, 20, 21, 22, 23, 24];
 export const SHOTS: ShotDef[] = DEF.map(([light, crowd], i) => ({ id: i + 1, a: CUT[i], b: CUT[i + 1], light, crowd }));
 export const XFADE: Record<number, number> = {};
 export const FLASH_AT = -100;
@@ -193,11 +189,14 @@ const CAMS: Record<number, Key[]> = {
   15: dl(15, [600.0, 1.12, 1.9], [600.0, 1.1, -0.62], 44, 0.0016),
   16: dl(16, [597.4, 1.4, 0.6], [596.0, 1.3, 2.2], 44, 0.0026),
   17: dl(17, [-2.0, 1.5, 6.4], [-12.0, 1.35, -4.6], 26, 0.0026),
-  18: dl(18, [597.0, 1.4, 0.55], [597.0, 1.3, 2.0], 44, 0.003),
-  19: dl(19, [594.6, 1.4, 1.6], [594.3, 1.2, 3.4], 50),
-  20: dl(20, [601.9, 1.45, 1.3], [603.2, 1.4, 3.7], 52),
-  21: dl(21, [597.0, 1.75, -2.4], [597.0, 1.0, 2.0], 58, 0.0016),
-  22: [{ f: 0, s: () => ({ pos: [-4.0, 2.2, -11.0], look: [1.5, 1.6, 6.0], fov: 52 }) }, { f: S0(22) + 2, dur: 80, s: () => ({ pos: [-7.0, 3.4, -14.0], look: [1.5, 1.8, 6.0], fov: 54 }) }],
+  18: dl(18, [2.5, 0.5, -0.85], [1.6, 0.5, -3.0], 50, 0.0022),
+  19: dl(19, [4.6, 1.0, -1.7], [-0.6, 0.75, -3.4], 42, 0.0016),
+  20: dl(20, [597.0, 1.4, 0.55], [597.0, 1.3, 2.0], 44, 0.003),
+  21: dl(21, [594.6, 1.4, 1.6], [594.3, 1.2, 3.4], 50),
+  22: dl(22, [601.9, 1.45, 1.3], [603.2, 1.4, 3.7], 52),
+  23: dl(23, [597.0, 1.75, -2.4], [597.0, 1.0, 2.0], 58, 0.0016),
+  // o fecho em loop: a mesma câmera do quadro 0 do plano 1, parada
+  24: [{ f: 0, s: () => ({ pos: [600.0, 1.85, -0.9], look: [600.0, 0.95, 2.5], fov: 66 }) }],
 };
 /** impact kicks: flip sign every frame, decay over 7 frames */
 const KICKS: number[] = [];
