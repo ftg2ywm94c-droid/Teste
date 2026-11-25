@@ -310,7 +310,7 @@ export const camAt = (id: number, f: number): Cam => {
 // ---------------- lens blur per beat (cInf px at 1080; 0 = sharp) ----------------
 export type Dof = { f: number; dur?: number; cInf: number; focus?: (f: number) => V3 };
 const FOC: Record<number, [number, V3]> = Object.fromEntries(Object.entries(CAMS).map(([k, keys]) => { const c = keys[0].s(0); return [Number(k), [6, c.look]]; }));
-export const DOF: Dof[] = SHOTS.map((s) => (s.id >= 6 ? { f: s.a, cInf: 4, focus: (f: number) => camAt(s.id, f).look } : { f: s.a, cInf: FOC[s.id][0], focus: () => FOC[s.id][1] }));   // vídeo 21: o foco anda junto com a mira da câmera
+export const DOF: Dof[] = SHOTS.map((s) => (s.id === 14 ? { f: s.a, cInf: FOC[1][0], focus: () => FOC[1][1] } : s.id >= 6 ? { f: s.a, cInf: 4, focus: (f: number) => camAt(s.id, f).look } : { f: s.a, cInf: FOC[s.id][0], focus: () => FOC[s.id][1] }));   // vídeo 21: o foco anda junto com a mira da câmera
 export const dofAt = (f: number) => {
   let i = 0; while (i + 1 < DOF.length && f >= DOF[i + 1].f) i++;
   const d = DOF[i], p = DOF[Math.max(0, i - 1)];

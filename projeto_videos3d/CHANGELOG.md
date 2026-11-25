@@ -5,6 +5,12 @@
 - `scripts/add_narration.py`: MP3 → MP4 com legenda sincronizada, ducking e −14 LUFS.
 - Para recuperar: `git checkout be24c75 -- projeto_videos3d` (a tag não pôde ser enviada ao GitHub: o acesso desta sessão só permite o branch de trabalho).
 
+## v0.23: vídeo 21 "A Chave · Ep. 1" (2026-11-25)
+- A partir do piloto (15,6 s iguais): praça, a sua casa, hora do dia contínua (noite → tarde → pôr do sol → noite), sombra de nuvens, câmera que atravessa o cenário de uma cena para outra (spline contínua do plano 6 ao 13).
+- Câmera refeita depois do 1º render: mira por ângulo, volta em arco no homem, grua por cima dos telhados; praça compacta. Loop: plano 14 com as regras do plano 1 (emenda 1,9/255).
+- `assemble.py`: nome de saída do 21 e pipe de quadros quando PNG e JPEG se misturam (só nesse caso).
+- QC 15/15 (−13,7 LUFS, TP −1,7). Detalhes em `v2/ep21/LIMITACOES.md` e `v2/ep21/qc_report_21.json`. Capa: quadro de 14,0 s.
+
 ## v0.22: vídeo 20 "A Visita · Ep. 1", versão 2 (celular na mão e luz real) (2026-11-25)
 - Render v2 completo, nativo 1080x1920, 2280 quadros (os da v1 guardados em `v2/ep20/frames_v1/`): celular visto de costas na mão, tela iluminando o rosto, luzes práticas (tela, despertador, luar, varanda, fresta, portão).
 - `assemble.py`: opção `LOUD_I` por episódio (padrão −14, os outros vídeos não mudam); vídeo 20 em −12,8 para compensar o limitador.

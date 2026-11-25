@@ -28,7 +28,18 @@ with open(os.path.join(OUT, 'frames.txt'), 'w') as f:
     for p in paths:
         if os.path.exists(p) and os.path.getsize(p) > 0: last = p
         f.write(f"file '{last}'\nduration {1 / SH.FPS:.6f}\n")
-def run(c): print('$', ' '.join(c[:6]), '...'); subprocess.run(c, check=True)
+MIXED = len({os.path.splitext(p)[1] for p in paths}) > 1   # PNG (piloto) + JPEG (vídeo 21): o concat do ffmpeg usa o decodificador do 1º arquivo
+                                                          # e quebra nos outros; então os quadros vão decodificados (RGB cru) por um pipe
+def run(c):
+    print('$', ' '.join(c[:6]), '...')
+    if not (MIXED and 'frames.txt' in ' '.join(c)): return subprocess.run(c, check=True)
+    from PIL import Image
+    i = c.index(os.path.join(OUT, 'frames.txt')); c = c[:i - 5] + ['-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', '1080x1920', '-r', str(SH.FPS), '-i', 'pipe:0'] + c[i + 1:]
+    pr = subprocess.Popen(c, stdin=subprocess.PIPE); last = None
+    for p in paths:
+        if os.path.exists(p) and os.path.getsize(p) > 0: last = p
+        im = Image.open(last).convert('RGB'); assert im.size == (1080, 1920), (last, im.size); pr.stdin.write(im.tobytes())
+    pr.stdin.close(); assert pr.wait() == 0, 'ffmpeg falhou'
 # áudio: voz original intacta (só reamostrada) + leito de efeitos/música abaixado pela voz
 # camada de tensão/suspense opcional (v2/lib/tensao.py): entra no leito e é abaixada pela voz junto com efeitos e música
 TENS = os.path.join(OUT, 'tensao.wav'); HAS_T = os.path.exists(TENS); W_T = os.environ.get('W_TENSAO', '0.75')

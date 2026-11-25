@@ -96,6 +96,7 @@ export class World {
   private bulbOn = new THREE.MeshBasicMaterial({ color: new THREE.Color(4.0, 3.0, 1.6), fog: true });
   private storm = new THREE.Group();
   private wtrees: { g: THREE.Group; ph: number }[] = [];   // árvores que balançam com o vento
+  private v21 = new THREE.Group();                          // vídeo 21: chão até o horizonte, praça e a sua casa
   private big = new THREE.Group();                          // a árvore enorme da frente da sua casa
   private lamp!: THREE.Mesh;
   private smash = new THREE.Group();                        // depois da queda: copa amassada na fachada, buraco, telhas no chão
@@ -521,6 +522,7 @@ export class World {
       this.poleLight.position.set(2002.8, D0 + 6.85, 15.3); this.poleLight.target.position.set(2001.8, D0, 15.6);
       this.farLight.position.set(2002.8, D0 + 6.85, 34.0); this.farLight.target.position.set(2001.5, D0, 33.5);
 
+      { const b = new Batch(); const bx = (x0: number, y0: number, z0: number, x1: number, y1: number, z1: number, m: THREE.Material, r = 0) => b.add(boxGeo(V(x0, D0 + y0, z0), V(x1, D0 + y1, z1), r), m);   // lote próprio (this.v21)
       // ===== vídeo 21 — A CHAVE: chão até o horizonte, a PRAÇA no começo da rua (z -13,5 a -44) e a SUA CASA no fim (z 44) =====
       b.add(quadUp(1700, 2300, -400, 300, 300, 350, D0 - 0.01), M.grass);                 // gramado até o horizonte (a câmera sobe acima dos telhados)
       b.add(quadUp(1996.4, 2003.6, 40, 44, 1, 1, D0 + 0.03), M.asphHD);                    // a rua chega na sua casa
@@ -558,6 +560,7 @@ export class World {
       this.winLight.castShadow = true; this.winLight.shadow.mapSize.set(1024, 1024); this.winLight.shadow.bias = -0.0004; R.add(this.winLight, this.winLight.target);
       this.winLight.position.set(CASA.win[0], D0 + CASA.win[1], 43.7); this.winLight.target.position.set(CASA.win[0] - 0.3, D0, 34.0);
       this.porchL.position.set(2000.0, D0 + 2.5, 43.4); R.add(this.porchL);
+      b.build(this.v21); R.add(this.v21); }
     }
     { // ===== vídeo 20 — A VISITA =====
       // a maçaneta (alavanca) da porta da frente, com pivô no espelho
@@ -641,6 +644,7 @@ export class World {
     for (const { g, ph } of this.corn) g.rotation.set(0, 0, w2 * (0.06 + 0.05 * Math.sin(t * 1.9 + ph) + 0.02 * Math.sin(t * 4.7 + ph * 1.7)));
     this.farmWin.visible = false;
     this.big.visible = false; this.cushion.visible = false;
+    this.v21.visible = id >= 6 && id <= 13;   // o piloto (1–5) e o loop (14) ficam iguais ao quadro 0, sem o cenário novo
     const ck = curtainAt(id, t); this.curtL.scale.set(0.25 + 0.8 * ck, 1, 1); this.curtR.scale.set(0.25 + 0.8 * ck, 1, 1);
     (this.roomWin.material as THREE.MeshLambertMaterial).color.set("#0c1226");
     this.knob.rotation.set(0, 0, id === 18 ? knobAt(t) : 0);
@@ -692,7 +696,7 @@ export class World {
   }
 
   update(id: number, f: number, cam: THREE.PerspectiveCamera, scene: THREE.Scene) {
-    const t = f / FPS, s = SHOTS[id - 1], tod = id >= 6 ? todAt(id, t) : -1, L = tod >= 0 ? lightAt(tod) : LIGHTS[s.light];
+    const t = f / FPS, s = SHOTS[id - 1], tod = id >= 6 && id !== 14 ? todAt(id, t) : -1, L = tod >= 0 ? lightAt(tod) : LIGHTS[s.light];
     const lname = tod >= 0 ? todName(tod) : s.light;
     const c = camAt(id, f);
     cam.position.set(...c.pos); cam.up.set(0, 1, 0); cam.lookAt(...c.look); cam.rotateZ(c.roll);

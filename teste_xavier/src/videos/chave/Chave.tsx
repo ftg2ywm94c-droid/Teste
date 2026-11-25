@@ -87,7 +87,7 @@ const Inner: React.FC<{ id: number; kit: Kit }> = ({ id, kit }) => {
   if (d.focus) fpt.set(...d.focus(f)); else fpt.copy(target);
   fx.lens.focus = Math.max(0.3, fpt.sub(cam.position).dot(fwd));
   fx.lens.cInf = d.cInf;
-  if (id >= 6) gradeTod(fx.grade, todAt(id, f / FPS)); else gradeFor(fx.grade, SHOTS[id - 1].light);
+  if (id >= 6 && id !== 14) gradeTod(fx.grade, todAt(id, f / FPS)); else gradeFor(fx.grade, SHOTS[id - 1].light);
   fx.grain.seed = f; // deterministic per frame
   return (
     <>

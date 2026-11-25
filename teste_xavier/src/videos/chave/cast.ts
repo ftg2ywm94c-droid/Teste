@@ -993,7 +993,7 @@ const ep7 = (id: number, cam: CamInfo, t: number, out: Stage) => {
 export const stage = (id: number, t: number, cam: CamInfo): Stage => {
   const out: Stage = { places: [], fx: [] };
   const s = SHOTS[id - 1];
-  LNAME = id >= 6 ? todName(todAt(id, t)) : s.light;
+  LNAME = id >= 6 && id !== 14 ? todName(todAt(id, t)) : s.light;
   findSun(cam, SUN);
   if (s.crowd === "tourists") tourists(cam, t, out, false);
   if (s.crowd === "cheer") tourists(cam, t, out, true);
