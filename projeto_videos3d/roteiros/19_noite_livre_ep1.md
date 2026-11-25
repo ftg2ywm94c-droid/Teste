@@ -62,3 +62,18 @@ Custo no vidIQ: cada voz tem menos de 1000 caracteres, então 28 créditos por v
   - muro e portão meio aberto na frente da casa;
   - Thor latindo no meio da rua e três máscaras na esquina.
 - **Os tempos ainda são provisórios** (`LINES` no `story.ts`). Quando chegarem os áudios (créditos do vidIQ renovam em 09/12, mais a narração do usuário), os tempos e as bocas passam a vir dos áudios reais.
+
+## Roteiro v2 (25/11/2026): técnicas das referências aplicadas (`analysis/refs/MANUAL_REFERENCIAS.md`)
+
+As mudanças, cada uma com o dado que a apoia:
+1. **Narração mais rápida** (~3 palavras/s; as referências fazem 2,7–3,6 e o nosso vídeo 18 fez ~2,5). Frases curtas, a voz começando no quadro 0.
+2. **Reviravolta 5–10 s antes do CTA** (as quatro referências fazem isso): o Thor para de latir e **abana o rabo pra uma das máscaras**. Sugere que é alguém conhecido, deixa a Parte 2 armada e não tem violência.
+3. **HUD fixo**: "● NOITE LIVRE · 21:57 · FALTAM 3 MIN", contando até 21:59 (o relógio e a bateria da RTR; o relógio da Souzeira).
+4. **Palavra-chave no topo** por plano, **onomatopeias** carimbadas ("CLAC" na tranca, "AU! AU!"), **círculo** nas máscaras e no portão. A maquete está em `analysis/19_mock_overlays.jpg`.
+5. **Final em loop**: o último segundo repete o 1º quadro (o sofá com "A NOITE LIVRE · EP. 1").
+6. A **identidade nossa continua**: 3D toon, Poppins, amarelo, "E se..." no fim e "história de ficção".
+
+### Falas do narrador v2 (bloco único para gravar)
+Imagina: o governo anuncia a Noite Livre. Das dez da noite às seis da manhã, nada é crime. E faltam três minutos. Foi você. Lá fora, o Thor tá no meio da rua, latindo. Na esquina, três pessoas de máscara olham pra ele. Aí o Thor para de latir. E abana o rabo. Pra uma das máscaras. Você decide. A: corre lá fora e pega o Thor. B: fica trancado e chama ele pela janela. Comenta A ou B. A mais comentada vira a Parte 2. E se...
+
+As falas da TV, do pai, da mãe e da Bia continuam as mesmas da v1. Plano novo a fazer quando chegarem os áudios: o Thor quieto abanando o rabo, virado para a máscara do meio.

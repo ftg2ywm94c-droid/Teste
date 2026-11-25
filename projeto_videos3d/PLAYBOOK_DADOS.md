@@ -66,6 +66,19 @@ Regra: nenhum número ou afirmação sobre um vídeo vai para o usuário sem ter
 - **Final com frase de efeito que volta ao começo (loop).** Nos vídeos "E se…?" de curiosidade, o CTA falado pode sair. Na série A/B, o CTA continua, porque é ele que gera os comentários.
 - **Duração testável: 2:00–2:17** nos vídeos de explicação, já que os maiores sucessos deles passam de 2 min.
 
+
+### Regra permanente (pedido do usuário, 25/11/2026)
+**Sempre analisar dados antes de dizer o que o usuário deve fazer** (horário, título, hashtags, tags, capa). Cada recomendação diz de onde veio: Instagram insights, Metricool, vidIQ ou referências medidas.
+
+### Aprendizado das referências (25/11/2026, `analysis/refs/MANUAL_REFERENCIAS.md`)
+- Narração de ~3 palavras/s; voz no quadro 0; reviravolta 5–10 s antes do CTA; CTA com consequência ("vira a Parte N").
+- Camada de texto: HUD fixo (relógio ou contador), palavra-chave no topo, onomatopeia carimbada, círculo, legenda com a palavra-chave colorida.
+- Final em loop: o último segundo igual ao 1º quadro.
+- Capa: um quadro do próprio vídeo com texto de impacto já na imagem. As referências que mais performaram não fazem capa separada.
+- Hashtag própria de cada série (#anoitelivre, #ultimoonibus) + "Assiste de fone 🎧" na descrição.
+- Tags pesam pouco: a Souzeira (473 mil) usa as mesmas tags genéricas em todo vídeo.
+- **As nossas continuações pulam mais que o Ep. 1** (Instagram: Ônibus 27→35%, Vendaval 30→57%). Nas partes, abrir com "Vocês escolheram X" já com a ação e a pílula da escolha na tela, como a Souzeira.
+
 ## 3. Regras de título, legenda e tags
 - **YouTube:** `[Série] Ep. N: [situação concreta]. [pergunta]?`. Sem data, sem "E se ?" sozinho, sem hashtag no título. Testar 2 opções no vidIQ (`score_title`) e usar a maior.
 - **Legenda TikTok/IG:** primeira linha = a premissa do quadro 0, depois "Comenta A ou B 👇" e "📩 Manda pra quem…". No Instagram, "Ep. 1 no perfil" no lugar de link.
@@ -75,7 +88,7 @@ Regra: nenhum número ou afirmação sobre um vídeo vai para o usuário sem ter
 
 ## 4. Postagem
 - **1 vídeo por dia por rede.** Pode ser o mesmo nas três redes no mesmo dia.
-- **Horário (BRT):** YouTube às 12h, que é o horário da maioria dos nossos vídeos com mais de 1,4 mil views. TikTok às 10h, ou às 18h como segunda opção. Instagram: o Ônibus Ep. 1 (172 mil) saiu numa sexta às 18:15, mas o Vendaval Ep. 1 saiu às 18:46 e ficou em 2,8 mil: o horário sozinho não explica; a legenda e o gancho pesaram mais. Manter 18h para a série e medir. Dias úteis rendem mais que o fim de semana.
+- **Horário (BRT), revisado em 25/11 com o Metricool (TikTok: pico às 10h, quarta e quinta mais fortes):** YouTube às 12h, que é o horário da maioria dos nossos vídeos com mais de 1,4 mil views. TikTok às 10h, ou às 18h como segunda opção. Instagram: o Ônibus Ep. 1 (172 mil) saiu numa sexta às 18:15, mas o Vendaval Ep. 1 saiu às 18:46 e ficou em 2,8 mil: o horário sozinho não explica; a legenda e o gancho pesaram mais. Manter 18h para a série e medir. Dias úteis rendem mais que o fim de semana.
 - **Sempre o MP4 original**, nunca o baixado com marca d'água de outra rede.
 - **Comentário fixado com a escolha**, mais a nota de segurança quando houver risco real.
 - **Ligar os episódios**: na descrição do novo, o link do anterior; e editar o anterior com o link do novo.
