@@ -458,6 +458,10 @@ export class World {
       bx(591.4, 2.8, 4.4, 597.1, 2.95, 8.6, lam("porchRoof", () => ({ color: "#3a3644" })));
       for (const x of [592.2, 596.0]) bx(x - 0.09, 0.75, 8.42, x + 0.09, 2.8, 8.58, M.white);
       b.add(quad(V(597.1, D0 + 0.75, 8.62), V(591.4, D0 + 0.75, 8.62), V(591.4, D0 + 2.8, 8.62), V(597.1, D0 + 2.8, 8.62)), lam("porchNight", () => ({ color: "#0b1024" })));
+      // a noite atrás da varanda: quintal escuro e árvores em silhueta (sem céu aberto no olho mágico)
+      b.add(quad(V(606, D0 - 0.5, 14), V(582, D0 - 0.5, 14), V(582, D0 + 9, 14), V(606, D0 + 9, 14)), lam("yardNight", () => ({ color: "#0a0f22" })));
+      b.add(quadUp(582, 606, 8.6, 14, 6, 3, D0 + 0.02), lam("yardGrass", () => ({ color: "#1c2a26" })));
+      for (const [x, z, r] of [[589, 12.5, 1.6], [599, 12.8, 1.9], [603.5, 12.2, 1.4]] as const) b.add(new THREE.IcosahedronGeometry(r, 1), lam("treeNight", () => ({ color: "#14201c" })), at(x, D0 + 2.6, z));
       bx(593.8, 2.4, 4.4, 594.4, 2.46, 4.55, M.pole);
       const pb = new THREE.Mesh(new THREE.SphereGeometry(0.09, 14, 10), this.bulbOn); pb.position.set(594.1, D0 + 2.36, 4.5); pb.layers.set(NOINK); R.add(pb);
       bx(593.1, 0, 5.0, 595.1, 0.02, 6.1, lam("doormat", () => ({ color: "#6a4a32" })));

@@ -143,7 +143,7 @@ def frame(t):
             d.rounded_rectangle((W / 2 - w2 / 2 - 30, 708, W / 2 + w2 / 2 + 30, 792), 36, fill=(10, 12, 24, int(200 * k2)))
             text(d, W / 2, 720, 'a mais comentada vira a PARTE 2', WHT, 50, k2)
     return im, n
-CIRCLE = (560, 560, 860, 960)   # ajustado depois dos quadros de conferência
+CIRCLE = (400, 780, 690, 1220)   # o marido no plano 16 (medido no quadro de conferência 1288)
 
 def main():
     only = set(sys.argv[1:])

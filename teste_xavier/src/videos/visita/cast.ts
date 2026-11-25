@@ -862,7 +862,7 @@ const rainCamFx = (cam: CamInfo, t: number, out: Stage, dense: number) => rainCa
 
 
 // ---------------- vídeo 20: A Visita ----------------
-const AVO: Who = { i: 931, o: { jacket: "#2e2a3a", pants: "#2e2a3a", boots: "#1d1a22", hat: "hair", hair: "#cfccd6", dress: "#2e2a3a", skin: "#e4d6cc", build: undefined }, okey: "avo" };
+const AVO: Who = { i: 931, o: { jacket: "#2e2a3a", pants: "#2e2a3a", boots: "#1d1a22", hat: "hair", hair: "#aeb3c2", dress: "#2e2a3a", skin: "#efd3bf" }, okey: "avo" };
 const CELIA: Who = { i: 932, o: { jacket: "#7a4a8a", pants: "#3a3446", boots: "#2a2230", hat: "hair", hair: "#9a8f8a", long: true, dress: "#7a4a8a", skin: "#e8b991" }, okey: "celia" };
 const MARIDO: Who = { i: 933, o: { jacket: "#56606c", pants: "#3a3f4a", boots: "#1d1a22", hat: "hair", hair: "#dcdce2", skin: "#cfd6d2", moustache: "#bdbdc4" }, okey: "marido" };
 const VIS = (v: number): Who => ({ i: 940 + v, o: { jacket: ["#3a3644", "#41394a", "#343c48", "#4a3f3a"][v % 4], pants: "#26242c", boots: "#141018", hat: "hair", hair: ["#cfccd6", "#3a2a22", "#8a8a92", "#2a201a"][v % 4], long: v % 3 === 1, skin: "#d6d8d4" }, okey: "vis" + v });
@@ -901,11 +901,11 @@ const ep6 = (id: number, cam: CamInfo, t: number, out: Stage) => {
     out.places.push(person(cam, w, x, D0, z, viewOf(cam, x, z, dx, 0), { mode: "stand", expr, blink: lidAt(t, w.i), look: 0 }, { mode: "stand", expr, blink: lidAt(t, w.i) })); blob(out, x, D0, z); };
   const glow = (key: string, col: string, x: number, y: number, z: number, w: number, h = w, flat = false) =>
     out.fx.push({ key, cw: 256, ch: 256, draw: (pp) => fxGlow(pp, col), soft: true, flat, x, y, z, w, h });
-  const clock = () => { const on = alarmAt(t); out.fx.push({ key: `clock|${on}`, cw: 512, ch: 280, draw: (pp) => fxAlarm(pp, on), x: 1000.25, y: D0 + 0.68, z: 3.62, w: 0.24, h: 0.13 });
-    if (on) glow("clockG", "rgba(255,60,48,0.55)", 1000.25, D0 + 0.7, 3.5, 0.9); };
-  const phone = () => { const on = phoneOn(t); out.fx.push({ key: `phone|${on}`, cw: 256, ch: 480, draw: (pp) => fxCell(pp, on), flat: true, rot: 0.3, x: 1000.42, y: D0 + 0.6, z: 3.5, w: 0.08, h: 0.15 });
-    if (on) { glow("phoneG", "rgba(170,210,255,0.7)", 1000.42, D0 + 0.75, 3.5, 0.8); glow("phoneW", "rgba(150,200,255,0.35)", 1000.2, D0 + 1.4, 3.9, 2.2); } };
-  const photo = () => out.fx.push({ key: "photo", cw: 340, ch: 420, draw: fxPhoto, x: 1000.12, y: D0 + 0.71, z: 3.82, w: 0.2, h: 0.25 });
+  const clock = () => { const on = alarmAt(t); out.fx.push({ key: `clock|${on}`, cw: 512, ch: 280, draw: (pp) => fxAlarm(pp, on), x: 1000.4, y: D0 + 0.66, z: 3.62, w: 0.22, h: 0.12 });
+    if (on) glow("clockG", "rgba(255,60,48,0.3)", 1000.4, D0 + 0.68, 3.66, 0.6); };
+  const phone = () => { const on = phoneOn(t); out.fx.push({ key: `phone|${on}`, cw: 256, ch: 480, draw: (pp) => fxCell(pp, on), flat: true, rot: 0.3, x: 1000.3, y: D0 + 0.6, z: 3.42, w: 0.08, h: 0.15 });
+    if (on) { glow("phoneG", "rgba(170,210,255,0.45)", 1000.3, D0 + 0.66, 3.42, 0.5); glow("phoneW", "rgba(150,200,255,0.22)", 1000.2, D0 + 1.4, 3.95, 2.2); } };
+  const photo = () => out.fx.push({ key: "photo", cw: 340, ch: 420, draw: fxPhoto, x: 1000.1, y: D0 + 0.72, z: 3.86, w: 0.18, h: 0.23 });
   /** você segurando o celular aceso diante do peito (a tela ilumina o rosto) */
   const hold = (x: number, y: number, z: number) => { out.fx.push({ key: "phoneH|true", cw: 256, ch: 480, draw: (pp) => fxCell(pp, true), x, y, z, w: 0.1, h: 0.19 });
     glow("faceG", "rgba(170,210,255,0.55)", x, y + 0.25, z + 0.05, 1.1); };
@@ -926,7 +926,7 @@ const ep6 = (id: number, cam: CamInfo, t: number, out: Stage) => {
     case "z_window": stand(YOU, 603.0, 3.45, "shock", 1); break;
     case "z_celia": case "z_husb": side(CELIA, 0.15, -19.2, 1, "smile_closed"); side(MARIDO, 0.62, -19.2, -1, c === "z_husb" ? "neutral" : "smile_closed"); rain(0.7);
       glow("celiaG", "rgba(255,210,140,0.5)", 0.4, D0 + 2.6, -20.6, 3.0); break;
-    case "z_street": { [-29, -18, -7, 15, 26, 37].forEach((x, i) => side(VIS(i), x + 0.3, -19.8, 0, "neutral"));
+    case "z_street": { [-8.5, -4.2, 5.2, 9.6, 14.2].forEach((x, i) => side(VIS(i), x, -19.6, 0, "neutral"));
       side(CELIA, 0.15, -19.2, 1, "smile_closed"); side(MARIDO, 0.62, -19.2, -1, "smile_closed"); rain(0.9); break; }
     case "z_knob": glow("gapG", "rgba(255,200,120,0.35)", 594.1, D0 + 0.05, 3.7, 1.4, 0.5, true); break;
     case "z_vib": case "z_hold2": stand(YOU, 597.0, 2.0, c === "z_vib" ? "shock" : "nervous"); hold(597.0, D0 + 1.05, 1.75); break;
