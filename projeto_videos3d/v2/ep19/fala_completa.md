@@ -1,0 +1,4 @@
+# Vídeo 19: fala completa (narração Ana Dias + personagens), na ordem da faixa
+
+## Narração
+Imagina: o governo anuncia a Noite Livre. Das dez da noite às seis da manhã, nada é crime. E faltam três minutos. Atenção. Faltam três minutos para o início da Noite Livre. A polícia não vai atender chamados até as seis da manhã. Fiquem em casa. Tranca a porta dos fundos. E fecha essa cortina. Tudo trancado. Agora ninguém sai. Pai... cadê o Thor? Tava no quintal... agora mesmo. O portão tá aberto! Quem foi o último a entrar? Foi você. Lá fora, o Thor tá no meio da rua, latindo. Na esquina, três pessoas de máscara olham pra ele. Ninguém abre essa porta. Mãe! É o Thor! Faltam dois minutos. Se correr... dá pra chegar nele em trinta segundos. E se eles chegarem primeiro? Aí o Thor para de latir. E abana o rabo... Pra uma das máscaras. Você decide. A: corre lá fora e pega o Thor. B: fica trancado e chama ele pela janela. Comenta A ou B. A mais comentada vira a Parte 2. E se...
