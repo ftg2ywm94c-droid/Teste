@@ -23,6 +23,11 @@ export const LFB = THREE.ShaderChunk.lights_fragment_begin
     "sunVis = ( directLight.visible && receiveShadow ) ? getShadow( directionalShadowMap[ i ]")
   .replace("vDirectionalShadowCoord[ i ] ) : 1.0;", "vDirectionalShadowCoord[ i ] ) : 1.0;\n\t\tdirectLight.color *= sunVis;");
 if (!LFB.includes("directLight.color *= sunVis")) throw new Error("shade.ts: three lights_fragment_begin changed");
+// piloto: guarda a soma das luzes PRÁTICAS (pontuais e spots: postes, lanterna) antes do laço do sol, para o two-tone somar
+// em vez de descartar (antes a noite ficava chapada: só o "sol" contava)
+export const LFB2 = LFB.replace("#if ( NUM_DIR_LIGHTS > 0 ) && defined( RE_Direct )", "accPS = reflectedLight.directDiffuse;\n#if ( NUM_DIR_LIGHTS > 0 ) && defined( RE_Direct )");
+if (!LFB2.includes("accPS = reflectedLight.directDiffuse")) throw new Error("shade.ts: no dir-light marker");
+export const PRACT = { uPract: { value: 1.0 } };
 
 const TWO_TONE = /* glsl */ `
 #if NUM_DIR_LIGHTS > 0
@@ -40,19 +45,20 @@ const TWO_TONE = /* glsl */ `
   reflectedLight.indirectDiffuse = vec3( 0.0 );                               // hemisphere/fill no longer used here
 }
 #endif
+reflectedLight.directDiffuse += accPS * uPract;                              // postes e lanterna (com as sombras do three)
 `;
-const DECL = "#include <common>\nuniform vec3 uLitCol; uniform vec3 uShadeCol; uniform vec3 uShadeLift; uniform float uLambert; uniform float uSideK; uniform float uTerm; uniform vec3 uBounce; uniform float uSat;";
+const DECL = "#include <common>\nuniform vec3 uLitCol; uniform vec3 uShadeCol; uniform vec3 uShadeLift; uniform float uLambert; uniform float uSideK; uniform float uTerm; uniform vec3 uBounce; uniform float uSat; uniform float uPract;";
 
 /** Lambert (or Phong: its specular term is kept, masked by the shadow) -> two-tone. Call once per material. */
 export function twoTone<T extends THREE.MeshLambertMaterial | THREE.MeshPhongMaterial>(m: T, liftK = 1): T {
   m.onBeforeCompile = (sh) => {
-    Object.assign(sh.uniforms, TONE);
+    Object.assign(sh.uniforms, TONE, PRACT);
     sh.fragmentShader = sh.fragmentShader
       .replace("#include <common>", DECL + `\n#define LIFT_K ${liftK.toFixed(3)}`)
-      .replace("#include <lights_fragment_begin>", "float sunVis = 1.0;\n" + LFB)
+      .replace("#include <lights_fragment_begin>", "float sunVis = 1.0; vec3 accPS = vec3( 0.0 );\n" + LFB2)
       .replace("#include <lights_fragment_end>", "#include <lights_fragment_end>\n" + TWO_TONE);
   };
-  m.customProgramCacheKey = () => "twoTone5_" + liftK.toFixed(3);
+  m.customProgramCacheKey = () => "twoTonePract1_" + liftK.toFixed(3);
   return m;
 }
 

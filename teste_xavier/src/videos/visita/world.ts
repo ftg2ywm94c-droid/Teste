@@ -8,7 +8,7 @@ import { LIGHTS, LOOK, LightPreset } from "./lights";
 import { TONE, CHAR, untone, twoTone } from "./shade";
 import { NOINK } from "./ink";
 import { Pool, Actor, Fx, stage } from "./cast";
-import { FPS, D0, SHOTS, camAt, ShotDef, FLOOR_H, V3, W, windAt, leanAt, lampOn, fallen, doorAt, darkAt, sirenK, sirenX, sirenPulse, clamp01, tvState, tvOn, ledOn, vibAt, TvState, curtainAt, talkAt, knobAt } from "./story";
+import { FPS, D0, SHOTS, camAt, ShotDef, FLOOR_H, V3, W, windAt, leanAt, lampOn, fallen, doorAt, darkAt, sirenK, sirenX, sirenPulse, clamp01, tvState, tvOn, ledOn, vibAt, TvState, curtainAt, talkAt, knobAt, phoneOn, alarmAt } from "./story";
 
 export const loadKit = async (): Promise<Kit> => ({});
 
@@ -110,6 +110,11 @@ export class World {
   private roomWin!: THREE.Mesh;
   private curtL = new THREE.Group(); private curtR = new THREE.Group();   // vídeo 19: a cortina da sala
   private knob = new THREE.Group();                                         // vídeo 20: a maçaneta da porta da frente (gira)
+  // vídeo 20 v2: luzes PRÁTICAS de verdade (o two-tone agora soma pontuais/spots, shade.ts LFB2): tela do celular, despertador,
+  // luar da janela, lâmpada da varanda (com sombra), fresta da porta e o portão da dona Célia
+  private phoneL = new THREE.PointLight("#a8c6ff", 0, 3.2, 2); private alarmL = new THREE.PointLight("#ff3a2c", 0, 2.6, 2);
+  private moonL = new THREE.SpotLight("#9fb6ff", 0, 9, 0.75, 0.7, 1.2); private porchL = new THREE.SpotLight("#ffc27a", 0, 9, 1.0, 0.6, 1.4);
+  private gapL = new THREE.PointLight("#ffbf78", 0, 2.2, 2); private gateL = new THREE.PointLight("#ffcf8a", 0, 8, 1.6);
   private frustum = new THREE.Frustum();
   private m4 = new THREE.Matrix4(); private v = new THREE.Vector3(); private sph = new THREE.Sphere();
 
@@ -465,6 +470,11 @@ export class World {
       bx(593.8, 2.4, 4.4, 594.4, 2.46, 4.55, M.pole);
       const pb = new THREE.Mesh(new THREE.SphereGeometry(0.09, 14, 10), this.bulbOn); pb.position.set(594.1, D0 + 2.36, 4.5); pb.layers.set(NOINK); R.add(pb);
       bx(593.1, 0, 5.0, 595.1, 0.02, 6.1, lam("doormat", () => ({ color: "#6a4a32" })));
+      for (const L of [this.phoneL, this.alarmL, this.gapL, this.gateL]) R.add(L);
+      for (const L of [this.moonL, this.porchL]) { L.castShadow = true; L.shadow.mapSize.set(1024, 1024); L.shadow.bias = -0.0004; L.shadow.camera.near = 0.2; R.add(L, L.target); }
+      this.moonL.position.set(996.6, D0 + 2.2, 3.9); this.moonL.target.position.set(998.6, D0, 1.4);
+      this.porchL.position.set(594.1, D0 + 2.3, 4.55); this.porchL.target.position.set(594.1, D0, 6.2);
+      this.gapL.position.set(594.1, D0 + 0.08, 3.7); this.gateL.position.set(0.4, D0 + 2.6, -20.4);
       // O QUARTO (1000,0): chão de madeira, paredes azul-escuras, cama de solteiro, criado-mudo, janela com a rua na chuva, pôster
       b.add(quadUp(994, 1006, -4, 4.2, 6, 4, D0 + 0.02), lam("floorWoodHD", () => ({ map: stoneHD("floorWoodHD", ["#a4744c", "#9a6c46", "#ad7c52", "#93663f"], "#7d5536") })));
       const bw = lam("bedWall", () => ({ color: "#5f7fa8" }));
@@ -610,6 +620,19 @@ export class World {
     for (const g of this.glows) {
       const on = true; // vídeo 19: a rua com luz (o perigo é a noite, não o escuro)
       g.material = on ? ((g.geometry as THREE.BufferGeometry).type === "SphereGeometry" ? this.bulbOn : this.glowOn) : this.glowOff;
+    }
+    { // vídeo 20 v2: as luzes práticas por plano
+      const cr = s.crowd, bed = ["z_bed", "z_clock", "z_wake", "z_phone", "z_hold", "z_photo", "z_loop"].includes(cr);
+      const HELD: Record<string, V3> = { z_hold: [998.72, D0 + 1.0, 1.9], z_vib: [597.12, D0 + 1.18, 1.65], z_hold2: [597.12, D0 + 1.18, 1.65], z_optB: [597.12, D0 + 1.18, 1.65], z_choice: [595.72, D0 + 1.18, 2.05] };
+      const hp = HELD[cr];
+      if (hp) { this.phoneL.position.set(...hp); this.phoneL.intensity = 1.6; }
+      else if (bed && phoneOn(t)) { this.phoneL.position.set(1000.3, D0 + 0.75, 3.3); this.phoneL.intensity = 1.1; }
+      else this.phoneL.intensity = 0;
+      this.alarmL.position.set(1000.4, D0 + 0.72, 3.5); this.alarmL.intensity = bed && alarmAt(t) ? 0.9 : 0;
+      this.moonL.intensity = bed ? 45 : 0;
+      this.porchL.intensity = ["z_avo", "z_avo2"].includes(cr) ? 28 : 0;
+      this.gapL.intensity = ["z_knock", "z_knob", "z_gap"].includes(cr) ? 0.8 : 0;
+      this.gateL.intensity = ["z_celia", "z_husb", "z_street"].includes(cr) ? 13 : 0;
     }
     // ---- cast + effects ----
     const right = V(0, 0, 0).setFromMatrixColumn(cam.matrixWorld, 0);

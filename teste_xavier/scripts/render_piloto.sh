@@ -12,6 +12,7 @@ for it in $SHOTS; do
   npx remotion render src/index.ts PilotoShort $tmp --sequence --frames=$a-$((b-1)) --image-format=png --concurrency=${CONC:-3} \
     --gl=swangle --timeout=300000 --browser-executable=$CH --log=error > out/piloto_seq/log_$n.txt 2>&1 || { echo "$n FALHOU"; tail -5 out/piloto_seq/log_$n.txt; continue; }
   i=$a; for f in $(ls $tmp/*.png | sort -V); do mv "$f" $DST/$n/$(printf %04d $i).png; i=$((i+1)); done
+  rm -rf .tmp/remotion-webpack-bundle-* .tmp/org.chromium.Chromium.*   # o pacote é refeito a cada plano: sem isto o disco enche (~55 MB por plano)
   echo "$n ok $(( $(find $DST/$n -name '*.png' | wc -l) )) quadros em $(( $(date +%s)-t0 ))s"
 done
 echo FIM

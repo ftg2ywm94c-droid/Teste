@@ -60,7 +60,7 @@ export const sirenX = (_t: number) => -95;
 export const sirenK = (_t: number) => 0;
 export const sirenPulse = (_t: number) => 0;
 /** casa no escuro (só a luz da rua e a do celular) */
-export const darkAt = (id: number, _t: number) => (BED.includes(id) ? 0.5 : ROOM.includes(id) ? 0.45 : 0);
+export const darkAt = (id: number, _t: number) => (BED.includes(id) ? 0.4 : ROOM.includes(id) ? 0.4 : 0);
 export type TvState = "news57" | "news58" | "off";
 export const tvState = (_id: number, _t: number): TvState => "off";
 export const tvOn = (_id: number, _t: number) => false;

@@ -6,7 +6,7 @@
 import * as THREE from "three";
 import {
   Pen, bodyFront, bodySide, KID, fxNote, fxBurst, fxSplash, fxStars, fxCreak, fxRing, fxBlob, fxShadow, fxContact, fxPlank, fxDrum,
-  Outfit, Expr, FrontOpts, SideOpts,
+  Outfit, Expr, FrontOpts, SideOpts, Prop,
 } from "./toon";
 import { FPS, D0, SHOTS, V3, smooth, clamp01, easeOut, T_SINK, T_WAR, T_NOT, T_OFF, T_FRIDGE, T_HOURS, W, windAt, leanAt, BOLTS, sparkAt, PHONE_NEAR, fallen, doorAt, sirenX, sirenK, sirenPulse, darkAt, KNOCKS, tvOn, ledOn, lampOn, barkAt, vibAt, talkAt, wagAt, alarmAt, phoneOn } from "./story";
 import { LIGHTS } from "./lights";
@@ -894,9 +894,9 @@ const fxPhoto = (p: Pen) => hi(p, 1, (g) => {
 const fxFeet = (p: Pen) => hi(p, 1, (g) => { g.fillStyle = "rgba(8,6,14,0.92)"; for (const x of [190, 320]) { g.beginPath(); g.ellipse(x, 64, 58, 40, 0, 0, 7); g.fill(); } });
 const ep6 = (id: number, cam: CamInfo, t: number, out: Stage) => {
   const c = SHOTS[id - 1].crowd;
-  const sitBed = (expr: Expr, look = 0) => out.places.push(person(cam, YOU, 998.6, D0, 2.25, { side: false, mirror: false }, { mode: "sit", seatH: SEAT_H, expr, blink: lidAt(t, YOU.i), look }, {}));
-  const stand = (w: Who, x: number, z: number, expr: Expr, look = 0) => {
-    out.places.push(person(cam, w, x, D0, z, { side: false, mirror: false }, { mode: "stand", expr, blink: lidAt(t, w.i), look }, {})); blob(out, x, D0, z); };
+  const sitBed = (expr: Expr, look = 0, prop: Prop = null) => out.places.push(person(cam, YOU, 998.6, D0, 2.25, { side: false, mirror: false }, { mode: "sit", seatH: SEAT_H, expr, blink: lidAt(t, YOU.i), look, prop }, {}));
+  const stand = (w: Who, x: number, z: number, expr: Expr, look = 0, prop: Prop = null) => {
+    out.places.push(person(cam, w, x, D0, z, { side: false, mirror: false }, { mode: "stand", expr, blink: lidAt(t, w.i), look, prop }, {})); blob(out, x, D0, z); };
   const side = (w: Who, x: number, z: number, dx: number, expr: Expr) => {
     out.places.push(person(cam, w, x, D0, z, viewOf(cam, x, z, dx, 0), { mode: "stand", expr, blink: lidAt(t, w.i), look: 0 }, { mode: "stand", expr, blink: lidAt(t, w.i) })); blob(out, x, D0, z); };
   const glow = (key: string, col: string, x: number, y: number, z: number, w: number, h = w, flat = false) =>
@@ -907,8 +907,8 @@ const ep6 = (id: number, cam: CamInfo, t: number, out: Stage) => {
     if (on) { glow("phoneG", "rgba(170,210,255,0.45)", 1000.3, D0 + 0.66, 3.42, 0.5); glow("phoneW", "rgba(150,200,255,0.22)", 1000.2, D0 + 1.4, 3.95, 2.2); } };
   const photo = () => out.fx.push({ key: "photo", cw: 340, ch: 420, draw: fxPhoto, x: 1000.1, y: D0 + 0.72, z: 3.86, w: 0.18, h: 0.23 });
   /** você segurando o celular aceso diante do peito (a tela ilumina o rosto) */
-  const hold = (x: number, y: number, z: number) => { out.fx.push({ key: "phoneH|true", cw: 256, ch: 480, draw: (pp) => fxCell(pp, true), x, y, z, w: 0.1, h: 0.19 });
-    glow("faceG", "rgba(170,210,255,0.55)", x, y + 0.25, z + 0.05, 1.1); };
+  // o celular agora fica NA MÃO (toon.ts, visto de costas, dedos na borda); a tela, virada para você, ilumina queixo e rosto de baixo pra cima
+  const screenLit = (x: number, y: number, z: number) => { glow("faceG", "rgba(160,200,255,0.34)", x, y, z - 0.12, 0.46, 0.34); glow("faceW", "rgba(150,195,255,0.14)", x, y + 0.1, z - 0.1, 1.0, 0.9); };
   const rain = (k = 1) => { rainCamFx(cam, t, out, k); boltSky(cam, t, out); };
   const porchG = () => glow("porchG", "rgba(255,200,120,0.6)", 594.1, D0 + 2.2, 4.8, 2.4);
   switch (c) {
@@ -916,7 +916,7 @@ const ep6 = (id: number, cam: CamInfo, t: number, out: Stage) => {
     case "z_clock": clock(); phone(); photo(); break;
     case "z_wake": sitBed("shock", 1); clock(); phone(); photo(); break;
     case "z_phone": clock(); phone(); photo(); break;
-    case "z_hold": sitBed("nervous", 0); hold(998.6, D0 + 0.95, 1.95); clock(); phone(); photo(); break;
+    case "z_hold": sitBed("nervous", 0, "phone"); screenLit(998.6, D0 + 0.95, 2.25); clock(); phone(); photo(); break;
     case "z_photo": photo(); phone(); clock(); break;
     case "z_rain": rain(1.1); break;
     case "z_knock": glow("gapG", "rgba(255,200,120,0.35)", 594.1, D0 + 0.05, 3.7, 1.4, 0.5, true); break;
@@ -929,12 +929,12 @@ const ep6 = (id: number, cam: CamInfo, t: number, out: Stage) => {
     case "z_street": { [-8.5, -4.2, 5.2, 9.6, 14.2].forEach((x, i) => side(VIS(i), x, -19.6, 0, "neutral"));
       side(CELIA, 0.15, -19.2, 1, "smile_closed"); side(MARIDO, 0.62, -19.2, -1, "smile_closed"); rain(0.9); break; }
     case "z_knob": glow("gapG", "rgba(255,200,120,0.35)", 594.1, D0 + 0.05, 3.7, 1.4, 0.5, true); break;
-    case "z_vib": case "z_hold2": stand(YOU, 597.0, 2.0, c === "z_vib" ? "shock" : "nervous"); hold(597.0, D0 + 1.05, 1.75); break;
+    case "z_vib": case "z_hold2": stand(YOU, 597.0, 2.0, c === "z_vib" ? "shock" : "nervous", 0, "phone"); screenLit(597.0, D0 + 1.2, 2.0); break;
     case "z_gap": out.fx.push({ key: "feet", cw: 512, ch: 128, draw: fxFeet, x: 594.1, y: D0 + 0.05, z: 3.965, w: 1.1, h: 0.08 }); break;
     case "z_you": stand(YOU, 597.0, 2.0, "shock"); break;
     case "z_optA": stand(YOU, 594.3, 3.3, "nervous", -1); break;
-    case "z_optB": stand(YOU, 597.0, 2.0, "nervous"); hold(597.0, D0 + 1.05, 1.75); break;
-    case "z_choice": stand(YOU, 595.6, 2.4, "shock", -1); hold(595.6, D0 + 1.05, 2.15); out.fx.push({ key: "feet", cw: 512, ch: 128, draw: fxFeet, x: 594.1, y: D0 + 0.05, z: 3.965, w: 1.1, h: 0.08 }); break;
+    case "z_optB": stand(YOU, 597.0, 2.0, "nervous", 0, "phone"); screenLit(597.0, D0 + 1.2, 2.0); break;
+    case "z_choice": stand(YOU, 595.6, 2.4, "shock", -1, "phone"); screenLit(595.6, D0 + 1.2, 2.4); out.fx.push({ key: "feet", cw: 512, ch: 128, draw: fxFeet, x: 594.1, y: D0 + 0.05, z: 3.965, w: 1.1, h: 0.08 }); break;
   }
 };
 
