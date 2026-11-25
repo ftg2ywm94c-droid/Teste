@@ -129,14 +129,14 @@ export const todAt = (id: number, t: number) => {
   return 2;
 };
 /** a praça (z de -13,5 a -44): banco, grama, meio-fio, a árvore do homem */
-export const PRACA = { bench: [1996.2, -20.0] as const, grass: [1998.6, -23.5] as const, curb: [2001.8, -14.2] as const, man: [2006.4, -34.2] as const, tree: [2008.9, -36.6] as const };
+export const PRACA = { bench: [1996.2, -17.2] as const, grass: [1997.5, -15.6] as const, curb: [1997.6, -14.25] as const, man: [2006.4, -34.2] as const, tree: [2008.9, -36.6] as const };
 /** sua casa no fim da rua (fachada em z 44, de frente para -z): porta e a janela do quarto (andar de cima) */
 export const CASA = { door: [2000.0, 44.0] as const, win: [2001.6, 4.3, 43.9] as const };
 /** você na praça: onde está e se está agachado procurando */
 export const youPraca = (t: number): { x: number; z: number; crouch: boolean; walk: boolean; phase: number } => {
   const B = PRACA.bench, G = PRACA.grass, C = PRACA.curb;
   const seg = (a: readonly number[], b: readonly number[], t0: number, t1: number) => { const u = smooth((t - t0) / (t1 - t0)); return { x: a[0] + (b[0] - a[0]) * u, z: a[1] + (b[1] - a[1]) * u }; };
-  if (t < 18.9) { const p = seg([1999.0, -15.5], [B[0] + 1.0, B[1]], 17.6, 18.9); return { ...p, crouch: false, walk: t > 17.6, phase: t * 0.9 }; }
+  if (t < 18.9) { const p = seg([1999.4, -16.6], [B[0] + 1.0, B[1]], 17.6, 18.9); return { ...p, crouch: false, walk: t > 17.6, phase: t * 0.9 }; }
   if (t < 21.3) return { x: B[0] + 1.0, z: B[1], crouch: t > 19.6, walk: false, phase: 0 };
   if (t < 21.8) return { ...seg([B[0] + 1.0, B[1]], G, 21.3, 21.8), crouch: false, walk: true, phase: t * 0.9 };
   if (t < 22.6) return { x: G[0], z: G[1], crouch: true, walk: false, phase: 0 };
@@ -220,38 +220,52 @@ const path = (keys: [number, V3, V3, number][]): Key[] => [{ f: 0, s: (f) => {
 const walkCam = (): Key[] => [{ f: 0, s: (f) => { const t = f / FPS, z = youZ(t); return { pos: [2000.55, 0.28 + 0.05 * t, z - 3.3 + 0.25 * t], look: [2000.0, 1.0, z], fov: 58 }; } }];
 /** vídeo 21: câmera que ATRAVESSA o cenário — spline Catmull-Rom por chaves de tempo (velocidade contínua nas chaves,
  *  sem o "para e anda" do path); a mesma lista vale para vários planos seguidos, então o corte entre eles não aparece */
-const spline = (keys: [number, V3, V3, number][]): Key[] => [{ f: 0, s: (f) => {
-  const t = f / FPS; let i = 0; while (i + 2 < keys.length && t >= keys[i + 1][0]) i++;
-  const k1 = keys[i], k2 = keys[i + 1], k0 = keys[Math.max(0, i - 1)], k3 = keys[Math.min(keys.length - 1, i + 2)];
-  let u = clamp01((t - k1[0]) / (k2[0] - k1[0]));
-  if (i === 0) u = u * u * (2 - u);                                  // sai do repouso (o último quadro do plano 5 está parado)
-  if (i + 2 >= keys.length) u = u * (1 + u - u * u);                 // chega no repouso
-  const cr = (a: number, b: number, c: number, d: number) => 0.5 * (2 * b + (-a + c) * u + (2 * a - 5 * b + 4 * c - d) * u * u + (-a + 3 * b - 3 * c + d) * u * u * u);
-  const P = (j: 1 | 2) => [0, 1, 2].map((k) => cr(k0[j][k], k1[j][k], k2[j][k], k3[j][k])) as V3;
-  return { pos: P(1), look: P(2), fov: cr(k0[3], k1[3], k2[3], k3[3]) };
-} }];
+const spline = (keys: [number, V3, V3, number][]): Key[] => {
+  // a MIRA é interpolada como ângulo (rumo, inclinação) + distância, não como ponto: com o ponto andando em linha, numa virada
+  // de 180° ele passava rente à câmera e o giro inteiro caía em 3–4 quadros (chicote); por ângulo o giro se espalha por igual
+  const A = keys.map((k) => { const d = [k[2][0] - k[1][0], k[2][1] - k[1][1], k[2][2] - k[1][2]], h = Math.hypot(d[0], d[2]);
+    return [Math.atan2(d[0], d[2]), Math.atan2(d[1], h), Math.hypot(h, d[1])]; });
+  for (let i = 1; i < A.length; i++) { while (A[i][0] - A[i - 1][0] > Math.PI) A[i][0] -= 2 * Math.PI; while (A[i][0] - A[i - 1][0] < -Math.PI) A[i][0] += 2 * Math.PI; }
+  return [{ f: 0, s: (f) => {
+    const t = f / FPS; let i = 0; while (i + 2 < keys.length && t >= keys[i + 1][0]) i++;
+    const j0 = Math.max(0, i - 1), j3 = Math.min(keys.length - 1, i + 2);
+    const k1 = keys[i], k2 = keys[i + 1], k0 = keys[j0], k3 = keys[j3];
+    let u = clamp01((t - k1[0]) / (k2[0] - k1[0]));
+    if (i === 0) u = u * u * (2 - u);                                  // sai do repouso (o último quadro do plano 5 está parado)
+    if (i + 2 >= keys.length) u = u * (1 + u - u * u);                 // chega no repouso
+    const cr = (a: number, b: number, c: number, d: number) => 0.5 * (2 * b + (-a + c) * u + (2 * a - 5 * b + 4 * c - d) * u * u + (-a + 3 * b - 3 * c + d) * u * u * u);
+    const pos = [0, 1, 2].map((k) => cr(k0[1][k], k1[1][k], k2[1][k], k3[1][k])) as V3;
+    const [yaw, pit, dist] = [0, 1, 2].map((k) => cr(A[j0][k], A[i][k], A[i + 1][k], A[j3][k]));
+    const look: V3 = [pos[0] + dist * Math.cos(pit) * Math.sin(yaw), pos[1] + dist * Math.sin(pit), pos[2] + dist * Math.cos(pit) * Math.cos(yaw)];
+    return { pos, look, fov: cr(k0[3], k1[3], k2[3], k3[3]) };
+  } }];
+};
 const TRAVEL: [number, V3, V3, number][] = [
   [15.6, [2001.02, 0.9, -0.45], [2001.08, 0.8, -1.45], 36],
   [16.6, [2001.0, 3.0, 1.0], [2000.9, 2.4, -2.0], 44],          // recua e sobe do close da chave
   [17.7, [2000.4, 14.0, 5.0], [2000.0, 9.0, -22.0], 55],        // acima dos telhados: o céu volta para a tarde
-  [18.8, [2000.0, 10.0, -9.0], [1998.0, 1.5, -22.0], 52],       // desce para a praça
-  [19.8, [1999.4, 3.0, -14.8], [1997.2, 0.7, -20.0], 44],
-  [20.9, [1998.8, 1.0, -16.9], [1997.1, 0.5, -20.3], 42],       // rente ao chão: você embaixo do banco
-  [21.9, [1999.9, 0.6, -19.6], [1998.6, 0.3, -23.5], 44],       // na grama
-  [22.9, [2000.6, 0.65, -17.4], [2001.8, 0.3, -14.2], 46],      // vira para o meio-fio
-  [23.9, [2003.4, 1.1, -17.4], [2002.0, 0.5, -14.2], 46],
-  [24.8, [2004.4, 1.6, -22.0], [2005.8, 1.4, -30.0], 46],       // atravessa a praça
-  [25.9, [2005.1, 1.6, -27.8], [2006.4, 1.5, -34.2], 42],
-  [26.7, [2005.6, 1.6, -30.4], [2006.4, 1.6, -34.2], 36],       // "homem": ele, parado na sombra da árvore
-  [27.8, [2007.6, 1.75, -37.6], [2003.0, 0.8, -16.0], 40],       // por cima do ombro dele
-  [29.1, [2007.5, 1.7, -37.3], [2002.3, 0.6, -14.4], 33],       // "olhando você procurar"
-  [30.2, [2004.0, 4.2, -25.0], [2001.0, 3.2, -4.0], 50],        // "o sol foi embora": sobe e vira para a rua
-  [31.8, [2001.0, 5.5, -4.0], [2000.0, 3.0, 26.0], 52],         // sobe a rua; o sol se pondo no fim dela
+  [18.8, [2000.0, 9.0, -8.5], [1998.0, 1.2, -18.5], 52],        // desce para a praça
+  [19.8, [1999.8, 2.4, -12.4], [1997.3, 0.8, -17.2], 46],
+  [20.9, [1999.3, 0.9, -14.3], [1997.2, 0.45, -17.2], 42],      // rente ao chão: você embaixo do banco
+  [21.9, [1999.6, 0.8, -13.4], [1997.5, 0.35, -15.6], 44],      // na grama
+  [22.9, [1999.9, 0.75, -12.9], [1997.6, 0.35, -14.25], 46],    // no meio-fio (banco, grama e meio-fio a 1,5 m um do outro)
+  [23.9, [2001.6, 1.2, -13.4], [1997.9, 0.6, -14.4], 46],       // recua sem tirar o olho de você
+  [25.3, [2002.6, 1.6, -17.5], [2005.6, 1.4, -30.0], 46],       // vira: "do outro lado da praça"
+  [26.2, [2004.9, 1.6, -30.2], [2006.4, 1.5, -34.2], 40],       // "homem": ele, parado na sombra da árvore
+  [26.9, [2005.3, 1.6, -31.7], [2006.4, 1.55, -34.2], 36],
+  [27.5, [2004.0, 1.65, -33.9], [2006.4, 1.55, -34.2], 36],     // a câmera dá a volta nele (raio 2,4 m, pelo lado longe da árvore)
+  [28.1, [2005.0, 1.7, -36.1], [2006.4, 1.55, -34.2], 38],
+  [28.7, [2007.37, 1.75, -36.4], [2002.0, 0.7, -22.0], 38],     // por cima do ombro dele: "olhando você procurar"
+  [29.3, [2007.5, 1.75, -36.9], [2002.3, 0.6, -24.0], 33],
+  [29.9, [2008.3, 2.8, -32.4], [2003.5, 2.2, -12.0], 44],      // sai pelo lado dele (sem atravessar o corpo) e sobe
+  [30.6, [2005.4, 4.6, -24.0], [2001.0, 3.2, -4.0], 50],        // "o sol foi embora": vira para a rua
+  [31.8, [2001.0, 7.0, 0.0], [2000.0, 3.5, 28.0], 52],         // sobe a rua; o sol se pondo no fim dela
   [33.2, [2000.6, 3.0, 23.5], [2000.0, 1.6, 44.0], 46],
   [34.6, [2000.8, 1.7, 36.6], [2000.0, 1.3, 44.0], 42],         // a porta: o chaveiro trocando a fechadura
-  [36.0, [2001.0, 1.7, 38.0], [2000.0, 1.3, 44.0], 38],
-  [37.0, [2001.6, 2.2, 37.0], [2000.0, 1.4, 20.0], 50],         // de volta, rua abaixo, duas da manhã
-  [38.5, [2001.2, 1.9, 22.5], [2000.6, 1.2, 5.0], 46],
+  [35.1, [2001.0, 1.7, 37.8], [2000.0, 1.3, 44.0], 39],
+  [36.4, [2001.6, 12.5, 35.0], [2008.5, 8.5, 35.0], 56],         // grua: sobe acima da rua e gira olhando para baixo...
+  [37.9, [2001.8, 4.5, 30.0], [2000.6, 1.4, 15.0], 48],         // ...e desce a rua de volta, duas da manhã
+  [38.8, [2001.2, 1.9, 22.5], [2000.6, 1.2, 5.0], 46],
   [39.6, [2000.9, 1.75, 19.3], [2000.7, 1.1, -1.5], 40],        // atrás de você: ele na luz da lanterna
   [40.5, [1999.3, 1.6, 8.0], [2000.85, 1.3, -1.5], 40],         // vai para o lado dele
   [41.6, [1997.4, 1.5, -0.6], [2000.85, 1.3, -1.5], 36],        // de lado: "levanta a chave"
@@ -259,8 +273,9 @@ const TRAVEL: [number, V3, V3, number][] = [
   [43.7, [1998.0, 1.9, 1.6], [2000.5, 3.0, 30.0], 44],          // segue o braço rua acima
   [45.1, [1999.4, 2.2, 10.0], [2000.0, 3.6, 44.0], 36],
   [46.6, [1999.7, 2.4, 18.0], [2000.6, 4.1, 44.0], 30],         // a janela do quarto
-  [51.4, [1999.8, 2.5, 24.0], [2000.9, 4.2, 44.0], 26],
-  [53.0, [2003.8, 5.0, 25.0], [2000.4, 0.9, 7.0], 52],          // escolha: você e ele, de cima
+  [50.8, [1999.8, 2.5, 23.6], [2000.9, 4.2, 44.0], 26],
+  [52.2, [2002.0, 12.5, 24.5], [2008.9, 8.5, 24.5], 56],         // grua: sobe e gira olhando para baixo...
+  [53.6, [2003.8, 5.0, 25.0], [2000.4, 0.9, 7.0], 52],          // ...escolha: você e ele, de cima
   [63.5, [2003.2, 4.4, 22.5], [2000.4, 0.9, 7.0], 46],
 ];
 const loopCam = (): Key[] => [{ f: 0, s: (f) => { const t = f / FPS - TOTAL / FPS, z = youZ(t); return { pos: [2000.55, 0.28 + 0.05 * t, z - 3.3 + 0.25 * t], look: [2000.0, 1.0, z], fov: 58 }; } }];

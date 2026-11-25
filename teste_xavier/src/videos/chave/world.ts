@@ -546,7 +546,7 @@ export class World {
       tree(b, PRACA.tree[0], PRACA.tree[1], 1.35, M, 2);
       for (const [x, z, sc, sdd] of [[1990.5, -18.0, 1.1, 1], [2010.0, -18.5, 1.0, 3], [1990.0, -38.5, 1.25, 4], [1993.6, -26.0, 0.9, 5], [2010.5, -27.5, 1.05, 6], [2001.8, -42.0, 1.15, 7]] as const) tree(b, x, z, sc, M, sdd);
       // postes de praça (luminária redonda)
-      for (const [x, z] of [[1998.4, -15.5], [2001.6, -40.5], [1995.4, -29.5]] as const) { b.add(cyl(0.07, 0.07, 3.6, 10), M.pole, at(x, D0, z)); b.add(new THREE.SphereGeometry(0.22, 14, 10), lam("pracaGlobe", () => ({ color: "#f1ead8" })), at(x, D0 + 3.75, z)); }
+      for (const [x, z] of [[1994.8, -15.4], [2001.6, -40.5], [1995.4, -29.5]] as const) { b.add(cyl(0.07, 0.07, 3.6, 10), M.pole, at(x, D0, z)); b.add(new THREE.SphereGeometry(0.22, 14, 10), lam("pracaGlobe", () => ({ color: "#f1ead8" })), at(x, D0 + 3.75, z)); }
       // a SUA CASA, de frente para a rua (porta no centro, a janela do quarto em cima à direita)
       house(b, 2000.0, 47.6, Math.PI, 8.0, 7.0, 6.4, 23);
       const frame = lam("winFrame", () => ({ color: "#f2ece0" })), doorM = lam("myDoor", () => ({ color: "#5a3424" }));
