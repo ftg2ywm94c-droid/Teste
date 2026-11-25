@@ -123,3 +123,10 @@ O que fazer com cada leitura:
 - Quando chegar a hora: testar a demanda com 2–3 posts de bastidores separados ("comenta QUERO") e só construir o produto se a resposta justificar.
 - Se virar produto, vender o método (formato, roteiros, playbook com dados reais) e não o código. Antes, conferir a licença da skill e da voz. Sem promessa de resultado.
 - Retorno sem curso: acompanhar os requisitos do YouTube Shorts (YPP) e das recompensas do TikTok, e publis com marcas que combinem com o público de suspense.
+
+## 8. Vozes de IA (ElevenLabs), regra do usuário de 26/11/2026
+- **Usar somente o modelo `eleven_v3`** em todas as falas e narrações, com `language_code: "pt"`. O usuário escolheu o v3 porque soa bem e gasta menos créditos. Não usar `eleven_v4` nem `eleven_multilingual_v2` sem um novo pedido.
+- O vídeo 19 foi gerado com `eleven_multilingual_v2`, antes desta regra, e fica como está.
+- Os narradores candidatos para o próximo vídeo são o Eliel e a Spuds Oxley (`narracao/20_narrador_candidatos/ANALISE.md`). A escolha final é do usuário.
+- A velocidade nunca é alterada, nem na geração nem depois. O ritmo de ~3 palavras/s das referências vem do texto, com frases curtas.
+- Conferir cada take com Whisper e refazer os errados. Anotar o uso de caracteres antes e depois de cada lote.

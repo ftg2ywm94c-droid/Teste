@@ -55,3 +55,4 @@ A conta tem 7 das 10 vagas de voz ocupadas. Para testar as 4, é preciso liberar
 - Nos três modelos, o Whisper reconheceu as duas vozes como português (probabilidade 0,99–1,0) e com o texto certo. A Spuds fala "está" onde o roteiro tem "tá".
 - A Spuds é mais lenta (2,1 palavras/s). Para chegar perto das ~3/s das referências, o roteiro precisa de frases mais curtas, sem mudar a velocidade.
 - Custo do teste: 6 gerações, ~770 caracteres. A conta está em 1.032 de 40.000 no mês.
+- **Regra do usuário (26/11): daqui para frente, só o modelo `eleven_v3`** (PLAYBOOK_DADOS.md §8).
