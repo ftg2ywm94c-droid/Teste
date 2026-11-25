@@ -56,3 +56,12 @@ A conta tem 7 das 10 vagas de voz ocupadas. Para testar as 4, é preciso liberar
 - A Spuds é mais lenta (2,1 palavras/s). Para chegar perto das ~3/s das referências, o roteiro precisa de frases mais curtas, sem mudar a velocidade.
 - Custo do teste: 6 gerações, ~770 caracteres. A conta está em 1.032 de 40.000 no mês.
 - **Regra do usuário (26/11): daqui para frente, só o modelo `eleven_v3`** (PLAYBOOK_DADOS.md §8).
+
+## Decisão final (26/11/2026)
+- **O narrador do vídeo 20 é a Spuds Oxley - Grandpa** (`NOpBlnGInO9m6vDvFkFC`), no modelo `eleven_v3`.
+- A referência de som é `cmp_Spuds_eleven_v3.mp3`.
+- O Eliel continua na conta como reserva.
+- Para o roteiro:
+  - a voz faz ~2,1 palavras/s, então a narração precisa de frases curtas e diretas;
+  - a meta é ~60 s de vídeo com ~120–140 palavras de narração;
+  - "tá" pode sair como "está", e cada take precisa ser conferido.

@@ -127,6 +127,6 @@ O que fazer com cada leitura:
 ## 8. Vozes de IA (ElevenLabs), regra do usuário de 26/11/2026
 - **Usar somente o modelo `eleven_v3`** em todas as falas e narrações, com `language_code: "pt"`. O usuário escolheu o v3 porque soa bem e gasta menos créditos. Não usar `eleven_v4` nem `eleven_multilingual_v2` sem um novo pedido.
 - O vídeo 19 foi gerado com `eleven_multilingual_v2`, antes desta regra, e fica como está.
-- Os narradores candidatos para o próximo vídeo são o Eliel e a Spuds Oxley (`narracao/20_narrador_candidatos/ANALISE.md`). A escolha final é do usuário.
+- **Narrador do próximo vídeo (20): Spuds Oxley - Grandpa** (`NOpBlnGInO9m6vDvFkFC`), escolhida pelo usuário em 26/11. Ela é lenta (~2,1 palavras/s), então o roteiro precisa de frases curtas.
 - A velocidade nunca é alterada, nem na geração nem depois. O ritmo de ~3 palavras/s das referências vem do texto, com frases curtas.
 - Conferir cada take com Whisper e refazer os errados. Anotar o uso de caracteres antes e depois de cada lote.
