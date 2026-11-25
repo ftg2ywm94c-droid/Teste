@@ -1,5 +1,24 @@
 # Vídeo 19: A Noite Livre · Ep. 1 (pacote de postagem, 25/11/2026)
 
+## Tags (prontas para copiar, revisadas em 25/11/2026)
+Fonte: autocompletar de busca do YouTube no Brasil (hl=pt-BR, gl=BR), que mostra o que as pessoas digitam. O vidIQ estava sem créditos (2 de 150; renova em 09/12), então **não há números de volume**, só a confirmação de que a busca existe.
+
+**YouTube, campo Tags:**
+```
+história de terror, histórias de terror, história de terror animada, terror animado, animação de terror 3d, história de suspense, história de terror curta, animação 3d, você decide, a noite livre
+```
+**YouTube, fim da descrição:** `#shorts #historiadeterror #terroranimado #suspense #vocedecide`
+**Instagram e TikTok:** `#historiadeterror #terroranimado #suspense #animacao3d #vocedecide #pov #anoitelivre`
+
+O que os dados mostraram:
+- "história de terror" e "histórias de terror" são as buscas mais fortes do nicho, com muitas variações: animada, desenho, real, para dormir. Elas entram primeiro.
+- "terror animado" e "animação de terror 3d" existem e descrevem exatamente o nosso formato.
+- "noite livre" é dominada por um programa de rádio (Itatiaia). Fica só como marca da série, no fim.
+- "você decide" é dominada por músicas e programas de TV. Fica pela série, mas não traz busca.
+- "escolha a ou b" e "história de ficção" quase não têm busca. Saíram das tags e "história de ficção" continua só no texto.
+- "noite do crime" tem muita busca, mas é praticamente o nome do filme. **Não usar** (regra do projeto e risco de parecer conteúdo do filme).
+- "pov terror" só aparece em inglês ("pov horror"). No Instagram e no TikTok `#pov` continua, porque lá a hashtag é usada como formato.
+
 Arquivos: `v2/ep19/out/19_noite_livre_ep1_1080x1920.mp4` (64,6 s) e `thumbnails/19_noite_livre_ep1_capa.jpg` (capa: o quadro de **45,0 s** do próprio vídeo).
 
 Os títulos abaixo **não foram pontuados**. Em 25/11 sobraram 2 créditos do vidIQ, que renovam em 09/12. A ordem sugerida segue o padrão observado nas referências, não uma nota.
