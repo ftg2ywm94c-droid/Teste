@@ -27,7 +27,7 @@
  "narration": {
   "lag_ms": 0,
   "drift_ms": 0,
-  "envelope_corr": 0.912
+  "envelope_corr": 0.923
  },
  "caption_start_max_err_s": 0.0,
  "collision_min_gap_m": "n/a",

@@ -15,3 +15,10 @@
 - **Item de QC reprovado `frames`:** o MP4 tem 1938 quadros (64,60 s) e a narração tem 64,58 s. A regra do `qc.py` aceita meio quadro de diferença, e aqui a diferença é de 0,6 quadro: um quadro final repetido pelo `assemble.py` para cobrir o áudio. Os outros 14 itens passam. Não é perceptível e fica anotado.
 - **Emenda do loop:** a diferença média entre o último quadro e o quadro 0 é de 1,2 em 255, porque o HUD e o selo são iguais e a lente é contínua.
 - **Atraso de 1 quadro (33 ms):** o mesmo de `assemble.py` dos vídeos anteriores, sem efeito perceptível.
+- **Troca do som (26/11, a pedido do usuário: "chiado" e latido falso):**
+  - o zumbido da TV na sala tinha ruído branco de 600–3000 Hz e foi tirado;
+  - os grilos sintéticos (senoides de 4,3 kHz) viraram o loop real CC0 `grilos_loop.flac`;
+  - o sopro de ruído no rabo abanando saiu;
+  - o latido sintetizado (onda quadrada) virou um latido real gerado no gerador de efeitos da ElevenLabs (`assets/sfx_ia/`), com dois latidos por abertura de boca.
+  - Medido no `sfx.wav`, nos planos da sala (0–16 s), a faixa de 600–3000 Hz e a faixa de 2,5–9 kHz caíram para cerca de −61 dB, contra cerca de −39 dB nos agudos antes.
+  - O QC continua igual: −14,3 LUFS, TP −1,8. A correlação da narração subiu de 0,912 para 0,923.

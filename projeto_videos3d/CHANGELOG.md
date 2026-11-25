@@ -28,7 +28,7 @@
   - o plano 24 deixou de ser estático (o QC achou ~2 s parados);
   - a legenda desce nos letreiros da TV;
   - a frase da Parte 2 ganhou um fundo escuro.
-- QC: −14,3 LUFS, TP −1,8, correlação da narração 0,912, deriva 0 ms. Só o item `frames` reprova, por 0,6 quadro (explicado em `v2/ep19/LIMITACOES.md`). Pacote de postagem em `v2/ep19/POSTAGEM.md`.
+- QC: −14,3 LUFS, TP −1,8, correlação da narração 0,912 (0,923 depois da troca do som), deriva 0 ms. Só o item `frames` reprova, por 0,6 quadro (explicado em `v2/ep19/LIMITACOES.md`). Pacote de postagem em `v2/ep19/POSTAGEM.md`.
 
 ## v0.20: vídeo 18 "Jogador 2 · Ep. 1" (série nova, suspense na espera pelo GTA 6) (2026-11-24)
 - Cenas na skill Xavier (`teste_xavier/src/videos/jogador2/`, composição `Jogador2Short`). São 21 planos cortados nas palavras do MP3 do usuário, com render nativo 1080x1920 (1938 quadros).
