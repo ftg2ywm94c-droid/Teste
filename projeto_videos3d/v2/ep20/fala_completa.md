@@ -1,0 +1,4 @@
+# Vídeo 20: fala completa (narrador Spuds Oxley + avó Edna), na ordem da faixa
+
+## Narração
+Três da manhã. Seu despertador toca sozinho. Você nunca colocou alarme pra essa hora. Aí o celular acende. Mensagem… do número da sua avó. Ela morreu faz dois anos. Começa a chover. E alguém bate na porta. Três vezes. Abre, meu anjo… tá frio aqui fora. Você olha pelo olho mágico. É ela. Com o mesmo casaco do enterro. Você corre pra janela. Do outro lado da rua, a dona Célia está no portão… abraçando o marido. Ele morreu faz oito anos. E não é só ela. Cada casa da rua… tem uma visita. Você não vai deixar a vó entrar? O celular vibra de novo. Mas se ela está na porta… quem está mandando mensagem? Você decide. A: abre a porta pra vó. B: responde a mensagem. Comenta A ou B. A mais comentada vira a Parte 2. E se...

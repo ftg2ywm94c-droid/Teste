@@ -1,0 +1,1145 @@
+{
+"diffs": [
+[
+"replace",
+"pra",
+"para"
+],
+[
+"replace",
+"tá",
+"Está"
+],
+[
+"replace",
+"pra",
+"para a"
+],
+[
+"replace",
+"vó",
+"avó"
+],
+[
+"insert",
+"",
+"a"
+],
+[
+"replace",
+"pra vó.",
+"para a avó."
+],
+[
+"replace",
+"2.",
+"dois."
+]
+],
+"words": [
+{
+"w": "Três",
+"s": 0.0,
+"e": 0.48,
+"key": true
+},
+{
+"w": "da",
+"s": 0.48,
+"e": 0.7,
+"key": true
+},
+{
+"w": "manhã.",
+"s": 0.7,
+"e": 1.6,
+"key": true
+},
+{
+"w": "Seu",
+"s": 1.86,
+"e": 2.04,
+"key": false
+},
+{
+"w": "despertador",
+"s": 2.04,
+"e": 2.78,
+"key": false
+},
+{
+"w": "toca",
+"s": 2.78,
+"e": 3.06,
+"key": true
+},
+{
+"w": "sozinho.",
+"s": 3.06,
+"e": 3.72,
+"key": true
+},
+{
+"w": "Você",
+"s": 4.38,
+"e": 4.68,
+"key": false
+},
+{
+"w": "nunca",
+"s": 4.68,
+"e": 5.14,
+"key": false
+},
+{
+"w": "colocou",
+"s": 5.14,
+"e": 5.52,
+"key": false
+},
+{
+"w": "alarme",
+"s": 5.52,
+"e": 6.02,
+"key": false
+},
+{
+"w": "pra",
+"s": 6.02,
+"e": 6.3,
+"key": false
+},
+{
+"w": "essa",
+"s": 6.3,
+"e": 6.54,
+"key": false
+},
+{
+"w": "hora.",
+"s": 6.54,
+"e": 6.82,
+"key": false
+},
+{
+"w": "Aí",
+"s": 7.38,
+"e": 7.76,
+"key": false
+},
+{
+"w": "o",
+"s": 7.76,
+"e": 8.1,
+"key": false
+},
+{
+"w": "celular",
+"s": 8.1,
+"e": 8.44,
+"key": false
+},
+{
+"w": "acende.",
+"s": 8.44,
+"e": 9.3,
+"key": false
+},
+{
+"w": "Mensagem…",
+"s": 9.78,
+"e": 10.54,
+"key": false
+},
+{
+"w": "do",
+"s": 10.54,
+"e": 11.22,
+"key": false
+},
+{
+"w": "número",
+"s": 11.22,
+"e": 11.68,
+"key": false
+},
+{
+"w": "da",
+"s": 11.68,
+"e": 12.0,
+"key": false
+},
+{
+"w": "sua",
+"s": 12.0,
+"e": 12.24,
+"key": true
+},
+{
+"w": "avó.",
+"s": 12.24,
+"e": 12.94,
+"key": true
+},
+{
+"w": "Ela",
+"s": 13.46,
+"e": 13.62,
+"key": false
+},
+{
+"w": "morreu",
+"s": 13.62,
+"e": 13.98,
+"key": false
+},
+{
+"w": "faz",
+"s": 13.98,
+"e": 14.32,
+"key": false
+},
+{
+"w": "dois",
+"s": 14.32,
+"e": 14.68,
+"key": true
+},
+{
+"w": "anos.",
+"s": 14.68,
+"e": 15.42,
+"key": true
+},
+{
+"w": "Começa",
+"s": 16.98,
+"e": 17.36,
+"key": false
+},
+{
+"w": "a",
+"s": 17.36,
+"e": 17.52,
+"key": false
+},
+{
+"w": "chover.",
+"s": 17.52,
+"e": 18.32,
+"key": false
+},
+{
+"w": "E",
+"s": 18.32,
+"e": 18.76,
+"key": false
+},
+{
+"w": "alguém",
+"s": 18.76,
+"e": 19.06,
+"key": false
+},
+{
+"w": "bate",
+"s": 19.06,
+"e": 19.38,
+"key": true
+},
+{
+"w": "na",
+"s": 19.38,
+"e": 19.64,
+"key": true
+},
+{
+"w": "porta.",
+"s": 19.64,
+"e": 20.24,
+"key": true
+},
+{
+"w": "Três",
+"s": 20.24,
+"e": 21.0,
+"key": true
+},
+{
+"w": "vezes.",
+"s": 21.0,
+"e": 21.7,
+"key": true
+},
+{
+"w": "Abre,",
+"s": 22.56,
+"e": 22.94,
+"key": false
+},
+{
+"w": "meu",
+"s": 23.1,
+"e": 23.22,
+"key": false
+},
+{
+"w": "anjo…",
+"s": 23.22,
+"e": 23.64,
+"key": false
+},
+{
+"w": "tá",
+"s": 23.74,
+"e": 24.02,
+"key": true
+},
+{
+"w": "frio",
+"s": 24.02,
+"e": 24.46,
+"key": true
+},
+{
+"w": "aqui",
+"s": 24.46,
+"e": 24.78,
+"key": true
+},
+{
+"w": "fora.",
+"s": 24.78,
+"e": 25.16,
+"key": true
+},
+{
+"w": "Você",
+"s": 25.7,
+"e": 26.02,
+"key": false
+},
+{
+"w": "olha",
+"s": 26.02,
+"e": 26.44,
+"key": false
+},
+{
+"w": "pelo",
+"s": 26.44,
+"e": 26.76,
+"key": false
+},
+{
+"w": "olho",
+"s": 26.76,
+"e": 27.12,
+"key": true
+},
+{
+"w": "mágico.",
+"s": 27.12,
+"e": 28.06,
+"key": true
+},
+{
+"w": "É",
+"s": 28.86,
+"e": 29.24,
+"key": true
+},
+{
+"w": "ela.",
+"s": 29.24,
+"e": 29.96,
+"key": true
+},
+{
+"w": "Com",
+"s": 30.8,
+"e": 30.9,
+"key": false
+},
+{
+"w": "o",
+"s": 30.9,
+"e": 31.1,
+"key": false
+},
+{
+"w": "mesmo",
+"s": 31.1,
+"e": 31.58,
+"key": false
+},
+{
+"w": "casaco",
+"s": 31.58,
+"e": 32.04,
+"key": true
+},
+{
+"w": "do",
+"s": 32.04,
+"e": 32.2,
+"key": true
+},
+{
+"w": "enterro.",
+"s": 32.2,
+"e": 33.02,
+"key": true
+},
+{
+"w": "Você",
+"s": 33.28,
+"e": 33.48,
+"key": false
+},
+{
+"w": "corre",
+"s": 33.48,
+"e": 33.8,
+"key": false
+},
+{
+"w": "pra",
+"s": 33.8,
+"e": 34.12,
+"key": false
+},
+{
+"w": "janela.",
+"s": 34.12,
+"e": 34.66,
+"key": false
+},
+{
+"w": "Do",
+"s": 35.1,
+"e": 35.32,
+"key": false
+},
+{
+"w": "outro",
+"s": 35.32,
+"e": 35.7,
+"key": false
+},
+{
+"w": "lado",
+"s": 35.7,
+"e": 35.94,
+"key": false
+},
+{
+"w": "da",
+"s": 35.94,
+"e": 36.22,
+"key": false
+},
+{
+"w": "rua,",
+"s": 36.22,
+"e": 36.5,
+"key": false
+},
+{
+"w": "a",
+"s": 36.82,
+"e": 36.9,
+"key": false
+},
+{
+"w": "dona",
+"s": 36.9,
+"e": 37.3,
+"key": false
+},
+{
+"w": "Célia",
+"s": 37.3,
+"e": 37.5,
+"key": false
+},
+{
+"w": "está",
+"s": 37.5,
+"e": 37.6,
+"key": false
+},
+{
+"w": "no",
+"s": 37.6,
+"e": 37.8,
+"key": false
+},
+{
+"w": "portão…",
+"s": 37.8,
+"e": 38.26,
+"key": false
+},
+{
+"w": "abraçando",
+"s": 39.18,
+"e": 39.78,
+"key": true
+},
+{
+"w": "o",
+"s": 39.78,
+"e": 39.96,
+"key": true
+},
+{
+"w": "marido.",
+"s": 39.96,
+"e": 40.52,
+"key": true
+},
+{
+"w": "Ele",
+"s": 41.48,
+"e": 41.66,
+"key": false
+},
+{
+"w": "morreu",
+"s": 41.66,
+"e": 42.14,
+"key": false
+},
+{
+"w": "faz",
+"s": 42.14,
+"e": 42.54,
+"key": false
+},
+{
+"w": "oito",
+"s": 42.54,
+"e": 42.98,
+"key": true
+},
+{
+"w": "anos.",
+"s": 42.98,
+"e": 43.5,
+"key": true
+},
+{
+"w": "E",
+"s": 44.4,
+"e": 44.6,
+"key": false
+},
+{
+"w": "não",
+"s": 44.6,
+"e": 44.72,
+"key": false
+},
+{
+"w": "é",
+"s": 44.72,
+"e": 44.86,
+"key": false
+},
+{
+"w": "só",
+"s": 44.86,
+"e": 45.04,
+"key": false
+},
+{
+"w": "ela.",
+"s": 45.04,
+"e": 45.54,
+"key": false
+},
+{
+"w": "Cada",
+"s": 46.12,
+"e": 46.54,
+"key": false
+},
+{
+"w": "casa",
+"s": 46.54,
+"e": 47.0,
+"key": false
+},
+{
+"w": "da",
+"s": 47.0,
+"e": 47.3,
+"key": false
+},
+{
+"w": "rua…",
+"s": 47.3,
+"e": 47.68,
+"key": false
+},
+{
+"w": "tem",
+"s": 47.68,
+"e": 48.52,
+"key": false
+},
+{
+"w": "uma",
+"s": 48.52,
+"e": 48.82,
+"key": true
+},
+{
+"w": "visita.",
+"s": 48.82,
+"e": 49.56,
+"key": true
+},
+{
+"w": "Você",
+"s": 50.12,
+"e": 50.44,
+"key": false
+},
+{
+"w": "não",
+"s": 50.44,
+"e": 50.76,
+"key": false
+},
+{
+"w": "vai",
+"s": 50.76,
+"e": 51.0,
+"key": false
+},
+{
+"w": "deixar",
+"s": 51.0,
+"e": 51.46,
+"key": true
+},
+{
+"w": "a",
+"s": 51.46,
+"e": 51.66,
+"key": true
+},
+{
+"w": "vó",
+"s": 51.66,
+"e": 51.82,
+"key": true
+},
+{
+"w": "entrar?",
+"s": 51.82,
+"e": 52.38,
+"key": true
+},
+{
+"w": "O",
+"s": 52.82,
+"e": 53.0,
+"key": false
+},
+{
+"w": "celular",
+"s": 53.0,
+"e": 53.5,
+"key": false
+},
+{
+"w": "vibra",
+"s": 53.5,
+"e": 53.92,
+"key": true
+},
+{
+"w": "de",
+"s": 53.92,
+"e": 54.16,
+"key": true
+},
+{
+"w": "novo.",
+"s": 54.16,
+"e": 54.58,
+"key": true
+},
+{
+"w": "Mas",
+"s": 55.94,
+"e": 56.68,
+"key": false
+},
+{
+"w": "se",
+"s": 56.68,
+"e": 57.04,
+"key": false
+},
+{
+"w": "ela",
+"s": 57.04,
+"e": 57.26,
+"key": false
+},
+{
+"w": "está",
+"s": 57.26,
+"e": 57.46,
+"key": false
+},
+{
+"w": "na",
+"s": 57.46,
+"e": 57.8,
+"key": false
+},
+{
+"w": "porta…",
+"s": 57.8,
+"e": 58.5,
+"key": false
+},
+{
+"w": "quem",
+"s": 59.6,
+"e": 59.82,
+"key": false
+},
+{
+"w": "está",
+"s": 59.82,
+"e": 60.06,
+"key": false
+},
+{
+"w": "mandando",
+"s": 60.06,
+"e": 60.48,
+"key": true
+},
+{
+"w": "mensagem?",
+"s": 60.7,
+"e": 61.2,
+"key": true
+},
+{
+"w": "Você",
+"s": 61.7,
+"e": 62.02,
+"key": true
+},
+{
+"w": "decide.",
+"s": 62.02,
+"e": 62.5,
+"key": true
+},
+{
+"w": "A:",
+"s": 63.3,
+"e": 63.72,
+"key": false
+},
+{
+"w": "abre",
+"s": 64.04,
+"e": 64.4,
+"key": true
+},
+{
+"w": "a",
+"s": 64.4,
+"e": 64.66,
+"key": true
+},
+{
+"w": "porta",
+"s": 64.66,
+"e": 64.92,
+"key": true
+},
+{
+"w": "pra",
+"s": 64.92,
+"e": 65.30000000000001,
+"key": false
+},
+{
+"w": "vó.",
+"s": 65.30000000000001,
+"e": 65.68,
+"key": true
+},
+{
+"w": "B:",
+"s": 65.94,
+"e": 66.68,
+"key": false
+},
+{
+"w": "responde",
+"s": 66.96,
+"e": 67.44,
+"key": true
+},
+{
+"w": "a",
+"s": 67.44,
+"e": 67.6,
+"key": true
+},
+{
+"w": "mensagem.",
+"s": 67.6,
+"e": 68.18,
+"key": true
+},
+{
+"w": "Comenta",
+"s": 69.02,
+"e": 69.48,
+"key": false
+},
+{
+"w": "A",
+"s": 69.48,
+"e": 70.24,
+"key": true
+},
+{
+"w": "ou",
+"s": 70.24,
+"e": 70.44,
+"key": true
+},
+{
+"w": "B.",
+"s": 70.44,
+"e": 70.92,
+"key": true
+},
+{
+"w": "A",
+"s": 71.4,
+"e": 71.56,
+"key": false
+},
+{
+"w": "mais",
+"s": 71.56,
+"e": 71.72,
+"key": false
+},
+{
+"w": "comentada",
+"s": 71.72,
+"e": 72.46,
+"key": false
+},
+{
+"w": "vira",
+"s": 72.46,
+"e": 73.14,
+"key": false
+},
+{
+"w": "a",
+"s": 73.14,
+"e": 73.36,
+"key": false
+},
+{
+"w": "Parte",
+"s": 73.36,
+"e": 73.56,
+"key": true
+},
+{
+"w": "2.",
+"s": 73.56,
+"e": 74.04,
+"key": true
+},
+{
+"w": "E",
+"s": 74.54,
+"e": 74.92,
+"key": false
+},
+{
+"w": "se...",
+"s": 74.92,
+"e": 75.29,
+"key": false
+}
+],
+"chunks": [
+{
+"s": 0.0,
+"e": 1.6,
+"t": "{\\c&H0028D7FF&}TRÊS{\\c&HFFFFFF&} {\\c&H0028D7FF&}DA{\\c&HFFFFFF&} {\\c&H0028D7FF&}MANHÃ.{\\c&HFFFFFF&}"
+},
+{
+"s": 1.86,
+"e": 2.78,
+"t": "SEU DESPERTADOR"
+},
+{
+"s": 2.78,
+"e": 3.72,
+"t": "{\\c&H0028D7FF&}TOCA{\\c&HFFFFFF&} {\\c&H0028D7FF&}SOZINHO.{\\c&HFFFFFF&}"
+},
+{
+"s": 4.38,
+"e": 5.14,
+"t": "VOCÊ NUNCA"
+},
+{
+"s": 5.14,
+"e": 6.02,
+"t": "COLOCOU ALARME"
+},
+{
+"s": 6.02,
+"e": 6.82,
+"t": "PRA ESSA HORA."
+},
+{
+"s": 7.38,
+"e": 8.44,
+"t": "AÍ O CELULAR"
+},
+{
+"s": 8.44,
+"e": 9.3,
+"t": "ACENDE."
+},
+{
+"s": 9.78,
+"e": 10.54,
+"t": "MENSAGEM…"
+},
+{
+"s": 10.54,
+"e": 12.94,
+"t": "DO NÚMERO DA {\\c&H0028D7FF&}SUA{\\c&HFFFFFF&} {\\c&H0028D7FF&}AVÓ.{\\c&HFFFFFF&}"
+},
+{
+"s": 13.46,
+"e": 15.42,
+"t": "ELA MORREU FAZ {\\c&H0028D7FF&}DOIS{\\c&HFFFFFF&} {\\c&H0028D7FF&}ANOS.{\\c&HFFFFFF&}"
+},
+{
+"s": 16.98,
+"e": 18.32,
+"t": "COMEÇA A CHOVER."
+},
+{
+"s": 18.32,
+"e": 20.24,
+"t": "E ALGUÉM {\\c&H0028D7FF&}BATE{\\c&HFFFFFF&} {\\c&H0028D7FF&}NA{\\c&HFFFFFF&} {\\c&H0028D7FF&}PORTA.{\\c&HFFFFFF&}"
+},
+{
+"s": 20.24,
+"e": 21.7,
+"t": "{\\c&H0028D7FF&}TRÊS{\\c&HFFFFFF&} {\\c&H0028D7FF&}VEZES.{\\c&HFFFFFF&}"
+},
+{
+"s": 22.56,
+"e": 22.94,
+"t": "ABRE,"
+},
+{
+"s": 23.1,
+"e": 23.74,
+"t": "MEU ANJO…"
+},
+{
+"s": 23.74,
+"e": 25.16,
+"t": "{\\c&H0028D7FF&}TÁ{\\c&HFFFFFF&} {\\c&H0028D7FF&}FRIO{\\c&HFFFFFF&} {\\c&H0028D7FF&}AQUI{\\c&HFFFFFF&} {\\c&H0028D7FF&}FORA.{\\c&HFFFFFF&}"
+},
+{
+"s": 25.7,
+"e": 26.76,
+"t": "VOCÊ OLHA PELO"
+},
+{
+"s": 26.76,
+"e": 28.02,
+"t": "{\\c&H0028D7FF&}OLHO{\\c&HFFFFFF&} {\\c&H0028D7FF&}MÁGICO.{\\c&HFFFFFF&}"
+},
+{
+"s": 28.86,
+"e": 29.96,
+"t": "{\\c&H0028D7FF&}É{\\c&HFFFFFF&} {\\c&H0028D7FF&}ELA.{\\c&HFFFFFF&}"
+},
+{
+"s": 30.8,
+"e": 31.58,
+"t": "COM O MESMO"
+},
+{
+"s": 31.58,
+"e": 33.02,
+"t": "{\\c&H0028D7FF&}CASACO{\\c&HFFFFFF&} {\\c&H0028D7FF&}DO{\\c&HFFFFFF&} {\\c&H0028D7FF&}ENTERRO.{\\c&HFFFFFF&}"
+},
+{
+"s": 33.28,
+"e": 33.8,
+"t": "VOCÊ CORRE"
+},
+{
+"s": 33.8,
+"e": 34.66,
+"t": "PRA JANELA."
+},
+{
+"s": 35.1,
+"e": 35.7,
+"t": "DO OUTRO"
+},
+{
+"s": 35.7,
+"e": 36.5,
+"t": "LADO DA RUA,"
+},
+{
+"s": 36.82,
+"e": 37.5,
+"t": "A DONA CÉLIA"
+},
+{
+"s": 37.5,
+"e": 38.26,
+"t": "ESTÁ NO PORTÃO…"
+},
+{
+"s": 39.18,
+"e": 40.52,
+"t": "{\\c&H0028D7FF&}ABRAÇANDO{\\c&HFFFFFF&} {\\c&H0028D7FF&}O{\\c&HFFFFFF&} {\\c&H0028D7FF&}MARIDO.{\\c&HFFFFFF&}"
+},
+{
+"s": 41.48,
+"e": 43.5,
+"t": "ELE MORREU FAZ {\\c&H0028D7FF&}OITO{\\c&HFFFFFF&} {\\c&H0028D7FF&}ANOS.{\\c&HFFFFFF&}"
+},
+{
+"s": 44.4,
+"e": 45.54,
+"t": "E NÃO É SÓ ELA."
+},
+{
+"s": 46.12,
+"e": 47.0,
+"t": "CADA CASA"
+},
+{
+"s": 47.0,
+"e": 47.68,
+"t": "DA RUA…"
+},
+{
+"s": 47.68,
+"e": 49.56,
+"t": "TEM {\\c&H0028D7FF&}UMA{\\c&HFFFFFF&} {\\c&H0028D7FF&}VISITA.{\\c&HFFFFFF&}"
+},
+{
+"s": 50.12,
+"e": 51.0,
+"t": "VOCÊ NÃO VAI"
+},
+{
+"s": 51.0,
+"e": 52.38,
+"t": "{\\c&H0028D7FF&}DEIXAR{\\c&HFFFFFF&} {\\c&H0028D7FF&}A{\\c&HFFFFFF&} {\\c&H0028D7FF&}VÓ{\\c&HFFFFFF&} {\\c&H0028D7FF&}ENTRAR?{\\c&HFFFFFF&}"
+},
+{
+"s": 52.82,
+"e": 54.58,
+"t": "O CELULAR {\\c&H0028D7FF&}VIBRA{\\c&HFFFFFF&} {\\c&H0028D7FF&}DE{\\c&HFFFFFF&} {\\c&H0028D7FF&}NOVO.{\\c&HFFFFFF&}"
+},
+{
+"s": 55.94,
+"e": 57.46,
+"t": "MAS SE ELA ESTÁ"
+},
+{
+"s": 57.46,
+"e": 58.5,
+"t": "NA PORTA…"
+},
+{
+"s": 59.6,
+"e": 60.48,
+"t": "QUEM ESTÁ {\\c&H0028D7FF&}MANDANDO{\\c&HFFFFFF&}"
+},
+{
+"s": 60.7,
+"e": 61.2,
+"t": "{\\c&H0028D7FF&}MENSAGEM?{\\c&HFFFFFF&}"
+},
+{
+"s": 61.7,
+"e": 62.5,
+"t": "{\\c&H0028D7FF&}VOCÊ{\\c&HFFFFFF&} {\\c&H0028D7FF&}DECIDE.{\\c&HFFFFFF&}"
+},
+{
+"s": 63.3,
+"e": 63.72,
+"t": "A:"
+},
+{
+"s": 64.04,
+"e": 65.68,
+"t": "{\\c&H0028D7FF&}ABRE{\\c&HFFFFFF&} {\\c&H0028D7FF&}A{\\c&HFFFFFF&} {\\c&H0028D7FF&}PORTA{\\c&HFFFFFF&} PRA {\\c&H0028D7FF&}VÓ.{\\c&HFFFFFF&}"
+},
+{
+"s": 65.94,
+"e": 66.68,
+"t": "B:"
+},
+{
+"s": 66.96,
+"e": 67.44,
+"t": "{\\c&H0028D7FF&}RESPONDE{\\c&HFFFFFF&}"
+},
+{
+"s": 67.44,
+"e": 68.18,
+"t": "{\\c&H0028D7FF&}A{\\c&HFFFFFF&} {\\c&H0028D7FF&}MENSAGEM.{\\c&HFFFFFF&}"
+},
+{
+"s": 69.02,
+"e": 70.92,
+"t": "COMENTA {\\c&H0028D7FF&}A{\\c&HFFFFFF&} {\\c&H0028D7FF&}OU{\\c&HFFFFFF&} {\\c&H0028D7FF&}B.{\\c&HFFFFFF&}"
+},
+{
+"s": 71.4,
+"e": 72.46,
+"t": "A MAIS COMENTADA"
+},
+{
+"s": 72.46,
+"e": 74.04,
+"t": "VIRA A {\\c&H0028D7FF&}PARTE{\\c&HFFFFFF&} {\\c&H0028D7FF&}2.{\\c&HFFFFFF&}"
+},
+{
+"s": 74.54,
+"e": 75.29,
+"t": "E SE..."
+}
+],
+"hud": []
+}

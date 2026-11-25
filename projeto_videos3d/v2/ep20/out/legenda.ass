@@ -1,0 +1,68 @@
+[Script Info]
+; Texto: roteiro aprovado. Tempos: faster-whisper (medium) por palavra, alinhado ao roteiro.
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Leg,Poppins,92,&H00FFFFFF,&H00FFFFFF,&H00101010,&H78000000,-1,0,0,0,100,100,0,0,1,5,2,2,90,90,560,1
+Style: Nota,Poppins,38,&H00FFFFFF,&H00FFFFFF,&H64000000,&H64000000,-1,0,0,0,100,100,1,0,3,10,0,8,80,80,140,1
+Style: Hud,Poppins,62,&H00FFFFFF,&H00FFFFFF,&H50000000,&H50000000,-1,0,0,0,100,100,1,0,3,18,0,8,80,80,250,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:01.60,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}TRÊS{\c&HFFFFFF&} {\c&H0028D7FF&}DA{\c&HFFFFFF&} {\c&H0028D7FF&}MANHÃ.{\c&HFFFFFF&}
+Dialogue: 1,0:00:01.86,0:00:02.78,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SEU DESPERTADOR
+Dialogue: 1,0:00:02.78,0:00:03.72,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}TOCA{\c&HFFFFFF&} {\c&H0028D7FF&}SOZINHO.{\c&HFFFFFF&}
+Dialogue: 1,0:00:04.38,0:00:05.14,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ NUNCA
+Dialogue: 1,0:00:05.14,0:00:06.02,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}COLOCOU ALARME
+Dialogue: 1,0:00:06.02,0:00:06.82,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PRA ESSA HORA.
+Dialogue: 1,0:00:07.38,0:00:08.44,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}AÍ O CELULAR
+Dialogue: 1,0:00:08.44,0:00:09.30,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ACENDE.
+Dialogue: 1,0:00:09.78,0:00:10.54,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}MENSAGEM…
+Dialogue: 1,0:00:10.54,0:00:12.94,Leg,,0,0,300,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DO NÚMERO DA {\c&H0028D7FF&}SUA{\c&HFFFFFF&} {\c&H0028D7FF&}AVÓ.{\c&HFFFFFF&}
+Dialogue: 1,0:00:13.46,0:00:15.42,Leg,,0,0,300,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ELA MORREU FAZ {\c&H0028D7FF&}DOIS{\c&HFFFFFF&} {\c&H0028D7FF&}ANOS.{\c&HFFFFFF&}
+Dialogue: 1,0:00:16.98,0:00:18.32,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}COMEÇA A CHOVER.
+Dialogue: 1,0:00:18.32,0:00:20.24,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E ALGUÉM {\c&H0028D7FF&}BATE{\c&HFFFFFF&} {\c&H0028D7FF&}NA{\c&HFFFFFF&} {\c&H0028D7FF&}PORTA.{\c&HFFFFFF&}
+Dialogue: 1,0:00:20.24,0:00:21.70,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}TRÊS{\c&HFFFFFF&} {\c&H0028D7FF&}VEZES.{\c&HFFFFFF&}
+Dialogue: 1,0:00:22.56,0:00:22.94,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ABRE,
+Dialogue: 1,0:00:23.10,0:00:23.74,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}MEU ANJO…
+Dialogue: 1,0:00:23.74,0:00:25.16,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}TÁ{\c&HFFFFFF&} {\c&H0028D7FF&}FRIO{\c&HFFFFFF&} {\c&H0028D7FF&}AQUI{\c&HFFFFFF&} {\c&H0028D7FF&}FORA.{\c&HFFFFFF&}
+Dialogue: 1,0:00:25.70,0:00:26.76,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ OLHA PELO
+Dialogue: 1,0:00:26.76,0:00:28.02,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}OLHO{\c&HFFFFFF&} {\c&H0028D7FF&}MÁGICO.{\c&HFFFFFF&}
+Dialogue: 1,0:00:28.86,0:00:29.96,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}É{\c&HFFFFFF&} {\c&H0028D7FF&}ELA.{\c&HFFFFFF&}
+Dialogue: 1,0:00:30.80,0:00:31.58,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}COM O MESMO
+Dialogue: 1,0:00:31.58,0:00:33.02,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}CASACO{\c&HFFFFFF&} {\c&H0028D7FF&}DO{\c&HFFFFFF&} {\c&H0028D7FF&}ENTERRO.{\c&HFFFFFF&}
+Dialogue: 1,0:00:33.28,0:00:33.80,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ CORRE
+Dialogue: 1,0:00:33.80,0:00:34.66,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PRA JANELA.
+Dialogue: 1,0:00:35.10,0:00:35.70,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DO OUTRO
+Dialogue: 1,0:00:35.70,0:00:36.50,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}LADO DA RUA,
+Dialogue: 1,0:00:36.82,0:00:37.50,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A DONA CÉLIA
+Dialogue: 1,0:00:37.50,0:00:38.26,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ESTÁ NO PORTÃO…
+Dialogue: 1,0:00:39.18,0:00:40.52,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}ABRAÇANDO{\c&HFFFFFF&} {\c&H0028D7FF&}O{\c&HFFFFFF&} {\c&H0028D7FF&}MARIDO.{\c&HFFFFFF&}
+Dialogue: 1,0:00:41.48,0:00:43.50,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ELE MORREU FAZ {\c&H0028D7FF&}OITO{\c&HFFFFFF&} {\c&H0028D7FF&}ANOS.{\c&HFFFFFF&}
+Dialogue: 1,0:00:44.40,0:00:45.54,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E NÃO É SÓ ELA.
+Dialogue: 1,0:00:46.12,0:00:47.00,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}CADA CASA
+Dialogue: 1,0:00:47.00,0:00:47.68,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DA RUA…
+Dialogue: 1,0:00:47.68,0:00:49.56,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}TEM {\c&H0028D7FF&}UMA{\c&HFFFFFF&} {\c&H0028D7FF&}VISITA.{\c&HFFFFFF&}
+Dialogue: 1,0:00:50.12,0:00:51.00,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ NÃO VAI
+Dialogue: 1,0:00:51.00,0:00:52.38,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}DEIXAR{\c&HFFFFFF&} {\c&H0028D7FF&}A{\c&HFFFFFF&} {\c&H0028D7FF&}VÓ{\c&HFFFFFF&} {\c&H0028D7FF&}ENTRAR?{\c&HFFFFFF&}
+Dialogue: 1,0:00:52.82,0:00:54.58,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O CELULAR {\c&H0028D7FF&}VIBRA{\c&HFFFFFF&} {\c&H0028D7FF&}DE{\c&HFFFFFF&} {\c&H0028D7FF&}NOVO.{\c&HFFFFFF&}
+Dialogue: 1,0:00:55.94,0:00:57.46,Leg,,0,0,300,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}MAS SE ELA ESTÁ
+Dialogue: 1,0:00:57.46,0:00:58.50,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NA PORTA…
+Dialogue: 1,0:00:59.60,0:01:00.48,Leg,,0,0,300,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}QUEM ESTÁ {\c&H0028D7FF&}MANDANDO{\c&HFFFFFF&}
+Dialogue: 1,0:01:00.70,0:01:01.20,Leg,,0,0,300,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}MENSAGEM?{\c&HFFFFFF&}
+Dialogue: 1,0:01:01.70,0:01:02.50,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}VOCÊ{\c&HFFFFFF&} {\c&H0028D7FF&}DECIDE.{\c&HFFFFFF&}
+Dialogue: 1,0:01:03.30,0:01:03.72,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A:
+Dialogue: 1,0:01:04.04,0:01:05.68,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}ABRE{\c&HFFFFFF&} {\c&H0028D7FF&}A{\c&HFFFFFF&} {\c&H0028D7FF&}PORTA{\c&HFFFFFF&} PRA {\c&H0028D7FF&}VÓ.{\c&HFFFFFF&}
+Dialogue: 1,0:01:05.94,0:01:06.68,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}B:
+Dialogue: 1,0:01:06.96,0:01:07.44,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}RESPONDE{\c&HFFFFFF&}
+Dialogue: 1,0:01:07.44,0:01:08.18,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}A{\c&HFFFFFF&} {\c&H0028D7FF&}MENSAGEM.{\c&HFFFFFF&}
+Dialogue: 1,0:01:09.02,0:01:10.92,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}COMENTA {\c&H0028D7FF&}A{\c&HFFFFFF&} {\c&H0028D7FF&}OU{\c&HFFFFFF&} {\c&H0028D7FF&}B.{\c&HFFFFFF&}
+Dialogue: 1,0:01:11.40,0:01:12.46,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A MAIS COMENTADA
+Dialogue: 1,0:01:12.46,0:01:14.04,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VIRA A {\c&H0028D7FF&}PARTE{\c&HFFFFFF&} {\c&H0028D7FF&}2.{\c&HFFFFFF&}
+Dialogue: 1,0:01:14.54,0:01:15.29,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E SE...
+Dialogue: 0,0:00:00.00,0:00:03.00,Nota,,0,0,450,,{\fad(200,200)\an2}história de ficção
