@@ -15,3 +15,8 @@ Vídeo 20: das 7 batidas geradas, uma foi recortada e repetida 3 vezes (o roteir
 | chaveiro.mp3 | ElevenLabs, efeitos sonoros | "A small ring of metal house keys gently jingling as it sways hanging from a finger, close, quiet night, no other sounds" (2,5 s, prompt_influence 0,6) | 25/11/2026 |
 
 Piloto: conferido por análise. Passos: 7 ataques, ~0,78 s entre eles, piso −71 dB. Chaveiro: 5 ataques, centroide 11,4 kHz (metálico), piso −69 dB.
+| praca_tarde.mp3 | ElevenLabs, efeitos sonoros | "Afternoon city park ambience: songbirds chirping in trees, light breeze in leaves, very distant traffic, no voices, no music, calm" (10 s, prompt_influence 0,6) | 25/11/2026 |
+| passos_grama.mp3 | ElevenLabs, efeitos sonoros | "Footsteps of one person walking slowly on short grass in a park, close, soft rustle, no other sounds" (4 s, prompt_influence 0,6) | 25/11/2026 |
+| fechadura_troca.mp3 | ElevenLabs, efeitos sonoros | "A locksmith replacing a front door lock: screwdriver turning screws, metal lock cylinder clicking into place, a key tested in the new lock, close, no voices, no music" (5 s, prompt_influence 0,6) | 25/11/2026 |
+
+Vídeo 21: conferido por análise. Praça: o grave (<200 Hz, tráfego/vento) fica 11–28 dB acima da faixa dos pássaros (2–8 kHz), então entra com corte abaixo de 300 Hz. Passos na grama: 6 ataques, centroide 8,4 kHz, piso −64 dB. Fechadura: 12 ataques metálicos, centroide 6,9 kHz, piso −70 dB.

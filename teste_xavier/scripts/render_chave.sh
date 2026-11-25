@@ -10,7 +10,7 @@ for it in $SHOTS; do
   have=$(find -L $DST/$n \( -name '*.png' -o -name '*.jpg' \) -size +1k | wc -l)
   [ "$have" -ge "$want" ] && { echo "$n completo"; continue; }
   tmp=out/chave_seq/$n; rm -rf $tmp; mkdir -p $tmp; t0=$(date +%s)
-  npx remotion render src/index.ts ChaveShort $tmp --sequence --frames=$a-$((b-1)) --image-format=jpeg --jpeg-quality=95 --concurrency=${CONC:-1} \
+  npx remotion render src/index.ts ChaveShort $tmp --sequence --frames=$a-$((b-1)) --image-format=jpeg --jpeg-quality=95 --concurrency=${CONC:-1} --bundle-cache=false \
     --gl=swangle --timeout=300000 --browser-executable=$CH --log=error > out/chave_seq/log_$n.txt 2>&1 || { echo "$n FALHOU"; tail -5 out/chave_seq/log_$n.txt; continue; }
   i=$a; for f in $(ls $tmp/*.jpeg $tmp/*.jpg 2>/dev/null | sort -V); do mv "$f" $DST/$n/$(printf %04d $i).jpg; i=$((i+1)); done
   rm -rf .tmp/remotion-webpack-bundle-* .tmp/org.chromium.Chromium.*   # o pacote é refeito a cada plano: sem isto o disco enche
