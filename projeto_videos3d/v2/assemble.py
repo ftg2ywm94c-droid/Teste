@@ -18,6 +18,7 @@ paths, missing = [], []
 for s in SH.SHOTS:
     for f in s.frames:
         p = os.path.join(FR, s.name, f'{f:04d}.png')
+        if not os.path.exists(p) and os.path.exists(p[:-4] + '.jpg'): p = p[:-4] + '.jpg'   # vídeo 21 em diante: quadros em JPEG (q95) para caber no disco
         if not os.path.exists(p) or os.path.getsize(p) == 0: missing.append(f)
         paths.append(p)
 assert len(paths) == total, (len(paths), total)
