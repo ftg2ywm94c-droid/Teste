@@ -31,14 +31,14 @@ export const W = {
   // nomes herdados (código antigo)
   tv1: -100, ancora: -100, rostos: -100, cortina: -100, tranca: -100, cade: -100, quintal: -100, portao: -100, ultimo: -100,
   esquina: -100, porta: -100, thor: -100, dois: -100, correr: -100, vira: -100, quieto: -100, abana: -100, mascaras: -100, trancado: -100, latirPara: -100,
-  caiu: -100, liga: -100, jogador: -100, alguma: -100, param: -100,
+  caiu: -100, jogador: -100, alguma: -100, param: -100,
   seis: -100, liga0: -100, n193: -100, chama: -100, duas: -100, atendem: -100, fala: -100, endereco: -100, arvore: -100, fio: -100,
-  vizinha: -100, outro: -100, voz: -100, nao: -100, fica: -100, equipe: -100, ligacao: -100, celular: -100, apaga: -100,
+  vizinha: -100, outro: -100, voz: -100, nao: -100, fica: -100, equipe: -100, ligacao: -100, celular: -100,
   la: -100, sirene: -100, e1: -100, para: -100, silencio: -100, batem: -100,
   forte: -100, e2: -100, abre: -100, filho: -100, eu: -100, entre: -100, e3: -100, fio2: -100, ainda: -100, faisca: -100,
   atravessa: -100, grita: -100,
   estrondo: -10, casa: -9, silencio0: -8, voceAbre: -100, aguentou: -100,
-  apaga0: -1, estalo: 999, inclinando: 999, celular2: 999, direcao: 999, pisca: 999, dobrar: 0, vento: -1,
+  apaga0: -1, estalo: 999, inclinando: 999, celular2: 999, direcao: 999, dobrar: 0, vento: -1,
 };
 export const T_OFF = -1, T_FRIDGE = 999, T_HOURS = 999, T_SINK = 999, T_WAR = 999, T_NOT = 999;
 
@@ -79,7 +79,7 @@ export const phoneOn = (t: number) => t >= W.acende;
 /** o poste da esquina: 1 aceso, pisca entre "pisca" e "apaga", 0 apagado */
 export const poleAt = (t: number) => {
   if (t < W.pisca) return 1; if (t >= W.apaga) return 0;
-  const k = Math.floor((t - W.pisca) * 30); return [1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0][k] ?? 0;
+  const k = Math.floor((t - W.pisca) * 30); return [1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0][k] ?? 0;
 };
 /** a lanterna do celular */
 export const torchOn = (t: number) => t >= W.liga;

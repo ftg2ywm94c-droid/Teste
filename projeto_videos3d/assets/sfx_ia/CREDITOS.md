@@ -11,3 +11,7 @@ Conferido por análise: 8 latidos de 0,11–0,16 s, fundamental 500–850 Hz, si
 | despertador.mp3 | ElevenLabs, efeitos sonoros | "Digital alarm clock beeping repeatedly, close, in a quiet bedroom, no other sounds" (3 s) | 26/11/2026 |
 
 Vídeo 20: das 7 batidas geradas, uma foi recortada e repetida 3 vezes (o roteiro diz "três vezes").
+| passos_calcada.mp3 | ElevenLabs, efeitos sonoros | "Slow footsteps of one person in sneakers walking on a concrete sidewalk at night, steady pace, close, quiet empty street, no music, no other sounds" (5 s, prompt_influence 0,6) | 25/11/2026 |
+| chaveiro.mp3 | ElevenLabs, efeitos sonoros | "A small ring of metal house keys gently jingling as it sways hanging from a finger, close, quiet night, no other sounds" (2,5 s, prompt_influence 0,6) | 25/11/2026 |
+
+Piloto: conferido por análise. Passos: 7 ataques, ~0,78 s entre eles, piso −71 dB. Chaveiro: 5 ataques, centroide 11,4 kHz (metálico), piso −69 dB.

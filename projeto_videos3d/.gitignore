@@ -141,3 +141,9 @@ v2/ep20/out/*.wav
 v2/ep20/out/*.mp4
 v2/ep20/out/frames.txt
 v2/ep20/out/mg.txt
+v2/ep90/frames/
+v2/ep90/mg/
+v2/ep90/out/*.wav
+v2/ep90/out/*.mp4
+v2/ep90/out/frames.txt
+v2/ep90/out/mg.txt

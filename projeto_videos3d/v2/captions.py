@@ -90,6 +90,9 @@ for seg in segs:
     if res[0] >= 99 and EP:          # sem divisão válida: permite cortar depois de palavra curta
         RELAX[0] = True; best.cache_clear(); res = best(0); RELAX[0] = False
     for a, b in res[2]: chunks.append(seg[a:b])
+# opcional (captions_cfg.ONE_WORD = True): uma palavra por vez, como nas referências (piloto); os outros vídeos não mudam
+if EP and getattr(CFG, 'ONE_WORD', False): chunks = [[i] for i in range(len(S))]
+_TAGS = getattr(CFG, 'LEG_TAGS', '') if EP else ''
 def ts(t): return f"{int(t // 3600)}:{int(t // 60 % 60):02d}:{t % 60:05.2f}"
 YEL = '&H0028D7FF&'
 ev = []
@@ -135,7 +138,7 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 _MV = getattr(CFG, 'LEG_MV', []) if EP else []
 def _mv(s):
     return next((m for a_, b_, m in _MV if a_ <= s < b_), 0)
-L = [f"Dialogue: 1,{ts(s)},{ts(e)},Leg,,0,0,{_mv(s)},,{{\\fad(40,30)\\fscx92\\fscy92\\t(0,90,\\fscx100\\fscy100)}}{t}" for s, e, t in ev]
+L = [f"Dialogue: 1,{ts(s)},{ts(e)},Leg,,0,0,{_mv(s)},,{{\\fad(40,30)\\fscx92\\fscy92\\t(0,90,\\fscx100\\fscy100){_TAGS}}}{t}" for s, e, t in ev]
 L += [f"Dialogue: 0,{ts(s)},{ts(e)},Hud,,0,0,0,,{{\\fad(180,180)}}{t}" for s, e, t in HUD]
 NOTES = CFG.NOTES(wt) if EP and hasattr(CFG, 'NOTES') else []
 SAFE916 = bool(EP) and EP.isdigit() and int(EP) >= 9      # zonas seguras do 9:16 (TikTok/Reels/Shorts): notas fora da faixa de nome/descrição (embaixo) e das abas (em cima)
