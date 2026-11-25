@@ -10,6 +10,7 @@
 - `assemble.py`: opção `LOUD_I` por episódio (padrão −14, os outros vídeos não mudam); vídeo 20 em −12,8 para compensar o limitador.
 - Legenda desce sob o carimbo "BIP BIP" no plano 2; celular apagado no plano do loop (só o plano 27 refeito).
 - QC: −14,1 LUFS, TP −1,6, atraso e deriva 0 ms; só `frames` reprova por 0,7 quadro. Detalhes em `v2/ep20/LIMITACOES.md` e `v2/ep20/qc_report_20.json`. Capa: quadro de 33,1 s.
+- Piloto de qualidade (EP=90) renderizado e montado: QC passa nos 15 itens; render com 1 aba (`CONC=1`), porque com 3 abas saíram quadros em branco e sem lanterna (`v2/ep90/LIMITACOES.md`); câmera do plano 2 se aproxima no escuro.
 - Postagem passa a ser entregue em blocos no chat (sem `POSTAGEM.md`), a pedido do usuário.
 
 ## v0.21: vídeo 19 "A Noite Livre · Ep. 1" (série nova, elenco de vozes de IA e o processo das referências) (2026-11-25)
