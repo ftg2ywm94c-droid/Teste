@@ -13,3 +13,18 @@ Leitura:
 - O Ep. 1 do ônibus começa acima de 100% (gente voltando/reassistindo) e só cai no fim (cartões A/B).
 - Em todos, a curva despenca nos últimos ~10 s: é o trecho dos cartões "comenta A ou B".
 - Limite: são 4 vídeos; não há prints de "visualizou vs. deslizou" nem do Ep. 3.
+
+## Segunda leva de prints: "continuaram assistindo" x "ignorado" (deslizaram)
+| Short | Continuaram | Deslizaram | Visualizações intencionais | Espectadores únicos |
+|---|---|---|---|---|
+| Ônibus Ep. 1 | 73,4% | 26,6% | 7,7 mil (de 14,3 mil) | 7,4 mil; tempo de exibição 180 h |
+| Ônibus Ep. 2 | 60,0% | 40,0% | 1,0 mil | 998 |
+| Vendaval Ep. 2 | 54,8% | 45,2% | 1,1 mil | 1,0 mil |
+
+O que aparece na tela nos primeiros segundos (quadros 0 / 1,5 / 4 s tirados dos MP4s):
+- **Ônibus Ep. 1:** quadro 0 sem texto, a cena se lê sozinha (ônibus chegando no ponto à noite); 1,5 s: relógio "00:10" grande; 4 s: dentro do ônibus vazio.
+- **Ônibus Ep. 2:** quadro 0 "A PORTA FECHOU." sobre uma placa de ponto; 1,5 s: close chapado da porta (verde, sem leitura) com "E ELE NÃO PAROU."; 4 s: cartão "VOCÊ DECIDE · PARTE 2 / vocês escolheram B".
+- **Vendaval Ep. 2:** 1,5 s: cartão "vocês escolheram B · BANHEIRO" e a fala "escolheu B: o banheiro".
+
+Leitura: a ordem de quem desliza (26,6% < 40% < 45,2%) é a mesma da retenção. O que mais desliza é o que mostra a recapitulação logo no 1º segundo; o melhor mostra uma cena clara + a hora, sem recapitulação.
+O empurrão do Ep. 1 durou ~4 dias (espectadores únicos: pico em 21/11 com ~3,5 mil, perto de 0 em 24/11).
