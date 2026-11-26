@@ -28,3 +28,10 @@ O que aparece na tela nos primeiros segundos (quadros 0 / 1,5 / 4 s tirados dos 
 
 Leitura: a ordem de quem desliza (26,6% < 40% < 45,2%) é a mesma da retenção. O que mais desliza é o que mostra a recapitulação logo no 1º segundo; o melhor mostra uma cena clara + a hora, sem recapitulação.
 O empurrão do Ep. 1 durou ~4 dias (espectadores únicos: pico em 21/11 com ~3,5 mil, perto de 0 em 24/11).
+
+## Vídeo 20 (A Visita Ep. 1), primeira 1h21 no ar (print de 26/11 13:20)
+- 1,3 mil visualizações (2º de 10 no canal nesse período), 25 likes, 14 comentários; 626 visualizações intencionais.
+- Continuaram 54,8% / deslizaram 45,2%: igual ao Vendaval Ep. 2 e pior que o Ônibus Ep. 1 (73,4%).
+- Quadro 0 do vídeo 20: relógio "03:00" no canto, selo "A VISITA · EP. 1", "no final, você decide" e o carimbo "BIP BIP", tudo junto (feito antes da regra da abertura limpa).
+- Canal: 1.329 inscritos; 39,3 mil visualizações e 351 h nos últimos 28 dias.
+- Os números da 1ª hora ainda mudam; comparar de novo com 2–3 dias.
