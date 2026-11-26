@@ -155,3 +155,10 @@ v2/ep21/out/*.wav
 v2/ep21/out/*.mp4
 v2/ep21/out/frames.txt
 v2/ep21/out/mg.txt
+v2/ep121/frames
+v2/ep121/mg/
+v2/ep121/out/*.wav
+v2/ep121/out/*.mp4
+v2/ep121/out/frames.txt
+v2/ep121/out/mg.txt
+narracao/121_vozes/*.wav

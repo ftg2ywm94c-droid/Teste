@@ -1,0 +1,4 @@
+# Vídeo 121: A Chave Ep. 1 em inglês (narrador Spuds Oxley, eleven_v3, en), na ordem da faixa
+
+## Narração
+Two a.m. You're walking home. The streetlight on the corner flickers… and dies. You turn on your phone's flashlight. At the end of the street, someone is standing there. And he's holding your key. You lost that key this afternoon, at the park. You looked under the bench, in the grass, by the curb. And across the park, there was a man standing still. Watching you look. The sun went down. You gave up, called a locksmith, and changed the lock. So you're safe now… right? Except now he raises the key. And points at your house. Your bedroom light turns on. You live alone. You decide. A: take the key from his hand. B: run home. Comment A or B. The most commented answer becomes Part 2. What if...

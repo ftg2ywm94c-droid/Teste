@@ -5,6 +5,11 @@
 - `scripts/add_narration.py`: MP3 → MP4 com legenda sincronizada, ducking e −14 LUFS.
 - Para recuperar: `git checkout be24c75 -- projeto_videos3d` (a tag não pôde ser enviada ao GitHub: o acesso desta sessão só permite o branch de trabalho).
 
+## v0.24: vídeo 121 "The Key · Ep. 1" (A Chave em inglês, canal You Decide 3D) (2026-11-26)
+- Mesmos quadros do 21, sem novo render; voz Spuds Oxley em inglês (`eleven_v3`, `en`), cada frase no instante da frase em português (`narracao/121_vozes/montar.py`), palavras de ação alinhadas em 3 frases.
+- Títulos, legenda, capa, foto de perfil e banner do canal em inglês (`canal_us/`). `transcribe.py` com `WHISPER_LANG` (padrão `pt`).
+- QC 15/15 (−14,3 LUFS, TP −1,8). Detalhes em `v2/ep121/LIMITACOES.md`.
+
 ## v0.23: vídeo 21 "A Chave · Ep. 1" (2026-11-25)
 - A partir do piloto (15,6 s iguais): praça, a sua casa, hora do dia contínua (noite → tarde → pôr do sol → noite), sombra de nuvens, câmera que atravessa o cenário de uma cena para outra (spline contínua do plano 6 ao 13).
 - Câmera refeita depois do 1º render: mira por ângulo, volta em arco no homem, grua por cima dos telhados; praça compacta. Loop: plano 14 com as regras do plano 1 (emenda 1,9/255).
