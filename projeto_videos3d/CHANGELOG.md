@@ -9,6 +9,7 @@
 - A partir do piloto (15,6 s iguais): praça, a sua casa, hora do dia contínua (noite → tarde → pôr do sol → noite), sombra de nuvens, câmera que atravessa o cenário de uma cena para outra (spline contínua do plano 6 ao 13).
 - Câmera refeita depois do 1º render: mira por ângulo, volta em arco no homem, grua por cima dos telhados; praça compacta. Loop: plano 14 com as regras do plano 1 (emenda 1,9/255).
 - `assemble.py`: nome de saída do 21 e pipe de quadros quando PNG e JPEG se misturam (só nesse caso).
+- Abertura v2: quadro 0 sem texto, selo com fade e "02:00" grande (como o Ônibus Ep. 1, 26,6% de deslize); loop sem títulos.
 - QC 15/15 (−13,7 LUFS, TP −1,7). Detalhes em `v2/ep21/LIMITACOES.md` e `v2/ep21/qc_report_21.json`. Capa: quadro de 14,0 s.
 
 ## v0.22: vídeo 20 "A Visita · Ep. 1", versão 2 (celular na mão e luz real) (2026-11-25)

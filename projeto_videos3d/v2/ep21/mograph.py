@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Títulos do vídeo 21 (A Chave · Ep. 1) em 1080x1920 (camada RGBA sobre o 3D), no nosso estilo (Poppins + amarelo):
-- selo "A CHAVE · EP. 1 / no final, você decide" nos primeiros 2,5 s e no plano do loop (a emenda fica igual);
+- abertura: selo "A CHAVE · EP. 1" com fade desde o quadro 0 e a hora "02:00" grande de 0,4 a 3,4 s; o loop fica sem títulos (emenda igual);
 - cartões A/B, "COMENTA A OU B" e "a mais comentada vira a PARTE 2" na escolha.
 O resto do vídeo fica sem títulos: a legenda de uma palavra e a câmera contam a história.
 Uso: python3 v2/ep21/mograph.py -> v2/ep21/mg/<plano>/NNNN.png."""
@@ -24,16 +24,19 @@ def card(d, x0, y0, x1, y1, col, k, letter, label, lpx=46):
     text(d, cx, cy, letter, INK, int(r * 1.5), k, stroke=0, anchor='mm')
     lines = label.split('\n'); lh = int(lpx * 1.12); y = cy - lh * len(lines) // 2
     for ln in lines: text(d, (cx + r + x1) // 2, y, ln, WHT, lpx, k); y += lh
-def badge(d, k):
+def badge(d, k, y=390, sub=True):
     s = 'A CHAVE · EP. 1'; fo = f(46); w = d.textlength(s, font=fo); x0 = (W - w) / 2 - 36
-    d.rounded_rectangle((x0, 390, x0 + w + 72, 470), 40, fill=YEL + (int(240 * k),), outline=INK + (int(255 * k),), width=5)
-    d.text((W / 2, 430), s, font=fo, fill=INK + (int(255 * k),), anchor='mm')
-    text(d, W / 2, 492, 'no final, você decide', YEL, 50, k)
+    d.rounded_rectangle((x0, y, x0 + w + 72, y + 80), 40, fill=YEL + (int(240 * k),), outline=INK + (int(255 * k),), width=5)
+    d.text((W / 2, y + 40), s, font=fo, fill=INK + (int(255 * k),), anchor='mm')
+    if sub: text(d, W / 2, y + 102, 'no final, você decide', YEL, 50, k)
 A, B, COM, SE = 53.16, 56.1, 58.04, P.W['k_se']
 def frame(t):
     im = Image.new('RGBA', (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
-    if t < 2.5: badge(d, min(1.0, (2.5 - t) / 0.25))
-    if t >= SE + 0.02: badge(d, min(1.0, (t - SE - 0.02) / 0.25))       # no último quadro igual ao quadro 0 (k = 1)
+    # abertura como a do Ônibus Ep. 1 (o Short que menos gente deslizou, 26,6%): o quadro 0 sem texto (só a cena),
+    # o selo entra com fade e a HORA grande enquanto a voz diz "Duas da manhã"; nada de "no final, você decide" no 1º segundo
+    if t < 3.6: badge(d, env(t, 0.0, 3.6, 0.25, 0.3), y=230, sub=False)
+    if 0.4 <= t < 3.4: text(d, W / 2, 340, '02:00', WHT, 190, env(t, 0.4, 3.4))
+    # o plano do loop fica sem títulos: o último quadro é igual ao quadro 0, que também não tem texto
     if A <= t < B: card(d, 60, 380, 1020, 620, RED, env(t, A, B), 'A', 'PEGA A CHAVE\nDA MÃO DELE', 52)
     if B <= t < COM: card(d, 60, 380, 1020, 620, GRN, env(t, B, COM), 'B', 'CORRE\nPRA CASA', 56)
     if COM <= t < SE:

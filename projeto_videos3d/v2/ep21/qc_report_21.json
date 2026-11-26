@@ -18,8 +18,8 @@
  "black_segments": 0,
  "freeze_segments": 0,
  "motion": {
-  "mean": 7.79,
-  "min": 0.0019,
+  "mean": 7.794,
+  "min": 0.0023,
   "static_frames": 7
  },
  "loudness_lufs": -13.7,

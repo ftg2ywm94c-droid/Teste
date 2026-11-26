@@ -10,3 +10,4 @@
 - **Escala de diferença entre quadros:** os maiores saltos que sobraram (até 43/255 em 1538–1552, a grua subindo pela fachada) foram conferidos a olho: movimento contínuo, sem quadro quebrado.
 - **QC:** 15/15 itens; −13,7 LUFS, pico −1,7 dBTP, correlação da narração 0,968, atraso e deriva 0 ms (`qc_report_21.json`).
 - **Capa:** quadro de 14,0 s do próprio vídeo (o homem com a sua chave), título "2 DA MANHÃ… ELE TEM A SUA CHAVE" embaixo, sem tapar o rosto (`thumbnails/21_a_chave_ep1_capa.jpg`).
+- **Abertura v2 (26/11, depois da análise de retenção):** como no Ônibus Ep. 1 (o Short que menos gente deslizou, 26,6%): quadro 0 só com a cena, selo "A CHAVE · EP. 1" com fade e "02:00" grande de 0,4 a 3,4 s enquanto a voz diz "Duas da manhã"; saiu o "no final, você decide" do começo e o selo do plano do loop. Só a camada de títulos e a montagem foram refeitas (sem render 3D). QC 15/15, −13,7 LUFS; emenda do loop 1,8/255. A versão anterior do `mograph.py` está no git.
