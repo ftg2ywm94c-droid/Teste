@@ -8,7 +8,7 @@ import { LIGHTS, LOOK, LightPreset, lightAt, lookAt, todName } from "./lights";
 import { TONE, CHAR, CLOUD, untone, twoTone } from "./shade";
 import { NOINK } from "./ink";
 import { Pool, Actor, Fx, stage } from "./cast";
-import { FPS, D0, SHOTS, camAt, ShotDef, FLOOR_H, V3, W, windAt, leanAt, lampOn, fallen, doorAt, darkAt, sirenK, sirenX, sirenPulse, clamp01, tvState, tvOn, ledOn, vibAt, TvState, curtainAt, talkAt, knobAt, poleAt, torchOn, torchAim, youZ, todAt, winOn, PRACA, CASA, idoorAt, bangAt, stripOn } from "./story";
+import { FPS, D0, SHOTS, camAt, ShotDef, FLOOR_H, V3, W, windAt, leanAt, lampOn, fallen, doorAt, darkAt, sirenK, sirenX, sirenPulse, clamp01, tvState, tvOn, ledOn, vibAt, TvState, curtainAt, talkAt, knobAt, poleAt, torchOn, torchAim, youZ, todAt, winOn, PRACA, CASA, idoorAt, bangAt, stripOn, HALL, smooth } from "./story";
 
 export const loadKit = async (): Promise<Kit> => ({});
 
@@ -97,7 +97,8 @@ export class World {
   private storm = new THREE.Group();
   private wtrees: { g: THREE.Group; ph: number }[] = [];   // árvores que balançam com o vento
   private v21 = new THREE.Group();
-  private idoor = new THREE.Group(); private strip!: THREE.Mesh;   // vídeo 122: a porta da frente por dentro (dobradiça) e a luz embaixo da porta do quarto                          // vídeo 21: chão até o horizonte, praça e a sua casa
+  private idoor = new THREE.Group(); private strip!: THREE.Mesh;
+  private hall = new THREE.Group(); private myHouse = new THREE.Group();   // vídeo 122 v3: o hall fica DENTRO da sua casa (atrás da porta de verdade)   // vídeo 122: a porta da frente por dentro (dobradiça) e a luz embaixo da porta do quarto                          // vídeo 21: chão até o horizonte, praça e a sua casa
   private big = new THREE.Group();                          // a árvore enorme da frente da sua casa
   private lamp!: THREE.Mesh;
   private smash = new THREE.Group();                        // depois da queda: copa amassada na fachada, buraco, telhas no chão
@@ -551,14 +552,13 @@ export class World {
       // postes de praça (luminária redonda)
       for (const [x, z] of [[1994.8, -15.4], [2001.6, -40.5], [1995.4, -29.5]] as const) { b.add(cyl(0.07, 0.07, 3.6, 10), M.pole, at(x, D0, z)); b.add(new THREE.SphereGeometry(0.22, 14, 10), lam("pracaGlobe", () => ({ color: "#f1ead8" })), at(x, D0 + 3.75, z)); }
       // a SUA CASA, de frente para a rua (porta no centro, a janela do quarto em cima à direita)
-      house(b, 2000.0, 47.6, Math.PI, 8.0, 7.0, 6.4, 23);
-      const frame = lam("winFrame", () => ({ color: "#f2ece0" })), doorM = lam("myDoor", () => ({ color: "#5a3424" }));
-      bx(1999.45, 0.0, 43.95, 2000.55, 2.15, 44.06, doorM);                                    // a porta (fechadura nova, dourada)
-      bx(2000.33, 1.0, 43.9, 2000.43, 1.1, 43.95, lam("lockNew", () => ({ color: "#e0b64a" })));
-      bx(2000.372, 1.025, 43.894, 2000.388, 1.07, 43.9, lam("keyhole", () => ({ color: "#1a140c" })));   // vídeo 122: o buraco da fechadura nova
-      bx(CASA.win[0] - 0.75, CASA.win[1] - 0.65, 43.9, CASA.win[0] + 0.75, CASA.win[1] + 0.65, 44.05, frame);
-      this.winGlass = new THREE.Mesh(new THREE.PlaneGeometry(1.3, 1.1), this.winOffM); this.winGlass.position.set(CASA.win[0], D0 + CASA.win[1], 43.88); this.winGlass.rotation.y = Math.PI; this.winGlass.layers.set(NOINK); R.add(this.winGlass);
-      bx(CASA.win[0] - 0.03, CASA.win[1] - 0.55, 43.86, CASA.win[0] + 0.03, CASA.win[1] + 0.55, 43.87, frame);    // a cruzeta da janela
+      // vídeo 122 v3: a casa num lote próprio (some quando a câmera está dentro), mais funda (9 m, fachada em z 43,74) e com o VÃO da
+      // porta na fachada; a porta é a do hall (this.idoor), que abre de verdade. Sem rodapé de pedra (fecharia o vão).
+      const hb = new Batch(); house(hb, 2000.0, 48.24, Math.PI, 8.0, 9.0, 6.4, 23, D0, [-0.5, 0.5, 2.15]); hb.build(this.myHouse); R.add(this.myHouse);
+      const frame = lam("winFrame", () => ({ color: "#f2ece0" }));
+      bx(CASA.win[0] - 0.75, CASA.win[1] - 0.65, 43.6, CASA.win[0] + 0.75, CASA.win[1] + 0.65, 43.75, frame);
+      this.winGlass = new THREE.Mesh(new THREE.PlaneGeometry(1.3, 1.1), this.winOffM); this.winGlass.position.set(CASA.win[0], D0 + CASA.win[1], 43.58); this.winGlass.rotation.y = Math.PI; this.winGlass.layers.set(NOINK); R.add(this.winGlass);
+      bx(CASA.win[0] - 0.03, CASA.win[1] - 0.55, 43.56, CASA.win[0] + 0.03, CASA.win[1] + 0.55, 43.57, frame);    // a cruzeta da janela
       this.winLight.castShadow = true; this.winLight.shadow.mapSize.set(1024, 1024); this.winLight.shadow.bias = -0.0004; R.add(this.winLight, this.winLight.target);
       this.winLight.position.set(CASA.win[0], D0 + CASA.win[1], 43.7); this.winLight.target.position.set(CASA.win[0] - 0.3, D0, 34.0);
       this.porchL.position.set(2000.0, D0 + 2.5, 43.4); R.add(this.porchL);
@@ -568,7 +568,7 @@ export class World {
         const floorM = lam("hallFloor", () => ({ map: rep(stoneHD("hallFloorHD", ["#6b4a33", "#734f36", "#634430", "#7a5639"], "#3e2a1c"), 2, 4) }));
         const wallM = lam("hallWall", () => ({ color: "#b9b2a3" })), trimM = lam("hallTrim", () => ({ color: "#e6e0d2" }));
         const stairM = lam("hallStair", () => ({ color: "#7a5434" })), doorM = lam("hallDoor", () => ({ color: "#5a3424" })), railM = lam("hallRail", () => ({ color: "#3b2a20" }));
-        b.add(quadUp(2998.2, 3001.8, -0.05, 8.0, 2, 4, D0 + 0.0), floorM);                                    // piso
+        b.add(quadUp(2998.2, 3001.8, -0.05, 8.0, 2, 4, D0 + 0.012), floorM);                                  // piso (1 cm acima do chão da rua, que passa por baixo)                                    // piso
         bx(2998.0, 0, -0.05, 2998.2, 5.8, 8.0, wallM); bx(3001.8, 0, -0.05, 3002.0, 5.8, 8.0, wallM);          // paredes laterais
         bx(2998.0, 0, 8.0, 3002.0, 5.8, 8.2, wallM);                                                          // parede do fundo (a do quarto, em cima)
         bx(2998.0, 5.8, -0.2, 3002.0, 6.0, 8.2, wallM);                                                       // teto
@@ -584,14 +584,16 @@ export class World {
         bx(3000.48, 2.8, 7.94, 3000.55, 4.97, 8.0, trimM); bx(3001.45, 2.8, 7.94, 3001.52, 4.97, 8.0, trimM); bx(3000.48, 4.9, 7.94, 3001.52, 4.97, 8.0, trimM);
         bx(2998.05, 1.0, 3.0, 2998.22, 2.2, 4.1, lam("hallWinFrame", () => ({ color: "#e6e0d2" })));          // janela da esquerda (a lua entra por ela)
         const winQ = new THREE.Mesh(new THREE.PlaneGeometry(1.0, 1.1), new THREE.MeshBasicMaterial({ color: new THREE.Color(0.18, 0.26, 0.5), fog: false }));
-        winQ.position.set(2998.23, D0 + 1.6, 3.55); winQ.rotation.y = Math.PI / 2; winQ.layers.set(NOINK); R.add(winQ);
-        const outQ = new THREE.Mesh(new THREE.PlaneGeometry(3, 3), new THREE.MeshBasicMaterial({ color: new THREE.Color(0.05, 0.07, 0.15), fog: false }));
-        outQ.position.set(3000, D0 + 1.4, -1.6); outQ.layers.set(NOINK); R.add(outQ);                          // lá fora, pela porta aberta: a rua escura
-        this.strip = new THREE.Mesh(new THREE.PlaneGeometry(0.86, 0.035), this.bulbWarm); this.strip.position.set(3001.0, D0 + 2.82, 7.95); this.strip.layers.set(NOINK); R.add(this.strip);
-        b.build(R);
+        winQ.position.set(2998.23, D0 + 1.6, 3.55); winQ.rotation.y = Math.PI / 2; winQ.layers.set(NOINK); this.hall.add(winQ);
+        // v3: sem o quadro escuro fingindo a rua atrás da porta: pela porta aberta aparece a rua de verdade
+        this.strip = new THREE.Mesh(new THREE.PlaneGeometry(0.86, 0.035), this.bulbWarm); this.strip.position.set(3001.0, D0 + 2.82, 7.95); this.strip.layers.set(NOINK); this.hall.add(this.strip);
+        b.build(this.hall);
         // a porta da frente: dobradiça em x 2999,5; abre para dentro (+z)
         const db = new Batch(); db.add(boxGeo(V(0, 0, 0), V(1.0, 2.13, 0.06), 0), doorM); db.add(boxGeo(V(0.82, 1.0, 0.06), V(0.9, 1.06, 0.12), 0), lam("lockNew", () => ({ color: "#e0b64a" })));
-        db.build(this.idoor); this.idoor.position.set(2999.5, D0, -0.06); R.add(this.idoor);
+        db.add(boxGeo(V(0.83, 1.0, -0.05), V(0.93, 1.1, 0.0), 0), lam("lockNew", () => ({ color: "#e0b64a" })));            // v3: a fechadura nova por fora (a da rua)
+        db.add(boxGeo(V(0.872, 1.025, -0.056), V(0.888, 1.07, -0.05), 0), lam("keyhole", () => ({ color: "#1a140c" })));    // e o buraco dela
+        db.build(this.idoor); this.idoor.position.set(2999.5, D0, -0.06); this.hall.add(this.idoor);
+        this.hall.position.set(HALL[0], 0, HALL[1]); R.add(this.hall);                                       // (3000, z) do hall -> (2000, z + 44,01) da rua
       }
     }
     { // ===== vídeo 20 — A VISITA =====
@@ -682,18 +684,20 @@ export class World {
     this.knob.rotation.set(0, 0, id === 18 ? knobAt(t) : 0);
     // vídeo 122: na rua os dois postes acesos; a lanterna do celular na fechadura (5, 7); dentro de casa: a lua pela janela,
     // a lanterna do celular para a frente e a luz do quarto (embaixo da porta) até "off"
-    const street = id <= 7 || id === 14, inside = id >= 8 && id <= 13;
-    this.poleLight.intensity = street ? 900 : 0; this.poleBulb.material = street ? this.bulbWarm : this.glowOff;
-    this.farLight.intensity = street ? 700 : 0;
-    if (id === 5 || id === 7) { this.torch.intensity = 4; this.torch.position.set(2000.75, D0 + 1.25, 42.7); this.torch.target.position.set(2000.34, D0 + 0.98, 43.92); }
-    else if (inside && id !== 12) { this.torch.intensity = 220; this.torch.position.set(3000.12, D0 + 1.15, 0.62); this.torch.target.position.set(3000.3, D0 + 0.2, 4.5); }
-    else this.torch.intensity = 0;
-    if (inside) { this.winLight.color.set("#8fb0ff"); this.winLight.intensity = 240; this.winLight.position.set(2996.6, D0 + 2.7, 3.5); this.winLight.target.position.set(3000.6, D0, 2.4); }
-    else { this.winLight.intensity = 0; }
+    // v3: luzes pelo TEMPO (não pelo plano): a câmera é uma só do quadro 0 à escolha, então nada pode pular num corte invisível.
+    // O plano 14 (loop) volta ao quadro 0, com as luzes do quadro 0.
+    const tl = id === 14 ? 0 : t, H = (x: number, y: number, z: number): [number, number, number] => [x + HALL[0], y, z + HALL[1]];
+    this.poleLight.intensity = 900; this.poleBulb.material = this.bulbWarm; this.farLight.intensity = 700;
+    const tin = smooth((tl - 21.8) / 0.8), tOn = tl < 13.5 ? 0 : tl < 21.8 ? 1 : 1 - smooth((tl - 41.8) / 0.6) + smooth((tl - 49.0) / 0.8);
+    const tp = [2000.75 + (H(3000.12, 0, 0)[0] - 2000.75) * tin, 1.25 - 0.1 * tin, 42.7 + (H(0, 0, 0.62)[2] - 42.7) * tin] as const;
+    const tg = [2000.34 + (H(3000.3, 0, 0)[0] - 2000.34) * tin, 0.98 - 0.78 * tin, 43.92 + (H(0, 0, 4.5)[2] - 43.92) * tin] as const;
+    this.torch.intensity = tOn * (4 + 216 * tin); this.torch.position.set(tp[0], D0 + tp[1], tp[2]); this.torch.target.position.set(tg[0], D0 + tg[1], tg[2]);
+    this.winLight.color.set("#8fb0ff"); this.winLight.intensity = tl > 21.0 ? 240 : 0; this.winLight.position.set(...H(2996.6, D0 + 2.7, 3.5)); this.winLight.target.position.set(...H(3000.6, D0, 2.4));
     this.winGlass.material = this.winOffM;
-    const so = inside && stripOn(t);
-    this.porchL.intensity = so ? 9 : 0; this.porchL.position.set(3001.0, D0 + 3.0, 7.65); this.strip.material = so ? this.bulbWarm : this.glowOff;
-    this.idoor.rotation.set(0, inside ? idoorAt(t) + 0.035 * bangAt(t) : 0, 0);
+    const so = tl > 21.0 && stripOn(tl);
+    this.porchL.intensity = so ? 9 : 0; this.porchL.position.set(...H(3001.0, D0 + 3.0, 7.65)); this.strip.material = so ? this.bulbWarm : this.glowOff;
+    this.idoor.rotation.set(0, idoorAt(tl) + 0.035 * bangAt(tl), 0);
+    { const cp = camAt(id, Math.round(tl * FPS)).pos; this.myHouse.visible = !(cp[2] > 43.7 && Math.abs(cp[0] - 2000) < 2.1 && cp[1] < 6.2); }   // dentro do hall a casa (por fora) some
   }
 
   /** desenha a tela da TV: telejornal genérico com o apresentador falando e o relógio */
@@ -738,7 +742,7 @@ export class World {
     cam.fov = c.fov; cam.near = 0.2; cam.far = 1500; cam.updateProjectionMatrix(); cam.updateMatrixWorld();
     const focus = V(...c.look), dist = cam.position.distanceTo(focus);
     cam.layers.enable(NOINK);
-    const K = tod >= 0 ? lookAt(tod) : LOOK[s.light], sunDir = tod >= 0 ? this.worldSun(tod) : this.shotSun(id, s, L);
+    const K = tod >= 0 ? lookAt(tod) : LOOK[s.light], sunDir = tod >= 0 ? this.worldSun(tod) : this.shotSun(1, SHOTS[0], L);   // v3: a lua fixa (a do plano 1) em todos os planos
     this.hemi.color.set(L.sky); this.hemi.groundColor.set(L.ground); this.hemi.intensity = L.hemiI;
     this.sun.color.set(L.sunCol); this.sun.intensity = L.sunI;
     let Rr = THREE.MathUtils.clamp(dist * 1.15 + 7, 14, 110);

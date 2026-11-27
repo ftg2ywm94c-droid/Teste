@@ -286,19 +286,26 @@ const TRAVEL: [number, V3, V3, number][] = [
 ];
 const loopCam = (): Key[] => [{ f: 0, s: (f) => { const t = f / FPS - TOTAL / FPS, z = youZ(t); return { pos: [2000.55, 0.28 + 0.05 * t, z - 3.3 + 0.25 * t], look: [2000.0, 1.0, z], fov: 58 }; } }];
 // ---------------- vídeo 122: rua (você e ele sob o poste), corrida até a porta, dentro de casa (hall em x 3000) ----------------
-/** você na rua: frente a frente com ele (z 15,1), dá um tranco para trás ao se soltar e corre rua acima até a porta (z 42,6) */
+/** v3: o hall (montado em x 3000) fica DENTRO da sua casa: (3000, z) do hall = (2000, z + 44,01) da rua; a porta do hall é a da rua */
+export const HALL: [number, number] = [-1000, 44.01];
+/** v3: você do quadro 0 à escolha, num só caminho (a câmera não corta mais): frente a frente com ele (z 15,1), tranco, corrida até a
+ *  porta (z 42,6), entra quando a porta abre, recua e fica encostado na porta (z 44,43). face = para onde está virado (z) */
 export const youSt = (t: number) => {
-  if (t < W.e_twist) return { x: 2000.25, z: 15.1, run: false };
-  if (t < 6.8) return { x: 2000.25, z: 15.1 + 0.35 * smooth((t - W.e_twist) / 0.5), run: false };
-  return { x: 2000.25 - 0.05 * smooth((t - 6.8) / 2), z: Math.min(42.6, 15.45 + 3.9 * (t - 6.8)), run: t < 13.75 };
+  if (t < W.e_twist) return { x: 2000.5, z: 15.1, run: false, walk: false, face: -1 };
+  if (t < 6.8) return { x: 2000.5, z: 15.1 + 0.35 * smooth((t - W.e_twist) / 0.5), run: false, walk: false, face: 1 };
+  if (t < 22.35) return { x: 2000.5 - 0.2 * smooth((t - 6.8) / 7), z: Math.min(42.6, 15.45 + 3.9 * (t - 6.8)), run: t < 13.75, walk: false, face: 1 };
+  if (t < 22.9) { const k = smooth((t - 22.35) / 0.5); return { x: 2000.3 - 0.25 * k, z: 42.6 + 2.4 * k, run: false, walk: k < 1, face: 1 }; }
+  return { x: 2000.05, z: 45.0 - 0.57 * smooth((t - 22.9) / 0.4), run: false, walk: false, face: 1 };
 };
-/** ele: parado em z 14,1; corre atrás de você; está a uns 10 m quando você erra a chave; bate na porta às 24,7 s */
+/** ele: parado em z 14,1; corre atrás de você; chega na porta quando ela bate (z 43,3, do lado de fora) e some depois */
 export const manSt = (t: number) => {
   const k = (a: number, b: number, za: number, zb: number) => za + (zb - za) * clamp01((t - a) / (b - a));
-  if (t < 7.6) return { z: 14.1, run: false };
-  if (t < 13.0) return { z: k(7.6, 13.0, 14.1, 27.5), run: true };
-  if (t < 18.9) return { z: k(13.0, 18.9, 27.5, 35.0), run: true };
-  return { z: k(18.9, 22.8, 35.0, 43.0), run: t < 22.8 };
+  const x = 2000.5 - 0.1 * smooth((t - 7.6) / 1.4);
+  if (t < 7.6) return { x, z: 14.1, run: false, gone: false };
+  if (t < 13.0) return { x, z: k(7.6, 13.0, 14.1, 27.5), run: true, gone: false };
+  if (t < 18.9) return { x, z: k(13.0, 18.9, 27.5, 35.0), run: true, gone: false };
+  const z = Math.min(43.3, k(18.9, 22.8, 35.0, 43.0) + Math.max(0, t - 22.8) * 1.5);
+  return { x, z, run: z < 43.3, gone: t > 23.6 };
 };
 /** a chave: 0 na mão dele, 1 na sua (o arranco em "key") */
 export const keySwap = (t: number) => smooth((t - (W.e_key - 0.05)) / 0.18);
@@ -312,29 +319,49 @@ export const bangAt = (t: number) => { for (const b of BANGS) { const d = t - b;
 export const stripOn = (t: number) => t < W.e_off;
 
 const SH1: [number, V3, V3, number][] = [[0.0, [2004.7, 1.3, 14.6], [2000.5, 1.0, 14.6], 42], [2.3, [2004.45, 1.31, 14.6], [2000.5, 1.0, 14.6], 40]];
-/** vídeo 122: a câmera corre na frente de você (olhando rua abaixo, para ele) */
-const runCam = (): Key[] => [{ f: 0, s: (f) => { const t = f / FPS, z = youSt(t).z, b = 0.04 * Math.sin(t * 9.0);
-  return { pos: [2000.75, 1.28 + b, z + 3.3], look: [2000.2, 1.05 + b * 0.5, z - 6.0], fov: 54, roll: 0.012 * Math.sin(t * 4.5) }; } }];
+/** v3: UMA câmera do quadro 0 até a escolha (como no vídeo 21): gira nos dois, sai correndo na sua frente, chega com você na porta,
+ *  vira para ele e volta para a chave, entra na casa antes de você e se vira para a porta batendo, desce até o celular, vira para a
+ *  escada e termina na escolha. Só o plano 14 (loop) corta, para voltar ao quadro 0. Tempos = palavras do áudio. */
+export const TRAVEL2: [number, V3, V3, number][] = [
+  [0.0, [2004.7, 1.3, 14.6], [2000.5, 1.0, 14.6], 42],
+  [2.3, [2004.45, 1.31, 14.6], [2000.5, 1.0, 14.6], 40],
+  [4.3, [2003.7, 1.37, 14.62], [2000.5, 1.1, 14.6], 37],        // "Hard."
+  [5.7, [2003.9, 1.4, 15.1], [2000.5, 1.05, 15.2], 40],         // "twist free"
+  [6.8, [2004.4, 1.42, 16.4], [2000.5, 1.05, 16.1], 44],
+  [7.7, [2003.3, 1.4, 21.0], [2000.4, 1.05, 18.3], 50],         // "run": passa para a sua frente
+  [8.6, [2001.5, 1.32, 26.2], [2000.3, 1.05, 18.5], 54],        // "Behind you": você e ele, rua abaixo
+  [9.6, [2000.9, 1.3, 29.9], [2000.25, 1.05, 20.0], 54],
+  [10.8, [2000.75, 1.28, 34.6], [2000.2, 1.05, 25.0], 54],      // "Fast."
+  [12.0, [2001.2, 1.32, 39.4], [2000.2, 1.05, 30.0], 52],
+  [13.0, [2002.1, 1.4, 42.0], [2000.3, 1.1, 38.5], 48],         // sai da frente, você chega na porta
+  [13.9, [2001.45, 1.32, 42.25], [2000.35, 1.05, 43.7], 40],    // por cima do seu ombro: a fechadura
+  [15.0, [2000.85, 1.2, 42.95], [2000.36, 1.0, 43.92], 36],     // "shaking", "won't go in"
+  [16.8, [2000.95, 1.18, 43.3], [2000.36, 1.0, 43.92], 32],     // de lado na fechadura
+  [18.1, [2001.1, 1.75, 43.3], [2000.2, 1.1, 34.0], 44],        // "Wrong way": sobe e olha por cima de você, rua abaixo: ele vindo
+  [19.3, [2000.95, 1.2, 43.25], [2000.36, 1.0, 43.92], 34],     // "flip"
+  [20.5, [2000.8, 1.15, 43.35], [2000.36, 1.0, 43.92], 30],     // "Click."
+  [21.4, [2000.75, 1.35, 43.0], [2000.3, 1.2, 45.5], 38],       // a porta abre
+  [22.05, [2000.3, 1.55, 43.6], [2000.15, 1.35, 47.5], 44],
+  [22.35, [2000.25, 1.6, 44.6], [2000.25, 1.4, 48.5], 46],      // a câmera entra na frente de você (a porta já toda aberta)
+  [23.0, [2000.95, 1.6, 45.95], [1998.6, 1.4, 46.2], 46],       // e vira...
+  [23.55, [2001.25, 1.58, 47.0], [2000.05, 1.3, 44.35], 46],    // ...para a porta batendo (ele chegando lá fora)
+  [24.2, [2000.6, 1.5, 47.4], [2000.0, 1.25, 44.21], 44],
+  [24.6, [2000.2, 1.42, 46.8], [2000.0, 1.3, 44.31], 42],       // BANG
+  [30.2, [2000.15, 1.44, 46.21], [2000.0, 1.32, 44.31], 40],
+  [33.6, [2000.05, 1.5, 45.31], [2000.0, 1.46, 44.36], 32],     // "silence": no seu rosto
+  [34.6, [2000.3, 1.43, 45.5], [2000.0, 1.37, 44.41], 35],      // o celular
+  [40.9, [2000.35, 1.44, 45.36], [2000.0, 1.38, 44.41], 33],
+  [41.85, [2000.75, 1.2, 45.6], [2002.4, 1.6, 45.3], 44],       // vira...
+  [42.7, [2000.86, 0.96, 45.7], [2001.03, 2.5, 50.7], 47],      // ..."Upstairs": a escada, de baixo
+  [45.2, [2000.9, 1.02, 46.1], [2001.0, 3.3, 51.9], 42],        // a luz embaixo da porta apaga
+  [48.6, [2000.92, 1.06, 46.45], [2001.0, 3.48, 52.0], 37],     // "Someone is already inside"
+  [50.3, [1999.1, 1.7, 48.6], [2000.1, 1.4, 44.6], 50],         // escolha: você na porta (A) e a escada atrás da câmera (B)
+  [63.9, [1999.2, 1.66, 47.9], [2000.1, 1.4, 44.6], 44],
+];
+const TR = spline(TRAVEL2);
 const CAMS: Record<number, Key[]> = {
-  1: path(SH1),
-  2: path([[2.3, [2003.9, 1.35, 14.62], [2000.5, 1.08, 14.6], 40], [5.4, [2003.6, 1.37, 14.62], [2000.5, 1.1, 14.6], 37]]),
-  3: [{ f: 0, s: (f) => { const t = f / FPS, z = youSt(t).z, c = 14.6 + Math.max(0, z - 15.5);   // começa nos dois e passa a seguir você correndo
-    return { pos: [2005.6, 1.35, c], look: [2000.5, 1.0, c + 0.2], fov: 48 }; } }],
-  4: runCam(),
-  5: path([[13.0, [2000.6, 1.2, 42.95], [2000.36, 1.0, 43.92], 36], [17.3, [2000.55, 1.16, 43.1], [2000.36, 1.0, 43.92], 32]]),
-  6: path([[17.3, [2000.02, 1.5, 43.55], [2000.3, 1.2, 33.0], 48], [18.9, [2000.02, 1.5, 43.5], [2000.3, 1.2, 33.0], 44]]),
-  7: path([[18.9, [2000.55, 1.16, 43.1], [2000.36, 1.0, 43.92], 32], [21.6, [2000.5, 1.12, 43.25], [2000.36, 1.0, 43.92], 28]]),
-  8: path([[21.6, [3000.35, 1.55, 4.7], [3000.0, 1.25, 0.2], 46], [24.5, [3000.3, 1.5, 4.2], [3000.0, 1.25, 0.2], 44]]),
-  9: path([[24.5, [3000.2, 1.42, 2.7], [3000.0, 1.3, 0.3], 42], [30.2, [3000.15, 1.44, 2.2], [3000.0, 1.32, 0.3], 40]]),
-  10: path([[30.2, [3000.12, 1.45, 2.2], [3000.0, 1.42, 0.35], 38], [33.6, [3000.05, 1.5, 1.3], [3000.0, 1.46, 0.35], 32]]),
-  11: path([[33.6, [3000.4, 1.42, 1.55], [3000.0, 1.36, 0.4], 36], [42.2, [3000.35, 1.44, 1.35], [3000.0, 1.38, 0.4], 33]]),
-  // vídeo 122 v2: a câmera não para em 45,2 s (o path parava em cada chave e o QC acusou imagem congelada)
-  12: [{ f: 0, s: (f) => { const t = f / FPS, s = Math.min(1, Math.max(0, (t - 42.2) / 7.1)), u = glide((t - 42.2) / 3.0), v = Math.min(1, Math.max(0, (t - 45.2) / 4.1));
-    return { pos: [3000.85 + 0.08 * s, 0.95 + 0.12 * s, 1.6 + 0.9 * s], look: [3001.05 - 0.05 * u, 2.3 + 1.0 * u + 0.2 * v, 6.4 + 1.5 * u + 0.1 * v], fov: 48 - 4 * u - 6 * v }; } }],
-  // vídeo 122 v2: aproximação lenta e contínua durante a escolha (antes quase parada)
-  13: [{ f: 0, s: (f) => { const s = Math.min(1, Math.max(0, (f / FPS - 49.3) / 14.6));
-    return { pos: [2999.05 + 0.12 * s, 1.7 - 0.03 * s, 4.7 - 0.7 * s], look: [3000.45, 1.45, 1.5], fov: 50 - 6 * s }; } }],
-  // vídeo 122 v2: chega ao quadro 0 desacelerando (antes 1,1 s congelado); no último quadro a câmera está no ponto do quadro 0
+  1: TR, 2: TR, 3: TR, 4: TR, 5: TR, 6: TR, 7: TR, 8: TR, 9: TR, 10: TR, 11: TR, 12: TR, 13: TR,
+  // o loop: chega ao quadro 0 desacelerando; no último quadro a câmera está no ponto do quadro 0
   14: [{ f: 0, s: (f) => { const r = Math.max(0, (65.0 - f / FPS) / 1.1) ** 2;
     return { pos: [SH1[0][1][0] + 0.3 * r, SH1[0][1][1] + 0.03 * r, SH1[0][1][2]], look: SH1[0][2], fov: SH1[0][3] + 3 * r }; } }],
 };

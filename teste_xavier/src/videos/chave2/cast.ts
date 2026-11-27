@@ -8,7 +8,7 @@ import {
   Pen, bodyFront, bodySide, KID, fxNote, fxBurst, fxSplash, fxStars, fxCreak, fxRing, fxBlob, fxShadow, fxContact, fxPlank, fxDrum,
   Outfit, Expr, FrontOpts, SideOpts, Prop,
 } from "./toon";
-import { FPS, D0, SHOTS, V3, smooth, clamp01, easeOut, T_SINK, T_WAR, T_NOT, T_OFF, T_FRIDGE, T_HOURS, W, windAt, leanAt, BOLTS, sparkAt, PHONE_NEAR, fallen, doorAt, sirenX, sirenK, sirenPulse, darkAt, KNOCKS, tvOn, ledOn, lampOn, barkAt, vibAt, talkAt, wagAt, alarmAt, phoneOn, youZ, torchOn, poleAt, todAt, youPraca, raiseAt, PRACA, youSt, manSt, keySwap, grabAt, bangAt } from "./story";
+import { FPS, D0, SHOTS, V3, smooth, clamp01, easeOut, T_SINK, T_WAR, T_NOT, T_OFF, T_FRIDGE, T_HOURS, W, windAt, leanAt, BOLTS, sparkAt, PHONE_NEAR, fallen, doorAt, sirenX, sirenK, sirenPulse, darkAt, KNOCKS, tvOn, ledOn, lampOn, barkAt, vibAt, talkAt, wagAt, alarmAt, phoneOn, youZ, torchOn, poleAt, todAt, youPraca, raiseAt, PRACA, youSt, manSt, keySwap, grabAt, bangAt, HALL } from "./story";
 import { LIGHTS, todName } from "./lights";
 import { NOINK } from "./ink";
 import { cardShade, blobMaterial, CARD_K } from "./cardshade";
@@ -1009,50 +1009,48 @@ const ep8 = (id: number, cam: CamInfo, t0: number, out: Stage) => {
   const front = (w: Who, x: number, y: number, z: number, fo: Partial<FrontOpts>) => {
     out.places.push(person(cam, w, x, y, z, { side: false, mirror: false }, { mode: "stand", expr: "nervous", blink: lidAt(t, w.i), look: 0, prop: null, ...fo } as FrontOpts, {})); blob(out, x, y, z); };
   const glint = q(Math.max(0, Math.sin(t * 5.0)), 5);
-  switch (c) {
-    case "g_grab": case "g_wrist": case "g_loop": {
+  // v3: UMA encenação para o vídeo todo, pelo tempo (a câmera não corta mais; o plano só escolhe o tempo — o 14 é o quadro 0).
+  // Cada personagem escolhe o desenho (de frente / de lado) pelo ângulo da câmera, como no vídeo 21.
+  const act = (w: Who, x: number, y: number, z: number, face: number, fo: Partial<FrontOpts>, so: SideOpts) => {
+    const v = viewOf(cam, x, z, 0, face), e = fo.expr ?? "nervous";
+    out.places.push(person(cam, w, x, y, z, v, { mode: "stand", blink: lidAt(t, w.i), look: 0, prop: null, ...fo, expr: e } as FrontOpts, { ...so, expr: e, blink: lidAt(t, w.i) }));
+    blob(out, x, y, z); };
+  const HX = HALL[0], HZ = HALL[1];
+  { // você
+    const y = youSt(t), bz = t > 24.0 ? 0.03 * Math.abs(bangAt(t)) : 0;
+    if (t < W.e_twist) {
       const sw = keySwap(t), reach = t < 1.2 ? Math.sin(Math.PI * clamp01((t - 0.15) / 0.95)) : 0;
-      sideP(YOU, SX, YZ, -1, { mode: reach > 0.02 ? "push" : "stand", pose: q(reach, 10) }, t < W.e_grabs ? (sw > 0.5 ? "stern" : "nervous") : "shock");
-      const g = grabAt(t); sideP(FIG, SX, MZ, 1, { mode: g > 0.02 ? "push" : "stand", pose: q(g, 10) }, g > 0.3 ? "stern" : "neutral");
-      // a chave: na mão dele (z 14,45) -> na sua (z 14,8), num arco rápido
-      keysFx(SX, D0 + 0.98 + 0.1 * Math.sin(Math.PI * sw), MZ + 0.36 + 0.42 * sw, 0.2, sw < 0.5 ? glint : 0);
-      break; }
-    case "g_twist": {
-      const y = youSt(t), m = manSt(t);
-      sideP(YOU, y.x + 0.25, y.z, 1, y.run ? { mode: "march", phase: y.z / 1.5, stride: 1.4 } : { mode: "stand" }, "shock");
-      sideP(FIG, SX, m.z, 1, m.run ? { mode: "march", phase: m.z / 1.5, stride: 1.4 } : { mode: "stand" }, "stern");
-      if (!y.run) keysFx(y.x + 0.25, D0 + 0.95, y.z + 0.25, 0.14, 0);
-      break; }
-    case "g_run": {
-      const y = youSt(t), m = manSt(t);
-      front(YOU, y.x, D0, y.z, { mode: "march", phase: y.z / 1.3, expr: "shock", look: 0 });
-      front(FIG, 2000.35, D0, m.z, { mode: "march", phase: m.z / 1.3, expr: "stern" });
-      break; }
-    case "g_lock": case "g_click": {
-      // a chave na fechadura dourada (2000,33 / 1,0 / 43,9): treme, raspa ("won't go in"), vira, entra ("Click")
-      const jit = t < W.e_click ? 1 : 0, sh = (a: number, f: number) => a * jit * Math.sin(t * f);
-      const scrape = t > W.e_wont && t < W.e_flip ? 0.012 * Math.sin((t - W.e_wont) * 9) : 0;
-      const inK = smooth((t - W.e_click + 0.15) / 0.15), flip = t >= W.e_flip;
-      keysFx(2000.38 + scrape + sh(0.004, 47), D0 + 0.985 + sh(0.004, 61) - 0.035 * (1 - inK), 43.86 + 0.02 * inK, 0.13, 0, flip, true);   // a ponta da chave para cima, na direção do buraco
-      glowAt("torchSpot", "rgba(235,245,255,0.12)", 2000.36, D0 + 1.0, 43.88, 0.35, 0.3);
-      break; }
-    case "g_behind": {
-      const m = manSt(t);
-      front(YOU, 2000.55, D0, 42.1, { expr: "shock", look: -1, prop: "phoneLit" });
-      front(FIG, 2000.35, D0, m.z, { mode: "march", phase: m.z / 1.3, expr: "stern" });
-      break; }
-    case "i_slam": {
-      const k = smooth((t - 21.95) / 0.6), z = -0.7 + 1.9 * k;
-      front(YOU, 3000.0, D0, z, { mode: k < 1 ? "march" : "stand", phase: z / 1.0, expr: "shock", prop: "phoneLit" });
-      break; }
-    case "i_bang": front(YOU, 3000.0, D0, 0.42 + 0.03 * Math.abs(bangAt(t)), { expr: "shock", prop: "phoneLit" }); break;
-    case "i_silence": front(YOU, 3000.0, D0, 0.42, { expr: "nervous", prop: "phoneLit", look: q(Math.sin(t * 0.9), 4) }); break;
-    case "i_phone": front(YOU, 3000.0, D0, 0.42, { expr: t > W.e_nice ? "shock" : "nervous", prop: "phoneLit" });
-      glowAt("screenG2", "rgba(150,190,255,0.4)", 3000.1, D0 + 1.2, 0.3, 0.5, 0.35); break;
-    case "i_stairs": if (t > W.e_someone - 0.2) front(FIG, 3000.75, D0 + 2.8, 7.35, { expr: "neutral" }); break;
-    case "i_choice": front(YOU, 3000.35, D0, 1.5, { expr: "nervous", prop: "phoneLit", look: -1 });
-      glowAt("screenG3", "rgba(150,190,255,0.35)", 3000.45, D0 + 1.2, 1.38, 0.5, 0.35); break;
+      act(YOU, y.x, D0, y.z, y.face, { expr: t < W.e_grabs ? (sw > 0.5 ? "stern" : "nervous") : "shock" }, { mode: reach > 0.02 ? "push" : "stand", pose: q(reach, 10) });
+    } else {
+      const moving = y.run || y.walk, ph = y.z / (y.run ? 1.5 : 1.0);
+      const atDoor = t >= 13.75 && t < 22.35, inside = t >= 22.35;
+      const expr: Expr = y.run ? "shock" : atDoor ? (t > 17.3 && t < 18.9 ? "shock" : "nervous") : !inside ? "shock"
+        : t < 30.2 ? "shock" : t < 33.6 ? "nervous" : t < 42.2 ? (t > W.e_nice ? "shock" : "nervous") : "nervous";
+      const look = atDoor && t > 17.3 && t < 18.9 ? -1 : t >= 30.2 && t < 33.6 ? q(Math.sin(t * 0.9), 4) : t >= 49.3 ? -1 : 0;
+      act(YOU, y.x, D0, y.z + bz, y.face, { mode: moving ? "march" : "stand", phase: ph, expr, look, prop: t >= 13.75 ? "phoneLit" : null },
+        moving ? { mode: "march", phase: ph, stride: y.run ? 1.4 : 1.0 } : { mode: "stand" });
+      if (t < 6.8) keysFx(y.x, D0 + 0.95, y.z + 0.25, 0.14, 0);   // a chave na sua mão, antes de correr
+    }
   }
+  { // ele (na rua até a porta bater; depois some, do lado de fora)
+    const m = manSt(t);
+    if (t < 7.6) { const g = grabAt(t); act(FIG, m.x, D0, m.z, 1, { expr: g > 0.3 ? "stern" : "neutral" }, { mode: g > 0.02 ? "push" : "stand", pose: q(g, 10) }); }
+    else if (!m.gone) act(FIG, m.x, D0, m.z, 1, { mode: m.run ? "march" : "stand", phase: m.z / 1.3, expr: "stern" }, m.run ? { mode: "march", phase: m.z / 1.5, stride: 1.4 } : { mode: "stand" });
+  }
+  if (t < W.e_twist) { const sw = keySwap(t);   // a chave: na mão dele (z 14,45) -> na sua (z 14,8), num arco rápido
+    keysFx(2000.5, D0 + 0.98 + 0.1 * Math.sin(Math.PI * sw), 14.1 + 0.36 + 0.42 * sw, 0.2, sw < 0.5 ? glint : 0); }
+  if (t >= 13.75 && t < 21.6) {
+    // a chave na fechadura dourada (2000,38 / 1,0 / 43,9): treme, raspa ("won't go in"), vira, entra ("Click")
+    const jit = t < W.e_click ? 1 : 0, sh = (a: number, f: number) => a * jit * Math.sin(t * f);
+    const scrape = t > W.e_wont && t < W.e_flip ? 0.012 * Math.sin((t - W.e_wont) * 9) : 0;
+    const inK = smooth((t - W.e_click + 0.15) / 0.15), flip = t >= W.e_flip;
+    keysFx(2000.38 + scrape + sh(0.004, 47), D0 + 0.985 + sh(0.004, 61) - 0.035 * (1 - inK), 43.86 + 0.02 * inK, 0.13, 0, flip, true);
+    glowAt("torchSpot", "rgba(235,245,255,0.12)", 2000.36, D0 + 1.0, 43.88, 0.35, 0.3);
+  }
+  if (t >= 33.6 && t < 42.2) glowAt("screenG2", "rgba(150,190,255,0.4)", 3000.1 + HX, D0 + 1.2, 0.3 + HZ, 0.5, 0.35);
+  if (t >= 49.3) glowAt("screenG3", "rgba(150,190,255,0.35)", 3000.1 + HX, D0 + 1.2, 0.3 + HZ, 0.5, 0.35);
+  // lá em cima: alguém já está dentro (depois de "Someone")
+  if (t > W.e_someone - 0.2) act(FIG, 3000.75 + HX, D0 + 2.8, 7.35 + HZ, -1, { expr: "neutral" }, { mode: "stand" });
 };
 
 /** everything with a face in shot `id` at time t */
