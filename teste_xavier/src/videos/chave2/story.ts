@@ -239,7 +239,13 @@ const spline = (keys: [number, V3, V3, number][]): Key[] => {
     let u = clamp01((t - k1[0]) / (k2[0] - k1[0]));
     if (i === 0) u = u * u * (2 - u);                                  // sai do repouso (o último quadro do plano 5 está parado)
     if (i + 2 >= keys.length) u = u * (1 + u - u * u);                 // chega no repouso
-    const cr = (a: number, b: number, c: number, d: number) => 0.5 * (2 * b + (-a + c) * u + (2 * a - 5 * b + 4 * c - d) * u * u + (-a + 3 * b - 3 * c + d) * u * u * u);
+    // v3: tangentes pelo TEMPO de cada trecho (Catmull-Rom não uniforme): com trechos de durações muito diferentes, a versão uniforme
+    // passava do ponto (um giro rápido antes de um trecho longo empurrava a mira para fora de você)
+    const T0 = k0[0], T1 = k1[0], T2 = k2[0], T3 = k3[0], D = T2 - T1;
+    const h00 = 2 * u * u * u - 3 * u * u + 1, h10 = u * u * u - 2 * u * u + u, h01 = -2 * u * u * u + 3 * u * u, h11 = u * u * u - u * u;
+    const cr = (a: number, b: number, c: number, d: number) => {
+      const m1 = j0 === i ? c - b : ((c - a) / (T2 - T0)) * D, m2 = j3 === i + 1 ? c - b : ((d - b) / (T3 - T1)) * D;
+      return h00 * b + h10 * m1 + h01 * c + h11 * m2; };
     const pos = [0, 1, 2].map((k) => cr(k0[1][k], k1[1][k], k2[1][k], k3[1][k])) as V3;
     const [yaw, pit, dist] = [0, 1, 2].map((k) => cr(A[j0][k], A[i][k], A[i + 1][k], A[j3][k]));
     const look: V3 = [pos[0] + dist * Math.cos(pit) * Math.sin(yaw), pos[1] + dist * Math.sin(pit), pos[2] + dist * Math.cos(pit) * Math.cos(yaw)];
@@ -293,8 +299,8 @@ export const HALL: [number, number] = [-1000, 44.01];
 export const youSt = (t: number) => {
   if (t < W.e_twist) return { x: 2000.5, z: 15.1, run: false, walk: false, face: -1 };
   if (t < 6.8) return { x: 2000.5, z: 15.1 + 0.35 * smooth((t - W.e_twist) / 0.5), run: false, walk: false, face: 1 };
-  if (t < 22.35) return { x: 2000.5 - 0.2 * smooth((t - 6.8) / 7), z: Math.min(42.6, 15.45 + 3.9 * (t - 6.8)), run: t < 13.75, walk: false, face: 1 };
-  if (t < 22.9) { const k = smooth((t - 22.35) / 0.5); return { x: 2000.3 - 0.25 * k, z: 42.6 + 2.4 * k, run: false, walk: k < 1, face: 1 }; }
+  if (t < 22.1) return { x: 2000.5 - 0.2 * smooth((t - 6.8) / 7), z: Math.min(42.6, 15.45 + 3.9 * (t - 6.8)), run: t < 13.75, walk: false, face: 1 };
+  if (t < 22.9) { const k = smooth((t - 22.1) / 0.45); return { x: 2000.3 - 0.25 * k, z: 42.6 + 2.4 * k, run: false, walk: k < 1, face: 1 }; }
   return { x: 2000.05, z: 45.0 - 0.57 * smooth((t - 22.9) / 0.4), run: false, walk: false, face: 1 };
 };
 /** ele: parado em z 14,1; corre atrás de você; chega na porta quando ela bate (z 43,3, do lado de fora) e some depois */
@@ -340,23 +346,26 @@ export const TRAVEL2: [number, V3, V3, number][] = [
   [18.1, [2001.1, 1.75, 43.3], [2000.2, 1.1, 34.0], 44],        // "Wrong way": sobe e olha por cima de você, rua abaixo: ele vindo
   [19.3, [2000.95, 1.2, 43.25], [2000.36, 1.0, 43.92], 34],     // "flip"
   [20.5, [2000.8, 1.15, 43.35], [2000.36, 1.0, 43.92], 30],     // "Click."
-  [21.4, [2000.75, 1.35, 43.0], [2000.3, 1.2, 45.5], 38],       // a porta abre
-  [22.05, [2000.3, 1.55, 43.6], [2000.15, 1.35, 47.5], 44],
-  [22.35, [2000.25, 1.6, 44.6], [2000.25, 1.4, 48.5], 46],      // a câmera entra na frente de você (a porta já toda aberta)
-  [23.0, [2000.95, 1.6, 45.95], [1998.6, 1.4, 46.2], 46],       // e vira...
-  [23.55, [2001.25, 1.58, 47.0], [2000.05, 1.3, 44.35], 46],    // ...para a porta batendo (ele chegando lá fora)
-  [24.2, [2000.6, 1.5, 47.4], [2000.0, 1.25, 44.21], 44],
+  [21.4, [2001.1, 1.4, 43.1], [2000.3, 1.2, 45.5], 38],         // a porta abre (a câmera à sua direita)
+  [22.3, [2000.95, 1.6, 42.85], [2000.2, 1.3, 46.0], 44],       // à sua direita, entrando junto (ele logo atrás)
+  [22.65, [2000.25, 1.55, 43.85], [2000.05, 1.25, 46.5], 46],   // passa pela porta (já toda aberta) atrás de você
+  [23.05, [2000.85, 1.52, 44.55], [2000.05, 1.25, 44.95], 46],
+  [23.25, [2001.1, 1.51, 44.85], [2000.05, 1.25, 44.75], 46],
+  [23.5, [2001.15, 1.5, 45.3], [2000.05, 1.25, 44.5], 46],     // dá a volta em você pela direita...
+  [24.25, [2000.95, 1.5, 46.7], [2000.05, 1.25, 44.45], 46],     // ...e fica de frente, a porta fechada atrás de você
   [24.6, [2000.2, 1.42, 46.8], [2000.0, 1.3, 44.31], 42],       // BANG
   [30.2, [2000.15, 1.44, 46.21], [2000.0, 1.32, 44.31], 40],
   [33.6, [2000.05, 1.5, 45.31], [2000.0, 1.46, 44.36], 32],     // "silence": no seu rosto
   [34.6, [2000.3, 1.43, 45.5], [2000.0, 1.37, 44.41], 35],      // o celular
   [40.9, [2000.35, 1.44, 45.36], [2000.0, 1.38, 44.41], 33],
-  [41.85, [2000.75, 1.2, 45.6], [2002.4, 1.6, 45.3], 44],       // vira...
+  [41.85, [2000.6, 1.25, 45.5], [1998.1, 1.6, 47.6], 44],       // vira pela porta e pela janela (luar)...
   [42.7, [2000.86, 0.96, 45.7], [2001.03, 2.5, 50.7], 47],      // ..."Upstairs": a escada, de baixo
   [45.2, [2000.9, 1.02, 46.1], [2001.0, 3.3, 51.9], 42],        // a luz embaixo da porta apaga
   [48.6, [2000.92, 1.06, 46.45], [2001.0, 3.48, 52.0], 37],     // "Someone is already inside"
-  [50.3, [1999.1, 1.7, 48.6], [2000.1, 1.4, 44.6], 50],         // escolha: você na porta (A) e a escada atrás da câmera (B)
-  [63.9, [1999.2, 1.66, 47.9], [2000.1, 1.4, 44.6], 44],
+  [49.4, [1999.95, 1.4, 47.7], [1998.1, 1.6, 47.6], 46],        // vira pela janela...
+  [50.3, [1999.1, 1.7, 48.6], [2000.05, 1.35, 44.45], 50],         // escolha: você na porta (A) e a escada atrás da câmera (B)
+  [51.5, [1999.12, 1.69, 48.45], [2000.05, 1.35, 44.45], 49],
+  [63.9, [1999.2, 1.66, 47.9], [2000.05, 1.35, 44.45], 44],
 ];
 const TR = spline(TRAVEL2);
 const CAMS: Record<number, Key[]> = {

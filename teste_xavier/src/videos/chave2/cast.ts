@@ -1023,7 +1023,7 @@ const ep8 = (id: number, cam: CamInfo, t0: number, out: Stage) => {
       act(YOU, y.x, D0, y.z, y.face, { expr: t < W.e_grabs ? (sw > 0.5 ? "stern" : "nervous") : "shock" }, { mode: reach > 0.02 ? "push" : "stand", pose: q(reach, 10) });
     } else {
       const moving = y.run || y.walk, ph = y.z / (y.run ? 1.5 : 1.0);
-      const atDoor = t >= 13.75 && t < 22.35, inside = t >= 22.35;
+      const atDoor = t >= 13.75 && t < 22.1, inside = t >= 22.1;
       const expr: Expr = y.run ? "shock" : atDoor ? (t > 17.3 && t < 18.9 ? "shock" : "nervous") : !inside ? "shock"
         : t < 30.2 ? "shock" : t < 33.6 ? "nervous" : t < 42.2 ? (t > W.e_nice ? "shock" : "nervous") : "nervous";
       const look = atDoor && t > 17.3 && t < 18.9 ? -1 : t >= 30.2 && t < 33.6 ? q(Math.sin(t * 0.9), 4) : t >= 49.3 ? -1 : 0;
