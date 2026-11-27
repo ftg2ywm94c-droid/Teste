@@ -35,3 +35,11 @@ O empurrão do Ep. 1 durou ~4 dias (espectadores únicos: pico em 21/11 com ~3,5
 - Quadro 0 do vídeo 20: relógio "03:00" no canto, selo "A VISITA · EP. 1", "no final, você decide" e o carimbo "BIP BIP", tudo junto (feito antes da regra da abertura limpa).
 - Canal: 1.329 inscritos; 39,3 mil visualizações e 351 h nos últimos 28 dias.
 - Os números da 1ª hora ainda mudam; comparar de novo com 2–3 dias.
+
+## Vídeo 121 (The Key Ep. 1, canal novo You Decide 3D), 23 h no ar (prints de 27/11 12:10)
+- 1.020 visualizações (557 intencionais), +4 inscritos; 100% de não inscritos.
+- Origem: feed dos Shorts 97,2% (991), pesquisa 2,4% (24), páginas do canal 3, outros 2.
+- Curva: subiu até ~1 mil nas primeiras ~4 h e ficou parada depois (o teste inicial do feed não foi ampliado).
+- Continuaram 57,2% / deslizaram 42,8% (vídeo 20 BR: 54,8%; Ônibus Ep. 1 BR: 73,4%).
+- Retenção e países: ainda sem dados (o YouTube diz que leva até 2 dias).
+- Termos de pesquisa ("19 chofwa weh", "candy", "super mario bros wonder") somam só ~24 views e não têm relação com o vídeo: não dá para tirar conclusão deles.
