@@ -42,7 +42,7 @@ def run(c):
     pr.stdin.close(); assert pr.wait() == 0, 'ffmpeg falhou'
 # áudio: voz original intacta (só reamostrada) + leito de efeitos/música abaixado pela voz
 # camada de tensão/suspense opcional (v2/lib/tensao.py): entra no leito e é abaixada pela voz junto com efeitos e música
-TENS = os.path.join(OUT, 'tensao.wav'); HAS_T = os.path.exists(TENS); W_T = os.environ.get('W_TENSAO', '0.75')
+TENS = os.path.join(OUT, 'tensao.wav'); HAS_T = os.path.exists(TENS); W_T = os.environ.get('W_TENSAO', str(getattr(SH, 'W_TENSAO', 0.75)))   # por episódio no plan.py (padrão 0,75: os outros vídeos não mudam)
 BED = (f'[1:a][2:a][3:a]amix=inputs=3:weights=1 0.55 {W_T}:normalize=0[bed];' if HAS_T else '[1:a][2:a]amix=inputs=2:weights=1 0.55:normalize=0[bed];')
 SFX_BUS = getattr(SH, 'SFX_BUS', None)   # (ganho, razão do ducking) — efeitos num canal próprio, só levemente abaixados pela voz
 if SFX_BUS:   # vídeos a partir do 11: efeitos fora do leito (música/tensão continuam abaixadas como antes)

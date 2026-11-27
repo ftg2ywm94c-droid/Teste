@@ -1,5 +1,9 @@
 [
 [
+0.0,
+"efeitos -8 dB enquanto a narração fala (envelope da voz), cheios nas pausas"
+],
+[
 0.64,
 "arranco da chave (swish)"
 ],
@@ -60,8 +64,8 @@
 "pancadas na porta (murro_porta, ElevenLabs) em BANG, hits, once, twice"
 ],
 [
-33.96,
-"celular vibra"
+32.75,
+"celular vibra no fim do silêncio, antes de \"Your phone\" (não cobre a fala)"
 ],
 [
 37.79,

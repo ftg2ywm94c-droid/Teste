@@ -4,8 +4,9 @@ montagem em narracao/122_vozes/montar.py)."""
 import math
 FPS = 30; END = 65.0          # TOTAL = 1950 quadros na story.ts
 NATIVE = True
-SFX_BUS = (2.0, 2)
+SFX_BUS = (1.6, 2)   # efeitos um pouco abaixo do vídeo 21 (pedido: não cobrir a narração; medido em medir_mix.py)
 LIMITER = 0.8
+W_TENSAO = 0.55   # tensão um pouco abaixo do padrão (0,75): não cobrir a narração (medir_mix.py)
 RENDER_RES = '1080x1920 nativo (Remotion + three.js, skill Xavier)'
 W = dict(e_rip=0.3, e_key=0.76, e_grabs=2.62, e_hard=4.3, e_twist=5.7, e_run=7.38, e_behind=8.82, e_fast=10.8, e_shaking=14.06,
          e_wont=15.56, e_wrong=17.5, e_flip=19.18, e_click=20.38, e_inside=22.0, e_slam=23.16, e_bang=24.68, e_hits=26.12, e_once=27.56,

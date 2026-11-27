@@ -39,7 +39,7 @@ inK = np.clip((tg - 23.1) / 0.1, 0, 1) * np.clip(1 - (tg - 63.9) / 0.1, 0, 1) * 
 sfx += room * inK[:, None] * 0.05
 EV.append((23.1, 'ambiente: rua lá fora até a porta bater; dentro, um quarto quase mudo; o silêncio de 30,3 a 33,5 s'))
 # ---- o arranco: whoosh + chaveiro; o tranco no pulso ----
-put(sw(7), K['e_key'] - 0.12, 0.35, tag='arranco da chave (swish)'); put(norm(ia('chaveiro.mp3'))[int(0.18 * SR):], K['e_key'], 0.6, tag='chaveiro na sua mão')
+put(sw(7), K['e_key'] - 0.12, 0.35, tag='arranco da chave (swish)'); put(norm(ia('chaveiro.mp3'))[int(0.18 * SR):], K['e_key'], 0.3, tag='chaveiro na sua mão')
 put(norm(cc0('impacto_hit_01.flac')), K['e_grabs'] + 0.25, 0.3, tag='ele agarra o pulso'); put(norm(cc0('impacto_hit_04.flac')), K['e_hard'], 0.42, tag='"hard": tranco')
 put(sw(10), K['e_twist'], 0.38, tag='você se solta')
 # ---- a corrida: os seus passos (contatos do ciclo, phase = z/1,5) e os dele, mais pesados e graves ----
@@ -61,17 +61,17 @@ put(woo, 8.55, 0.25, tag='corte para a câmera correndo')
 ch = norm(ia('chaveiro.mp3'))
 put(ch, 13.1, 0.45); put(ch[int(0.4 * SR):], 15.3, 0.45, tag='chaveiro tremendo na mão')
 mac = norm(ia('macaneta.mp3')); put(hpf(mac, 900)[:int(1.6 * SR)], K['e_wont'], 0.45, tag='a chave raspando (não entra)')
-put(norm(cc0('clique_7.flac')), K['e_flip'] + 0.05, 0.3, tag='flip')
+put(norm(cc0('clique_7.flac')), K['e_flip'] + 0.05, 0.14, tag='flip')
 put(norm(cc0('clique_1.flac')), K['e_click'], 0.75, tag='Click (a chave entra)'); put(norm(ia('fechadura_troca.mp3'))[int(1.72 * SR):int(2.3 * SR)], K['e_click'] + 0.1, 0.4)
 # ---- dentro: a porta abre, você entra, a porta BATE ----
-put(mac[int(0.15 * SR):int(1.1 * SR)], 21.7, 0.3, tag='porta abre')
-slam = norm(ia('porta_bate_forte.mp3')); put(slam, K['e_slam'] - 0.08, 0.95, tag='SLAM (porta bate)')
+put(mac[int(0.15 * SR):int(1.1 * SR)], 21.7, 0.16, tag='porta abre')
+slam = norm(ia('porta_bate_forte.mp3')); put(slam, K['e_slam'] - 0.08, 0.6, tag='SLAM (porta bate)')
 # ---- as 4 pancadas dele do lado de fora (BANG, hits, once, twice) ----
 mu = norm(ia('murro_porta.mp3'))
 for tb, g in [(K['e_bang'], 1.0), (K['e_hits'] + 0.1, 0.8), (K['e_once'], 0.9), (K['e_twice'], 1.0)]: put(mu, tb, g)
 EV.append((K['e_bang'], 'pancadas na porta (murro_porta, ElevenLabs) em BANG, hits, once, twice'))
 # ---- o celular vibra; a mensagem chega ----
-put(norm(ia('celular_vibra.mp3')), K['e_phone'], 0.55, tag='celular vibra')
+put(fade(norm(ia('celular_vibra.mp3'))[:int(0.75 * SR)], 0.005, 0.12), 32.75, 0.4, tag='celular vibra no fim do silêncio, antes de "Your phone" (não cobre a fala)')
 put(norm(cc0('bolha_1.flac')), K['e_nice'] - 0.15, 0.3, tag='mensagem chega')
 # ---- em cima: o interruptor do quarto (a luz apaga) e o rangido do assoalho ----
 put(norm(cc0('clique_5.flac')), K['e_off'] - 0.02, 0.45, tag='a luz do quarto apaga (interruptor)')
@@ -92,8 +92,17 @@ for a, b, frq, g in [(0.0, 5.4, (73.4, 110, 146.8, 174.6), 0.06), (5.4, 13.0, (7
                      (23.1, 30.2, (65.4, 98, 130.8, 155.6), 0.06), (33.6, 42.2, (61.7, 92.5, 123.5, 146.8), 0.05), (42.2, 49.3, (58.3, 87.3, 116.5, 138.6), 0.06),
                      (49.3, END, (73.4, 110, 146.8, 174.6), 0.06)]:
     put(pad(frq, b - a + 0.6, g), a, 1.0, bus=mus)
+# ---- a narração por cima: os efeitos abaixam ~8 dB enquanto ele fala (ataque 30 ms, volta em 250 ms) e voltam cheios nas pausas ----
+vo = load(os.path.join(ROOT, 'narracao', '122_narracao.mp3'))[:N, 0]; vo = np.pad(vo, (0, N - len(vo)))
+hop = 480; env = np.array([np.sqrt(np.mean(vo[i:i + hop] ** 2)) for i in range(0, N, hop)]); env = env / max(env.max(), 1e-9)
+on = np.clip((20 * np.log10(env + 1e-6) + 40) / 15, 0, 1)                      # 0 abaixo de -40 dB, 1 acima de -25 dB (relativo ao pico)
+sm = np.zeros_like(on); a_up, a_dn = np.exp(-hop / (0.03 * SR)), np.exp(-hop / (0.25 * SR))
+for i in range(len(on)): sm[i] = on[i] + (sm[i - 1] - on[i]) * (a_up if on[i] > sm[i - 1] else a_dn) if i else on[i]
+DUCK = 10 ** (-8 / 20); duck = np.repeat(1 - (1 - DUCK) * sm, hop)[:N]
+sfx *= duck[:, None]; mus *= (1 - 0.6 * (1 - duck))[:, None]
+EV.append((0.0, 'efeitos -8 dB enquanto a narração fala (envelope da voz), cheios nas pausas'))
 pk = max(np.abs(sfx).max(), 1e-9); sfx *= min(1.0, 0.89 / pk)
-pk = max(np.abs(mus).max(), 1e-9); mus *= 0.5 / pk
+pk = max(np.abs(mus).max(), 1e-9); mus *= 0.38 / pk   # trilha um pouco mais baixa que no 21 (não cobrir a narração)
 wavfile.write(os.path.join(OUT, 'sfx.wav'), SR, (sfx * 32767).astype(np.int16))
 wavfile.write(os.path.join(OUT, 'music.wav'), SR, (mus * 32767).astype(np.int16))
 json.dump(sorted(EV), open(os.path.join(OUT, 'sfx_events.json'), 'w'), ensure_ascii=False, indent=0)
