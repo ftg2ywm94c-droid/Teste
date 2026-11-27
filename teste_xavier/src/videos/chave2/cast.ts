@@ -1026,7 +1026,7 @@ const ep8 = (id: number, cam: CamInfo, t0: number, out: Stage) => {
       const atDoor = t >= 13.75 && t < 22.1, inside = t >= 22.1;
       const expr: Expr = y.run ? "shock" : atDoor ? (t > 17.3 && t < 18.9 ? "shock" : "nervous") : !inside ? "shock"
         : t < 30.2 ? "shock" : t < 33.6 ? "nervous" : t < 42.2 ? (t > W.e_nice ? "shock" : "nervous") : "nervous";
-      const look = atDoor && t > 17.3 && t < 18.9 ? -1 : t >= 30.2 && t < 33.6 ? q(Math.sin(t * 0.9), 4) : t >= 49.3 ? -1 : 0;
+      const look = atDoor && t > 17.3 && t < 18.9 ? -1 : t >= 30.2 && t < 33.6 ? q(Math.sin(t * 0.9), 4) : 0;
       act(YOU, y.x, D0, y.z + bz, y.face, { mode: moving ? "march" : "stand", phase: ph, expr, look, prop: t >= 13.75 ? "phoneLit" : null },
         moving ? { mode: "march", phase: ph, stride: y.run ? 1.4 : 1.0 } : { mode: "stand" });
       if (t < 6.8) keysFx(y.x, D0 + 0.95, y.z + 0.25, 0.14, 0);   // a chave na sua mão, antes de correr
@@ -1048,7 +1048,7 @@ const ep8 = (id: number, cam: CamInfo, t0: number, out: Stage) => {
     glowAt("torchSpot", "rgba(235,245,255,0.12)", 2000.36, D0 + 1.0, 43.88, 0.35, 0.3);
   }
   if (t >= 33.6 && t < 42.2) glowAt("screenG2", "rgba(150,190,255,0.4)", 3000.1 + HX, D0 + 1.2, 0.3 + HZ, 0.5, 0.35);
-  if (t >= 49.3) glowAt("screenG3", "rgba(150,190,255,0.35)", 3000.1 + HX, D0 + 1.2, 0.3 + HZ, 0.5, 0.35);
+  if (t >= 49.3) { const y = youSt(t); glowAt("screenG3", "rgba(150,190,255,0.35)", y.x + 0.05, D0 + 1.2, y.z - 0.12, 0.5, 0.35); }
   // lá em cima: alguém já está dentro (depois de "Someone")
   if (t > W.e_someone - 0.2) act(FIG, 3000.75 + HX, D0 + 2.8, 7.35 + HZ, -1, { expr: "neutral" }, { mode: "stand" });
 };

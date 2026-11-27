@@ -8,7 +8,7 @@ import { LIGHTS, LOOK, LightPreset, lightAt, lookAt, todName } from "./lights";
 import { TONE, CHAR, CLOUD, untone, twoTone } from "./shade";
 import { NOINK } from "./ink";
 import { Pool, Actor, Fx, stage } from "./cast";
-import { FPS, D0, SHOTS, camAt, ShotDef, FLOOR_H, V3, W, windAt, leanAt, lampOn, fallen, doorAt, darkAt, sirenK, sirenX, sirenPulse, clamp01, tvState, tvOn, ledOn, vibAt, TvState, curtainAt, talkAt, knobAt, poleAt, torchOn, torchAim, youZ, todAt, winOn, PRACA, CASA, idoorAt, bangAt, stripOn, HALL, smooth } from "./story";
+import { FPS, D0, SHOTS, camAt, ShotDef, FLOOR_H, V3, W, windAt, leanAt, lampOn, fallen, doorAt, darkAt, sirenK, sirenX, sirenPulse, clamp01, tvState, tvOn, ledOn, vibAt, TvState, curtainAt, talkAt, knobAt, poleAt, torchOn, torchAim, youZ, todAt, winOn, PRACA, CASA, idoorAt, bangAt, stripOn, HALL, smooth, youSt } from "./story";
 
 export const loadKit = async (): Promise<Kit> => ({});
 
@@ -692,6 +692,7 @@ export class World {
     const tp = [2000.75 + (H(3000.12, 0, 0)[0] - 2000.75) * tin, 1.25 - 0.1 * tin, 42.7 + (H(0, 0, 0.62)[2] - 42.7) * tin] as const;
     const tg = [2000.34 + (H(3000.3, 0, 0)[0] - 2000.34) * tin, 0.98 - 0.78 * tin, 43.92 + (H(0, 0, 4.5)[2] - 43.92) * tin] as const;
     this.torch.intensity = tOn * (4 + 216 * tin); this.torch.position.set(tp[0], D0 + tp[1], tp[2]); this.torch.target.position.set(tg[0], D0 + tg[1], tg[2]);
+    if (tl >= 41.0) { const y = youSt(tl); this.torch.position.set(y.x + 0.07, D0 + 1.15, y.z + 0.2); this.torch.target.position.set(y.x + 0.25, D0 + 0.2, y.z + 4.0); }   // segue o seu celular até a escada
     this.winLight.color.set("#8fb0ff"); this.winLight.intensity = tl > 21.0 ? 240 : 0; this.winLight.position.set(...H(2996.6, D0 + 2.7, 3.5)); this.winLight.target.position.set(...H(3000.6, D0, 2.4));
     this.winGlass.material = this.winOffM;
     const so = tl > 21.0 && stripOn(tl);

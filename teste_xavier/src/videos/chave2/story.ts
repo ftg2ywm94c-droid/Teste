@@ -301,7 +301,9 @@ export const youSt = (t: number) => {
   if (t < 6.8) return { x: 2000.5, z: 15.1 + 0.35 * smooth((t - W.e_twist) / 0.5), run: false, walk: false, face: 1 };
   if (t < 22.1) return { x: 2000.5 - 0.2 * smooth((t - 6.8) / 7), z: Math.min(42.6, 15.45 + 3.9 * (t - 6.8)), run: t < 13.75, walk: false, face: 1 };
   if (t < 22.9) { const k = smooth((t - 22.1) / 0.45); return { x: 2000.3 - 0.25 * k, z: 42.6 + 2.4 * k, run: false, walk: k < 1, face: 1 }; }
-  return { x: 2000.05, z: 45.0 - 0.57 * smooth((t - 22.9) / 0.4), run: false, walk: false, face: 1 };
+  if (t < 41.2) return { x: 2000.05, z: 45.0 - 0.57 * smooth((t - 22.9) / 0.4), run: false, walk: false, face: 1 };
+  const k = smooth((t - 41.2) / 1.1);   // "Upstairs": sai da porta e vai até o pé da escada
+  return { x: 2000.05 + 0.2 * k, z: 44.43 + 1.47 * k, run: false, walk: k > 0 && k < 1, face: 1 };
 };
 /** ele: parado em z 14,1; corre atrás de você; chega na porta quando ela bate (z 43,3, do lado de fora) e some depois */
 export const manSt = (t: number) => {
@@ -346,26 +348,28 @@ export const TRAVEL2: [number, V3, V3, number][] = [
   [18.1, [2001.1, 1.75, 43.3], [2000.2, 1.1, 34.0], 44],        // "Wrong way": sobe e olha por cima de você, rua abaixo: ele vindo
   [19.3, [2000.95, 1.2, 43.25], [2000.36, 1.0, 43.92], 34],     // "flip"
   [20.5, [2000.8, 1.15, 43.35], [2000.36, 1.0, 43.92], 30],     // "Click."
-  [21.4, [2001.1, 1.4, 43.1], [2000.3, 1.2, 45.5], 38],         // a porta abre (a câmera à sua direita)
-  [22.3, [2000.95, 1.6, 42.85], [2000.2, 1.3, 46.0], 44],       // à sua direita, entrando junto (ele logo atrás)
-  [22.65, [2000.25, 1.55, 43.85], [2000.05, 1.25, 46.5], 46],   // passa pela porta (já toda aberta) atrás de você
-  [23.05, [2000.85, 1.52, 44.55], [2000.05, 1.25, 44.95], 46],
-  [23.25, [2001.1, 1.51, 44.85], [2000.05, 1.25, 44.75], 46],
-  [23.5, [2001.15, 1.5, 45.3], [2000.05, 1.25, 44.5], 46],     // dá a volta em você pela direita...
-  [24.25, [2000.95, 1.5, 46.7], [2000.05, 1.25, 44.45], 46],     // ...e fica de frente, a porta fechada atrás de você
+  [21.4, [2000.85, 1.45, 41.9], [1999.9, 1.3, 46.0], 40],       // a porta abre (a câmera atrás de você, à direita, mirando o vão)
+  [22.3, [2000.7, 1.6, 42.4], [1999.95, 1.3, 46.0], 44],        // você entra (ele logo atrás)
+  [22.65, [2000.25, 1.55, 43.85], [2000.05, 1.25, 46.5], 48],   // passa pela porta (já toda aberta) atrás de você
+  [23.05, [2001.2, 1.5, 44.4], [2000.05, 1.25, 44.95], 50],
+  [23.25, [2001.45, 1.5, 44.95], [2000.05, 1.25, 44.75], 50],   // dá a volta em você pela direita (a 1,4 m)...
+  [23.5, [2001.45, 1.5, 45.6], [2000.05, 1.25, 44.5], 50],
+  [24.25, [2001.0, 1.5, 46.7], [2000.05, 1.25, 44.45], 46],     // ...e fica de frente, a porta fechada atrás de você
   [24.6, [2000.2, 1.42, 46.8], [2000.0, 1.3, 44.31], 42],       // BANG
   [30.2, [2000.15, 1.44, 46.21], [2000.0, 1.32, 44.31], 40],
   [33.6, [2000.05, 1.5, 45.31], [2000.0, 1.46, 44.36], 32],     // "silence": no seu rosto
   [34.6, [2000.3, 1.43, 45.5], [2000.0, 1.37, 44.41], 35],      // o celular
   [40.9, [2000.35, 1.44, 45.36], [2000.0, 1.38, 44.41], 33],
-  [41.85, [2000.6, 1.25, 45.5], [1998.1, 1.6, 47.6], 44],       // vira pela porta e pela janela (luar)...
-  [42.7, [2000.86, 0.96, 45.7], [2001.03, 2.5, 50.7], 47],      // ..."Upstairs": a escada, de baixo
-  [45.2, [2000.9, 1.02, 46.1], [2001.0, 3.3, 51.9], 42],        // a luz embaixo da porta apaga
-  [48.6, [2000.92, 1.06, 46.45], [2001.0, 3.48, 52.0], 37],     // "Someone is already inside"
-  [49.4, [1999.95, 1.4, 47.7], [1998.1, 1.6, 47.6], 46],        // vira pela janela...
-  [50.3, [1999.1, 1.7, 48.6], [2000.05, 1.35, 44.45], 50],         // escolha: você na porta (A) e a escada atrás da câmera (B)
-  [51.5, [1999.12, 1.69, 48.45], [2000.05, 1.35, 44.45], 49],
-  [63.9, [1999.2, 1.66, 47.9], [2000.05, 1.35, 44.45], 44],
+  [41.6, [2001.15, 1.42, 45.15], [2000.1, 1.3, 44.9], 40],      // você sai da porta e anda até a escada; a câmera dá a volta...
+  [42.2, [2000.95, 1.3, 44.4], [2000.3, 1.5, 46.6], 44],        // ...e fica atrás de você
+  [42.8, [2000.5, 1.15, 44.35], [2001.0, 2.6, 50.7], 47],       // "Upstairs": por cima do seu ombro, a escada
+  [45.2, [2000.55, 1.12, 44.6], [2001.0, 3.3, 51.9], 42],       // a luz embaixo da porta do quarto apaga
+  [48.3, [2000.6, 1.12, 44.85], [2001.0, 3.45, 52.0], 38],      // "Someone is already inside"
+  [48.9, [2001.25, 1.5, 45.9], [2001.15, 3.0, 51.0], 44],       // a câmera sobe a escada...
+  [49.6, [2001.25, 2.7, 48.3], [1999.0, 2.6, 48.3], 48],        // ...virando pela janela...
+  [50.3, [2001.3, 3.6, 50.0], [2000.25, 1.2, 45.6], 52],        // ...e olha lá de cima: você embaixo, a porta atrás (A), a escada (B)
+  [51.5, [2001.3, 3.58, 49.9], [2000.25, 1.2, 45.6], 51],
+  [63.9, [2001.25, 3.5, 49.6], [2000.25, 1.15, 45.6], 46],
 ];
 const TR = spline(TRAVEL2);
 const CAMS: Record<number, Key[]> = {
