@@ -328,9 +328,15 @@ const CAMS: Record<number, Key[]> = {
   9: path([[24.5, [3000.2, 1.42, 2.7], [3000.0, 1.3, 0.3], 42], [30.2, [3000.15, 1.44, 2.2], [3000.0, 1.32, 0.3], 40]]),
   10: path([[30.2, [3000.12, 1.45, 2.2], [3000.0, 1.42, 0.35], 38], [33.6, [3000.05, 1.5, 1.3], [3000.0, 1.46, 0.35], 32]]),
   11: path([[33.6, [3000.4, 1.42, 1.55], [3000.0, 1.36, 0.4], 36], [42.2, [3000.35, 1.44, 1.35], [3000.0, 1.38, 0.4], 33]]),
-  12: path([[42.2, [3000.85, 0.95, 1.6], [3001.05, 2.3, 6.4], 48], [45.2, [3000.9, 1.0, 1.9], [3001.0, 3.3, 7.9], 44], [49.3, [3000.92, 1.05, 2.4], [3001.0, 3.5, 8.0], 38]]),
-  13: path([[49.3, [2999.05, 1.7, 4.7], [3000.45, 1.45, 1.5], 50], [63.9, [2999.15, 1.68, 4.3], [3000.45, 1.45, 1.5], 46]]),
-  14: [{ f: 0, s: () => ({ pos: SH1[0][1], look: SH1[0][2], fov: SH1[0][3] }) }],
+  // vídeo 122 v2: a câmera não para em 45,2 s (o path parava em cada chave e o QC acusou imagem congelada)
+  12: [{ f: 0, s: (f) => { const t = f / FPS, s = Math.min(1, Math.max(0, (t - 42.2) / 7.1)), u = glide((t - 42.2) / 3.0), v = Math.min(1, Math.max(0, (t - 45.2) / 4.1));
+    return { pos: [3000.85 + 0.08 * s, 0.95 + 0.12 * s, 1.6 + 0.9 * s], look: [3001.05 - 0.05 * u, 2.3 + 1.0 * u + 0.2 * v, 6.4 + 1.5 * u + 0.1 * v], fov: 48 - 4 * u - 6 * v }; } }],
+  // vídeo 122 v2: aproximação lenta e contínua durante a escolha (antes quase parada)
+  13: [{ f: 0, s: (f) => { const s = Math.min(1, Math.max(0, (f / FPS - 49.3) / 14.6));
+    return { pos: [2999.05 + 0.12 * s, 1.7 - 0.03 * s, 4.7 - 0.7 * s], look: [3000.45, 1.45, 1.5], fov: 50 - 6 * s }; } }],
+  // vídeo 122 v2: chega ao quadro 0 desacelerando (antes 1,1 s congelado); no último quadro a câmera está no ponto do quadro 0
+  14: [{ f: 0, s: (f) => { const r = Math.max(0, (65.0 - f / FPS) / 1.1) ** 2;
+    return { pos: [SH1[0][1][0] + 0.3 * r, SH1[0][1][1] + 0.03 * r, SH1[0][1][2]], look: SH1[0][2], fov: SH1[0][3] + 3 * r }; } }],
 };
 /** impact kicks: flip sign every frame, decay over 7 frames */
 const KICKS: number[] = [0.82, 4.3, 5.7, 23.16, 24.68, 26.22, 27.56, 28.82];   // vídeo 122: arranco, "hard", soltar, porta batendo e as batidas
