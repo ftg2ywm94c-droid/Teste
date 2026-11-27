@@ -13,6 +13,7 @@ import { NoiteLivreShort, NOITELIVRE_FRAMES } from "./videos/noitelivre/NoiteLiv
 import { VisitaShort, VISITA_FRAMES } from "./videos/visita/Visita";
 import { PilotoShort, PILOTO_FRAMES } from "./videos/piloto/Piloto";
 import { ChaveShort, CHAVE_FRAMES } from "./videos/chave/Chave";
+import { Chave2Short, CHAVE2_FRAMES } from "./videos/chave2/Chave2";
 import { Onibus2Short, ONIBUS2_FRAMES } from "./videos/onibus2/Onibus2";
 // Cada desenho novo: copie templates/pisa/ para src/videos/<nome>/, renomeie e registre aqui.
 export const Root: React.FC = () => (
@@ -29,6 +30,7 @@ export const Root: React.FC = () => (
     <Composition id="VisitaShort" component={VisitaShort} durationInFrames={VISITA_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="PilotoShort" component={PilotoShort} durationInFrames={PILOTO_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="ChaveShort" component={ChaveShort} durationInFrames={CHAVE_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="Chave2Short" component={Chave2Short} durationInFrames={CHAVE2_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="Onibus2Short" component={Onibus2Short} durationInFrames={ONIBUS2_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="BridgeShort" component={BridgeShort} durationInFrames={BRIDGE_FRAMES} fps={30} width={1080} height={1920} />
   </>
