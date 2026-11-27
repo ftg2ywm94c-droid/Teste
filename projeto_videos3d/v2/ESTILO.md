@@ -63,3 +63,33 @@ O que fez funcionar, a repetir:
 - Alvo, medido no trecho do evento, depois do ducking: efeitos de ação (apagar, encaixe, impacto de título, trovão) de −2 a −10 dB da voz; ambientes (chuva, grilos, geladeira) de −12 a −20 dB. Nada acima da voz.
 - Camadas mínimas por vídeo: swish em todo corte, whoosh + impacto grave em todo título/número grande, um ambiente por cenário, e "power down/up" ou equivalente nas viradas da história.
 - Medir sempre (efeito isolado passando pela mesma cadeia × voz) antes de declarar pronto. O QC da narração (correlação ≥ 0,9) garante que a voz continua clara.
+
+## 10. Padrão 3D atual, para todos os temas e projetos novos (pedido do usuário em 27/11/2026)
+Vale para todo vídeo novo, de qualquer série ou tema. Referências: vídeo 21 (A Chave Ep. 1) e vídeo 122 v3 (The Key Ep. 2).
+Motor: Remotion + three.js (skill Xavier), render nativo em 1080x1920. Nunca declarar nativo quando for ampliação.
+
+**Câmera contínua (a regra que o 122 v1 quebrou)**
+- Uma câmera só, do quadro 0 até a escolha ou o CTA: spline Catmull-Rom com a mira interpolada por ângulo (`spline()` no `story.ts`). Ela vai de uma cena para a outra atravessando o cenário: gira em volta, corre junto, sobe em grua, passa por portas.
+- Corte seco só onde a história pula de lugar ou de tempo e não há caminho físico, e no loop final (que volta ao quadro 0).
+- Cenários ligados de verdade. Se a história entra numa casa, o interior fica atrás da porta real e a fachada tem o vão. Nada de interior montado longe e trocado num corte.
+- Personagens, objetos e luzes seguem o TEMPO do vídeo, não o plano. Ninguém some, pula de lugar ou muda de luz numa troca de plano invisível. Luz da lua ou do sol fixa no mundo.
+- Simular a câmera quadro a quadro antes do render (como `simcam.py`):
+  - giro ≤ 4°/quadro em cena calma e ≤ 5,5°/quadro em cena de ação;
+  - nada de atravessar parede, porta, degrau ou personagem;
+  - checar a velocidade.
+- A câmera nunca fica parada: o QC reprova trechos congelados de 0,5 s ou mais.
+
+**Textura, luz e acabamento (o nível do piloto e do vídeo 21, sem regredir)**
+- Superfícies com textura HD procedural: asfalto e calçada com rachadura e brilho, fachadas `facadeHD` com relevo (janelas, cornija, soleira), piso de pedra ou madeira `stoneHD`, telhado. Nada de cor chapada onde se vê de perto.
+- Luz com fonte real no cenário: postes, lanterna do celular, luz de janela, luz embaixo da porta, lua. Sombras ligadas. Brilho nas lâmpadas (bloom).
+- Profundidade de campo que acompanha a mira da câmera. Contorno toon (ink) e grade de cor por preset de luz.
+- Personagens 2D toon no mundo 3D, com desenho de frente ou de lado escolhido pelo ângulo da câmera (`viewOf`), piscadas, expressão trocando na palavra e objeto na mão.
+- Legenda de 1 palavra, Poppins, amarelo. Selo da série com fade, sem texto no quadro 0.
+- A cada vídeo, subir um degrau no visual (§5) sem quebrar o que funciona.
+
+**Antes de declarar pronto**
+- Quadros de teste nos momentos-chave e varredura de todos os quadros (em branco, saltos).
+- QC 15/15, mixagem medida (§9) e emenda do loop.
+- Conferir também se a câmera seguiu esta seção: contar os cortes. O único corte esperado é o do loop.
+
+A §8 ("um corte por ideia") vale para vídeos de dados com motion graphics. Nas histórias em 3D vale esta seção.
