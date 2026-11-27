@@ -5,6 +5,13 @@
 - `scripts/add_narration.py`: MP3 → MP4 com legenda sincronizada, ducking e −14 LUFS.
 - Para recuperar: `git checkout be24c75 -- projeto_videos3d` (a tag não pôde ser enviada ao GitHub: o acesso desta sessão só permite o branch de trabalho).
 
+## v0.25: vídeo 122 "The Key · Ep. 2" (continuação pela opção A, canal You Decide 3D) (2026-11-27)
+- Nova composição `Chave2Short` (`teste_xavier/src/videos/chave2/`): agarrão e arranco da chave, perseguição na rua, fechadura, porta batendo, interior da casa, celular, escada com a luz do quarto apagando.
+- Narração em inglês com a mesma voz do Ep. 1 (`narracao/122_vozes/`). Efeitos novos de IA em `assets/sfx_ia/` (ver `CREDITOS.md`).
+- Mixagem com os efeitos abaixando pela voz. `assemble.py` passa a ler `W_TENSAO` por episódio (padrão 0,75, os outros vídeos não mudam).
+- 1º render reprovado no QC por imagem congelada. Câmeras dos planos 12–14 refeitas e esses planos renderizados de novo.
+- QC 15/15 (−14,1 LUFS, TP −1,8). Detalhes em `v2/ep122/LIMITACOES.md` e `v2/ep122/qc_report_122.json`. Capa: quadro de 10,0 s.
+
 ## v0.24: vídeo 121 "The Key · Ep. 1" (A Chave em inglês, canal You Decide 3D) (2026-11-26)
 - Mesmos quadros do 21, sem novo render; voz Spuds Oxley em inglês (`eleven_v3`, `en`), cada frase no instante da frase em português (`narracao/121_vozes/montar.py`), palavras de ação alinhadas em 3 frases.
 - Títulos, legenda, capa, foto de perfil e banner do canal em inglês (`canal_us/`). `transcribe.py` com `WHISPER_LANG` (padrão `pt`).
