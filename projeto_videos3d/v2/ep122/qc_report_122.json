@@ -18,9 +18,9 @@
  "black_segments": 0,
  "freeze_segments": 0,
  "motion": {
-  "mean": 1.968,
-  "min": 0.0,
-  "static_frames": 39
+  "mean": 4.896,
+  "min": 0.0212,
+  "static_frames": 0
  },
  "loudness_lufs": -14.1,
  "true_peak_dbfs": -1.8,

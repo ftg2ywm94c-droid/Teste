@@ -5,6 +5,12 @@
 - `scripts/add_narration.py`: MP3 → MP4 com legenda sincronizada, ducking e −14 LUFS.
 - Para recuperar: `git checkout be24c75 -- projeto_videos3d` (a tag não pôde ser enviada ao GitHub: o acesso desta sessão só permite o branch de trabalho).
 
+## v0.26: vídeo 122 v3, câmera contínua (2026-11-28)
+- `Chave2Short` refeito com uma câmera só (spline `TRAVEL2`) que atravessa a rua, entra pela porta real e sobe a escada. O corredor foi encaixado atrás da fachada, e personagens e luzes seguem o tempo do vídeo. Único corte: o loop.
+- Escada sem parede vazia e plano final sem congelar. 1950 quadros nativos 1080x1920 varridos. QC 15/15.
+- Novo padrão para todos os projetos: `v2/ESTILO.md` §10 e `CLAUDE.md` na raiz.
+- v2 recuperável: `v2/ep122/frames_v2_backup/`, `out/122_the_key_ep2_v2_1080x1920.mp4`, `thumbnails/122_the_key_ep2_cover_v2.jpg`. Detalhes em `v2/ep122/LIMITACOES.md`.
+
 ## v0.25: vídeo 122 "The Key · Ep. 2" (continuação pela opção A, canal You Decide 3D) (2026-11-27)
 - Nova composição `Chave2Short` (`teste_xavier/src/videos/chave2/`): agarrão e arranco da chave, perseguição na rua, fechadura, porta batendo, interior da casa, celular, escada com a luz do quarto apagando.
 - Narração em inglês com a mesma voz do Ep. 1 (`narracao/122_vozes/`). Efeitos novos de IA em `assets/sfx_ia/` (ver `CREDITOS.md`).
