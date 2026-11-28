@@ -365,10 +365,11 @@ export const TRAVEL2: [number, V3, V3, number][] = [
   [42.8, [2000.5, 1.15, 44.35], [2001.0, 2.6, 50.7], 47],       // "Upstairs": por cima do seu ombro, a escada
   [45.2, [2000.55, 1.12, 44.6], [2001.0, 3.3, 51.9], 42],       // a luz embaixo da porta do quarto apaga
   [48.3, [2000.6, 1.12, 44.85], [2001.0, 3.45, 52.0], 38],      // "Someone is already inside"
-  [48.9, [2001.25, 1.5, 45.9], [2001.15, 3.0, 51.0], 44],       // a câmera sobe a escada...
-  [49.6, [2001.25, 2.7, 48.3], [1999.0, 2.6, 48.3], 48],        // ...virando pela janela...
-  [50.3, [2001.3, 3.6, 50.0], [2000.25, 1.2, 45.6], 52],        // ...e olha lá de cima: você embaixo, a porta atrás (A), a escada (B)
-  [51.5, [2001.3, 3.58, 49.9], [2000.25, 1.2, 45.6], 51],
+  [48.9, [2001.15, 1.25, 45.2], [2000.25, 1.3, 45.9], 42],         // a câmera contorna você pela direita...
+  [49.6, [2001.35, 1.45, 46.15], [2000.25, 1.25, 45.95], 44],   // ..."You decide": você de perto, de lado
+  [50.15, [2001.25, 2.0, 47.3], [2000.25, 1.25, 45.9], 46],      // ...sobe a escada de costas, olhando para você...
+  [50.75, [2001.3, 3.3, 49.4], [2000.25, 1.2, 45.6], 50],
+  [51.4, [2001.3, 3.6, 50.0], [2000.25, 1.2, 45.6], 52],        // ...e lá de cima: você embaixo, a porta atrás (A), a escada (B)
   [63.9, [2001.25, 3.5, 49.6], [2000.25, 1.15, 45.6], 46],
 ];
 const TR = spline(TRAVEL2);
