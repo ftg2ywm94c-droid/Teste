@@ -1,0 +1,266 @@
+[
+ {
+  "take": "E0",
+  "corte": [
+   0.0,
+   1.18
+  ],
+  "pt": 0.0,
+  "em": 0.08,
+  "atraso": 0.08,
+  "texto": "Two a .m."
+ },
+ {
+  "take": "E0",
+  "corte": [
+   1.36,
+   2.6
+  ],
+  "pt": 1.8,
+  "em": 1.8,
+  "atraso": 0.0,
+  "texto": "You're walking home."
+ },
+ {
+  "take": "E0",
+  "corte": [
+   3.18,
+   6.72
+  ],
+  "pt": 3.18,
+  "em": 3.18,
+  "atraso": 0.0,
+  "texto": "The streetlight on the corner flickers and dies."
+ },
+ {
+  "take": "E0",
+  "corte": [
+   7.54,
+   9.28
+  ],
+  "pt": 7.44,
+  "em": 7.44,
+  "atraso": 0.0,
+  "texto": "You turn on your phone's flashlight."
+ },
+ {
+  "take": "E0",
+  "corte": [
+   9.94,
+   13.36
+  ],
+  "pt": 9.2,
+  "em": 9.26,
+  "atraso": 0.06,
+  "texto": "At the end of the street, someone is standing there,"
+ },
+ {
+  "take": "E0",
+  "corte": [
+   13.92,
+   15.76
+  ],
+  "pt": 12.84,
+  "em": 12.84,
+  "atraso": 0.0,
+  "texto": "and he's holding your key."
+ },
+ {
+  "take": "E1",
+  "corte": [
+   0.0,
+   3.28
+  ],
+  "pt": 16.08,
+  "em": 16.08,
+  "atraso": 0.0,
+  "texto": "You lost that key this afternoon at the park."
+ },
+ {
+  "take": "E1",
+  "corte": [
+   4.02,
+   7.32
+  ],
+  "pt": 19.9,
+  "em": 19.9,
+  "atraso": 0.0,
+  "texto": "You looked under the bench, in the grass, by the curb,"
+ },
+ {
+  "take": "E1",
+  "corte": [
+   8.18,
+   12.06
+  ],
+  "pt": 24.02,
+  "em": 24.02,
+  "atraso": 0.0,
+  "texto": "and across the park there was a man standing still,"
+ },
+ {
+  "take": "E1",
+  "corte": [
+   12.66,
+   13.82
+  ],
+  "pt": 27.8,
+  "em": 27.98,
+  "atraso": 0.18,
+  "texto": "watching you look."
+ },
+ {
+  "take": "E2",
+  "corte": [
+   0.0,
+   1.54
+  ],
+  "pt": 29.22,
+  "em": 29.22,
+  "atraso": 0.0,
+  "texto": "The sun went down."
+ },
+ {
+  "take": "E2",
+  "corte": [
+   2.24,
+   6.7
+  ],
+  "pt": 31.58,
+  "em": 31.58,
+  "atraso": 0.0,
+  "texto": "You gave up, called a locksmith, and changed the lock."
+ },
+ {
+  "take": "E2",
+  "corte": [
+   7.76,
+   10.6
+  ],
+  "pt": 36.22,
+  "em": 36.22,
+  "atraso": 0.0,
+  "texto": "So you're safe now, right?"
+ },
+ {
+  "take": "E3",
+  "corte": [
+   0.0,
+   6.0
+  ],
+  "pt": 38.5,
+  "em": 39.14,
+  "atraso": 0.64,
+  "texto": "Except now, he raises the key and points at your house."
+ },
+ {
+  "take": "E3",
+  "corte": [
+   7.08,
+   9.24
+  ],
+  "pt": 45.94,
+  "em": 45.94,
+  "atraso": 0.0,
+  "texto": "Your bedroom light turns on."
+ },
+ {
+  "take": "E3",
+  "corte": [
+   9.8,
+   10.84
+  ],
+  "pt": 49.36,
+  "em": 49.36,
+  "atraso": 0.0,
+  "texto": "You live alone."
+ },
+ {
+  "take": "E4",
+  "corte": [
+   0.0,
+   1.06
+  ],
+  "pt": 51.68,
+  "em": 51.68,
+  "atraso": 0.0,
+  "texto": "You decide."
+ },
+ {
+  "take": "E4",
+  "corte": [
+   1.88,
+   2.4
+  ],
+  "pt": 53.16,
+  "em": 53.16,
+  "atraso": 0.0,
+  "texto": "A."
+ },
+ {
+  "take": "E4",
+  "corte": [
+   3.12,
+   4.94
+  ],
+  "pt": 53.82,
+  "em": 53.82,
+  "atraso": 0.0,
+  "texto": "Take the key from his hand."
+ },
+ {
+  "take": "E4",
+  "corte": [
+   5.66,
+   6.46
+  ],
+  "pt": 56.1,
+  "em": 56.1,
+  "atraso": 0.0,
+  "texto": "B."
+ },
+ {
+  "take": "E4",
+  "corte": [
+   6.66,
+   7.82
+  ],
+  "pt": 56.92,
+  "em": 56.98,
+  "atraso": 0.06,
+  "texto": "Run home."
+ },
+ {
+  "take": "E4",
+  "corte": [
+   8.84,
+   10.96
+  ],
+  "pt": 58.04,
+  "em": 58.22,
+  "atraso": 0.18,
+  "texto": "Comment A or B."
+ },
+ {
+  "take": "E4",
+  "corte": [
+   11.42,
+   14.3
+  ],
+  "pt": 60.66,
+  "em": 60.66,
+  "atraso": 0.0,
+  "texto": "The most commented answer becomes part two."
+ },
+ {
+  "take": "E4",
+  "corte": [
+   14.66,
+   15.78
+  ],
+  "pt": 63.58,
+  "em": 63.62,
+  "atraso": 0.04,
+  "texto": "What if..."
+ }
+]

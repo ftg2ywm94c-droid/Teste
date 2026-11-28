@@ -1,0 +1,86 @@
+[Script Info]
+; Texto: roteiro aprovado. Tempos: faster-whisper (medium) por palavra, alinhado ao roteiro.
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Leg,Poppins,92,&H00FFFFFF,&H00FFFFFF,&H00101010,&H78000000,-1,0,0,0,100,100,0,0,1,5,2,2,90,90,560,1
+Style: Nota,Poppins,38,&H00FFFFFF,&H00FFFFFF,&H64000000,&H64000000,-1,0,0,0,100,100,1,0,3,10,0,8,80,80,140,1
+Style: Hud,Poppins,62,&H00FFFFFF,&H00FFFFFF,&H50000000,&H50000000,-1,0,0,0,100,100,1,0,3,18,0,8,80,80,250,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:01.84,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}A{\c&HFFFFFF&} {\c&H0028D7FF&}PORTA{\c&HFFFFFF&} {\c&H0028D7FF&}FECHA{\c&HFFFFFF&} COM VOCÊ
+Dialogue: 1,0:00:01.84,0:00:02.70,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}LÁ DENTRO.
+Dialogue: 1,0:00:03.08,0:00:04.68,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E O ÔNIBUS {\c&H0028D7FF&}PASSA{\c&HFFFFFF&} {\c&H0028D7FF&}DIRETO{\c&HFFFFFF&}
+Dialogue: 1,0:00:04.68,0:00:05.60,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PELO SEU PONTO.
+Dialogue: 1,0:00:05.96,0:00:06.76,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NO LETREIRO,
+Dialogue: 1,0:00:07.06,0:00:08.54,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NOTURNO VIRA
+Dialogue: 1,0:00:08.54,0:00:09.80,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}FORA{\c&HFFFFFF&} {\c&H0028D7FF&}DE{\c&HFFFFFF&} {\c&H0028D7FF&}SERVIÇO.{\c&HFFFFFF&}
+Dialogue: 1,0:00:10.02,0:00:11.22,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ELE SAI DA ROTA
+Dialogue: 1,0:00:11.22,0:00:12.22,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E ENTRA NUMA RUA
+Dialogue: 1,0:00:12.22,0:00:14.08,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SEM {\c&H0028D7FF&}NENHUM{\c&HFFFFFF&} {\c&H0028D7FF&}POSTE{\c&HFFFFFF&} {\c&H0028D7FF&}ACESO.{\c&HFFFFFF&}
+Dialogue: 1,0:00:14.52,0:00:15.18,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}AS LUZES
+Dialogue: 1,0:00:15.18,0:00:16.20,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DO TETO COMEÇAM
+Dialogue: 1,0:00:16.20,0:00:16.94,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A {\c&H0028D7FF&}APAGAR,{\c&HFFFFFF&}
+Dialogue: 1,0:00:17.14,0:00:18.02,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}UMA POR UMA,
+Dialogue: 1,0:00:18.30,0:00:19.16,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}DA{\c&HFFFFFF&} {\c&H0028D7FF&}FRENTE{\c&HFFFFFF&}
+Dialogue: 1,0:00:19.16,0:00:19.86,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}PRO{\c&HFFFFFF&} {\c&H0028D7FF&}FUNDO.{\c&HFFFFFF&}
+Dialogue: 1,0:00:20.26,0:00:20.78,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O CELULAR
+Dialogue: 1,0:00:20.78,0:00:21.62,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}VIBRA{\c&HFFFFFF&} NO BANCO
+Dialogue: 1,0:00:21.62,0:00:22.36,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DA FRENTE.
+Dialogue: 1,0:00:23.02,0:00:24.06,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}BOA{\c&HFFFFFF&} {\c&H0028D7FF&}ESCOLHA.{\c&HFFFFFF&}
+Dialogue: 1,0:00:24.34,0:00:25.32,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}AGORA {\c&H0028D7FF&}NÃO{\c&HFFFFFF&} {\c&H0028D7FF&}OLHA{\c&HFFFFFF&}
+Dialogue: 1,0:00:25.32,0:00:26.24,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}PRO{\c&HFFFFFF&} {\c&H0028D7FF&}RETROVISOR.{\c&HFFFFFF&}
+Dialogue: 1,0:00:26.82,0:00:27.58,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ OLHA.
+Dialogue: 1,0:00:27.58,0:00:29.06,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O MOTORISTA NÃO
+Dialogue: 1,0:00:29.06,0:00:30.22,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}TÁ TE ENCARANDO.
+Dialogue: 1,0:00:30.58,0:00:31.26,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ELE TÁ OLHANDO
+Dialogue: 1,0:00:31.26,0:00:32.48,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PRO {\c&H0028D7FF&}BANCO{\c&HFFFFFF&} {\c&H0028D7FF&}DO{\c&HFFFFFF&} {\c&H0028D7FF&}FUNDO.{\c&HFFFFFF&}
+Dialogue: 1,0:00:32.82,0:00:33.42,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PRO LUGAR
+Dialogue: 1,0:00:33.42,0:00:34.16,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ONDE VOCÊ TAVA
+Dialogue: 1,0:00:34.16,0:00:35.12,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SENTADO AGORA
+Dialogue: 1,0:00:35.12,0:00:35.62,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}HÁ POUCO.
+Dialogue: 1,0:00:36.06,0:00:36.84,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E {\c&H0028D7FF&}TEM{\c&HFFFFFF&} {\c&H0028D7FF&}ALGUÉM{\c&HFFFFFF&}
+Dialogue: 1,0:00:36.84,0:00:37.70,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}SENTADO{\c&HFFFFFF&} {\c&H0028D7FF&}LÁ.{\c&HFFFFFF&}
+Dialogue: 1,0:00:38.08,0:00:38.86,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O ÔNIBUS ENTRA
+Dialogue: 1,0:00:38.86,0:00:40.28,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NUMA {\c&H0028D7FF&}GARAGEM{\c&HFFFFFF&} {\c&H0028D7FF&}ENORME.{\c&HFFFFFF&}
+Dialogue: 1,0:00:40.72,0:00:41.44,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DEZENAS
+Dialogue: 1,0:00:41.44,0:00:41.96,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DE ÔNIBUS
+Dialogue: 1,0:00:41.96,0:00:42.72,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PARADOS,
+Dialogue: 1,0:00:42.96,0:00:43.26,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}TODOS
+Dialogue: 1,0:00:43.26,0:00:44.12,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}COM O LETREIRO
+Dialogue: 1,0:00:44.12,0:00:44.74,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ACESO,
+Dialogue: 1,0:00:45.04,0:00:46.44,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E {\c&H0028D7FF&}NENHUM{\c&HFFFFFF&} {\c&H0028D7FF&}MOTORISTA.{\c&HFFFFFF&}
+Dialogue: 1,0:00:46.96,0:00:47.94,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A PORTA ABRE.
+Dialogue: 1,0:00:48.38,0:00:48.60,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PELA
+Dialogue: 1,0:00:48.60,0:00:49.62,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PRIMEIRA VEZ,
+Dialogue: 1,0:00:49.62,0:00:50.30,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O MOTORISTA
+Dialogue: 1,0:00:50.30,0:00:52.44,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}FALA: {\c&H0028D7FF&}ÚLTIMA{\c&HFFFFFF&} {\c&H0028D7FF&}PARADA.{\c&HFFFFFF&}
+Dialogue: 1,0:00:52.44,0:00:53.14,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E O CELULAR
+Dialogue: 1,0:00:53.14,0:00:54.60,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}COMEÇA A TOCAR.
+Dialogue: 1,0:00:54.60,0:00:55.28,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}NÚMERO{\c&HFFFFFF&}
+Dialogue: 1,0:00:55.28,0:00:56.18,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}DESCONHECIDO.{\c&HFFFFFF&}
+Dialogue: 1,0:00:56.72,0:00:58.40,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ TEM {\c&H0028D7FF&}CINCO{\c&HFFFFFF&} {\c&H0028D7FF&}SEGUNDOS.{\c&HFFFFFF&}
+Dialogue: 1,0:00:58.96,0:01:00.06,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}OPÇÃO A: VOCÊ
+Dialogue: 1,0:01:00.06,0:01:00.40,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ATENDE
+Dialogue: 1,0:01:00.40,0:01:01.14,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A LIGAÇÃO.
+Dialogue: 1,0:01:01.52,0:01:02.30,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}OPÇÃO B:
+Dialogue: 1,0:01:02.60,0:01:03.52,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ DESCE
+Dialogue: 1,0:01:03.52,0:01:04.56,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E CORRE PELA
+Dialogue: 1,0:01:04.56,0:01:05.46,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}GARAGEM.
+Dialogue: 1,0:01:05.80,0:01:07.28,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}COMENTA {\c&H0028D7FF&}A{\c&HFFFFFF&} {\c&H0028D7FF&}OU{\c&HFFFFFF&} {\c&H0028D7FF&}B.{\c&HFFFFFF&}
+Dialogue: 1,0:01:07.62,0:01:08.68,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A MAIS COMENTADA
+Dialogue: 1,0:01:08.68,0:01:09.84,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VIRA A {\c&H0028D7FF&}PARTE{\c&HFFFFFF&} {\c&H0028D7FF&}TRÊS.{\c&HFFFFFF&}
+Dialogue: 1,0:01:10.18,0:01:10.86,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}MANDA PRA QUEM
+Dialogue: 1,0:01:10.86,0:01:11.46,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ESCOLHERIA
+Dialogue: 1,0:01:11.46,0:01:12.00,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DIFERENTE
+Dialogue: 1,0:01:12.00,0:01:12.58,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DE VOCÊ
+Dialogue: 1,0:01:12.82,0:01:13.60,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E SE INSCREVE
+Dialogue: 1,0:01:13.60,0:01:14.34,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PRA NÃO PERDER.
+Dialogue: 1,0:01:14.86,0:01:15.82,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}VOCÊ{\c&HFFFFFF&} {\c&H0028D7FF&}DECIDE...{\c&HFFFFFF&}
+Dialogue: 0,0:00:00.00,0:00:03.40,Nota,,0,0,450,,{\fad(200,200)\an2}história de ficção

@@ -1,0 +1,1307 @@
+{
+"diffs": [
+[
+"replace",
+"pro",
+"para o"
+],
+[
+"insert",
+"",
+"o"
+],
+[
+"replace",
+"pra",
+"para"
+],
+[
+"replace",
+"pra",
+"para"
+],
+[
+"replace",
+"2.",
+"dois."
+],
+[
+"replace",
+"pra",
+"para"
+],
+[
+"delete",
+"## Na tela - **Quadro 0:** barra de instalação travada em 99% na TV, sala escura, relógio 03:12. Texto: \"99%.\" + \"E A LUZ CAIU.\" - Sítio à noite: casa simples, milharal, galpão com gerador, dois cachorros na varanda. - Console e controle **genéricos** (sem marca nem logotipo). A tela da TV mostra só \"instalando… 99%\", sem logo, arte, personagem ou trecho do jogo. - Luzinha do console acesa no escuro; TV ligando sozinha com \"JOGADOR 2 CONECTADO\". - Cachorros param de latir (o som corta seco). - Almofada do sofá tremendo, sem mostrar o que está embaixo. - Cartões: \"A · PEGAR O QUE VIBRA NO SOFÁ\" / \"B · LIGAR O GERADOR NO GALPÃO\", \"COMENTA A OU B\", \"a mais comentada vira a PARTE 2\". - Nota pequena: \"história de ficção\". ## Cuidados - O nome do jogo aparece só na narração e no título, como referência ao que o personagem espera. Nada da identidade visual do jogo (logo, arte, personagens, cidade, interface) e nada da marca do console aparece no vídeo. - Sem fatos inventados sobre o jogo (data, tamanho do download, conteúdo). \"Dois dias pra baixar\" é da história do personagem (internet de rádio do sítio), não um dado do jogo. - Suspense sem violência; o \"jogador 2\" não é mostrado no Ep. 1. ## Ideias para a Parte 2 (não decididas) - A: o que vibra é um segundo controle que ninguém comprou, com a luz já pareada. - B: no galpão, o gerador já está ligado, e há pegadas de barro indo do galpão até a janela da sala.",
+""
+]
+],
+"words": [
+{
+"w": "Três",
+"s": 0.0,
+"e": 0.52,
+"key": true
+},
+{
+"w": "e",
+"s": 0.52,
+"e": 0.76,
+"key": true
+},
+{
+"w": "doze",
+"s": 0.76,
+"e": 1.02,
+"key": true
+},
+{
+"w": "da",
+"s": 1.02,
+"e": 1.24,
+"key": true
+},
+{
+"w": "manhã.",
+"s": 1.24,
+"e": 2.02,
+"key": true
+},
+{
+"w": "Faltava",
+"s": 2.16,
+"e": 2.5,
+"key": false
+},
+{
+"w": "um",
+"s": 2.5,
+"e": 2.68,
+"key": true
+},
+{
+"w": "por",
+"s": 2.68,
+"e": 2.92,
+"key": true
+},
+{
+"w": "cento",
+"s": 2.92,
+"e": 3.2,
+"key": true
+},
+{
+"w": "pro",
+"s": 3.2,
+"e": 3.46,
+"key": false
+},
+{
+"w": "jogo",
+"s": 3.46,
+"e": 3.68,
+"key": false
+},
+{
+"w": "mais",
+"s": 3.68,
+"e": 4.1,
+"key": false
+},
+{
+"w": "esperado",
+"s": 4.1,
+"e": 4.54,
+"key": false
+},
+{
+"w": "da",
+"s": 4.54,
+"e": 4.7,
+"key": false
+},
+{
+"w": "década",
+"s": 4.7,
+"e": 5.08,
+"key": false
+},
+{
+"w": "terminar",
+"s": 5.08,
+"e": 5.52,
+"key": false
+},
+{
+"w": "de",
+"s": 5.52,
+"e": 5.82,
+"key": false
+},
+{
+"w": "instalar.",
+"s": 5.82,
+"e": 6.26,
+"key": false
+},
+{
+"w": "E",
+"s": 6.82,
+"e": 7.04,
+"key": false
+},
+{
+"w": "a",
+"s": 7.04,
+"e": 7.18,
+"key": true
+},
+{
+"w": "luz",
+"s": 7.18,
+"e": 7.32,
+"key": true
+},
+{
+"w": "do",
+"s": 7.32,
+"e": 7.56,
+"key": true
+},
+{
+"w": "sítio",
+"s": 7.56,
+"e": 7.86,
+"key": true
+},
+{
+"w": "caiu.",
+"s": 7.86,
+"e": 8.44,
+"key": true
+},
+{
+"w": "Você",
+"s": 9.28,
+"e": 9.48,
+"key": false
+},
+{
+"w": "mora",
+"s": 9.48,
+"e": 9.74,
+"key": false
+},
+{
+"w": "no",
+"s": 9.74,
+"e": 9.92,
+"key": false
+},
+{
+"w": "sítio",
+"s": 9.92,
+"e": 10.16,
+"key": false
+},
+{
+"w": "do",
+"s": 10.16,
+"e": 10.36,
+"key": false
+},
+{
+"w": "seu",
+"s": 10.36,
+"e": 10.56,
+"key": false
+},
+{
+"w": "avô,",
+"s": 10.56,
+"e": 10.98,
+"key": false
+},
+{
+"w": "a",
+"s": 11.24,
+"e": 11.36,
+"key": false
+},
+{
+"w": "uma",
+"s": 11.36,
+"e": 11.56,
+"key": false
+},
+{
+"w": "hora",
+"s": 11.56,
+"e": 11.72,
+"key": false
+},
+{
+"w": "da",
+"s": 11.72,
+"e": 11.92,
+"key": false
+},
+{
+"w": "cidade.",
+"s": 11.92,
+"e": 12.4,
+"key": false
+},
+{
+"w": "Juntou",
+"s": 12.96,
+"e": 13.28,
+"key": false
+},
+{
+"w": "dinheiro",
+"s": 13.46,
+"e": 13.66,
+"key": false
+},
+{
+"w": "o",
+"s": 13.66,
+"e": 13.86,
+"key": false
+},
+{
+"w": "ano",
+"s": 13.86,
+"e": 13.96,
+"key": false
+},
+{
+"w": "inteiro",
+"s": 13.96,
+"e": 14.4,
+"key": false
+},
+{
+"w": "pra",
+"s": 14.4,
+"e": 14.62,
+"key": false
+},
+{
+"w": "comprar",
+"s": 14.62,
+"e": 14.92,
+"key": false
+},
+{
+"w": "o",
+"s": 14.92,
+"e": 15.18,
+"key": false
+},
+{
+"w": "console.",
+"s": 15.18,
+"e": 15.5,
+"key": false
+},
+{
+"w": "A",
+"s": 16.2,
+"e": 16.38,
+"key": false
+},
+{
+"w": "internet",
+"s": 16.38,
+"e": 16.72,
+"key": false
+},
+{
+"w": "de",
+"s": 16.72,
+"e": 17.0,
+"key": false
+},
+{
+"w": "rádio",
+"s": 17.0,
+"e": 17.26,
+"key": false
+},
+{
+"w": "levou",
+"s": 17.26,
+"e": 17.6,
+"key": false
+},
+{
+"w": "dois",
+"s": 17.6,
+"e": 17.92,
+"key": false
+},
+{
+"w": "dias",
+"s": 17.92,
+"e": 18.22,
+"key": false
+},
+{
+"w": "pra",
+"s": 18.22,
+"e": 18.42,
+"key": false
+},
+{
+"w": "baixar",
+"s": 18.42,
+"e": 18.8,
+"key": false
+},
+{
+"w": "o",
+"s": 18.8,
+"e": 18.98,
+"key": false
+},
+{
+"w": "GTA",
+"s": 18.98,
+"e": 19.22,
+"key": true
+},
+{
+"w": "6.",
+"s": 19.22,
+"e": 19.8,
+"key": true
+},
+{
+"w": "E",
+"s": 20.28,
+"e": 20.56,
+"key": false
+},
+{
+"w": "agora,",
+"s": 20.56,
+"e": 20.94,
+"key": false
+},
+{
+"w": "escuro.",
+"s": 21.48,
+"e": 22.1,
+"key": true
+},
+{
+"w": "Só",
+"s": 22.58,
+"e": 22.76,
+"key": false
+},
+{
+"w": "o",
+"s": 22.76,
+"e": 22.96,
+"key": false
+},
+{
+"w": "vento",
+"s": 22.96,
+"e": 23.2,
+"key": false
+},
+{
+"w": "no",
+"s": 23.2,
+"e": 23.34,
+"key": false
+},
+{
+"w": "milharal.",
+"s": 23.34,
+"e": 23.92,
+"key": true
+},
+{
+"w": "Aí",
+"s": 24.68,
+"e": 24.94,
+"key": false
+},
+{
+"w": "você",
+"s": 24.94,
+"e": 25.3,
+"key": false
+},
+{
+"w": "percebe",
+"s": 25.3,
+"e": 25.58,
+"key": false
+},
+{
+"w": "uma",
+"s": 25.58,
+"e": 25.84,
+"key": false
+},
+{
+"w": "coisa:",
+"s": 25.84,
+"e": 26.28,
+"key": false
+},
+{
+"w": "a",
+"s": 26.74,
+"e": 26.94,
+"key": false
+},
+{
+"w": "luzinha",
+"s": 26.94,
+"e": 27.28,
+"key": false
+},
+{
+"w": "do",
+"s": 27.28,
+"e": 27.46,
+"key": false
+},
+{
+"w": "console",
+"s": 27.46,
+"e": 27.84,
+"key": false
+},
+{
+"w": "continua",
+"s": 27.84,
+"e": 28.34,
+"key": true
+},
+{
+"w": "acesa.",
+"s": 28.34,
+"e": 29.3,
+"key": true
+},
+{
+"w": "Sem",
+"s": 29.54,
+"e": 29.74,
+"key": true
+},
+{
+"w": "energia",
+"s": 29.74,
+"e": 30.24,
+"key": true
+},
+{
+"w": "nenhuma.",
+"s": 30.24,
+"e": 30.7,
+"key": true
+},
+{
+"w": "A",
+"s": 31.46,
+"e": 31.62,
+"key": false
+},
+{
+"w": "TV",
+"s": 31.62,
+"e": 31.84,
+"key": false
+},
+{
+"w": "liga",
+"s": 31.84,
+"e": 32.14,
+"key": true
+},
+{
+"w": "sozinha.",
+"s": 32.14,
+"e": 33.0,
+"key": true
+},
+{
+"w": "Na",
+"s": 33.38,
+"e": 33.58,
+"key": false
+},
+{
+"w": "tela,",
+"s": 33.58,
+"e": 33.92,
+"key": false
+},
+{
+"w": "uma",
+"s": 34.1,
+"e": 34.22,
+"key": false
+},
+{
+"w": "mensagem:",
+"s": 34.22,
+"e": 34.96,
+"key": false
+},
+{
+"w": "jogador",
+"s": 35.38,
+"e": 35.88,
+"key": true
+},
+{
+"w": "dois",
+"s": 35.88,
+"e": 36.22,
+"key": true
+},
+{
+"w": "conectado.",
+"s": 36.22,
+"e": 37.04,
+"key": true
+},
+{
+"w": "Você",
+"s": 37.68,
+"e": 37.88,
+"key": false
+},
+{
+"w": "só",
+"s": 37.88,
+"e": 38.08,
+"key": false
+},
+{
+"w": "tem",
+"s": 38.08,
+"e": 38.2,
+"key": false
+},
+{
+"w": "um",
+"s": 38.2,
+"e": 38.56,
+"key": true
+},
+{
+"w": "controle.",
+"s": 38.56,
+"e": 38.82,
+"key": true
+},
+{
+"w": "Os",
+"s": 39.6,
+"e": 39.86,
+"key": false
+},
+{
+"w": "cachorros,",
+"s": 39.86,
+"e": 40.42,
+"key": false
+},
+{
+"w": "que",
+"s": 40.42,
+"e": 40.6,
+"key": false
+},
+{
+"w": "latiam",
+"s": 40.6,
+"e": 40.98,
+"key": false
+},
+{
+"w": "lá",
+"s": 40.98,
+"e": 41.26,
+"key": false
+},
+{
+"w": "fora,",
+"s": 41.26,
+"e": 41.54,
+"key": false
+},
+{
+"w": "param",
+"s": 41.54,
+"e": 41.82,
+"key": true
+},
+{
+"w": "ao",
+"s": 41.82,
+"e": 42.06,
+"key": true
+},
+{
+"w": "mesmo",
+"s": 42.06,
+"e": 42.38,
+"key": true
+},
+{
+"w": "tempo.",
+"s": 42.38,
+"e": 42.8,
+"key": true
+},
+{
+"w": "E",
+"s": 43.4,
+"e": 43.58,
+"key": false
+},
+{
+"w": "no",
+"s": 43.58,
+"e": 43.72,
+"key": false
+},
+{
+"w": "sofá,",
+"s": 43.72,
+"e": 44.18,
+"key": false
+},
+{
+"w": "do",
+"s": 44.18,
+"e": 44.36,
+"key": false
+},
+{
+"w": "seu",
+"s": 44.36,
+"e": 44.56,
+"key": false
+},
+{
+"w": "lado,",
+"s": 44.56,
+"e": 44.96,
+"key": false
+},
+{
+"w": "alguma",
+"s": 45.4,
+"e": 45.6,
+"key": false
+},
+{
+"w": "coisa",
+"s": 45.6,
+"e": 45.88,
+"key": false
+},
+{
+"w": "começa",
+"s": 45.88,
+"e": 46.26,
+"key": false
+},
+{
+"w": "a",
+"s": 46.26,
+"e": 46.44,
+"key": false
+},
+{
+"w": "vibrar.",
+"s": 46.44,
+"e": 46.9,
+"key": true
+},
+{
+"w": "Você",
+"s": 47.54,
+"e": 47.84,
+"key": false
+},
+{
+"w": "decide.",
+"s": 47.84,
+"e": 48.36,
+"key": false
+},
+{
+"w": "Opção",
+"s": 48.94,
+"e": 49.36,
+"key": false
+},
+{
+"w": "A:",
+"s": 49.36,
+"e": 50.06,
+"key": false
+},
+{
+"w": "pegar",
+"s": 50.22,
+"e": 50.54,
+"key": false
+},
+{
+"w": "o",
+"s": 50.54,
+"e": 50.64,
+"key": false
+},
+{
+"w": "que",
+"s": 50.64,
+"e": 50.72,
+"key": false
+},
+{
+"w": "tá",
+"s": 50.72,
+"e": 50.86,
+"key": false
+},
+{
+"w": "vibrando",
+"s": 50.86,
+"e": 51.24,
+"key": false
+},
+{
+"w": "no",
+"s": 51.24,
+"e": 51.42,
+"key": false
+},
+{
+"w": "sofá.",
+"s": 51.42,
+"e": 52.32,
+"key": false
+},
+{
+"w": "Opção",
+"s": 52.56,
+"e": 52.92,
+"key": false
+},
+{
+"w": "B:",
+"s": 52.92,
+"e": 53.52,
+"key": false
+},
+{
+"w": "sair",
+"s": 53.52,
+"e": 54.16,
+"key": false
+},
+{
+"w": "no",
+"s": 54.16,
+"e": 54.34,
+"key": false
+},
+{
+"w": "escuro",
+"s": 54.34,
+"e": 54.8,
+"key": true
+},
+{
+"w": "e",
+"s": 54.8,
+"e": 54.98,
+"key": false
+},
+{
+"w": "ligar",
+"s": 54.98,
+"e": 55.28,
+"key": false
+},
+{
+"w": "o",
+"s": 55.28,
+"e": 55.42,
+"key": false
+},
+{
+"w": "gerador",
+"s": 55.42,
+"e": 55.76,
+"key": false
+},
+{
+"w": "no",
+"s": 55.76,
+"e": 55.92,
+"key": false
+},
+{
+"w": "galpão.",
+"s": 55.92,
+"e": 56.9,
+"key": false
+},
+{
+"w": "Comenta",
+"s": 57.28,
+"e": 57.6,
+"key": false
+},
+{
+"w": "A",
+"s": 57.6,
+"e": 57.94,
+"key": true
+},
+{
+"w": "ou",
+"s": 57.94,
+"e": 58.12,
+"key": true
+},
+{
+"w": "B.",
+"s": 58.12,
+"e": 58.62,
+"key": true
+},
+{
+"w": "A",
+"s": 59.0,
+"e": 59.16,
+"key": false
+},
+{
+"w": "mais",
+"s": 59.16,
+"e": 59.34,
+"key": false
+},
+{
+"w": "comentada",
+"s": 59.34,
+"e": 59.94,
+"key": false
+},
+{
+"w": "vira",
+"s": 59.94,
+"e": 60.28,
+"key": false
+},
+{
+"w": "a",
+"s": 60.28,
+"e": 60.44,
+"key": false
+},
+{
+"w": "Parte",
+"s": 60.44,
+"e": 60.56,
+"key": false
+},
+{
+"w": "2.",
+"s": 60.56,
+"e": 61.04,
+"key": false
+},
+{
+"w": "Manda",
+"s": 61.6,
+"e": 61.9,
+"key": false
+},
+{
+"w": "pra",
+"s": 61.9,
+"e": 62.06,
+"key": false
+},
+{
+"w": "quem",
+"s": 62.06,
+"e": 62.2,
+"key": false
+},
+{
+"w": "tá",
+"s": 62.2,
+"e": 62.44,
+"key": false
+},
+{
+"w": "esperando",
+"s": 62.44,
+"e": 62.78,
+"key": false
+},
+{
+"w": "esse",
+"s": 62.78,
+"e": 63.04,
+"key": false
+},
+{
+"w": "jogo.",
+"s": 63.04,
+"e": 63.42,
+"key": false
+},
+{
+"w": "E",
+"s": 64.0,
+"e": 64.28,
+"key": false
+},
+{
+"w": "se...",
+"s": 64.28,
+"e": 64.58,
+"key": false
+}
+],
+"chunks": [
+{
+"s": 0.0,
+"e": 1.02,
+"t": "{\\c&H0028D7FF&}TRÊS{\\c&HFFFFFF&} {\\c&H0028D7FF&}E{\\c&HFFFFFF&} {\\c&H0028D7FF&}DOZE{\\c&HFFFFFF&}"
+},
+{
+"s": 1.02,
+"e": 2.16,
+"t": "{\\c&H0028D7FF&}DA{\\c&HFFFFFF&} {\\c&H0028D7FF&}MANHÃ.{\\c&HFFFFFF&}"
+},
+{
+"s": 2.16,
+"e": 3.2,
+"t": "FALTAVA {\\c&H0028D7FF&}UM{\\c&HFFFFFF&} {\\c&H0028D7FF&}POR{\\c&HFFFFFF&} {\\c&H0028D7FF&}CENTO{\\c&HFFFFFF&}"
+},
+{
+"s": 3.2,
+"e": 3.68,
+"t": "PRO JOGO"
+},
+{
+"s": 3.68,
+"e": 4.54,
+"t": "MAIS ESPERADO"
+},
+{
+"s": 4.54,
+"e": 5.08,
+"t": "DA DÉCADA"
+},
+{
+"s": 5.08,
+"e": 5.52,
+"t": "TERMINAR"
+},
+{
+"s": 5.52,
+"e": 6.26,
+"t": "DE INSTALAR."
+},
+{
+"s": 6.82,
+"e": 7.86,
+"t": "E {\\c&H0028D7FF&}A{\\c&HFFFFFF&} {\\c&H0028D7FF&}LUZ{\\c&HFFFFFF&} {\\c&H0028D7FF&}DO{\\c&HFFFFFF&} {\\c&H0028D7FF&}SÍTIO{\\c&HFFFFFF&}"
+},
+{
+"s": 7.86,
+"e": 8.44,
+"t": "{\\c&H0028D7FF&}CAIU.{\\c&HFFFFFF&}"
+},
+{
+"s": 9.28,
+"e": 9.74,
+"t": "VOCÊ MORA"
+},
+{
+"s": 9.74,
+"e": 10.16,
+"t": "NO SÍTIO"
+},
+{
+"s": 10.16,
+"e": 10.98,
+"t": "DO SEU AVÔ,"
+},
+{
+"s": 11.24,
+"e": 11.72,
+"t": "A UMA HORA"
+},
+{
+"s": 11.72,
+"e": 12.4,
+"t": "DA CIDADE."
+},
+{
+"s": 12.96,
+"e": 13.66,
+"t": "JUNTOU DINHEIRO"
+},
+{
+"s": 13.66,
+"e": 14.4,
+"t": "O ANO INTEIRO"
+},
+{
+"s": 14.4,
+"e": 14.92,
+"t": "PRA COMPRAR"
+},
+{
+"s": 14.92,
+"e": 15.5,
+"t": "O CONSOLE."
+},
+{
+"s": 16.2,
+"e": 16.72,
+"t": "A INTERNET"
+},
+{
+"s": 16.72,
+"e": 17.6,
+"t": "DE RÁDIO LEVOU"
+},
+{
+"s": 17.6,
+"e": 18.22,
+"t": "DOIS DIAS"
+},
+{
+"s": 18.22,
+"e": 19.8,
+"t": "PRA BAIXAR O {\\c&H0028D7FF&}GTA{\\c&HFFFFFF&} {\\c&H0028D7FF&}6.{\\c&HFFFFFF&}"
+},
+{
+"s": 20.28,
+"e": 20.94,
+"t": "E AGORA,"
+},
+{
+"s": 21.48,
+"e": 22.1,
+"t": "{\\c&H0028D7FF&}ESCURO.{\\c&HFFFFFF&}"
+},
+{
+"s": 22.58,
+"e": 23.92,
+"t": "SÓ O VENTO NO {\\c&H0028D7FF&}MILHARAL.{\\c&HFFFFFF&}"
+},
+{
+"s": 24.68,
+"e": 25.58,
+"t": "AÍ VOCÊ PERCEBE"
+},
+{
+"s": 25.58,
+"e": 26.28,
+"t": "UMA COISA:"
+},
+{
+"s": 26.74,
+"e": 27.28,
+"t": "A LUZINHA"
+},
+{
+"s": 27.28,
+"e": 27.84,
+"t": "DO CONSOLE"
+},
+{
+"s": 27.84,
+"e": 29.24,
+"t": "{\\c&H0028D7FF&}CONTINUA{\\c&HFFFFFF&} {\\c&H0028D7FF&}ACESA.{\\c&HFFFFFF&}"
+},
+{
+"s": 29.54,
+"e": 30.24,
+"t": "{\\c&H0028D7FF&}SEM{\\c&HFFFFFF&} {\\c&H0028D7FF&}ENERGIA{\\c&HFFFFFF&}"
+},
+{
+"s": 30.24,
+"e": 30.7,
+"t": "{\\c&H0028D7FF&}NENHUMA.{\\c&HFFFFFF&}"
+},
+{
+"s": 31.46,
+"e": 33.0,
+"t": "A TV {\\c&H0028D7FF&}LIGA{\\c&HFFFFFF&} {\\c&H0028D7FF&}SOZINHA.{\\c&HFFFFFF&}"
+},
+{
+"s": 33.38,
+"e": 33.92,
+"t": "NA TELA,"
+},
+{
+"s": 34.1,
+"e": 34.96,
+"t": "UMA MENSAGEM:"
+},
+{
+"s": 35.38,
+"e": 36.22,
+"t": "{\\c&H0028D7FF&}JOGADOR{\\c&HFFFFFF&} {\\c&H0028D7FF&}DOIS{\\c&HFFFFFF&}"
+},
+{
+"s": 36.22,
+"e": 37.04,
+"t": "{\\c&H0028D7FF&}CONECTADO.{\\c&HFFFFFF&}"
+},
+{
+"s": 37.68,
+"e": 38.82,
+"t": "VOCÊ SÓ TEM {\\c&H0028D7FF&}UM{\\c&HFFFFFF&} {\\c&H0028D7FF&}CONTROLE.{\\c&HFFFFFF&}"
+},
+{
+"s": 39.6,
+"e": 40.42,
+"t": "OS CACHORROS,"
+},
+{
+"s": 40.42,
+"e": 40.98,
+"t": "QUE LATIAM"
+},
+{
+"s": 40.98,
+"e": 41.54,
+"t": "LÁ FORA,"
+},
+{
+"s": 41.54,
+"e": 42.38,
+"t": "{\\c&H0028D7FF&}PARAM{\\c&HFFFFFF&} {\\c&H0028D7FF&}AO{\\c&HFFFFFF&} {\\c&H0028D7FF&}MESMO{\\c&HFFFFFF&}"
+},
+{
+"s": 42.38,
+"e": 42.8,
+"t": "{\\c&H0028D7FF&}TEMPO.{\\c&HFFFFFF&}"
+},
+{
+"s": 43.4,
+"e": 44.18,
+"t": "E NO SOFÁ,"
+},
+{
+"s": 44.18,
+"e": 44.96,
+"t": "DO SEU LADO,"
+},
+{
+"s": 45.4,
+"e": 45.88,
+"t": "ALGUMA COISA"
+},
+{
+"s": 45.88,
+"e": 46.9,
+"t": "COMEÇA A {\\c&H0028D7FF&}VIBRAR.{\\c&HFFFFFF&}"
+},
+{
+"s": 47.54,
+"e": 48.36,
+"t": "VOCÊ DECIDE."
+},
+{
+"s": 48.94,
+"e": 50.64,
+"t": "OPÇÃO A: PEGAR O"
+},
+{
+"s": 50.64,
+"e": 51.24,
+"t": "QUE TÁ VIBRANDO"
+},
+{
+"s": 51.24,
+"e": 52.32,
+"t": "NO SOFÁ."
+},
+{
+"s": 52.56,
+"e": 54.16,
+"t": "OPÇÃO B: SAIR"
+},
+{
+"s": 54.16,
+"e": 55.28,
+"t": "NO {\\c&H0028D7FF&}ESCURO{\\c&HFFFFFF&} E LIGAR"
+},
+{
+"s": 55.28,
+"e": 55.76,
+"t": "O GERADOR"
+},
+{
+"s": 55.76,
+"e": 56.82,
+"t": "NO GALPÃO."
+},
+{
+"s": 57.28,
+"e": 58.62,
+"t": "COMENTA {\\c&H0028D7FF&}A{\\c&HFFFFFF&} {\\c&H0028D7FF&}OU{\\c&HFFFFFF&} {\\c&H0028D7FF&}B.{\\c&HFFFFFF&}"
+},
+{
+"s": 59.0,
+"e": 59.94,
+"t": "A MAIS COMENTADA"
+},
+{
+"s": 59.94,
+"e": 61.04,
+"t": "VIRA A PARTE 2."
+},
+{
+"s": 61.6,
+"e": 62.2,
+"t": "MANDA PRA QUEM"
+},
+{
+"s": 62.2,
+"e": 62.78,
+"t": "TÁ ESPERANDO"
+},
+{
+"s": 62.78,
+"e": 63.42,
+"t": "ESSE JOGO."
+},
+{
+"s": 64.0,
+"e": 64.58,
+"t": "E SE..."
+}
+],
+"hud": []
+}

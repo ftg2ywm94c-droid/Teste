@@ -1,0 +1,8 @@
+{
+ "base": "thumbnails/_10_base/still_0090.png",
+ "grade": {"sky": [255, 190, 60], "sky_amt": 0.25, "sky_to": 0.4, "contrast": 1.2, "sat": 1.25, "vignette": 0.5, "shadow_tint": [0, 10, 25]},
+ "title_top": 300,
+ "title": [["E SE O BRASIL", [255, 255, 255], 130], ["COBRASSE MENOS", [255, 210, 20], 120], ["IMPOSTOS?", [60, 230, 140], 210]],
+ "inset": {"src": "thumbnails/_10_base/still_1000.png", "crop": [420, 860, 1080, 1520], "center": [790, 1130], "diam": 380,
+           "ring": [255, 210, 20], "tag": ["QUEM PAGA A CONTA?", [255, 210, 20], [0, 0, 0], 34]}
+}

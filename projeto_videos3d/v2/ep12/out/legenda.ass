@@ -1,0 +1,93 @@
+[Script Info]
+; Texto: roteiro aprovado. Tempos: faster-whisper (medium) por palavra, alinhado ao roteiro.
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Leg,Poppins,92,&H00FFFFFF,&H00FFFFFF,&H00101010,&H78000000,-1,0,0,0,100,100,0,0,1,5,2,2,90,90,560,1
+Style: Nota,Poppins,38,&H00FFFFFF,&H00FFFFFF,&H64000000,&H64000000,-1,0,0,0,100,100,1,0,3,10,0,8,80,80,140,1
+Style: Hud,Poppins,62,&H00FFFFFF,&H00FFFFFF,&H50000000,&H50000000,-1,0,0,0,100,100,1,0,3,18,0,8,80,80,250,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:01.52,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SÃO {\c&H0028D7FF&}ONZE{\c&HFFFFFF&} {\c&H0028D7FF&}DA{\c&HFFFFFF&} {\c&H0028D7FF&}NOITE.{\c&HFFFFFF&}
+Dialogue: 1,0:00:01.76,0:00:02.62,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ TÁ EM CASA,
+Dialogue: 1,0:00:02.78,0:00:03.48,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SEM NINGUÉM,
+Dialogue: 1,0:00:03.78,0:00:04.50,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}QUANDO O CELULAR
+Dialogue: 1,0:00:04.50,0:00:05.02,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DISPARA
+Dialogue: 1,0:00:05.02,0:00:05.52,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}UM ALARME
+Dialogue: 1,0:00:05.52,0:00:06.10,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}QUE VOCÊ
+Dialogue: 1,0:00:06.10,0:00:07.14,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NUNCA OUVIU.
+Dialogue: 1,0:00:07.36,0:00:07.68,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}MESMO
+Dialogue: 1,0:00:07.68,0:00:08.72,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NO SILENCIOSO.
+Dialogue: 1,0:00:09.28,0:00:09.90,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NA TELA:
+Dialogue: 1,0:00:10.34,0:00:11.14,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DEFESA CIVIL.
+Dialogue: 1,0:00:11.64,0:00:12.92,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}ALERTA{\c&HFFFFFF&} {\c&H0028D7FF&}SEVERO.{\c&HFFFFFF&}
+Dialogue: 1,0:00:13.16,0:00:13.70,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VENDAVAL
+Dialogue: 1,0:00:13.70,0:00:14.44,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}COM RAJADAS
+Dialogue: 1,0:00:14.44,0:00:15.48,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ACIMA DE {\c&H0028D7FF&}NOVENTA{\c&HFFFFFF&}
+Dialogue: 1,0:00:15.48,0:00:16.06,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}QUILÔMETROS{\c&HFFFFFF&}
+Dialogue: 1,0:00:16.06,0:00:16.62,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}POR{\c&HFFFFFF&} {\c&H0028D7FF&}HORA.{\c&HFFFFFF&}
+Dialogue: 1,0:00:17.28,0:00:17.72,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ OLHA
+Dialogue: 1,0:00:17.72,0:00:18.52,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PELA JANELA.
+Dialogue: 1,0:00:18.92,0:00:20.28,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A RUA TÁ PARADA.
+Dialogue: 1,0:00:20.50,0:00:21.38,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}CALMA{\c&HFFFFFF&} {\c&H0028D7FF&}DEMAIS.{\c&HFFFFFF&}
+Dialogue: 1,0:00:22.10,0:00:22.84,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DEZ MINUTOS
+Dialogue: 1,0:00:22.84,0:00:23.42,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DEPOIS,
+Dialogue: 1,0:00:23.80,0:00:24.74,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}O{\c&HFFFFFF&} {\c&H0028D7FF&}VENTO{\c&HFFFFFF&} {\c&H0028D7FF&}CHEGA.{\c&HFFFFFF&}
+Dialogue: 1,0:00:25.12,0:00:25.78,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PRIMEIRO,
+Dialogue: 1,0:00:25.78,0:00:26.54,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}UM ASSOBIO
+Dialogue: 1,0:00:26.54,0:00:27.42,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}FINO NA FRESTA
+Dialogue: 1,0:00:27.42,0:00:28.06,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DA PORTA.
+Dialogue: 1,0:00:28.06,0:00:28.96,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DEPOIS,
+Dialogue: 1,0:00:29.58,0:00:30.06,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}AS ÁRVORES
+Dialogue: 1,0:00:30.06,0:00:30.52,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}COMEÇAM
+Dialogue: 1,0:00:30.52,0:00:31.46,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A DOBRAR.
+Dialogue: 1,0:00:31.62,0:00:32.16,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}UMA TELHA
+Dialogue: 1,0:00:32.16,0:00:32.92,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PASSA VOANDO
+Dialogue: 1,0:00:32.92,0:00:33.92,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PELA JANELA.
+Dialogue: 1,0:00:34.16,0:00:35.14,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}A{\c&HFFFFFF&} {\c&H0028D7FF&}LUZ{\c&HFFFFFF&} {\c&H0028D7FF&}PISCA...{\c&HFFFFFF&}
+Dialogue: 1,0:00:35.14,0:00:36.30,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}E{\c&HFFFFFF&} {\c&H0028D7FF&}APAGA.{\c&HFFFFFF&}
+Dialogue: 1,0:00:36.80,0:00:37.66,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NO ESCURO,
+Dialogue: 1,0:00:37.90,0:00:38.24,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ OUVE
+Dialogue: 1,0:00:38.24,0:00:39.42,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}UM {\c&H0028D7FF&}ESTALO{\c&HFFFFFF&} {\c&H0028D7FF&}GRAVE.{\c&HFFFFFF&}
+Dialogue: 1,0:00:39.92,0:00:40.56,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}É A ÁRVORE
+Dialogue: 1,0:00:40.56,0:00:41.64,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ENORME DA FRENTE
+Dialogue: 1,0:00:41.64,0:00:42.44,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DA SUA CASA.
+Dialogue: 1,0:00:42.92,0:00:43.28,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ELA TÁ
+Dialogue: 1,0:00:43.28,0:00:44.18,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}INCLINANDO.
+Dialogue: 1,0:00:44.44,0:00:45.66,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}NA{\c&HFFFFFF&} {\c&H0028D7FF&}SUA{\c&HFFFFFF&} {\c&H0028D7FF&}DIREÇÃO.{\c&HFFFFFF&}
+Dialogue: 1,0:00:46.02,0:00:46.56,Leg,,0,0,330,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O CELULAR
+Dialogue: 1,0:00:46.56,0:00:47.35,Leg,,0,0,330,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}TÁ COM OITO
+Dialogue: 1,0:00:47.35,0:00:48.14,Leg,,0,0,330,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}POR CENTO.
+Dialogue: 1,0:00:48.14,0:00:49.96,Leg,,0,0,330,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ TEM {\c&H0028D7FF&}DEZ{\c&HFFFFFF&} {\c&H0028D7FF&}SEGUNDOS.{\c&HFFFFFF&}
+Dialogue: 1,0:00:50.34,0:00:51.16,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}OPÇÃO A:
+Dialogue: 1,0:00:51.38,0:00:51.68,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ
+Dialogue: 1,0:00:51.68,0:00:52.42,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SAI CORRENDO
+Dialogue: 1,0:00:52.42,0:00:53.00,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PELA PORTA
+Dialogue: 1,0:00:53.00,0:00:53.60,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DA FRENTE,
+Dialogue: 1,0:00:53.60,0:00:54.34,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PRA RUA.
+Dialogue: 1,0:00:54.34,0:00:55.78,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}OPÇÃO B:
+Dialogue: 1,0:00:56.06,0:00:56.78,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}VOCÊ SE TRANCA
+Dialogue: 1,0:00:56.78,0:00:57.42,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NO BANHEIRO,
+Dialogue: 1,0:00:57.84,0:00:58.88,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}O ÚNICO CÔMODO
+Dialogue: 1,0:00:58.88,0:00:59.64,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}SEM JANELA.
+Dialogue: 1,0:01:00.06,0:01:00.58,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E AÍ,
+Dialogue: 1,0:01:00.82,0:01:01.30,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}QUAL VOCÊ
+Dialogue: 1,0:01:01.30,0:01:01.94,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}{\c&H0028D7FF&}ESCOLHE?{\c&HFFFFFF&}
+Dialogue: 1,0:01:02.18,0:01:03.66,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}COMENTA {\c&H0028D7FF&}A{\c&HFFFFFF&} {\c&H0028D7FF&}OU{\c&HFFFFFF&} {\c&H0028D7FF&}B.{\c&HFFFFFF&}
+Dialogue: 1,0:01:04.04,0:01:04.64,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}A RESPOSTA
+Dialogue: 1,0:01:04.64,0:01:05.64,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}TÁ NO COMENTÁRIO
+Dialogue: 1,0:01:05.64,0:01:06.40,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}FIXADO.
+Dialogue: 1,0:01:06.74,0:01:07.40,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}NÃO SE ESQUEÇA
+Dialogue: 1,0:01:07.40,0:01:08.28,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}DE SE INSCREVER
+Dialogue: 1,0:01:08.28,0:01:09.24,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E FICAR ATENTO
+Dialogue: 1,0:01:09.24,0:01:10.00,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}PARA O PRÓXIMO.
+Dialogue: 1,0:01:10.46,0:01:10.86,Leg,,0,0,0,,{\fad(40,30)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}E SE...
+Dialogue: 0,0:00:00.00,0:00:03.70,Nota,,0,0,450,,{\fad(200,200)\an2}história ilustrativa
+Dialogue: 0,0:00:13.10,0:00:17.20,Nota,,0,0,450,,{\fad(200,200)\an2}alerta real da Defesa Civil RS para 17 a 19/11/2026
+Dialogue: 0,0:01:04.00,0:01:11.16,Nota,,0,0,450,,{\fad(200,200)\an2}alertas reais: Defesa Civil · SMS 40199 (envie seu CEP)

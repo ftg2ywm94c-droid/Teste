@@ -1,0 +1,8 @@
+{
+ "base": "thumbnails/_09_base/still_0066.png",
+ "grade": {"sky": [255, 110, 160], "sky_amt": 0.35, "sky_to": 0.45, "contrast": 1.2, "sat": 1.25, "vignette": 0.55, "shadow_tint": [10, 0, 25]},
+ "title_top": 340,
+ "title": [["E SE A VIDA REAL", [255, 255, 255], 130], ["SEGUISSE AS REGRAS", [255, 210, 20], 118], ["DO GTA?", [255, 80, 150], 250]],
+ "inset": {"src": "thumbnails/_09_base/still_1440.png", "crop": [330, 690, 730, 1090], "center": [740, 1330], "diam": 360,
+           "ring": [255, 80, 150], "tag": ["O CORPO QUE AGUENTARIA", [255, 210, 20], [0, 0, 0], 34]}
+}

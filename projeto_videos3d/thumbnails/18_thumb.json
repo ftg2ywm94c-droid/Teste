@@ -1,0 +1,8 @@
+{
+ "base": "thumbnails/_18_base/base.png",
+ "grade": {"sky": [120, 150, 255], "sky_amt": 0.0, "sky_to": 0.4, "contrast": 1.2, "sat": 1.15, "vignette": 0.45, "shadow_tint": [0, 5, 30]},
+ "title_top": 150,
+ "title": [["FALTAVA 1% PRO GTA 6", [255, 255, 255], 96], ["E A LUZ CAIU.", [255, 210, 20], 118], ["QUEM É O JOGADOR 2?", [255, 255, 255], 100]],
+ "inset": {"src": "thumbnails/_18_base/inset.png", "crop": [140, 640, 940, 1440], "center": [720, 1300], "diam": 380,
+           "ring": [60, 160, 255], "tag": ["EP. 1", [60, 160, 255], [255, 255, 255], 36]}
+}

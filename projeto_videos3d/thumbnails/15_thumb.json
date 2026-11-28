@@ -1,0 +1,8 @@
+{
+ "base": "thumbnails/_15_base/base.png",
+ "grade": {"sky": [120, 150, 255], "sky_amt": 0.0, "sky_to": 0.4, "contrast": 1.2, "sat": 1.15, "vignette": 0.5, "shadow_tint": [0, 5, 30]},
+ "title_top": 150,
+ "title": [["ELE NÃO PAROU.", [255, 210, 20], 135], ["VOCÊ ATENDE", [255, 255, 255], 120], ["OU CORRE?", [255, 210, 20], 150]],
+ "inset": {"src": "thumbnails/_15_base/inset.png", "crop": [270, 240, 900, 870], "center": [280, 1380], "diam": 400,
+           "ring": [230, 40, 40], "tag": ["PARTE 2", [230, 40, 40], [255, 255, 255], 36]}
+}

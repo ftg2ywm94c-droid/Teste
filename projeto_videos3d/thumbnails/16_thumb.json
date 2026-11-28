@@ -1,0 +1,8 @@
+{
+ "base": "thumbnails/_16_base/base.png",
+ "grade": {"sky": [120, 150, 255], "sky_amt": 0.0, "sky_to": 0.4, "contrast": 1.2, "sat": 1.15, "vignette": 0.45, "shadow_tint": [0, 5, 30]},
+ "title_top": 150,
+ "title": [["O FIO TÁ NA SALA.", [255, 210, 20], 118], ["ELA BATE NA PORTA.", [255, 255, 255], 105], ["VOCÊ ABRE?", [255, 210, 20], 150]],
+ "inset": {"src": "thumbnails/_16_base/inset.png", "crop": [250, 450, 950, 1150], "center": [750, 1200], "diam": 360,
+           "ring": [230, 40, 40], "tag": ["EP. 3", [230, 40, 40], [255, 255, 255], 36]}
+}

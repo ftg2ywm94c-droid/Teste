@@ -1,0 +1,95 @@
+#!/usr/bin/env python3
+"""Montagem final: quadros 720x1280 -> 1080x1920 (lanczos, declarado como ampliação) + legenda ASS + narração original + efeitos/música
+com ducking pela voz, normalização -14 LUFS / -1,5 dBTP. Depois roda o QC.
+Uso: python3 v2/assemble.py [--allow-missing]"""
+import os, sys, glob, json, subprocess
+HERE = os.path.dirname(os.path.abspath(__file__)); PROJ = os.path.dirname(HERE); sys.path[:0] = [os.path.join(HERE, 'lib'), HERE]
+EP = os.environ.get('EP')          # ex.: EP=02 usa v2/ep02 (planos, quadros, saída) e narracao/02_narracao.mp3
+if EP:
+    BASE = os.path.join(HERE, f'ep{EP}'); sys.path.insert(0, BASE); import plan as SH
+    DEF_NAME = {'02': '02_terra_parasse_de_girar_1080x1920.mp4', '03': '03_buraco_atravessa_a_terra_1080x1920.mp4', '04': '04_oxigenio_sumisse_20s_1080x1920.mp4', '05': '05_todo_oxigenio_sumisse_1080x1920.mp4', '06': '06_apocalipse_zumbi_brasil_1080x1920.mp4', '07': '07_furacao_avenida_paulista_1080x1920.mp4', '08': '08_fogo_nunca_descoberto_1080x1920.mp4', '09': '09_vida_real_regras_gta_1080x1920.mp4', '10': '10_brasil_menos_impostos_1080x1920.mp4', '11': '11_luz_3_dias_1080x1920.mp4', '12': '12_vendaval_escolha_1080x1920.mp4', '13': '13_ultimo_onibus_ep1_1080x1920.mp4', '14': '14_vendaval_ep2_1080x1920.mp4', '15': '15_ultimo_onibus_parte2_1080x1920.mp4', '16': '16_vendaval_ep3_1080x1920.mp4', '18': '18_jogador2_ep1_1080x1920.mp4', '19': '19_noite_livre_ep1_1080x1920.mp4', '20': '20_a_visita_ep1_1080x1920.mp4', '21': '21_a_chave_ep1_1080x1920.mp4'}.get(EP, f'{EP}_1080x1920.mp4')
+else:
+    BASE = HERE; import shots as SH
+    DEF_NAME = '01_distancia_de_parada_1080x1920.mp4'
+FR = os.path.abspath(os.environ.get('FRAMES_DIR', os.path.join(BASE, 'frames'))); OUT = os.environ.get('OUT_DIR', os.path.join(BASE, 'out')); os.makedirs(OUT, exist_ok=True)
+NARR = os.path.join(PROJ, 'narracao', f'{EP or "01"}_narracao.mp3')
+total = round(SH.END * SH.FPS)
+paths, missing = [], []
+for s in SH.SHOTS:
+    for f in s.frames:
+        p = os.path.join(FR, s.name, f'{f:04d}.png')
+        if not os.path.exists(p) and os.path.exists(p[:-4] + '.jpg'): p = p[:-4] + '.jpg'   # vídeo 21 em diante: quadros em JPEG (q95) para caber no disco
+        if not os.path.exists(p) or os.path.getsize(p) == 0: missing.append(f)
+        paths.append(p)
+assert len(paths) == total, (len(paths), total)
+if missing and '--allow-missing' not in sys.argv: sys.exit(f'faltam {len(missing)} quadros (ex.: {missing[:10]})')
+with open(os.path.join(OUT, 'frames.txt'), 'w') as f:
+    last = None
+    for p in paths:
+        if os.path.exists(p) and os.path.getsize(p) > 0: last = p
+        f.write(f"file '{last}'\nduration {1 / SH.FPS:.6f}\n")
+MIXED = len({os.path.splitext(p)[1] for p in paths}) > 1   # PNG (piloto) + JPEG (vídeo 21): o concat do ffmpeg usa o decodificador do 1º arquivo
+                                                          # e quebra nos outros; então os quadros vão decodificados (RGB cru) por um pipe
+def run(c):
+    print('$', ' '.join(c[:6]), '...')
+    if not (MIXED and 'frames.txt' in ' '.join(c)): return subprocess.run(c, check=True)
+    from PIL import Image
+    i = c.index(os.path.join(OUT, 'frames.txt')); c = c[:i - 5] + ['-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', '1080x1920', '-r', str(SH.FPS), '-i', 'pipe:0'] + c[i + 1:]
+    pr = subprocess.Popen(c, stdin=subprocess.PIPE); last = None
+    for p in paths:
+        if os.path.exists(p) and os.path.getsize(p) > 0: last = p
+        im = Image.open(last).convert('RGB'); assert im.size == (1080, 1920), (last, im.size); pr.stdin.write(im.tobytes())
+    pr.stdin.close(); assert pr.wait() == 0, 'ffmpeg falhou'
+# áudio: voz original intacta (só reamostrada) + leito de efeitos/música abaixado pela voz
+# camada de tensão/suspense opcional (v2/lib/tensao.py): entra no leito e é abaixada pela voz junto com efeitos e música
+TENS = os.path.join(OUT, 'tensao.wav'); HAS_T = os.path.exists(TENS); W_T = os.environ.get('W_TENSAO', str(getattr(SH, 'W_TENSAO', 0.75)))   # por episódio no plan.py (padrão 0,75: os outros vídeos não mudam)
+BED = (f'[1:a][2:a][3:a]amix=inputs=3:weights=1 0.55 {W_T}:normalize=0[bed];' if HAS_T else '[1:a][2:a]amix=inputs=2:weights=1 0.55:normalize=0[bed];')
+SFX_BUS = getattr(SH, 'SFX_BUS', None)   # (ganho, razão do ducking) — efeitos num canal próprio, só levemente abaixados pela voz
+if SFX_BUS:   # vídeos a partir do 11: efeitos fora do leito (música/tensão continuam abaixadas como antes)
+    g_sfx, r_sfx = SFX_BUS
+    BED = (f'[2:a][3:a]amix=inputs=2:weights=0.55 {W_T}:normalize=0[bed];' if HAS_T else '[2:a]volume=0.55[bed];')
+    fc = ('[0:a]aresample=48000,pan=stereo|c0=c0|c1=c0,asplit=3[v][key][key2];' + BED +
+          '[bed][key]sidechaincompress=threshold=0.02:ratio=5:attack=20:release=300:makeup=1[duck];'
+          f'[1:a]volume={g_sfx}[sx];[sx][key2]sidechaincompress=threshold=0.05:ratio={r_sfx}:attack=10:release=200:makeup=1[sd];'
+          '[v]volume=1.0[vv];[vv][duck][sd]amix=inputs=3:weights=1 0.62 1:normalize=0:duration=longest,')
+else:
+  fc = ('[0:a]aresample=48000,pan=stereo|c0=c0|c1=c0,asplit=2[v][key];'
+      + BED +
+      '[bed][key]sidechaincompress=threshold=0.02:ratio=5:attack=20:release=300:makeup=1[duck];'
+      '[v]volume=1.0[vv];[vv][duck]amix=inputs=2:weights=1 0.62:normalize=0:duration=longest,')
+fc += (
+      'apad=whole_dur=' + f'{SH.END:.3f}' + ',atrim=0:' + f'{SH.END:.3f}' + ',loudnorm=I=' + str(getattr(SH, 'LOUD_I', -14)) + ':TP=-1.5:LRA=9,aresample=48000'
+      + (f",aresample=192000,alimiter=limit={SH.LIMITER}:attack=0.1:release=60:level=0:asc=1,aresample=48000" if getattr(SH, 'LIMITER', None) else '') + '[mix]')  # opcional: limitador a 4x (pega picos entre amostras) para o pico real ficar abaixo de -1 dBTP após o AAC
+run(['ffmpeg', '-y', '-v', 'error', '-i', NARR, '-i', os.path.join(OUT, 'sfx.wav'), '-i', os.path.join(OUT, 'music.wav'),
+     *(['-i', TENS] if HAS_T else []), '-filter_complex', fc, '-map', '[mix]', '-ar', '48000', '-c:a', 'pcm_s16le', os.path.join(OUT, 'mix.wav')])
+UP = 'scale=1080:1920:flags=lanczos,unsharp=5:5:0.45:5:5:0.0,' if not getattr(SH, 'NATIVE', False) else ''   # 3D nativo em 1080x1920: sem ampliar
+vf = (UP + 'eq=contrast=1.03:saturation=1.05,'
+      f"ass={os.path.join(OUT, 'legenda.ass')}:fontsdir={os.path.join(PROJ, 'fonts')},format=yuv420p")
+final = os.path.join(OUT, os.environ.get('OUT_NAME', DEF_NAME))
+MG = os.path.join(BASE, 'mg')          # camada de motion graphics em 1080x1920 (vídeo 10 em diante), sobreposta depois da ampliação do 3D
+if EP and os.path.isdir(MG):
+    mg_missing = [p for s in SH.SHOTS for f in s.frames for p in [os.path.join(MG, s.name, f'{f:04d}.png')] if not os.path.exists(p)]
+    if mg_missing: sys.exit(f'faltam {len(mg_missing)} quadros de motion graphics (ex.: {mg_missing[:3]})')
+    with open(os.path.join(OUT, 'mg.txt'), 'w') as f:
+        for s in SH.SHOTS:
+            for fr_ in s.frames: f.write(f"file '{os.path.join(MG, s.name, f'{fr_:04d}.png')}'\nduration {1 / SH.FPS:.6f}\n")
+    a3d, a_ass = vf.split(',ass=')
+    fcv = f"[0:v]{a3d}[b];[1:v]format=rgba[o];[b][o]overlay=0:0,ass={a_ass}[v]"
+    run(['ffmpeg', '-y', '-v', 'error', '-f', 'concat', '-safe', '0', '-i', os.path.join(OUT, 'frames.txt'), '-f', 'concat', '-safe', '0', '-i', os.path.join(OUT, 'mg.txt'),
+         '-i', os.path.join(OUT, 'mix.wav'), '-filter_complex', fcv, '-r', '30', '-map', '[v]', '-map', '2:a', '-c:v', 'libx264', '-preset', 'slow', '-crf', '17', '-profile:v', 'high',
+         '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-t', f'{SH.END:.3f}', '-movflags', '+faststart', final + '.tmp.mp4'])
+else:
+  run(['ffmpeg', '-y', '-v', 'error', '-f', 'concat', '-safe', '0', '-i', os.path.join(OUT, 'frames.txt'), '-i', os.path.join(OUT, 'mix.wav'),
+     '-vf', vf, '-r', '30', '-map', '0:v', '-map', '1:a', '-c:v', 'libx264', '-preset', 'slow', '-crf', '17', '-profile:v', 'high',
+     '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-t', f'{SH.END:.3f}', '-movflags', '+faststart', final + '.tmp.mp4'])
+os.replace(final + '.tmp.mp4', final); print('ok', final, 'faltando:', len(missing))
+# versão leve (~6 Mbps) para baixar no celular: o app só mostra o botão de baixar em arquivos menores
+if os.path.getsize(final) > 80e6 and os.environ.get('LEVE', '1') == '1':
+    leve = final.replace('.mp4', '_leve.mp4'); x = ['-c:v', 'libx264', '-preset', 'slow', '-b:v', '6200k', '-maxrate', '9000k', '-bufsize', '12000k']
+    pl = os.path.join(OUT, 'ffpass')
+    run(['ffmpeg', '-y', '-v', 'error', '-i', final] + x + ['-pass', '1', '-passlogfile', pl, '-an', '-f', 'mp4', '/dev/null'])
+    run(['ffmpeg', '-y', '-v', 'error', '-i', final] + x + ['-pass', '2', '-passlogfile', pl, '-profile:v', 'high', '-pix_fmt', 'yuv420p',
+         '-movflags', '+faststart', '-c:a', 'copy', leve])
+    for f in os.listdir(OUT):
+        if f.startswith('ffpass'): os.remove(os.path.join(OUT, f))
+    print('leve', leve, round(os.path.getsize(leve) / 1e6), 'MB')

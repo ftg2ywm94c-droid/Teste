@@ -1,0 +1,82 @@
+[
+ {
+  "i": 0,
+  "frase": "Seis por cento. Você liga pros bombeiros. Cento e noventa e três. Chama uma vez. Duas. Atendem.",
+  "score": 0.552,
+  "ouvido": "6%. Você liga para os bombeiros. 193. Chama uma vez. Duas. Atendem.",
+  "f0": 178,
+  "palavras_s": 2.14
+ },
+ {
+  "i": 1,
+  "frase": "Você fala tudo: o endereço, a árvore, o fio soltando faísca, a vizinha pedindo socorro.",
+  "score": 1.0,
+  "ouvido": "Você fala tudo.  O endereço, a árvore, o fio.  Soltando faísca, a vizinha pedindo socorro.",
+  "f0": 184,
+  "palavras_s": 2.05
+ },
+ {
+  "i": 2,
+  "frase": "Do outro lado, uma voz calma: não chega perto do fio, fica onde você está, a equipe já tá indo. Três por cento.",
+  "score": 0.909,
+  "ouvido": "Do outro lado, uma voz calma, não chega perto do fio, fica onde você está, a equipe  já está indo, 3%.",
+  "f0": 208,
+  "palavras_s": 2.97
+ },
+ {
+  "i": 3,
+  "frase": "A ligação cai. O celular apaga. Agora é só escuridão e chuva. Lá longe, uma sirene. Ela vai chegando, chegando... e para. Silêncio.",
+  "score": 1.0,
+  "ouvido": "A ligação cai, o celular apaga, agora é só escuridão e chuva, lá longe uma sirene.  Ela vai chegando, chegando e para, silêncio.",
+  "f0": 193,
+  "palavras_s": 2.09
+ },
+ {
+  "i": 4,
+  "frase": "Aí batem na porta da frente. Forte. É a vizinha, gritando: abre! O meu filho tá preso, eu não consigo tirar ele sozinha!",
+  "score": 1.0,
+  "ouvido": "Aí batem na porta da frente.  Forte!  É a vizinha?  Gritando.  Abre!  O meu filho está preso.  Eu não consigo tirar ele sozinha.",
+  "f0": 203,
+  "palavras_s": 2.74
+ },
+ {
+  "i": 5,
+  "frase": "Entre você e a porta tem a sala inteira no escuro. E no meio dela, o fio. Ainda soltando faísca.",
+  "score": 1.0,
+  "ouvido": "entre você e a porta tem a sala inteira no escuro, e no meio dela o fio ainda soltando  faísca.",
+  "f0": 219,
+  "palavras_s": 2.7
+ },
+ {
+  "i": 6,
+  "frase": "Opção A: você atravessa a sala e abre a porta pra ela.",
+  "score": 0.997,
+  "ouvido": "Opção A. Você atravessa a sala e abre a porta para ela.",
+  "f0": 225,
+  "palavras_s": 3.32
+ },
+ {
+  "i": 7,
+  "frase": "Opção B: você fica no banheiro e grita pra ela esperar os bombeiros na rua.",
+  "score": 1.0,
+  "ouvido": "Opção B. Você fica no banheiro e grita para ela esperar os bombeiros na rua.",
+  "f0": 180,
+  "palavras_s": 2.91
+ },
+ {
+  "i": 8,
+  "frase": "Comenta A ou B. A mais comentada vira o episódio quatro.",
+  "score": 0.909,
+  "ouvido": "Comenta A ou B. A mais comentada vira o episódio 4.",
+  "f0": 186,
+  "palavras_s": 2.32
+ },
+ {
+  "i": 9,
+  "frase": "Manda pra quem escolheria diferente de você e se inscreve pra não perder. E se...",
+  "score": 1.0,
+  "ouvido": "Manda pra quem escolheria diferente de você e se inscreve pra não perder.  E se...",
+  "f0": 229,
+  "palavras_s": 3.22
+ }
+]

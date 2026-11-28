@@ -1,0 +1,1534 @@
+{
+"diffs": [],
+"words": [
+{
+"w": "Agora",
+"s": 0.0,
+"e": 0.36,
+"key": false
+},
+{
+"w": "mesmo,",
+"s": 0.36,
+"e": 0.84,
+"key": false
+},
+{
+"w": "você",
+"s": 1.12,
+"e": 1.24,
+"key": false
+},
+{
+"w": "está",
+"s": 1.24,
+"e": 1.42,
+"key": false
+},
+{
+"w": "girando",
+"s": 1.42,
+"e": 1.74,
+"key": false
+},
+{
+"w": "a",
+"s": 1.74,
+"e": 1.92,
+"key": false
+},
+{
+"w": "mais",
+"s": 1.92,
+"e": 2.16,
+"key": false
+},
+{
+"w": "de",
+"s": 2.16,
+"e": 2.52,
+"key": false
+},
+{
+"w": "mil",
+"s": 2.52,
+"e": 2.82,
+"key": true
+},
+{
+"w": "quilômetros",
+"s": 2.82,
+"e": 3.46,
+"key": true
+},
+{
+"w": "por",
+"s": 3.46,
+"e": 3.76,
+"key": true
+},
+{
+"w": "hora.",
+"s": 3.76,
+"e": 4.06,
+"key": true
+},
+{
+"w": "E",
+"s": 4.84,
+"e": 4.98,
+"key": false
+},
+{
+"w": "se",
+"s": 4.98,
+"e": 5.08,
+"key": false
+},
+{
+"w": "isso",
+"s": 5.08,
+"e": 5.36,
+"key": false
+},
+{
+"w": "parasse?",
+"s": 5.36,
+"e": 5.82,
+"key": false
+},
+{
+"w": "A",
+"s": 6.96,
+"e": 7.12,
+"key": false
+},
+{
+"w": "Terra",
+"s": 7.12,
+"e": 7.38,
+"key": false
+},
+{
+"w": "gira",
+"s": 7.38,
+"e": 7.7,
+"key": false
+},
+{
+"w": "uma",
+"s": 7.7,
+"e": 8.04,
+"key": false
+},
+{
+"w": "vez",
+"s": 8.04,
+"e": 8.22,
+"key": false
+},
+{
+"w": "por",
+"s": 8.22,
+"e": 8.48,
+"key": false
+},
+{
+"w": "dia.",
+"s": 8.48,
+"e": 8.82,
+"key": false
+},
+{
+"w": "No",
+"s": 9.24,
+"e": 9.34,
+"key": false
+},
+{
+"w": "Equador,",
+"s": 9.34,
+"e": 9.84,
+"key": true
+},
+{
+"w": "o",
+"s": 10.28,
+"e": 10.42,
+"key": false
+},
+{
+"w": "chão",
+"s": 10.42,
+"e": 10.56,
+"key": false
+},
+{
+"w": "anda",
+"s": 10.56,
+"e": 10.86,
+"key": false
+},
+{
+"w": "a",
+"s": 10.86,
+"e": 11.02,
+"key": false
+},
+{
+"w": "mil",
+"s": 11.02,
+"e": 11.38,
+"key": true
+},
+{
+"w": "seiscentos",
+"s": 11.38,
+"e": 12.14,
+"key": true
+},
+{
+"w": "e",
+"s": 12.14,
+"e": 12.28,
+"key": true
+},
+{
+"w": "setenta",
+"s": 12.28,
+"e": 12.64,
+"key": true
+},
+{
+"w": "quilômetros",
+"s": 12.64,
+"e": 13.34,
+"key": true
+},
+{
+"w": "por",
+"s": 13.34,
+"e": 13.62,
+"key": true
+},
+{
+"w": "hora,",
+"s": 13.62,
+"e": 13.88,
+"key": true
+},
+{
+"w": "e",
+"s": 14.28,
+"e": 14.44,
+"key": false
+},
+{
+"w": "você,",
+"s": 14.44,
+"e": 14.88,
+"key": false
+},
+{
+"w": "o",
+"s": 15.18,
+"e": 15.34,
+"key": false
+},
+{
+"w": "ar",
+"s": 15.34,
+"e": 15.64,
+"key": false
+},
+{
+"w": "e",
+"s": 15.64,
+"e": 15.78,
+"key": false
+},
+{
+"w": "o",
+"s": 15.78,
+"e": 15.94,
+"key": false
+},
+{
+"w": "mar",
+"s": 15.94,
+"e": 16.24,
+"key": false
+},
+{
+"w": "vão",
+"s": 16.24,
+"e": 16.52,
+"key": false
+},
+{
+"w": "junto.",
+"s": 16.52,
+"e": 16.96,
+"key": false
+},
+{
+"w": "Por",
+"s": 17.68,
+"e": 17.86,
+"key": false
+},
+{
+"w": "isso",
+"s": 17.86,
+"e": 18.04,
+"key": false
+},
+{
+"w": "ninguém",
+"s": 18.04,
+"e": 18.3,
+"key": false
+},
+{
+"w": "sente.",
+"s": 18.3,
+"e": 18.7,
+"key": false
+},
+{
+"w": "Agora",
+"s": 19.94,
+"e": 20.22,
+"key": false
+},
+{
+"w": "imagine",
+"s": 20.22,
+"e": 20.58,
+"key": false
+},
+{
+"w": "que",
+"s": 20.58,
+"e": 20.74,
+"key": false
+},
+{
+"w": "o",
+"s": 20.74,
+"e": 20.88,
+"key": false
+},
+{
+"w": "planeta",
+"s": 20.88,
+"e": 21.16,
+"key": false
+},
+{
+"w": "trava",
+"s": 21.16,
+"e": 21.58,
+"key": false
+},
+{
+"w": "de",
+"s": 21.58,
+"e": 21.78,
+"key": false
+},
+{
+"w": "uma",
+"s": 21.78,
+"e": 22.02,
+"key": false
+},
+{
+"w": "vez.",
+"s": 22.02,
+"e": 22.32,
+"key": false
+},
+{
+"w": "O",
+"s": 22.94,
+"e": 23.12,
+"key": false
+},
+{
+"w": "chão",
+"s": 23.12,
+"e": 23.3,
+"key": false
+},
+{
+"w": "para,",
+"s": 23.3,
+"e": 23.66,
+"key": false
+},
+{
+"w": "mas",
+"s": 24.08,
+"e": 24.32,
+"key": false
+},
+{
+"w": "o",
+"s": 24.32,
+"e": 24.56,
+"key": false
+},
+{
+"w": "ar",
+"s": 24.56,
+"e": 24.86,
+"key": false
+},
+{
+"w": "e",
+"s": 24.86,
+"e": 25.04,
+"key": false
+},
+{
+"w": "o",
+"s": 25.04,
+"e": 25.28,
+"key": false
+},
+{
+"w": "oceano",
+"s": 25.28,
+"e": 25.82,
+"key": false
+},
+{
+"w": "continuam",
+"s": 25.82,
+"e": 26.38,
+"key": false
+},
+{
+"w": "indo",
+"s": 26.38,
+"e": 26.64,
+"key": false
+},
+{
+"w": "para",
+"s": 26.64,
+"e": 26.84,
+"key": false
+},
+{
+"w": "o",
+"s": 26.84,
+"e": 27.0,
+"key": false
+},
+{
+"w": "leste.",
+"s": 27.0,
+"e": 27.36,
+"key": true
+},
+{
+"w": "Como",
+"s": 28.26,
+"e": 28.58,
+"key": false
+},
+{
+"w": "um",
+"s": 28.58,
+"e": 28.76,
+"key": false
+},
+{
+"w": "ônibus",
+"s": 28.76,
+"e": 29.16,
+"key": false
+},
+{
+"w": "freando",
+"s": 29.16,
+"e": 29.52,
+"key": false
+},
+{
+"w": "de",
+"s": 29.54,
+"e": 29.78,
+"key": false
+},
+{
+"w": "repente,",
+"s": 29.78,
+"e": 30.22,
+"key": false
+},
+{
+"w": "a",
+"s": 30.82,
+"e": 30.96,
+"key": false
+},
+{
+"w": "mil",
+"s": 30.96,
+"e": 31.12,
+"key": true
+},
+{
+"w": "e",
+"s": 31.12,
+"e": 31.32,
+"key": true
+},
+{
+"w": "seiscentos",
+"s": 31.32,
+"e": 31.82,
+"key": true
+},
+{
+"w": "por",
+"s": 31.82,
+"e": 32.02,
+"key": true
+},
+{
+"w": "hora.",
+"s": 32.02,
+"e": 32.34,
+"key": true
+},
+{
+"w": "Onde",
+"s": 33.38,
+"e": 33.5,
+"key": false
+},
+{
+"w": "você",
+"s": 33.5,
+"e": 33.82,
+"key": false
+},
+{
+"w": "estaria",
+"s": 33.82,
+"e": 34.04,
+"key": false
+},
+{
+"w": "mais",
+"s": 34.04,
+"e": 34.26,
+"key": false
+},
+{
+"w": "seguro:",
+"s": 34.26,
+"e": 34.64,
+"key": false
+},
+{
+"w": "no",
+"s": 35.14,
+"e": 35.28,
+"key": false
+},
+{
+"w": "Equador",
+"s": 35.28,
+"e": 35.86,
+"key": true
+},
+{
+"w": "ou",
+"s": 35.86,
+"e": 36.2,
+"key": false
+},
+{
+"w": "perto",
+"s": 36.2,
+"e": 36.48,
+"key": false
+},
+{
+"w": "dos",
+"s": 36.48,
+"e": 36.76,
+"key": false
+},
+{
+"w": "polos?",
+"s": 36.76,
+"e": 37.54,
+"key": true
+},
+{
+"w": "Comenta",
+"s": 37.84,
+"e": 38.12,
+"key": false
+},
+{
+"w": "aí.",
+"s": 38.12,
+"e": 38.6,
+"key": false
+},
+{
+"w": "Perto",
+"s": 39.54,
+"e": 39.78,
+"key": false
+},
+{
+"w": "dos",
+"s": 39.78,
+"e": 40.06,
+"key": false
+},
+{
+"w": "polos,",
+"s": 40.06,
+"e": 40.58,
+"key": true
+},
+{
+"w": "onde",
+"s": 40.72,
+"e": 40.92,
+"key": false
+},
+{
+"w": "o",
+"s": 40.92,
+"e": 41.08,
+"key": false
+},
+{
+"w": "chão",
+"s": 41.08,
+"e": 41.26,
+"key": false
+},
+{
+"w": "quase",
+"s": 41.26,
+"e": 41.66,
+"key": false
+},
+{
+"w": "não",
+"s": 41.66,
+"e": 41.84,
+"key": false
+},
+{
+"w": "se",
+"s": 41.84,
+"e": 42.06,
+"key": false
+},
+{
+"w": "move.",
+"s": 42.06,
+"e": 42.32,
+"key": false
+},
+{
+"w": "No",
+"s": 43.12,
+"e": 43.24,
+"key": false
+},
+{
+"w": "Equador,",
+"s": 43.24,
+"e": 43.8,
+"key": true
+},
+{
+"w": "o",
+"s": 44.12,
+"e": 44.22,
+"key": false
+},
+{
+"w": "vento",
+"s": 44.22,
+"e": 44.5,
+"key": false
+},
+{
+"w": "seria",
+"s": 44.5,
+"e": 44.8,
+"key": false
+},
+{
+"w": "quatro",
+"s": 44.8,
+"e": 45.32,
+"key": true
+},
+{
+"w": "vezes",
+"s": 45.32,
+"e": 45.72,
+"key": true
+},
+{
+"w": "mais",
+"s": 45.72,
+"e": 46.08,
+"key": true
+},
+{
+"w": "forte",
+"s": 46.08,
+"e": 46.4,
+"key": true
+},
+{
+"w": "que",
+"s": 46.4,
+"e": 46.56,
+"key": false
+},
+{
+"w": "a",
+"s": 46.56,
+"e": 46.78,
+"key": false
+},
+{
+"w": "maior",
+"s": 46.78,
+"e": 47.0,
+"key": false
+},
+{
+"w": "rajada",
+"s": 47.0,
+"e": 47.48,
+"key": false
+},
+{
+"w": "já",
+"s": 47.48,
+"e": 47.7,
+"key": false
+},
+{
+"w": "medida,",
+"s": 47.7,
+"e": 48.04,
+"key": false
+},
+{
+"w": "e",
+"s": 48.58,
+"e": 48.76,
+"key": false
+},
+{
+"w": "o",
+"s": 48.76,
+"e": 48.96,
+"key": false
+},
+{
+"w": "oceano",
+"s": 48.96,
+"e": 49.28,
+"key": false
+},
+{
+"w": "invadiria",
+"s": 49.28,
+"e": 49.88,
+"key": false
+},
+{
+"w": "os",
+"s": 49.88,
+"e": 50.12,
+"key": false
+},
+{
+"w": "continentes.",
+"s": 50.12,
+"e": 50.74,
+"key": false
+},
+{
+"w": "E",
+"s": 51.78,
+"e": 51.92,
+"key": false
+},
+{
+"w": "mesmo",
+"s": 51.92,
+"e": 52.14,
+"key": false
+},
+{
+"w": "uma",
+"s": 52.14,
+"e": 52.36,
+"key": false
+},
+{
+"w": "parada",
+"s": 52.36,
+"e": 52.7,
+"key": false
+},
+{
+"w": "lenta",
+"s": 52.7,
+"e": 53.04,
+"key": false
+},
+{
+"w": "mudaria",
+"s": 53.04,
+"e": 53.44,
+"key": false
+},
+{
+"w": "tudo:",
+"s": 53.44,
+"e": 53.84,
+"key": false
+},
+{
+"w": "um",
+"s": 54.36,
+"e": 54.62,
+"key": true
+},
+{
+"w": "dia",
+"s": 54.62,
+"e": 55.1,
+"key": true
+},
+{
+"w": "duraria",
+"s": 55.1,
+"e": 55.64,
+"key": true
+},
+{
+"w": "um",
+"s": 55.64,
+"e": 56.04,
+"key": true
+},
+{
+"w": "ano.",
+"s": 56.04,
+"e": 56.42,
+"key": true
+},
+{
+"w": "Seis",
+"s": 56.42,
+"e": 57.52,
+"key": true
+},
+{
+"w": "meses",
+"s": 57.52,
+"e": 57.82,
+"key": true
+},
+{
+"w": "de",
+"s": 57.82,
+"e": 58.12,
+"key": true
+},
+{
+"w": "sol,",
+"s": 58.12,
+"e": 58.38,
+"key": true
+},
+{
+"w": "seis",
+"s": 58.94,
+"e": 59.16,
+"key": true
+},
+{
+"w": "de",
+"s": 59.16,
+"e": 59.36,
+"key": true
+},
+{
+"w": "noite.",
+"s": 59.36,
+"e": 59.78,
+"key": true
+},
+{
+"w": "Sem",
+"s": 60.68,
+"e": 60.84,
+"key": false
+},
+{
+"w": "o",
+"s": 60.84,
+"e": 61.1,
+"key": false
+},
+{
+"w": "giro,",
+"s": 61.1,
+"e": 61.5,
+"key": false
+},
+{
+"w": "a",
+"s": 61.8,
+"e": 61.96,
+"key": false
+},
+{
+"w": "água",
+"s": 61.96,
+"e": 62.12,
+"key": false
+},
+{
+"w": "que",
+"s": 62.12,
+"e": 62.22,
+"key": false
+},
+{
+"w": "se",
+"s": 62.22,
+"e": 62.4,
+"key": false
+},
+{
+"w": "acumula",
+"s": 62.4,
+"e": 62.66,
+"key": false
+},
+{
+"w": "no",
+"s": 62.66,
+"e": 62.82,
+"key": false
+},
+{
+"w": "Equador",
+"s": 62.82,
+"e": 63.36,
+"key": true
+},
+{
+"w": "escorreria",
+"s": 63.36,
+"e": 64.0,
+"key": false
+},
+{
+"w": "para",
+"s": 64.0,
+"e": 64.18,
+"key": false
+},
+{
+"w": "os",
+"s": 64.18,
+"e": 64.4,
+"key": false
+},
+{
+"w": "polos,",
+"s": 64.4,
+"e": 64.94,
+"key": true
+},
+{
+"w": "deixando",
+"s": 65.26,
+"e": 65.5,
+"key": false
+},
+{
+"w": "um",
+"s": 65.5,
+"e": 65.72,
+"key": false
+},
+{
+"w": "continente",
+"s": 65.72,
+"e": 66.18,
+"key": true
+},
+{
+"w": "gigante",
+"s": 66.18,
+"e": 66.82,
+"key": true
+},
+{
+"w": "no",
+"s": 66.82,
+"e": 67.02,
+"key": false
+},
+{
+"w": "meio",
+"s": 67.02,
+"e": 67.22,
+"key": false
+},
+{
+"w": "do",
+"s": 67.22,
+"e": 67.46,
+"key": false
+},
+{
+"w": "planeta.",
+"s": 67.46,
+"e": 67.82,
+"key": false
+},
+{
+"w": "A",
+"s": 69.0,
+"e": 69.14,
+"key": false
+},
+{
+"w": "boa",
+"s": 69.14,
+"e": 69.26,
+"key": false
+},
+{
+"w": "notícia:",
+"s": 69.26,
+"e": 69.84,
+"key": false
+},
+{
+"w": "a",
+"s": 70.42,
+"e": 70.54,
+"key": false
+},
+{
+"w": "Terra",
+"s": 70.54,
+"e": 70.74,
+"key": false
+},
+{
+"w": "está",
+"s": 70.74,
+"e": 71.04,
+"key": false
+},
+{
+"w": "desacelerando,",
+"s": 71.04,
+"e": 72.06,
+"key": false
+},
+{
+"w": "mas",
+"s": 72.52,
+"e": 72.62,
+"key": false
+},
+{
+"w": "menos",
+"s": 72.62,
+"e": 73.0,
+"key": false
+},
+{
+"w": "de",
+"s": 73.0,
+"e": 73.38,
+"key": false
+},
+{
+"w": "dois",
+"s": 73.38,
+"e": 73.58,
+"key": true
+},
+{
+"w": "milésimos",
+"s": 73.58,
+"e": 74.2,
+"key": true
+},
+{
+"w": "de",
+"s": 74.2,
+"e": 74.46,
+"key": true
+},
+{
+"w": "segundo",
+"s": 74.46,
+"e": 74.86,
+"key": true
+},
+{
+"w": "por",
+"s": 74.86,
+"e": 75.3,
+"key": true
+},
+{
+"w": "século.",
+"s": 75.3,
+"e": 75.7,
+"key": true
+}
+],
+"chunks": [
+{
+"s": 0.0,
+"e": 0.84,
+"t": "AGORA MESMO,"
+},
+{
+"s": 1.12,
+"e": 1.42,
+"t": "VOCÊ ESTÁ"
+},
+{
+"s": 1.42,
+"e": 1.92,
+"t": "GIRANDO A"
+},
+{
+"s": 1.92,
+"e": 2.82,
+"t": "MAIS DE {\\c&H0028D7FF&}MIL{\\c&HFFFFFF&}"
+},
+{
+"s": 2.82,
+"e": 3.46,
+"t": "{\\c&H0028D7FF&}QUILÔMETROS{\\c&HFFFFFF&}"
+},
+{
+"s": 3.46,
+"e": 4.06,
+"t": "{\\c&H0028D7FF&}POR{\\c&HFFFFFF&} {\\c&H0028D7FF&}HORA.{\\c&HFFFFFF&}"
+},
+{
+"s": 4.84,
+"e": 5.36,
+"t": "E SE ISSO"
+},
+{
+"s": 5.36,
+"e": 5.82,
+"t": "PARASSE?"
+},
+{
+"s": 6.96,
+"e": 7.7,
+"t": "A TERRA GIRA"
+},
+{
+"s": 7.7,
+"e": 8.82,
+"t": "UMA VEZ POR DIA."
+},
+{
+"s": 9.24,
+"e": 9.84,
+"t": "NO {\\c&H0028D7FF&}EQUADOR,{\\c&HFFFFFF&}"
+},
+{
+"s": 10.28,
+"e": 10.86,
+"t": "O CHÃO ANDA"
+},
+{
+"s": 10.86,
+"e": 12.14,
+"t": "A {\\c&H0028D7FF&}MIL{\\c&HFFFFFF&} {\\c&H0028D7FF&}SEISCENTOS{\\c&HFFFFFF&}"
+},
+{
+"s": 12.14,
+"e": 12.64,
+"t": "{\\c&H0028D7FF&}E{\\c&HFFFFFF&} {\\c&H0028D7FF&}SETENTA{\\c&HFFFFFF&}"
+},
+{
+"s": 12.64,
+"e": 13.34,
+"t": "{\\c&H0028D7FF&}QUILÔMETROS{\\c&HFFFFFF&}"
+},
+{
+"s": 13.34,
+"e": 13.88,
+"t": "{\\c&H0028D7FF&}POR{\\c&HFFFFFF&} {\\c&H0028D7FF&}HORA,{\\c&HFFFFFF&}"
+},
+{
+"s": 14.28,
+"e": 14.88,
+"t": "E VOCÊ,"
+},
+{
+"s": 15.18,
+"e": 16.24,
+"t": "O AR E O MAR"
+},
+{
+"s": 16.24,
+"e": 16.96,
+"t": "VÃO JUNTO."
+},
+{
+"s": 17.68,
+"e": 18.04,
+"t": "POR ISSO"
+},
+{
+"s": 18.04,
+"e": 18.7,
+"t": "NINGUÉM SENTE."
+},
+{
+"s": 19.94,
+"e": 20.58,
+"t": "AGORA IMAGINE"
+},
+{
+"s": 20.58,
+"e": 21.16,
+"t": "QUE O PLANETA"
+},
+{
+"s": 21.16,
+"e": 21.58,
+"t": "TRAVA"
+},
+{
+"s": 21.58,
+"e": 22.32,
+"t": "DE UMA VEZ."
+},
+{
+"s": 22.94,
+"e": 23.66,
+"t": "O CHÃO PARA,"
+},
+{
+"s": 24.08,
+"e": 24.86,
+"t": "MAS O AR"
+},
+{
+"s": 24.86,
+"e": 25.82,
+"t": "E O OCEANO"
+},
+{
+"s": 25.82,
+"e": 26.64,
+"t": "CONTINUAM INDO"
+},
+{
+"s": 26.64,
+"e": 27.36,
+"t": "PARA O {\\c&H0028D7FF&}LESTE.{\\c&HFFFFFF&}"
+},
+{
+"s": 28.26,
+"e": 29.16,
+"t": "COMO UM ÔNIBUS"
+},
+{
+"s": 29.16,
+"e": 29.54,
+"t": "FREANDO"
+},
+{
+"s": 29.54,
+"e": 30.22,
+"t": "DE REPENTE,"
+},
+{
+"s": 30.82,
+"e": 31.32,
+"t": "A {\\c&H0028D7FF&}MIL{\\c&HFFFFFF&} {\\c&H0028D7FF&}E{\\c&HFFFFFF&}"
+},
+{
+"s": 31.32,
+"e": 31.82,
+"t": "{\\c&H0028D7FF&}SEISCENTOS{\\c&HFFFFFF&}"
+},
+{
+"s": 31.82,
+"e": 32.34,
+"t": "{\\c&H0028D7FF&}POR{\\c&HFFFFFF&} {\\c&H0028D7FF&}HORA.{\\c&HFFFFFF&}"
+},
+{
+"s": 33.38,
+"e": 33.82,
+"t": "ONDE VOCÊ"
+},
+{
+"s": 33.82,
+"e": 34.04,
+"t": "ESTARIA"
+},
+{
+"s": 34.04,
+"e": 34.64,
+"t": "MAIS SEGURO:"
+},
+{
+"s": 35.14,
+"e": 35.86,
+"t": "NO {\\c&H0028D7FF&}EQUADOR{\\c&HFFFFFF&}"
+},
+{
+"s": 35.86,
+"e": 36.48,
+"t": "OU PERTO"
+},
+{
+"s": 36.48,
+"e": 37.54,
+"t": "DOS {\\c&H0028D7FF&}POLOS?{\\c&HFFFFFF&}"
+},
+{
+"s": 37.84,
+"e": 38.6,
+"t": "COMENTA AÍ."
+},
+{
+"s": 39.54,
+"e": 40.72,
+"t": "PERTO DOS {\\c&H0028D7FF&}POLOS,{\\c&HFFFFFF&}"
+},
+{
+"s": 40.72,
+"e": 41.26,
+"t": "ONDE O CHÃO"
+},
+{
+"s": 41.26,
+"e": 41.66,
+"t": "QUASE"
+},
+{
+"s": 41.66,
+"e": 42.32,
+"t": "NÃO SE MOVE."
+},
+{
+"s": 43.12,
+"e": 43.8,
+"t": "NO {\\c&H0028D7FF&}EQUADOR,{\\c&HFFFFFF&}"
+},
+{
+"s": 44.12,
+"e": 44.8,
+"t": "O VENTO SERIA"
+},
+{
+"s": 44.8,
+"e": 45.72,
+"t": "{\\c&H0028D7FF&}QUATRO{\\c&HFFFFFF&} {\\c&H0028D7FF&}VEZES{\\c&HFFFFFF&}"
+},
+{
+"s": 45.72,
+"e": 46.4,
+"t": "{\\c&H0028D7FF&}MAIS{\\c&HFFFFFF&} {\\c&H0028D7FF&}FORTE{\\c&HFFFFFF&}"
+},
+{
+"s": 46.4,
+"e": 47.0,
+"t": "QUE A MAIOR"
+},
+{
+"s": 47.0,
+"e": 47.48,
+"t": "RAJADA"
+},
+{
+"s": 47.48,
+"e": 48.04,
+"t": "JÁ MEDIDA,"
+},
+{
+"s": 48.58,
+"e": 49.28,
+"t": "E O OCEANO"
+},
+{
+"s": 49.28,
+"e": 49.88,
+"t": "INVADIRIA"
+},
+{
+"s": 49.88,
+"e": 50.74,
+"t": "OS CONTINENTES."
+},
+{
+"s": 51.78,
+"e": 52.14,
+"t": "E MESMO"
+},
+{
+"s": 52.14,
+"e": 53.04,
+"t": "UMA PARADA LENTA"
+},
+{
+"s": 53.04,
+"e": 53.84,
+"t": "MUDARIA TUDO:"
+},
+{
+"s": 54.36,
+"e": 55.64,
+"t": "{\\c&H0028D7FF&}UM{\\c&HFFFFFF&} {\\c&H0028D7FF&}DIA{\\c&HFFFFFF&} {\\c&H0028D7FF&}DURARIA{\\c&HFFFFFF&}"
+},
+{
+"s": 55.64,
+"e": 56.42,
+"t": "{\\c&H0028D7FF&}UM{\\c&HFFFFFF&} {\\c&H0028D7FF&}ANO.{\\c&HFFFFFF&}"
+},
+{
+"s": 56.42,
+"e": 58.38,
+"t": "{\\c&H0028D7FF&}SEIS{\\c&HFFFFFF&} {\\c&H0028D7FF&}MESES{\\c&HFFFFFF&} {\\c&H0028D7FF&}DE{\\c&HFFFFFF&} {\\c&H0028D7FF&}SOL,{\\c&HFFFFFF&}"
+},
+{
+"s": 58.94,
+"e": 59.78,
+"t": "{\\c&H0028D7FF&}SEIS{\\c&HFFFFFF&} {\\c&H0028D7FF&}DE{\\c&HFFFFFF&} {\\c&H0028D7FF&}NOITE.{\\c&HFFFFFF&}"
+},
+{
+"s": 60.68,
+"e": 61.5,
+"t": "SEM O GIRO,"
+},
+{
+"s": 61.8,
+"e": 62.12,
+"t": "A ÁGUA"
+},
+{
+"s": 62.12,
+"e": 62.66,
+"t": "QUE SE ACUMULA"
+},
+{
+"s": 62.66,
+"e": 63.36,
+"t": "NO {\\c&H0028D7FF&}EQUADOR{\\c&HFFFFFF&}"
+},
+{
+"s": 63.36,
+"e": 64.0,
+"t": "ESCORRERIA"
+},
+{
+"s": 64.0,
+"e": 64.94,
+"t": "PARA OS {\\c&H0028D7FF&}POLOS,{\\c&HFFFFFF&}"
+},
+{
+"s": 65.26,
+"e": 65.5,
+"t": "DEIXANDO"
+},
+{
+"s": 65.5,
+"e": 66.82,
+"t": "UM {\\c&H0028D7FF&}CONTINENTE{\\c&HFFFFFF&} {\\c&H0028D7FF&}GIGANTE{\\c&HFFFFFF&}"
+},
+{
+"s": 66.82,
+"e": 67.22,
+"t": "NO MEIO"
+},
+{
+"s": 67.22,
+"e": 67.82,
+"t": "DO PLANETA."
+},
+{
+"s": 69.0,
+"e": 69.84,
+"t": "A BOA NOTÍCIA:"
+},
+{
+"s": 70.42,
+"e": 71.04,
+"t": "A TERRA ESTÁ"
+},
+{
+"s": 71.04,
+"e": 71.94000000000001,
+"t": "DESACELERANDO,"
+},
+{
+"s": 72.52,
+"e": 73.0,
+"t": "MAS MENOS"
+},
+{
+"s": 73.0,
+"e": 73.58,
+"t": "DE {\\c&H0028D7FF&}DOIS{\\c&HFFFFFF&}"
+},
+{
+"s": 73.58,
+"e": 74.2,
+"t": "{\\c&H0028D7FF&}MILÉSIMOS{\\c&HFFFFFF&}"
+},
+{
+"s": 74.2,
+"e": 74.86,
+"t": "{\\c&H0028D7FF&}DE{\\c&HFFFFFF&} {\\c&H0028D7FF&}SEGUNDO{\\c&HFFFFFF&}"
+},
+{
+"s": 74.86,
+"e": 75.7,
+"t": "{\\c&H0028D7FF&}POR{\\c&HFFFFFF&} {\\c&H0028D7FF&}SÉCULO.{\\c&HFFFFFF&}"
+}
+],
+"hud": [
+[
+68.9,
+76.4,
+"o dia aumenta ~1,78 ms por século"
+]
+]
+}

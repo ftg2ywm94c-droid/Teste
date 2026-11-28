@@ -1,0 +1,36 @@
+{
+ "os": "Linux-6.18.44-fc-v378-x86_64-with-glibc2.39",
+ "cpu_cores": 2,
+ "ram_gb": 7,
+ "gpu": null,
+ "disk_free_gb": 32,
+ "python": "3.13.18",
+ "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+ "blender": null,
+ "bpy": null,
+ "network_for_installs": false,
+ "python_libs_ok": [
+  "numpy",
+  "opencv",
+  "Pillow",
+  "scipy",
+  "scikit-image",
+  "imageio",
+  "matplotlib"
+ ],
+ "missing": [
+  "blender/bpy",
+  "edge-tts (precisa de rede)",
+  "faster-whisper",
+  "pysubs2",
+  "soundfile",
+  "librosa",
+  "qualquer TTS pt-BR offline"
+ ],
+ "other": {
+  "tesseract": "5 (eng) — usado para ler as legendas queimadas",
+  "ffmpeg_flite": "presente, mas só voz em inglês — não usado",
+  "fonts": "Poppins Bold disponível"
+ },
+ "decision": "Sem Blender e sem instalação possível: PoC renderizada com ray caster 3D próprio em NumPy (engine/rt.py). Script bpy equivalente entregue sem teste."
+}

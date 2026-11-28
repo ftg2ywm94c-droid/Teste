@@ -1,0 +1,1364 @@
+{
+"diffs": [
+[
+"replace",
+"duzentos e cinquenta",
+"250"
+],
+[
+"replace",
+"cem",
+"100"
+],
+[
+"replace",
+"sessenta",
+"60"
+],
+[
+"replace",
+"duzentos e cinquenta",
+"250"
+]
+],
+"words": [
+{
+"w": "Vento",
+"s": 0.0,
+"e": 0.48,
+"key": false
+},
+{
+"w": "de",
+"s": 0.48,
+"e": 0.72,
+"key": false
+},
+{
+"w": "duzentos",
+"s": 0.72,
+"e": 1.74,
+"key": true
+},
+{
+"w": "e",
+"s": 1.74,
+"e": 1.74,
+"key": true
+},
+{
+"w": "cinquenta",
+"s": 1.74,
+"e": 1.74,
+"key": true
+},
+{
+"w": "quilômetros",
+"s": 1.74,
+"e": 2.4,
+"key": true
+},
+{
+"w": "por",
+"s": 2.4,
+"e": 2.74,
+"key": true
+},
+{
+"w": "hora",
+"s": 2.74,
+"e": 2.96,
+"key": true
+},
+{
+"w": "na",
+"s": 2.96,
+"e": 3.14,
+"key": false
+},
+{
+"w": "Avenida",
+"s": 3.14,
+"e": 3.52,
+"key": false
+},
+{
+"w": "Paulista.",
+"s": 3.52,
+"e": 4.1,
+"key": false
+},
+{
+"w": "É",
+"s": 4.68,
+"e": 4.76,
+"key": false
+},
+{
+"w": "o",
+"s": 4.76,
+"e": 4.86,
+"key": false
+},
+{
+"w": "que",
+"s": 4.86,
+"e": 4.94,
+"key": false
+},
+{
+"w": "um",
+"s": 4.94,
+"e": 5.1,
+"key": false
+},
+{
+"w": "furacão",
+"s": 5.1,
+"e": 5.48,
+"key": false
+},
+{
+"w": "dos",
+"s": 5.48,
+"e": 5.78,
+"key": true
+},
+{
+"w": "mais",
+"s": 5.78,
+"e": 6.22,
+"key": true
+},
+{
+"w": "fortes",
+"s": 6.22,
+"e": 6.62,
+"key": true
+},
+{
+"w": "traria.",
+"s": 6.62,
+"e": 7.3,
+"key": false
+},
+{
+"w": "Só",
+"s": 7.62,
+"e": 7.8,
+"key": false
+},
+{
+"w": "que",
+"s": 7.8,
+"e": 7.94,
+"key": false
+},
+{
+"w": "São",
+"s": 7.94,
+"e": 8.2,
+"key": false
+},
+{
+"w": "Paulo",
+"s": 8.2,
+"e": 8.44,
+"key": false
+},
+{
+"w": "tem",
+"s": 8.44,
+"e": 8.62,
+"key": false
+},
+{
+"w": "uma",
+"s": 8.62,
+"e": 8.84,
+"key": true
+},
+{
+"w": "defesa",
+"s": 8.84,
+"e": 9.28,
+"key": true
+},
+{
+"w": "que",
+"s": 9.28,
+"e": 9.6,
+"key": false
+},
+{
+"w": "quase",
+"s": 9.6,
+"e": 9.94,
+"key": false
+},
+{
+"w": "ninguém",
+"s": 9.94,
+"e": 10.36,
+"key": false
+},
+{
+"w": "conhece.",
+"s": 10.36,
+"e": 11.22,
+"key": false
+},
+{
+"w": "Em",
+"s": 11.46,
+"e": 11.62,
+"key": false
+},
+{
+"w": "2023,",
+"s": 11.62,
+"e": 12.48,
+"key": false
+},
+{
+"w": "um",
+"s": 12.88,
+"e": 13.04,
+"key": false
+},
+{
+"w": "vento",
+"s": 13.04,
+"e": 13.3,
+"key": false
+},
+{
+"w": "de",
+"s": 13.3,
+"e": 13.56,
+"key": false
+},
+{
+"w": "pouco",
+"s": 13.56,
+"e": 13.84,
+"key": false
+},
+{
+"w": "mais",
+"s": 13.84,
+"e": 14.14,
+"key": false
+},
+{
+"w": "de",
+"s": 14.14,
+"e": 14.34,
+"key": false
+},
+{
+"w": "cem",
+"s": 14.34,
+"e": 14.54,
+"key": false
+},
+{
+"w": "por",
+"s": 14.54,
+"e": 14.82,
+"key": false
+},
+{
+"w": "hora",
+"s": 14.82,
+"e": 15.12,
+"key": false
+},
+{
+"w": "derrubou",
+"s": 15.12,
+"e": 15.66,
+"key": false
+},
+{
+"w": "centenas",
+"s": 15.66,
+"e": 16.32,
+"key": true
+},
+{
+"w": "de",
+"s": 16.32,
+"e": 16.58,
+"key": true
+},
+{
+"w": "árvores",
+"s": 16.58,
+"e": 17.12,
+"key": true
+},
+{
+"w": "e",
+"s": 17.12,
+"e": 17.44,
+"key": false
+},
+{
+"w": "deixou",
+"s": 17.44,
+"e": 17.68,
+"key": false
+},
+{
+"w": "milhões",
+"s": 17.68,
+"e": 18.12,
+"key": true
+},
+{
+"w": "de",
+"s": 18.12,
+"e": 18.46,
+"key": true
+},
+{
+"w": "casas",
+"s": 18.46,
+"e": 18.7,
+"key": true
+},
+{
+"w": "sem",
+"s": 18.7,
+"e": 18.94,
+"key": true
+},
+{
+"w": "luz.",
+"s": 18.94,
+"e": 19.24,
+"key": true
+},
+{
+"w": "Um",
+"s": 19.72,
+"e": 19.88,
+"key": false
+},
+{
+"w": "furacão",
+"s": 19.88,
+"e": 20.28,
+"key": false
+},
+{
+"w": "desses",
+"s": 20.28,
+"e": 20.72,
+"key": false
+},
+{
+"w": "venta",
+"s": 20.72,
+"e": 21.1,
+"key": false
+},
+{
+"w": "mais",
+"s": 21.1,
+"e": 21.4,
+"key": true
+},
+{
+"w": "que",
+"s": 21.4,
+"e": 21.58,
+"key": true
+},
+{
+"w": "o",
+"s": 21.58,
+"e": 21.8,
+"key": true
+},
+{
+"w": "dobro.",
+"s": 21.8,
+"e": 22.1,
+"key": true
+},
+{
+"w": "E",
+"s": 22.1,
+"e": 22.68,
+"key": false
+},
+{
+"w": "o",
+"s": 22.68,
+"e": 22.94,
+"key": false
+},
+{
+"w": "dobro",
+"s": 22.94,
+"e": 23.2,
+"key": false
+},
+{
+"w": "de",
+"s": 23.2,
+"e": 23.42,
+"key": false
+},
+{
+"w": "vento",
+"s": 23.42,
+"e": 23.86,
+"key": false
+},
+{
+"w": "empurra",
+"s": 23.86,
+"e": 24.4,
+"key": false
+},
+{
+"w": "quatro",
+"s": 24.4,
+"e": 24.84,
+"key": true
+},
+{
+"w": "vezes",
+"s": 24.84,
+"e": 25.22,
+"key": true
+},
+{
+"w": "mais.",
+"s": 25.22,
+"e": 25.64,
+"key": true
+},
+{
+"w": "Entre",
+"s": 26.1,
+"e": 26.32,
+"key": false
+},
+{
+"w": "os",
+"s": 26.32,
+"e": 26.6,
+"key": false
+},
+{
+"w": "prédios",
+"s": 26.6,
+"e": 26.78,
+"key": false
+},
+{
+"w": "da",
+"s": 26.78,
+"e": 26.98,
+"key": false
+},
+{
+"w": "Paulista,",
+"s": 26.98,
+"e": 27.56,
+"key": false
+},
+{
+"w": "o",
+"s": 27.78,
+"e": 27.94,
+"key": false
+},
+{
+"w": "vento",
+"s": 27.94,
+"e": 28.24,
+"key": false
+},
+{
+"w": "ainda",
+"s": 28.24,
+"e": 28.6,
+"key": false
+},
+{
+"w": "acelera.",
+"s": 28.6,
+"e": 29.54,
+"key": true
+},
+{
+"w": "Placas,",
+"s": 29.54,
+"e": 30.22,
+"key": false
+},
+{
+"w": "vidros",
+"s": 30.5,
+"e": 30.86,
+"key": false
+},
+{
+"w": "e",
+"s": 30.86,
+"e": 31.04,
+"key": false
+},
+{
+"w": "galhos",
+"s": 31.04,
+"e": 31.42,
+"key": false
+},
+{
+"w": "viram",
+"s": 31.42,
+"e": 31.8,
+"key": false
+},
+{
+"w": "projéteis.",
+"s": 31.8,
+"e": 32.84,
+"key": true
+},
+{
+"w": "E",
+"s": 32.98,
+"e": 33.08,
+"key": false
+},
+{
+"w": "o",
+"s": 33.08,
+"e": 33.24,
+"key": false
+},
+{
+"w": "Brasil",
+"s": 33.24,
+"e": 33.46,
+"key": false
+},
+{
+"w": "já",
+"s": 33.46,
+"e": 33.8,
+"key": false
+},
+{
+"w": "teve",
+"s": 33.8,
+"e": 34.02,
+"key": false
+},
+{
+"w": "um:",
+"s": 34.02,
+"e": 34.22,
+"key": false
+},
+{
+"w": "em",
+"s": 34.66,
+"e": 34.82,
+"key": false
+},
+{
+"w": "2004,",
+"s": 34.82,
+"e": 35.6,
+"key": false
+},
+{
+"w": "o",
+"s": 35.9,
+"e": 36.04,
+"key": false
+},
+{
+"w": "furacão",
+"s": 36.04,
+"e": 36.4,
+"key": false
+},
+{
+"w": "Catarina",
+"s": 36.4,
+"e": 37.02,
+"key": false
+},
+{
+"w": "danificou",
+"s": 37.02,
+"e": 37.62,
+"key": false
+},
+{
+"w": "milhares",
+"s": 37.62,
+"e": 38.22,
+"key": false
+},
+{
+"w": "de",
+"s": 38.22,
+"e": 38.46,
+"key": false
+},
+{
+"w": "casas",
+"s": 38.46,
+"e": 38.74,
+"key": false
+},
+{
+"w": "no",
+"s": 38.74,
+"e": 38.94,
+"key": false
+},
+{
+"w": "Sul.",
+"s": 38.94,
+"e": 39.18,
+"key": false
+},
+{
+"w": "Agora,",
+"s": 39.84,
+"e": 40.26,
+"key": false
+},
+{
+"w": "a",
+"s": 40.26,
+"e": 40.64,
+"key": false
+},
+{
+"w": "defesa.",
+"s": 40.64,
+"e": 41.52,
+"key": false
+},
+{
+"w": "Furacão",
+"s": 41.72,
+"e": 42.32,
+"key": false
+},
+{
+"w": "precisa",
+"s": 42.32,
+"e": 42.68,
+"key": false
+},
+{
+"w": "de",
+"s": 42.68,
+"e": 42.94,
+"key": false
+},
+{
+"w": "mar",
+"s": 42.94,
+"e": 43.22,
+"key": true
+},
+{
+"w": "quente.",
+"s": 43.22,
+"e": 43.96,
+"key": true
+},
+{
+"w": "São",
+"s": 44.16,
+"e": 44.44,
+"key": false
+},
+{
+"w": "Paulo",
+"s": 44.44,
+"e": 44.72,
+"key": false
+},
+{
+"w": "fica",
+"s": 44.72,
+"e": 45.0,
+"key": false
+},
+{
+"w": "a",
+"s": 45.0,
+"e": 45.1,
+"key": false
+},
+{
+"w": "uns",
+"s": 45.1,
+"e": 45.26,
+"key": false
+},
+{
+"w": "sessenta",
+"s": 45.26,
+"e": 45.66,
+"key": true
+},
+{
+"w": "quilômetros",
+"s": 45.66,
+"e": 46.2,
+"key": true
+},
+{
+"w": "da",
+"s": 46.2,
+"e": 46.5,
+"key": false
+},
+{
+"w": "costa,",
+"s": 46.5,
+"e": 46.96,
+"key": false
+},
+{
+"w": "em",
+"s": 47.18,
+"e": 47.32,
+"key": true
+},
+{
+"w": "cima",
+"s": 47.32,
+"e": 47.44,
+"key": true
+},
+{
+"w": "da",
+"s": 47.44,
+"e": 47.74,
+"key": true
+},
+{
+"w": "serra.",
+"s": 47.74,
+"e": 48.32,
+"key": true
+},
+{
+"w": "Longe",
+"s": 48.62,
+"e": 48.82,
+"key": false
+},
+{
+"w": "do",
+"s": 48.82,
+"e": 49.0,
+"key": false
+},
+{
+"w": "mar,",
+"s": 49.0,
+"e": 49.3,
+"key": false
+},
+{
+"w": "ele",
+"s": 49.56,
+"e": 49.82,
+"key": false
+},
+{
+"w": "perde",
+"s": 49.82,
+"e": 50.14,
+"key": false
+},
+{
+"w": "combustível",
+"s": 50.14,
+"e": 50.88,
+"key": false
+},
+{
+"w": "e",
+"s": 50.88,
+"e": 51.16,
+"key": false
+},
+{
+"w": "enfraquece.",
+"s": 51.16,
+"e": 51.98,
+"key": true
+},
+{
+"w": "Então",
+"s": 52.34,
+"e": 52.58,
+"key": false
+},
+{
+"w": "os",
+"s": 52.58,
+"e": 52.9,
+"key": false
+},
+{
+"w": "duzentos",
+"s": 52.9,
+"e": 53.44,
+"key": false
+},
+{
+"w": "e",
+"s": 53.44,
+"e": 53.44,
+"key": false
+},
+{
+"w": "cinquenta",
+"s": 53.44,
+"e": 53.44,
+"key": false
+},
+{
+"w": "por",
+"s": 53.44,
+"e": 53.96,
+"key": false
+},
+{
+"w": "hora",
+"s": 53.96,
+"e": 54.24,
+"key": false
+},
+{
+"w": "não",
+"s": 54.24,
+"e": 54.58,
+"key": true
+},
+{
+"w": "chegam",
+"s": 54.58,
+"e": 54.96,
+"key": true
+},
+{
+"w": "inteiros",
+"s": 54.96,
+"e": 55.4,
+"key": true
+},
+{
+"w": "na",
+"s": 55.4,
+"e": 55.58,
+"key": false
+},
+{
+"w": "Paulista.",
+"s": 55.58,
+"e": 56.08,
+"key": false
+},
+{
+"w": "O",
+"s": 56.52,
+"e": 56.7,
+"key": false
+},
+{
+"w": "perigo",
+"s": 56.7,
+"e": 57.0,
+"key": false
+},
+{
+"w": "real",
+"s": 57.0,
+"e": 57.34,
+"key": false
+},
+{
+"w": "é",
+"s": 57.34,
+"e": 57.7,
+"key": false
+},
+{
+"w": "a",
+"s": 57.7,
+"e": 57.82,
+"key": false
+},
+{
+"w": "tempestade",
+"s": 57.82,
+"e": 58.38,
+"key": true
+},
+{
+"w": "comum,",
+"s": 58.38,
+"e": 58.78,
+"key": true
+},
+{
+"w": "que",
+"s": 58.78,
+"e": 59.22,
+"key": false
+},
+{
+"w": "já",
+"s": 59.22,
+"e": 59.54,
+"key": false
+},
+{
+"w": "mostrou",
+"s": 59.54,
+"e": 59.94,
+"key": false
+},
+{
+"w": "do",
+"s": 59.94,
+"e": 60.06,
+"key": false
+},
+{
+"w": "que",
+"s": 60.06,
+"e": 60.18,
+"key": false
+},
+{
+"w": "é",
+"s": 60.18,
+"e": 60.32,
+"key": false
+},
+{
+"w": "capaz.",
+"s": 60.32,
+"e": 60.72,
+"key": false
+},
+{
+"w": "Segue",
+"s": 61.32,
+"e": 61.52,
+"key": false
+},
+{
+"w": "o",
+"s": 61.52,
+"e": 61.68,
+"key": false
+},
+{
+"w": "perfil",
+"s": 61.68,
+"e": 62.04,
+"key": false
+},
+{
+"w": "para",
+"s": 62.04,
+"e": 62.24,
+"key": false
+},
+{
+"w": "o",
+"s": 62.24,
+"e": 62.44,
+"key": false
+},
+{
+"w": "próximo",
+"s": 62.44,
+"e": 62.92,
+"key": false
+},
+{
+"w": "\"e",
+"s": 62.92,
+"e": 63.36,
+"key": false
+},
+{
+"w": "se\".",
+"s": 63.36,
+"e": 63.48,
+"key": false
+}
+],
+"chunks": [
+{
+"s": 0.0,
+"e": 0.48,
+"t": "VENTO"
+},
+{
+"s": 0.48,
+"e": 1.74,
+"t": "DE {\\c&H0028D7FF&}DUZENTOS{\\c&HFFFFFF&}"
+},
+{
+"s": 1.74,
+"e": 1.74,
+"t": "{\\c&H0028D7FF&}E{\\c&HFFFFFF&} {\\c&H0028D7FF&}CINQUENTA{\\c&HFFFFFF&}"
+},
+{
+"s": 1.74,
+"e": 2.4,
+"t": "{\\c&H0028D7FF&}QUILÔMETROS{\\c&HFFFFFF&}"
+},
+{
+"s": 2.4,
+"e": 2.96,
+"t": "{\\c&H0028D7FF&}POR{\\c&HFFFFFF&} {\\c&H0028D7FF&}HORA{\\c&HFFFFFF&}"
+},
+{
+"s": 2.96,
+"e": 3.52,
+"t": "NA AVENIDA"
+},
+{
+"s": 3.52,
+"e": 4.1,
+"t": "PAULISTA."
+},
+{
+"s": 4.68,
+"e": 4.76,
+"t": "É"
+},
+{
+"s": 4.76,
+"e": 5.48,
+"t": "O QUE UM FURACÃO"
+},
+{
+"s": 5.48,
+"e": 7.3,
+"t": "{\\c&H0028D7FF&}DOS{\\c&HFFFFFF&} {\\c&H0028D7FF&}MAIS{\\c&HFFFFFF&} {\\c&H0028D7FF&}FORTES{\\c&HFFFFFF&} TRARIA."
+},
+{
+"s": 7.62,
+"e": 8.44,
+"t": "SÓ QUE SÃO PAULO"
+},
+{
+"s": 8.44,
+"e": 9.94,
+"t": "TEM {\\c&H0028D7FF&}UMA{\\c&HFFFFFF&} {\\c&H0028D7FF&}DEFESA{\\c&HFFFFFF&} QUE QUASE"
+},
+{
+"s": 9.94,
+"e": 11.22,
+"t": "NINGUÉM CONHECE."
+},
+{
+"s": 11.46,
+"e": 12.48,
+"t": "EM 2023,"
+},
+{
+"s": 12.88,
+"e": 13.3,
+"t": "UM VENTO"
+},
+{
+"s": 13.3,
+"e": 14.14,
+"t": "DE POUCO MAIS"
+},
+{
+"s": 14.14,
+"e": 15.12,
+"t": "DE CEM POR HORA"
+},
+{
+"s": 15.12,
+"e": 15.66,
+"t": "DERRUBOU"
+},
+{
+"s": 15.66,
+"e": 16.32,
+"t": "{\\c&H0028D7FF&}CENTENAS{\\c&HFFFFFF&}"
+},
+{
+"s": 16.32,
+"e": 17.12,
+"t": "{\\c&H0028D7FF&}DE{\\c&HFFFFFF&} {\\c&H0028D7FF&}ÁRVORES{\\c&HFFFFFF&}"
+},
+{
+"s": 17.12,
+"e": 17.68,
+"t": "E DEIXOU"
+},
+{
+"s": 17.68,
+"e": 18.7,
+"t": "{\\c&H0028D7FF&}MILHÕES{\\c&HFFFFFF&} {\\c&H0028D7FF&}DE{\\c&HFFFFFF&} {\\c&H0028D7FF&}CASAS{\\c&HFFFFFF&}"
+},
+{
+"s": 18.7,
+"e": 19.24,
+"t": "{\\c&H0028D7FF&}SEM{\\c&HFFFFFF&} {\\c&H0028D7FF&}LUZ.{\\c&HFFFFFF&}"
+},
+{
+"s": 19.72,
+"e": 20.28,
+"t": "UM FURACÃO"
+},
+{
+"s": 20.28,
+"e": 21.1,
+"t": "DESSES VENTA"
+},
+{
+"s": 21.1,
+"e": 22.1,
+"t": "{\\c&H0028D7FF&}MAIS{\\c&HFFFFFF&} {\\c&H0028D7FF&}QUE{\\c&HFFFFFF&} {\\c&H0028D7FF&}O{\\c&HFFFFFF&} {\\c&H0028D7FF&}DOBRO.{\\c&HFFFFFF&}"
+},
+{
+"s": 22.1,
+"e": 23.2,
+"t": "E O DOBRO"
+},
+{
+"s": 23.2,
+"e": 24.4,
+"t": "DE VENTO EMPURRA"
+},
+{
+"s": 24.4,
+"e": 25.64,
+"t": "{\\c&H0028D7FF&}QUATRO{\\c&HFFFFFF&} {\\c&H0028D7FF&}VEZES{\\c&HFFFFFF&} {\\c&H0028D7FF&}MAIS.{\\c&HFFFFFF&}"
+},
+{
+"s": 26.1,
+"e": 26.78,
+"t": "ENTRE OS PRÉDIOS"
+},
+{
+"s": 26.78,
+"e": 27.56,
+"t": "DA PAULISTA,"
+},
+{
+"s": 27.78,
+"e": 29.54,
+"t": "O VENTO AINDA {\\c&H0028D7FF&}ACELERA.{\\c&HFFFFFF&}"
+},
+{
+"s": 29.54,
+"e": 30.22,
+"t": "PLACAS,"
+},
+{
+"s": 30.5,
+"e": 31.42,
+"t": "VIDROS E GALHOS"
+},
+{
+"s": 31.42,
+"e": 32.7,
+"t": "VIRAM {\\c&H0028D7FF&}PROJÉTEIS.{\\c&HFFFFFF&}"
+},
+{
+"s": 32.98,
+"e": 33.46,
+"t": "E O BRASIL"
+},
+{
+"s": 33.46,
+"e": 34.22,
+"t": "JÁ TEVE UM:"
+},
+{
+"s": 34.66,
+"e": 35.6,
+"t": "EM 2004,"
+},
+{
+"s": 35.9,
+"e": 36.4,
+"t": "O FURACÃO"
+},
+{
+"s": 36.4,
+"e": 37.02,
+"t": "CATARINA"
+},
+{
+"s": 37.02,
+"e": 37.62,
+"t": "DANIFICOU"
+},
+{
+"s": 37.62,
+"e": 38.22,
+"t": "MILHARES"
+},
+{
+"s": 38.22,
+"e": 39.18,
+"t": "DE CASAS NO SUL."
+},
+{
+"s": 39.84,
+"e": 40.26,
+"t": "AGORA,"
+},
+{
+"s": 40.26,
+"e": 41.52,
+"t": "A DEFESA."
+},
+{
+"s": 41.72,
+"e": 42.68,
+"t": "FURACÃO PRECISA"
+},
+{
+"s": 42.68,
+"e": 43.96,
+"t": "DE {\\c&H0028D7FF&}MAR{\\c&HFFFFFF&} {\\c&H0028D7FF&}QUENTE.{\\c&HFFFFFF&}"
+},
+{
+"s": 44.16,
+"e": 45.0,
+"t": "SÃO PAULO FICA"
+},
+{
+"s": 45.0,
+"e": 45.66,
+"t": "A UNS {\\c&H0028D7FF&}SESSENTA{\\c&HFFFFFF&}"
+},
+{
+"s": 45.66,
+"e": 46.2,
+"t": "{\\c&H0028D7FF&}QUILÔMETROS{\\c&HFFFFFF&}"
+},
+{
+"s": 46.2,
+"e": 46.96,
+"t": "DA COSTA,"
+},
+{
+"s": 47.18,
+"e": 48.32,
+"t": "{\\c&H0028D7FF&}EM{\\c&HFFFFFF&} {\\c&H0028D7FF&}CIMA{\\c&HFFFFFF&} {\\c&H0028D7FF&}DA{\\c&HFFFFFF&} {\\c&H0028D7FF&}SERRA.{\\c&HFFFFFF&}"
+},
+{
+"s": 48.62,
+"e": 49.3,
+"t": "LONGE DO MAR,"
+},
+{
+"s": 49.56,
+"e": 50.14,
+"t": "ELE PERDE"
+},
+{
+"s": 50.14,
+"e": 51.98,
+"t": "COMBUSTÍVEL E {\\c&H0028D7FF&}ENFRAQUECE.{\\c&HFFFFFF&}"
+},
+{
+"s": 52.34,
+"e": 52.58,
+"t": "ENTÃO"
+},
+{
+"s": 52.58,
+"e": 53.44,
+"t": "OS DUZENTOS"
+},
+{
+"s": 53.44,
+"e": 53.44,
+"t": "E CINQUENTA"
+},
+{
+"s": 53.44,
+"e": 54.24,
+"t": "POR HORA"
+},
+{
+"s": 54.24,
+"e": 54.96,
+"t": "{\\c&H0028D7FF&}NÃO{\\c&HFFFFFF&} {\\c&H0028D7FF&}CHEGAM{\\c&HFFFFFF&}"
+},
+{
+"s": 54.96,
+"e": 55.4,
+"t": "{\\c&H0028D7FF&}INTEIROS{\\c&HFFFFFF&}"
+},
+{
+"s": 55.4,
+"e": 56.08,
+"t": "NA PAULISTA."
+},
+{
+"s": 56.52,
+"e": 57.7,
+"t": "O PERIGO REAL É"
+},
+{
+"s": 57.7,
+"e": 58.78,
+"t": "A {\\c&H0028D7FF&}TEMPESTADE{\\c&HFFFFFF&} {\\c&H0028D7FF&}COMUM,{\\c&HFFFFFF&}"
+},
+{
+"s": 58.78,
+"e": 59.94,
+"t": "QUE JÁ MOSTROU"
+},
+{
+"s": 59.94,
+"e": 60.72,
+"t": "DO QUE É CAPAZ."
+},
+{
+"s": 61.32,
+"e": 62.04,
+"t": "SEGUE O PERFIL"
+},
+{
+"s": 62.04,
+"e": 62.92,
+"t": "PARA O PRÓXIMO"
+},
+{
+"s": 62.92,
+"e": 63.48,
+"t": "\"E SE\"."
+}
+],
+"hud": []
+}
