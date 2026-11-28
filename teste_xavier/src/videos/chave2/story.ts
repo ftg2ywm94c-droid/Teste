@@ -370,7 +370,7 @@ export const TRAVEL2: [number, V3, V3, number][] = [
   [50.15, [2001.25, 2.0, 47.3], [2000.25, 1.25, 45.9], 46],      // ...sobe a escada de costas, olhando para você...
   [50.75, [2001.3, 3.3, 49.4], [2000.25, 1.2, 45.6], 50],
   [51.4, [2001.3, 3.6, 50.0], [2000.25, 1.2, 45.6], 52],        // ...e lá de cima: você embaixo, a porta atrás (A), a escada (B)
-  [63.9, [2001.25, 3.5, 49.6], [2000.25, 1.15, 45.6], 46],
+  [63.9, [2001.15, 3.3, 49.15], [2000.25, 1.15, 45.6], 44],
 ];
 const TR = spline(TRAVEL2);
 const CAMS: Record<number, Key[]> = {
